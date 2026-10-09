@@ -1,0 +1,215 @@
+---
+import ExternalLink from './ExternalLink.astro';
+import FooterStrip from './FooterStrip.astro';
+import StoryBlock from './StoryBlock.astro';
+import { withBase } from '../lib/base';
+import { briefStats, formatChineseDate, formatGrouped, formatWeekday, pointsLabel, sectionMain, shortMonthDay, storyHref } from '../lib/format';
+import { findHref, type IssueNav, type Section } from '../lib/issues';
+import { SECTION_BRIEF_CAP, SECTION_STORY_CAP } from '../lib/pages';
+
+interface Props {
+  nav: IssueNav;
+  section: Section;
+  pageNumber: number;
+  pageCount: number;
+  label: string;
+  part?: 'primary' | 'more';
+}
+
+const { nav, section, pageNumber, pageCount, label, part = 'primary' } = Astro.props;
+const data = nav.entry.data;
+const weekday = formatWeekday(data.date);
+const rich =
+  Boolean(section.stats) ||
+  section.stories.some((story) => (story.comment_quotes?.length ?? 0) > 0) ||
+  section.briefs.some((brief) => brief.comments != null);
+const stories = part === 'more' ? section.stories.slice(SECTION_STORY_CAP) : section.stories.slice(0, SECTION_STORY_CAP);
+const briefs = part === 'more' ? section.briefs.slice(SECTION_BRIEF_CAP) : section.briefs.slice(0, SECTION_BRIEF_CAP);
+const [lead, ...rest] = stories;
+const showStats = Boolean(section.stats) && part === 'primary';
+---
+
+<div class="nameplate-top">
+  <div class="ear-box">
+    <a href={withBase()}>早间新闻</a>
+    <span>第 {nav.number} 期</span>
+  </div>
+  <p class="edition-flag">今日{1 + data.sections.length}版 · {label}</p>
+  <div class="ear-box ear-box-right">
+    <span>{data.date}</span>
+    <span>{weekday}</span>
+  </div>
+</div>
+
+<header class="inside-mast">
+  <p class="mast-en">The Morning News</p>
+  <p class="inside-title"><a href={withBase()}>早间新闻</a></p>
+</header>
+
+<div class="rule-double" aria-hidden="true"></div>
+
+<div class="dateline">
+  <p class="left">VOL. I ··· No. {nav.number}</p>
+  <p class="center">{formatChineseDate(data.date)}　{weekday}</p>
+  <p class="right">{part === 'more' ? `${label} · 续` : `第 ${pageNumber} 版`}</p>
+</div>
+
+{
+  data.dummy && (
+    <p class="dummy-banner">占位样本 · 此期 JSON 含 dummy: true，只为测试往期与翻页，可整份删除</p>
+  )
+}
+
+<div class:list={['section-banner', rich && 'is-rich']}>
+  <h2 class="section-display">{sectionMain(section.name)}</h2>
+  {section.en && <p class="section-en">{section.en}</p>}
+</div>
+<div class="rule-double" aria-hidden="true"></div>
+
+{
+  rich && part === 'primary' && lead ? (
+    <div class="section-layout">
+      <div class="section-lead">
+        <StoryBlock story={lead} level="h2" variant="section-lead" />
+      </div>
+      <aside class="section-rail" aria-label="本版简讯">
+        {briefs.length > 0 && (
+          <div class="stat-box">
+            <h3 class="stat-title">本版简讯</h3>
+            <ol class="brief-list">
+              {briefs.map((brief) => (
+                <li>
+                  <ExternalLink href={brief.url ?? brief.hn}>{brief.title}</ExternalLink>
+                  <span>
+                    {briefStats(brief.points, brief.comments)}
+                    {' · '}
+                    <ExternalLink class="hn-link" href={brief.hn}>
+                      HN
+                    </ExternalLink>
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
+        {showStats && section.stats && (
+          <section class="stat-box section-numbers" aria-label="本版数字">
+            <h3 class="stat-title">本版数字</h3>
+            {section.stats.items != null && (
+              <div class="stat-row">
+                <b>{formatGrouped(section.stats.items)}</b>
+                <span>条本版帖子上了 {shortMonthDay(data.date)} 首页</span>
+              </div>
+            )}
+            {section.stats.points != null && (
+              <div class="stat-row">
+                <b>{formatGrouped(section.stats.points)}</b>
+                <span>
+                  本版点赞合计
+                  {section.stats.comments != null && (
+                    <>
+                      <br />
+                      评论合计 {formatGrouped(section.stats.comments)}
+                    </>
+                  )}
+                </span>
+              </div>
+            )}
+            {section.stats.top_points && (
+              <div class="stat-row">
+                <b>{formatGrouped(section.stats.top_points.value)}</b>
+                <span>
+                  本版最高点赞
+                  {section.stats.top_points.comments != null && `（${section.stats.top_points.comments} 评论）`}
+                  <br />
+                  <ExternalLink href={findHref(data, section.stats.top_points.id) ?? data.source}>
+                    {section.stats.top_points.title}
+                  </ExternalLink>
+                </span>
+              </div>
+            )}
+            {section.stats.top_comments && section.stats.top_comments.id !== section.stats.top_points?.id && (
+              <div class="stat-row">
+                <b>{formatGrouped(section.stats.top_comments.value)}</b>
+                <span>
+                  本版最多评论
+                  <br />
+                  <ExternalLink href={findHref(data, section.stats.top_comments.id) ?? data.source}>
+                    {section.stats.top_comments.title}
+                  </ExternalLink>
+                </span>
+              </div>
+            )}
+            {section.stats.top_brief && (
+              <div class="stat-row stat-row-last">
+                <b>{formatGrouped(section.stats.top_brief.value)}</b>
+                <span>
+                  简讯中最高点赞
+                  {section.stats.top_brief.comments != null && `（${section.stats.top_brief.comments} 评论）`}
+                  <br />
+                  <ExternalLink href={findHref(data, section.stats.top_brief.id) ?? data.source}>
+                    {section.stats.top_brief.title}
+                  </ExternalLink>
+                </span>
+              </div>
+            )}
+          </section>
+        )}
+      </aside>
+      {rest.map((story, index) => (
+        <div class:list={['section-rest', index === 0 ? 'section-s2' : 'section-s3']}>
+          <StoryBlock story={story} level="h3" variant="section" />
+        </div>
+      ))}
+    </div>
+  ) : (
+    <>
+      {stories.length > 0 && (
+        <div class="story-grid">
+          {stories.map((story) => (
+            <StoryBlock story={story} level="h3" variant={rich ? 'section' : 'section'} />
+          ))}
+        </div>
+      )}
+      {briefs.length > 0 && (
+        <aside class="briefs">
+          <h3 class="briefs-label">{part === 'more' ? '简讯续' : '简讯'}</h3>
+          <ul>
+            {briefs.map((brief) => (
+              <li>
+                <ExternalLink href={storyHref({ url: brief.url ?? null, hn: brief.hn })}>{brief.title}</ExternalLink>
+                <span class="nums">
+                  {brief.comments != null ? briefStats(brief.points, brief.comments) : pointsLabel(brief.points)}
+                  {brief.comments != null && (
+                    <>
+                      {' · '}
+                      <ExternalLink class="hn-link" href={brief.hn}>
+                        HN
+                      </ExternalLink>
+                    </>
+                  )}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )}
+    </>
+  )
+}
+
+<FooterStrip
+  date={data.date}
+  publishedAt={data.published_at}
+  source={data.source}
+  prevDate={nav.prevDate}
+  nextDate={nav.nextDate}
+  snapshot={part === 'primary' ? data.stats?.snapshot : undefined}
+/>
+
+<div class="folio folio-bottom">
+  <span>早间新闻 · {label}{part === 'more' ? ' · 续' : ''}</span>
+  <span>
+    {pageNumber} / {pageCount}
+  </span>
+</div>
