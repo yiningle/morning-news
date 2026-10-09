@@ -1,0 +1,41 @@
+---
+import ExternalLink from './ExternalLink.astro';
+import { withBase } from '../lib/base';
+import { formatPublishedFull } from '../lib/format';
+
+interface Props {
+  date: string;
+  publishedAt: string;
+  source: string;
+  prevDate: string | null;
+  nextDate: string | null;
+  snapshot?: string;
+}
+
+const { date, publishedAt, source, prevDate, nextDate, snapshot } = Astro.props;
+---
+
+<footer class="page-foot">
+  <p class="source-note">
+    数据来源：Hacker News 官方 {date} 首页归档。点赞为注册用户投票，代表关注度而非质量。{formatPublishedFull(publishedAt)}。
+    {snapshot && `数字快照 ${formatPublishedFull(snapshot)}。`}
+    <ExternalLink href={source}>打开当日 HN 归档</ExternalLink>
+  </p>
+  <p class="issue-jump">
+    {
+      prevDate ? (
+        <a href={withBase(`${prevDate}/`)}>上一期</a>
+      ) : (
+        <span>创刊号</span>
+      )
+    }
+    <a href={withBase('archive/')}>往期目录</a>
+    {
+      nextDate ? (
+        <a href={withBase(`${nextDate}/`)}>下一期</a>
+      ) : (
+        <a href={withBase()}>最新一期</a>
+      )
+    }
+  </p>
+</footer>
