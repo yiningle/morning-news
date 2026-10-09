@@ -1,0 +1,312 @@
+---
+import ExternalLink from './ExternalLink.astro';
+import FooterStrip from './FooterStrip.astro';
+import StoryBlock from './StoryBlock.astro';
+import { normalizePath, withBase } from '../lib/base';
+import { formatChineseDate, formatGrouped, formatWeekday, sectionMain, stats } from '../lib/format';
+import { findHref, type IssueNav } from '../lib/issues';
+import { FRONT_SIDE_CAP, type PaperPage } from '../lib/pages';
+
+interface Props {
+  nav: IssueNav;
+  pages: PaperPage[];
+  part?: 'primary' | 'more';
+}
+
+const { nav, pages, part = 'primary' } = Astro.props;
+const data = nav.entry.data;
+const canonical = withBase(`${data.date}/`);
+const onCanonical = normalizePath(Astro.url.pathname) === canonical;
+const weekday = formatWeekday(data.date);
+const rich = data.side.length > 2 || Boolean(data.stats) || Boolean(data.quote_of_day);
+const rail = rich ? data.side.slice(0, 2) : data.side;
+const under = rich ? data.side.slice(2, Math.min(4, data.side.length)) : [];
+const bandStory = rich && data.side.length > 4 ? data.side[4] : null;
+const overflow = data.side.slice(FRONT_SIDE_CAP);
+const editions = 1 + data.sections.length;
+const picked = 1 + data.side.length + data.sections.reduce((sum, section) => sum + section.stories.length, 0);
+const briefCount = data.sections.reduce((sum, section) => sum + section.briefs.length, 0);
+const statsLine =
+  data.stats?.front_page_count != null
+    ? `首页 ${data.stats.front_page_count} 条 · 本报精选 ${picked} 条 · 简讯 ${briefCount} 条`
+    : `第 ${nav.number} 期`;
+
+function sectionSheet(sectionIndex: number): PaperPage | undefined {
+  return pages.find((page) => page.kind === 'section' && page.sectionIndex === sectionIndex);
+}
+
+const cnEdition = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
+function editionName(sheetIndex: number): string {
+  const n = sheetIndex + 1;
+  return `第${cnEdition[n] ?? n}版`;
+}
+---
+
+{
+  part === 'more' ? (
+    <>
+      <header class="inside-mast">
+        <p class="mast-en">The Morning News</p>
+        <p class="inside-title"><a href={withBase()}>早间新闻</a></p>
+      </header>
+      <div class="rule-double" aria-hidden="true" />
+      <div class="dateline">
+        <p class="left">VOL. I ··· No. {nav.number}</p>
+        <p class="center">{formatChineseDate(data.date)}　{weekday}</p>
+        <p class="right">头版续</p>
+      </div>
+      <h2 class="section-display">头版续</h2>
+      <div class="rule-single" aria-hidden="true" />
+      <div class="overflow-stories">
+        {overflow.map((story) => (
+          <StoryBlock story={story} level="h3" variant="side" />
+        ))}
+      </div>
+    </>
+  ) : (
+    <>
+      <div class="nameplate-top">
+        <div class="ear-box">
+          <span>"辑录 Hacker News 每日首页"</span>
+          <span>第 {nav.number} 期</span>
+        </div>
+        <p class="edition-flag">今日{editions}版 · 头版</p>
+        <div class="ear-box ear-box-right">
+          {onCanonical ? (
+            <span>{data.date}</span>
+          ) : (
+            <a href={canonical} title="本期固定地址">
+              {data.date}
+            </a>
+          )}
+          <span>{weekday}</span>
+        </div>
+      </div>
+
+      <header class="masthead">
+        <p class="mast-en">The Morning News</p>
+        <h1 class="masthead-title"><a href={withBase()}>早间新闻</a></h1>
+      </header>
+
+      <div class="rule-double" aria-hidden="true" />
+
+      <div class="dateline">
+        <p class="left">VOL. I ··· No. {nav.number}</p>
+        <p class="center">{formatChineseDate(data.date)}　{weekday}</p>
+        <p class="right">{statsLine}</p>
+      </div>
+
+      {data.dummy && (
+        <p class="dummy-banner">占位样本 · 此期 JSON 含 dummy: true，只为测试往期与翻页，可整份删除</p>
+      )}
+
+      <div class="front-grid">
+        <div class="front-main">
+          <StoryBlock story={data.lead} level="h2" variant="lead" />
+          {under.length > 0 && (
+            <div class="front-sub">
+              {under.map((story) => (
+                <StoryBlock story={story} level="h3" variant="side" />
+              ))}
+            </div>
+          )}
+        </div>
+        <aside class="front-side" aria-label="边栏">
+          {rail.map((story) => (
+            <StoryBlock story={story} level="h3" variant="side" />
+          ))}
+        </aside>
+      </div>
+
+      {rich && (data.stats || data.quote_of_day || bandStory) && (
+        <div class="front-band">
+          <div class="band-col">
+            {data.stats && (
+              <section class="stat-box" aria-label="今日数字">
+                <h2 class="stat-title">今日数字</h2>
+                {data.stats.top_points && (
+                  <div class="stat-row">
+                    <b>{formatGrouped(data.stats.top_points.value)}</b>
+                    <span>
+                      最高点赞
+                      <br />
+                      <ExternalLink href={findHref(data, data.stats.top_points.id) ?? data.lead.hn}>
+                        {data.stats.top_points.title}
+                      </ExternalLink>
+                    </span>
+                  </div>
+                )}
+                {data.stats.top_comments && (
+                  <div class="stat-row">
+                    <b>{formatGrouped(data.stats.top_comments.value)}</b>
+                    <span>
+                      最多评论
+                      <br />
+                      {data.stats.top_comments.id === data.stats.top_points?.id ? (
+                        data.lead.tag ? `同一帖，${data.lead.tag}` : '同一帖'
+                      ) : (
+                        <ExternalLink href={findHref(data, data.stats.top_comments.id) ?? data.lead.hn}>
+                          {data.stats.top_comments.title}
+                        </ExternalLink>
+                      )}
+                    </span>
+                  </div>
+                )}
+                {data.stats.over_500 != null && (
+                  <div class="stat-row">
+                    <b>{formatGrouped(data.stats.over_500)}</b>
+                    <span>
+                      条帖子破 500 点赞
+                      {(data.stats.over_300 != null || data.stats.over_100 != null) && (
+                        <>
+                          <br />
+                          {[
+                            data.stats.over_300 != null ? `破 300 有 ${data.stats.over_300} 条` : '',
+                            data.stats.over_100 != null ? `破 100 有 ${data.stats.over_100} 条` : '',
+                          ]
+                            .filter(Boolean)
+                            .join('，')}
+                        </>
+                      )}
+                    </span>
+                  </div>
+                )}
+                {data.stats.hottest_ratio && (
+                  <div class="stat-row">
+                    <b>{formatGrouped(data.stats.hottest_ratio.value)}</b>
+                    <span>
+                      评论/点赞比最高（≥100 点赞）
+                      <br />
+                      <ExternalLink href={findHref(data, data.stats.hottest_ratio.id) ?? data.source}>
+                        {data.stats.hottest_ratio.title}
+                      </ExternalLink>
+                    </span>
+                  </div>
+                )}
+                {data.stats.show_hn != null && (
+                  <div class="stat-row">
+                    <b>{formatGrouped(data.stats.show_hn)}</b>
+                    <span>个 Show HN 上了首页</span>
+                  </div>
+                )}
+                {data.stats.total_comments != null && (
+                  <div class="stat-row stat-row-last">
+                    <b>{formatGrouped(data.stats.total_comments)}</b>
+                    <span>
+                      首页 {data.stats.with_numbers ?? data.stats.front_page_count ?? ''} 条帖子评论合计
+                      {data.stats.total_points != null && (
+                        <>
+                          <br />
+                          点赞合计 {formatGrouped(data.stats.total_points)}
+                        </>
+                      )}
+                    </span>
+                  </div>
+                )}
+              </section>
+            )}
+            {data.quote_of_day && (
+              <section class="quote-box" aria-label="评论金句">
+                <h2 class="stat-title">评论金句</h2>
+                <p class="pull-quote">「{data.quote_of_day.zh}」</p>
+                {data.quote_of_day.en && <p class="pull-en">“{data.quote_of_day.en}”</p>}
+                <p class="quote-who quote-who-center">
+                  —— <ExternalLink href={data.quote_of_day.hn}>{data.quote_of_day.user}</ExternalLink>
+                  {data.quote_of_day.story && `，评 ${data.quote_of_day.story}`}
+                </p>
+              </section>
+            )}
+          </div>
+          {bandStory && (
+            <div class="band-col">
+              <StoryBlock story={bandStory} level="h3" variant="side" />
+            </div>
+          )}
+          <div class="band-col">
+            <section class="guide index-guide" aria-label="各版导读">
+              <h2 class="guide-title">Inside Today · 各版导读</h2>
+              <div class="guide-grid">
+                {data.sections.map((section, sectionIndex) => {
+                  const sheet = sectionSheet(sectionIndex);
+                  const pageIndex = sheet?.index ?? sectionIndex + 1;
+                  const [first, ...rest] = section.stories;
+                  const previewBriefs = section.briefs.slice(0, 2);
+                  return (
+                    <div class="guide-item">
+                      <span>
+                        {editionName(pageIndex)} · {sectionMain(section.name)}
+                      </span>
+                      {first && sheet && (
+                        <b>
+                          <a href={`#${sheet.id}`} data-page={pageIndex}>
+                            {first.title}
+                          </a>
+                        </b>
+                      )}
+                      {first && <em>{stats(first.points, first.comments)}</em>}
+                      <ul class="index-list">
+                        {rest.map((story) => (
+                          <li>
+                            {sheet ? (
+                              <a href={`#${sheet.id}`} data-page={pageIndex}>
+                                {story.title}
+                              </a>
+                            ) : (
+                              story.title
+                            )}
+                          </li>
+                        ))}
+                        {previewBriefs.map((brief) => (
+                          <li class="index-brief">
+                            <ExternalLink href={brief.url ?? brief.hn}>{brief.title}</ExternalLink>
+                            <i>{brief.points} 点赞</i>
+                          </li>
+                        ))}
+                        {section.briefs.length > 0 && <li class="index-note">本版另有简讯 {section.briefs.length} 条</li>}
+                      </ul>
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+          </div>
+        </div>
+      )}
+
+      {!rich && (
+        <section class="guide" aria-label="各版导读">
+          <h2 class="guide-title">Inside Today · 各版导读</h2>
+          <div class="guide-grid">
+            {data.sections.map((section, sectionIndex) => {
+              const sheet = sectionSheet(sectionIndex);
+              const pageIndex = sheet?.index ?? sectionIndex + 1;
+              return (
+                <a class="guide-item" href={`#${sheet?.id ?? `p-${pageIndex}`}`} data-page={pageIndex}>
+                  <span>{sectionMain(section.name)}</span>
+                  <b>{section.stories[0].title}</b>
+                  <em>{stats(section.stories[0].points, section.stories[0].comments)}</em>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      )}
+    </>
+  )
+}
+
+<FooterStrip
+  date={data.date}
+  publishedAt={data.published_at}
+  source={data.source}
+  prevDate={nav.prevDate}
+  nextDate={nav.nextDate}
+  snapshot={data.stats?.snapshot}
+/>
+
+<div class="folio folio-bottom">
+  <span>早间新闻 · {part === 'more' ? '头版续' : '头版'}</span>
+  <span>
+    {(pages.find((page) => page.kind === (part === 'more' ? 'front-more' : 'front'))?.index ?? 0) + 1} / {pages.length}
+  </span>
+</div>
