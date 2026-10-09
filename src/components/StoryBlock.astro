@@ -31,7 +31,7 @@ function kickerText(): string | null {
 const kicker = kickerText();
 ---
 
-<article class:list={['story', `story-${variant}`}>
+<article class:list={['story', `story-${variant}`]}>
   {kicker && <p class="kicker">{kicker}</p>}
   <Tag class="story-title">
     <ExternalLink href={href}>{story.title}</ExternalLink>
