@@ -1,0 +1,98 @@
+---
+import Layout from '../components/Layout.astro';
+import { buildMonth, groupByMonth } from '../lib/calendar';
+import { withBase } from '../lib/base';
+import { formatIssueDate, formatWeekday } from '../lib/format';
+import { getIssueNav } from '../lib/issues';
+
+const issues = await getIssueNav();
+const newestFirst = [...issues].reverse();
+const months = groupByMonth(issues);
+const weekdays = ['一', '二', '三', '四', '五', '六', '日'];
+---
+
+<Layout title="早间新闻 · 往期目录" description="早间新闻往期目录。按出刊日期检索每一期黑客新闻中文晨报。">
+  <main class="archive-wrap">
+    <header class="archive-mast">
+      <p class="mast-en">The Morning News</p>
+      <h1 class="masthead-title"><a href={withBase()}>早间新闻</a></h1>
+      <div class="rule-double" aria-hidden="true"></div>
+      <p class="archive-kicker"><a href={withBase()}>回到最新一期</a> · 往期目录</p>
+    </header>
+
+    {
+      months.length === 0 ? (
+        <p class="empty-note">尚无出刊。</p>
+      ) : (
+        months.map((month) => {
+          const cells = buildMonth(month.year, month.month, month.byDay);
+          return (
+            <section class="month" aria-label={`${month.year} 年 ${month.month} 月`}>
+              <h2>
+                {month.year} 年 {month.month} 月
+              </h2>
+              <div class="cal" role="grid">
+                {weekdays.map((day) => (
+                  <div class="cal-dow" role="columnheader">
+                    {day}
+                  </div>
+                ))}
+                {cells.map((cell) => {
+                  if (cell.day === null) return <div class="cal-pad" role="gridcell" />;
+                  if (!cell.issue) {
+                    return (
+                      <div class="cal-day is-empty" role="gridcell">
+                        <span class="d">{cell.day}</span>
+                      </div>
+                    );
+                  }
+                  const issue = cell.issue;
+                  const data = issue.entry.data;
+                  return (
+                    <a
+                      class:list={['cal-day', 'has', data.dummy && 'is-dummy']}
+                      role="gridcell"
+                      href={withBase(`${data.date}/`)}
+                      aria-label={`${formatIssueDate(data.date)}，第 ${issue.number} 期，${data.lead.title}${data.dummy ? '，占位样本' : ''}`}
+                    >
+                      <span class="d">{cell.day}</span>
+                      <span class="mark">{data.dummy ? '占位' : `第 ${issue.number} 期`}</span>
+                    </a>
+                  );
+                })}
+              </div>
+            </section>
+          );
+        })
+      )
+    }
+
+    <section class="issue-index" aria-label="期号列表">
+      <h2>各期</h2>
+      <ol>
+        {
+          newestFirst.map((issue) => {
+            const data = issue.entry.data;
+            return (
+              <li>
+                <a href={withBase(`${data.date}/`)}>
+                  <span class="issue-no">第 {issue.number} 期</span>
+                  <span class="issue-date">
+                    {formatIssueDate(data.date)} · {formatWeekday(data.date)}
+                  </span>
+                  <span class="issue-title">{data.lead.title}</span>
+                  {data.dummy && <span class="pill">占位样本</span>}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ol>
+    </section>
+
+    <p class="source-note archive-note">
+      期号从现存最早一期数起。点赞为注册用户投票，代表关注度而非质量。
+      <a href={withBase()}>阅读最新一期</a>
+    </p>
+  </main>
+</Layout>
