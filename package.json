@@ -1,0 +1,21 @@
+{
+  "name": "morning-news",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "早间新闻 — a static Chinese morning edition of Hacker News.",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^7.3.8"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}
