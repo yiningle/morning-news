@@ -1,0 +1,232 @@
+{
+  "date": "2026-10-07",
+  "published_at": "2026-10-08T08:10:00+08:00",
+  "source": "https://news.ycombinator.com/front?day=2026-10-07",
+  "dummy": true,
+  "lead": {
+    "title": "特朗普政府暂停微软参与绿卡项目",
+    "url": "https://apnews.com/article/h1b-visa-program-vance-microsoft-e7b3a407f822702b269ee277d21343ea",
+    "hn": "https://news.ycombinator.com/item?id=50006832",
+    "points": 859,
+    "comments": 1464,
+    "summary": [
+      "副总统 Vance 指责企业在小报上登个招聘广告走过场，没人应聘就拿来当理由，用外籍员工替代美国员工。",
+      "评论区分成两派：一派觉得早该查，微软在压低工资；另一派说真正的问题是美国没有一个正常的工作签证和入籍通道，而且执法只挑一家，像是选择性出手。"
+    ],
+    "tag": "评论数近点赞两倍"
+  },
+  "side": [
+    {
+      "title": "16.9 MB 的语音转文字模型 Whistle",
+      "url": "https://cactuscompute.com/blog/whistle",
+      "hn": "https://news.ycombinator.com/item?id=50008427",
+      "points": 692,
+      "comments": 143,
+      "summary": [
+        "小到能在 Echo Show 上离线跑，有人已用它让音箱不再连亚马逊。英文识别被夸准，但还不能边说边出字。"
+      ],
+      "tag": "官方首页第一"
+    },
+    {
+      "title": "资助坦桑尼亚女孩读书十年",
+      "url": null,
+      "hn": "https://news.ycombinator.com/item?id=50006366",
+      "points": 687,
+      "comments": 211,
+      "summary": [
+        "十年前的一句承诺，她如今大学毕业，刚考上斯瓦希里语硕士。"
+      ],
+      "tag": "人物"
+    }
+  ],
+  "sections": [
+    {
+      "name": "AI",
+      "stories": [
+        {
+          "title": "陶哲轩：AI 时代要换一种方式看待数学进展",
+          "url": "https://mathstodon.xyz/@tao/117395269325940185",
+          "hn": "https://news.ycombinator.com/item?id=50002008",
+          "points": 595,
+          "comments": 633,
+          "summary": [
+            "担心 AI 把证明甩给数学界，验证的苦活留给别人。评论问：做数学是为了解题，还是为了理解？"
+          ]
+        },
+        {
+          "title": "DeepSeek 4.1 Flash 来了，业界为何不慌",
+          "url": "https://www.dgt.is/blog/2026-10-07-deepseek-freek-out/",
+          "hn": "https://news.ycombinator.com/item?id=50000488",
+          "points": 595,
+          "comments": 473,
+          "summary": [
+            "评论解释：多数人用有补贴的包月订阅，算下来并不比它贵；也有人认为它离 Opus 5.5 还远。"
+          ]
+        },
+        {
+          "title": "OpenAI 撤回三项数学成果",
+          "url": "https://twitter.com/danintheory/status/2108065033070789090",
+          "hn": "https://news.ycombinator.com/item?id=50002650",
+          "points": 286,
+          "comments": 562,
+          "summary": [
+            "评论追问撤回的是否是没做 Lean 验证的几篇；也有人说过了 Lean，命题本身也可能写错。"
+          ]
+        }
+      ],
+      "briefs": [
+        {
+          "title": "Opus 5.5 六小时可视化《看不见的城市》",
+          "hn": "https://news.ycombinator.com/item?id=50004790",
+          "points": 384
+        },
+        {
+          "title": "Step 5 预览版上线 OpenRouter",
+          "hn": "https://news.ycombinator.com/item?id=50007764",
+          "points": 121
+        }
+      ]
+    },
+    {
+      "name": "开发",
+      "stories": [
+        {
+          "title": "Zotero：好软件是慢慢长成的",
+          "url": "https://newsletter.dancohen.org/archive/the-slow-formation-of-durable-software/",
+          "hn": "https://news.ycombinator.com/item?id=49980346",
+          "points": 279,
+          "comments": 113,
+          "summary": [
+            "作者说当年有 AI 也快不了，因为团队还不知道自己要什么。评论借此反驳「agent 产出快」。"
+          ]
+        },
+        {
+          "title": "经典 demoscene 作品在浏览器里原生运行",
+          "url": "https://treylorswift.github.io/demoscene-recomp/web/",
+          "hn": "https://news.ycombinator.com/item?id=50002426",
+          "points": 151,
+          "comments": 140,
+          "summary": [
+            "录下 CPU 执行的每段代码再逐条译成 C。老玩家怀旧 Second Reality，也有人担心 AI 冲淡圈子。"
+          ]
+        },
+        {
+          "title": "终端程序状态协议 OSC 7501",
+          "url": "https://mitchellh.com/writing/program-status-osc7501",
+          "hn": "https://news.ycombinator.com/item?id=49984159",
+          "points": 135,
+          "comments": 44,
+          "summary": [
+            "Mitchell Hashimoto 提议让程序向终端汇报运行状态。"
+          ]
+        }
+      ],
+      "briefs": [
+        {
+          "title": "DuckDB 的 Ducklake",
+          "hn": "https://news.ycombinator.com/item?id=49996149",
+          "points": 160
+        },
+        {
+          "title": "Linux 以太网音频接口 ETH-68",
+          "hn": "https://news.ycombinator.com/item?id=49992994",
+          "points": 132
+        }
+      ]
+    },
+    {
+      "name": "科学",
+      "stories": [
+        {
+          "title": "把 ADHD 看成昼夜节律紊乱",
+          "url": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1697900/full",
+          "hn": "https://news.ycombinator.com/item?id=50011928",
+          "points": 267,
+          "comments": 153,
+          "summary": [
+            "综述认为可按时间调整作息来治疗。有专家说因果可能双向，也有人提醒期刊质量不高。"
+          ]
+        },
+        {
+          "title": "维也纳与北京造出首批钍核钟",
+          "url": "https://www.nytimes.com/2026/10/07/science/first-nuclear-clocks-thorium-229.html",
+          "hn": "https://news.ycombinator.com/item?id=49996406",
+          "points": 183,
+          "comments": 51,
+          "summary": [
+            "锁定原子核而非外层电子，受干扰更小。评论最大疑问：这么准，拿什么验证？"
+          ]
+        },
+        {
+          "title": "复原石器时代的绳与线",
+          "url": "https://www.smithsonianmag.com/science-nature/archaeologists-are-reconstructing-the-invisible-technologies-of-the-stone-age-from-rope-to-thread-and-twine-180989534/",
+          "hn": "https://news.ycombinator.com/item?id=49998992",
+          "points": 124,
+          "comments": 55,
+          "summary": [
+            "许多技术用的是留不下来的材料，考古学家正设法把它们找回来。"
+          ]
+        }
+      ],
+      "briefs": [
+        {
+          "title": "530 万年前的深海鲸鱼墓地",
+          "hn": "https://news.ycombinator.com/item?id=49996639",
+          "points": 121
+        },
+        {
+          "title": "Biohub 18 亿美元 AI 生物数据计划",
+          "hn": "https://news.ycombinator.com/item?id=50011999",
+          "points": 105
+        }
+      ]
+    },
+    {
+      "name": "文化",
+      "stories": [
+        {
+          "title": "花 15 年寻找一支昙花一现的乐队",
+          "url": "https://shahidhussain.com/writing/search-for-salvage/",
+          "hn": "https://news.ycombinator.com/item?id=49959280",
+          "points": 363,
+          "comments": 127,
+          "summary": [
+            "一篇网络考古长文，评论区变成大家分享自己找回老歌的经历。"
+          ]
+        },
+        {
+          "title": "回味 DVD 菜单之美",
+          "url": "https://vale.rocks/posts/dvd-menus",
+          "hn": "https://news.ycombinator.com/item?id=50005527",
+          "points": 290,
+          "comments": 156,
+          "summary": [
+            "评论怀念《记忆碎片》可倒序观看的隐藏菜单，也有人收藏了约 250 份 DVD 菜单。"
+          ]
+        },
+        {
+          "title": "陆龟 Jonathan：地球最年长陆地动物",
+          "url": "https://www.404media.co/oldest-living-land-animal-jonathan-the-tortoise/",
+          "hn": "https://news.ycombinator.com/item?id=49998066",
+          "points": 273,
+          "comments": 160,
+          "summary": [
+            "404 Media 报道这只仍然活着的老陆龟。"
+          ]
+        }
+      ],
+      "briefs": [
+        {
+          "title": "Theranos.world",
+          "hn": "https://news.ycombinator.com/item?id=50009295",
+          "points": 392
+        },
+        {
+          "title": "机器人刷播放量者被判入狱",
+          "hn": "https://news.ycombinator.com/item?id=50000985",
+          "points": 162
+        }
+      ]
+    }
+  ]
+}
