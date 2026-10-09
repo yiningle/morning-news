@@ -1,0 +1,98 @@
+---
+import FrontSheet from './FrontSheet.astro';
+import Layout from './Layout.astro';
+import SectionSheet from './SectionSheet.astro';
+import { withBase } from '../lib/base';
+import { formatIssueDate } from '../lib/format';
+import type { IssueNav } from '../lib/issues';
+import { planPages } from '../lib/pages';
+
+interface Props {
+  nav: IssueNav;
+}
+
+const { nav } = Astro.props;
+const data = nav.entry.data;
+const pages = planPages({
+  sections: data.sections.map((section) => ({
+    name: section.name,
+    stories: section.stories,
+    briefs: section.briefs,
+  })),
+  sideCount: data.side.length,
+});
+const description = `${data.lead.title}。${data.lead.summary[0] ?? ''}`.slice(0, 140);
+---
+
+<Layout title={`早间新闻 · ${formatIssueDate(data.date)}`} description={description}>
+  <a class="skip" href="#p-0">跳到头版</a>
+  <div class="app" data-paper data-dummy={data.dummy ? 'true' : 'false'}>
+    <button type="button" class="toc-toggle" data-toc-toggle aria-expanded="false" aria-controls="toc-drawer">
+      目录
+    </button>
+    <div class="toc-scrim" data-toc-scrim hidden></div>
+    <nav id="toc-drawer" class="toc" aria-label="版面目录" aria-hidden="true" inert>
+      <p class="toc-kicker">版面目录</p>
+      <p class="toc-issue">第 {nav.number} 期 · {formatIssueDate(data.date)}</p>
+      <ol>
+        {
+          pages.map((page) => (
+            <li>
+              <a href={`#${page.id}`} data-page={page.index} aria-label={`第 ${page.index + 1} 版 ${page.label}`}>
+                {page.short}
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+      <a class="toc-archive" href={withBase('archive/')}>往期</a>
+    </nav>
+
+    <div class="desk-row">
+      <div class="stage">
+        <div class="sheet-slot" data-slot>
+          {
+            pages.map((page) => (
+              <article
+                class="sheet"
+                id={page.id}
+                data-sheet
+                data-index={page.index}
+                data-label={page.label}
+                aria-label={page.label}
+              >
+                <div class="sheet-scroll">
+                  {page.kind === 'front' || page.kind === 'front-more' ? (
+                    <FrontSheet nav={nav} pages={pages} part={page.kind === 'front-more' ? 'more' : 'primary'} />
+                  ) : (
+                    <SectionSheet
+                      nav={nav}
+                      section={data.sections[page.sectionIndex ?? 0]}
+                      pageNumber={page.index + 1}
+                      pageCount={pages.length}
+                      label={page.label}
+                      part={page.kind === 'section-more' ? 'more' : 'primary'}
+                    />
+                  )}
+                </div>
+              </article>
+            ))
+          }
+        </div>
+        <div class="pager-bar">
+          <button type="button" data-turn="-1">‹ 上一版</button>
+          <p class="pager-status" data-pager>头版 · 1 / {pages.length}</p>
+          <p class="pager-hint">拖左右边缘翻页，方向键翻版</p>
+          <button type="button" data-turn="1">下一版 ›</button>
+        </div>
+      </div>
+    </div>
+    <p class="live" data-live aria-live="polite"></p>
+  </div>
+</Layout>
+
+<script>
+  import { initPaper } from '../scripts/paper';
+
+  initPaper();
+</script>
