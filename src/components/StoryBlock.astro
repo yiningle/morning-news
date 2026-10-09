@@ -1,0 +1,94 @@
+---
+import ExternalLink from './ExternalLink.astro';
+import QuoteList from './QuoteList.astro';
+import { stats, storyHref } from '../lib/format';
+import type { Story } from '../lib/issues';
+
+interface Props {
+  story: Story;
+  level?: 'h2' | 'h3';
+  variant?: 'lead' | 'side' | 'section' | 'section-lead';
+}
+
+const { story, level = 'h3', variant = 'section' } = Astro.props;
+const href = storyHref(story);
+const Tag = level;
+const showSource = Boolean(story.url && story.url !== story.hn);
+const quotes = story.comment_quotes ?? [];
+const deckFirst = variant === 'lead' || (variant === 'section' && quotes.length === 0);
+const metaBeforeBody = variant === 'section-lead' || (variant === 'section' && quotes.length > 0);
+const quoteLayout = variant === 'lead' && quotes.length >= 3 ? 'wide' : variant === 'section-lead' && quotes.length >= 2 ? 'pair' : 'stack';
+
+function kickerText(): string | null {
+  if (story.kicker) {
+    if (story.tag && !story.kicker.includes(story.tag)) return `${story.kicker} · ${story.tag}`;
+    return story.kicker;
+  }
+  if (variant === 'lead') return story.tag ? `要闻 · ${story.tag}` : '要闻';
+  return story.tag ?? null;
+}
+
+const kicker = kickerText();
+---
+
+<article class:list={['story', `story-${variant}`}>
+  {kicker && <p class="kicker">{kicker}</p>}
+  <Tag class="story-title">
+    <ExternalLink href={href}>{story.title}</ExternalLink>
+  </Tag>
+  {
+    deckFirst ? (
+      <p class="deck">
+        <span class="nums">{stats(story.points, story.comments)}</span>
+        {showSource && (
+          <>
+            {' · '}
+            <ExternalLink href={story.url!}>原文</ExternalLink>
+          </>
+        )}
+        {' · '}
+        <ExternalLink class="hn-link" href={story.hn}>
+          HN 讨论
+        </ExternalLink>
+      </p>
+    ) : null
+  }
+  {
+    metaBeforeBody && (
+      <p class="meta">
+        <span class="nums">{stats(story.points, story.comments)}</span>
+        {showSource && (
+          <>
+            {' · '}
+            <ExternalLink href={story.url!}>原文</ExternalLink>
+          </>
+        )}
+        {' · '}
+        <ExternalLink class="hn-link" href={story.hn}>
+          HN 讨论
+        </ExternalLink>
+      </p>
+    )
+  }
+  <div class="story-body">
+    {story.summary.map((paragraph) => <p>{paragraph}</p>)}
+  </div>
+  {
+    variant === 'side' && (
+      <p class="meta">
+        <span class="nums">{stats(story.points, story.comments)}</span>
+        {showSource && (
+          <>
+            {' · '}
+            <ExternalLink href={story.url!}>原文</ExternalLink>
+          </>
+        )}
+        {' · '}
+        <ExternalLink class="hn-link" href={story.hn}>
+          HN 讨论
+        </ExternalLink>
+      </p>
+    )
+  }
+  {quotes.length > 0 && <QuoteList quotes={quotes} layout={quoteLayout} />}
+</article>
