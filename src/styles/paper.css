@@ -1285,7 +1285,7 @@ body.is-locked .sheet-slot.is-curling {
 }
 
 .debate-title::before {
-  content: "\u25a0 ";
+  content: "■ ";
   color: var(--accent);
 }
 
@@ -1395,7 +1395,7 @@ body.is-locked .sheet-slot.is-curling {
 }
 
 .index-list li::before {
-  content: "\u25b8 ";
+  content: "▸ ";
   color: var(--accent);
 }
 
