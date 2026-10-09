@@ -1,1 +1,1146 @@
-PLACEHOLDER
+{
+  "date": "2026-10-08",
+  "published_at": "2026-10-09T08:10:00+08:00",
+  "source": "https://news.ycombinator.com/front?day=2026-10-08",
+  "schema_version": 2,
+  "lead": {
+    "id": 50006832,
+    "title": "特朗普政府暂停微软参与绿卡项目",
+    "title_en": "Trump administration is suspending Microsoft from a green card program",
+    "url": "https://apnews.com/article/h1b-visa-program-vance-microsoft-e7b3a407f822702b269ee277d21343ea",
+    "hn": "https://news.ycombinator.com/item?id=50006832",
+    "points": 872,
+    "comments": 1481,
+    "summary": [
+      "据美联社报道，美国政府暂停微软参与一项绿卡（永久居留）项目。副总统 Vance 指责企业在小镇报纸上登一则招聘广告走过场，没人应聘就拿来当理由，用他所说的「外籍契约劳工」替代美国员工。",
+      "这是当天点赞和评论双料第一的帖子，评论数接近点赞的两倍。评论区分成几派：一派觉得早该查，认为企业借签证压低工资；另一派说真正的问题是美国始终没有一个正常的工作签证和入籍通道；还有人拿外包公司的数据对比，质疑执法只挑一家，像是选择性出手。",
+      "也有不少人从个人经历出发：从 F-1 学生签证、OPT 到 H-1B 再到 L-1 调岗的「标准路线」被详细描述出来，不少人认为「招聘广告」这一步本来就是走形式。"
+    ],
+    "comment_quotes": [
+      {
+        "user": "exabrial",
+        "stance": "支持",
+        "zh": "我知道这届政府有争议，但这件事做得对，理由很多。最大的一条是这个项目本身就极不公平：微软把外国人招进来，付少得多的钱干完全一样的活。",
+        "en": "this is the correct thing to do for a lot of reasons.",
+        "replies": 102,
+        "hn": "https://news.ycombinator.com/item?id=50007723",
+        "id": 50007723
+      },
+      {
+        "user": "spprashant",
+        "stance": "反对",
+        "zh": "美国什么都肯做，就是不肯搞一个正常的工作签证项目，配上清晰的入籍路径。抽签制度本来就是让人钻空子的，装样子的「本地招聘」也一样。注销签证、遣返这些人，并不会把工作还给美国人。",
+        "en": "The US will do anything but have a sane worker visa program",
+        "replies": 45,
+        "hn": "https://news.ycombinator.com/item?id=50009384",
+        "id": 50009384
+      },
+      {
+        "user": "pontus",
+        "stance": "质疑",
+        "zh": "Vance 描述的「登广告走过场」，据我了解大家都是这么干的，不是吗？他们把这套说法只用在对手身上、不用在盟友身上，我并不意外。",
+        "en": "My understanding is that this is pretty much how everyone does it, no?",
+        "replies": 341,
+        "hn": "https://news.ycombinator.com/item?id=50009106",
+        "id": 50009106
+      }
+    ],
+    "tag": "评论数近点赞两倍",
+    "kicker": "要闻 · 移民政策"
+  },
+  "side": [
+    {
+      "id": 50008427,
+      "title": "16.9 MB 的语音转文字模型 Whistle",
+      "title_en": "Whistle: Speech to Text in 16.9 MB",
+      "url": "https://cactuscompute.com/blog/whistle",
+      "hn": "https://news.ycombinator.com/item?id=50008427",
+      "points": 756,
+      "comments": 152,
+      "summary": [
+        "Cactus 发布只有 16.9 MB 的语音识别模型，小到可以离线跑在智能音箱这类小设备上。英文识别被不少人夸准，但演示还不能边说边出字。"
+      ],
+      "comment_quotes": [
+        {
+          "user": "skolos",
+          "stance": "实测",
+          "zh": "我用 Whistle 等工具接管了自家的 Echo Show，它现在完全不连亚马逊。自由转写上它比 Qwen ASR 差很多（170 句里对方认对 168 句，Whistle 只有 70 句），但改成只识别固定指令模板后，准确率上去了。",
+          "en": "It now doesn't dial to Amazon at all",
+          "replies": 19,
+          "hn": "https://news.ycombinator.com/item?id=50011633",
+          "id": 50011633
+        },
+        {
+          "user": "bambax",
+          "stance": "挑刺",
+          "zh": "我念了《好人寥寥》结尾 Jessep 上校那段独白，「枪」被转成了「大炮」，这纯属幻觉。别指望它给出忠实的逐字稿。",
+          "en": "\"cannons\" instead of \"guns\" is pure hallucination",
+          "replies": 0,
+          "hn": "https://news.ycombinator.com/item?id=50017722",
+          "id": 50017722
+        }
+      ],
+      "tag": "官方首页第一",
+      "kicker": "科技 · 首页第一"
+    },
+    {
+      "id": 50006366,
+      "title": "资助坦桑尼亚女孩读书十年",
+      "title_en": "Tell HN: I've been paying for a rural Tanzanian's education for 10 years",
+      "url": "https://news.ycombinator.com/item?id=50006366",
+      "hn": "https://news.ycombinator.com/item?id=50006366",
+      "points": 699,
+      "comments": 216,
+      "summary": [
+        "楼主十年前 19 岁，在坦桑尼亚 Njombe 高地的村子 Ibumila 住过一个夏天，答应供房东家 11 岁的女儿 Anwarite 上学。她今年从达累斯萨拉姆大学毕业，刚被斯瓦希里语硕士项目录取，整个 18 个月的硕士费用约 1,161 美元。",
+        "楼主 2021 年把这件事注册成 501(c)(3) 非营利组织，目前资助村里 5 名学生的学费和医疗。"
+      ],
+      "comment_quotes": [
+        {
+          "user": "thevillagechief",
+          "stance": "共鸣",
+          "zh": "我就是被资助的那一方。当年高中一年学费 700 美元，家里付不起，压力大极了，要不是校长好心，我早就辍学了。那彻底改变了我的人生。",
+          "en": "I've been on the other end of this.",
+          "replies": 7,
+          "hn": "https://news.ycombinator.com/item?id=50007654",
+          "id": 50007654
+        },
+        {
+          "user": "helterskelter2",
+          "stance": "提醒",
+          "zh": "这很棒，让我想起 Bram Moolenaar。但请尽量找个可信的第三方为你背书。我见过太多这类慈善，尤其是涉及穷国儿童的，最后被证明是骗局。",
+          "en": "Please try to get some sort of trusted source to vouch for you",
+          "replies": 4,
+          "hn": "https://news.ycombinator.com/item?id=50008760",
+          "id": 50008760
+        }
+      ],
+      "tag": "人物",
+      "kicker": "Tell HN · 人物"
+    },
+    {
+      "id": 50009295,
+      "title": "Theranos.world：走进 Holmes 的办公室",
+      "title_en": "Theranos.world",
+      "url": "https://www.theranos.world/",
+      "hn": "https://news.ycombinator.com/item?id=50009295",
+      "points": 440,
+      "comments": 154,
+      "summary": [
+        "一个可交互的 3D 网站，复原了 Theranos 创始人 Elizabeth Holmes 的办公室：可以坐到桌前用电脑、拿起手机、打开 Theranos 检测仪和样品抽屉，翻她的邮件和备忘录。"
+      ],
+      "comment_quotes": [
+        {
+          "user": "regus",
+          "stance": "好评",
+          "zh": "很棒，让我想起 Adobe Flash 时代的宣传网站。那时的广告有趣多了。",
+          "en": "it reminds me of promotional websites from the Adobe Flash era",
+          "replies": 8,
+          "hn": "https://news.ycombinator.com/item?id=50011847",
+          "id": 50011847
+        },
+        {
+          "user": "lisp2240",
+          "stance": "讽刺",
+          "zh": "在这里看到它真奇怪。我记得当年骗局都曝光很久了，这个网站上还满是对 Holmes 的狂热吹捧。",
+          "en": "I remember when this site was nothing but foaming-at-the-mouth fawning",
+          "replies": 6,
+          "hn": "https://news.ycombinator.com/item?id=50012156",
+          "id": 50012156
+        }
+      ],
+      "tag": null,
+      "kicker": "网络 · 互动叙事"
+    },
+    {
+      "id": 50007519,
+      "title": "4 小时储能电池装机成本已低于燃气轮机",
+      "title_en": "4-hour battery storage is cheaper to install than gas turbines all across globe",
+      "url": "https://www.solarpowerworldonline.com/2026/10/4-hour-battery-storage-is-cheaper-to-install-than-gas-turbines-all-across-globe/",
+      "hn": "https://news.ycombinator.com/item?id=50007519",
+      "points": 242,
+      "comments": 144,
+      "summary": [
+        "Wood Mackenzie 最新全球度电成本报告：在同时建模的 43 个市场里，4 小时电池储能都已比开式循环燃气轮机便宜。中东和非洲 2026 年为每兆瓦时 120 美元，预计到 2035 年再降 33% 到 80 美元；中国储能成本比亚太其他地区平均低 55% 以上。"
+      ],
+      "comment_quotes": [
+        {
+          "user": "alwa",
+          "stance": "称赞",
+          "zh": "想夸一下这篇的写法：严谨、密实、条理清楚，是在沟通，而不是把一堆原始表格用散文吐出来。",
+          "en": "Rigorous, dense, and well-organized",
+          "replies": 35,
+          "hn": "https://news.ycombinator.com/item?id=50008441",
+          "id": 50008441
+        },
+        {
+          "user": "adrianN",
+          "stance": "质疑",
+          "zh": "这挺显然的，但据我所知难点不在撑过 4 小时，而在撑过冬天一个阴天又没风的整周。在这件事上，目前还是燃气更便宜。",
+          "en": "it’s bridging a cloudy week without wind in winter",
+          "replies": 46,
+          "hn": "https://news.ycombinator.com/item?id=50008094",
+          "id": 50008094
+        }
+      ],
+      "tag": null,
+      "kicker": "能源 · 报告"
+    },
+    {
+      "id": 49970767,
+      "title": "Hundred Rabbits：在帆船上离网生活",
+      "title_en": "Living off-grid: Hundred Rabbits",
+      "url": "https://100r.ca/site/home.html",
+      "hn": "https://news.ycombinator.com/item?id=49970767",
+      "points": 359,
+      "comments": 177,
+      "summary": [
+        "Hundred Rabbits 是一对住在帆船上的艺术家兼程序员，靠太阳能供电，做能在离线、低功耗条件下运行的小工具和小游戏，并把航海日志写成长文。"
+      ],
+      "comment_quotes": [
+        {
+          "user": "kennywinker",
+          "stance": "批评",
+          "zh": "绝无恶意，他们的项目很有意思。但离网生活本质上是唯我的：抛下社会，而不是努力在社会中好好生活，终归是条死路。留下来让大家都变好，更有价值。",
+          "en": "living off grid is fundamentally solipsist",
+          "replies": 94,
+          "hn": "https://news.ycombinator.com/item?id=50002522",
+          "id": 50002522
+        },
+        {
+          "user": "newtypecola",
+          "stance": "欣赏",
+          "zh": "我喜欢他们拆开旧帽子研究怎么做新帽子，还把衣服比作开源软件。他们做所有东西都是这个思路：能理解、修理、重造自己依赖的东西。",
+          "en": "compared clothing to open-source software",
+          "replies": 4,
+          "hn": "https://news.ycombinator.com/item?id=50001849",
+          "id": 50001849
+        }
+      ],
+      "tag": null,
+      "kicker": "生活 · 离网"
+    }
+  ],
+  "sections": [
+    {
+      "name": "AI",
+      "page": 2,
+      "en": "Artificial Intelligence",
+      "stories": [
+        {
+          "id": 50002008,
+          "title": "陶哲轩：AI 时代要换一种方式看待数学进展",
+          "title_en": "“Math 2.0” will need to value mathematical progress more holistically",
+          "url": "https://mathstodon.xyz/@tao/117395269325940185",
+          "hn": "https://news.ycombinator.com/item?id=50002008",
+          "points": 597,
+          "comments": 636,
+          "summary": [
+            "陶哲轩在 Mathstodon 发文，提出「数学 2.0」需要更全面地衡量数学进展：AI 自动解题的人往往在目标「解决」后就对这个领域失去兴趣，也讲不清 AI 的输出，把验证、打磨和推广的苦活留给了别人。",
+            "他还提到，一旦知道某个问题已有解，就会「污染」人类和 AI 寻找其他、更有启发性证明的努力。"
+          ],
+          "comment_quotes": [
+            {
+              "user": "shubhamjain",
+              "stance": "赞同",
+              "zh": "很平衡的观点，他的担心合理。他承认 AI 会改变数学，但把证明一股脑倒给数学界，指望别人去验证、打磨和扩展，很难说是推动领域的有效方式。现在更像是在追逐「我们证明了 X 个未解问题」的指标。",
+              "en": "A very balanced perspective",
+              "replies": 244,
+              "hn": "https://news.ycombinator.com/item?id=50002166",
+              "id": 50002166
+            },
+            {
+              "user": "devolving-dev",
+              "stance": "追问",
+              "zh": "我们当初为什么要做数学？如果是为了扫清科学上的障碍，问题被解掉应该高兴才对。但感觉数学更像是在追求开悟，像一种精神瑜伽。如果是这样，我们也许可以无视 AI 证明，继续做下去？",
+              "en": "Why were we doing math in the first place?",
+              "replies": 19,
+              "hn": "https://news.ycombinator.com/item?id=50002784",
+              "id": 50002784
+            }
+          ],
+          "tag": null,
+          "kicker": "AI · 数学"
+        },
+        {
+          "id": 50002650,
+          "title": "OpenAI 撤回三项数学成果",
+          "title_en": "OpenAI withdraws three mathematical results",
+          "url": "https://twitter.com/danintheory/status/2108065033070789090",
+          "hn": "https://news.ycombinator.com/item?id=50002650",
+          "points": 309,
+          "comments": 574,
+          "summary": [
+            "OpenAI 在其 math 仓库的更新记录里撤回了 10 月 6 日发布的一批 AI 数学成果中的三项，其中一处错误据评论指出是符号错误。这是当天评论第三多的帖子，评论数接近点赞的两倍。",
+            "评论追问被撤回的是否正是没做 Lean 形式化验证的那几篇；也有人提醒，过了 Lean，命题本身也可能写错。"
+          ],
+          "comment_quotes": [
+            {
+              "user": "hmate9",
+              "stance": "辩护",
+              "zh": "大约 400 项里（目前）错了 3 项，命中率依然相当不错。",
+              "en": "3 mistakes (so far) out of ~400 is still a pretty good hit rate",
+              "replies": 56,
+              "hn": "https://news.ycombinator.com/item?id=50004733",
+              "id": 50004733
+            },
+            {
+              "user": "ijustlovemath",
+              "stance": "怀疑",
+              "zh": "我觉得仔细看下去，很多完全由 AI 生成的证明都会站不住。即便在 Lean 里，你也能写出编译通过、但表述的东西和本意不同的理论。只是量太大，可能要好几年才能把问题找出来，就像 abc 猜想那样。",
+              "en": "Even in Lean, you can build theories which compile",
+              "replies": 47,
+              "hn": "https://news.ycombinator.com/item?id=50005841",
+              "id": 50005841
+            }
+          ],
+          "tag": null,
+          "kicker": "AI · 争议"
+        },
+        {
+          "id": 50004790,
+          "title": "Opus 5.5 六小时可视化《看不见的城市》",
+          "title_en": "I gave Opus 5.5 one prompt and six hours to visualize Invisible Cities",
+          "url": "https://quesma.com/blog/invisible-cities-one-shot/",
+          "hn": "https://news.ycombinator.com/item?id=50004790",
+          "points": 390,
+          "comments": 191,
+          "summary": [
+            "Quesma 的 Piotr Migdał 用一句提示词让 Claude Opus 5.5 用 three.js 把卡尔维诺《看不见的城市》里的 55 座城市全部可视化。模型实际只用了 1 小时 25 分钟、6 个并行子代理，API 费用约 74 美元；同一提示词下 GPT-6 Astra 用了 53 分钟、约 10 美元。"
+          ],
+          "comment_quotes": [
+            {
+              "user": "droidjj",
+              "stance": "劝告",
+              "zh": "如果你还没读过这本书，我想劝你别先打开这个可视化。读这本书的乐趣之一，就是让脑海里的画面自由驰骋。",
+              "en": "I’m tempted to warn you against opening the visualization",
+              "replies": 17,
+              "hn": "https://news.ycombinator.com/item?id=50005362",
+              "id": 50005362
+            },
+            {
+              "user": "potomushto",
+              "stance": "冷感",
+              "zh": "我明白它为什么厉害，但我没什么感觉。以前我羡慕别人能沉迷一个想法、花那么多时间去实现它；现在它就像有人开会前 10 分钟一键生成、排版精美的演示稿。",
+              "en": "But I don’t feel much.",
+              "replies": 28,
+              "hn": "https://news.ycombinator.com/item?id=50006181",
+              "id": 50006181
+            }
+          ],
+          "tag": null,
+          "kicker": "AI · 设计"
+        }
+      ],
+      "briefs": [
+        {
+          "id": 50002665,
+          "title": "网友：我用 Claude Code 找到一颗可能没人知道的行星",
+          "title_en": "I think I found a planet nobody knew existed. I used Claude Code to find it",
+          "url": "https://www.reddit.com/r/ClaudeAI/s/mbe5IY2LF9",
+          "hn": "https://news.ycombinator.com/item?id=50002665",
+          "points": 174,
+          "comments": 70
+        },
+        {
+          "id": 50007764,
+          "title": "阶跃星辰 Step 5 预览版上线 OpenRouter，百万上下文 MoE",
+          "title_en": "Step 5 Preview, a 1M-context MoE from StepFun, shows up on OpenRouter",
+          "url": "https://openrouter.ai/stepfun/step-5-preview",
+          "hn": "https://news.ycombinator.com/item?id=50007764",
+          "points": 127,
+          "comments": 31
+        },
+        {
+          "id": 50000676,
+          "title": "用 LLM 把 TypeScript 编译器、检查器和 LSP 移植到 Rust",
+          "title_en": "Port of the TypeScript compiler, checker and lsp to Rust, by LLM",
+          "url": "https://github.com/pingdotgg/ts-rust",
+          "hn": "https://news.ycombinator.com/item?id=50000676",
+          "points": 111,
+          "comments": 208
+        },
+        {
+          "id": 50005608,
+          "title": "三星 LittleBit：低于 1 bit 的 LLM 压缩",
+          "title_en": "Sub-1-Bit LLM Compression via Latent Factorization",
+          "url": "https://github.com/SamsungLabs/LittleBit",
+          "hn": "https://news.ycombinator.com/item?id=50005608",
+          "points": 84,
+          "comments": 23
+        },
+        {
+          "id": 50008565,
+          "title": "Anthropic 禁止对 Claude「辱骂或残忍」",
+          "title_en": "Anthropic bans 'abusive or cruel behavior' towards Claude",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude",
+          "hn": "https://news.ycombinator.com/item?id=50008565",
+          "points": 71,
+          "comments": 164
+        },
+        {
+          "id": 50003677,
+          "title": "AHM 就 OpenAI 10 月 6 日发布的数学文档发表声明",
+          "title_en": "AHM Statement on OpenAI's October 6 Release of Mathematical Documents",
+          "url": "https://www.ahmath.org/statements",
+          "hn": "https://news.ycombinator.com/item?id=50003677",
+          "points": 47,
+          "comments": 43
+        },
+        {
+          "id": 50010656,
+          "title": "AI 数学突飞猛进，Vitalik 支持加密圈「地堡模式」",
+          "title_en": "Vitalik Buterin backs crypto ‘bunker mode’ amid rapid AI math advances",
+          "url": "https://cointelegraph.com/news/justin-drake-urges-crypto-bunker-mode-as-ai-could-break-wallet-security-within-months",
+          "hn": "https://news.ycombinator.com/item?id=50010656",
+          "points": 61,
+          "comments": 59
+        },
+        {
+          "id": 50012043,
+          "title": "Matthew Green：我们可能会失去公钥密码学",
+          "title_en": "I think we might lose public key cryptography",
+          "url": "https://twitter.com/matthew_d_green/status/2108278850555674975",
+          "hn": "https://news.ycombinator.com/item?id=50012043",
+          "points": 60,
+          "comments": 35
+        },
+        {
+          "id": 50008272,
+          "title": "特朗普称用「人工智能」一词的人是「敌人」",
+          "title_en": "Trump says anyone who uses the phrase \"artificial intelligence\" is \"the enemy\"",
+          "url": "https://breakingthenews.net/Article/Trump:-Anyone-using-term-%27Artificial-Intelligence%27-is-the-%27ENEMY%27/67261230",
+          "hn": "https://news.ycombinator.com/item?id=50008272",
+          "points": 52,
+          "comments": 57
+        },
+        {
+          "id": 50002215,
+          "title": "语言模型时代的 Clojure",
+          "title_en": "Clojure in the age of language models",
+          "url": "https://yogthos.net/posts/2026-10-07-clojure-llms.html",
+          "hn": "https://news.ycombinator.com/item?id=50002215",
+          "points": 37,
+          "comments": 15
+        }
+      ],
+      "stats": {
+        "items": 13,
+        "points": 2120,
+        "comments": 2106,
+        "top_points": {
+          "id": 50002008,
+          "title": "陶哲轩：AI 时代要换一种方式看待数学进展",
+          "value": 597,
+          "comments": 636
+        },
+        "top_comments": {
+          "id": 50002008,
+          "title": "陶哲轩：AI 时代要换一种方式看待数学进展",
+          "value": 636
+        },
+        "top_brief": {
+          "id": 50002665,
+          "title": "网友：我用 Claude Code 找到一颗可能没人知道的行星",
+          "value": 174,
+          "comments": 70
+        }
+      }
+    },
+    {
+      "name": "开发",
+      "page": 3,
+      "en": "Software",
+      "stories": [
+        {
+          "id": 49980346,
+          "title": "Zotero：好软件是慢慢长成的",
+          "title_en": "The Slow Formation of Durable Software",
+          "url": "https://newsletter.dancohen.org/archive/the-slow-formation-of-durable-software/",
+          "hn": "https://news.ycombinator.com/item?id=49980346",
+          "points": 280,
+          "comments": 113,
+          "summary": [
+            "Dan Cohen 回顾文献管理软件 Zotero 的诞生：它花了很长时间和大量协作才确立愿景。作者说就算当年有 AI 也快不了，因为团队还不知道自己要什么，写不出连贯的提示词。",
+            "评论区借此讨论「agent 产出快」是否等于好软件。"
+          ],
+          "comment_quotes": [
+            {
+              "user": "adamddev1",
+              "stance": "赞同",
+              "zh": "人们说 agent 开发好，是因为能快速大量产出。但这不代表产出的东西真正好、真正可靠。真正有洞见、扎实的东西会被指数级地更多使用，多花的线性开发时间在成本收益里（渐近地）可以忽略。",
+              "en": "that doesn't mean that any of it will be truly good and reliable.",
+              "replies": 15,
+              "hn": "https://news.ycombinator.com/item?id=50004704",
+              "id": 50004704
+            },
+            {
+              "user": "kstenerud",
+              "stance": "反驳",
+              "zh": "AI 并不排斥这个过程，反而能加速其中一部分。他描述的就是典型的大项目生命周期：调研现状、用户研究、头脑风暴、原型、反馈、确定愿景……",
+              "en": "AI doesn't preclude this.",
+              "replies": 7,
+              "hn": "https://news.ycombinator.com/item?id=50005121",
+              "id": 50005121
+            }
+          ],
+          "tag": null,
+          "kicker": "开发 · 软件工程"
+        },
+        {
+          "id": 50002426,
+          "title": "经典 demoscene 作品在浏览器里原生运行",
+          "title_en": "Classic PC demoscene productions running natively in the browser",
+          "url": "https://treylorswift.github.io/demoscene-recomp/web/",
+          "hn": "https://news.ycombinator.com/item?id=50002426",
+          "points": 152,
+          "comments": 140,
+          "summary": [
+            "作者在 x86 模拟器上录下 CPU 实际执行的每一段代码，再逐条翻译成 C，保留原机的精确时序，再与模拟器逐事件比对，让 Second Reality 等经典 PC demo 原生跑在浏览器里。项目还提供 AI 重制选项。"
+          ],
+          "comment_quotes": [
+            {
+              "user": "velo_aprx",
+              "stance": "反对",
+              "zh": "我混 demoscene 快 30 年了，它是我生命的一大部分。请让 AI 离 demoscene 远点。我想被真人的知识、技巧和创造力打动，而不是你写提示词的能力。我尤其讨厌那个 AI 重制选项。",
+              "en": "Please keep AI away from the demoscene.",
+              "replies": 42,
+              "hn": "https://news.ycombinator.com/item?id=50004677",
+              "id": 50004677
+            },
+            {
+              "user": "alphasm",
+              "stance": "怀旧",
+              "zh": "这勾起好多回忆！我 1994 年买了第一台 PC（486 DX2-66），Second Reality 是我在那台机器上看的第一个 demo，当时画面和音效把我震住了，逢人就炫耀。",
+              "en": "this brings back memories!",
+              "replies": 0,
+              "hn": "https://news.ycombinator.com/item?id=50006073",
+              "id": 50006073
+            }
+          ],
+          "tag": null,
+          "kicker": "开发 · 复古计算"
+        },
+        {
+          "id": 49984159,
+          "title": "终端程序状态协议 OSC 7501",
+          "title_en": "A Terminal Protocol for Program Status (OSC 7501)",
+          "url": "https://mitchellh.com/writing/program-status-osc7501",
+          "hn": "https://news.ycombinator.com/item?id=49984159",
+          "points": 149,
+          "comments": 47,
+          "summary": [
+            "Ghostty 作者 Mitchell Hashimoto 提议一个新的终端转义序列，让命令行程序主动向终端汇报自己的运行状态，供终端界面展示。"
+          ],
+          "comment_quotes": [
+            {
+              "user": "drewg123",
+              "stance": "老传统",
+              "zh": "BSD 系统多年前就有类似功能：在终端按 ^T，会给正在等待的程序发 SIGINFO，默认显示程序名、阻塞在什么上、时间和内存占用。",
+              "en": "The BSDs have had a version of this for many, many years.",
+              "replies": 6,
+              "hn": "https://news.ycombinator.com/item?id=50012691",
+              "id": 50012691
+            },
+            {
+              "user": "paaloeye",
+              "stance": "另一方案",
+              "zh": "OSC 7501 要解决的问题，几乎能完美放进 UAPI 的 OSC 3008 规范里，systemd 已实现，Ubuntu 26.04 已可用。我宁愿看到扩展 OSC 3008。",
+              "en": "I'd rather see `OSC 3008` being extended.",
+              "replies": 2,
+              "hn": "https://news.ycombinator.com/item?id=50015912",
+              "id": 50015912
+            }
+          ],
+          "tag": null,
+          "kicker": "开发 · 终端"
+        }
+      ],
+      "briefs": [
+        {
+          "id": 49996149,
+          "title": "DuckDB 推出 Ducklake",
+          "title_en": "DuckDB Ducklake",
+          "url": "https://github.com/duckdb/ducklake",
+          "hn": "https://news.ycombinator.com/item?id=49996149",
+          "points": 179,
+          "comments": 23
+        },
+        {
+          "id": 49992994,
+          "title": "ETH-68：给 Linux 用的以太网音频接口",
+          "title_en": "ETH-68: Ethernet Audio Interface for Linux",
+          "url": "https://naturalsystems.io/eth68",
+          "hn": "https://news.ycombinator.com/item?id=49992994",
+          "points": 158,
+          "comments": 86
+        },
+        {
+          "id": 50001580,
+          "title": "Zerobrew：更快的 Homebrew 替代品",
+          "title_en": "Zerobrew: A faster alternative to Homebrew",
+          "url": "https://github.com/zerobrewhq/zerobrew",
+          "hn": "https://news.ycombinator.com/item?id=50001580",
+          "points": 108,
+          "comments": 93
+        },
+        {
+          "id": 49977351,
+          "title": "用 Swift 写的极简内核，跑在 QEMU 上",
+          "title_en": "A minimal kernel in Swift, running in QEMU",
+          "url": "https://carette.xyz/posts/minimal_swift_kernel_on_qemu/",
+          "hn": "https://news.ycombinator.com/item?id=49977351",
+          "points": 103,
+          "comments": 28
+        },
+        {
+          "id": 50007353,
+          "title": "有人向 ICANN 申请 .lan 新顶级域",
+          "title_en": "New gTLD Application for .lan",
+          "url": "https://newgtldprogram-aps.icann.org/applications/CD2694T-T26351/summary",
+          "hn": "https://news.ycombinator.com/item?id=50007353",
+          "points": 124,
+          "comments": 142
+        },
+        {
+          "id": 50002249,
+          "title": "Let's Encrypt：2027 年 2 月起证书有效期缩至 64 天",
+          "title_en": "Let's Encrypt: 64-Day Certificate Lifetimes Coming Feb 2027",
+          "url": "https://letsencrypt.org/2026/10/07/64-day-certs.html",
+          "hn": "https://news.ycombinator.com/item?id=50002249",
+          "points": 51,
+          "comments": 24
+        },
+        {
+          "id": 50004115,
+          "title": "OLED 烧屏测试：30 个月更新",
+          "title_en": "OLED burn-in test: 30-month update",
+          "url": "https://www.techspot.com/article/3178-oled-burn-in-test/",
+          "hn": "https://news.ycombinator.com/item?id=50004115",
+          "points": 119,
+          "comments": 84
+        },
+        {
+          "id": 49965117,
+          "title": "浮点与整数运算遵循两种不同范式",
+          "title_en": "Float and integer arithmetic follow two different paradigms",
+          "url": "https://blog.pkh.me/p/49-float-and-integer-arithmetic-follow-two-different-paradigms.html",
+          "hn": "https://news.ycombinator.com/item?id=49965117",
+          "points": 64,
+          "comments": 18
+        },
+        {
+          "id": 50009904,
+          "title": "Show HN：K10s，可点击的 Kubernetes 终端界面",
+          "title_en": "Show HN: K10s – A Clickable Kubernetes TUI (Go, Bubble Tea)",
+          "url": "https://github.com/p10node/k10s",
+          "hn": "https://news.ycombinator.com/item?id=50009904",
+          "points": 65,
+          "comments": 49
+        },
+        {
+          "id": 50009654,
+          "title": "Serverless 惊魂：一张 10,811.41 美元的账单",
+          "title_en": "Serverless Horrors $10,811.41",
+          "url": "https://serverlesshorrors.com/all/cloudflare-108k/",
+          "hn": "https://news.ycombinator.com/item?id=50009654",
+          "points": 61,
+          "comments": 24
+        }
+      ],
+      "stats": {
+        "items": 13,
+        "points": 1613,
+        "comments": 871,
+        "top_points": {
+          "id": 49980346,
+          "title": "Zotero：好软件是慢慢长成的",
+          "value": 280,
+          "comments": 113
+        },
+        "top_comments": {
+          "id": 50007353,
+          "title": "有人向 ICANN 申请 .lan 新顶级域",
+          "value": 142
+        },
+        "top_brief": {
+          "id": 49996149,
+          "title": "DuckDB 推出 Ducklake",
+          "value": 179,
+          "comments": 23
+        }
+      }
+    },
+    {
+      "name": "科学",
+      "page": 4,
+      "en": "Science",
+      "stories": [
+        {
+          "id": 50011928,
+          "title": "把 ADHD 看成昼夜节律紊乱",
+          "title_en": "ADHD as a circadian rhythm disorder: evidence and implications for chronotherapy (2025)",
+          "url": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1697900/full",
+          "hn": "https://news.ycombinator.com/item?id=50011928",
+          "points": 296,
+          "comments": 192,
+          "summary": [
+            "精神病学期刊《Frontiers in Psychiatry》2025 年的一篇综述梳理 ADHD 与昼夜节律紊乱的关联证据，认为可以用按时间调整作息、光照的「时间疗法」辅助治疗。",
+            "评论里有自称时间生物学家的 ADHD 患者现身说法，也有人提醒这本期刊质量不高。"
+          ],
+          "comment_quotes": [
+            {
+              "user": "randomImmigrant",
+              "stance": "专业意见",
+              "zh": "时间生物学家，本人也有 ADHD。关联确实存在，但因果可能是双向的。要算昼夜节律疾病，得有生物钟基因突变，ADHD 并没有，所以这么叫不太对。不过从个人经验看，这种联系强到值得深入研究。",
+              "en": "Chronobiologist here. And also have ADHD.",
+              "replies": 32,
+              "hn": "https://news.ycombinator.com/item?id=50014066",
+              "id": 50014066
+            },
+            {
+              "user": "emil-lp",
+              "stance": "提醒",
+              "zh": "注意 Frontiers 系列是质量很低的期刊，多数科学家敬而远之，除非他们三周内急需一篇论文应付终身教职考核。",
+              "en": "Frontiers In is a very low quality outlet",
+              "replies": 2,
+              "hn": "https://news.ycombinator.com/item?id=50013456",
+              "id": 50013456
+            }
+          ],
+          "tag": null,
+          "kicker": "科学 · 医学"
+        },
+        {
+          "id": 49996406,
+          "title": "维也纳与北京造出首批钍核钟",
+          "title_en": "Teams in Vienna and Beijing have built the first thorium nuclear clocks",
+          "url": "https://www.nytimes.com/2026/10/07/science/first-nuclear-clocks-thorium-229.html",
+          "hn": "https://news.ycombinator.com/item?id=49996406",
+          "points": 183,
+          "comments": 52,
+          "summary": [
+            "据《纽约时报》报道，维也纳和北京的团队造出了首批钍-229 核钟。它锁定原子核的跃迁而不是外层电子，受外界电磁干扰更小；论文发表于《自然》。"
+          ],
+          "comment_quotes": [
+            {
+              "user": "pclowes",
+              "stance": "疑问",
+              "zh": "他们怎么知道这钟有多准？比如 6500 万年漂移 2 秒，测这个似乎比造钟还难。难道不需要一个完美的钟当基准吗？这里面一定有很巧妙的办法。",
+              "en": "How do they know the accuracy of the clock?",
+              "replies": 4,
+              "hn": "https://news.ycombinator.com/item?id=50002094",
+              "id": 50002094
+            },
+            {
+              "user": "soltanov",
+              "stance": "解释",
+              "zh": "普通原子钟探测的是外层电子，对杂散电磁噪声敏感；直接锁定原子核，才是真正消除环境漂移的办法。",
+              "en": "locking directly to the nucleus is how you actually kill environment drift.",
+              "replies": 4,
+              "hn": "https://news.ycombinator.com/item?id=50002275",
+              "id": 50002275
+            }
+          ],
+          "tag": null,
+          "kicker": "科学 · 物理"
+        },
+        {
+          "id": 49998992,
+          "title": "复原石器时代的绳与线",
+          "title_en": "Archaeologists Are Reconstructing the 'Invisible' Technologies of the Stone Age",
+          "url": "https://www.smithsonianmag.com/science-nature/archaeologists-are-reconstructing-the-invisible-technologies-of-the-stone-age-from-rope-to-thread-and-twine-180989534/",
+          "hn": "https://news.ycombinator.com/item?id=49998992",
+          "points": 133,
+          "comments": 55,
+          "summary": [
+            "《史密森尼》杂志报道：石器时代的许多技术用的是绳、线、木头等留不下来的材料，考古学家正设法把这些「看不见的技术」复原出来。"
+          ],
+          "comment_quotes": [
+            {
+              "user": "alexpotato",
+              "stance": "引言",
+              "zh": "有句很妙的话：埃及人用石头盖房子，却在纸莎草上写日常；苏美尔人用泥盖房子，却在泥板上写字。所以埃及留下很多建筑、很少文字，苏美尔恰好相反。",
+              "en": "The Egyptians built using stone but wrote day to day on papyrus.",
+              "replies": 16,
+              "hn": "https://news.ycombinator.com/item?id=50007965",
+              "id": 50007965
+            },
+            {
+              "user": "rich_sasha",
+              "stance": "设想",
+              "zh": "要是新石器时代的人最引以为豪的技术跟石头毫无关系，只是没能留下来，那就有意思了：更好的布料？防水衣服？用「笨」石器做出的精巧木器？",
+              "en": "Better fabrics? Waterproof clothing?",
+              "replies": 0,
+              "hn": "https://news.ycombinator.com/item?id=50008423",
+              "id": 50008423
+            }
+          ],
+          "tag": null,
+          "kicker": "科学 · 考古"
+        }
+      ],
+      "briefs": [
+        {
+          "id": 49982445,
+          "title": "维基百科：Cleo（数学家）",
+          "title_en": "Cleo (Mathematician)",
+          "url": "https://en.wikipedia.org/wiki/Cleo_(mathematician)",
+          "hn": "https://news.ycombinator.com/item?id=49982445",
+          "points": 254,
+          "comments": 58
+        },
+        {
+          "id": 49996639,
+          "title": "530 万年前的深海鲸鱼墓地（《自然》）",
+          "title_en": "A 5.3M-year-old deep-sea whale necropolis in the Diamantina Zone",
+          "url": "https://www.nature.com/articles/s41586-026-10546-z",
+          "hn": "https://news.ycombinator.com/item?id=49996639",
+          "points": 133,
+          "comments": 10
+        },
+        {
+          "id": 50011999,
+          "title": "Biohub：18 亿美元的全球「AI 可用生物数据」承诺",
+          "title_en": "AI-ready biological data: $1.8B global commitment",
+          "url": "https://biohub.org/news/virtual-biology-initiative-expansion/",
+          "hn": "https://news.ycombinator.com/item?id=50011999",
+          "points": 123,
+          "comments": 18
+        },
+        {
+          "id": 49978010,
+          "title": "「鳗鱼爬出水面死去」（《卫报》环境报道）",
+          "title_en": "'The eels were climbing out of the water to die'",
+          "url": "https://www.theguardian.com/environment/2026/sep/24/furnace-book-east-sussex-fishing-lake",
+          "hn": "https://news.ycombinator.com/item?id=49978010",
+          "points": 104,
+          "comments": 67
+        },
+        {
+          "id": 49994663,
+          "title": "外骨骼时代的黎明",
+          "title_en": "The dawn of the age of the exoskeleton",
+          "url": "https://theconversation.com/the-dawn-of-the-age-of-the-exoskeleton-281804",
+          "hn": "https://news.ycombinator.com/item?id=49994663",
+          "points": 76,
+          "comments": 42
+        },
+        {
+          "id": 50004542,
+          "title": "香草醛有望用于治疗慢性伤口",
+          "title_en": "Vanillin provides a sweet solution for chronic wound healing",
+          "url": "https://news.flinders.edu.au/blog/2026/10/06/vanillin-provides-a-sweet-solution-for-chronic-wound-healing/",
+          "hn": "https://news.ycombinator.com/item?id=50004542",
+          "points": 35,
+          "comments": 5
+        },
+        {
+          "id": 49983765,
+          "title": "《伦敦书评》：Bloody Cavemen",
+          "title_en": "Bloody Cavemen",
+          "url": "https://www.lrb.co.uk/the-paper/v48/n18/edmund-gordon/bloody-cavemen",
+          "hn": "https://news.ycombinator.com/item?id=49983765",
+          "points": 33,
+          "comments": 3
+        },
+        {
+          "id": 49966866,
+          "title": "在浏览器里运行的模拟计算机模拟器",
+          "title_en": "Analog Computer Simulator in the Browser",
+          "url": "https://pavel-krivanek.github.io/The-Analog-Thing-Simulator/public/",
+          "hn": "https://news.ycombinator.com/item?id=49966866",
+          "points": 42,
+          "comments": 13
+        }
+      ],
+      "stats": {
+        "items": 11,
+        "points": 1412,
+        "comments": 515,
+        "top_points": {
+          "id": 50011928,
+          "title": "把 ADHD 看成昼夜节律紊乱",
+          "value": 296,
+          "comments": 192
+        },
+        "top_comments": {
+          "id": 50011928,
+          "title": "把 ADHD 看成昼夜节律紊乱",
+          "value": 192
+        },
+        "top_brief": {
+          "id": 49982445,
+          "title": "维基百科：Cleo（数学家）",
+          "value": 254,
+          "comments": 58
+        }
+      }
+    },
+    {
+      "name": "文化",
+      "page": 5,
+      "en": "Culture",
+      "stories": [
+        {
+          "id": 49959280,
+          "title": "花 15 年寻找一支昙花一现的乐队",
+          "title_en": "15-year search for a band that charted once and vanished",
+          "url": "https://shahidhussain.com/writing/search-for-salvage/",
+          "hn": "https://news.ycombinator.com/item?id=49959280",
+          "points": 363,
+          "comments": 128,
+          "summary": [
+            "这是一篇网络考古长文：作者花了 15 年追查一支只上过一次排行榜就消失的乐队，追查途中，连早已不是主流的音乐平台 Pandora 都翻了个遍。评论区变成大家分享自己找回老歌的经历。"
+          ],
+          "comment_quotes": [
+            {
+              "user": "ilamont",
+              "stance": "推荐",
+              "zh": "喜欢这类故事的话，一定要听播客 Reply All 第 158 集《失踪的金曲》：一个人记得 90 年代一首歌的歌词和旋律，却在网上找不到任何记录，他为此做的追查简直是另一个级别。",
+              "en": "The Case of the Missing Hit",
+              "replies": 7,
+              "hn": "https://news.ycombinator.com/item?id=50005827",
+              "id": 50005827
+            },
+            {
+              "user": "nkrisc",
+              "stance": "亲历",
+              "zh": "我没花 15 年，但经历类似：2003 年在一个 Flash 动画里听到挪威乐队 Kaizers Orchestra 的歌，听不懂挪威语，只能反复听、尽量把歌词记下来去搜，几个月后才在一个挪威网站找到。",
+              "en": "I had a similar experience with the Norwegian band Kaizers Orchestra.",
+              "replies": 0,
+              "hn": "https://news.ycombinator.com/item?id=50004214",
+              "id": 50004214
+            }
+          ],
+          "tag": null,
+          "kicker": "文化 · 网络考古"
+        },
+        {
+          "id": 50005527,
+          "title": "回味 DVD 菜单之美",
+          "title_en": "Beauty in DVD Menus",
+          "url": "https://vale.rocks/posts/dvd-menus",
+          "hn": "https://news.ycombinator.com/item?id=50005527",
+          "points": 303,
+          "comments": 161,
+          "summary": [
+            "作者回顾 DVD 时代精心设计的动画菜单，感叹如今的 DVD 和蓝光菜单大多只剩一张图或一段视频加通用菜单。评论区一边怀旧，一边吐槽当年的菜单又慢又难用。"
+          ],
+          "comment_quotes": [
+            {
+              "user": "alt227",
+              "stance": "怀念",
+              "zh": "我记得《记忆碎片》的 DVD 有个隐藏菜单，按特定按键组合就能一场一场倒着看整部电影。当时觉得要进入创意发行的新时代了，可惜没流行起来。",
+              "en": "watching the film backwards scene by scene",
+              "replies": 15,
+              "hn": "https://news.ycombinator.com/item?id=50006261",
+              "id": 50006261
+            },
+            {
+              "user": "gwbas1c",
+              "stance": "反驳",
+              "zh": "我不同意。是因为我们本来就更喜欢菜单简单的碟片，对花絮没什么兴趣。录像带没有菜单，流媒体也是直接开播。",
+              "en": "I disagree; it's because we prefer disks with very simple menus",
+              "replies": 47,
+              "hn": "https://news.ycombinator.com/item?id=50006528",
+              "id": 50006528
+            }
+          ],
+          "tag": null,
+          "kicker": "文化 · 设计"
+        },
+        {
+          "id": 49998066,
+          "title": "陆龟 Jonathan：地球最年长陆地动物",
+          "title_en": "'Jonathan' is the oldest land animal on Earth",
+          "url": "https://www.404media.co/oldest-living-land-animal-jonathan-the-tortoise/",
+          "hn": "https://news.ycombinator.com/item?id=49998066",
+          "points": 275,
+          "comments": 161,
+          "summary": [
+            "404 Media 报道这只仍然活着的老陆龟 Jonathan。研究发现它在 DNA 修复、胰岛素调节、线粒体功能等多数衰老通路上都有独特的基因变异。"
+          ],
+          "comment_quotes": [
+            {
+              "user": "scun",
+              "stance": "调侃",
+              "zh": "把长寿点满，速度和魅力全扔了。",
+              "en": "min-maxing longevity vs speed and charisma",
+              "replies": 9,
+              "hn": "https://news.ycombinator.com/item?id=50000383",
+              "id": 50000383
+            },
+            {
+              "user": "dyauspitr",
+              "stance": "对比",
+              "zh": "有意思，最年长的陆地动物还不到 200 岁，海里的生物却能活五六百年甚至更久。",
+              "en": "stuff that lives in the sea can go for five or 600 years",
+              "replies": 42,
+              "hn": "https://news.ycombinator.com/item?id=50000509",
+              "id": 50000509
+            }
+          ],
+          "tag": null,
+          "kicker": "文化 · 自然"
+        }
+      ],
+      "briefs": [
+        {
+          "id": 50006012,
+          "title": "老牌社交网站 Orkut.com",
+          "title_en": "Orkut.com",
+          "url": "https://orkut.com/",
+          "hn": "https://news.ycombinator.com/item?id=50006012",
+          "points": 191,
+          "comments": 138
+        },
+        {
+          "id": 50002494,
+          "title": "撑起互联网的那些人（数据可视化）",
+          "title_en": "The people holding up the internet",
+          "url": "https://sheets.works/data-viz/holding-up-the-internet",
+          "hn": "https://news.ycombinator.com/item?id=50002494",
+          "points": 187,
+          "comments": 68
+        },
+        {
+          "id": 50000985,
+          "title": "美国男子刷音乐播放量被判入狱",
+          "title_en": "US man given prison sentence for bot-farming music streams",
+          "url": "https://thequietus.com/news/us-man-given-prison-sentence-for-bot-farming-music-streams/",
+          "hn": "https://news.ycombinator.com/item?id=50000985",
+          "points": 174,
+          "comments": 266
+        },
+        {
+          "id": 50004777,
+          "title": "Anne Carson 获 2026 年诺贝尔文学奖",
+          "title_en": "Anne Carson wins Nobel Prize in literature 2026",
+          "url": "https://www.theguardian.com/books/2026/oct/08/wins-the-nobel-prize-in-literature-2026",
+          "hn": "https://news.ycombinator.com/item?id=50004777",
+          "points": 171,
+          "comments": 41
+        },
+        {
+          "id": 50010470,
+          "title": "不直奔主题的价值（2015）",
+          "title_en": "The value of not getting to the point (2015)",
+          "url": "https://ken.arneson.name/2015/11/the-value-of-not-getting-to-the-point/",
+          "hn": "https://news.ycombinator.com/item?id=50010470",
+          "points": 166,
+          "comments": 55
+        },
+        {
+          "id": 50008047,
+          "title": "Show HN：用 LED 灯丝做一件能弯的「霓虹」T 恤",
+          "title_en": "Show HN: Making a flexible \"neon\" t-shirt with LED filaments",
+          "url": "http://scottbezek.blogspot.com/2026/10/making-flexible-neon-t-shirt-with-leds.html",
+          "hn": "https://news.ycombinator.com/item?id=50008047",
+          "points": 162,
+          "comments": 30
+        },
+        {
+          "id": 49958194,
+          "title": "《时空幻境》里的时间旅行（2015）",
+          "title_en": "Time Travel in Braid (2015)",
+          "url": "https://qntm.org/braid",
+          "hn": "https://news.ycombinator.com/item?id=49958194",
+          "points": 101,
+          "comments": 47
+        },
+        {
+          "id": 50005017,
+          "title": "Telnet BBS 指南",
+          "title_en": "Telnet BBS Guide",
+          "url": "https://www.telnetbbsguide.com/",
+          "hn": "https://news.ycombinator.com/item?id=50005017",
+          "points": 101,
+          "comments": 36
+        },
+        {
+          "id": 50008685,
+          "title": "毫无诚意的「个性化」猎头邮件",
+          "title_en": "The Deeply Impersonal Personalized Recruiter Mail",
+          "url": "https://blog.pentlander.com/the-deeply-impersonal-personalized-recruiter-mail/",
+          "hn": "https://news.ycombinator.com/item?id=50008685",
+          "points": 33,
+          "comments": 30
+        },
+        {
+          "id": 49971347,
+          "title": "ENIAC 的程序员们（2011）",
+          "title_en": "ENIAC Programmers (2011)",
+          "url": "https://www.columbia.edu/cu/computinghistory/eniac.html",
+          "hn": "https://news.ycombinator.com/item?id=49971347",
+          "points": 16,
+          "comments": 1
+        }
+      ],
+      "stats": {
+        "items": 13,
+        "points": 2243,
+        "comments": 1162,
+        "top_points": {
+          "id": 49959280,
+          "title": "花 15 年寻找一支昙花一现的乐队",
+          "value": 363,
+          "comments": 128
+        },
+        "top_comments": {
+          "id": 50000985,
+          "title": "美国男子刷音乐播放量被判入狱",
+          "value": 266
+        },
+        "top_brief": {
+          "id": 50006012,
+          "title": "老牌社交网站 Orkut.com",
+          "value": 191,
+          "comments": 138
+        }
+      }
+    }
+  ],
+  "quote_of_day": {
+    "user": "olafmol",
+    "id": 50004853,
+    "hn": "https://news.ycombinator.com/item?id=50004853",
+    "story_id": 49980346,
+    "story": "Zotero：好软件是慢慢长成的",
+    "zh": "荷兰有句老话：没有摩擦，就没有光泽。",
+    "en": "Without friction, no shine"
+  },
+  "stats": {
+    "snapshot": "2026-10-09T17:30:00+08:00",
+    "front_page_count": 90,
+    "with_numbers": 86,
+    "flagged_or_dupe": 4,
+    "top_points": {
+      "value": 872,
+      "id": 50006832,
+      "title": "特朗普政府暂停微软参与绿卡项目"
+    },
+    "top_comments": {
+      "value": 1481,
+      "id": 50006832,
+      "title": "特朗普政府暂停微软参与绿卡项目"
+    },
+    "second_comments": {
+      "value": 636,
+      "id": 50002008,
+      "title": "陶哲轩：AI 时代要换一种方式看待数学进展"
+    },
+    "over_500": 4,
+    "over_300": 10,
+    "over_100": 39,
+    "show_hn": 10,
+    "total_points": 11768,
+    "total_comments": 7465,
+    "hottest_ratio": {
+      "value": 1.86,
+      "id": 50002650,
+      "title": "OpenAI 撤回三项数学成果",
+      "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+    }
+  }
+}
