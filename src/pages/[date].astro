@@ -1,0 +1,20 @@
+---
+import IssuePaper from '../components/IssuePaper.astro';
+import { getIssueNav, type IssueNav } from '../lib/issues';
+
+export async function getStaticPaths() {
+  const issues = await getIssueNav();
+  return issues.map((nav) => ({
+    params: { date: nav.entry.data.date },
+    props: { nav },
+  }));
+}
+
+interface Props {
+  nav: IssueNav;
+}
+
+const { nav } = Astro.props;
+---
+
+<IssuePaper nav={nav} />
