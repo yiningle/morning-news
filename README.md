@@ -43,7 +43,7 @@ src/content/issues/YYYY-MM-DD.json
 
 1. 每日任务把当天的晨报写成 `src/content/issues/YYYY-MM-DD.json`，提交并推到 [yiningle/morning-news](https://github.com/yiningle/morning-news) 的 `main`。
 2. 推送触发 `.github/workflows/deploy.yml`（也可以在 Actions 里手动跑一次）。
-3. CI 用 Node 22 执行 `npm ci`，再以 `BASE_PATH=/hn/` 执行 `npm run build`。
+3. CI 用 Node 24 执行 `npm ci`，再以 `BASE_PATH=/hn/` 执行 `npm run build`。
 4. 工作流把 `dist/` 里的文件打成 tar，经 SSH 解到服务器的 `/var/www/html/.hn-new`，再把现有的 `/var/www/html/hn` 挪到 `/var/www/html/.hn-old`，最后把新目录换成 `/var/www/html/hn`。nginx 配置不动。
 
 线上地址是 `http://43.156.61.11/hn/`。首页是最新一期，往期在 `/hn/archive/`，单期在 `/hn/YYYY-MM-DD/`。
