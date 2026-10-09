@@ -1,0 +1,22 @@
+---
+import IssuePaper from '../components/IssuePaper.astro';
+import Layout from '../components/Layout.astro';
+import { withBase } from '../lib/base';
+import { getIssueNav } from '../lib/issues';
+
+const issues = await getIssueNav();
+const latest = issues.at(-1);
+---
+
+{
+  latest ? (
+    <IssuePaper nav={latest} />
+  ) : (
+    <Layout title="早间新闻" description="尚无出刊。">
+      <main class="archive-wrap">
+        <h1 class="masthead-title"><a href={withBase()}>早间新闻</a></h1>
+        <p class="empty-note">尚无出刊。把一期 JSON 放进 src/content/issues/ 后重新构建。</p>
+      </main>
+    </Layout>
+  )
+}
