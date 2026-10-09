@@ -1,0 +1,76 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Restore vendored fonts
+        run: node scripts/ensure-fonts.mjs
+
+      - name: Install
+        run: npm ci
+
+      - name: Build for /hn/
+        run: npm run build
+        env:
+          BASE_PATH: /hn/
+          ASTRO_TELEMETRY_DISABLED: "1"
+
+      - name: Commit fonts when the checkout did not have them
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          git add src/fonts/*.woff2
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Add vendored font files"
+          git push
+
+      - name: Deploy dist over SSH
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+        run: |
+          set -euo pipefail
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$VPS_SSH_KEY" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          ssh-keyscan -H "$VPS_HOST" >> ~/.ssh/known_hosts
+          tar -C dist -czf - . | ssh \
+            -i ~/.ssh/id_deploy \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=accept-new \
+            "$VPS_USER@$VPS_HOST" \
+            'set -euo pipefail
+             rm -rf /var/www/html/.hn-new
+             mkdir -p /var/www/html/.hn-new
+             tar -xzf - -C /var/www/html/.hn-new
+             test -f /var/www/html/.hn-new/index.html
+             rm -rf /var/www/html/.hn-old
+             if [ -d /var/www/html/hn ]; then
+               mv /var/www/html/hn /var/www/html/.hn-old
+             fi
+             mv /var/www/html/.hn-new /var/www/html/hn
+             rm -rf /var/www/html/.hn-old'
