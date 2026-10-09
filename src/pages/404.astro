@@ -1,0 +1,20 @@
+---
+import Layout from '../components/Layout.astro';
+import { withBase } from '../lib/base';
+---
+
+<Layout title="早间新闻 · 未找到" description="这一页没有出刊。">
+  <main class="archive-wrap">
+    <header class="archive-mast">
+      <p class="mast-en">The Morning News</p>
+      <h1 class="masthead-title"><a href={withBase()}>早间新闻</a></h1>
+      <div class="rule-double" aria-hidden="true"></div>
+      <p class="archive-kicker">未找到这一版</p>
+    </header>
+    <p class="empty-note">这个地址不在报纸里。它可能写错了，或者这一期还没有出刊。</p>
+    <p class="issue-jump">
+      <a href={withBase()}>最新一期</a>
+      <a href={withBase('archive/')}>往期目录</a>
+    </p>
+  </main>
+</Layout>
