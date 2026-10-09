@@ -1,0 +1,31 @@
+---
+import ExternalLink from './ExternalLink.astro';
+import { repliesLabel } from '../lib/format';
+import type { Story } from '../lib/issues';
+
+interface Props {
+  quotes: NonNullable<Story['comment_quotes']>;
+  layout?: 'stack' | 'wide' | 'pair';
+}
+
+const { quotes, layout = 'stack' } = Astro.props;
+---
+
+{
+  quotes.length > 0 && (
+    <section class:list={['debate', layout === 'wide' && 'debate-wide', layout === 'pair' && 'debate-pair']} aria-label="评论区在吵什么">
+      <p class="debate-title">评论区在吵什么</p>
+      {quotes.map((quote) => (
+        <blockquote class="quote">
+          {quote.stance && <span class="stance">{quote.stance}</span>}
+          {quote.zh}
+          {quote.en && <span class="quote-en">“{quote.en}”</span>}
+          <span class="quote-who">
+            —— <ExternalLink href={quote.hn}>{quote.user}</ExternalLink>
+            {quote.replies != null && ` · ${repliesLabel(quote.replies)}`}
+          </span>
+        </blockquote>
+      ))}
+    </section>
+  )
+}
