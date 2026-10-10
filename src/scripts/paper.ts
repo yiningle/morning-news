@@ -41,6 +41,22 @@ function whenIdle(task: (deadline: { timeRemaining: () => number }) => void, tim
   return { cancel: () => window.clearTimeout(id) };
 }
 
+/**
+ * Run a task in an idle period that has at least `minMs` left, so even a
+ * restyle that is cheap but not tiny never pushes back the next frame. Gives up
+ * waiting after `timeout` ms.
+ */
+function whenRoomy(minMs: number, task: () => void, timeout = 1500): IdleHandle {
+  const until = performance.now() + timeout;
+  let handle: IdleHandle;
+  const attempt = (deadline: { timeRemaining: () => number }) => {
+    if (deadline.timeRemaining() >= minMs || performance.now() >= until) task();
+    else handle = whenIdle(attempt, Math.max(1, until - performance.now()));
+  };
+  handle = whenIdle(attempt, timeout);
+  return { cancel: () => handle.cancel() };
+}
+
 function saveData(): boolean {
   const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
   return connection?.saveData === true;
@@ -118,10 +134,20 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   let frontSheet: HTMLElement | null = null;
   let underSheet: HTMLElement | null = null;
 
-  /* Background preloading: lay out hidden sheets and pre-render the curl snapshot. */
-  type Snapshot = { index: number; width: number; height: number; clone: HTMLElement };
-  let snapshot: Snapshot | null = null;
+  /* Background preloading: lay out hidden sheets and pre-render one curl print per sheet. */
+  type Snapshot = { width: number; height: number; wrap: HTMLElement; clone: HTMLElement };
+  const snapshots = new Map<number, Snapshot>();
   const warmed = new Set<number>();
+  /* A sheet just turned away from: fully clipped, hidden for real a few frames later. */
+  let retiring: HTMLElement | null = null;
+  let retireJob: IdleHandle | null = null;
+  let retireFrame = 0;
+  let curlWidth = 0;
+  let curlHeight = 0;
+  const shield = document.createElement('div');
+  shield.className = 'curl-shield';
+  shield.setAttribute('aria-hidden', 'true');
+  slot.appendChild(shield);
   let preloadStarted = false;
   let preloadJob: IdleHandle | null = null;
   let resizeTimer = 0;
@@ -168,11 +194,12 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   });
   window.addEventListener('resize', () => {
     if (busy) cancelTo(index);
-    dropSnapshot();
+    dropSnapshots();
     // Let hidden sheets drop back to skipped while the size changes, then re-prepare.
     if (warmed.size > 0) {
       sheets.forEach((sheet) => sheet.classList.remove('is-warm'));
       warmed.clear();
+      keepWarm(index);
     }
     window.clearTimeout(resizeTimer);
     resizeTimer = window.setTimeout(() => {
@@ -208,17 +235,63 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   }
 
   function show(next: number): void {
+    flushRetire();
     sheets.forEach((sheet, sheetIndex) => {
       sheet.classList.remove('is-front', 'is-under');
       sheet.style.clipPath = '';
-      sheet.style.pointerEvents = '';
       sheet.hidden = sheetIndex !== next;
     });
     index = next;
+    keepWarm(next);
     scroller(sheets[next]).scrollTop = 0;
     paint();
-    if (snapshot && snapshot.index !== next) dropSnapshot();
     schedulePreload();
+  }
+
+  /** A sheet that has been shown is laid out already: keep it rendered when it is hidden again. */
+  function keepWarm(page: number): void {
+    warmed.add(page);
+    sheets[page]?.classList.add('is-warm');
+  }
+
+  /**
+   * End of a turn: show `next` without restyling anything big in this frame.
+   * The sheet turned away from is already invisible (fully clipped), so hiding it
+   * for real (a visibility change that restyles its whole subtree) waits until
+   * the turn has settled.
+   */
+  function settle(next: number): void {
+    flushRetire();
+    const old = sheets[index];
+    const incoming = sheets[next];
+    incoming.hidden = false;
+    incoming.style.clipPath = '';
+    incoming.classList.remove('is-front', 'is-under');
+    index = next;
+    keepWarm(next);
+    if (old && old !== incoming) {
+      old.classList.remove('is-front', 'is-under');
+      settleFrom(old);
+      return;
+    }
+    paint();
+    schedulePreload();
+  }
+
+  function flushRetire(): void {
+    if (retireFrame) cancelAnimationFrame(retireFrame);
+    retireFrame = 0;
+    retireJob?.cancel();
+    retireJob = null;
+    if (!retiring) return;
+    const sheet = retiring;
+    retiring = null;
+    if (sheet === sheets[index] && !busy) {
+      sheet.style.clipPath = '';
+      return;
+    }
+    sheet.hidden = true;
+    sheet.style.clipPath = '';
   }
 
   function startPreload(): void {
@@ -258,12 +331,16 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     const order = preloadOrder();
     const adjacent = order[0];
     if (adjacent !== undefined && !warmed.has(adjacent)) return () => warmSheet(adjacent);
-    if (!prefersReducedMotion() && sheets.length > 1 && !snapshotReady()) {
-      const { width, height } = slotSize();
-      if (width >= 20 && height >= 20) return () => buildSnapshot();
-    }
+    const curls = !prefersReducedMotion() && sheets.length > 1;
+    if (curls && !snapshotReady(index)) return () => buildSnapshot(index);
     for (const page of order) {
       if (!warmed.has(page)) return () => warmSheet(page);
+    }
+    // The print on the back of the curl, for every sheet a turn can start from.
+    if (curls) {
+      for (const page of order) {
+        if (!snapshotReady(page)) return () => buildSnapshot(page);
+      }
     }
     return null;
   }
@@ -273,8 +350,8 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     root.dataset.preloaded = 'false';
     preloadJob = whenIdle(() => {
       preloadJob = null;
-      // Never compete with a page turn in progress; pick up again once it settles.
-      if (busy) {
+      // Never compete with a page turn in progress or one that is settling.
+      if (busy || retiring) {
         schedulePreload();
         return;
       }
@@ -299,20 +376,24 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     void scroller(sheet).scrollHeight;
   }
 
-  function snapshotReady(): boolean {
-    if (!snapshot || snapshot.index !== index) return false;
+  function snapshotReady(page: number): boolean {
+    const snap = snapshots.get(page);
+    if (!snap) return false;
     const { width, height } = slotSize();
-    return snapshot.width === width && snapshot.height === height;
+    if (width < 20 || height < 20) return true;
+    return snap.width === width && snap.height === height;
   }
 
-  function dropSnapshot(): void {
+  function dropSnapshots(): void {
     if (busy) return;
-    snapshot = null;
+    snapshots.clear();
+    layers.printActive = null;
     layers.print.replaceChildren();
   }
 
   /** Clone a sheet into the curl layer: the mirrored print seen on the turning page's back. */
-  function makeSnapshot(from: number): HTMLElement {
+  function makeSnapshot(from: number, width: number, height: number): Snapshot {
+    snapshots.get(from)?.wrap.remove();
     const source = scroller(sheets[from]);
     const slotRect = slot.getBoundingClientRect();
     const sourceRect = source.getBoundingClientRect();
@@ -330,20 +411,19 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     const wrap = document.createElement('div');
     wrap.className = 'curl-print-sheet';
     wrap.append(clone);
-    layers.print.replaceChildren(wrap);
-    return clone;
+    layers.print.append(wrap);
+    const snap = { width, height, wrap, clone };
+    snapshots.set(from, snap);
+    return snap;
   }
 
-  function buildSnapshot(): void {
+  /** Build and lay out a sheet's curl print ahead of time; it then stays ready for every later turn. */
+  function buildSnapshot(page: number): void {
     if (busy) return;
     const { width, height } = slotSize();
     if (width < 20 || height < 20) return;
-    const clone = makeSnapshot(index);
-    snapshot = { index, width, height, clone };
-    // Lay the hidden print out now so the first curl frame only paints.
-    layers.root.classList.add('is-warming');
-    void clone.scrollHeight;
-    layers.root.classList.remove('is-warming');
+    const snap = makeSnapshot(page, width, height);
+    void snap.clone.scrollHeight;
   }
 
   function prefetchAdjacentIssues(): void {
@@ -371,53 +451,100 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     return { width: rect.width, height: rect.height };
   }
 
+  /**
+   * Tear the curl down. Only cheap, non-inherited changes happen here (opacity,
+   * z-index, clip-path, a class on an empty shield), so the frame that ends a
+   * turn does not restyle the pages.
+   */
   function clearCurl(): void {
     window.cancelAnimationFrame(frame);
     pose = null;
     busy = false;
     slot.classList.remove('is-curling');
-    slot.dataset.edge = '';
     layers.root.hidden = true;
     layers.back.style.filter = '';
     if (frontSheet) {
-      frontSheet.style.clipPath = '';
       frontSheet.classList.remove('is-front');
       frontSheet = null;
     }
     if (underSheet) {
       underSheet.classList.remove('is-under');
-      underSheet.style.pointerEvents = '';
       underSheet = null;
     }
   }
 
   function cancelTo(next: number): void {
+    const keep = sheets[next];
+    const under = underSheet;
     clearCurl();
+    if (keep && !keep.hidden && under && under !== keep && !prefersReducedMotion()) {
+      // Cancelled turn: the page never left. Put it back and retire the one underneath.
+      keep.style.clipPath = '';
+      index = next;
+      settleFrom(under);
+      return;
+    }
     show(next);
+  }
+
+  /**
+   * Retire a sheet that is no longer shown. It is clipped away at once (paint
+   * only) and hidden for real two frames later in idle time, never in the
+   * frames that finish the turn.
+   */
+  function settleFrom(sheet: HTMLElement): void {
+    flushRetire();
+    sheet.style.clipPath = 'inset(100%)';
+    retiring = sheet;
+    retireFrame = requestAnimationFrame(() => {
+      retireFrame = requestAnimationFrame(() => {
+        retireFrame = 0;
+        retireJob = whenRoomy(12, () => {
+          retireJob = null;
+          flushRetire();
+          // Do the restyle now, inside the idle period, not in the next frame.
+          void slot.offsetWidth;
+          // The edge cursor is inherited, so clearing it restyles every page: its own idle task.
+          if (slot.dataset.edge) {
+            retireJob = whenRoomy(14, () => {
+              retireJob = null;
+              if (busy) return;
+              slot.dataset.edge = '';
+              void slot.offsetWidth;
+            }, 1000);
+          }
+        }, 1000);
+      });
+    });
+    paint();
+    schedulePreload();
   }
 
   function mountCurl(from: number, to: number): boolean {
     const { width, height } = slotSize();
     if (width < 20 || height < 20) return false;
     clearCurl();
+    flushRetire();
+    curlWidth = width;
+    curlHeight = height;
     frontSheet = sheets[from];
     underSheet = sheets[to];
     frontSheet.hidden = false;
     underSheet.hidden = false;
+    underSheet.style.clipPath = '';
     frontSheet.classList.add('is-front');
     underSheet.classList.add('is-under');
-    underSheet.style.pointerEvents = 'none';
     scroller(underSheet).scrollTop = 0;
 
     const source = scroller(frontSheet);
-    let clone: HTMLElement;
-    if (snapshot && snapshot.index === from && snapshot.width === width && snapshot.height === height) {
-      clone = snapshot.clone;
-    } else {
-      clone = makeSnapshot(from);
-      snapshot = { index: from, width, height, clone };
+    let snap = snapshots.get(from);
+    if (!snap || snap.width !== width || snap.height !== height) snap = makeSnapshot(from, width, height);
+    if (layers.printActive !== snap.wrap) {
+      layers.printActive?.classList.remove('is-active');
+      snap.wrap.classList.add('is-active');
+      layers.printActive = snap.wrap;
     }
-    clone.scrollTop = source.scrollTop;
+    snap.clone.scrollTop = source.scrollTop;
 
     layers.root.hidden = false;
     slot.classList.add('is-curling');
@@ -426,26 +553,33 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     return true;
   }
 
-  function draw(nextPose: CurlPose): void {
-    if (!frontSheet) return;
-    const { width, height } = slotSize();
+  /** Paint one curl frame. Returns true once the turning page has completely left the slot. */
+  function draw(nextPose: CurlPose): boolean {
+    if (!frontSheet) return false;
     pose = nextPose;
-    paintCurl(layers, frontSheet, width, height, nextPose);
+    // Size cached at mount (a resize cancels the turn): no layout read per frame.
+    return paintCurl(layers, frontSheet, curlWidth, curlHeight, nextPose) === 'cleared';
   }
 
   function finishAt(next: number, push: boolean): void {
     clearCurl();
-    show(next);
+    settle(next);
     if (push) setHash(next);
   }
 
-  function animatePose(from: CurlPose, to: CurlPose, ms: number, done: () => void): void {
+  function animatePose(
+    from: CurlPose,
+    to: CurlPose,
+    ms: number,
+    done: () => void,
+    finishWhenCleared = false,
+  ): void {
     window.cancelAnimationFrame(frame);
     const started = performance.now();
     const step = (now: number) => {
       const t = Math.min(1, (now - started) / ms);
       const e = easeOut(t);
-      draw({
+      const cleared = draw({
         origin: {
           x: lerp(from.origin.x, to.origin.x, e),
           y: lerp(from.origin.y, to.origin.y, e),
@@ -455,7 +589,9 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
           y: lerp(from.point.y, to.point.y, e),
         },
       });
-      if (t < 1) frame = requestAnimationFrame(step);
+      // Once the page is fully off the slot nothing on screen moves any more:
+      // finish now instead of holding still frames until the clock runs out.
+      if (t < 1 && !(finishWhenCleared && cleared)) frame = requestAnimationFrame(step);
       else done();
     };
     frame = requestAnimationFrame(step);
@@ -487,12 +623,17 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
       finishAt(next, push);
       return;
     }
-    const { width, height } = slotSize();
+    const width = curlWidth;
+    const height = curlHeight;
     const started = performance.now();
     const step = (now: number) => {
       const t = Math.min(1, (now - started) / AUTO_MS);
-      draw(forward ? forwardPath(easeInOut(t), width, height) : backwardPath(easeInOut(t), width, height));
-      if (t < 1) frame = requestAnimationFrame(step);
+      const cleared = draw(
+        forward ? forwardPath(easeInOut(t), width, height) : backwardPath(easeInOut(t), width, height),
+      );
+      // The sheet leaves the slot at about 85% of the path; the remaining frames
+      // would show nothing moving and read as a stall before the turn commits.
+      if (t < 1 && !cleared) frame = requestAnimationFrame(step);
       else finishAt(next, push);
     };
     frame = requestAnimationFrame(step);
@@ -512,7 +653,7 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     const { width, height } = slotSize();
     const passed = forward ? current.point.x < width * 0.5 : current.point.x > width * 0.5;
     if (passed && next >= 0 && next < sheets.length) {
-      animatePose(current, clearedPose(current, width, height), COMPLETE_MS, () => finishAt(next, true));
+      animatePose(current, clearedPose(current, width, height), COMPLETE_MS, () => finishAt(next, true), true);
       return;
     }
     animatePose(current, { origin: current.origin, point: { ...current.origin } }, CANCEL_MS, () => cancelTo(index));
@@ -589,9 +730,9 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
           }
           dragging = true;
           root.dataset.suppressClick = 'true';
-          target.style.touchAction = 'none';
           try {
-            target.setPointerCapture(pointerId);
+            // Capture on the shield so the drag shows its grabbing cursor; events still bubble to the slot.
+            shield.setPointerCapture(pointerId);
           } catch {
             /* The sheet still receives the move while the pointer stays over it. */
           }
@@ -613,7 +754,6 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     const endDrag = (event: PointerEvent) => {
       if (!tracking || event.pointerId !== pointerId) return;
       tracking = false;
-      target.style.touchAction = '';
       if (!dragging || !pose) {
         dragging = false;
         return;
@@ -623,6 +763,11 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
       releaseDrag(forward, next, pose);
     };
 
+    // No text selection while a turn is being dragged (the slot used to get user-select: none).
+    target.addEventListener('selectstart', (event) => {
+      if (dragging || busy) event.preventDefault();
+    });
+
     target.addEventListener('pointerleave', () => {
       if (!tracking) target.dataset.edge = '';
     });
@@ -631,7 +776,6 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
       if (!tracking || event.pointerId !== pointerId) return;
       tracking = false;
       dragging = false;
-      target.style.touchAction = '';
       if (busy) cancelTo(index);
     });
   }
