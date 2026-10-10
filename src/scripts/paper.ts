@@ -1,12 +1,14 @@
 import {
   backwardPath,
-  clipHalfPlane,
   createCurlLayers,
   forwardPath,
-  makeFold,
-  pageRect,
   paintCurl,
+  poseCleared,
+  resetCurlLayers,
+  resetHalfPlane,
+  type CurlMode,
   type CurlPose,
+  type HalfPlane,
   type Pt,
 } from './curl';
 
@@ -96,6 +98,28 @@ function missingFaces(text: string): FontFace[] {
   return faces;
 }
 
+/**
+ * Whether the page is composited on a real GPU. A software compositor (no GPU,
+ * blocklisted driver, SwiftShader) would have to blend every rotated clip box
+ * on the CPU, which costs more than re-rastering clip-path polygons.
+ * `?curl=gpu|flat` forces a mode for testing.
+ */
+function detectCurlMode(): CurlMode {
+  const forced = new URLSearchParams(location.search).get('curl');
+  if (forced === 'gpu' || forced === 'flat') return forced;
+  try {
+    const canvas = document.createElement('canvas');
+    const gl = canvas.getContext('webgl', { failIfMajorPerformanceCaveat: true });
+    if (!gl) return 'flat';
+    const info = gl.getExtension('WEBGL_debug_renderer_info');
+    const renderer = info ? String(gl.getParameter(info.UNMASKED_RENDERER_WEBGL)) : String(gl.getParameter(gl.RENDERER));
+    gl.getExtension('WEBGL_lose_context')?.loseContext();
+    return /swiftshader|llvmpipe|softpipe|software|basic render|microsoft basic/i.test(renderer) ? 'flat' : 'gpu';
+  } catch {
+    return 'flat';
+  }
+}
+
 function easeOut(t: number): number {
   return 1 - (1 - t) * (1 - t);
 }
@@ -132,6 +156,7 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   let frame = 0;
   let pose: CurlPose | null = null;
   let frontSheet: HTMLElement | null = null;
+  let frontPlane: HalfPlane | null = null;
   let underSheet: HTMLElement | null = null;
 
   /* Background preloading: lay out hidden sheets and pre-render one curl print per sheet. */
@@ -142,6 +167,8 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   let retiring: HTMLElement | null = null;
   let retireJob: IdleHandle | null = null;
   let retireFrame = 0;
+  /* Flat (clip-path) until the idle-time GPU check says the compositor path is safe. */
+  let curlMode: CurlMode = 'flat';
   let curlWidth = 0;
   let curlHeight = 0;
   const shield = document.createElement('div');
@@ -217,6 +244,13 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     return sheet.querySelector<HTMLElement>('.sheet-scroll') ?? sheet;
   }
 
+  /** The wrappers a turn cuts a sheet with (see .sheet-clip in paper.css). */
+  function planeOf(sheet: HTMLElement): HalfPlane {
+    const box = sheet.querySelector<HTMLElement>(':scope > .sheet-clip') ?? sheet;
+    const content = box.querySelector<HTMLElement>(':scope > .sheet-unclip') ?? box;
+    return { box, content };
+  }
+
   function paint(): void {
     pageLinks.forEach((link) => {
       const current = Number(link.dataset.page) === index;
@@ -238,7 +272,7 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     flushRetire();
     sheets.forEach((sheet, sheetIndex) => {
       sheet.classList.remove('is-front', 'is-under');
-      sheet.style.clipPath = '';
+      resetHalfPlane(planeOf(sheet));
       sheet.hidden = sheetIndex !== next;
     });
     index = next;
@@ -255,25 +289,25 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   }
 
   /**
-   * End of a turn: show `next` without restyling anything big in this frame.
-   * The sheet turned away from is already invisible (fully clipped), so hiding it
-   * for real (a visibility change that restyles its whole subtree) waits until
-   * the turn has settled.
+   * End of a turn: the last curl frame already shows the next page exactly
+   * (the turned page is cut away completely and nothing it casts is left), so
+   * this frame changes nothing on the pages: no layer, clip, z-index or
+   * visibility change. The page turned away from is hidden for real (and its
+   * layers dropped) a few frames later in idle time.
    */
   function settle(next: number): void {
     flushRetire();
     const old = sheets[index];
     const incoming = sheets[next];
     incoming.hidden = false;
-    incoming.style.clipPath = '';
-    incoming.classList.remove('is-front', 'is-under');
     index = next;
     keepWarm(next);
     if (old && old !== incoming) {
-      old.classList.remove('is-front', 'is-under');
       settleFrom(old);
       return;
     }
+    incoming.classList.remove('is-front', 'is-under');
+    resetHalfPlane(planeOf(incoming));
     paint();
     schedulePreload();
   }
@@ -286,12 +320,11 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     if (!retiring) return;
     const sheet = retiring;
     retiring = null;
-    if (sheet === sheets[index] && !busy) {
-      sheet.style.clipPath = '';
-      return;
-    }
-    sheet.hidden = true;
-    sheet.style.clipPath = '';
+    const current = sheets[index];
+    if (sheet !== current || busy) sheet.hidden = true;
+    sheet.classList.remove('is-front', 'is-under');
+    resetHalfPlane(planeOf(sheet));
+    if (current && current !== sheet && !busy) current.classList.remove('is-front', 'is-under');
   }
 
   function startPreload(): void {
@@ -305,11 +338,19 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
       const loads = missingFaces(text).map((face) => face.load().catch(() => undefined));
       const ready = document.fonts ? document.fonts.ready : Promise.resolve();
       Promise.all([...loads, ready]).finally(() => {
+        if (!busy) setCurlMode(detectCurlMode());
         preloadStarted = true;
         schedulePreload();
         prefetchAdjacentIssues();
       });
     });
+  }
+
+  function setCurlMode(mode: CurlMode): void {
+    curlMode = mode;
+    // Pre-promotes the curl parts and the shown sheet's fold wrappers (paper.css).
+    slot.classList.toggle('curl-gpu', mode === 'gpu');
+    slot.dataset.curl = mode;
   }
 
   /** Sheets to prepare, nearest first and forward before backward. */
@@ -462,15 +503,11 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     busy = false;
     slot.classList.remove('is-curling');
     layers.root.hidden = true;
-    layers.back.style.filter = '';
-    if (frontSheet) {
-      frontSheet.classList.remove('is-front');
-      frontSheet = null;
-    }
-    if (underSheet) {
-      underSheet.classList.remove('is-under');
-      underSheet = null;
-    }
+    // The pages keep their is-front / is-under stacking until the turned-away
+    // sheet is retired, so ending a turn changes no z-index on the pages.
+    frontSheet = null;
+    frontPlane = null;
+    underSheet = null;
   }
 
   function cancelTo(next: number): void {
@@ -478,8 +515,9 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     const under = underSheet;
     clearCurl();
     if (keep && !keep.hidden && under && under !== keep && !prefersReducedMotion()) {
-      // Cancelled turn: the page never left. Put it back and retire the one underneath.
-      keep.style.clipPath = '';
+      // Cancelled turn: the page never left. Put it back whole (it stays
+      // stacked above the one underneath) and retire the one underneath.
+      resetHalfPlane(planeOf(keep));
       index = next;
       settleFrom(under);
       return;
@@ -488,13 +526,12 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   }
 
   /**
-   * Retire a sheet that is no longer shown. It is clipped away at once (paint
-   * only) and hidden for real two frames later in idle time, never in the
-   * frames that finish the turn.
+   * Retire a sheet that is no longer shown. It is already invisible (cut away
+   * by the turn, or covered by the page stacked above it) and is hidden for
+   * real two frames later in idle time, never in the frames that finish the turn.
    */
   function settleFrom(sheet: HTMLElement): void {
     flushRetire();
-    sheet.style.clipPath = 'inset(100%)';
     retiring = sheet;
     retireFrame = requestAnimationFrame(() => {
       retireFrame = requestAnimationFrame(() => {
@@ -525,13 +562,24 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     if (width < 20 || height < 20) return false;
     clearCurl();
     flushRetire();
+    if (width !== curlWidth || height !== curlHeight) {
+      // Bands just long enough to cross the page at any angle (set only when the size changes).
+      layers.root.style.setProperty('--curl-band', `${Math.ceil(Math.hypot(width, height) * 2)}px`);
+    }
     curlWidth = width;
     curlHeight = height;
     frontSheet = sheets[from];
+    frontPlane = planeOf(frontSheet);
     underSheet = sheets[to];
+    sheets.forEach((sheet) => {
+      if (sheet !== frontSheet) sheet.classList.remove('is-front');
+      if (sheet !== underSheet) sheet.classList.remove('is-under');
+    });
     frontSheet.hidden = false;
     underSheet.hidden = false;
-    underSheet.style.clipPath = '';
+    resetHalfPlane(planeOf(underSheet));
+    resetHalfPlane(frontPlane);
+    resetCurlLayers(layers);
     frontSheet.classList.add('is-front');
     underSheet.classList.add('is-under');
     scroller(underSheet).scrollTop = 0;
@@ -555,16 +603,19 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
 
   /** Paint one curl frame. Returns true once the turning page has completely left the slot. */
   function draw(nextPose: CurlPose): boolean {
-    if (!frontSheet) return false;
+    if (!frontPlane) return false;
     pose = nextPose;
     // Size cached at mount (a resize cancels the turn): no layout read per frame.
-    return paintCurl(layers, frontSheet, curlWidth, curlHeight, nextPose) === 'cleared';
+    return paintCurl(layers, frontPlane, curlWidth, curlHeight, nextPose, curlMode) === 'cleared';
   }
 
   function finishAt(next: number, push: boolean): void {
+    const curled = frontPlane !== null;
     clearCurl();
-    settle(next);
-    if (push) setHash(next);
+    if (curled) settle(next);
+    else show(next);
+    // The history entry is not needed in the frame that ends the turn.
+    if (push) whenIdle(() => setHash(next), 200);
   }
 
   function animatePose(
@@ -597,25 +648,29 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     frame = requestAnimationFrame(step);
   }
 
+  /**
+   * Where a released drag heads: along the drag direction, a little past the
+   * nearest point at which the page, its flap and its shadow have all left the
+   * slot. The page leaves while the ease-out is still moving it (no long
+   * near-still tail before the turn commits), and never in a jump.
+   */
   function clearedPose(current: CurlPose, width: number, height: number): CurlPose {
     const dx = current.point.x - current.origin.x;
     const dy = current.point.y - current.origin.y;
     const len = Math.hypot(dx, dy) || 1;
-    let scale = Math.max(len * 1.15, Math.hypot(width, height));
-    let point = {
-      x: current.origin.x + (dx / len) * scale,
-      y: current.origin.y + (dy / len) * scale,
-    };
-    for (let step = 0; step < 6; step += 1) {
-      const fold = makeFold(current.origin, point);
-      if (!fold || clipHalfPlane(pageRect(width, height), fold, false).length < 3) break;
-      scale *= 1.4;
-      point = {
-        x: current.origin.x + (dx / len) * scale,
-        y: current.origin.y + (dy / len) * scale,
-      };
+    const at = (scale: number): CurlPose => ({
+      origin: { ...current.origin },
+      point: { x: current.origin.x + (dx / len) * scale, y: current.origin.y + (dy / len) * scale },
+    });
+    let low = len;
+    let high = Math.max(len * 2, Math.hypot(width, height) * 2);
+    for (let step = 0; step < 8 && !poseCleared(width, height, at(high)); step += 1) high *= 1.6;
+    for (let step = 0; step < 24; step += 1) {
+      const mid = (low + high) / 2;
+      if (poseCleared(width, height, at(mid))) high = mid;
+      else low = mid;
     }
-    return { origin: { ...current.origin }, point };
+    return at(high + Math.max(60, (high - len) * 0.3));
   }
 
   function playPath(forward: boolean, next: number, push: boolean): void {
@@ -653,7 +708,11 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     const { width, height } = slotSize();
     const passed = forward ? current.point.x < width * 0.5 : current.point.x > width * 0.5;
     if (passed && next >= 0 && next < sheets.length) {
-      animatePose(current, clearedPose(current, width, height), COMPLETE_MS, () => finishAt(next, true), true);
+      const target = clearedPose(current, width, height);
+      // Keep the hand's pace: a short remaining throw takes less time than a long one.
+      const travel = Math.hypot(target.point.x - current.point.x, target.point.y - current.point.y);
+      const ms = Math.min(COMPLETE_MS, Math.max(420, travel * 0.45));
+      animatePose(current, target, ms, () => finishAt(next, true), true);
       return;
     }
     animatePose(current, { origin: current.origin, point: { ...current.origin } }, CANCEL_MS, () => cancelTo(index));
