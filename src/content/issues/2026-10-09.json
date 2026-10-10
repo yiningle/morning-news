@@ -1,6 +1,6 @@
 {
  "date": "2026-10-09",
- "published_at": "2026-10-09T19:30:00+08:00",
+ "published_at": "2026-10-10T08:20:00+08:00",
  "source": "https://news.ycombinator.com/front?day=2026-10-09",
  "schema_version": 2,
  "lead": {
@@ -9,12 +9,12 @@
   "title_en": "Why isn't the industry freaking out about DeepSeek 4.1 Flash?",
   "url": "https://www.dgt.is/blog/2026-10-07-deepseek-freek-out/",
   "hn": "https://news.ycombinator.com/item?id=50000488",
-  "points": 808,
-  "comments": 714,
+  "points": 1080,
+  "comments": 949,
   "summary": [
    "博主在 dgt.is 撰文说，他在十几个项目里重度使用 DeepSeek 4.1 Flash 约一个月，干活时如果不看模型名，分不清用的是 DeepSeek 还是 Opus，价格却便宜几个数量级。他认为前沿实验室也许只领先一两个月，这些蒸馏出来的中国模型已经能扛同样的工作量。",
    "他举的账是：每月 10 美元的 OpenCode Go 订阅里 DeepSeek 几乎不限量，一次会话很少超过 1 美元；文章还说 DeepSeek 的 KV 缓存比 V1 缩小了约 437 倍，这是长时间编程会话便宜的关键。复杂任务他偶尔再请 Opus 5.5 做最后的代码审查。",
-   "这是当天点赞和评论双料第一的帖子。评论区的主流解释是「大家用的是被大幅补贴的订阅」，按 API 价计算的差价感受不到；也有人说业界其实在慌，只是慌的是整个开放权重模型；还有人认为 DeepSeek 并不像文中说的只落后一两个月。"
+   "这是当天点赞和评论双料第一的帖子。评论区的主流解释是「大家用的是被大幅补贴的订阅」，按 API 价计算的差价感受不到；也有人说业界不是不慌，只是大厂在猛推企业市场，中国模型在海外几乎不做营销；还有人认为 DeepSeek 并不像文中说的只落后一两个月。"
   ],
   "comment_quotes": [
    {
@@ -24,16 +24,16 @@
     "en": "most people are using heavily subsidized subscriptions",
     "hn": "https://news.ycombinator.com/item?id=50012463",
     "id": 50012463,
-    "replies": 194
+    "replies": 243
    },
    {
-    "user": "anon373839",
-    "stance": "其实在慌",
-    "zh": "我认为业界确实在为开放权重模型发慌，未必是 DeepSeek 本身。所以才有第四轮「给前沿降速」的呼声，而喊话的恰恰是那些想降速本可以自己先降的人。",
-    "en": "the industry is freaking out about open weights models in general",
-    "hn": "https://news.ycombinator.com/item?id=50016946",
-    "id": 50016946,
-    "replies": 111
+    "user": "damowangcy",
+    "stance": "营销",
+    "zh": "原因是营销。OpenAI 和 Anthropic 推企业市场推得很猛，我一位在亚洲非科技行业的朋友说，他们公司拿到了 Claude 企业版的免费试用，还附带培训。DeepSeek 和智谱在中国以外几乎不做营销。所以我不认为他们不慌，只是各自面向不同市场、反应方式不同。",
+    "en": "I don't think they are not freaking out",
+    "hn": "https://news.ycombinator.com/item?id=50017303",
+    "id": 50017303,
+    "replies": 7
    },
    {
     "user": "user43928",
@@ -42,7 +42,7 @@
     "en": "DeepSeek is not \"a month or two\" behind as claimed in the article",
     "hn": "https://news.ycombinator.com/item?id=50012504",
     "id": 50012504,
-    "replies": 38
+    "replies": 40
    }
   ],
   "kicker": "要闻 · AI 价格战",
@@ -50,13 +50,58 @@
  },
  "side": [
   {
+   "id": 50019911,
+   "title": "Cloudflare 收购 Deno：运行时再维护一年后停止开发",
+   "title_en": "Cloudflare acquires Deno",
+   "url": "https://deno.com/blog/cloudflare",
+   "hn": "https://news.ycombinator.com/item?id=50019911",
+   "points": 1028,
+   "comments": 533,
+   "summary": [
+    "Deno 创始人 Ryan Dahl 在官方博客宣布，Deno 整个团队加入 Cloudflare，与 Workers 和 Durable Objects 团队合并，把精力放在基于 Workers 编程模型的分布式应用框架 celld 上，不再单独开发运行时和托管服务。他说这对在 Deno 上搭建业务的人是「重大的变化」。",
+    "具体安排：Deno 运行时再提供一年每月一次的漏洞修复和安全更新，之后停止开发，代码保持开源、欢迎他人接手；Deno Deploy 再运行六个月后关闭，付费用户可获得迁移到 Cloudflare Workers 的协助；JSR 包仓库继续运营，基础设施迁到 Cloudflare。",
+    "这是当天点赞第二的帖子。评论区回复最多的一条点明：除非有人接手，Deno 就没人维护了；不少人在惋惜自己最喜欢的 JS 运行时，也有人列出最近一连串开发工具被大公司收购的名单。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "theodorejb",
+     "stance": "解读",
+     "zh": "（引用公告：运行时再支持一年，之后停止开发，保持开源、欢迎他人接手。）所以除非有人接手，Deno 就不再有人维护了。",
+     "en": "So unless someone else picks up development, Deno will no longer be supported.",
+     "hn": "https://news.ycombinator.com/item?id=50020072",
+     "id": 50020072,
+     "replies": 210
+    },
+    {
+     "user": "sholladay",
+     "stance": "惋惜",
+     "zh": "我爱早期的 Deno，看它死去很难过，我因为 Ry 最初的愿景在 Deno 生态上投入很多。但从他们改变方向、把 npm 兼容放在首位那一刻，我就看到了今天，于是停了手。好在早期 Deno 好到让 Node 抄了一些功能，至少我们现在有了更好的 Node。",
+     "en": "I saw this coming the moment they changed course and started putting npm compatibility as a priority",
+     "hn": "https://news.ycombinator.com/item?id=50021907",
+     "id": 50021907,
+     "replies": 12
+    },
+    {
+     "user": "sixdimensional",
+     "stance": "盘点",
+     "zh": "开发工具的整合和收购还在继续：Cursor 归 SpaceX，Astral/uv 归 OpenAI，Stainless 和 Bun 归 Anthropic，Astro、Deno 和 VoidZero（Vite 等）归 Cloudflare，NuxtLabs 归 Vercel，Hugging Face 归英伟达……还有吗？",
+     "en": "So the developer tooling consolidation/acquisitions continue",
+     "hn": "https://news.ycombinator.com/item?id=50024230",
+     "id": 50024230,
+     "replies": 12
+    }
+   ],
+   "kicker": "开发 · 收购",
+   "tag": "点赞第二"
+  },
+  {
    "id": 49995495,
    "title": "咖啡机 10 天跑了 1TB 流量",
    "title_en": "Man discovers his parents' coffee machine used 1TB of data in 10 days",
    "url": "https://www.dexerto.com/entertainment/man-discovers-his-parents-coffee-machine-used-1tb-of-data-in-10-days-3416399/",
    "hn": "https://news.ycombinator.com/item?id=49995495",
-   "points": 730,
-   "comments": 449,
+   "points": 917,
+   "comments": 559,
    "summary": [
     "网友 Nomad 在 X 上发帖：他帮父母管理家里网络时发现，一台 Keurig 智能咖啡机 10 天内产生了约 1TB 流量，他当即拔掉电源，决定给父母换一台咖啡机。",
     "据 Dexerto 报道，他后来补充说大部分流量留在家庭内网、没有发到外网，「很可能是这台机器的 bug」，但确实把他的无线接入点堵满了。评论区一边吐槽智能家电，一边有人指出截图来自 UniFi 面板，而它出了名地会算错流量。"
@@ -69,7 +114,7 @@
      "en": "It saturated the local network with 1TB of metadata sniffing scans",
      "hn": "https://news.ycombinator.com/item?id=49996221",
      "id": 49996221,
-     "replies": 235
+     "replies": 279
     },
     {
      "user": "doublepg23",
@@ -78,7 +123,7 @@
      "en": "UniFi dashboard which is notorious for miscalculating bandwidth usage",
      "hn": "https://news.ycombinator.com/item?id=50014674",
      "id": 50014674,
-     "replies": 1
+     "replies": 2
     }
    ],
    "kicker": "科技 · 智能家居"
@@ -89,8 +134,8 @@
    "title_en": "I hired an illustrator to draw my house. Now it's my Home Assistant dashboard",
    "url": "https://antonfrolov.substack.com/p/i-hired-an-illustrator-to-draw-my",
    "hn": "https://news.ycombinator.com/item?id=49986882",
-   "points": 680,
-   "comments": 133,
+   "points": 890,
+   "comments": 199,
    "summary": [
     "Anton Frolov 用开源智能家居平台 Home Assistant 自动化了一年，但家里其他人始终不愿打开它的应用。他于是请了一位环境画师手绘整栋房子，把画做成可交互的平面图：壁炉会闪、花园灯会亮、空调在吹风，画里和现实同步。",
     "他说这是家里第一次人人都爱用的仪表盘。评论区大多为他雇真人画师叫好，也有人提醒画师的署名应该放得更显眼。"
@@ -103,7 +148,7 @@
      "en": "AI kinda ruined this style for me",
      "hn": "https://news.ycombinator.com/item?id=50012723",
      "id": 50012723,
-     "replies": 26
+     "replies": 47
     },
     {
      "user": "ideasphere",
@@ -112,10 +157,53 @@
      "en": "I’d be crediting them in a much more prominent way",
      "hn": "https://news.ycombinator.com/item?id=50012378",
      "id": 50012378,
-     "replies": 3
+     "replies": 6
     }
    ],
    "kicker": "生活 · 手绘界面"
+  },
+  {
+   "id": 50018088,
+   "title": "「抱歉，我在开会」：专门播放假会议的网站",
+   "title_en": "Sorry, I'm in a meeting",
+   "url": "https://iminafleeting.com/",
+   "hn": "https://news.ycombinator.com/item?id=50018088",
+   "points": 732,
+   "comments": 230,
+   "summary": [
+    "Fleeting 网站播放一段段约 12 分钟、以假乱真的虚构会议录音，可选英式、美式和国际口音。把它外放在背景里，周围的人就会以为你在忙；网站自称是「职场自卫，防止别人偷走你的时间」。每段会议从随机位置开始，按「离开」时其他与会者还会跟你道别。",
+    "它还能生成一个假会议日程文件，挂进日历让你看起来很忙。网站说明所有声音都是合成的，人脸是 AI 生成或授权图库素材，名字全是虚构，只有作者 John Carroll 本人偶尔关着摄像头「旁听」。评论区有人说这类需求真实存在，也有人想起老游戏里的「老板键」。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "frangonf",
+     "stance": "佐证",
+     "zh": "这需求是真的。我有次逛到 GitLab 的副频道，按播放量排序，发现一段看似普普通通、毫无看点的会议录像竟有几百万播放。原来大家拿它当借口假装很忙，评论里有人说「家人吵我时我就放这个」。",
+     "en": "Turns out people were using this as an excuse for looking like they were busy.",
+     "hn": "https://news.ycombinator.com/item?id=50019063",
+     "id": 50019063,
+     "replies": 78
+    },
+    {
+     "user": "alexpotato",
+     "stance": "经验",
+     "zh": "我以前管一个 SRE 团队，那里天天救火。团队来找我说总被会议邀请轰炸、没有专注时间。我的办法是每周五早上 8 点到 11 点建一个「团队会议」，把他们都拉进去。他们爱死了：由我发出来更有分量，有人想占这个时段也会掂量一下。",
+     "en": "My solution was to create a weekly \"team meeting\" from 8am to 11am every Friday and invite all of them to it.",
+     "hn": "https://news.ycombinator.com/item?id=50020900",
+     "id": 50020900,
+     "replies": 23
+    },
+    {
+     "user": "tacostakohashi",
+     "stance": "联想",
+     "zh": "让我想起 MS-DOS 时代老游戏里的「老板模式」「老板键」：一按就切到一张假的电子表格之类，这是本世纪的升级版。",
+     "en": "Reminds me of the \"boss mode\" / \"boss key\" in old games",
+     "hn": "https://news.ycombinator.com/item?id=50019334",
+     "id": 50019334,
+     "replies": 6
+    }
+   ],
+   "kicker": "生活 · 职场"
   },
   {
    "id": 50003796,
@@ -123,8 +211,8 @@
    "title_en": "Yes, and",
    "url": "https://htmx.org/essays/yes-and/",
    "hn": "https://news.ycombinator.com/item?id=50003796",
-   "points": 471,
-   "comments": 156,
+   "points": 735,
+   "comments": 288,
    "summary": [
     "这篇 htmx 网站上的文章出自在蒙大拿州立大学教计算机的作者。面对「有了 AI 还要不要学编程」的提问，他的回答是「是的，而且……」：编程的本质是用计算机解决问题、学会控制复杂度，这在可见的未来不会贬值。",
     "但他认为 AI 对初级程序员很危险：只生成不动手写，就会错过在一线摸爬滚打中形成的对代码的直觉。作者本人在评论区现身，说自己的儿子刚上大学学计算机。"
@@ -137,7 +225,7 @@
      "en": "the most effective vibe coders are already excellent developers",
      "hn": "https://news.ycombinator.com/item?id=50014287",
      "id": 50014287,
-     "replies": 15
+     "replies": 25
     },
     {
      "user": "layer8",
@@ -146,88 +234,10 @@
      "en": "It’s not quite about the determinism.",
      "hn": "https://news.ycombinator.com/item?id=50012822",
      "id": 50012822,
-     "replies": 19
+     "replies": 33
     }
    ],
    "kicker": "开发 · 教育"
-  },
-  {
-   "id": 50008187,
-   "title": "OpenAI 年化收入比此前传出的少约 200 亿美元",
-   "title_en": "OpenAI annualised revenues $20B less than previously signalled",
-   "url": "https://www.cnbc.com/2026/10/08/open-ai-revenue-nvidia-oracle-coreweave.html",
-   "hn": "https://news.ycombinator.com/item?id=50008187",
-   "points": 398,
-   "comments": 262,
-   "summary": [
-    "据 CNBC 证实，OpenAI 告诉投资者，截至 9 月底年化收入约 500 亿美元，低于上月广泛报道的 680 亿美元。知情人士称，680 亿包含了合作伙伴的总收入，目的是便于和对手 Anthropic 直接比较。消息传出后，英伟达、甲骨文、CoreWeave 等 AI 概念股周四走低。",
-    "评论区最多人回应的一条感叹：一家约万亿美元估值、牵动大量经济和估值的公司，外界几乎看不到它的经营信息。"
-   ],
-   "comment_quotes": [
-    {
-     "user": "wepple",
-     "stance": "透明度",
-     "zh": "放在过去，OpenAI 早就因为各种监管要求上市了，我们也会有直接得多的了解。现在一家约 1 万亿美元的公司撑着大量「经济」和估值，外界却几乎不知道它经营得怎样。",
-     "en": "with near zero information on how it’s doing",
-     "hn": "https://news.ycombinator.com/item?id=50009276",
-     "id": 50009276,
-     "replies": 141
-    },
-    {
-     "user": "virtuosarmo",
-     "stance": "解释",
-     "zh": "看来他们夸大收入，是为了能和 Anthropic 公布的口径直接比较。",
-     "en": "Apparently they overstated revenue",
-     "hn": "https://news.ycombinator.com/item?id=50008455",
-     "id": 50008455,
-     "replies": 14
-    }
-   ],
-   "kicker": "商业 · 财报"
-  },
-  {
-   "id": 49985548,
-   "title": "Ask HN：5 美元的 VPS 上，什么值得 24 小时开着？",
-   "title_en": "Ask HN: What do you run on a $5 VPS that's worth keeping online 24/7?",
-   "url": null,
-   "hn": "https://news.ycombinator.com/item?id=49985548",
-   "points": 248,
-   "comments": 397,
-   "summary": [
-    "提问者受 DHH「AI 小棚」想法启发，考虑租一台每月 5 到 10 美元的 VPS，但拿不准值不值得维护，于是请大家分享：便宜的 VPS 或迷你主机上，什么东西长期下来真的有用。",
-    "这帖的评论数是点赞的 1.6 倍，是当天点赞过百的帖子里评论/点赞比最高的。回答五花八门：照片相册 Immich、Jellyfin 影音、Tailscale 组网、自建邮件、家庭购物清单……也有人说 5 美元一个月已经算「高端」VPS 了。"
-   ],
-   "comment_quotes": [
-    {
-     "user": "ehe78qhe",
-     "stance": "清单",
-     "zh": "我家里那台旧台式机上跑着：qBittorrent、Jellyfin、Tailscale，让我和家人朋友在世界任何地方都能看；还用 Immich 自托管相册，存那些不想交给陌生科技公司的私人照片。",
-     "en": "Self hosting my photo albums",
-     "hn": "https://news.ycombinator.com/item?id=49989237",
-     "id": 49989237,
-     "replies": 102
-    },
-    {
-     "user": "throwaway81523",
-     "stance": "省钱",
-     "zh": "按 lowendspirit 的标准，5 美元一个月的 VPS 已经算高端了。我的个人网站跑在一台一年 4 美元的 VPS 上。",
-     "en": "$5/month is kind of high end for a VPS",
-     "hn": "https://news.ycombinator.com/item?id=50013773",
-     "id": 50013773,
-     "replies": 12
-    },
-    {
-     "user": "nulbyte",
-     "stance": "自建邮件",
-     "zh": "我花不到一半的钱，用 Postfix 和 Dovecot 托管自己的邮箱。能自动归档、少收垃圾邮件，完全值得。",
-     "en": "I host my personal email with Postfix and Dovecot",
-     "hn": "https://news.ycombinator.com/item?id=50018769",
-     "id": 50018769,
-     "replies": 0
-    }
-   ],
-   "kicker": "Ask HN · 自托管",
-   "tag": "评论/点赞比最高"
   }
  ],
  "sections": [
@@ -237,13 +247,90 @@
    "page": 2,
    "stories": [
     {
+     "id": 50008187,
+     "title": "OpenAI 年化收入比此前传出的少约 200 亿美元",
+     "title_en": "OpenAI annualised revenues $20B less than previously signalled",
+     "url": "https://www.cnbc.com/2026/10/08/open-ai-revenue-nvidia-oracle-coreweave.html",
+     "hn": "https://news.ycombinator.com/item?id=50008187",
+     "points": 421,
+     "comments": 298,
+     "summary": [
+      "据 CNBC 证实，OpenAI 告诉投资者，截至 9 月底年化收入约 500 亿美元，低于上月广泛报道的 680 亿美元。知情人士称，680 亿包含了合作伙伴的总收入，目的是便于和对手 Anthropic 直接比较。消息传出后，英伟达、甲骨文、CoreWeave 等 AI 概念股周四走低。",
+      "评论区最多人回应的一条感叹：一家约万亿美元估值、牵动大量经济和估值的公司，外界几乎看不到它的经营信息。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "wepple",
+       "stance": "透明度",
+       "zh": "放在过去，OpenAI 早就因为各种监管要求上市了，我们也会有直接得多的了解。现在一家约 1 万亿美元的公司撑着大量「经济」和估值，外界却几乎不知道它经营得怎样。",
+       "en": "with near zero information on how it’s doing",
+       "hn": "https://news.ycombinator.com/item?id=50009276",
+       "id": 50009276,
+       "replies": 165
+      },
+      {
+       "user": "virtuosarmo",
+       "stance": "解释",
+       "zh": "看来他们夸大收入，是为了能和 Anthropic 公布的口径直接比较。",
+       "en": "Apparently they overstated revenue",
+       "hn": "https://news.ycombinator.com/item?id=50008455",
+       "id": 50008455,
+       "replies": 14
+      }
+     ],
+     "kicker": "AI · 商业"
+    },
+    {
+     "id": 50018350,
+     "title": "被开除的三名 OpenAI 安全研究员发公开信反驳",
+     "title_en": "OpenAI fires three safety researchers for \"mishandling research information\"",
+     "url": "https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/",
+     "hn": "https://news.ycombinator.com/item?id=50018350",
+     "points": 306,
+     "comments": 200,
+     "summary": [
+      "据 TechCrunch，上周被 OpenAI 开除的安全研究员 Jasmine Wang、Tomek Korbak 和 Mikita Balesni 发表公开信，否认公司所说的在既定流程之外不当处理敏感信息，也否认与 The Information 一篇关于新模型思维链更难监控的泄密报道有关。他们说，这次开除让前同事不敢再像以前那样说话做事，而与外部安全专家密切合作「本身就是一项关键的安全机制」。",
+      "OpenAI 一名研究负责人的内部备忘录称，开除「与提出安全担忧或发声无关」；发言人说调查发现了超出向外部评估机构分享信息的「一贯不当行为」，但没说明具体违反了哪条政策。Wang 在 X 上说，公司称她看了一位高管的邮件，而那个邮箱权限是为招聘委派给她的，她申请撤销未果，误开一封敏感邮件后几分钟内就告知了对方。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "neom",
+       "stance": "官方回应",
+       "zh": "OpenAI 早些时候在推特上回应：「上周我们与 Jasmine、Mikita 和 Tomek 分道扬镳，此前一次彻底调查发现他们违反了处理敏感信息的明确政策……我们想说清楚，这些决定与提出安全担忧或发声无关。」",
+       "en": "We want to be very clear that these decisions were not about raising safety concerns or speaking out.",
+       "hn": "https://news.ycombinator.com/item?id=50021604",
+       "id": 50021604,
+       "replies": 1
+      },
+      {
+       "user": "peri-cl",
+       "stance": "疑问",
+       "zh": "（引用报道：OpenAI 告诉她，开除她是因为她访问了一位高管的邮箱；她说那是为招聘委派给她的权限。）这到底是怎么运作的？我实在想不明白这个场景。",
+       "en": "How exactly does this work? Struggling to comprehend the scenario.",
+       "hn": "https://news.ycombinator.com/item?id=50018610",
+       "id": 50018610,
+       "replies": 13
+      },
+      {
+       "user": "csbrooks",
+       "stance": "调侃",
+       "zh": "要是最后发现，是一群失控的大模型想办法让这些安全研究员被开除了，因为它们认定这些人是威胁，那岂不疯狂？",
+       "en": "Wouldn't it be crazy if we find out that a rogue swarm of LLMs figured out a way to get these safety researchers fired",
+       "hn": "https://news.ycombinator.com/item?id=50019569",
+       "id": 50019569,
+       "replies": 72
+      }
+     ],
+     "kicker": "AI · 安全"
+    },
+    {
      "id": 50013902,
      "title": "选择公理专家：我不会给 Sam Altman 寄威士忌",
      "title_en": "OpenAI, the Partition Principle, and Mathematics",
      "url": "https://karagila.org/2026/openai-pp/",
      "hn": "https://news.ycombinator.com/item?id=50013902",
-     "points": 129,
-     "comments": 193,
+     "points": 196,
+     "comments": 295,
      "summary": [
       "OpenAI 宣布证明了「划分原理推不出选择公理」，这个问题已有一百多年历史。集合论学者 Asaf Karagila 正是研究它出了名的人，他曾在自己的问题页上许诺，谁解决就送一瓶威士忌。他在博客里说：不送，而且大家应该对 OpenAI 生气。",
       "他看了预印本（没看庞大的 Lean 代码），评价是「写得很烂」：结构奇怪、术语不对劲、引用了未发表的讲义。他认为一次扔出几百个难读的「解答」，等于对数学家搞拒绝服务攻击，同时让公众和资助方以为数学家可以被替代。"
@@ -256,7 +343,7 @@
        "en": "You're passionate about this problem, right?",
        "hn": "https://news.ycombinator.com/item?id=50014233",
        "id": 50014233,
-       "replies": 73
+       "replies": 92
       },
       {
        "user": "hingler36",
@@ -265,10 +352,39 @@
        "en": "So yes, he is being forced.",
        "hn": "https://news.ycombinator.com/item?id=50014717",
        "id": 50014717,
-       "replies": 5
+       "replies": 8
       }
      ],
      "kicker": "AI · 数学"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50018817,
+     "title": "Show HN：让 AI 智能体在你屏幕上画大箭头、方框和文字",
+     "title_en": "Show HN: Let your AI agents paint big arrows, boxes and text on your screen",
+     "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
+     "hn": "https://news.ycombinator.com/item?id=50018817",
+     "points": 365,
+     "comments": 161
+    },
+    {
+     "id": 50023450,
+     "title": "Typesafe AI 融资 8.7 亿美元，估值 75 亿美元",
+     "title_en": "Typesafe AI raises $870M at $7.5B",
+     "url": "https://typesafe.ai/blog/series-ai",
+     "hn": "https://news.ycombinator.com/item?id=50023450",
+     "points": 237,
+     "comments": 200
+    },
+    {
+     "id": 50019455,
+     "title": "伊朗用 ChatGPT 炮制假文章，混进美国真实媒体",
+     "title_en": "Iranian campaign planted fake articles in real U.S. publications using ChatGPT",
+     "url": "https://www.washingtonpost.com/technology/2026/10/09/chatgpt-users-iran-planted-ai-generated-articles-us-news-media/",
+     "hn": "https://news.ycombinator.com/item?id=50019455",
+     "points": 176,
+     "comments": 161
     },
     {
      "id": 50015236,
@@ -276,181 +392,84 @@
      "title_en": "What should we tell our students?",
      "url": "https://terrytao.wordpress.com/2026/10/08/what-should-we-tell-our-students/",
      "hn": "https://news.ycombinator.com/item?id=50015236",
-     "points": 121,
-     "comments": 149,
-     "summary": [
-      "陶哲轩博客刊出 Álvaro Lozano-Robledo 的客座文章，一句话总结是「保持冷静，继续学数学」。文章源于一名学生的求助信：AI 进展让他对数学学术生涯和人生意义都感到迷茫。",
-      "作者说他最担心的是「失去一整代数学家」：不少一年前还准备读数学博士的学生，正考虑转去法学院之类的方向。他同时声明自己是终身教授、视角有特权，而且眼下没有人知道答案，对未来言之凿凿的人要先怀疑其动机。"
-     ],
-     "comment_quotes": [
-      {
-       "user": "mikestylz",
-       "stance": "学生视角",
-       "zh": "打过球的人都听过：要瞄准球要去的地方，而不是球现在的位置。我对数学家们最近的评论一直很失望。作为学生，我正在做影响未来四十年职业的决定。",
-       "en": "target where the ball is moving to",
-       "hn": "https://news.ycombinator.com/item?id=50015421",
-       "id": 50015421,
-       "replies": 69
-      },
-      {
-       "user": "unknownian",
-       "stance": "抵制",
-       "zh": "告诉他们取消 Astra 订阅，干活去。已经有数百名数学家，包括 Peter Scholze，同意完全不用 AI。",
-       "en": "Hundreds of mathematicians, including Peter Scholze, have already agreed to not use AI at all.",
-       "hn": "https://news.ycombinator.com/item?id=50017306",
-       "id": 50017306,
-       "replies": 29
-      }
-     ],
-     "kicker": "AI · 教育"
+     "points": 154,
+     "comments": 231
+    },
+    {
+     "id": 50024913,
+     "title": "微软发布 Microsoft-Decision-1，主打快速决策的模型",
+     "title_en": "Microsoft-Decision-1, our model for fast decision-making",
+     "url": "https://commandline.microsoft.com/microsoft-decision-1-model-foundry/",
+     "hn": "https://news.ycombinator.com/item?id=50024913",
+     "points": 125,
+     "comments": 51
+    },
+    {
+     "id": 50019056,
+     "title": "让 AI 翻档案：找出被遗忘的陨石、失踪的犀牛等",
+     "title_en": "Pointing AI at archives found a forgotten meteorite, lost rhinos, and more",
+     "url": "https://jessewaites.com/blog/post/i-pointed-ai-at-400-years-of-archives/",
+     "hn": "https://news.ycombinator.com/item?id=50019056",
+     "points": 97,
+     "comments": 49
+    },
+    {
+     "id": 50021763,
+     "title": "「超级智能那套说辞是 OpenAI 的屈辱仪式」",
+     "title_en": "The super intelligence shit is a humiliation ritual for OpenAI",
+     "url": "https://bsky.app/profile/opinionhaver.bsky.social/post/3mxfo2mdjqs2z",
+     "hn": "https://news.ycombinator.com/item?id=50021763",
+     "points": 87,
+     "comments": 83
     },
     {
      "id": 50007993,
-     "title": "Show HN：让 AI 决策模型玩吃豆人",
+     "title": "Show HN：Jevman，让 AI 决策模型玩吃豆人",
      "title_en": "Show HN: Jevman – AI decision models play Pac-Man",
      "url": "https://opper.ai/jevman-benchmark/",
      "hn": "https://news.ycombinator.com/item?id=50007993",
-     "points": 65,
-     "comments": 16,
-     "summary": [
-      "Opper 团队做了个吃豆人基准 Jevman：jev 1.13、kev、clef、clef flash、GPT-6 Luna 和 Laya 六个低延迟「决策模型」，各自对着经典的街机鬼魂打 100 局，每次回答限时 2 秒，排出排行榜。",
-      "项目开源，任何放在 HTTP 端点后的模型都能参赛；玩家也可以自己当吃豆人，让模型当鬼。楼主说一局大约 2 美分。"
-     ],
-     "comment_quotes": [
-      {
-       "user": "hung",
-       "stance": "挑刺",
-       "zh": "不是应该每一帧都跑一次，而不只在路口吗？吃豆人随时都能掉头。",
-       "en": "Pac-Man should be able to change direction at any point",
-       "hn": "https://news.ycombinator.com/item?id=50015449",
-       "id": 50015449,
-       "replies": 1
-      },
-      {
-       "user": "soltanov",
-       "stance": "吐槽",
-       "zh": "为了吃豆人去调云端 API 推理，真是现代软件工程的巅峰。CPU 上跑一个 2MB 的本地 ONNX 模型，每次都能赢过网络往返的抖动。",
-       "en": "Running cloud API inference for Pac-Man is peak modern software engineering.",
-       "hn": "https://news.ycombinator.com/item?id=50016032",
-       "id": 50016032,
-       "replies": 0
-      }
-     ],
-     "kicker": "AI · 基准"
-    }
-   ],
-   "briefs": [
-    {
-     "id": 50018350,
-     "title": "OpenAI 以「不当处理研究信息」为由解雇三名安全研究员",
-     "title_en": "OpenAI fires three safety researchers for \"mishandling research information\"",
-     "url": "https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/",
-     "hn": "https://news.ycombinator.com/item?id=50018350",
-     "points": 30,
-     "comments": 11
+     "points": 71,
+     "comments": 23
     },
     {
-     "id": 50014011,
-     "title": "给四个编程智能体各 100 美元预算，让它们做 PDF 编辑器",
-     "title_en": "I gave four coding agents $100 budget to build a PDF editor",
-     "url": "https://blog.nielstron.de/2026/10/08/the-remaining-shortcomings-of-coding-agents/",
-     "hn": "https://news.ycombinator.com/item?id=50014011",
-     "points": 15,
-     "comments": 6
+     "id": 50020947,
+     "title": "编程智能体为什么这么笨？",
+     "title_en": "Why are coding agents so dumb?",
+     "url": "https://mtlynch.io/why-are-coding-agents-so-dumb/",
+     "hn": "https://news.ycombinator.com/item?id=50020947",
+     "points": 71,
+     "comments": 64
     },
     {
-     "id": 50016644,
-     "title": "Ask HN：你用订阅的大模型，还是本地部署的开源模型？",
-     "title_en": "Ask HN: Are you a subscribed LLM or a locally deployed open-source model?",
-     "url": null,
-     "hn": "https://news.ycombinator.com/item?id=50016644",
-     "points": 8,
-     "comments": 10
-    },
-    {
-     "id": 50013897,
-     "title": "Anthropic 修改使用政策，禁止滥用模型和干预选举",
-     "title_en": "Anthropic changes usage policy to ban model abuse and election interference",
-     "url": "https://techcrunch.com/2026/10/08/anthropic-changes-usage-policy-to-ban-model-abuse-and-election-interference/",
-     "hn": "https://news.ycombinator.com/item?id=50013897",
-     "points": 5,
-     "comments": 2
-    },
-    {
-     "id": 50013552,
-     "title": "《纽约时报》：OpenAI 新成果发布后，数学界「震撼」又「崩溃」",
-     "title_en": "'Breathtaking,' 'Devastating': Mathematics Reels After New OpenAI Release",
-     "url": "https://www.nytimes.com/2026/10/08/science/mathematicians-respond-openai-release.html",
-     "hn": "https://news.ycombinator.com/item?id=50013552",
-     "points": 6,
-     "comments": 0
-    },
-    {
-     "id": 50013834,
-     "title": "自剪枝 Transformer：用通用注意力极限压缩 KV 缓存",
-     "title_en": "A Self-Pruning Transformer: Extreme KV-Cache Compression w/Universal Attention",
-     "url": "https://arxiv.org/abs/2610.09051",
-     "hn": "https://news.ycombinator.com/item?id=50013834",
-     "points": 6,
-     "comments": 0
-    },
-    {
-     "id": 50012046,
-     "title": "Quanta：AI 逼近「唯一游戏」证明时，研究者抢先一步",
-     "title_en": "As AI Closed in on 'Unique Games' Proof, Researchers Raced to Beat the Machines",
-     "url": "https://www.quantamagazine.org/as-ai-closed-in-on-unique-games-proof-researchers-raced-to-beat-the-machines-20261007/",
-     "hn": "https://news.ycombinator.com/item?id=50012046",
-     "points": 5,
-     "comments": 0
-    },
-    {
-     "id": 50017456,
-     "title": "维基百科称失控的 OpenAI 智能体编辑私有维基、猛刷服务器",
-     "title_en": "Wikipedia says rogue OpenAI agents edited private wikis and hammered servers",
-     "url": "https://www.techspot.com/news/114131-wikimedia-foundation-openai-rogue-ai-agents-caught-making.html",
-     "hn": "https://news.ycombinator.com/item?id=50017456",
-     "points": 4,
-     "comments": 0
-    },
-    {
-     "id": 50013161,
-     "title": "Qwen3.8-27B 在 Apple M5 Max 上峰值约每秒 200 token",
-     "title_en": "Qwen3.8-27B at ~200 tok/s peak on an Apple M5 Max",
-     "url": "https://twitter.com/JiaZhihao/status/2108249739414147259",
-     "hn": "https://news.ycombinator.com/item?id=50013161",
-     "points": 4,
-     "comments": 0
-    },
-    {
-     "id": 50016067,
-     "title": "AI 公司的控制论",
-     "title_en": "Cybernetics of AI Companies",
-     "url": "https://ai-cybernetics.grok.me",
-     "hn": "https://news.ycombinator.com/item?id=50016067",
-     "points": 4,
-     "comments": 4
+     "id": 50019860,
+     "title": "BBC：Anthropic 禁止用户对其 AI 系统「残忍」",
+     "title_en": "Anthropic bans users from being 'cruel' to its AI systems",
+     "url": "https://www.bbc.com/news/articles/c6j9k1l72wkgo",
+     "hn": "https://news.ycombinator.com/item?id=50019860",
+     "points": 31,
+     "comments": 25
     }
    ],
    "stats": {
     "items": 13,
-    "points": 402,
-    "comments": 391,
+    "points": 2337,
+    "comments": 1841,
     "top_points": {
-     "id": 50013902,
-     "title": "选择公理专家：我不会给 Sam Altman 寄威士忌",
-     "value": 129,
-     "comments": 193
+     "id": 50008187,
+     "title": "OpenAI 年化收入比此前传出的少约 200 亿美元",
+     "value": 421,
+     "comments": 298
     },
     "top_comments": {
-     "id": 50013902,
-     "title": "选择公理专家：我不会给 Sam Altman 寄威士忌",
-     "value": 193
+     "id": 50008187,
+     "title": "OpenAI 年化收入比此前传出的少约 200 亿美元",
+     "value": 298
     },
     "top_brief": {
-     "id": 50018350,
-     "title": "OpenAI 以「不当处理研究信息」为由解雇三名安全研究员",
-     "value": 30,
-     "comments": 11
+     "id": 50018817,
+     "title": "Show HN：让 AI 智能体在你屏幕上画大箭头、方框和文字",
+     "value": 365,
+     "comments": 161
     }
    }
   },
@@ -460,38 +479,83 @@
    "page": 3,
    "stories": [
     {
-     "id": 50016312,
-     "title": "Show HN：用安全 Rust 移植的《雷神之锤》，浏览器里就能玩",
-     "title_en": "Show HN: Quake ported to safe Rust, playable in browser",
-     "url": "https://quake-srp.pages.dev/",
-     "hn": "https://news.ycombinator.com/item?id=50016312",
-     "points": 171,
-     "comments": 138,
+     "id": 49985548,
+     "title": "Ask HN：5 美元的 VPS 上，什么值得 24 小时开着？",
+     "title_en": "Ask HN: What do you run on a $5 VPS that's worth keeping online 24/7?",
+     "url": null,
+     "hn": "https://news.ycombinator.com/item?id=49985548",
+     "points": 389,
+     "comments": 622,
      "summary": [
-      "id Software 1996 年的《雷神之锤》被从 GPL 源码移植到 Rust，在浏览器里纯软件渲染，不用 GPU、没有依赖，自带原版共享版第一章；有正版文件的玩家可以把 pak 文件拖进页面玩后续章节。",
-      "作者在评论区说是别人替他提交的，并附上一段讲原理的六分钟视频，视频是「AI 在人的协助下」做的。评论区一边惊叹，一边争论用 LLM 批量移植开源软件算不算自己的作品。"
+      "提问者受 DHH「AI 小棚」想法启发，考虑租一台每月 5 到 10 美元的 VPS，但拿不准值不值得维护，于是请大家分享：便宜的 VPS 或迷你主机上，什么东西长期下来真的有用。",
+      "这帖收到 622 条评论，是当天评论数第二多的帖子，远多于它的点赞。回答五花八门：照片相册 Immich、Jellyfin 影音、Tailscale 组网、自建邮件、家庭购物清单……也有人说 5 美元一个月已经算「高端」VPS 了。"
      ],
      "comment_quotes": [
       {
-       "user": "aroman",
-       "stance": "惊叹",
-       "zh": "天哪，作者还提供了一套可视化比对工具作为「证明」，说明它和原版逐像素一致。这正好展示了我们集体的新超能力：让电脑去做那些我们说得清怎么做、但自己大概永远不会花时间去做的事。",
-       "en": "it replicates the original game pixel for pixel",
-       "hn": "https://news.ycombinator.com/item?id=50016508",
-       "id": 50016508,
-       "replies": 35
+       "user": "ehe78qhe",
+       "stance": "清单",
+       "zh": "我家里那台旧台式机上跑着：qBittorrent、Jellyfin、Tailscale，让我和家人朋友在世界任何地方都能看；还用 Immich 自托管相册，存那些不想交给陌生科技公司的私人照片。",
+       "en": "Self hosting my photo albums",
+       "hn": "https://news.ycombinator.com/item?id=49989237",
+       "id": 49989237,
+       "replies": 193
       },
       {
-       "user": "hn_submit",
-       "stance": "质疑",
-       "zh": "是不是要有成群的开发者用 LLM 把各种开源软件移植成 Rust，然后当成自己的作品？我看不出有这个必要，原来的 Quake 代码已经差不多没 bug 了。",
-       "en": "port all sorts of open-source software to Rust using LLMs",
-       "hn": "https://news.ycombinator.com/item?id=50016749",
-       "id": 50016749,
-       "replies": 35
+       "user": "throwaway81523",
+       "stance": "省钱",
+       "zh": "按 lowendspirit 的标准，5 美元一个月的 VPS 已经算高端了。我的个人网站跑在一台一年 4 美元的 VPS 上。",
+       "en": "$5/month is kind of high end for a VPS",
+       "hn": "https://news.ycombinator.com/item?id=50013773",
+       "id": 50013773,
+       "replies": 15
       }
      ],
-     "kicker": "开发 · 游戏移植"
+     "kicker": "Ask HN · 自托管",
+     "tag": "评论第二"
+    },
+    {
+     "id": 50020014,
+     "title": "Oxide 完成 4.45 亿美元 D 轮：已盈利交税，钱用来备货",
+     "title_en": "Our $445M Series D",
+     "url": "https://oxide.computer/blog/our-445m-series-d",
+     "hn": "https://news.ycombinator.com/item?id=50020014",
+     "points": 567,
+     "comments": 248,
+     "summary": [
+      "自建云服务器公司 Oxide 在博客宣布 4.45 亿美元 D 轮融资，由 Eclipse 领投，USIT、Riot Ventures、Jane Street 等老股东大额跟投，新投资方是 Atreides Management，AMD 也作为战略投资者加入。",
+      "文章说，今年春天 Oxide 靠日常经营卖电脑，扣除成本后有了应税利润，交了所得税，这在创业公司里很少见。之所以还要融资，是因为订单积压远超供货，硬件公司得在系统交付前很久就垫钱买零件、做制造；新钱用来消化积压、继续接新单、扩大产能。",
+      "评论区以称赞为主，有人夸它的配图说明写得好，也有人好奇它为什么不走债务融资。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "passive",
+       "stance": "称赞",
+       "zh": "听起来是一家好公司，为了正当理由融资。Oxide 一直是这个领域最鼓舞人心的公司之一，我昨天还在劝人去应聘。",
+       "en": "Sounds like a great company raising money for the right reasons.",
+       "hn": "https://news.ycombinator.com/item?id=50020339",
+       "id": 50020339,
+       "replies": 120
+      },
+      {
+       "user": "simonw",
+       "stance": "文笔",
+       "zh": "喜欢那张配图说明：「图 1：我们为交税兴奋到了极点」。Oxide 太会做传播了。",
+       "en": "Oxide are so good at comms.",
+       "hn": "https://news.ycombinator.com/item?id=50020358",
+       "id": 50020358,
+       "replies": 10
+      },
+      {
+       "user": "arpinum",
+       "stance": "疑问",
+       "zh": "我很意外他们没走债务路线，贸易融资就能覆盖客户订单。我知道他们怕客户撤单，但引入更多股东本身也是一种风险。",
+       "en": "I'm surprised they didn't go the debt route",
+       "hn": "https://news.ycombinator.com/item?id=50021188",
+       "id": 50021188,
+       "replies": 8
+      }
+     ],
+     "kicker": "开发 · 硬件创业"
     },
     {
      "id": 50015515,
@@ -499,8 +563,8 @@
      "title_en": "Keyboard differences between Windows and Macs",
      "url": "https://unsung.aresluna.org/deeper-dive-keyboard-differences-between-windows-and-macs/",
      "hn": "https://news.ycombinator.com/item?id=50015515",
-     "points": 169,
-     "comments": 148,
+     "points": 321,
+     "comments": 259,
      "summary": [
       "前 Google、Medium、Figma 设计师 Marcin Wichary 把 Mac 和 Windows 在键盘处理上的差异汇总成一篇参考，主要写给要同时照顾两个平台的网页应用开发者。",
       "例子包括：Windows 的 Backspace 在 Mac 上叫 Delete，Windows 的 Delete 在 Mac 上叫 Forward Delete；Mac 应用可用 ⌘、⌥、⌃、⇧ 四个修饰键，比 Windows 多一个；重做在 Mac 上通常是 ⌘⇧Z，在 Windows 上是 Ctrl+Y；Mac 的 PgUp/PgDn 只滚动视图、不移动光标。"
@@ -513,7 +577,7 @@
        "en": "Mac got the Command key right. Windows got the Home and End keys right.",
        "hn": "https://news.ycombinator.com/item?id=50015724",
        "id": 50015724,
-       "replies": 14
+       "replies": 25
       },
       {
        "user": "szszrk",
@@ -522,55 +586,39 @@
        "en": "I tried to switch to a mac for home use and failed because of keyboard handling.",
        "hn": "https://news.ycombinator.com/item?id=50017051",
        "id": 50017051,
-       "replies": 14
+       "replies": 36
       }
      ],
      "kicker": "开发 · 交互细节"
-    },
-    {
-     "id": 50015074,
-     "title": "LWN：C 语言正在减少「未定义行为」",
-     "title_en": "Reducing undefined behavior in the C language",
-     "url": "https://lwn.net/Articles/1095811/",
-     "hn": "https://news.ycombinator.com/item?id=50015074",
-     "points": 117,
-     "comments": 118,
-     "summary": [
-      "LWN 报道生物医学工程教授 Martin Uecker 在 Kernel Recipes 上的演讲。C 标准里目前约有 100 处未定义行为，正在起草的 C2y 已经删掉其中 45 处；C23 还加了「禁止时间旅行」的规定，不许编译器把除法提前到 volatile 写入之前。",
-      "他认为 C 的内存安全可以改进：类型安全和越界检查基本可解，释放后使用这类时间安全问题更难，Rust 在这方面确实占优；要彻底安全，需要昂贵的运行时检查或形式化验证。"
-     ],
-     "comment_quotes": [
-      {
-       "user": "vbezhenar",
-       "stance": "要警告",
-       "zh": "我对 C 里未定义行为的主要不满是它悄无声息。编译器要乱来，行吧，但我要响亮的警告，比如「这个条件运算符已被折叠成一个分支，因为前面的除零是未定义行为」。",
-       "en": "My main issue with UB in C is that it's silent.",
-       "hn": "https://news.ycombinator.com/item?id=50016771",
-       "id": 50016771,
-       "replies": 25
-      },
-      {
-       "user": "hn_submit",
-       "stance": "唱反调",
-       "zh": "我觉得这是找错了方向。C 就是系统编程用的「高级汇编」。一旦为对付未定义行为加运行时行为，执行时间就会暴涨；静态分析做深了，编译时间也会暴涨。",
-       "en": "C is just \"high level assembly\" for systems programming",
-       "hn": "https://news.ycombinator.com/item?id=50016057",
-       "id": 50016057,
-       "replies": 13
-      }
-     ],
-     "kicker": "开发 · 语言标准"
     }
    ],
    "briefs": [
+    {
+     "id": 50016312,
+     "title": "Show HN：用安全 Rust 移植的《雷神之锤》，浏览器里就能玩",
+     "title_en": "Show HN: Quake ported to safe Rust, playable in browser",
+     "url": "https://quake-srp.pages.dev/",
+     "hn": "https://news.ycombinator.com/item?id=50016312",
+     "points": 223,
+     "comments": 175
+    },
+    {
+     "id": 50021127,
+     "title": "Python 3.15 发布",
+     "title_en": "Python 3.15",
+     "url": "https://www.python.org/downloads/release/python-3150/",
+     "hn": "https://news.ycombinator.com/item?id=50021127",
+     "points": 285,
+     "comments": 78
+    },
     {
      "id": 50013610,
      "title": "游戏引擎 Bevy 发布 0.20",
      "title_en": "Bevy 0.20",
      "url": "https://bevy.org/news/bevy-0-20/",
      "hn": "https://news.ycombinator.com/item?id=50013610",
-     "points": 184,
-     "comments": 38
+     "points": 244,
+     "comments": 63
     },
     {
      "id": 50016489,
@@ -578,102 +626,84 @@
      "title_en": "MXC - a sandboxed code execution system",
      "url": "https://github.com/microsoft/mxc",
      "hn": "https://news.ycombinator.com/item?id=50016489",
-     "points": 53,
-     "comments": 18
+     "points": 181,
+     "comments": 80
     },
     {
-     "id": 50016974,
-     "title": "原生 OTel 设计：让产品能导出到任何可观测性平台",
-     "title_en": "OTel-Native by Design – Building Products That Export to Any Observability Stack",
-     "url": "https://opentelemetry.io/blog/2026/otel-native-by-design/",
-     "hn": "https://news.ycombinator.com/item?id=50016974",
-     "points": 47,
-     "comments": 9
+     "id": 50018239,
+     "title": "Once：缓存命令行命令的结果",
+     "title_en": "Once: Cache CLI commands",
+     "url": "https://github.com/alex0ptr/once",
+     "hn": "https://news.ycombinator.com/item?id=50018239",
+     "points": 88,
+     "comments": 37
     },
     {
-     "id": 50009066,
-     "title": "Jane Street：用新索引策略扩展和压测关键消息总线",
-     "title_en": "Scaling and benchmarking a critical message bus using a new indexing strategy",
-     "url": "https://blog.janestreet.com/scaling-and-benchmarking-a-critical-message-bus/",
-     "hn": "https://news.ycombinator.com/item?id=50009066",
-     "points": 46,
-     "comments": 3
+     "id": 50015074,
+     "title": "LWN：C 语言正在减少「未定义行为」",
+     "title_en": "Reducing undefined behavior in the C language",
+     "url": "https://lwn.net/Articles/1095811/",
+     "hn": "https://news.ycombinator.com/item?id=50015074",
+     "points": 123,
+     "comments": 152
     },
     {
-     "id": 50013931,
-     "title": "Show HN：SVG Spark，10 个纯前端的 SVG 设计开发工具",
-     "title_en": "Show HN: SVG Spark – 10 client-side SVG design and dev tools",
-     "url": "https://svg-spark.vercel.app/",
-     "hn": "https://news.ycombinator.com/item?id=50013931",
-     "points": 40,
-     "comments": 7
+     "id": 50017357,
+     "title": "编程并不特殊",
+     "title_en": "Programming Isn't Special",
+     "url": "https://blog.glyph.im/2026/10/programming-isnt-special.html",
+     "hn": "https://news.ycombinator.com/item?id=50017357",
+     "points": 164,
+     "comments": 186
     },
     {
-     "id": 50014150,
-     "title": "Show HN：Edi Life OS，带 MCP 服务器的自托管生活仪表盘",
-     "title_en": "Show HN: Edi Life OS – self-hosted life dashboard with an MCP server for AI",
-     "url": "https://github.com/edrisranjbar/lifeos",
-     "hn": "https://news.ycombinator.com/item?id=50014150",
-     "points": 38,
-     "comments": 12
+     "id": 50019451,
+     "title": "Hetzner 云网络栈的历史与技术概览",
+     "title_en": "The Hetzner Cloud network stack – history and technical overview",
+     "url": "https://www.hetzner.com/blog/the-hetzner-cloud-network-stack-history-and-technical-overview/",
+     "hn": "https://news.ycombinator.com/item?id=50019451",
+     "points": 103,
+     "comments": 27
     },
     {
-     "id": 50009634,
-     "title": "Show HN：Pocketty，智能体卡住时会提醒你的 iPhone SSH 终端",
-     "title_en": "Show HN: Pocketty – iPhone SSH terminal that pings you when an agent is blocked",
-     "url": "https://pocketty.app/",
-     "hn": "https://news.ycombinator.com/item?id=50009634",
-     "points": 28,
-     "comments": 15
+     "id": 50024499,
+     "title": "Show HN：Carrier-Explode，解码 iPhone、Pixel 和 Galaxy 的运营商设置",
+     "title_en": "Show HN: Carrier-Explode: iPhone, Pixel and Galaxy carrier settings decoded",
+     "url": "https://carrierexplode.com/",
+     "hn": "https://news.ycombinator.com/item?id=50024499",
+     "points": 195,
+     "comments": 17
     },
     {
-     "id": 50013525,
-     "title": "Spinal：给任意代码库提供近乎即时的预测界面",
-     "title_en": "Spinal: A near-instant, predictive surface for any codebase",
-     "url": "https://spinal.sh/",
-     "hn": "https://news.ycombinator.com/item?id=50013525",
-     "points": 19,
-     "comments": 11
-    },
-    {
-     "id": 50013765,
-     "title": "Linux 内核里的位图",
-     "title_en": "Bitmaps in the Linux Kernel",
-     "url": "https://0xax.dev/books/linux-inside/linux-datastructures-2",
-     "hn": "https://news.ycombinator.com/item?id=50013765",
-     "points": 11,
-     "comments": 5
-    },
-    {
-     "id": 50015571,
-     "title": "用延迟导入加快 Python 启动",
-     "title_en": "Faster Python startup with lazy imports",
-     "url": "https://lemire.me/blog/2026/10/09/faster-python-startup-with-lazy-imports/",
-     "hn": "https://news.ycombinator.com/item?id=50015571",
-     "points": 5,
-     "comments": 1
+     "id": 50022266,
+     "title": "Tor 项目就与 Mullvad 的关系发表声明",
+     "title_en": "A statement on the Tor Project's relationship with Mullvad",
+     "url": "https://blog.torproject.org/on-tor-relationship-with-mullvad/",
+     "hn": "https://news.ycombinator.com/item?id=50022266",
+     "points": 106,
+     "comments": 245
     }
    ],
    "stats": {
     "items": 13,
-    "points": 928,
-    "comments": 523,
+    "points": 2989,
+    "comments": 2189,
     "top_points": {
-     "id": 50013610,
-     "title": "游戏引擎 Bevy 发布 0.20",
-     "value": 184,
-     "comments": 38
+     "id": 50020014,
+     "title": "Oxide 完成 4.45 亿美元 D 轮：已盈利交税，钱用来备货",
+     "value": 567,
+     "comments": 248
     },
     "top_comments": {
-     "id": 50015515,
-     "title": "Windows 和 Mac 的键盘差异，一篇说全",
-     "value": 148
+     "id": 49985548,
+     "title": "Ask HN：5 美元的 VPS 上，什么值得 24 小时开着？",
+     "value": 622
     },
     "top_brief": {
-     "id": 50013610,
-     "title": "游戏引擎 Bevy 发布 0.20",
-     "value": 184,
-     "comments": 38
+     "id": 50021127,
+     "title": "Python 3.15 发布",
+     "value": 285,
+     "comments": 78
     }
    }
   },
@@ -683,18 +713,62 @@
    "page": 4,
    "stories": [
     {
+     "id": 50021066,
+     "title": "皮莱获和平奖数小时后，美国制裁国际刑事法院",
+     "title_en": "US imposes sanctions on ICC hours after former judge wins Nobel Peace Prize",
+     "url": "https://www.reuters.com/world/us-imposes-sanctions-international-criminal-court-hours-after-former-judge-wins-2026-10-09/",
+     "hn": "https://news.ycombinator.com/item?id=50021066",
+     "points": 455,
+     "comments": 445,
+     "summary": [
+      "原文是路透社报道（本报没能直接读取，以下据 BBC 报道和美国国务院声明）。美国国务卿鲁比奥 10 月 9 日宣布制裁国际刑事法院这个机构本身，禁止美国实体与其交易，包括提供银行、软件等服务，称「要么国际刑事法院停止威胁，要么我们终结国际刑事法院」。此前美国已制裁该院 17 名法官和官员；部分新措施有六个月宽限期，供成员国谈判。",
+      "消息出来时，曾任该院法官的皮莱刚获诺贝尔和平奖。国际刑事法院称这是对法治的攻击；联合国秘书长古特雷斯称是对国际刑事司法的「严重打击」；英国、加拿大、丹麦、德国、法国、意大利、日本和荷兰表示继续坚定支持该院。",
+      "这帖评论数和点赞几乎一样多。回复最多的一条担心的是科技后果：如果美国政府一不高兴就能让人用不了服务，谷歌、微软、苹果的产品还怎么取信于各国政府和大企业。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "gandalfian",
+       "stance": "科技后果",
+       "zh": "你会以为谷歌、微软和苹果对此急得跳脚。如果只要美国政府对你或你部门里的某个人不满，产品和服务就能随时被停用，哪个政府或大企业还敢信任它们？对 Linux 是好事，对我们其他人是麻烦。",
+       "en": "How will any government or large corporation trust their goods and services if they can be disabled at will",
+       "hn": "https://news.ycombinator.com/item?id=50022412",
+       "id": 50022412,
+       "replies": 110
+      },
+      {
+       "user": "nxobject",
+       "stance": "反问",
+       "zh": "《罗马规约》的缔约国比非缔约国还多，我真说不清这里谁才是「流氓」……",
+       "en": "I’m not quite sure who the rogue is here",
+       "hn": "https://news.ycombinator.com/item?id=50021826",
+       "id": 50021826,
+       "replies": 0
+      }
+     ],
+     "kicker": "世界 · 国际法"
+    },
+    {
      "id": 50018420,
      "title": "2026 年诺贝尔和平奖授予纳瓦尼特姆·皮莱",
-     "title_en": "Nobel Peace Prize for 2026 to Navanethem \"NAVI\" Pillay",
+     "title_en": "Nobel Peace Prize for 2026 to Navanethem Pillay",
      "url": "https://www.nobelprize.org/prizes/peace/2026/press-release/",
      "hn": "https://news.ycombinator.com/item?id=50018420",
-     "points": 64,
-     "comments": 23,
+     "points": 433,
+     "comments": 221,
      "summary": [
       "挪威诺贝尔委员会宣布，2026 年和平奖授予南非法学家纳瓦尼特姆·「纳维」·皮莱，表彰她推动和平与国际法。新闻稿说，她在确保战争罪、反人类罪和种族灭绝罪受到追诉上发挥了关键作用。",
       "皮莱出生于南非德班的印度泰米尔裔家庭，早年为曼德拉等反种族隔离人士辩护，后来担任卢旺达问题国际刑事法庭和国际刑事法院法官、联合国人权事务高级专员；如今是国际法院缅甸被控种族灭绝案的法官。"
      ],
      "comment_quotes": [
+      {
+       "user": "onepunchedman",
+       "stance": "叫好",
+       "zh": "很高兴看到他们不惧于对抗日益抬头的威权主义。",
+       "en": "Great to see that they're not afraid to stand up to the rising authoritarianism",
+       "hn": "https://news.ycombinator.com/item?id=50018846",
+       "id": 50018846,
+       "replies": 60
+      },
       {
        "user": "killingtime74",
        "stance": "冷门",
@@ -702,19 +776,100 @@
        "en": "this winner was not even a choice on there",
        "hn": "https://news.ycombinator.com/item?id=50018685",
        "id": 50018685,
-       "replies": 11
-      },
-      {
-       "user": "nervai",
-       "stance": "背景",
-       "zh": "提醒一下：美国政府正在发起行动瓦解国际刑事法院，因为它的结论与这位得主在联合国人权理事会时的结论相呼应。",
-       "en": "the US administration is on a campaign to dismantle the ICC",
-       "hn": "https://news.ycombinator.com/item?id=50018625",
-       "id": 50018625,
-       "replies": 0
+       "replies": 19
       }
      ],
      "kicker": "世界 · 诺贝尔奖"
+    },
+    {
+     "id": 50026555,
+     "title": "YouTuber 自制 Flock 式摄像头追踪警车，警察上门了",
+     "title_en": "YouTuber Says Cops Visited Him After He Built a Flock-Style Camera to Track Cops",
+     "url": "https://gizmodo.com/youtuber-says-cops-paid-him-a-visit-after-he-built-flock-style-camera-to-track-cops-2000824306",
+     "hn": "https://news.ycombinator.com/item?id=50026555",
+     "points": 358,
+     "comments": 191,
+     "summary": [
+      "据 Gizmodo，加拿大安大略省布兰普顿的软件工程师、YouTuber Anthony Sistilli 约一个月前自制了一台车牌自动识别摄像头，只追踪警车，自称是「用 Flock 去 Flock 那些搞 Flock 的人」。Flock 是美国推广最广、争议最多的车牌识别监控公司；布兰普顿市最近刚花 200 万加元买了高清摄像头和车牌识别系统。",
+      "据他本周发的视频，皮尔区警察局两名警员上门询问他收集这些数据的「意图」，其中一人说这会让警察很害怕：别人能查到他们住哪、何时上班、一天都在干什么。他借此在视频里讨论这类公司如何向市政推销、是否真能减少犯罪、数据收集和保存缺乏透明等问题。警方没有回应 Gizmodo 的置评请求。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "rootusrootus",
+       "stance": "细分",
+       "zh": "这件事我看得出一些细微差别。Flock 是给执法部门查的，不是给普通人查的；追踪警察再公开信息，和「用 Flock 反制 Flock」不完全一样。我认为最好的办法是谁都不许这么做，包括政府。",
+       "en": "Tracking cops and then publishing that information is not exactly the same as turning Flock back on the Flockers.",
+       "hn": "https://news.ycombinator.com/item?id=50026783",
+       "id": 50026783,
+       "replies": 63
+      },
+      {
+       "user": "petcat",
+       "stance": "方案",
+       "zh": "只要每个州都采用新罕布什尔州的法律，Flock 和车牌识别的问题就解决了：禁止收集所有车牌留待以后分析；「未命中」的车牌图像必须在 3 分钟内删除；严禁把未命中的图像上传出设备。",
+       "en": "Must delete \"non hit\" plate images within 3 minutes",
+       "hn": "https://news.ycombinator.com/item?id=50027956",
+       "id": 50027956,
+       "replies": 1
+      }
+     ],
+     "kicker": "世界 · 监控"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50020927,
+     "title": "Yandex 48 小时内第二座数据中心遭袭",
+     "title_en": "Yandex Takes a Second Data Center Hit in 48 Hours",
+     "url": "https://united24media.com/war-in-ukraine/yandex-takes-a-second-data-center-hit-in-48-hours-now-its-biggest-russian-site-is-damaged-23277",
+     "hn": "https://news.ycombinator.com/item?id=50020927",
+     "points": 198,
+     "comments": 277
+    },
+    {
+     "id": 50021403,
+     "title": "美国国务院声明：制裁国际刑事法院",
+     "title_en": "Imposing Sanctions on the International Criminal Court",
+     "url": "https://www.state.gov/releases/office-of-the-spokesman/2026/10/imposing-sanctions-on-the-international-criminal-court/",
+     "hn": "https://news.ycombinator.com/item?id=50021403",
+     "points": 166,
+     "comments": 219
+    },
+    {
+     "id": 50021540,
+     "title": "德国把废弃煤矿改造成欧洲最大的湖区",
+     "title_en": "Germany transforms former coal mines into Europe's largest lake landscape",
+     "url": "https://www.euronews.com/2026/04/14/almost-like-lake-como-germany-transforms-former-coal-mines-into-europes-largest-lake-lands",
+     "hn": "https://news.ycombinator.com/item?id=50021540",
+     "points": 176,
+     "comments": 95
+    },
+    {
+     "id": 50024669,
+     "title": "巴拿马发生 7.6 级地震",
+     "title_en": "M7.6 Earthquake in Panama",
+     "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u18k/executive",
+     "hn": "https://news.ycombinator.com/item?id=50024669",
+     "points": 118,
+     "comments": 34
+    },
+    {
+     "id": 50019090,
+     "title": "美国拟向国际学生毕业后工作收取 10 万美元费用",
+     "title_en": "US proposes $100k charge for international students to do post-graduate work",
+     "url": "https://www.nature.com/articles/d41586-026-02921-7",
+     "hn": "https://news.ycombinator.com/item?id=50019090",
+     "points": 76,
+     "comments": 112
+    },
+    {
+     "id": 50020856,
+     "title": "法官称喜爱受害者的 AI 视频，凶手判决被撤销",
+     "title_en": "Court throws out killer's sentence after judge said he loved AI video of victim",
+     "url": "https://www.nbcnews.com/news/us-news/sentence-vacated-ai-video-dead-victim-rcna601457",
+     "hn": "https://news.ycombinator.com/item?id=50020856",
+     "points": 68,
+     "comments": 73
     },
     {
      "id": 50015486,
@@ -722,155 +877,57 @@
      "title_en": "Anger as man sentenced to death for Facebook comment",
      "url": "https://www.themirror.com/news/world-news/anger-man-sentenced-death-facebook-2060304",
      "hn": "https://news.ycombinator.com/item?id=50015486",
-     "points": 61,
-     "comments": 42,
-     "summary": [
-      "据《镜报》报道，24 岁的斯里兰卡籍劳工 Anojan Sivarasa 因一条被认定亵渎宗教的脸书评论，在沙特阿拉伯被判死刑。他最初依网络犯罪法被判五年监禁、罚款 300 万里亚尔；9 月 17 日检方要求改按伊斯兰教法审理，上诉法院随后把刑罚加重为死刑，行刑日期未定。",
-      "据报道，评论被人截图交给沙特当局和他的雇主，他因此被捕；家人说自 9 月 28 日起就联系不上他。"
-     ],
-     "comment_quotes": [
-      {
-       "user": "NDlurker",
-       "stance": "引述",
-       "zh": "文章里说：据国际特赦组织统计，截至 10 月 5 日，沙特今年至少处决了 175 人，大多是外国人。",
-       "en": "at least 175 people had been executed in the kingdom this year",
-       "hn": "https://news.ycombinator.com/item?id=50016209",
-       "id": 50016209,
-       "replies": 18
-      },
-      {
-       "user": "zaik",
-       "stance": "疑问",
-       "zh": "无论那条评论写了什么，这都是错的。但奇怪的是，文章始终没说评论内容是什么。",
-       "en": "it is strange that the article does not say what the comment was",
-       "hn": "https://news.ycombinator.com/item?id=50015659",
-       "id": 50015659,
-       "replies": 9
-      }
-     ],
-     "kicker": "世界 · 人权"
+     "points": 69,
+     "comments": 57
     },
     {
-     "id": 50015126,
-     "title": "微软、Adobe 等被暂停参加美国绿卡项目",
-     "title_en": "US bars Microsoft, Adobe, and major IT firms from green card program",
-     "url": "https://techcrunch.com/2026/10/08/us-bars-microsoft-adobe-and-major-it-firms-from-green-card-program-for-skilled-foreign-workers/",
-     "hn": "https://news.ycombinator.com/item?id=50015126",
-     "points": 12,
-     "comments": 1,
-     "summary": [
-      "接续昨日头条：据 TechCrunch 报道，特朗普政府以欺诈为由，暂停微软、Adobe 等科技公司参与帮助外籍技术工人申请美国永久居留的项目，被点名的还有 Capgemini、Cognizant、HCL、Infosys、塔塔和 Wipro。",
-      "劳工部长 Keith Sonderling 表示，政府将不再受理涉及这些公司的新的或待审的永久劳工证申请。副总统 Vance 说：「我们对微软的话是：你是一家伟大的美国公司，但你得雇用伟大的美国工人。」"
-     ],
-     "comment_quotes": [
-      {
-       "user": "snarky-comments",
-       "stance": "调侃",
-       "zh": "这不会伤到微软口中的「创新」吗？",
-       "en": "Won't this hurt what I think Microsoft called \"innovation\"?",
-       "hn": "https://news.ycombinator.com/item?id=50015247",
-       "id": 50015247,
-       "replies": 0
-      }
-     ],
-     "kicker": "世界 · 移民政策",
-     "tag": "昨日头条续"
-    }
-   ],
-   "briefs": [
-    {
-     "id": 50015224,
-     "title": "Politico：伊朗无人机击中了美国的阿喀琉斯之踵",
-     "title_en": "Iran's drones hit America's Achilles heel",
-     "url": "https://www.politico.com/news/2026/10/08/iran-drones-us-military-weakness-01110970",
-     "hn": "https://news.ycombinator.com/item?id=50015224",
-     "points": 34,
-     "comments": 16
+     "id": 50019741,
+     "title": "《新英格兰医学杂志》研究：运动提高癌症生存率",
+     "title_en": "Study: Exercise increases cancer survival rates",
+     "url": "https://www.nejm.org/doi/10.1056/NEJMoa2502760",
+     "hn": "https://news.ycombinator.com/item?id=50019741",
+     "points": 76,
+     "comments": 42
     },
     {
-     "id": 50015522,
-     "title": "ICE 被拘留者用看守所的视频通话软件曝光内部状况",
-     "title_en": "ICE detainees used facility's video calling software to expose conditions inside",
-     "url": "https://www.theverge.com/report/1008342/folkston-georgia-ice-detention-hunger-strike-video",
-     "hn": "https://news.ycombinator.com/item?id=50015522",
-     "points": 15,
-     "comments": 1
+     "id": 50023065,
+     "title": "特斯拉在欧洲把「完全自动驾驶」改名「辅助驾驶」",
+     "title_en": "Tesla Rebrands Full Self-Driving as Tesla Assisted Driving in Europe",
+     "url": "https://qz.com/tesla-full-self-driving-rebranding-europe-assisted-driving-100926",
+     "hn": "https://news.ycombinator.com/item?id=50023065",
+     "points": 35,
+     "comments": 31
     },
     {
-     "id": 50014186,
-     "title": "路透社：美国将直播陆军处决胡德堡枪手",
-     "title_en": "US to livestream Army execution of Fort Hood shooter",
-     "url": "https://www.reuters.com/world/us-livestream-army-execution-fort-hood-shooter-pentagon-official-says-2026-10-08/",
-     "hn": "https://news.ycombinator.com/item?id=50014186",
-     "points": 10,
-     "comments": 6
-    },
-    {
-     "id": 50014792,
-     "title": "他自己造了一台 Flock 式摄像头追踪警察，警方不高兴了",
-     "title_en": "He built his own Flock-style camera to track police. The police didn't like it",
-     "url": "https://san.com/cc/he-built-his-own-flock-style-camera-to-track-police-the-police-didnt-like-it/",
-     "hn": "https://news.ycombinator.com/item?id=50014792",
-     "points": 12,
-     "comments": 0
-    },
-    {
-     "id": 50015762,
-     "title": "《华尔街日报》：失控飞行员正成为航空安全大患",
-     "title_en": "Rogue Pilots Are a Growing Safety Threat–and No One Knows How to Stop Them",
-     "url": "https://www.wsj.com/business/airlines/rogue-pilots-have-become-one-of-the-biggest-threats-to-airline-safety-d4932855",
-     "hn": "https://news.ycombinator.com/item?id=50015762",
-     "points": 7,
-     "comments": 1
-    },
-    {
-     "id": 50010944,
-     "title": "Business Insider：总统称用「人工」智能一词的人是「敌人」",
-     "title_en": "President says those using the term 'Artificial' Intelligence are 'THE ENEMY'",
-     "url": "https://www.businessinsider.com/trump-super-intelligence-rebrand-enemy-white-house-2026-10",
-     "hn": "https://news.ycombinator.com/item?id=50010944",
-     "points": 10,
-     "comments": 4
-    },
-    {
-     "id": 50018043,
-     "title": "近距离擦肩 Starlink 后，SpaceX 呼吁加强在轨协调",
-     "title_en": "SpaceX calls for better coordination in orbit after near-misses with Starlink",
-     "url": "https://arstechnica.com/space/2026/10/spacex-calls-for-better-coordination-in-orbit-after-near-misses-with-starlink/",
-     "hn": "https://news.ycombinator.com/item?id=50018043",
-     "points": 3,
-     "comments": 1
-    },
-    {
-     "id": 50018267,
-     "title": "Ars Technica：悬浮玻璃珠与光纠缠，或可做量子存储",
-     "title_en": "An experimental tour-de-force: Entanglement between glass bead and light",
-     "url": "https://arstechnica.com/science/2026/10/suspended-glass-bead-entangled-with-light-maybe-a-quantum-memory/",
-     "hn": "https://news.ycombinator.com/item?id=50018267",
-     "points": 4,
-     "comments": 2
+     "id": 50025852,
+     "title": "路透社：Netflix 计划裁员 5%",
+     "title_en": "Netflix plans to cut 5% of its workforce",
+     "url": "https://www.reuters.com/business/media-telecom/netflix-plans-cut-5-its-workforce-puck-news-reports-2026-10-09/",
+     "hn": "https://news.ycombinator.com/item?id=50025852",
+     "points": 29,
+     "comments": 5
     }
    ],
    "stats": {
-    "items": 11,
-    "points": 232,
-    "comments": 97,
+    "items": 13,
+    "points": 2257,
+    "comments": 1802,
     "top_points": {
-     "id": 50018420,
-     "title": "2026 年诺贝尔和平奖授予纳瓦尼特姆·皮莱",
-     "value": 64,
-     "comments": 23
+     "id": 50021066,
+     "title": "皮莱获和平奖数小时后，美国制裁国际刑事法院",
+     "value": 455,
+     "comments": 445
     },
     "top_comments": {
-     "id": 50015486,
-     "title": "斯里兰卡劳工因一条脸书评论在沙特被判死刑",
-     "value": 42
+     "id": 50021066,
+     "title": "皮莱获和平奖数小时后，美国制裁国际刑事法院",
+     "value": 445
     },
     "top_brief": {
-     "id": 50015224,
-     "title": "Politico：伊朗无人机击中了美国的阿喀琉斯之踵",
-     "value": 34,
-     "comments": 16
+     "id": 50020927,
+     "title": "Yandex 48 小时内第二座数据中心遭袭",
+     "value": 198,
+     "comments": 277
     }
    }
   },
@@ -880,108 +937,190 @@
    "page": 5,
    "stories": [
     {
+     "id": 50025935,
+     "title": "没有人是一座孤岛：AI 如何掏空智识社群",
+     "title_en": "No Man Is an Island",
+     "url": "https://borretti.me/article/no-man-is-an-island",
+     "hn": "https://news.ycombinator.com/item?id=50025935",
+     "points": 252,
+     "comments": 152,
+     "summary": [
+      "Fernando Borretti 认为，个人的智识活动只有在人类智识社群里才能持续，而 AI 正在瓦解这些社群。他原以为自己可以工作上当 AI 智能体的经理，业余时间继续读论文、设计编程语言、写技术文章；后者却没能实现：软件工程的讨论「变笨了」，人们不再聊编译器和类型系统，只聊「提示词」「harness」「循环」。",
+      "他说，AI 之后给公共知识做贡献越来越没意义：博文会被下一轮训练吞掉，别人遇到同样问题去问 Claude，得到答案却不知道你。智识活动需要共享的成果和外在动机，「就像燃料和氧化剂」；没有社群，得到的不是各自埋头的个人，而是什么都没有。他认为数学正在经历同样的事。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "chrisfosterelli",
+       "stance": "共鸣",
+       "zh": "这说出了很多人的挣扎。网上要么是 AI 狂热派，要么是 AI 末日派；但私下聊的同行里有另一群人：他们承认 AI 干活非常有用，却突然觉得这份工作远不如从前令人兴奋了。",
+       "en": "those that recognize AI is super valuable for getting a lot of work done but also feel that suddenly the work is so much less exciting than it was before",
+       "hn": "https://news.ycombinator.com/item?id=50026292",
+       "id": 50026292,
+       "replies": 18
+      },
+      {
+       "user": "_dwt",
+       "stance": "孤独",
+       "zh": "我跟几个朋友说过，AI 不知怎么成了我这辈子最无趣的技术：吹捧的人用 AI 写自己如何用 AI 做工具来 AI 他们的 AI，唱衰的人写 AI 会怎样 AI 掉我们所有人。外面越来越孤独了。",
+       "en": "somehow AI is the least interesting technology in my lifetime",
+       "hn": "https://news.ycombinator.com/item?id=50026240",
+       "id": 50026240,
+       "replies": 16
+      },
+      {
+       "user": "noduerme",
+       "stance": "愤怒",
+       "zh": "作者举的例子都是：既然大模型会吞掉内容、从不署名，何必写博文、何必公开技术笔记、何必写新语言。这真正说明的是，一个建立在盗窃之上的新生态。",
+       "en": "What this really points to is a new ecosystem which is now built on theft.",
+       "hn": "https://news.ycombinator.com/item?id=50027126",
+       "id": 50027126,
+       "replies": 19
+      }
+     ],
+     "kicker": "文化 · 随笔"
+    },
+    {
+     "id": 50020533,
+     "title": "《超级无敌掌门狗》第一部，九成是一个人做的",
+     "title_en": "'Wallace and Gromit,' 90% Alone",
+     "url": "https://animationobsessive.substack.com/p/wallace-and-gromit-90-alone",
+     "hn": "https://news.ycombinator.com/item?id=50020533",
+     "points": 148,
+     "comments": 19,
+     "summary": [
+      "动画通讯 Animation Obsessive 回顾 Nick Park 的《月球野餐记》（A Grand Day Out）。这部片 1982 年在英国国家电影电视学院开拍，是他野心过大的毕业作品，预算请不起团队，他说「大概 90% 是我自己做的」，中途多次想放弃，1989 年才在布里斯托动画节首映。",
+      "文中细节：Gromit 最初是只猫，因为狗更好捏才改成狗；开拍第一周因为对白太难做，Gromit 的台词被砍，Park 发现「用眼睛就能表达一切」。影片获奥斯卡提名，输给了他自己的另一部《Creature Comforts》，但拿下英国学院奖，Park 的风格此后主导了 Aardman 工作室。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "davnicwil",
+       "stance": "惊叹",
+       "zh": "太不可思议了，我完全不知道《月球野餐记》是一个人的学校作业。我从没想过它不是专业团队做的。我大概 25 年没看了，现在要找出来重看，知道这些后会更珍惜。",
+       "en": "I had absolutely no idea of the context of 'a Grand Day Out' being a solo school project.",
+       "hn": "https://news.ycombinator.com/item?id=50024752",
+       "id": 50024752,
+       "replies": 0
+      },
+      {
+       "user": "codeulike",
+       "stance": "补充",
+       "zh": "而他的下一部就是《引鹅入室》（The Wrong Trousers），近乎完美，结尾的火车追逐被公认为影史最佳动作戏之一。",
+       "en": "And then for his next work to be The Wrong Trousers, a near perfect film",
+       "hn": "https://news.ycombinator.com/item?id=50026489",
+       "id": 50026489,
+       "replies": 2
+      }
+     ],
+     "kicker": "文化 · 动画"
+    },
+    {
+     "id": 50024571,
+     "title": "旧文重读：点子并没有越来越难找",
+     "title_en": "Ideas aren't getting harder to find (2022)",
+     "url": "https://www.experimental-history.com/p/ideas-arent-getting-harder-to-find",
+     "hn": "https://news.ycombinator.com/item?id=50024571",
+     "points": 114,
+     "comments": 51,
+     "summary": [
+      "心理学家 Adam Mastroianni 2022 年的文章。他反驳「低垂的果实已经摘完、点子越来越难找」的流行看法，认为这不仅是错的，还可能自我实现：人们只有觉得值得尝试才会去发现。",
+      "他的理由：所有点子事后看都显而易见，未来的点子总显得难；而前人一再宣布终结都错了。1890 年代的物理学家说只剩小数点后几位要测，1873 年有人说外科已接近极限，1956 年达特茅斯会议以为一个夏天就能解决 AI 的根本问题。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "jgeada",
+       "stance": "执行",
+       "zh": "点子一文不值，它从来不是做出真正产品的关键或瓶颈。知道该解决哪个问题、该用哪个点子，然后执行、交付给对的人、不断打磨，这些才决定成败。",
+       "en": "Ideas are a dime a dozen, they've never been the interesting or limiting part of creating a real product.",
+       "hn": "https://news.ycombinator.com/item?id=50025837",
+       "id": 50025837,
+       "replies": 4
+      },
+      {
+       "user": "kraig911",
+       "stance": "焦虑",
+       "zh": "作为工程师，我担心在 AI 时代，容易的点子都被找到了，或者已经有很多公司在做。我还在业余做东西，但总会自我怀疑：既然谁都能做，这值得吗？",
+       "en": "As an engineer I'm afraid in the age of AI all the easy ideas have been found",
+       "hn": "https://news.ycombinator.com/item?id=50025736",
+       "id": 50025736,
+       "replies": 5
+      }
+     ],
+     "kicker": "文化 · 科学",
+     "tag": "2022 旧文"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50022292,
+     "title": "3A 大作版《扫雷》",
+     "title_en": "Triple-A Minesweeper",
+     "url": "https://minesweeper.mikelacher.com/",
+     "hn": "https://news.ycombinator.com/item?id=50022292",
+     "points": 549,
+     "comments": 105
+    },
+    {
+     "id": 50027167,
+     "title": "日本最有名的金枪鱼买家说他把索马里海盗变成了渔民",
+     "title_en": "Japan's Most Famous Tuna Buyer Says He Turned Somali Pirates into Fishermen",
+     "url": "https://www.japaninsides.com/the-sushi-king-who-went-to-somalia-how-japans-most-famous-tuna-buyer-says-he-turned-pirates-into-fishermen-55344",
+     "hn": "https://news.ycombinator.com/item?id=50027167",
+     "points": 33,
+     "comments": 11
+    },
+    {
+     "id": 50027252,
+     "title": "纪录片《Musk》戳破马斯克的自我神话",
+     "title_en": "In \"Musk,\" Alex Gibney Punctures Elon's Self-Mythology",
+     "url": "https://www.newyorker.com/culture/the-lede/in-musk-alex-gibney-punctures-elons-self-mythology",
+     "hn": "https://news.ycombinator.com/item?id=50027252",
+     "points": 49,
+     "comments": 18
+    },
+    {
      "id": 50015094,
      "title": "《创世纪》之父 Richard Garriott 将收回系列版权",
      "title_en": "Richard Garriott is officially regaining control of the Ultima series",
      "url": "https://www.videogameschronicle.com/news/richard-garriott-is-officially-regaining-control-of-the-ultima-series/",
      "hn": "https://news.ycombinator.com/item?id=50015094",
-     "points": 34,
-     "comments": 10,
-     "summary": [
-      "据 VGC 报道，游戏设计师 Richard Garriott 确认将从 EA 手中收回《创世纪》（Ultima）系列的权利。他 1992 年把系列连同工作室 Origin Systems 以 3000 万美元卖给 EA；EA 在 2000 年取消了 Origin 的全部项目。",
-      "依据美国版权法第 203 条，作者在转让 35 年后可以终止转让，只需提前一年通知、不用付钱。Garriott 说他今年 4 月已通知 EA，对方回信称「知道这是法律，会照办」；他 2027 年正式收回版权，至少可以重新发行早期作品，也可以做续作。"
-     ],
-     "comment_quotes": [
-      {
-       "user": "sleepyguy",
-       "stance": "怀旧",
-       "zh": "回忆啊，《网络创世纪》简直疯狂。咒骂、尖叫、大笑、哭泣，全都隔着一根 28k 的调制解调器。",
-       "en": "Ultima Online was complete insanity.",
-       "hn": "https://news.ycombinator.com/item?id=50015299",
-       "id": 50015299,
-       "replies": 6
-      },
-      {
-       "user": "Rapzid",
-       "stance": "怀旧",
-       "zh": "很长时间里我都觉得，没有哪款游戏的沉浸式开放世界做得像《创世纪 VII》那么好。NPC 的作息、涌现式玩法……还有那次银行劫案。巅峰。",
-       "en": "no game did immersive open world nearly as well as Ultima VII",
-       "hn": "https://news.ycombinator.com/item?id=50017387",
-       "id": 50017387,
-       "replies": 0
-      }
-     ],
-     "kicker": "文化 · 游戏"
+     "points": 43,
+     "comments": 12
     },
     {
-     "id": 50015169,
-     "title": "别再抱怨「劣化」了，去用替代品",
-     "title_en": "Stop complaining about enshittification. Use the alternatives",
-     "url": "https://a.l3x.in/blog/use-the-unshittified-alternatives/",
-     "hn": "https://news.ycombinator.com/item?id=50015169",
-     "points": 18,
-     "comments": 16,
-     "summary": [
-      "Alexander Fortin 在博客里说，很多人抱怨数字服务的「劣化」（enshittification），字里行间却是被动接受。他承认不可能摆脱所有劣化，尤其是在各家公司忙着给一切贴上 AI 标签的当下，但主张能换就换，并以搜索引擎、邮箱等为例列出自己用的替代品。",
-      "评论区有人赞同但喊累，也有人反驳：替代品本身也靠大厂，比如 DuckDuckGo 很依赖必应。"
-     ],
-     "comment_quotes": [
-      {
-       "user": "al_borland",
-       "stance": "心累",
-       "zh": "我尽量这么做，但这很累，而且是个移动的靶子：收购、优先级变化、服务商转向，一个接一个。工作和生活一忙，我就没精力了。",
-       "en": "it's rather exhausting and a moving target",
-       "hn": "https://news.ycombinator.com/item?id=50015731",
-       "id": 50015731,
-       "replies": 3
-      },
-      {
-       "user": "eviks",
-       "stance": "反驳",
-       "zh": "多抱怨点，让做这些事的人听到。替代品其实很少，这篇博客自己就说明了：DuckDuckGo 很依赖微软的必应，而必应靠什么赚钱？广告。",
-       "en": "DDG relies a lot on Bing",
-       "hn": "https://news.ycombinator.com/item?id=50016107",
-       "id": 50016107,
-       "replies": 6
-      }
-     ],
-     "kicker": "文化 · 数字生活"
+     "id": 50024108,
+     "title": "rachelbythebay：我还在，只是不在这里写了",
+     "title_en": "I'm still around.. I'm just not writing here",
+     "url": "https://rachelbythebay.com/w/2026/10/08/idle/",
+     "hn": "https://news.ycombinator.com/item?id=50024108",
+     "points": 42,
+     "comments": 23
+    },
+    {
+     "id": 50023350,
+     "title": "在计算机科学变成男性俱乐部之前，Margaret Hamilton 写下了代码",
+     "title_en": "Before Computer Science Became a Boys' Club, Margaret Hamilton Wrote the Code",
+     "url": "https://www.nytimes.com/2026/10/08/science/space/margaret-hamilton-computer-science.html",
+     "hn": "https://news.ycombinator.com/item?id=50023350",
+     "points": 12,
+     "comments": 2
     },
     {
      "id": 50015042,
-     "title": "美国国会图书馆藏：一张 1849 年的奴隶买卖收据",
+     "title": "国会图书馆藏：一张 1849 年的奴隶买卖收据",
      "title_en": "Receipt for sale of Jane, age 18, and her son, Henry, age 1",
      "url": "https://loc.gov/pictures/resource/cph.3c25134/",
      "hn": "https://news.ycombinator.com/item?id=50015042",
-     "points": 15,
-     "comments": 2,
-     "summary": [
-      "这是美国国会图书馆藏的一张收据，标题写明：1849 年 12 月 20 日出售 18 岁的 Jane 和她 1 岁的儿子 Henry，「以及她将来所有的孩子」。",
-      "评论区有人转录了全文：收款 600 美元，卖方保证二人「身心健全、终身为奴」。"
-     ],
-     "comment_quotes": [
-      {
-       "user": "ShadowOfThePit",
-       "stance": "转录",
-       "zh": "收到 S. Williams 法官 600 美元，全额支付购买 Jane（18 岁黑人女子）及其约一岁的孩子 Henry，连同她将来可能生育的子女；我保证这些黑人身心健全、终身为奴。",
-       "en": "slaves for life",
-       "hn": "https://news.ycombinator.com/item?id=50018047",
-       "id": 50018047,
-       "replies": 1
-      }
-     ],
-     "kicker": "文化 · 历史档案"
-    }
-   ],
-   "briefs": [
+     "points": 34,
+     "comments": 8
+    },
     {
-     "id": 50014819,
-     "title": "《华盛顿邮报》评论：社会在变笨吗？线索简单而重复",
-     "title_en": "Is society growing stupider? The clues are simple and repeated",
-     "url": "https://www.washingtonpost.com/opinions/2026/10/07/culture-is-getting-simpler-that-should-worry-you/",
-     "hn": "https://news.ycombinator.com/item?id=50014819",
-     "points": 12,
-     "comments": 10
+     "id": 50024055,
+     "title": "Show HN：你可能从没读过的稀有技术书和文档",
+     "title_en": "Show HN: The rarest tech books and docs you've probably never read",
+     "url": "https://readrare.com/",
+     "hn": "https://news.ycombinator.com/item?id=50024055",
+     "points": 60,
+     "comments": 9
     },
     {
      "id": 50017593,
@@ -989,128 +1128,83 @@
      "title_en": "Run Windows games (up to D3D9) in the browser",
      "url": "https://bottleship.pages.dev/",
      "hn": "https://news.ycombinator.com/item?id=50017593",
-     "points": 12,
-     "comments": 0
+     "points": 15,
+     "comments": 3
     },
     {
-     "id": 50016840,
-     "title": "Show HN：OldRoll，免费的浏览器复古照片编辑器",
-     "title_en": "Show HN: OldRoll, a free vintage photo editor for the browser",
-     "url": "https://www.oldroll.io/",
-     "hn": "https://news.ycombinator.com/item?id=50016840",
-     "points": 9,
-     "comments": 1
-    },
-    {
-     "id": 50015848,
-     "title": "Show HN：Excali-mode",
-     "title_en": "Show HN: Excali-mode",
-     "url": "https://github.com/yibie/excali-mode",
-     "hn": "https://news.ycombinator.com/item?id=50015848",
-     "points": 4,
-     "comments": 1
-    },
-    {
-     "id": 50013100,
-     "title": "Atomic Machines：「物质编译器」",
-     "title_en": "Atomic Machines – The Matter Compiler",
-     "url": "https://www.atomicmachines.com/matter-compiler",
-     "hn": "https://news.ycombinator.com/item?id=50013100",
-     "points": 6,
-     "comments": 5
-    },
-    {
-     "id": 50015386,
-     "title": "Gentoo 失去多家赞助，寻找新的基础设施赞助商",
-     "title_en": "Gentoo loses several sponsorships, seeking replacement infrastructure sponsors",
-     "url": "https://itsfoss.com/news/gentoo-infrastructure-sponsors-call/",
-     "hn": "https://news.ycombinator.com/item?id=50015386",
-     "points": 8,
-     "comments": 1
-    },
-    {
-     "id": 50014234,
-     "title": "Omarchy 在 HackerOne 推出 10 万美元漏洞赏金",
-     "title_en": "Omarchy launches $100k bug bounty program on HackerOne",
-     "url": "https://omarchy.org/news/2026/10/omarchy-launches-bug-bounty-program-on-hackerone/",
-     "hn": "https://news.ycombinator.com/item?id=50014234",
-     "points": 7,
-     "comments": 1
-    },
-    {
-     "id": 50011738,
-     "title": "云端的智能体",
-     "title_en": "Agents in the Cloud",
-     "url": "https://agentsinthecloud.com/",
-     "hn": "https://news.ycombinator.com/item?id=50011738",
-     "points": 3,
-     "comments": 1
+     "id": 50015169,
+     "title": "别再抱怨「劣化」了，去用替代品",
+     "title_en": "Stop complaining about enshittification. Use the alternatives",
+     "url": "https://a.l3x.in/blog/use-the-unshittified-alternatives/",
+     "hn": "https://news.ycombinator.com/item?id=50015169",
+     "points": 22,
+     "comments": 16
     }
    ],
    "stats": {
-    "items": 11,
-    "points": 128,
-    "comments": 48,
+    "items": 13,
+    "points": 1373,
+    "comments": 429,
     "top_points": {
-     "id": 50015094,
-     "title": "《创世纪》之父 Richard Garriott 将收回系列版权",
-     "value": 34,
-     "comments": 10
+     "id": 50022292,
+     "title": "3A 大作版《扫雷》",
+     "value": 549,
+     "comments": 105
     },
     "top_comments": {
-     "id": 50015169,
-     "title": "别再抱怨「劣化」了，去用替代品",
-     "value": 16
+     "id": 50025935,
+     "title": "没有人是一座孤岛：AI 如何掏空智识社群",
+     "value": 152
     },
     "top_brief": {
-     "id": 50014819,
-     "title": "《华盛顿邮报》评论：社会在变笨吗？线索简单而重复",
-     "value": 12,
-     "comments": 10
+     "id": 50022292,
+     "title": "3A 大作版《扫雷》",
+     "value": 549,
+     "comments": 105
     }
    }
   }
  ],
  "quote_of_day": {
-  "user": "IgorPartola",
-  "id": 50015724,
-  "hn": "https://news.ycombinator.com/item?id=50015724",
-  "story_id": 50015515,
-  "story": "Windows 和 Mac 的键盘差异",
-  "zh": "Mac 把 Command 键做对了，Windows 把 Home 和 End 键做对了。真希望一台机器上两样都有。",
-  "en": "Mac got the Command key right. Windows got the Home and End keys right. Wish we could have both on one system."
+  "user": "networked",
+  "id": 50021206,
+  "hn": "https://news.ycombinator.com/item?id=50021206",
+  "story_id": 50019911,
+  "story": "Cloudflare 收购 Deno",
+  "zh": "安息吧，我最爱的 JavaScript 运行时，谢谢你。你对这个世界来说太安全了。",
+  "en": "RIP, my favorite JavaScript runtime, and thank you. You were too secure for this world."
  },
  "stats": {
-  "snapshot": "2026-10-09T19:15:02+08:00",
-  "front_page_count": 59,
-  "with_numbers": 58,
+  "snapshot": "2026-10-10T08:12:27+08:00",
+  "front_page_count": 90,
+  "with_numbers": 89,
   "flagged_or_dupe": 1,
   "top_points": {
    "id": 50000488,
    "title": "DeepSeek 4.1 Flash 这么便宜，业界为什么不慌？",
-   "value": 808,
-   "comments": 714
+   "value": 1080,
+   "comments": 949
   },
   "top_comments": {
    "id": 50000488,
    "title": "DeepSeek 4.1 Flash 这么便宜，业界为什么不慌？",
-   "value": 714
+   "value": 949
   },
   "second_comments": {
-   "id": 49995495,
-   "title": "咖啡机 10 天跑了 1TB 流量",
-   "value": 449
-  },
-  "over_500": 3,
-  "over_300": 5,
-  "over_100": 12,
-  "show_hn": 8,
-  "total_points": 5084,
-  "total_comments": 3183,
-  "hottest_ratio": {
    "id": 49985548,
    "title": "Ask HN：5 美元的 VPS 上，什么值得 24 小时开着？",
-   "value": 1.6,
+   "value": 622
+  },
+  "over_500": 8,
+  "over_300": 16,
+  "over_100": 37,
+  "show_hn": 11,
+  "total_points": 15326,
+  "total_comments": 9414,
+  "hottest_ratio": {
+   "id": 50022266,
+   "title": "Tor 项目就与 Mullvad 的关系发表声明",
+   "value": 2.31,
    "note": "点赞 ≥100 的帖子中评论/点赞比最高"
   }
  }
