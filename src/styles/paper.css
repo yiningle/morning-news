@@ -1012,8 +1012,26 @@ body.is-locked .sheet {
   flex-direction: column;
 }
 
+/*
+ * Hidden sheets stay in the layout tree but are skipped for paint, hit testing,
+ * focus, find-in-page and accessibility, the same as display: none for
+ * readers. Until the background preloader reaches a sheet, content-visibility:
+ * hidden keeps it from costing anything at first paint.
+ */
 body.is-locked .sheet[hidden] {
-  display: none !important;
+  display: flex !important;
+  visibility: hidden;
+  content-visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+}
+
+/*
+ * Prepared by the background preloader: laid out and pre-painted while still
+ * invisible, so turning to it only has to show it.
+ */
+body.is-locked .sheet[hidden].is-warm {
+  content-visibility: visible;
 }
 
 body.is-locked .sheet-scroll {
@@ -1077,7 +1095,19 @@ body.is-locked .sheet-slot.is-curling {
 }
 
 .curl-layer[hidden] {
-  display: none !important;
+  display: block !important;
+  content-visibility: hidden;
+  opacity: 0;
+}
+
+/* Keep the pre-rendered curl snapshot's layout alive while the layer is hidden. */
+.curl-layer.is-warming {
+  content-visibility: visible;
+}
+
+.curl-layer > [hidden] {
+  display: block !important;
+  opacity: 0;
 }
 
 .curl-shadow,
@@ -1762,6 +1792,9 @@ body.is-locked .sheet-slot.is-curling {
   .sheet,
   .sheet[hidden] {
     display: block !important;
+    visibility: visible !important;
+    content-visibility: visible !important;
+    opacity: 1 !important;
     position: static !important;
     overflow: visible !important;
     break-after: page;

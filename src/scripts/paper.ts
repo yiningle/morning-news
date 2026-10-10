@@ -26,6 +26,60 @@ function readHash(count: number): number {
   return page;
 }
 
+type IdleHandle = { cancel: () => void };
+
+/** requestIdleCallback with a setTimeout fallback (Safari). */
+function whenIdle(task: (deadline: { timeRemaining: () => number }) => void, timeout = 1500): IdleHandle {
+  if (typeof window.requestIdleCallback === 'function') {
+    const id = window.requestIdleCallback(task, { timeout });
+    return { cancel: () => window.cancelIdleCallback(id) };
+  }
+  const id = window.setTimeout(() => {
+    const started = performance.now();
+    task({ timeRemaining: () => Math.max(0, 12 - (performance.now() - started)) });
+  }, 32);
+  return { cancel: () => window.clearTimeout(id) };
+}
+
+function saveData(): boolean {
+  const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+  return connection?.saveData === true;
+}
+
+function parseUnicodeRange(range: string): Array<[number, number]> {
+  return range
+    .split(',')
+    .map((part) => part.trim().replace(/^U\+/i, ''))
+    .filter(Boolean)
+    .map((part): [number, number] => {
+      if (part.includes('?')) {
+        return [parseInt(part.replace(/\?/g, '0'), 16), parseInt(part.replace(/\?/g, 'F'), 16)];
+      }
+      const [lo, hi] = part.split('-');
+      return [parseInt(lo, 16), parseInt(hi ?? lo, 16)];
+    });
+}
+
+/**
+ * Font faces a piece of text needs that have not been fetched yet. Only
+ * supplementary subsets (e.g. the rare-glyph file for 钍) are considered: the
+ * main faces are preloaded in <head>, and the Latin subsets are shadowed by the
+ * full simplified-Chinese files, so fetching them would only waste bytes.
+ */
+function missingFaces(text: string): FontFace[] {
+  if (!document.fonts) return [];
+  const codes = [...new Set(text)].map((ch) => ch.codePointAt(0) ?? 0);
+  const faces: FontFace[] = [];
+  document.fonts.forEach((face) => {
+    if (face.status !== 'unloaded') return;
+    const ranges = parseUnicodeRange(face.unicodeRange);
+    const coversLatin = ranges.some(([lo, hi]) => lo <= 0x41 && hi >= 0x41);
+    if (coversLatin) return;
+    if (codes.some((code) => ranges.some(([lo, hi]) => code >= lo && code <= hi))) faces.push(face);
+  });
+  return faces;
+}
+
 function easeOut(t: number): number {
   return 1 - (1 - t) * (1 - t);
 }
@@ -63,6 +117,14 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   let pose: CurlPose | null = null;
   let frontSheet: HTMLElement | null = null;
   let underSheet: HTMLElement | null = null;
+
+  /* Background preloading: lay out hidden sheets and pre-render the curl snapshot. */
+  type Snapshot = { index: number; width: number; height: number; clone: HTMLElement };
+  let snapshot: Snapshot | null = null;
+  const warmed = new Set<number>();
+  let preloadStarted = false;
+  let preloadJob: IdleHandle | null = null;
+  let resizeTimer = 0;
 
   document.documentElement.classList.add('js-epaper');
   document.body.classList.add('is-locked');
@@ -106,10 +168,23 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   });
   window.addEventListener('resize', () => {
     if (busy) cancelTo(index);
+    dropSnapshot();
+    // Let hidden sheets drop back to skipped while the size changes, then re-prepare.
+    if (warmed.size > 0) {
+      sheets.forEach((sheet) => sheet.classList.remove('is-warm'));
+      warmed.clear();
+    }
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(() => {
+      schedulePreload();
+    }, 250);
   });
 
   bindDrag(slot);
   bindDrawer();
+
+  if (document.readyState === 'complete') startPreload();
+  else window.addEventListener('load', startPreload, { once: true });
 
   function scroller(sheet: HTMLElement): HTMLElement {
     return sheet.querySelector<HTMLElement>('.sheet-scroll') ?? sheet;
@@ -142,6 +217,148 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     index = next;
     scroller(sheets[next]).scrollTop = 0;
     paint();
+    if (snapshot && snapshot.index !== next) dropSnapshot();
+    schedulePreload();
+  }
+
+  function startPreload(): void {
+    if (preloadStarted) return;
+    whenIdle(() => {
+      // Fetch any rare-glyph font subsets the hidden sheets need first, and wait
+      // for fonts to settle: a font arriving later would invalidate every
+      // sheet's text layout and undo the warm-up.
+      const pages = saveData() ? [index, ...preloadOrder()] : sheets.map((_, page) => page);
+      const text = pages.map((page) => sheets[page]?.textContent ?? '').join('');
+      const loads = missingFaces(text).map((face) => face.load().catch(() => undefined));
+      const ready = document.fonts ? document.fonts.ready : Promise.resolve();
+      Promise.all([...loads, ready]).finally(() => {
+        preloadStarted = true;
+        schedulePreload();
+        prefetchAdjacentIssues();
+      });
+    });
+  }
+
+  /** Sheets to prepare, nearest first and forward before backward. */
+  function preloadOrder(): number[] {
+    if (saveData()) {
+      const adjacent = index + 1 < sheets.length ? index + 1 : index - 1;
+      return adjacent >= 0 && adjacent !== index ? [adjacent] : [];
+    }
+    const order: number[] = [];
+    for (let step = 1; step < sheets.length; step += 1) {
+      if (index + step < sheets.length) order.push(index + step);
+      if (index - step >= 0) order.push(index - step);
+    }
+    return order;
+  }
+
+  /** The next unit of background work, or null when everything is ready. */
+  function nextPreloadTask(): (() => void) | null {
+    const order = preloadOrder();
+    const adjacent = order[0];
+    if (adjacent !== undefined && !warmed.has(adjacent)) return () => warmSheet(adjacent);
+    if (!prefersReducedMotion() && sheets.length > 1 && !snapshotReady()) {
+      const { width, height } = slotSize();
+      if (width >= 20 && height >= 20) return () => buildSnapshot();
+    }
+    for (const page of order) {
+      if (!warmed.has(page)) return () => warmSheet(page);
+    }
+    return null;
+  }
+
+  function schedulePreload(): void {
+    if (!preloadStarted || preloadJob) return;
+    root.dataset.preloaded = 'false';
+    preloadJob = whenIdle(() => {
+      preloadJob = null;
+      // Never compete with a page turn in progress; pick up again once it settles.
+      if (busy) {
+        schedulePreload();
+        return;
+      }
+      // One sheet-sized unit per idle period keeps every task short and lets
+      // input and animation frames run in between.
+      const task = nextPreloadTask();
+      if (!task) {
+        root.dataset.preloaded = 'true';
+        return;
+      }
+      task();
+      schedulePreload();
+    });
+  }
+
+  /** Render a hidden sheet ahead of time (still invisible) so a flip only has to show it. */
+  function warmSheet(page: number): void {
+    warmed.add(page);
+    const sheet = sheets[page];
+    if (!sheet || !sheet.hidden) return;
+    sheet.classList.add('is-warm');
+    void scroller(sheet).scrollHeight;
+  }
+
+  function snapshotReady(): boolean {
+    if (!snapshot || snapshot.index !== index) return false;
+    const { width, height } = slotSize();
+    return snapshot.width === width && snapshot.height === height;
+  }
+
+  function dropSnapshot(): void {
+    if (busy) return;
+    snapshot = null;
+    layers.print.replaceChildren();
+  }
+
+  /** Clone a sheet into the curl layer: the mirrored print seen on the turning page's back. */
+  function makeSnapshot(from: number): HTMLElement {
+    const source = scroller(sheets[from]);
+    const slotRect = slot.getBoundingClientRect();
+    const sourceRect = source.getBoundingClientRect();
+    const clone = source.cloneNode(true) as HTMLElement;
+    clone.querySelectorAll('[id]').forEach((node) => node.removeAttribute('id'));
+    clone.setAttribute('inert', '');
+    clone.setAttribute('aria-hidden', 'true');
+    clone.style.position = 'absolute';
+    clone.style.left = `${sourceRect.left - slotRect.left}px`;
+    clone.style.top = `${sourceRect.top - slotRect.top}px`;
+    clone.style.width = `${sourceRect.width}px`;
+    clone.style.height = `${sourceRect.height}px`;
+    clone.style.margin = '0';
+    clone.style.overflow = 'hidden';
+    const wrap = document.createElement('div');
+    wrap.className = 'curl-print-sheet';
+    wrap.append(clone);
+    layers.print.replaceChildren(wrap);
+    return clone;
+  }
+
+  function buildSnapshot(): void {
+    if (busy) return;
+    const { width, height } = slotSize();
+    if (width < 20 || height < 20) return;
+    const clone = makeSnapshot(index);
+    snapshot = { index, width, height, clone };
+    // Lay the hidden print out now so the first curl frame only paints.
+    layers.root.classList.add('is-warming');
+    void clone.scrollHeight;
+    layers.root.classList.remove('is-warming');
+  }
+
+  function prefetchAdjacentIssues(): void {
+    if (saveData()) return;
+    const urls = [root.dataset.prevIssue, root.dataset.nextIssue].filter((url): url is string => Boolean(url));
+    whenIdle(() => {
+      for (const href of urls) {
+        if (document.head.querySelector(`link[rel="prefetch"][href="${href}"]`)) continue;
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.href = href;
+        link.as = 'document';
+        document.head.append(link);
+      }
+    }, 4000);
   }
 
   function setHash(page: number): void {
@@ -161,7 +378,6 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     slot.classList.remove('is-curling');
     slot.dataset.edge = '';
     layers.root.hidden = true;
-    layers.print.replaceChildren();
     layers.back.style.filter = '';
     if (frontSheet) {
       frontSheet.style.clipPath = '';
@@ -194,23 +410,13 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     scroller(underSheet).scrollTop = 0;
 
     const source = scroller(frontSheet);
-    const slotRect = slot.getBoundingClientRect();
-    const sourceRect = source.getBoundingClientRect();
-    const clone = source.cloneNode(true) as HTMLElement;
-    clone.querySelectorAll('[id]').forEach((node) => node.removeAttribute('id'));
-    clone.setAttribute('inert', '');
-    clone.setAttribute('aria-hidden', 'true');
-    clone.style.position = 'absolute';
-    clone.style.left = `${sourceRect.left - slotRect.left}px`;
-    clone.style.top = `${sourceRect.top - slotRect.top}px`;
-    clone.style.width = `${sourceRect.width}px`;
-    clone.style.height = `${sourceRect.height}px`;
-    clone.style.margin = '0';
-    clone.style.overflow = 'hidden';
-    const wrap = document.createElement('div');
-    wrap.className = 'curl-print-sheet';
-    wrap.append(clone);
-    layers.print.replaceChildren(wrap);
+    let clone: HTMLElement;
+    if (snapshot && snapshot.index === from && snapshot.width === width && snapshot.height === height) {
+      clone = snapshot.clone;
+    } else {
+      clone = makeSnapshot(from);
+      snapshot = { index: from, width, height, clone };
+    }
     clone.scrollTop = source.scrollTop;
 
     layers.root.hidden = false;
