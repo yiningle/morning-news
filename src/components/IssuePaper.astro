@@ -26,7 +26,13 @@ const description = `${data.lead.title}。${data.lead.summary[0] ?? ''}`.slice(0
 
 <Layout title={`早间新闻 · ${formatIssueDate(data.date)}`} description={description}>
   <a class="skip" href="#p-0">跳到头版</a>
-  <div class="app" data-paper data-dummy={data.dummy ? 'true' : 'false'}>
+  <div
+    class="app"
+    data-paper
+    data-dummy={data.dummy ? 'true' : 'false'}
+    data-prev-issue={nav.prevDate ? withBase(`${nav.prevDate}/`) : undefined}
+    data-next-issue={nav.nextDate ? withBase(`${nav.nextDate}/`) : undefined}
+  >
     <button type="button" class="toc-toggle" data-toc-toggle aria-expanded="false" aria-controls="toc-drawer">
       目录
     </button>
