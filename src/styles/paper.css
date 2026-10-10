@@ -1081,9 +1081,24 @@ body.is-locked .sheet-slot[data-edge="right"] {
   cursor: grab;
 }
 
-body.is-locked .sheet-slot.is-curling {
+/*
+ * During a turn an empty shield covers the slot: it carries the grabbing
+ * cursor, user-select and touch-action, and keeps clicks off the pages.
+ * Toggling it restyles one empty element, where putting cursor / user-select /
+ * touch-action on the slot restyled every page.
+ */
+.curl-shield {
+  display: none;
+}
+
+body.is-locked .sheet-slot.is-curling .curl-shield {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 5;
   cursor: grabbing;
   user-select: none;
+  touch-action: none;
 }
 
 .curl-layer {
@@ -1094,15 +1109,10 @@ body.is-locked .sheet-slot.is-curling {
   pointer-events: none;
 }
 
+/* Hidden by opacity only, so the prepared prints keep their layout and showing the layer restyles nothing. */
 .curl-layer[hidden] {
   display: block !important;
-  content-visibility: hidden;
   opacity: 0;
-}
-
-/* Keep the pre-rendered curl snapshot's layout alive while the layer is hidden. */
-.curl-layer.is-warming {
-  content-visibility: visible;
 }
 
 .curl-layer > [hidden] {
@@ -1136,6 +1146,12 @@ body.is-locked .sheet-slot.is-curling {
   position: absolute;
   inset: 0;
   transform-origin: 0 0;
+  visibility: hidden;
+}
+
+/* One prepared print per sheet; only the one for the page being turned is painted. */
+.curl-print-sheet.is-active {
+  visibility: visible;
 }
 
 .curl-print .sheet-scroll {

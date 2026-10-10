@@ -130,6 +130,8 @@ export type CurlLayers = {
   faceBand: HTMLElement;
   back: HTMLElement;
   print: HTMLElement;
+  /** The prepared print (one per sheet) shown on the back of the current turn. */
+  printActive: HTMLElement | null;
   shadeBand: HTMLElement;
   fold: HTMLElement;
 };
@@ -158,6 +160,7 @@ export function createCurlLayers(slot: HTMLElement): CurlLayers {
     faceBand: root.querySelector('.curl-face-band') as HTMLElement,
     back: root.querySelector('.curl-back') as HTMLElement,
     print: root.querySelector('.curl-print') as HTMLElement,
+    printActive: null,
     shadeBand: root.querySelector('.curl-shade-band') as HTMLElement,
     fold: root.querySelector('.curl-fold') as HTMLElement,
   };
@@ -191,17 +194,20 @@ function hideCurl(layers: CurlLayers, front: HTMLElement, fullyPeeled: boolean):
   layers.back.style.filter = '';
 }
 
+/** 'none': no fold yet; 'curl': page partly turned; 'cleared': the page has completely left the slot. */
+export type CurlState = 'none' | 'curl' | 'cleared';
+
 export function paintCurl(
   layers: CurlLayers,
   front: HTMLElement,
   width: number,
   height: number,
   pose: CurlPose,
-): boolean {
+): CurlState {
   const fold = makeFold(pose.origin, pose.point);
   if (!fold) {
     hideCurl(layers, front, false);
-    return false;
+    return 'none';
   }
   const rect = pageRect(width, height);
   const frontPoly = clipHalfPlane(rect, fold, true);
@@ -211,7 +217,7 @@ export function paintCurl(
   const flapOnPage = flap.some((p) => p.x > -48 && p.x < width + 48 && p.y > -48 && p.y < height + 48);
   if (peeled.length < 3 || flap.length < 3 || (frontGone && !flapOnPage)) {
     hideCurl(layers, front, frontGone);
-    return true;
+    return frontGone ? 'cleared' : 'curl';
   }
 
   const distance = Math.hypot(pose.point.x - pose.origin.x, pose.point.y - pose.origin.y);
@@ -228,7 +234,7 @@ export function paintCurl(
   if (!frontGone) layers.face.style.clipPath = clip(frontPoly, true);
   layers.back.style.clipPath = clip(flap, true);
 
-  const printInner = layers.print.firstElementChild as HTMLElement | null;
+  const printInner = layers.printActive;
   if (printInner) {
     printInner.style.transformOrigin = '0 0';
     printInner.style.transform = reflectionCSS(fold);
@@ -241,8 +247,10 @@ export function paintCurl(
   placeBand(layers.faceBand, fold.mx, fold.my, angle, length, Math.min(200, Math.max(90, depth * 0.55)));
   placeBand(layers.shadeBand, fold.mx, fold.my, angle, length, Math.max(120, depth * 2.3));
   placeBand(layers.fold, fold.mx, fold.my, angle, length, 16);
-  layers.back.style.filter = `drop-shadow(${(-fold.nx * 14).toFixed(1)}px ${(-fold.ny * 8).toFixed(1)}px 16px rgba(17,17,17,0.38))`;
-  return true;
+  // No CSS filter on the flap: clip-path is applied after filter, so a drop-shadow
+  // here was clipped away (it only nudged the anti-aliased edge) while forcing
+  // the whole mirrored page through an offscreen blur on every frame.
+  return 'curl';
 }
 
 function sweep(t: number, origin: Pt, mid: Pt, end: Pt): Pt {
