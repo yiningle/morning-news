@@ -1008,8 +1008,42 @@ body.is-locked .sheet-slot {
 body.is-locked .sheet {
   position: absolute;
   inset: 0;
+  z-index: 1;
   display: flex;
   flex-direction: column;
+  background-color: transparent;
+}
+
+/*
+ * Two wrappers let a turn cut the page along the fold with transforms only:
+ * the outer one becomes a large rotated clip box during a turn, the inner one
+ * is counter-transformed so the page itself never moves. At rest both are
+ * identity. They stay promoted while the sheet is shown, so starting or
+ * finishing a turn never adds or drops a layer.
+ */
+body.is-locked .sheet-clip,
+body.is-locked .sheet-unclip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transform-origin: 0 0;
+}
+
+body.is-locked .sheet-clip {
+  overflow: hidden;
+}
+
+body.is-locked .sheet-unclip {
+  background-color: var(--paper);
+}
+
+body.is-locked .curl-gpu > .sheet:not([hidden]) > .sheet-clip,
+body.is-locked .curl-gpu > .sheet:not([hidden]) > .sheet-clip > .sheet-unclip {
+  will-change: transform;
 }
 
 /*
@@ -1109,6 +1143,10 @@ body.is-locked .sheet-slot.is-curling .curl-shield {
   pointer-events: none;
 }
 
+.curl-gpu > .curl-layer {
+  will-change: opacity;
+}
+
 /* Hidden by opacity only, so the prepared prints keep their layout and showing the layer restyles nothing. */
 .curl-layer[hidden] {
   display: block !important;
@@ -1120,15 +1158,40 @@ body.is-locked .sheet-slot.is-curling .curl-shield {
   opacity: 0;
 }
 
-.curl-shadow,
-.curl-face,
-.curl-back {
+/*
+ * Every part below is a fixed-size, pre-promoted layer that a turn only moves
+ * with transforms (see curl.ts), so the compositor draws the curl without any
+ * layout, paint or raster per frame.
+ */
+.curl-hp,
+.curl-hp-content,
+.curl-back-page {
   position: absolute;
-  inset: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0 0;
+}
+
+/* Pre-promoted only where a GPU composites them (see detectCurlMode in paper.ts). */
+.curl-gpu .curl-hp,
+.curl-gpu .curl-hp-content,
+.curl-gpu .curl-back-page,
+.curl-gpu .curl-band {
+  will-change: transform;
+}
+
+.curl-hp {
   overflow: hidden;
 }
 
-.curl-back {
+/* With the GPU the page box itself cuts the flap; flat mode cuts it with a clip-path polygon. */
+.curl-gpu .curl-back-page {
+  overflow: hidden;
+}
+
+.curl-back-page {
   background-color: #f7f3ea;
 }
 
@@ -1138,14 +1201,9 @@ body.is-locked .sheet-slot.is-curling .curl-shield {
   inset: 0;
 }
 
-.curl-print {
-  overflow: hidden;
-}
-
 .curl-print-sheet {
   position: absolute;
   inset: 0;
-  transform-origin: 0 0;
   visibility: hidden;
 }
 
@@ -1163,13 +1221,14 @@ body.is-locked .sheet-slot.is-curling .curl-shield {
   background: rgba(247, 243, 234, 0.8);
 }
 
-.curl-shadow-band,
-.curl-face-band,
-.curl-shade-band,
-.curl-fold {
+/* Long enough to cross any page at any angle; thickness comes from scaleY of a 100px band. */
+.curl-band {
   position: absolute;
   left: 0;
   top: 0;
+  width: var(--curl-band, 300vmax);
+  height: 100px;
+  transform-origin: 0 0;
   pointer-events: none;
 }
 
@@ -1818,6 +1877,16 @@ body.is-locked .sheet-slot.is-curling .curl-shield {
 
   .sheet-scroll {
     overflow: visible !important;
+    height: auto !important;
+  }
+
+  .sheet-clip,
+  .sheet-unclip {
+    display: block !important;
+    position: static !important;
+    overflow: visible !important;
+    transform: none !important;
+    width: auto !important;
     height: auto !important;
   }
 }

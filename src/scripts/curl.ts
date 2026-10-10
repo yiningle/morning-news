@@ -86,33 +86,7 @@ export function reflectionCSS(fold: Fold): string {
   return `matrix(${n(a)}, ${n(b)}, ${n(c)}, ${n(d)}, ${n(tx)}, ${n(ty)})`;
 }
 
-function onFoldEdge(a: Pt, b: Pt, fold: Fold): boolean {
-  return Math.abs(sideOf(a, fold)) < 1.5 && Math.abs(sideOf(b, fold)) < 1.5;
-}
-
-/** Clip path for a polygon. The fold edge is bowed so the sheet reads as a bend, not a crease. */
-export function toClipPath(points: Pt[], fold: Fold | null, bow = 0): string {
-  if (points.length < 3) return 'polygon(0px 0px, 0px 0px, 0px 0px)';
-  if (!fold || bow === 0) {
-    return `polygon(${points.map((p) => `${p.x.toFixed(1)}px ${p.y.toFixed(1)}px`).join(', ')})`;
-  }
-  const cmds: string[] = [`M ${points[0].x.toFixed(1)} ${points[0].y.toFixed(1)}`];
-  for (let i = 0; i < points.length; i += 1) {
-    const a = points[i];
-    const b = points[(i + 1) % points.length];
-    if (onFoldEdge(a, b, fold) && Math.hypot(b.x - a.x, b.y - a.y) > 12) {
-      const cx = (a.x + b.x) / 2 - fold.nx * bow;
-      const cy = (a.y + b.y) / 2 - fold.ny * bow;
-      cmds.push(`Q ${cx.toFixed(1)} ${cy.toFixed(1)} ${b.x.toFixed(1)} ${b.y.toFixed(1)}`);
-    } else {
-      cmds.push(`L ${b.x.toFixed(1)} ${b.y.toFixed(1)}`);
-    }
-  }
-  cmds.push('Z');
-  return `path('${cmds.join(' ')}')`;
-}
-
-/** CSS rotation / gradient angle whose axis follows the fold (y-down screen space). */
+/** CSS rotation whose x axis follows the fold (y-down screen space). */
 export function foldCssAngle(fold: Fold): number {
   return (Math.atan2(fold.nx, -fold.ny) * 180) / Math.PI;
 }
@@ -122,13 +96,20 @@ export type CurlPose = {
   point: Pt;
 };
 
+/** The two wrappers inside a sheet that cut it along the fold: a rotated clip box and its counter-transformed content. */
+export type HalfPlane = { box: HTMLElement; content: HTMLElement };
+
 export type CurlLayers = {
   root: HTMLElement;
   shadow: HTMLElement;
+  shadowContent: HTMLElement;
   shadowBand: HTMLElement;
   face: HTMLElement;
+  faceContent: HTMLElement;
   faceBand: HTMLElement;
   back: HTMLElement;
+  /** The mirrored page box: reflected across the fold, inside the clip box that keeps the flap side. */
+  backPage: HTMLElement;
   print: HTMLElement;
   /** The prepared print (one per sheet) shown on the back of the current turn. */
   printActive: HTMLElement | null;
@@ -136,121 +117,211 @@ export type CurlLayers = {
   fold: HTMLElement;
 };
 
+/*
+ * Every moving part of the curl is a pre-promoted layer (will-change: transform)
+ * of fixed size, and each frame only writes transforms. Cutting along the fold
+ * is done with a large rotated overflow:hidden box whose edge lies on the fold
+ * and whose content is counter-transformed back into page space; the compositor
+ * clips that on the GPU, so nothing is laid out, painted or rasterised per frame.
+ */
 export function createCurlLayers(slot: HTMLElement): CurlLayers {
   const root = document.createElement('div');
   root.className = 'curl-layer';
   root.hidden = true;
   root.setAttribute('aria-hidden', 'true');
   root.innerHTML = `
-    <div class="curl-shadow"><div class="curl-shadow-band"></div></div>
-    <div class="curl-face"><div class="curl-face-band"></div></div>
-    <div class="curl-back">
-      <div class="curl-print"></div>
-      <div class="curl-tint"></div>
-      <div class="curl-shade-band"></div>
+    <div class="curl-hp curl-shadow"><div class="curl-hp-content"><div class="curl-band curl-shadow-band"></div></div></div>
+    <div class="curl-hp curl-face"><div class="curl-hp-content"><div class="curl-band curl-face-band"></div></div></div>
+    <div class="curl-hp curl-back">
+      <div class="curl-back-page">
+        <div class="curl-print"></div>
+        <div class="curl-tint"></div>
+        <div class="curl-band curl-shade-band"></div>
+      </div>
     </div>
-    <div class="curl-fold"></div>
+    <div class="curl-band curl-fold"></div>
   `;
   slot.appendChild(root);
+  const q = (selector: string) => root.querySelector(selector) as HTMLElement;
   return {
     root,
-    shadow: root.querySelector('.curl-shadow') as HTMLElement,
-    shadowBand: root.querySelector('.curl-shadow-band') as HTMLElement,
-    face: root.querySelector('.curl-face') as HTMLElement,
-    faceBand: root.querySelector('.curl-face-band') as HTMLElement,
-    back: root.querySelector('.curl-back') as HTMLElement,
-    print: root.querySelector('.curl-print') as HTMLElement,
+    shadow: q('.curl-shadow'),
+    shadowContent: q('.curl-shadow > .curl-hp-content'),
+    shadowBand: q('.curl-shadow-band'),
+    face: q('.curl-face'),
+    faceContent: q('.curl-face > .curl-hp-content'),
+    faceBand: q('.curl-face-band'),
+    back: q('.curl-back'),
+    backPage: q('.curl-back-page'),
+    print: q('.curl-print'),
     printActive: null,
-    shadeBand: root.querySelector('.curl-shade-band') as HTMLElement,
-    fold: root.querySelector('.curl-fold') as HTMLElement,
+    shadeBand: q('.curl-shade-band'),
+    fold: q('.curl-fold'),
   };
 }
 
-function placeBand(el: HTMLElement, x: number, y: number, angleDeg: number, length: number, thickness: number): void {
-  el.style.width = `${length}px`;
-  el.style.height = `${thickness}px`;
-  el.style.left = `${x}px`;
-  el.style.top = `${y}px`;
-  el.style.transformOrigin = 'center center';
-  el.style.transform = `translate(-50%, -50%) rotate(${angleDeg}deg)`;
+const px = (value: number) => `${value.toFixed(3)}px`;
+
+/** Height in CSS of every .curl-band; bands are stretched to their thickness with scaleY. */
+const BAND_BASE = 100;
+
+function placeBand(el: HTMLElement, fold: Fold, angleDeg: number, thickness: number): void {
+  el.style.transform =
+    `translate(${px(fold.mx)}, ${px(fold.my)}) rotate(${angleDeg.toFixed(4)}deg) ` +
+    `scale(1, ${(thickness / BAND_BASE).toFixed(4)}) translate(-50%, -50%)`;
 }
 
-let pathClipOk: boolean | null = null;
+type HalfPlaneTransforms = { box: string; content: string };
 
-function canUsePathClip(): boolean {
-  if (pathClipOk !== null) return pathClipOk;
-  const probe = document.createElement('div');
-  probe.style.clipPath = "path('M 0 0 L 1 0 L 1 1 Z')";
-  pathClipOk = probe.style.clipPath.includes('path');
-  return pathClipOk;
+/**
+ * Transforms that turn a width x height box into a size x size square whose
+ * edge lies on the fold, covering the side >= 0 (`positive`) or side <= 0, and
+ * the inverse for its content so the content stays exactly where it was.
+ */
+function halfPlane(fold: Fold, width: number, height: number, size: number, positive: boolean): HalfPlaneTransforms {
+  const angle = (Math.atan2(fold.ny, fold.nx) * 180) / Math.PI;
+  const sx = (size / width).toFixed(6);
+  const sy = (size / height).toFixed(6);
+  const ix = (width / size).toFixed(8);
+  const iy = (height / size).toFixed(8);
+  const shift = positive ? 0 : -size;
+  return {
+    box: `translate(${px(fold.mx)}, ${px(fold.my)}) rotate(${angle.toFixed(5)}deg) translate(${shift}px, ${-size / 2}px) scale(${sx}, ${sy})`,
+    content: `scale(${ix}, ${iy}) translate(${-shift}px, ${size / 2}px) rotate(${(-angle).toFixed(5)}deg) translate(${px(-fold.mx)}, ${px(-fold.my)})`,
+  };
 }
 
-function hideCurl(layers: CurlLayers, front: HTMLElement, fullyPeeled: boolean): void {
-  front.style.clipPath = fullyPeeled ? 'inset(100%)' : '';
-  layers.back.hidden = true;
-  layers.shadow.hidden = true;
-  layers.face.hidden = true;
-  layers.fold.hidden = true;
-  layers.back.style.filter = '';
+function setHidden(el: HTMLElement, hidden: boolean): void {
+  if (el.hidden !== hidden) el.hidden = hidden;
 }
 
-/** 'none': no fold yet; 'curl': page partly turned; 'cleared': the page has completely left the slot. */
+function setTransform(el: HTMLElement, value: string): void {
+  if (el.style.transform !== value) el.style.transform = value;
+}
+
+function hideParts(layers: CurlLayers): void {
+  setHidden(layers.back, true);
+  setHidden(layers.shadow, true);
+  setHidden(layers.face, true);
+  setHidden(layers.fold, true);
+}
+
+function setClip(el: HTMLElement, value: string): void {
+  if (el.style.clipPath !== value) el.style.clipPath = value;
+}
+
+function polygon(points: Pt[]): string {
+  if (points.length < 3) return 'inset(100%)';
+  return `polygon(${points.map((p) => `${px(p.x)} ${px(p.y)}`).join(', ')})`;
+}
+
+/** Put a sheet's fold wrappers back to identity (the whole page showing). */
+export function resetHalfPlane(front: HalfPlane): void {
+  setTransform(front.box, '');
+  setTransform(front.content, '');
+  setClip(front.box, '');
+}
+
+/** Clear whatever the other rendering mode left on the curl parts. */
+export function resetCurlLayers(layers: CurlLayers): void {
+  for (const el of [layers.shadow, layers.shadowContent, layers.face, layers.faceContent, layers.back, layers.backPage]) {
+    setTransform(el, '');
+    setClip(el, '');
+  }
+}
+
+/**
+ * 'gpu': cut along the fold with rotated clip boxes, so a frame is transforms
+ * only and the GPU compositor does the work. 'flat': for software compositing
+ * (no usable GPU), where every rotated clip box costs a full-page software
+ * blend per frame: clip-path polygons instead, re-rastered by the raster threads.
+ */
+export type CurlMode = 'gpu' | 'flat';
+
+/* How far the shadow band reaches past the fold, as a share of its thickness: its gradient is under 4% black beyond this. */
+const SHADOW_REACH = 0.4;
+
+/** 'none': no fold yet; 'curl': page partly turned; 'cleared': the page and everything it casts have left the slot. */
 export type CurlState = 'none' | 'curl' | 'cleared';
 
 export function paintCurl(
   layers: CurlLayers,
-  front: HTMLElement,
+  front: HalfPlane,
   width: number,
   height: number,
   pose: CurlPose,
+  mode: CurlMode = 'gpu',
 ): CurlState {
   const fold = makeFold(pose.origin, pose.point);
   if (!fold) {
-    hideCurl(layers, front, false);
+    resetHalfPlane(front);
+    hideParts(layers);
     return 'none';
   }
+  const gpu = mode === 'gpu';
   const rect = pageRect(width, height);
-  const frontPoly = clipHalfPlane(rect, fold, true);
-  const peeled = clipHalfPlane(rect, fold, false);
-  const flap = peeled.map((p) => reflectPoint(p, fold));
-  const frontGone = frontPoly.length < 3;
-  const flapOnPage = flap.some((p) => p.x > -48 && p.x < width + 48 && p.y > -48 && p.y < height + 48);
-  if (peeled.length < 3 || flap.length < 3 || (frontGone && !flapOnPage)) {
-    hideCurl(layers, front, frontGone);
-    return frontGone ? 'cleared' : 'curl';
+  const size = Math.ceil(Math.hypot(width, height) * 6);
+  const plus = gpu ? halfPlane(fold, width, height, size, true) : null;
+  const frontPoly = gpu ? [] : clipHalfPlane(rect, fold, true);
+  // The turning page keeps only the side of the fold away from the lifted corner.
+  if (plus) {
+    setTransform(front.box, plus.box);
+    setTransform(front.content, plus.content);
+  } else {
+    setClip(front.box, polygon(frontPoly));
   }
 
   const distance = Math.hypot(pose.point.x - pose.origin.x, pose.point.y - pose.origin.y);
-  const bow = canUsePathClip() ? Math.min(64, distance * 0.05) : 0;
-  const clip = (points: Pt[], curved: boolean) => toClipPath(points, curved ? fold : null, curved ? bow : 0);
+  const depth = distance / 2;
+  const shadowThickness = Math.min(240, Math.max(110, depth * 0.72));
+  // How far the nearest page corner is past the fold, on the lifted side (negative).
+  let nearest = -Infinity;
+  for (const corner of rect) nearest = Math.max(nearest, sideOf(corner, fold));
+  // Cleared only once the page, its flap and the visible part of the shadow it
+  // casts are off the slot, so the last curl frame already looks like the next page.
+  if (nearest <= -shadowThickness * SHADOW_REACH) {
+    hideParts(layers);
+    return 'cleared';
+  }
 
-  front.style.clipPath = frontGone ? 'inset(100%)' : clip(frontPoly, true);
-  layers.root.hidden = false;
-  layers.shadow.hidden = false;
-  layers.face.hidden = frontGone;
-  layers.back.hidden = false;
-  layers.fold.hidden = false;
-  layers.shadow.style.clipPath = clip(peeled, false);
-  if (!frontGone) layers.face.style.clipPath = clip(frontPoly, true);
-  layers.back.style.clipPath = clip(flap, true);
+  setHidden(layers.root, false);
+  setHidden(layers.shadow, false);
+  setHidden(layers.face, nearest <= 0);
+  setHidden(layers.back, false);
+  setHidden(layers.fold, false);
 
-  const printInner = layers.printActive;
-  if (printInner) {
-    printInner.style.transformOrigin = '0 0';
-    printInner.style.transform = reflectionCSS(fold);
+  if (plus) {
+    const minus = halfPlane(fold, width, height, size, false);
+    setTransform(layers.shadow, minus.box);
+    setTransform(layers.shadowContent, minus.content);
+    setTransform(layers.face, plus.box);
+    setTransform(layers.faceContent, plus.content);
+    setTransform(layers.back, plus.box);
+    // The back of the page: the page reflected across the fold, kept on the far side of it.
+    setTransform(layers.backPage, `${plus.content} ${reflectionCSS(fold)}`);
+  } else {
+    const peeled = clipHalfPlane(rect, fold, false);
+    setClip(layers.shadow, polygon(peeled));
+    setClip(layers.face, polygon(frontPoly));
+    setClip(layers.back, polygon(peeled.map((p) => reflectPoint(p, fold))));
+    setTransform(layers.backPage, reflectionCSS(fold));
   }
 
   const angle = foldCssAngle(fold);
-  const length = Math.hypot(width, height) * 2;
-  const depth = distance / 2;
-  placeBand(layers.shadowBand, fold.mx, fold.my, angle, length, Math.min(240, Math.max(110, depth * 0.72)));
-  placeBand(layers.faceBand, fold.mx, fold.my, angle, length, Math.min(200, Math.max(90, depth * 0.55)));
-  placeBand(layers.shadeBand, fold.mx, fold.my, angle, length, Math.max(120, depth * 2.3));
-  placeBand(layers.fold, fold.mx, fold.my, angle, length, 16);
-  // No CSS filter on the flap: clip-path is applied after filter, so a drop-shadow
-  // here was clipped away (it only nudged the anti-aliased edge) while forcing
-  // the whole mirrored page through an offscreen blur on every frame.
+  placeBand(layers.shadowBand, fold, angle, shadowThickness);
+  placeBand(layers.faceBand, fold, angle, Math.min(200, Math.max(90, depth * 0.55)));
+  placeBand(layers.shadeBand, fold, angle, Math.max(120, depth * 2.3));
+  placeBand(layers.fold, fold, angle, 16);
   return 'curl';
+}
+
+/** Whether a pose has carried the page and everything it casts off the slot. */
+export function poseCleared(width: number, height: number, pose: CurlPose): boolean {
+  const fold = makeFold(pose.origin, pose.point);
+  if (!fold) return false;
+  const depth = Math.hypot(pose.point.x - pose.origin.x, pose.point.y - pose.origin.y) / 2;
+  const shadowThickness = Math.min(240, Math.max(110, depth * 0.72));
+  return pageRect(width, height).every((corner) => sideOf(corner, fold) <= -shadowThickness * SHADOW_REACH);
 }
 
 function sweep(t: number, origin: Pt, mid: Pt, end: Pt): Pt {

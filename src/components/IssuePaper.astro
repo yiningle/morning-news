@@ -67,19 +67,23 @@ const description = `${data.lead.title}。${data.lead.summary[0] ?? ''}`.slice(0
                 data-label={page.label}
                 aria-label={page.label}
               >
-                <div class="sheet-scroll">
-                  {page.kind === 'front' || page.kind === 'front-more' ? (
-                    <FrontSheet nav={nav} pages={pages} part={page.kind === 'front-more' ? 'more' : 'primary'} />
-                  ) : (
-                    <SectionSheet
-                      nav={nav}
-                      section={data.sections[page.sectionIndex ?? 0]}
-                      pageNumber={page.index + 1}
-                      pageCount={pages.length}
-                      label={page.label}
-                      part={page.kind === 'section-more' ? 'more' : 'primary'}
-                    />
-                  )}
+                <div class="sheet-clip">
+                  <div class="sheet-unclip">
+                    <div class="sheet-scroll">
+                      {page.kind === 'front' || page.kind === 'front-more' ? (
+                        <FrontSheet nav={nav} pages={pages} part={page.kind === 'front-more' ? 'more' : 'primary'} />
+                      ) : (
+                        <SectionSheet
+                          nav={nav}
+                          section={data.sections[page.sectionIndex ?? 0]}
+                          pageNumber={page.index + 1}
+                          pageCount={pages.length}
+                          label={page.label}
+                          part={page.kind === 'section-more' ? 'more' : 'primary'}
+                        />
+                      )}
+                    </div>
+                  </div>
                 </div>
               </article>
             ))
