@@ -20,6 +20,8 @@ export type DebugInfo = {
   refreshMs: number;
   prewarm: boolean;
   loaf: boolean;
+  /** Warm-up progress, e.g. "warm 5/5 · prints 5/5 · done". */
+  preload: string;
   notes: string[];
 };
 
@@ -53,17 +55,34 @@ function pixelLine(): string {
   );
 }
 
+/** Short browser and engine name, from UA client hints where available. */
+export function browserLabel(): string {
+  const ua = navigator.userAgent;
+  const hints = (navigator as Navigator & { userAgentData?: { brands?: Array<{ brand: string; version: string }>; platform?: string } }).userAgentData;
+  const os = /Mac OS X/.test(ua) ? 'macOS' : /Windows/.test(ua) ? 'Windows' : /Android/.test(ua) ? 'Android' : /iPhone|iPad/.test(ua) ? 'iOS' : /Linux/.test(ua) ? 'Linux' : 'other OS';
+  const brand = hints?.brands?.find((b) => !/Not.?A.?Brand|Chromium/i.test(b.brand)) ?? hints?.brands?.find((b) => /Chromium/i.test(b.brand));
+  if (brand) return `${brand.brand} ${brand.version} · Blink · ${os}`;
+  const pick = (re: RegExp) => ua.match(re)?.[1];
+  if (/Firefox\//.test(ua)) return `Firefox ${pick(/Firefox\/(\d+)/)} · Gecko · ${os}`;
+  if (/Edg\//.test(ua)) return `Edge ${pick(/Edg\/(\d+)/)} · Blink · ${os}`;
+  if (/Chrome\//.test(ua)) return `Chrome ${pick(/Chrome\/(\d+)/)} · Blink · ${os}`;
+  if (/Safari\//.test(ua)) return `Safari ${pick(/Version\/([\d.]+)/) ?? ''} · WebKit · ${os}`;
+  return `${ua.slice(0, 60)} · ${os}`;
+}
+
 export class DebugOverlay {
+  private bootLog: string[] = [];
   private el: HTMLElement;
   private body: HTMLElement;
   private turns: TurnStats[] = [];
   private info: DebugInfo = {
     mode: 'flat',
-    modeWhy: 'not detected yet',
+    modeWhy: 'not detected yet (flat until then)',
     renderer: '',
     refreshMs: 0,
     prewarm: true,
     loaf: false,
+    preload: 'not started',
     notes: [],
   };
 
@@ -128,7 +147,9 @@ export class DebugOverlay {
       screen: `${screen.width}x${screen.height}`,
       viewportDevicePx: px.viewport,
       screenBackingPx: px.screen,
+      browser: browserLabel(),
       userAgent: navigator.userAgent,
+      boot: this.bootLog,
       turns: this.turns,
     };
   }
@@ -137,15 +158,23 @@ export class DebugOverlay {
     this.note(text);
   }
 
+  /** Record a start-up milestone (ms since navigation start). */
+  boot(label: string, ms: number): void {
+    this.bootLog.push(`${label} ${ms}ms`);
+    this.render();
+  }
+
   private render(): void {
     const info = this.info;
     const hz = info.refreshMs ? Math.round(1000 / info.refreshMs) : 0;
     const lines = [
+      browserLabel(),
       `mode ${info.mode} (${info.modeWhy})`,
       info.renderer ? `gpu  ${info.renderer}` : '',
       `dpr ${window.devicePixelRatio} · refresh ${hz ? `${hz} Hz (${info.refreshMs.toFixed(1)} ms)` : 'measuring…'} · ` +
         `prewarm ${info.prewarm ? 'on' : 'off'} · LoAF ${info.loaf ? 'yes' : 'no'}`,
       pixelLine(),
+      `boot ${this.bootLog.join(' · ') || '…'} · preload ${info.preload}`,
       ...info.notes.map((note) => `note ${note}`),
       '',
       this.turns.length ? 'turn  kind  mode  time   frames  median  p95   worst   slow(>1.5×)  start/mid/end/after  dropped' : 'turn a page to see stats',

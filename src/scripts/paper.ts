@@ -20,6 +20,10 @@ const COMPLETE_MS = 760;
 const CANCEL_MS = 440;
 const AUTO_MS = 980;
 /* How long after a turn the page turned away from is hidden for real (then in idle time). */
+/* Longest the warm-up waits for web fonts before it starts anyway. */
+const FONT_WAIT_MS = 2500;
+/* While a turn runs, the preloader checks back this often instead of every idle period. */
+const PRELOAD_RETRY_MS = 200;
 const RETIRE_AFTER_MS = 90;
 /* How long a prewarmed sheet stays (invisibly) drawn so its tiles and glyphs get rasterised. */
 const PREWARM_MS = 220;
@@ -226,6 +230,10 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   shield.setAttribute('aria-hidden', 'true');
   slot.appendChild(shield);
   let preloadStarted = false;
+  let preloadPending = false;
+  let modeDetected = false;
+  let refreshMeasured = false;
+  let refreshRemeasured = false;
   let preloadJob: IdleHandle | null = null;
   let resizeTimer = 0;
 
@@ -292,8 +300,7 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   bindDrag(slot);
   bindDrawer();
 
-  if (document.readyState === 'complete') startPreload();
-  else window.addEventListener('load', startPreload, { once: true });
+  boot();
 
   function scroller(sheet: HTMLElement): HTMLElement {
     return sheet.querySelector<HTMLElement>('.sheet-scroll') ?? sheet;
@@ -382,33 +389,78 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     if (current && current !== sheet && !busy) current.classList.remove('is-front', 'is-under');
   }
 
+  /**
+   * Start-up work, none of it gated on the window load event: with the CJK
+   * fonts preloaded (about 4.5 MB), `load` can come many seconds after the
+   * page is usable on a slow link, and turns made before it ran in flat mode on
+   * cold pages with no curl print ready.
+   */
+  function boot(): void {
+    debug?.set({ prewarm: prewarmOn, loaf: TurnRecorder.hasLoaf });
+    debug?.boot('script', bootMs());
+    if (document.readyState === 'complete') debug?.boot('load', bootMs());
+    else window.addEventListener('load', () => debug?.boot('load', bootMs()), { once: true });
+    // Mode and refresh rate right after the first frame, so the probe never delays first paint.
+    window.requestAnimationFrame(() => {
+      window.setTimeout(() => {
+        ensureMode();
+        measureRefresh().then(setRefresh);
+      }, 0);
+    });
+    startPreload();
+  }
+
+  function bootMs(): number {
+    return Math.round(performance.now());
+  }
+
+  function setRefresh(ms: number): void {
+    // A frame can only be missed, never come early: keep the shortest interval measured.
+    refreshMs = refreshMeasured ? Math.min(refreshMs, ms) : ms;
+    refreshMeasured = true;
+    debug?.set({ refreshMs });
+  }
+
+  /** Pick the curl mode once (also called by the first turn if it comes before the probe). */
+  function ensureMode(): void {
+    if (modeDetected) return;
+    modeDetected = true;
+    const detected = detectCurlMode();
+    setCurlMode(detected.mode);
+    modeUnverified = detected.mode === 'gpu' && !detected.forced && !detected.stored;
+    debug?.set({ mode: detected.mode, modeWhy: detected.why, renderer: detected.renderer });
+    debug?.boot('mode', bootMs());
+  }
+
   function startPreload(): void {
-    if (preloadStarted) return;
+    if (preloadStarted || preloadPending) return;
+    preloadPending = true;
     whenIdle(() => {
       // Fetch any rare-glyph font subsets the hidden sheets need first, and wait
-      // for fonts to settle: a font arriving later would invalidate every
-      // sheet's text layout and undo the warm-up.
+      // (a bounded time) for fonts to settle: a font arriving later invalidates
+      // every sheet's text layout and undoes part of the warm-up.
       const pages = saveData() ? [index, ...preloadOrder()] : sheets.map((_, page) => page);
       const text = pages.map((page) => sheets[page]?.textContent ?? '').join('');
       const loads = missingFaces(text).map((face) => face.load().catch(() => undefined));
       const ready = document.fonts ? document.fonts.ready : Promise.resolve();
-      Promise.all([...loads, ready]).finally(() => {
-        if (!busy) {
-          const detected = detectCurlMode();
-          setCurlMode(detected.mode);
-          modeUnverified = detected.mode === 'gpu' && !detected.forced && !detected.stored;
-          debug?.set({ mode: detected.mode, modeWhy: detected.why, renderer: detected.renderer });
-        }
-        debug?.set({ prewarm: prewarmOn, loaf: TurnRecorder.hasLoaf });
-        measureRefresh().then((ms) => {
-          refreshMs = ms;
-          debug?.set({ refreshMs: ms });
-        });
+      const settled = Promise.all([...loads, ready]).then(() => true, () => true);
+      const timeout = new Promise<boolean>((resolve) => window.setTimeout(() => resolve(false), FONT_WAIT_MS));
+      Promise.race([settled, timeout]).then((fontsDone) => {
+        debug?.boot(fontsDone ? 'fonts' : `fonts>${FONT_WAIT_MS}ms`, bootMs());
+        preloadPending = false;
         preloadStarted = true;
         schedulePreload();
         prefetchAdjacentIssues();
+        if (!fontsDone) {
+          // Fonts came in after the warm-up started: pre-raster the neighbours again with the real glyphs.
+          settled.then(() => {
+            debug?.boot('fonts', bootMs());
+            prewarmed.clear();
+            schedulePreload();
+          });
+        }
       });
-    });
+    }, 300);
   }
 
   function prewarmKey(page: number): string {
@@ -497,9 +549,14 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     root.dataset.preloaded = 'false';
     preloadJob = whenIdle(() => {
       preloadJob = null;
-      // Never compete with a page turn in progress or one that is settling.
+      // Never compete with a page turn in progress or one that is settling:
+      // look again a little later (a timer, not an idle callback per frame).
       if (busy || retiring || prewarmSheet) {
-        schedulePreload();
+        preloadJob = { cancel: () => window.clearTimeout(retryTimer) };
+        const retryTimer = window.setTimeout(() => {
+          preloadJob = null;
+          schedulePreload();
+        }, PRELOAD_RETRY_MS);
         return;
       }
       // One sheet-sized unit per idle period keeps every task short and lets
@@ -507,11 +564,25 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
       const task = nextPreloadTask();
       if (!task) {
         root.dataset.preloaded = 'true';
+        if (debug) {
+          reportPreload('done');
+          // A second refresh measurement on a quiet page (the first ran while the page was loading).
+          if (!refreshRemeasured) {
+            refreshRemeasured = true;
+            measureRefresh().then(setRefresh);
+          }
+        }
         return;
       }
       task();
+      if (debug) reportPreload('running');
       schedulePreload();
     });
+  }
+
+  function reportPreload(state: string): void {
+    const prints = sheets.filter((_, page) => snapshotReady(page)).length;
+    debug?.set({ preload: `warm ${warmed.size}/${sheets.length} · prints ${prints}/${sheets.length} · ${state}` });
   }
 
   /** Render a hidden sheet ahead of time (still invisible) so a flip only has to show it. */
@@ -680,6 +751,7 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     clearCurl();
     flushRetire();
     endPrewarm();
+    ensureMode();
     if (debug || modeUnverified) recorder?.begin(kind, curlMode);
     if (width !== curlWidth || height !== curlHeight) {
       // Bands just long enough to cross the page at any angle (set only when the size changes).
