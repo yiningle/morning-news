@@ -1,13 +1,19 @@
 /**
- * Post-build: give every built page its own small font subset (self-hosted
- * fallback for the CDN fonts, see src/font-sources.ts and Layout.astro).
+ * Post-build: the display web fonts of every built page, cut to exactly the
+ * characters its display text contains.
  *
- * For each dist/**\/*.html, the characters of its text are cut out of the
- * vendored Noto Serif SC (400/700/900) and UnifrakturMaguntia files into
- * content-hashed woff2 files under dist/_fonts/, with one stylesheet per
- * distinct character set. The page's `__FONT_SUBSET__` placeholders (meta tag
- * and <noscript> link) are replaced with a relative URL to that stylesheet,
- * so the output works under any base path.
+ * Body text uses the reader's system serif (see paper.css). Only the DISPLAY
+ * elements below use web fonts: Noto Serif SC Black (900, as "Morning
+ * Display") and UnifrakturMaguntia (Latin only). For each dist/**\/*.html the
+ * text of those elements is collected and the vendored fonts in src/fonts are
+ * subset to it (harfbuzz, via subset-font) into content-hashed woff2 files
+ * under dist/_fonts/. The page's `__DISPLAY_FONTS__` placeholder becomes a
+ * high-priority preload per file plus the @font-face rules, inside a
+ * <noscript> that Layout.astro's loader reads (and that applies as-is when
+ * JavaScript is off). URLs are relative, so the output works under any base.
+ *
+ * Keep DISPLAY in step with the rules in paper.css that use var(--display)
+ * or UnifrakturMaguntia.
  *
  * usage: node scripts/subset-fonts.mjs [distDir]
  */
@@ -17,6 +23,8 @@ import { dirname, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { create } from 'fontkitten';
 import subsetFont from 'subset-font';
+import { ELEMENT_NODE, TEXT_NODE, parse } from 'ultrahtml';
+import { querySelectorAll } from 'ultrahtml/selector';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = resolve(root, process.argv[2] ?? 'dist');
@@ -24,16 +32,49 @@ const fontsDir = join(root, 'src', 'fonts');
 const outDir = join(dist, '_fonts');
 mkdirSync(outDir, { recursive: true });
 
-/* Text the scripts add at run time (pager, live region) plus printable ASCII. */
-const RUNTIME_TEXT = '第版，·/–—“”‘’…' + Array.from({ length: 95 }, (_, i) => String.fromCharCode(32 + i)).join('');
-
-/* Per family and weight: source files in priority order (the first one that has a glyph provides it). */
-const FACES = [
-  { family: 'Noto Serif SC', weight: 400, files: ['noto-serif-sc-chinese-simplified-400-normal', 'noto-serif-sc-29-400-normal'] },
-  { family: 'Noto Serif SC', weight: 700, files: ['noto-serif-sc-chinese-simplified-700-normal', 'noto-serif-sc-29-700-normal'] },
-  { family: 'Noto Serif SC', weight: 900, files: ['noto-serif-sc-chinese-simplified-900-normal'] },
-  { family: 'UnifrakturMaguntia', weight: 400, files: ['unifrakturmaguntia-latin-400-normal'], latinOnly: true },
+/* The display elements, per face. `first` = only the start of the first paragraph (a ::first-letter drop cap). */
+const DISPLAY = [
+  {
+    family: 'Morning Display',
+    weight: 900,
+    // Latin glyphs from the Latin file, everything else from the simplified-Chinese one.
+    files: [{ name: 'noto-serif-sc-latin-900-normal', latin: true }, { name: 'noto-serif-sc-chinese-simplified-900-normal' }],
+    selectors: ['.masthead-title', '.inside-title', '.story-title', '.section-display', '.stat-title', '.briefs-label', '.pull-quote', '.debate-title', '.guide-item b'],
+    first: ['.story-lead .story-body', '.story-section-lead .story-body'],
+  },
+  {
+    family: 'UnifrakturMaguntia',
+    weight: 400,
+    files: [{ name: 'unifrakturmaguntia-latin-400-normal', latin: true }],
+    selectors: ['.mast-en', '.guide-title', '.section-en'],
+    first: [],
+  },
 ];
+
+const decode = (text) =>
+  text
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+    .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(Number(d)))
+    .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&nbsp;/g, '\u00a0').replace(/&amp;/g, '&');
+
+function textOf(node) {
+  if (node.type === TEXT_NODE) return decode(node.value);
+  if (node.type !== ELEMENT_NODE && node.type !== 0) return '';
+  if (node.type === ELEMENT_NODE && (node.name === 'script' || node.name === 'style')) return '';
+  return (node.children ?? []).map(textOf).join('');
+}
+
+function displayText(doc, face) {
+  let text = face.selectors.flatMap((sel) => querySelectorAll(doc, sel)).map(textOf).join('');
+  for (const sel of face.first) {
+    for (const body of querySelectorAll(doc, sel)) {
+      const p = (body.children ?? []).find((child) => child.type === ELEMENT_NODE && child.name === 'p');
+      // ::first-letter takes leading punctuation with the letter.
+      if (p) text += [...textOf(p).trimStart()].slice(0, 3).join('');
+    }
+  }
+  return text;
+}
 
 const sources = new Map();
 function source(name) {
@@ -44,66 +85,45 @@ function source(name) {
   return sources.get(name);
 }
 
-function pageText(html) {
-  const body = html
-    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
-    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
-    .replace(/<[^>]+>/g, ' ');
-  return body
-    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
-    .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(Number(d)))
-    .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&nbsp;/g, '\u00a0');
-}
-
 const hash = (value) => createHash('sha256').update(value).digest('hex').slice(0, 10);
-const range = (codes) => codes.map((c) => `U+${c.toString(16).toUpperCase()}`).join(', ');
+const range = (codes) => codes.map((c) => `U+${c.toString(16).toUpperCase()}`).join(',');
+const isLatin = (c) => c < 0x2000;
 
 const fileCache = new Map();
 async function subsetFile(name, codes) {
   const key = `${name}:${codes.join(',')}`;
-  if (fileCache.has(key)) return fileCache.get(key);
-  const data = await subsetFont(source(name).buffer, String.fromCodePoint(...codes), { targetFormat: 'woff2' });
-  const file = `${name.replace(/-normal$/, '')}.${hash(data)}.woff2`;
-  writeFileSync(join(outDir, file), data);
-  const result = { file, bytes: data.length };
-  fileCache.set(key, result);
-  return result;
+  if (!fileCache.has(key)) {
+    fileCache.set(key, (async () => {
+      const data = await subsetFont(source(name).buffer, String.fromCodePoint(...codes), { targetFormat: 'woff2' });
+      const file = `${name.replace(/-normal$/, '')}.${hash(data)}.woff2`;
+      writeFileSync(join(outDir, file), data);
+      return { file, bytes: data.length };
+    })());
+  }
+  return fileCache.get(key);
 }
 
-const cssCache = new Map();
-async function stylesheetFor(text) {
-  const codes = [...new Set([...text, ...RUNTIME_TEXT].map((ch) => ch.codePointAt(0)))].filter((c) => c >= 32).sort((a, b) => a - b);
-  const key = codes.join(',');
-  if (cssCache.has(key)) return cssCache.get(key);
-  const blocks = [];
-  let bytes = 0;
-  for (const face of FACES) {
-    let left = face.latinOnly ? codes.filter((c) => c < 0x2000) : codes;
-    face.files.forEach((name, i) => {
-      const cmap = source(name).cmap;
-      const mine = left.filter((c) => cmap.has(c));
-      left = left.filter((c) => !cmap.has(c));
-      face[`take${i}`] = mine;
-    });
-    for (let i = face.files.length - 1; i >= 0; i -= 1) {
-      // Rarer sources first with an exact unicode-range, the main file last as the catch-all,
-      // the same order the full fonts were declared in.
-      const mine = face[`take${i}`];
-      if (!mine.length) continue;
-      const out = await subsetFile(face.files[i], mine);
-      bytes += out.bytes;
-      blocks.push(
-        `@font-face{font-family:"${face.family}";font-style:normal;font-weight:${face.weight};font-display:swap;` +
-          `src:url(${out.file}) format("woff2")${i > 0 || face.latinOnly ? `;unicode-range:${range(mine)}` : ''}}`,
-      );
+const missing = new Set();
+async function facesFor(doc) {
+  const out = [];
+  for (const face of DISPLAY) {
+    const text = displayText(doc, face);
+    let left = [...new Set([...text].map((ch) => ch.codePointAt(0)))].filter((c) => c > 32 && c !== 0x3000).sort((a, b) => a - b);
+    const parts = [];
+    for (const file of face.files) {
+      const cmap = source(file.name).cmap;
+      const mine = left.filter((c) => (!file.latin || isLatin(c)) && cmap.has(c));
+      left = left.filter((c) => !mine.includes(c));
+      if (mine.length) parts.push({ name: file.name, codes: mine });
+    }
+    left.forEach((c) => missing.add(`${face.family}:${String.fromCodePoint(c)}`));
+    for (const part of parts) {
+      const result = await subsetFile(part.name, part.codes);
+      // An exact unicode-range only where one family has more than one file.
+      out.push({ ...result, family: face.family, weight: face.weight, codes: part.codes, range: parts.length > 1 ? range(part.codes) : null });
     }
   }
-  const css = `/* self-hosted subset: ${codes.length} characters */\n${blocks.join('\n')}\n`;
-  const file = `subset.${hash(css)}.css`;
-  writeFileSync(join(outDir, file), css);
-  const result = { file, bytes, chars: codes.length };
-  cssCache.set(key, result);
-  return result;
+  return out;
 }
 
 const started = Date.now();
@@ -111,10 +131,18 @@ const pages = globSync('**/*.html', { cwd: dist });
 for (const page of pages) {
   const path = join(dist, page);
   const html = readFileSync(path, 'utf8');
-  if (!html.includes('__FONT_SUBSET__')) continue;
-  const sheet = await stylesheetFor(pageText(html));
-  const href = relative(dirname(path), join(outDir, sheet.file)).split(sep).join('/');
-  writeFileSync(path, html.replaceAll('__FONT_SUBSET__', href));
-  console.log(`fonts: ${page} → _fonts/${sheet.file} (${sheet.chars} chars, ${Math.round(sheet.bytes / 1024)} KB)`);
+  const placeholder = /<meta name="display-fonts" content="__DISPLAY_FONTS__"\s*\/?>/;
+  if (!placeholder.test(html)) continue;
+  const faces = await facesFor(parse(html));
+  const href = (file) => relative(dirname(path), join(outDir, file)).split(sep).join('/');
+  const bytes = faces.reduce((sum, face) => sum + face.bytes, 0);
+  const preload = faces.map((face) => `<link rel="preload" href="${href(face.file)}" as="font" type="font/woff2" crossorigin fetchpriority="high">`).join('');
+  const rules = faces
+    .map((face) => `@font-face{font-family:"${face.family}";font-style:normal;font-weight:${face.weight};font-display:swap;src:url(${href(face.file)}) format("woff2")${face.range ? `;unicode-range:${face.range}` : ''}}`)
+    .join('');
+  const block = `${preload}<noscript id="display-fonts" data-bytes="${bytes}"><style>${rules}</style></noscript>`;
+  writeFileSync(path, html.replace(placeholder, () => block));
+  console.log(`fonts: ${page}: ${faces.map((f) => `${f.file} ${f.codes.length} chars ${(f.bytes / 1024).toFixed(1)} KB`).join(', ')} = ${(bytes / 1024).toFixed(1)} KB`);
 }
-console.log(`fonts: ${fileCache.size} subset files, ${cssCache.size} stylesheets in ${Date.now() - started} ms`);
+if (missing.size) console.log(`fonts: not in the fonts (system fallback): ${[...missing].join(' ')}`);
+console.log(`fonts: ${fileCache.size} subset files in ${Date.now() - started} ms`);

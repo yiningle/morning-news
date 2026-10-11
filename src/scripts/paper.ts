@@ -13,7 +13,7 @@ import {
   type HalfPlane,
   type Pt,
 } from './curl';
-import { fontGate } from './fonts';
+import { displayFonts, displayFontsPending, gateDisplayFonts } from './fonts';
 import { DebugOverlay, debugEnabled } from './debug';
 import { TurnRecorder, classifyRenderer, measureRefresh, type CurlMode, type TurnStats } from './perf';
 
@@ -135,21 +135,6 @@ function detectCurlMode(): { mode: CurlMode; why: string; renderer: string; forc
   return { mode, why: renderer === null ? 'auto: no fast WebGL' : `auto`, renderer: renderer ?? '', forced: false, stored: false };
 }
 
-
-type FontLoaderState = {
-  source: string | null;
-  probeMs: number | null;
-  cssAt: number | null;
-  tried: string[];
-  stored?: string;
-  rolledBack?: string;
-  ready: Promise<string | null>;
-};
-
-/** State of the inline font loader in Layout.astro, if it ran. */
-function fontLoader(): FontLoaderState | null {
-  return (window as Window & { __fonts?: FontLoaderState }).__fonts ?? null;
-}
 
 function lerp(a: number, b: number, t: number): number {
   return a + (b - a) * t;
@@ -387,43 +372,42 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
    * afterwards, in idle time.
    */
   function watchFonts(): void {
-    const gate = fontGate();
-    gate.guard = () => busy || retiring !== null;
-    // A batch re-lays out all the text in layout that uses those fonts, in one
-    // task: keep it to the page on screen, and bring the prepared pages back one
-    // per idle period afterwards (nextThaw), nearest first.
-    gate.beforeFlush = () => {
-      sheets.forEach((sheet) => {
-        if (sheet.hidden && sheet.classList.contains('is-warm')) sheet.classList.add('is-frozen');
-      });
-      // (A print in use by a turn stays in layout: the rule skips .is-active.)
-      snapshots.forEach((snap) => snap.wrap.classList.add('is-frozen'));
-    };
-    fontsStreaming = gate.pending || gate.stats.source === 'pending';
-    let applied = gate.stats.batches;
+    const fonts = displayFonts();
+    fontsStreaming = displayFontsPending(fonts);
+    // Adding the fonts re-lays out all the text in layout that uses them, in
+    // one task: keep it to the page on screen, and bring the prepared pages
+    // back one per idle period afterwards (nextThaw), nearest first.
+    gateDisplayFonts(
+      () => busy || retiring !== null,
+      () => {
+        sheets.forEach((sheet) => {
+          if (sheet.hidden && sheet.classList.contains('is-warm')) sheet.classList.add('is-frozen');
+        });
+        // (A print in use by a turn stays in layout: the rule skips .is-active.)
+        snapshots.forEach((snap) => snap.wrap.classList.add('is-frozen'));
+      },
+    );
     window.addEventListener('morning-news:fonts', () => {
-      if (gate.stats.batches !== applied) {
-        applied = gate.stats.batches;
-        fontsChanged = true;
-      }
-      fontsStreaming = gate.pending;
+      if (fonts.appliedAt !== null && fontsStreaming) fontsChanged = true;
+      fontsStreaming = displayFontsPending(fonts);
       if (debug) reportFonts();
       schedulePreload();
     });
+    if (debug) reportFonts();
   }
 
   function reportFonts(): void {
-    const info = fontLoader();
-    const stats = fontGate().stats;
-    const tried = info && (info.tried.length > 1 || stats.source !== info.source) ? ` (tried ${info.tried.join(', ')})` : '';
+    const fonts = displayFonts();
     debug?.set({
       fonts:
-        `${stats.source}${info?.stored ? ` [remembered ${info.stored}]` : ''}${tried} · probe ${info?.probeMs ?? '-'}ms · css at ${info?.cssAt ?? '-'}ms · ` +
-        `files ${stats.fetched}/${stats.files}${stats.failed ? ` (${stats.failed} failed)` : ''} ${Math.round(stats.bytes / 1024)} KB · ` +
-        `applied in ${stats.batches} batches, first ${stats.firstAppliedAt ?? '-'}ms, last ${stats.lastAppliedAt ?? '-'}ms` +
-        (stats.held ? ` · held ${stats.held}× for turns` : '') + (fontsStreaming ? ' · loading…' : ''),
+        `display ${fonts.faces.length} files ${(fonts.bytes / 1024).toFixed(1)} KB · ${fonts.status}` +
+        ` · ready ${fonts.readyAt ?? '-'}ms · applied ${fonts.appliedAt ?? '-'}ms` +
+        (fonts.gated ? ' (between turns)' : '') +
+        (fonts.held ? ` · held ${fonts.held}× for turns` : '') +
+        ' · body: system',
     });
   }
+
 
   function boot(): void {
     watchFonts();
@@ -469,10 +453,9 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     whenIdle(() => {
       // Wait (a bounded time) for the first batch of web fonts: fonts applied
       // later change every prepared sheet's text layout and undo part of the warm-up.
-      const gate = fontGate();
       const settled = new Promise<boolean>((resolve) => {
         const check = () => {
-          if (gate.stats.batches > 0 || (!gate.pending && gate.stats.source !== 'pending')) {
+          if (!displayFontsPending()) {
             window.removeEventListener('morning-news:fonts', check);
             resolve(true);
           }

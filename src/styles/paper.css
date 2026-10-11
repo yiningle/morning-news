@@ -1,32 +1,21 @@
 /*
- * The web fonts (Noto Serif SC 400/700/900, UnifrakturMaguntia) are not
- * declared here: the font loader in Layout.astro adds them from a CDN or from
- * the page's self-hosted subset, without blocking the first paint.
+ * Body text is set in the reader's own system UI font: no download.
  *
- * Until they arrive, text uses a local Song/Ming face with Noto Serif SC's
- * vertical metrics (ascent 1.151, descent 0.286, no line gap). CJK glyphs are
- * one em wide in every such font, so the swap barely moves a line.
+ * Only display text (masthead, headlines, section heads, drop caps, pull
+ * quotes, the blackletter lines; see DISPLAY in scripts/subset-fonts.mjs) uses
+ * web fonts: Noto Serif SC Black and UnifrakturMaguntia, cut at build time to
+ * exactly the characters those elements contain on each page. Their
+ * @font-face rules are written into the page by that script and applied by
+ * Layout.astro and src/scripts/fonts.ts, never during a page turn.
+ *
+ * Until they arrive, display text uses the heaviest local Song face with Noto
+ * Serif SC's vertical metrics (ascent 1.151, descent 0.286, no line gap). CJK
+ * glyphs are one em wide in every such font, so the swap barely moves a line.
  */
 @font-face {
-  font-family: "Noto Serif SC Fallback";
-  font-weight: 400;
-  src: local("Noto Serif CJK SC"), local("Source Han Serif SC"), local("Songti SC"), local("STSong"), local("SimSun");
-  ascent-override: 115.1%;
-  descent-override: 28.6%;
-  line-gap-override: 0%;
-}
-@font-face {
-  font-family: "Noto Serif SC Fallback";
-  font-weight: 700;
-  src: local("Noto Serif CJK SC Bold"), local("Source Han Serif SC Bold"), local("Songti SC Bold"), local("STSongti-SC-Bold"), local("SimSun");
-  ascent-override: 115.1%;
-  descent-override: 28.6%;
-  line-gap-override: 0%;
-}
-@font-face {
-  font-family: "Noto Serif SC Fallback";
+  font-family: "Display Fallback";
   font-weight: 900;
-  src: local("Noto Serif CJK SC Black"), local("Source Han Serif SC Heavy"), local("Songti SC Black"), local("STSongti-SC-Black"), local("SimSun");
+  src: local("Songti SC Black"), local("STSongti-SC-Black"), local("Noto Serif CJK SC Black"), local("Source Han Serif SC Heavy"), local("Songti SC Bold"), local("STSongti-SC-Bold"), local("Noto Serif CJK SC Bold"), local("SimSun");
   ascent-override: 115.1%;
   descent-override: 28.6%;
   line-gap-override: 0%;
@@ -44,7 +33,17 @@
   --column: #bbbbbb;
   --accent: #8b1a1a;
   --dummy: #8b1a1a;
-  --font: "Noto Serif SC", "Noto Serif SC Fallback", "Source Han Serif SC", "Source Han Serif CN", "Songti SC", "STSong", "SimSun", "PMingLiU", serif;
+  /*
+   * Body: each OS's own UI font, no download. Latin UI faces first (they have
+   * no CJK, so Chinese falls through), then the Simplified Chinese UI faces,
+   * named before system-ui so a Japanese CJK face is never picked for zh text:
+   * macOS/iOS SF + PingFang SC, Windows Segoe UI + Microsoft YaHei,
+   * Ubuntu/Linux Ubuntu + Noto Sans CJK SC (or WenQuanYi), Android Roboto + Noto Sans CJK.
+   */
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Ubuntu", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "WenQuanYi Micro Hei", system-ui, "Helvetica Neue", Arial, sans-serif;
+  /* Italic English excerpts: a real italic from a system serif, CJK from the body face. */
+  --latin-italic: "Iowan Old Style", "Charter", "Georgia", "Cambria", "Liberation Serif", "DejaVu Serif", var(--font);
+  --display: "Morning Display", "Display Fallback", var(--font);
   color-scheme: light;
 }
 
@@ -365,6 +364,7 @@ a:hover {
 }
 
 .inside-title {
+  font-family: var(--display);
   margin: 0.05rem 0 0;
   font-weight: 900;
   font-size: 1.55rem;
@@ -388,6 +388,7 @@ a:hover {
 }
 
 .masthead-title {
+  font-family: var(--display);
   margin: 0.05rem 0 0;
   text-align: center;
   font-weight: 900;
@@ -470,6 +471,7 @@ a:hover {
 }
 
 .story-title {
+  font-family: var(--display);
   margin: 0;
   font-weight: 900;
   line-height: 1.18;
@@ -566,6 +568,7 @@ a:hover {
 }
 
 .story-lead .story-body p:first-of-type::first-letter {
+  font-family: var(--display);
   font-weight: 900;
   font-size: 3.35em;
   float: left;
@@ -630,6 +633,7 @@ a:hover {
 }
 
 .guide-item b {
+  font-family: var(--display);
   display: block;
   font-weight: 900;
   font-size: 0.95rem;
@@ -644,6 +648,7 @@ a:hover {
 }
 
 .section-display {
+  font-family: var(--display);
   margin: 0.7rem 0 0.35rem;
   text-align: center;
   font-weight: 900;
@@ -673,6 +678,7 @@ a:hover {
 }
 
 .briefs-label {
+  font-family: var(--display);
   margin: 0 0 0.3rem;
   padding-bottom: 0.25rem;
   border-bottom: 1px solid var(--ink);
@@ -1317,6 +1323,7 @@ body.is-locked .sheet-slot.is-curling .curl-shield {
 }
 
 .stat-title {
+  font-family: var(--display);
   margin: 0 0 0.25rem;
   padding-bottom: 0.2rem;
   border-bottom: 3px double var(--ink);
@@ -1356,6 +1363,7 @@ body.is-locked .sheet-slot.is-curling .curl-shield {
 }
 
 .pull-quote {
+  font-family: var(--display);
   margin: 0.35rem 0 0.15rem;
   font-size: 1.15rem;
   font-weight: 900;
@@ -1365,6 +1373,7 @@ body.is-locked .sheet-slot.is-curling .curl-shield {
 .pull-en {
   margin: 0;
   color: var(--meta);
+  font-family: var(--latin-italic);
   font-style: italic;
   font-size: 0.86rem;
 }
@@ -1382,6 +1391,7 @@ body.is-locked .sheet-slot.is-curling .curl-shield {
 }
 
 .debate-title {
+  font-family: var(--display);
   margin: 0 0 0.15rem;
   font-size: 0.75rem;
   font-weight: 900;
@@ -1423,6 +1433,7 @@ body.is-locked .sheet-slot.is-curling .curl-shield {
   display: block;
   margin-top: 0.1rem;
   color: var(--meta);
+  font-family: var(--latin-italic);
   font-style: italic;
   font-size: 0.78rem;
   line-height: 1.4;
@@ -1596,6 +1607,7 @@ body.is-locked .sheet-slot.is-curling .curl-shield {
 }
 
 .story-section-lead .story-body p:first-of-type::first-letter {
+  font-family: var(--display);
   font-weight: 900;
   font-size: 2.8em;
   float: left;

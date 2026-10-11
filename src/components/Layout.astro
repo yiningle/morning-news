@@ -1,6 +1,5 @@
 ---
 import '../styles/paper.css';
-import { FONT_PROBE_TIMEOUT_MS, FONT_SOURCES, FONT_SOURCE_TTL_MS } from '../font-sources';
 
 interface Props {
   title: string;
@@ -8,9 +7,6 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
-const fontConfig = { sources: FONT_SOURCES, timeoutMs: FONT_PROBE_TIMEOUT_MS, ttlMs: FONT_SOURCE_TTL_MS };
-/* Replaced after the build by scripts/subset-fonts.mjs with this page's own font subset stylesheet. */
-const SUBSET = '__FONT_SUBSET__';
 ---
 
 <!doctype html>
@@ -22,120 +18,63 @@ const SUBSET = '__FONT_SUBSET__';
     <meta name="theme-color" content="#e9e4d8" />
     <meta name="color-scheme" content="light" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="font-subset" content={SUBSET} />
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    {/* Replaced after the build by scripts/subset-fonts.mjs: preloads of this page's display font subsets and their @font-face rules (in <noscript id="display-fonts">). */}
+    <meta name="display-fonts" content="__DISPLAY_FONTS__" />
     {/*
-      Font source picker. Runs before any stylesheet and never blocks
-      rendering: text shows at once in a metric-matched local fallback. Tries
-      each CDN's CSS in order with a timeout, remembers the one that worked
-      (localStorage, 7 days), and ends with this page's self-hosted subset.
-      src/scripts/fonts.ts then downloads only the files the text needs and
-      applies them between page turns. Same script on every page (the subset
-      URL is read from the meta tag above), so a CSP could allow it by hash.
+      Display font loader. Body text uses system fonts; only display text uses
+      the tiny per-page subsets declared above. Never blocks rendering: they
+      are loaded as FontFace objects and added to the document as soon as they
+      are in, unless the page-turn code has taken over (src/scripts/fonts.ts),
+      in which case they are added between turns. ?fonts=none leaves them out.
     */}
-    <script is:inline define:vars={{ fontConfig }}>
+    <script is:inline>
       (function () {
-        var cfg = fontConfig;
-        var KEY = 'morning-news:font-source';
-        var settle;
-        var meta = document.querySelector('meta[name="font-subset"]');
-        var subset = meta && meta.content && meta.content.indexOf('__') !== 0 ? meta.content : null;
-        /* Read by src/scripts/fonts.ts, which downloads and applies the font files. */
-        var state = (window.__fonts = { source: null, probeMs: null, cssAt: null, tried: [], css: null, subset: subset });
-        state.ready = new Promise(function (resolve) { settle = resolve; });
-        var at = function () { return Math.round(performance.now()); };
-        var forced = null;
-        try { forced = new URLSearchParams(location.search).get('fonts'); } catch (e) {}
-        var stored = null;
-        try {
-          var saved = JSON.parse(localStorage.getItem(KEY) || 'null');
-          if (saved && saved.exp > Date.now()) stored = saved.id;
-        } catch (e) {}
-        var list = cfg.sources.slice();
-        if (forced) {
-          list = list.filter(function (s) { return s.id === forced; });
-        } else if (stored) {
-          list.sort(function (a, b) { return (b.id === stored) - (a.id === stored); });
-          state.stored = stored;
-        }
-        if (forced === 'self' || forced === 'none') list = [];
-        if (subset) list.push({ id: 'self', css: [subset], preconnect: [] });
-        if (forced === 'none') list = [];
-        /* All CDNs together get at most two probe timeouts; then the self-hosted subset. */
-        var deadline = performance.now() + cfg.timeoutMs * 2;
-
-        function preconnect(source) {
-          source.preconnect.forEach(function (origin) {
-            var link = document.createElement('link');
-            link.rel = 'preconnect';
-            link.href = origin;
-            link.crossOrigin = 'anonymous';
-            document.head.appendChild(link);
-          });
-        }
-        function remember(id) {
-          if (forced) return;
-          try {
-            if (id) localStorage.setItem(KEY, JSON.stringify({ id: id, exp: Date.now() + cfg.ttlMs }));
-            else localStorage.removeItem(KEY);
-          } catch (e) {}
-        }
-        function finish(source, texts) {
-          state.source = source ? source.id : 'system';
-          state.cssAt = at();
-          if (texts) state.css = texts.map(function (text, i) { return { text: text, base: new URL(source.css[i], location.href).href }; });
-          document.documentElement.dataset.fonts = state.source;
-          settle(state.source);
-        }
-        function probe(source, self) {
-          return new Promise(function (resolve) {
-            var controller = typeof AbortController === 'function' ? new AbortController() : null;
-            var timer = setTimeout(function () {
-              if (controller) controller.abort();
-              resolve(null);
-            }, self ? 10000 : Math.max(0, Math.min(cfg.timeoutMs, deadline - performance.now())));
-            Promise.all(
-              source.css.map(function (url) {
-                return fetch(url, { mode: 'cors', credentials: 'omit', signal: controller ? controller.signal : undefined })
-                  .then(function (response) { return response.ok ? response.text() : Promise.reject(); })
-                  .then(function (text) { return text.indexOf('@font-face') >= 0 ? text : Promise.reject(); });
-              }),
-            ).then(
-              function (texts) { clearTimeout(timer); resolve(texts); },
-              function () { clearTimeout(timer); resolve(null); },
-            );
-          });
-        }
-        function next(i) {
-          var source = list[i];
-          if (!source || typeof fetch !== 'function') return finish(null, null);
-          var self = source.id === 'self';
-          if (!self && performance.now() >= deadline) return next(i + 1);
-          var started = performance.now();
-          if (!self) preconnect(source);
-          probe(source, self).then(function (texts) {
-            var ms = Math.round(performance.now() - started);
-            state.tried.push(source.id + (texts ? ' ' : ' failed ') + ms + 'ms');
-            if (!texts) {
-              if (!self && stored === source.id) remember(null);
-              return next(i + 1);
-            }
-            state.probeMs = ms;
-            if (!self) remember(source.id);
-            finish(source, texts);
-          });
-        }
-        next(0);
+        var state = (window.__displayFonts = { faces: [], bytes: 0, readyAt: null, appliedAt: null, held: 0, status: 'none', gated: false });
+        var el = document.getElementById('display-fonts');
+        if (!el || typeof FontFace !== 'function' || /[?&]fonts=none/.test(location.search)) return;
+        state.bytes = Number(el.getAttribute('data-bytes')) || 0;
+        var now = function () { return Math.round(performance.now()); };
+        el.textContent.replace(/@font-face\{([^}]*)\}/g, function (_, body) {
+          var get = function (key) {
+            var m = body.match(new RegExp(key + ':([^;]+)'));
+            return m ? m[1].trim() : undefined;
+          };
+          state.faces.push(
+            new FontFace(get('font-family').replace(/"/g, ''), get('src'), {
+              weight: get('font-weight'),
+              style: 'normal',
+              unicodeRange: get('unicode-range'),
+              display: 'swap',
+            }),
+          );
+          return '';
+        });
+        if (!state.faces.length) return;
+        state.status = 'loading';
+        state.apply = function () {
+          if (state.appliedAt !== null) return;
+          state.faces.forEach(function (face) { document.fonts.add(face); });
+          state.appliedAt = now();
+          state.status = 'applied';
+          window.dispatchEvent(new Event('morning-news:fonts'));
+        };
+        state.ready = Promise.all(state.faces.map(function (face) { return face.load(); })).then(
+          function () {
+            state.readyAt = now();
+            state.status = 'ready';
+            if (!state.gated) state.apply();
+          },
+          function () {
+            state.status = 'failed';
+            window.dispatchEvent(new Event('morning-news:fonts'));
+          },
+        );
       })();
     </script>
-    <noscript><link rel="stylesheet" href={SUBSET} /></noscript>
     <title>{title}</title>
   </head>
   <body>
     <slot />
-    <script>
-      import { fontGate } from '../scripts/fonts';
-      fontGate();
-    </script>
   </body>
 </html>
