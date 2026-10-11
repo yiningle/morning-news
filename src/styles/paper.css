@@ -999,6 +999,15 @@ body.is-locked .stage {
   min-height: 0;
 }
 
+/*
+ * A sideways two-finger swipe on a Mac trackpad would otherwise start Chrome's
+ * back / forward gesture, which navigates the page history the turns push.
+ */
+html.js-epaper,
+body.is-locked {
+  overscroll-behavior-x: none;
+}
+
 body.is-locked .sheet-slot {
   flex: 1;
   min-height: 0;
@@ -1037,7 +1046,13 @@ body.is-locked .sheet-clip {
   overflow: hidden;
 }
 
-body.is-locked .sheet-unclip {
+/*
+ * The paper colour sits on the scroller, not on a wrapper, so each page is a
+ * single opaque layer (its scrolled contents) instead of an opaque colour layer
+ * plus a transparent text layer blended over it: one full-page pass less per
+ * page per frame.
+ */
+body.is-locked .sheet-scroll {
   background-color: var(--paper);
 }
 
@@ -1066,6 +1081,19 @@ body.is-locked .sheet[hidden] {
  */
 body.is-locked .sheet[hidden].is-warm {
   content-visibility: visible;
+}
+
+/*
+ * Prewarm (paper.ts): an adjacent sheet drawn for a moment at near-zero
+ * opacity so the compositor rasterises its tiles and glyphs ahead of the turn.
+ * It is inert and its contribution is under half a grey level.
+ */
+body.is-locked .sheet[hidden].is-prewarm {
+  visibility: visible;
+  content-visibility: visible;
+  opacity: 0.004;
+  z-index: 3;
+  pointer-events: none;
 }
 
 body.is-locked .sheet-scroll {
@@ -1164,7 +1192,6 @@ body.is-locked .sheet-slot.is-curling .curl-shield {
  * layout, paint or raster per frame.
  */
 .curl-hp,
-.curl-hp-content,
 .curl-back-page {
   position: absolute;
   left: 0;
@@ -1176,7 +1203,6 @@ body.is-locked .sheet-slot.is-curling .curl-shield {
 
 /* Pre-promoted only where a GPU composites them (see detectCurlMode in paper.ts). */
 .curl-gpu .curl-hp,
-.curl-gpu .curl-hp-content,
 .curl-gpu .curl-back-page,
 .curl-gpu .curl-band {
   will-change: transform;
@@ -1204,6 +1230,7 @@ body.is-locked .sheet-slot.is-curling .curl-shield {
 .curl-print-sheet {
   position: absolute;
   inset: 0;
+  overflow: clip;
   visibility: hidden;
 }
 
@@ -1215,10 +1242,19 @@ body.is-locked .sheet-slot.is-curling .curl-shield {
 .curl-print .sheet-scroll {
   box-shadow: none;
   pointer-events: none;
+  overflow: visible;
 }
 
+/*
+ * The darkening towards the lifted edges of the flap is static and painted
+ * into the page-back layer once (the page box's edges are the flap's edges
+ * after the reflection), instead of a flap-wide band redrawn every frame.
+ */
 .curl-tint {
   background: rgba(247, 243, 234, 0.8);
+  box-shadow:
+    inset 0 0 0 1px rgba(17, 17, 17, 0.16),
+    inset 0 0 180px 24px rgba(17, 17, 17, 0.24);
 }
 
 /* Long enough to cross any page at any angle; thickness comes from scaleY of a 100px band. */
@@ -1232,36 +1268,35 @@ body.is-locked .sheet-slot.is-curling .curl-shield {
   pointer-events: none;
 }
 
-.curl-shadow-band {
+/*
+ * Shadow and shading in one band, centred on the fold (to bottom = from the
+ * turning page's side to the lifted side). Top half: the shading on the turning
+ * page, reaching 0.8x as far as the shadow. Bottom half: the shadow cast on the
+ * page underneath.
+ */
+.curl-cast {
   background: linear-gradient(
     to bottom,
-    rgba(17, 17, 17, 0) 0%,
-    rgba(17, 17, 17, 0.08) 22%,
+    rgba(48, 28, 10, 0) 10%,
+    rgba(48, 28, 10, 0.03) 32.4%,
+    rgba(17, 17, 17, 0.28) 50%,
     rgba(17, 17, 17, 0.55) 50%,
     rgba(17, 17, 17, 0.08) 78%,
     rgba(17, 17, 17, 0) 100%
   );
 }
 
-.curl-face-band {
-  background: linear-gradient(
-    to bottom,
-    rgba(48, 28, 10, 0) 0%,
-    rgba(48, 28, 10, 0.03) 28%,
-    rgba(17, 17, 17, 0.28) 50%,
-    rgba(48, 28, 10, 0.03) 72%,
-    rgba(48, 28, 10, 0) 100%
-  );
-}
-
+/* Capped in width (SHADE_MAX in curl.ts), so its edges fade out instead of ending on a dark stop. */
 .curl-shade-band {
   background: linear-gradient(
     to bottom,
-    rgba(17, 17, 17, 0.42) 0%,
-    rgba(17, 17, 17, 0.12) 28%,
+    rgba(17, 17, 17, 0) 0%,
+    rgba(17, 17, 17, 0.2) 14%,
+    rgba(17, 17, 17, 0.12) 30%,
     rgba(255, 252, 247, 0.45) 50%,
-    rgba(17, 17, 17, 0.12) 72%,
-    rgba(17, 17, 17, 0.42) 100%
+    rgba(17, 17, 17, 0.12) 70%,
+    rgba(17, 17, 17, 0.2) 86%,
+    rgba(17, 17, 17, 0) 100%
   );
 }
 
@@ -1845,6 +1880,43 @@ body.is-locked .sheet-slot.is-curling .curl-shield {
   .toc-toggle {
     transition: none;
   }
+}
+
+/* ?debug=1 overlay (src/scripts/debug.ts). */
+.debug-overlay {
+  position: fixed;
+  left: 8px;
+  bottom: 8px;
+  z-index: 1000;
+  max-width: min(760px, calc(100vw - 16px));
+  max-height: 46vh;
+  overflow: auto;
+  padding: 6px 8px;
+  border: 1px solid #1a1a1a;
+  background: rgba(255, 255, 255, 0.94);
+  color: #111;
+  font: 11px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.debug-head {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.debug-head button {
+  font: inherit;
+  padding: 1px 6px;
+}
+
+.debug-body {
+  margin: 4px 0 0;
+  white-space: pre;
+  font: inherit;
+}
+
+.debug-overlay.is-collapsed .debug-body {
+  display: none;
 }
 
 @media print {

@@ -1,20 +1,28 @@
 import {
   backwardPath,
+  bandLength,
   createCurlLayers,
+  easeInOut,
+  easeOut,
   forwardPath,
   paintCurl,
   poseCleared,
   resetCurlLayers,
   resetHalfPlane,
-  type CurlMode,
   type CurlPose,
   type HalfPlane,
   type Pt,
 } from './curl';
+import { DebugOverlay, debugEnabled } from './debug';
+import { TurnRecorder, classifyRenderer, measureRefresh, type CurlMode, type TurnStats } from './perf';
 
 const COMPLETE_MS = 760;
 const CANCEL_MS = 440;
 const AUTO_MS = 980;
+/* How long after a turn the page turned away from is hidden for real (then in idle time). */
+const RETIRE_AFTER_MS = 90;
+/* How long a prewarmed sheet stays (invisibly) drawn so its tiles and glyphs get rasterised. */
+const PREWARM_MS = 220;
 
 function prefersReducedMotion(): boolean {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -98,35 +106,60 @@ function missingFaces(text: string): FontFace[] {
   return faces;
 }
 
-/**
- * Whether the page is composited on a real GPU. A software compositor (no GPU,
- * blocklisted driver, SwiftShader) would have to blend every rotated clip box
- * on the CPU, which costs more than re-rastering clip-path polygons.
- * `?curl=gpu|flat` forces a mode for testing.
- */
-function detectCurlMode(): CurlMode {
-  const forced = new URLSearchParams(location.search).get('curl');
-  if (forced === 'gpu' || forced === 'flat') return forced;
+/** Session-scoped choice made by the runtime check after the first GPU-mode turn. */
+const MODE_KEY = 'morning-news:curl-mode';
+
+function readStoredMode(): CurlMode | null {
   try {
-    const canvas = document.createElement('canvas');
-    const gl = canvas.getContext('webgl', { failIfMajorPerformanceCaveat: true });
-    if (!gl) return 'flat';
-    const info = gl.getExtension('WEBGL_debug_renderer_info');
-    const renderer = info ? String(gl.getParameter(info.UNMASKED_RENDERER_WEBGL)) : String(gl.getParameter(gl.RENDERER));
-    gl.getExtension('WEBGL_lose_context')?.loseContext();
-    return /swiftshader|llvmpipe|softpipe|software|basic render|microsoft basic/i.test(renderer) ? 'flat' : 'gpu';
+    const value = sessionStorage.getItem(MODE_KEY);
+    return value === 'gpu' || value === 'flat' ? value : null;
   } catch {
-    return 'flat';
+    return null;
   }
 }
 
-function easeOut(t: number): number {
-  return 1 - (1 - t) * (1 - t);
+function storeMode(mode: CurlMode): void {
+  try {
+    sessionStorage.setItem(MODE_KEY, mode);
+  } catch {
+    /* storage unavailable */
+  }
 }
 
-function easeInOut(t: number): number {
-  return t < 0.5 ? 2 * t * t : 1 - ((-2 * t + 2) ** 2) / 2;
+/**
+ * The WebGL renderer string, or null when Chrome refuses a context because it
+ * would be slow (failIfMajorPerformanceCaveat: software compositing).
+ */
+function probeRenderer(): string | null {
+  try {
+    const canvas = document.createElement('canvas');
+    const gl = canvas.getContext('webgl', { failIfMajorPerformanceCaveat: true });
+    if (!gl) return null;
+    const info = gl.getExtension('WEBGL_debug_renderer_info');
+    const renderer = info ? String(gl.getParameter(info.UNMASKED_RENDERER_WEBGL)) : String(gl.getParameter(gl.RENDERER));
+    gl.getExtension('WEBGL_lose_context')?.loseContext();
+    return renderer;
+  } catch {
+    return null;
+  }
 }
+
+/**
+ * Curl mode: `?curl=gpu|flat` forces one; otherwise a choice already made this
+ * session; otherwise the renderer check (a software compositor would have to
+ * blend every rotated clip box on the CPU, which costs more than re-rastering
+ * clip-path polygons).
+ */
+function detectCurlMode(): { mode: CurlMode; why: string; renderer: string; forced: boolean; stored: boolean } {
+  const forced = new URLSearchParams(location.search).get('curl');
+  if (forced === 'gpu' || forced === 'flat') return { mode: forced, why: 'forced by ?curl', renderer: '', forced: true, stored: false };
+  const renderer = probeRenderer();
+  const stored = readStoredMode();
+  if (stored) return { mode: stored, why: 'chosen earlier this session', renderer: renderer ?? '', forced: false, stored: true };
+  const mode = classifyRenderer(renderer);
+  return { mode, why: renderer === null ? 'auto: no fast WebGL' : `auto`, renderer: renderer ?? '', forced: false, stored: false };
+}
+
 
 function lerp(a: number, b: number, t: number): number {
   return a + (b - a) * t;
@@ -169,6 +202,19 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   let retireFrame = 0;
   /* Flat (clip-path) until the idle-time GPU check says the compositor path is safe. */
   let curlMode: CurlMode = 'flat';
+  /* GPU mode not yet confirmed by a measured turn (see checkFirstTurn). */
+  let modeUnverified = false;
+  /* Display frame interval, measured in idle time after load (60 Hz until then). */
+  let refreshMs = 1000 / 60;
+  const debug = debugEnabled() ? new DebugOverlay() : null;
+  const recorder = debug || !prefersReducedMotion() ? new TurnRecorder() : null;
+  /* Adjacent sheets already pre-rasterised once at this size and pixel ratio. */
+  const prewarmOn = new URLSearchParams(location.search).get('prewarm') !== '0';
+  const prewarmed = new Set<string>();
+  let prewarmSheet: HTMLElement | null = null;
+  let prewarmTimer = 0;
+  /* The slot's box, read once and reused by pointer handlers (cleared on resize / scroll). */
+  let slotRect: DOMRect | null = null;
   let curlWidth = 0;
   let curlHeight = 0;
   const shield = document.createElement('div');
@@ -210,6 +256,9 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   );
 
   window.addEventListener('keydown', onKey);
+  window.addEventListener('scroll', () => {
+    slotRect = null;
+  }, { passive: true, capture: true });
   window.addEventListener('hashchange', () => {
     const next = readHash(sheets.length);
     if (next === index) return;
@@ -221,6 +270,8 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   });
   window.addEventListener('resize', () => {
     if (busy) cancelTo(index);
+    endPrewarm();
+    slotRect = null;
     dropSnapshots();
     // Let hidden sheets drop back to skipped while the size changes, then re-prepare.
     if (warmed.size > 0) {
@@ -313,7 +364,7 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   }
 
   function flushRetire(): void {
-    if (retireFrame) cancelAnimationFrame(retireFrame);
+    if (retireFrame) window.clearTimeout(retireFrame);
     retireFrame = 0;
     retireJob?.cancel();
     retireJob = null;
@@ -338,12 +389,54 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
       const loads = missingFaces(text).map((face) => face.load().catch(() => undefined));
       const ready = document.fonts ? document.fonts.ready : Promise.resolve();
       Promise.all([...loads, ready]).finally(() => {
-        if (!busy) setCurlMode(detectCurlMode());
+        if (!busy) {
+          const detected = detectCurlMode();
+          setCurlMode(detected.mode);
+          modeUnverified = detected.mode === 'gpu' && !detected.forced && !detected.stored;
+          debug?.set({ mode: detected.mode, modeWhy: detected.why, renderer: detected.renderer });
+        }
+        debug?.set({ prewarm: prewarmOn, loaf: TurnRecorder.hasLoaf });
+        measureRefresh().then((ms) => {
+          refreshMs = ms;
+          debug?.set({ refreshMs: ms });
+        });
         preloadStarted = true;
         schedulePreload();
         prefetchAdjacentIssues();
       });
     });
+  }
+
+  function prewarmKey(page: number): string {
+    const { width, height } = slotSize();
+    return `${page}@${window.devicePixelRatio}:${Math.round(width)}x${Math.round(height)}`;
+  }
+
+  /**
+   * Show a hidden sheet at near-zero opacity (inert, above nothing that matters)
+   * for a moment in idle time. The compositor rasterises it like a visible page,
+   * which fills the glyph caches for its text (costly for CJK at 2x), then it
+   * goes back to hidden. The next turn then only has to draw cached glyphs.
+   */
+  function prewarm(page: number): void {
+    const sheet = sheets[page];
+    prewarmed.add(prewarmKey(page));
+    if (!sheet || !sheet.hidden || busy) return;
+    sheet.setAttribute('inert', '');
+    sheet.classList.add('is-prewarm');
+    prewarmSheet = sheet;
+    prewarmTimer = window.setTimeout(endPrewarm, PREWARM_MS);
+  }
+
+  function endPrewarm(): void {
+    window.clearTimeout(prewarmTimer);
+    prewarmTimer = 0;
+    const sheet = prewarmSheet;
+    if (!sheet) return;
+    prewarmSheet = null;
+    sheet.classList.remove('is-prewarm');
+    sheet.removeAttribute('inert');
+    schedulePreload();
   }
 
   function setCurlMode(mode: CurlMode): void {
@@ -374,6 +467,15 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     if (adjacent !== undefined && !warmed.has(adjacent)) return () => warmSheet(adjacent);
     const curls = !prefersReducedMotion() && sheets.length > 1;
     if (curls && !snapshotReady(index)) return () => buildSnapshot(index);
+    // Draw the pages a turn will reveal once, invisibly, so their tiles and
+    // glyphs are rasterised before the turn instead of during its first frames.
+    if (curls && prewarmOn && !saveData()) {
+      for (const page of [index + 1, index - 1]) {
+        if (page >= 0 && page < sheets.length && warmed.has(page) && !prewarmed.has(prewarmKey(page))) {
+          return () => prewarm(page);
+        }
+      }
+    }
     for (const page of order) {
       if (!warmed.has(page)) return () => warmSheet(page);
     }
@@ -392,7 +494,7 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     preloadJob = whenIdle(() => {
       preloadJob = null;
       // Never compete with a page turn in progress or one that is settling.
-      if (busy || retiring) {
+      if (busy || retiring || prewarmSheet) {
         schedulePreload();
         return;
       }
@@ -442,15 +544,24 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     clone.querySelectorAll('[id]').forEach((node) => node.removeAttribute('id'));
     clone.setAttribute('inert', '');
     clone.setAttribute('aria-hidden', 'true');
+    // Not a scroller (overflow: visible, moved by `top`) inside a clipping box:
+    // a scrolled clone is a composited layer of its own, blended over the page
+    // box with the tint as a third layer. This way the whole back of the page
+    // (paper, print, tint) rasters into one opaque layer.
     clone.style.position = 'absolute';
-    clone.style.left = `${sourceRect.left - slotRect.left}px`;
-    clone.style.top = `${sourceRect.top - slotRect.top}px`;
-    clone.style.width = `${sourceRect.width}px`;
-    clone.style.height = `${sourceRect.height}px`;
+    clone.style.left = '0';
+    clone.style.top = '0';
+    clone.style.width = `${source.clientWidth || sourceRect.width}px`;
+    clone.style.height = 'auto';
+    clone.style.minHeight = `${sourceRect.height}px`;
     clone.style.margin = '0';
-    clone.style.overflow = 'hidden';
+    clone.style.overflow = 'visible';
     const wrap = document.createElement('div');
     wrap.className = 'curl-print-sheet';
+    wrap.style.left = `${sourceRect.left - slotRect.left}px`;
+    wrap.style.top = `${sourceRect.top - slotRect.top}px`;
+    wrap.style.width = `${sourceRect.width}px`;
+    wrap.style.height = `${sourceRect.height}px`;
     wrap.append(clone);
     layers.print.append(wrap);
     const snap = { width, height, wrap, clone };
@@ -464,7 +575,7 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     const { width, height } = slotSize();
     if (width < 20 || height < 20) return;
     const snap = makeSnapshot(page, width, height);
-    void snap.clone.scrollHeight;
+    void snap.clone.offsetHeight;
   }
 
   function prefetchAdjacentIssues(): void {
@@ -513,6 +624,7 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   function cancelTo(next: number): void {
     const keep = sheets[next];
     const under = underSheet;
+    if (frontPlane) endTurn(false);
     clearCurl();
     if (keep && !keep.hidden && under && under !== keep && !prefersReducedMotion()) {
       // Cancelled turn: the page never left. Put it back whole (it stays
@@ -533,8 +645,9 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   function settleFrom(sheet: HTMLElement): void {
     flushRetire();
     retiring = sheet;
-    retireFrame = requestAnimationFrame(() => {
-      retireFrame = requestAnimationFrame(() => {
+    // Time based, not "two frames later": two frames are only 17 ms on a 120 Hz screen.
+    retireFrame = window.setTimeout(() => {
+      {
         retireFrame = 0;
         retireJob = whenRoomy(12, () => {
           retireJob = null;
@@ -551,20 +664,22 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
             }, 1000);
           }
         }, 1000);
-      });
-    });
+      }
+    }, RETIRE_AFTER_MS);
     paint();
     schedulePreload();
   }
 
-  function mountCurl(from: number, to: number): boolean {
+  function mountCurl(from: number, to: number, kind: 'key' | 'drag'): boolean {
     const { width, height } = slotSize();
     if (width < 20 || height < 20) return false;
     clearCurl();
     flushRetire();
+    endPrewarm();
+    if (debug || modeUnverified) recorder?.begin(kind, curlMode);
     if (width !== curlWidth || height !== curlHeight) {
       // Bands just long enough to cross the page at any angle (set only when the size changes).
-      layers.root.style.setProperty('--curl-band', `${Math.ceil(Math.hypot(width, height) * 2)}px`);
+      layers.root.style.setProperty('--curl-band', `${bandLength(width, height)}px`);
     }
     curlWidth = width;
     curlHeight = height;
@@ -592,13 +707,44 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
       snap.wrap.classList.add('is-active');
       layers.printActive = snap.wrap;
     }
-    snap.clone.scrollTop = source.scrollTop;
+    const top = `${-source.scrollTop}px`;
+    if (snap.clone.style.top !== top) snap.clone.style.top = top;
 
     layers.root.hidden = false;
     slot.classList.add('is-curling');
     busy = true;
     paint();
     return true;
+  }
+
+  function endTurn(committed: boolean): void {
+    recorder?.end(committed, refreshMs).then((stats) => {
+      if (!stats) return;
+      debug?.addTurn(stats);
+      checkFirstTurn(stats);
+    });
+  }
+
+  /**
+   * Runtime safeguard: if the first GPU-mode turn ran slow (median frame over
+   * 1.5x the display's interval), use flat mode for the rest of the session.
+   */
+  function checkFirstTurn(stats: TurnStats): void {
+    if (!modeUnverified || stats.mode !== 'gpu' || !stats.committed || stats.frames < 8) return;
+    modeUnverified = false;
+    const interval = Math.max(4, refreshMs);
+    if (stats.medianMs > interval * 1.5) {
+      const apply = () => {
+        if (busy) whenIdle(apply);
+        else setCurlMode('flat');
+      };
+      apply();
+      storeMode('flat');
+      debug?.set({ mode: 'flat', modeWhy: `switched: first gpu turn median ${stats.medianMs}ms > 1.5×${interval.toFixed(1)}ms` });
+    } else {
+      storeMode('gpu');
+      debug?.note(`gpu mode confirmed by first turn (median ${stats.medianMs}ms)`);
+    }
   }
 
   /** Paint one curl frame. Returns true once the turning page has completely left the slot. */
@@ -611,6 +757,7 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
 
   function finishAt(next: number, push: boolean): void {
     const curled = frontPlane !== null;
+    if (curled) endTurn(true);
     clearCurl();
     if (curled) settle(next);
     else show(next);
@@ -674,7 +821,7 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   }
 
   function playPath(forward: boolean, next: number, push: boolean): void {
-    if (!mountCurl(index, next)) {
+    if (!mountCurl(index, next, 'key')) {
       finishAt(next, push);
       return;
     }
@@ -705,7 +852,9 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   }
 
   function releaseDrag(forward: boolean, next: number, current: CurlPose): void {
-    const { width, height } = slotSize();
+    // The size cached when the turn was mounted: no layout read on release.
+    const width = curlWidth;
+    const height = curlHeight;
     const passed = forward ? current.point.x < width * 0.5 : current.point.x > width * 0.5;
     if (passed && next >= 0 && next < sheets.length) {
       const target = clearedPose(current, width, height);
@@ -727,21 +876,41 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     let startX = 0;
     let startY = 0;
 
+    let pending: Pt | null = null;
+    let moveFrame = 0;
+
+    // One layout read per gesture at most: pointer handlers reuse the slot box.
+    const box = (): DOMRect => {
+      slotRect ??= target.getBoundingClientRect();
+      return slotRect;
+    };
     const localPoint = (event: PointerEvent): Pt => {
-      const rect = target.getBoundingClientRect();
+      const rect = box();
       return { x: event.clientX - rect.left, y: event.clientY - rect.top };
     };
-
+    const setEdge = (edge: string) => {
+      if ((target.dataset.edge ?? '') !== edge) target.dataset.edge = edge;
+    };
     const edgeAt = (point: Pt, width: number): 'left' | 'right' | '' => {
       const zone = Math.max(36, width * (width < 720 ? 0.18 : 0.12));
       if (point.x >= width - zone) return 'right';
       if (point.x <= zone) return 'left';
       return '';
     };
+    // Trackpads report pointer moves faster than the display refreshes (and
+    // coalesce them); draw only the latest position, once per frame.
+    const flushMove = () => {
+      moveFrame = 0;
+      if (!pending) return;
+      const point = pending;
+      pending = null;
+      draw({ origin, point });
+    };
 
     target.addEventListener('pointerdown', (event) => {
       if (event.button !== 0 || busy || prefersReducedMotion() || !event.isPrimary) return;
-      const { width, height } = slotSize();
+      slotRect = null;
+      const { width, height } = box();
       const point = localPoint(event);
       const edge = edgeAt(point, width);
       if (!edge) return;
@@ -765,12 +934,11 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
       (event) => {
         if (!tracking || event.pointerId !== pointerId) {
           if (tracking || busy) return;
-          const { width } = slotSize();
-          const edge = edgeAt(localPoint(event), width);
-          const onControl = event.target instanceof Element && Boolean(event.target.closest('a, button'));
+          const edge = edgeAt(localPoint(event), box().width);
+          const onControl = Boolean(edge) && event.target instanceof Element && Boolean(event.target.closest('a, button'));
           const blocked =
             (edge === 'right' && index >= sheets.length - 1) || (edge === 'left' && index <= 0);
-          target.dataset.edge = edge && !blocked && !onControl && !prefersReducedMotion() ? edge : '';
+          setEdge(edge && !blocked && !onControl && !prefersReducedMotion() ? edge : '');
           return;
         }
         const moved = Math.hypot(event.clientX - startX, event.clientY - startY);
@@ -783,7 +951,7 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
             return;
           }
           const next = index + (forward ? 1 : -1);
-          if (!mountCurl(index, next)) {
+          if (!mountCurl(index, next, 'drag')) {
             tracking = false;
             return;
           }
@@ -798,14 +966,15 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
         }
         event.preventDefault();
         const point = localPoint(event);
-        const { width, height } = slotSize();
+        const { width, height } = box();
         const clamped: Pt = {
           x: forward
             ? Math.min(origin.x - 2, Math.max(-width * 0.2, point.x))
             : Math.max(origin.x + 2, Math.min(width * 1.2, point.x)),
           y: Math.min(height + 28, Math.max(-28, point.y)),
         };
-        draw({ origin, point: clamped });
+        pending = clamped;
+        if (!moveFrame) moveFrame = requestAnimationFrame(flushMove);
       },
       { passive: false },
     );
@@ -813,6 +982,9 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     const endDrag = (event: PointerEvent) => {
       if (!tracking || event.pointerId !== pointerId) return;
       tracking = false;
+      // Apply the last move before releasing, so the release starts from where the finger left.
+      if (moveFrame) cancelAnimationFrame(moveFrame);
+      flushMove();
       if (!dragging || !pose) {
         dragging = false;
         return;
@@ -828,13 +1000,16 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     });
 
     target.addEventListener('pointerleave', () => {
-      if (!tracking) target.dataset.edge = '';
+      if (!tracking) setEdge('');
     });
     target.addEventListener('pointerup', endDrag);
     target.addEventListener('pointercancel', (event) => {
       if (!tracking || event.pointerId !== pointerId) return;
       tracking = false;
       dragging = false;
+      if (moveFrame) cancelAnimationFrame(moveFrame);
+      moveFrame = 0;
+      pending = null;
       if (busy) cancelTo(index);
     });
   }
@@ -847,6 +1022,7 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   function setDrawer(next: boolean): void {
     if (!toggle || !drawer || !scrim || next === drawerOpen) return;
     drawerOpen = next;
+    slotRect = null;
     root.classList.toggle('is-toc-open', next);
     toggle.setAttribute('aria-expanded', next ? 'true' : 'false');
     drawer.toggleAttribute('inert', !next);
