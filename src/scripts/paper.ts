@@ -152,7 +152,11 @@ function probeRenderer(): string | null {
  */
 function detectCurlMode(): { mode: CurlMode; why: string; renderer: string; forced: boolean; stored: boolean } {
   const forced = new URLSearchParams(location.search).get('curl');
-  if (forced === 'gpu' || forced === 'flat') return { mode: forced, why: 'forced by ?curl', renderer: '', forced: true, stored: false };
+  if (forced === 'gpu' || forced === 'flat') {
+    // The renderer is only probed for the debug overlay here (a WebGL context is not free).
+    const renderer = debugEnabled() ? probeRenderer() ?? 'none (no fast WebGL)' : '';
+    return { mode: forced, why: 'forced by ?curl', renderer, forced: true, stored: false };
+  }
   const renderer = probeRenderer();
   const stored = readStoredMode();
   if (stored) return { mode: stored, why: 'chosen earlier this session', renderer: renderer ?? '', forced: false, stored: true };
