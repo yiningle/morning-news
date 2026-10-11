@@ -12,7 +12,7 @@
   "points": 688,
   "comments": 300,
   "summary": [
-   "REA（Reverse Engineer Anything）是一套给编程智能体用的逆向工程工具：一条 `npx rea-agents@latest setup` 装好后，你可以直接用大白话让智能体去拆解一个程序，REA 负责把指令、反编译代码和调用关系交给智能体，智能体负责解释它在做什么、怎么改、怎么重做。",
+   "REA（Reverse Engineer Anything）是一套给编程智能体用的逆向工程工具：装好之后（一条 npx rea-agents@latest setup 命令），你可以直接用大白话让智能体去拆解一个程序，REA 负责把指令、反编译代码和调用关系交给智能体，智能体负责解释它在做什么、怎么改、怎么重做。",
    "官网举了两个例子：为什么 Windows 计算器里 200 + 10% 等于 220？REA 读出 % 按钮处理函数的汇编，智能体据此还原规则：在加号之后，百分比取的是第一个数的 10%。另一个是 Chrome 断网小恐龙为什么越跑越快：REA 读到运行中的脚本，速度从 6 起步、每帧加 0.001、上限 13，智能体再照这个规则做出一个可调速的小游戏。它支持原生可执行文件、JavaScript 和 Electron 应用，以及浏览器和进程活动的记录对比。",
    "这是当天点赞第一的帖子。评论区有人实际看了用它做的《东方》第 4 作反编译，说质量比他见过的很多 AI 反编译好；有人说顶级模型本来就能做这类事，自己曾直接把远程桌面客户端的二进制丢给 Claude 修好了两个老 bug；也有人问它到底比「让 Claude 自己装一套 Ghidra」强在哪。"
   ],
@@ -327,7 +327,7 @@
      "points": 234,
      "comments": 118,
      "summary": [
-      "Talorys 是一个开源的个人 AI 助手，一条 `npx create-talorys@latest` 就部署进你自己的 Cloudflare 账号：能聊天、记住你的偏好、管理任务笔记和项目，还能按计划提醒。前端在 Cloudflare Pages，后端是没有公网地址的私有 Worker，数据全存在一个带 SQLite 的 Durable Object 里，聊天模型用 Workers AI 上的 GLM-4.7-flash，都在免费额度内。",
+      "Talorys 是一个开源的个人 AI 助手，一条 npx create-talorys@latest 命令就能部署进你自己的 Cloudflare 账号：能聊天、记住你的偏好、管理任务笔记和项目，还能按计划提醒。前端在 Cloudflare Pages，后端是没有公网地址的私有 Worker，数据全存在一个带 SQLite 的 Durable Object 里，聊天模型用 Workers AI 上的 GLM-4.7-flash，都在免费额度内。",
       "项目强调单用户、无遥测、不向开发者发送任何数据；Workers AI 不可用或额度用完时，任务、笔记和提醒照常工作。评论区最多人回应的吐槽是「跑在 Cloudflare 上也叫自托管？」，也有人提醒 Workers AI 的免费额度计费让人看不懂。"
      ],
      "comment_quotes": [
