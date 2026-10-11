@@ -1,80 +1,35 @@
+/*
+ * The web fonts (Noto Serif SC 400/700/900, UnifrakturMaguntia) are not
+ * declared here: the font loader in Layout.astro adds them from a CDN or from
+ * the page's self-hosted subset, without blocking the first paint.
+ *
+ * Until they arrive, text uses a local Song/Ming face with Noto Serif SC's
+ * vertical metrics (ascent 1.151, descent 0.286, no line gap). CJK glyphs are
+ * one em wide in every such font, so the swap barely moves a line.
+ */
 @font-face {
-  font-family: "UnifrakturMaguntia";
-  font-style: normal;
+  font-family: "Noto Serif SC Fallback";
   font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/unifrakturmaguntia-latin-400-normal.woff2") format("woff2");
-  unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201D, U+2022, U+20AC, U+2122;
+  src: local("Noto Serif CJK SC"), local("Source Han Serif SC"), local("Songti SC"), local("STSong"), local("SimSun");
+  ascent-override: 115.1%;
+  descent-override: 28.6%;
+  line-gap-override: 0%;
 }
-
 @font-face {
-  font-family: "Noto Serif SC";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/noto-serif-sc-latin-400-normal.woff2") format("woff2");
-  unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: "Noto Serif SC";
-  font-style: normal;
+  font-family: "Noto Serif SC Fallback";
   font-weight: 700;
-  font-display: swap;
-  src: url("../fonts/noto-serif-sc-latin-700-normal.woff2") format("woff2");
-  unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: local("Noto Serif CJK SC Bold"), local("Source Han Serif SC Bold"), local("Songti SC Bold"), local("STSongti-SC-Bold"), local("SimSun");
+  ascent-override: 115.1%;
+  descent-override: 28.6%;
+  line-gap-override: 0%;
 }
-
 @font-face {
-  font-family: "Noto Serif SC";
-  font-style: normal;
+  font-family: "Noto Serif SC Fallback";
   font-weight: 900;
-  font-display: swap;
-  src: url("../fonts/noto-serif-sc-latin-900-normal.woff2") format("woff2");
-  unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* Rare ideograph missing from the simplified subset (钍). */
-@font-face {
-  font-family: "Noto Serif SC";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/noto-serif-sc-29-400-normal.woff2") format("woff2");
-  unicode-range: U+948D;
-}
-
-@font-face {
-  font-family: "Noto Serif SC";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("../fonts/noto-serif-sc-29-700-normal.woff2") format("woff2");
-  unicode-range: U+948D;
-}
-
-@font-face {
-  font-family: "Noto Serif SC";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/noto-serif-sc-chinese-simplified-400-normal.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Noto Serif SC";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("../fonts/noto-serif-sc-chinese-simplified-700-normal.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Noto Serif SC";
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url("../fonts/noto-serif-sc-chinese-simplified-900-normal.woff2") format("woff2");
+  src: local("Noto Serif CJK SC Black"), local("Source Han Serif SC Heavy"), local("Songti SC Black"), local("STSongti-SC-Black"), local("SimSun");
+  ascent-override: 115.1%;
+  descent-override: 28.6%;
+  line-gap-override: 0%;
 }
 
 :root {
@@ -89,7 +44,7 @@
   --column: #bbbbbb;
   --accent: #8b1a1a;
   --dummy: #8b1a1a;
-  --font: "Noto Serif SC", "Source Han Serif SC", "Source Han Serif CN", "Songti SC", "STSong", "SimSun", "PMingLiU", serif;
+  --font: "Noto Serif SC", "Noto Serif SC Fallback", "Source Han Serif SC", "Source Han Serif CN", "Songti SC", "STSong", "SimSun", "PMingLiU", serif;
   color-scheme: light;
 }
 
@@ -1083,6 +1038,11 @@ body.is-locked .sheet[hidden].is-warm {
   content-visibility: visible;
 }
 
+/* Taken out of layout while web fonts stream in (syncFrozen in paper.ts). */
+body.is-locked .sheet[hidden].is-warm.is-frozen {
+  content-visibility: hidden;
+}
+
 /*
  * Prewarm (paper.ts): an adjacent sheet drawn for a moment at near-zero
  * opacity so the compositor rasterises its tiles and glyphs ahead of the turn.
@@ -1235,6 +1195,10 @@ body.is-locked .sheet-slot.is-curling .curl-shield {
 }
 
 /* One prepared print per sheet; only the one for the page being turned is painted. */
+.curl-print-sheet.is-frozen:not(.is-active) {
+  content-visibility: hidden;
+}
+
 .curl-print-sheet.is-active {
   visibility: visible;
 }

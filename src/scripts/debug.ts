@@ -22,6 +22,8 @@ export type DebugInfo = {
   loaf: boolean;
   /** Warm-up progress, e.g. "warm 5/5 · prints 5/5 · done". */
   preload: string;
+  /** Font source and timings (see the loader in Layout.astro). */
+  fonts: string;
   notes: string[];
 };
 
@@ -83,6 +85,7 @@ export class DebugOverlay {
     prewarm: true,
     loaf: false,
     preload: 'not started',
+    fonts: 'no loader',
     notes: [],
   };
 
@@ -175,6 +178,7 @@ export class DebugOverlay {
         `prewarm ${info.prewarm ? 'on' : 'off'} · LoAF ${info.loaf ? 'yes' : 'no'}`,
       pixelLine(),
       `boot ${this.bootLog.join(' · ') || '…'} · preload ${info.preload}`,
+      `fonts ${info.fonts}`,
       ...info.notes.map((note) => `note ${note}`),
       '',
       this.turns.length ? 'turn  kind  mode  time   frames  median  p95   worst   slow(>1.5×)  start/mid/end/after  dropped' : 'turn a page to see stats',

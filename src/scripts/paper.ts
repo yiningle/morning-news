@@ -13,6 +13,7 @@ import {
   type HalfPlane,
   type Pt,
 } from './curl';
+import { fontGate } from './fonts';
 import { DebugOverlay, debugEnabled } from './debug';
 import { TurnRecorder, classifyRenderer, measureRefresh, type CurlMode, type TurnStats } from './perf';
 
@@ -76,40 +77,6 @@ function saveData(): boolean {
   return connection?.saveData === true;
 }
 
-function parseUnicodeRange(range: string): Array<[number, number]> {
-  return range
-    .split(',')
-    .map((part) => part.trim().replace(/^U\+/i, ''))
-    .filter(Boolean)
-    .map((part): [number, number] => {
-      if (part.includes('?')) {
-        return [parseInt(part.replace(/\?/g, '0'), 16), parseInt(part.replace(/\?/g, 'F'), 16)];
-      }
-      const [lo, hi] = part.split('-');
-      return [parseInt(lo, 16), parseInt(hi ?? lo, 16)];
-    });
-}
-
-/**
- * Font faces a piece of text needs that have not been fetched yet. Only
- * supplementary subsets (e.g. the rare-glyph file for 钍) are considered: the
- * main faces are preloaded in <head>, and the Latin subsets are shadowed by the
- * full simplified-Chinese files, so fetching them would only waste bytes.
- */
-function missingFaces(text: string): FontFace[] {
-  if (!document.fonts) return [];
-  const codes = [...new Set(text)].map((ch) => ch.codePointAt(0) ?? 0);
-  const faces: FontFace[] = [];
-  document.fonts.forEach((face) => {
-    if (face.status !== 'unloaded') return;
-    const ranges = parseUnicodeRange(face.unicodeRange);
-    const coversLatin = ranges.some(([lo, hi]) => lo <= 0x41 && hi >= 0x41);
-    if (coversLatin) return;
-    if (codes.some((code) => ranges.some(([lo, hi]) => code >= lo && code <= hi))) faces.push(face);
-  });
-  return faces;
-}
-
 /** Session-scoped choice made by the runtime check after the first GPU-mode turn. */
 const MODE_KEY = 'morning-news:curl-mode';
 
@@ -168,6 +135,21 @@ function detectCurlMode(): { mode: CurlMode; why: string; renderer: string; forc
   return { mode, why: renderer === null ? 'auto: no fast WebGL' : `auto`, renderer: renderer ?? '', forced: false, stored: false };
 }
 
+
+type FontLoaderState = {
+  source: string | null;
+  probeMs: number | null;
+  cssAt: number | null;
+  tried: string[];
+  stored?: string;
+  rolledBack?: string;
+  ready: Promise<string | null>;
+};
+
+/** State of the inline font loader in Layout.astro, if it ran. */
+function fontLoader(): FontLoaderState | null {
+  return (window as Window & { __fonts?: FontLoaderState }).__fonts ?? null;
+}
 
 function lerp(a: number, b: number, t: number): number {
   return a + (b - a) * t;
@@ -234,6 +216,9 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
   let modeDetected = false;
   let refreshMeasured = false;
   let refreshRemeasured = false;
+  let fontsChanged = false;
+  /* Web fonts still arriving: pages a turn cannot reach next are kept out of layout (see syncFrozen). */
+  let fontsStreaming = true;
   let preloadJob: IdleHandle | null = null;
   let resizeTimer = 0;
 
@@ -395,7 +380,53 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
    * page is usable on a slow link, and turns made before it ran in flat mode on
    * cold pages with no curl print ready.
    */
+  /**
+   * Web fonts are applied by the font gate (fonts.ts) in batches, never while a
+   * turn runs or a turned page is being retired. Each batch changes the text
+   * layout of the prepared pages, so their glyph tiles are pre-rastered again
+   * afterwards, in idle time.
+   */
+  function watchFonts(): void {
+    const gate = fontGate();
+    gate.guard = () => busy || retiring !== null;
+    // A batch re-lays out all the text in layout that uses those fonts, in one
+    // task: keep it to the page on screen, and bring the prepared pages back one
+    // per idle period afterwards (nextThaw), nearest first.
+    gate.beforeFlush = () => {
+      sheets.forEach((sheet) => {
+        if (sheet.hidden && sheet.classList.contains('is-warm')) sheet.classList.add('is-frozen');
+      });
+      // (A print in use by a turn stays in layout: the rule skips .is-active.)
+      snapshots.forEach((snap) => snap.wrap.classList.add('is-frozen'));
+    };
+    fontsStreaming = gate.pending || gate.stats.source === 'pending';
+    let applied = gate.stats.batches;
+    window.addEventListener('morning-news:fonts', () => {
+      if (gate.stats.batches !== applied) {
+        applied = gate.stats.batches;
+        fontsChanged = true;
+      }
+      fontsStreaming = gate.pending;
+      if (debug) reportFonts();
+      schedulePreload();
+    });
+  }
+
+  function reportFonts(): void {
+    const info = fontLoader();
+    const stats = fontGate().stats;
+    const tried = info && (info.tried.length > 1 || stats.source !== info.source) ? ` (tried ${info.tried.join(', ')})` : '';
+    debug?.set({
+      fonts:
+        `${stats.source}${info?.stored ? ` [remembered ${info.stored}]` : ''}${tried} · probe ${info?.probeMs ?? '-'}ms · css at ${info?.cssAt ?? '-'}ms · ` +
+        `files ${stats.fetched}/${stats.files}${stats.failed ? ` (${stats.failed} failed)` : ''} ${Math.round(stats.bytes / 1024)} KB · ` +
+        `applied in ${stats.batches} batches, first ${stats.firstAppliedAt ?? '-'}ms, last ${stats.lastAppliedAt ?? '-'}ms` +
+        (stats.held ? ` · held ${stats.held}× for turns` : '') + (fontsStreaming ? ' · loading…' : ''),
+    });
+  }
+
   function boot(): void {
+    watchFonts();
     debug?.set({ prewarm: prewarmOn, loaf: TurnRecorder.hasLoaf });
     debug?.boot('script', bootMs());
     if (document.readyState === 'complete') debug?.boot('load', bootMs());
@@ -436,14 +467,19 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     if (preloadStarted || preloadPending) return;
     preloadPending = true;
     whenIdle(() => {
-      // Fetch any rare-glyph font subsets the hidden sheets need first, and wait
-      // (a bounded time) for fonts to settle: a font arriving later invalidates
-      // every sheet's text layout and undoes part of the warm-up.
-      const pages = saveData() ? [index, ...preloadOrder()] : sheets.map((_, page) => page);
-      const text = pages.map((page) => sheets[page]?.textContent ?? '').join('');
-      const loads = missingFaces(text).map((face) => face.load().catch(() => undefined));
-      const ready = document.fonts ? document.fonts.ready : Promise.resolve();
-      const settled = Promise.all([...loads, ready]).then(() => true, () => true);
+      // Wait (a bounded time) for the first batch of web fonts: fonts applied
+      // later change every prepared sheet's text layout and undo part of the warm-up.
+      const gate = fontGate();
+      const settled = new Promise<boolean>((resolve) => {
+        const check = () => {
+          if (gate.stats.batches > 0 || (!gate.pending && gate.stats.source !== 'pending')) {
+            window.removeEventListener('morning-news:fonts', check);
+            resolve(true);
+          }
+        };
+        window.addEventListener('morning-news:fonts', check);
+        check();
+      });
       const timeout = new Promise<boolean>((resolve) => window.setTimeout(() => resolve(false), FONT_WAIT_MS));
       Promise.race([settled, timeout]).then((fontsDone) => {
         debug?.boot(fontsDone ? 'fonts' : `fonts>${FONT_WAIT_MS}ms`, bootMs());
@@ -455,7 +491,7 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
           // Fonts came in after the warm-up started: pre-raster the neighbours again with the real glyphs.
           settled.then(() => {
             debug?.boot('fonts', bootMs());
-            prewarmed.clear();
+            fontsChanged = true;
             schedulePreload();
           });
         }
@@ -516,9 +552,57 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     return order;
   }
 
+  /** Pages a turn can reveal next (and the one shown). */
+  function isNear(page: number): boolean {
+    return Math.abs(page - index) <= 1;
+  }
+
+  /**
+   * While web fonts stream in, every font that arrives re-lays out all the text
+   * that uses it, in the next frame, even mid-turn: with five prepared pages
+   * and five curl prints that was a 100 ms frame. So, in idle time only, the
+   * pages a turn cannot reach next and their prints are taken out of layout
+   * (content-visibility: hidden keeps their layout, skipped until needed), and
+   * the ones near the current page are kept or brought back in.
+   */
+  function syncFrozen(): void {
+    sheets.forEach((sheet, page) => {
+      if (!sheet.hidden) sheet.classList.remove('is-frozen');
+      else if (!isNear(page) && fontsStreaming && warmed.has(page)) sheet.classList.add('is-frozen');
+    });
+    snapshots.forEach((snap, page) => {
+      if (page !== index && fontsStreaming) snap.wrap.classList.add('is-frozen');
+    });
+  }
+
+  /** Bring one page (or curl print) frozen during font loading back into layout. */
+  function nextThaw(nearOnly = false): (() => void) | null {
+    for (const page of [index, ...preloadOrder()]) {
+      if (nearOnly && !isNear(page)) continue;
+      const sheet = sheets[page];
+      if (sheet?.classList.contains('is-frozen')) {
+        return () => {
+          sheet.classList.remove('is-frozen');
+          void scroller(sheet).scrollHeight;
+        };
+      }
+      const snap = snapshots.get(page);
+      if (snap?.wrap.classList.contains('is-frozen')) {
+        return () => {
+          snap.wrap.classList.remove('is-frozen');
+          void snap.clone.offsetHeight;
+        };
+      }
+    }
+    return null;
+  }
+
   /** The next unit of background work, or null when everything is ready. */
   function nextPreloadTask(): (() => void) | null {
     const order = preloadOrder();
+    // Pages a turn can reveal next, taken out of layout while a font batch was applied.
+    const near = nextThaw(true);
+    if (near) return near;
     const adjacent = order[0];
     if (adjacent !== undefined && !warmed.has(adjacent)) return () => warmSheet(adjacent);
     const curls = !prefersReducedMotion() && sheets.length > 1;
@@ -532,6 +616,10 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
         }
       }
     }
+    // Farther pages wait until the fonts are in (their layout would only be redone).
+    if (fontsStreaming) return null;
+    const thaw = nextThaw();
+    if (thaw) return thaw;
     for (const page of order) {
       if (!warmed.has(page)) return () => warmSheet(page);
     }
@@ -561,8 +649,19 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
       }
       // One sheet-sized unit per idle period keeps every task short and lets
       // input and animation frames run in between.
+      if (fontsChanged) {
+        // Fonts arrived since the neighbours were pre-rastered: do them again with the real glyphs.
+        fontsChanged = false;
+        prewarmed.clear();
+      }
+      syncFrozen();
       const task = nextPreloadTask();
       if (!task) {
+        // Waiting for fonts is not done: the loadingdone handler schedules the rest.
+        if (fontsStreaming) {
+          if (debug) reportPreload('waiting for fonts');
+          return;
+        }
         root.dataset.preloaded = 'true';
         if (debug) {
           reportPreload('done');
@@ -773,6 +872,12 @@ export function initPaper(rootArg: ParentNode | null = document.querySelector('[
     resetCurlLayers(layers);
     frontSheet.classList.add('is-front');
     underSheet.classList.add('is-under');
+    // Fonts still arriving: during the turn only the two pages in it follow them (syncFrozen thaws the rest later).
+    if (fontsStreaming) {
+      sheets.forEach((sheet) => {
+        if (sheet !== frontSheet && sheet !== underSheet && sheet.classList.contains('is-warm')) sheet.classList.add('is-frozen');
+      });
+    }
     scroller(underSheet).scrollTop = 0;
 
     const source = scroller(frontSheet);

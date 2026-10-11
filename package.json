@@ -2,13 +2,13 @@
   "name": "morning-news",
   "type": "module",
   "version": "1.0.0",
-  "description": "\u65e9\u95f4\u65b0\u95fb \u2014 a static Chinese morning edition of Hacker News.",
+  "description": "早间新闻 — a static Chinese morning edition of Hacker News.",
   "engines": {
     "node": ">=24"
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/subset-fonts.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "test": "node --test 'src/scripts/*.test.ts'"
@@ -17,6 +17,8 @@
     "astro": "^7.3.8"
   },
   "devDependencies": {
+    "fontkitten": "^1.0.3",
+    "subset-font": "^2.9.0",
     "typescript": "^7.0.2"
   }
 }
