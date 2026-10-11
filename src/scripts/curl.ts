@@ -101,12 +101,12 @@ export type HalfPlane = { box: HTMLElement; content: HTMLElement };
 
 export type CurlLayers = {
   root: HTMLElement;
-  shadow: HTMLElement;
-  shadowContent: HTMLElement;
-  shadowBand: HTMLElement;
-  face: HTMLElement;
-  faceContent: HTMLElement;
-  faceBand: HTMLElement;
+  /**
+   * One unclipped band along the fold: its lifted side is the shadow the page
+   * casts on the page underneath, its other side the shading on the turning
+   * page. (Two bands each clipped to its side cost two offscreen passes.)
+   */
+  cast: HTMLElement;
   back: HTMLElement;
   /** The mirrored page box: reflected across the fold, inside the clip box that keeps the flap side. */
   backPage: HTMLElement;
@@ -130,8 +130,7 @@ export function createCurlLayers(slot: HTMLElement): CurlLayers {
   root.hidden = true;
   root.setAttribute('aria-hidden', 'true');
   root.innerHTML = `
-    <div class="curl-hp curl-shadow"><div class="curl-hp-content"><div class="curl-band curl-shadow-band"></div></div></div>
-    <div class="curl-hp curl-face"><div class="curl-hp-content"><div class="curl-band curl-face-band"></div></div></div>
+    <div class="curl-band curl-cast"></div>
     <div class="curl-hp curl-back">
       <div class="curl-back-page">
         <div class="curl-print"></div>
@@ -145,12 +144,7 @@ export function createCurlLayers(slot: HTMLElement): CurlLayers {
   const q = (selector: string) => root.querySelector(selector) as HTMLElement;
   return {
     root,
-    shadow: q('.curl-shadow'),
-    shadowContent: q('.curl-shadow > .curl-hp-content'),
-    shadowBand: q('.curl-shadow-band'),
-    face: q('.curl-face'),
-    faceContent: q('.curl-face > .curl-hp-content'),
-    faceBand: q('.curl-face-band'),
+    cast: q('.curl-cast'),
     back: q('.curl-back'),
     backPage: q('.curl-back-page'),
     print: q('.curl-print'),
@@ -165,10 +159,29 @@ const px = (value: number) => `${value.toFixed(3)}px`;
 /** Height in CSS of every .curl-band; bands are stretched to their thickness with scaleY. */
 const BAND_BASE = 100;
 
-function placeBand(el: HTMLElement, fold: Fold, angleDeg: number, thickness: number): void {
-  el.style.transform =
-    `translate(${px(fold.mx)}, ${px(fold.my)}) rotate(${angleDeg.toFixed(4)}deg) ` +
-    `scale(1, ${(thickness / BAND_BASE).toFixed(4)}) translate(-50%, -50%)`;
+/**
+ * Bands are centred where the fold line passes closest to the page centre, so
+ * a band one page-diagonal long (see --curl-band) always spans the page: every
+ * page point projects onto the fold within half a diagonal of that spot.
+ * Bands hold only a gradient, so stretching them with scaleY costs no text raster.
+ */
+function placeBand(el: HTMLElement, at: Pt, angleDeg: number, thickness: number): void {
+  setTransform(
+    el,
+    `translate(${px(at.x)}, ${px(at.y)}) rotate(${angleDeg.toFixed(4)}deg) ` +
+      `scale(1, ${(thickness / BAND_BASE).toFixed(4)}) translate(-50%, -50%)`,
+  );
+}
+
+/** The point of the fold line nearest the page centre. */
+function bandCentre(fold: Fold, width: number, height: number): Pt {
+  const side = sideOf({ x: width / 2, y: height / 2 }, fold);
+  return { x: width / 2 - side * fold.nx, y: height / 2 - side * fold.ny };
+}
+
+/** Length of every band for a page of this size (one diagonal plus a margin). */
+export function bandLength(width: number, height: number): number {
+  return Math.ceil(Math.hypot(width, height)) + 8;
 }
 
 type HalfPlaneTransforms = { box: string; content: string };
@@ -201,8 +214,7 @@ function setTransform(el: HTMLElement, value: string): void {
 
 function hideParts(layers: CurlLayers): void {
   setHidden(layers.back, true);
-  setHidden(layers.shadow, true);
-  setHidden(layers.face, true);
+  setHidden(layers.cast, true);
   setHidden(layers.fold, true);
 }
 
@@ -224,7 +236,7 @@ export function resetHalfPlane(front: HalfPlane): void {
 
 /** Clear whatever the other rendering mode left on the curl parts. */
 export function resetCurlLayers(layers: CurlLayers): void {
-  for (const el of [layers.shadow, layers.shadowContent, layers.face, layers.faceContent, layers.back, layers.backPage]) {
+  for (const el of [layers.back, layers.backPage]) {
     setTransform(el, '');
     setClip(el, '');
   }
@@ -240,6 +252,9 @@ export type CurlMode = 'gpu' | 'flat';
 
 /* How far the shadow band reaches past the fold, as a share of its thickness: its gradient is under 4% black beyond this. */
 const SHADOW_REACH = 0.4;
+
+/* Widest the highlight band on the back of the page gets (CSS px). */
+const SHADE_MAX = 440;
 
 /** 'none': no fold yet; 'curl': page partly turned; 'cleared': the page and everything it casts have left the slot. */
 export type CurlState = 'none' | 'curl' | 'cleared';
@@ -285,33 +300,27 @@ export function paintCurl(
   }
 
   setHidden(layers.root, false);
-  setHidden(layers.shadow, false);
-  setHidden(layers.face, nearest <= 0);
+  setHidden(layers.cast, false);
   setHidden(layers.back, false);
   setHidden(layers.fold, false);
 
   if (plus) {
-    const minus = halfPlane(fold, width, height, size, false);
-    setTransform(layers.shadow, minus.box);
-    setTransform(layers.shadowContent, minus.content);
-    setTransform(layers.face, plus.box);
-    setTransform(layers.faceContent, plus.content);
     setTransform(layers.back, plus.box);
     // The back of the page: the page reflected across the fold, kept on the far side of it.
     setTransform(layers.backPage, `${plus.content} ${reflectionCSS(fold)}`);
   } else {
     const peeled = clipHalfPlane(rect, fold, false);
-    setClip(layers.shadow, polygon(peeled));
-    setClip(layers.face, polygon(frontPoly));
     setClip(layers.back, polygon(peeled.map((p) => reflectPoint(p, fold))));
     setTransform(layers.backPage, reflectionCSS(fold));
   }
 
   const angle = foldCssAngle(fold);
-  placeBand(layers.shadowBand, fold, angle, shadowThickness);
-  placeBand(layers.faceBand, fold, angle, Math.min(200, Math.max(90, depth * 0.55)));
-  placeBand(layers.shadeBand, fold, angle, Math.max(120, depth * 2.3));
-  placeBand(layers.fold, fold, angle, 16);
+  const centre = bandCentre(fold, width, height);
+  // The cast band's gradient puts the shading on the turning page at 0.8x the shadow's reach (see .curl-cast).
+  placeBand(layers.cast, centre, angle, shadowThickness);
+  // Narrow on purpose: a band as wide as the flap was one more flap-sized blend per frame.
+  placeBand(layers.shadeBand, centre, angle, Math.min(SHADE_MAX, Math.max(120, depth * 2.3)));
+  placeBand(layers.fold, centre, angle, 16);
   return 'curl';
 }
 
@@ -324,6 +333,15 @@ export function poseCleared(width: number, height: number, pose: CurlPose): bool
   return pageRect(width, height).every((corner) => sideOf(corner, fold) <= -shadowThickness * SHADOW_REACH);
 }
 
+/* Easing on elapsed time (0..1 of the duration), never on frame counts, so 60 and 120 Hz screens show the same motion. */
+export function easeOut(t: number): number {
+  return 1 - (1 - t) * (1 - t);
+}
+
+export function easeInOut(t: number): number {
+  return t < 0.5 ? 2 * t * t : 1 - ((-2 * t + 2) ** 2) / 2;
+}
+
 function sweep(t: number, origin: Pt, mid: Pt, end: Pt): Pt {
   const clamped = Math.min(1, Math.max(0, t));
   if (clamped <= 0.62) {
@@ -334,18 +352,36 @@ function sweep(t: number, origin: Pt, mid: Pt, end: Pt): Pt {
   return { x: mid.x + (end.x - mid.x) * k, y: mid.y + (end.y - mid.y) * k };
 }
 
+/**
+ * Where an automatic turn's corner ends up: the classic end point, pushed
+ * further out along the same line when needed so the page and its shadow have
+ * left the slot before t = 1 at any page shape (squarer pages need more room).
+ */
+function clearedEnd(origin: Pt, mid: Pt, end: Pt, width: number, height: number): Pt {
+  const key = `${origin.x},${origin.y},${mid.x},${end.x},${end.y},${width},${height}`;
+  const cached = endCache.get(key);
+  if (cached) return cached;
+  const along = (k: number): Pt => ({ x: mid.x + (end.x - mid.x) * k, y: mid.y + (end.y - mid.y) * k });
+  let k = 1;
+  // Clear by 94% of the last leg, so it happens while the page is still moving.
+  for (let step = 0; step < 16 && !poseCleared(width, height, { origin, point: along(k * 0.94) }); step += 1) k *= 1.12;
+  const point = along(k);
+  endCache.set(key, point);
+  return point;
+}
+
+const endCache = new Map<string, Pt>();
+
 export function forwardPath(t: number, width: number, height: number): CurlPose {
   const origin = { x: width, y: height };
-  return {
-    origin,
-    point: sweep(t, origin, { x: 0, y: 0 }, { x: -width * 1.4, y: -height * 0.22 }),
-  };
+  const mid = { x: 0, y: 0 };
+  const end = clearedEnd(origin, mid, { x: -width * 1.4, y: -height * 0.22 }, width, height);
+  return { origin, point: sweep(t, origin, mid, end) };
 }
 
 export function backwardPath(t: number, width: number, height: number): CurlPose {
   const origin = { x: 0, y: height };
-  return {
-    origin,
-    point: sweep(t, origin, { x: width, y: 0 }, { x: width * 2.4, y: -height * 0.22 }),
-  };
+  const mid = { x: width, y: 0 };
+  const end = clearedEnd(origin, mid, { x: width * 2.4, y: -height * 0.22 }, width, height);
+  return { origin, point: sweep(t, origin, mid, end) };
 }

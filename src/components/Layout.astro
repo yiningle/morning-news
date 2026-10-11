@@ -1,9 +1,5 @@
 ---
 import '../styles/paper.css';
-import sc400 from '../fonts/noto-serif-sc-chinese-simplified-400-normal.woff2?url';
-import sc700 from '../fonts/noto-serif-sc-chinese-simplified-700-normal.woff2?url';
-import sc900 from '../fonts/noto-serif-sc-chinese-simplified-900-normal.woff2?url';
-import blackletter from '../fonts/unifrakturmaguntia-latin-400-normal.woff2?url';
 
 interface Props {
   title: string;
@@ -23,10 +19,59 @@ const { title, description } = Astro.props;
     <meta name="color-scheme" content="light" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
-    <link rel="preload" href={blackletter} as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href={sc400} as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href={sc700} as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href={sc900} as="font" type="font/woff2" crossorigin />
+    {/* Replaced after the build by scripts/subset-fonts.mjs: preloads of this page's display font subsets and their @font-face rules (in <noscript id="display-fonts">). */}
+    <meta name="display-fonts" content="__DISPLAY_FONTS__" />
+    {/*
+      Display font loader. Body text uses system fonts; only display text uses
+      the tiny per-page subsets declared above. Never blocks rendering: they
+      are loaded as FontFace objects and added to the document as soon as they
+      are in, unless the page-turn code has taken over (src/scripts/fonts.ts),
+      in which case they are added between turns. ?fonts=none leaves them out.
+    */}
+    <script is:inline>
+      (function () {
+        var state = (window.__displayFonts = { faces: [], bytes: 0, readyAt: null, appliedAt: null, held: 0, status: 'none', gated: false });
+        var el = document.getElementById('display-fonts');
+        if (!el || typeof FontFace !== 'function' || /[?&]fonts=none/.test(location.search)) return;
+        state.bytes = Number(el.getAttribute('data-bytes')) || 0;
+        var now = function () { return Math.round(performance.now()); };
+        el.textContent.replace(/@font-face\{([^}]*)\}/g, function (_, body) {
+          var get = function (key) {
+            var m = body.match(new RegExp(key + ':([^;]+)'));
+            return m ? m[1].trim() : undefined;
+          };
+          state.faces.push(
+            new FontFace(get('font-family').replace(/"/g, ''), get('src'), {
+              weight: get('font-weight'),
+              style: 'normal',
+              unicodeRange: get('unicode-range'),
+              display: 'swap',
+            }),
+          );
+          return '';
+        });
+        if (!state.faces.length) return;
+        state.status = 'loading';
+        state.apply = function () {
+          if (state.appliedAt !== null) return;
+          state.faces.forEach(function (face) { document.fonts.add(face); });
+          state.appliedAt = now();
+          state.status = 'applied';
+          window.dispatchEvent(new Event('morning-news:fonts'));
+        };
+        state.ready = Promise.all(state.faces.map(function (face) { return face.load(); })).then(
+          function () {
+            state.readyAt = now();
+            state.status = 'ready';
+            if (!state.gated) state.apply();
+          },
+          function () {
+            state.status = 'failed';
+            window.dispatchEvent(new Event('morning-news:fonts'));
+          },
+        );
+      })();
+    </script>
     <title>{title}</title>
   </head>
   <body>
