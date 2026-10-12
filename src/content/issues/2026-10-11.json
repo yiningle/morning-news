@@ -1,0 +1,1320 @@
+{
+ "date": "2026-10-11",
+ "published_at": "2026-10-12T08:45:00+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-10-11",
+ "schema_version": 2,
+ "lead": {
+  "id": 50040547,
+  "title": "四天三座：Yandex 数据中心接连被无人机击中",
+  "title_en": "3rd Yandex Cloud Data Center Was Hit",
+  "url": "https://status.yandex.cloud/en/incidents/2136",
+  "hn": "https://news.ycombinator.com/item?id=50040547",
+  "points": 542,
+  "comments": 664,
+  "summary": [
+   "投稿链接是 Yandex Cloud 的事故状态页（本报抓取时被验证码拦下），以下据半岛电视台、塔斯社、基辅邮报和 Cybernews 的报道。10 月 11 日凌晨，Yandex 位于弗拉基米尔的数据中心遭无人机袭击，Yandex 在服务通告里说：「数据中心的运行已完全中止，没有人员伤亡」，剩余资源配置「不稳定」，平台进入紧急模式，并建议用户启动灾备方案。",
+   "这是四天里第三座被击中的 Yandex 数据中心：10 月 8 日，梁赞州萨索沃的数据中心起火停运，据报道那里放着 Yandex 训练自家 AI 模型所用三台超级计算机中的两台；9 日，卡卢加的设施也被击中、部分停摆。报道称，Yandex Cloud 的 ru-central1-a 可用区就在弗拉基米尔，受影响的包括 Yandex 音乐、智能家居、Telemost 视频会议和整套云基础设施，乌方称这是对俄方此前打击乌克兰数据中心的回应。",
+   "这是当天评论最多的帖子（664 条评论）。回复最多的几条，一边强调是俄罗斯先在 9 月对乌克兰电信和网络服务商的数据中心发动了十多次打击；一边从工程角度讨论：数据中心正在变成战争中的高优先级目标，未来的机房和服务会不会因此走向更分散的小型机房网络。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "vld_chk",
+    "stance": "背景",
+    "zh": "给那些「担心」乌克兰打击数据中心的人：不是乌克兰先开的头。整个 9 月，俄罗斯对乌克兰所有关键电信和网络服务商的数据中心发动了十多次打击。现在只是回敬。",
+    "en": "Ukraine did not start it.",
+    "hn": "https://news.ycombinator.com/item?id=50042501",
+    "id": 50042501,
+    "replies": 77
+   },
+   {
+    "user": "entropyneur",
+    "stance": "代价",
+    "zh": "俄罗斯过去在信息技术上相当先进，一度以自己是仅有的四个拥有互联网级搜索引擎的国家之一为傲。这场「小规模军事行动」已经让他们流失了大量人才，现在连基础设施也在丢。",
+    "en": "Russia used to be quite advanced in information technology.",
+    "hn": "https://news.ycombinator.com/item?id=50040877",
+    "id": 50040877,
+    "replies": 115
+   },
+   {
+    "user": "usrnm",
+    "stance": "工程视角",
+    "zh": "纯从工程角度看，这件事和中东被毁的 AWS 数据中心显示出一个有意思的趋势。它会怎样影响未来数据中心及其上服务的建法？我们会看到去中心化系统和更大规模的小型机房网络兴起吗？",
+    "en": "How will it affect the way future datacenters and services hosted in them are built?",
+    "hn": "https://news.ycombinator.com/item?id=50040757",
+    "id": 50040757,
+    "replies": 22
+   }
+  ],
+  "kicker": "要闻 · 战争与基础设施",
+  "tag": "评论第一"
+ },
+ "side": [
+  {
+   "id": 50041619,
+   "title": "Cloudflare 图表：来自 Yandex 的机器人流量几乎归零",
+   "title_en": "Bot traffic from Yandex",
+   "url": "https://radar.cloudflare.com/bots/as13238?dateRange=7d",
+   "hn": "https://news.ycombinator.com/item?id=50041619",
+   "points": 584,
+   "comments": 233,
+   "summary": [
+    "链接是 Cloudflare Radar 上 Yandex 自治系统 AS13238 过去 7 天的「机器人流量」页面（页面靠脚本渲染，本报无法直接读取，以下据评论区）。评论引用 Cloudflare 的术语表解释：这里的机器人流量，指 HTML 请求中按机器人评分被判定为「可能自动化」的比例；有评论说，第三次袭击后来自 Yandex 的这类流量已降到接近 0%。",
+    "这是当天点赞第一的帖子。但多条高赞评论提醒别过度解读：Yandex 本来就是「俄罗斯的谷歌」，机器人流量主要是搜索爬虫，半数机房下线，爬虫这种低优先级任务先停很正常；对比整个俄罗斯、欧洲和全球的图表，下降几乎看不出来，也不代表什么「水军机器人」消失了。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "londons_explore",
+     "stance": "解读",
+     "zh": "Yandex 就是俄罗斯的谷歌，它当然有机器人，那就是索引网页的方式。索引大概也是低优先级任务，所以如果一半机房下线，它的机器人流量下降可能超过 50%。",
+     "en": "if half their datacenter capacity is taken offline, their bot traffic probably reduces by more than 50%.",
+     "hn": "https://news.ycombinator.com/item?id=50042093",
+     "id": 50042093,
+     "replies": 68
+    },
+    {
+     "user": "throwaw12",
+     "stance": "纠正",
+     "zh": "有人得学学怎么看机器人流量页面。这只是来自 Yandex 机器人（包括爬虫和托管在其机房里的其他应用）的流量下降。拿俄罗斯、欧洲和全球的机器人流量比一比，即使在俄罗斯，这个下降也几乎看不出来。",
+     "en": "Dip is barely noticeable even in Russia.",
+     "hn": "https://news.ycombinator.com/item?id=50042416",
+     "id": 50042416,
+     "replies": 3
+    },
+    {
+     "user": "schleck8",
+     "stance": "数据",
+     "zh": "第三次打击后，来自 Yandex 的 HTTP 流量降到了约 0%，前两次打击已经让它下滑。我好奇网络层面是什么样子，因为它的搜索页面还能打开，但爬虫大概已经停了。",
+     "en": "The HTTP traffic from Yandex is down to ~ 0 % after the third strike",
+     "hn": "https://news.ycombinator.com/item?id=50042113",
+     "id": 50042113,
+     "replies": 43
+    }
+   ],
+   "kicker": "网络 · 数据图表",
+   "tag": "点赞第一"
+  },
+  {
+   "id": 50041682,
+   "title": "Nitter 收到 X 律师函，作者：我现在没有律师",
+   "title_en": "Nitter: Update Oct 10th seeking funding and legal help",
+   "url": "https://nitter.net",
+   "hn": "https://news.ycombinator.com/item?id=50041682",
+   "points": 413,
+   "comments": 218,
+   "summary": [
+    "Nitter 是一个开源的 X（推特）替代前端，不用账号、没有广告和追踪脚本就能看公开推文。作者 zedeus 在主页更新：X 公司 8 月 24 日发出停止侵权函，要求永久下架所有 Nitter 实例和项目代码仓库，9 月 8 日又发了一封，要求和威胁相同。",
+    "作者说，自己 9 月 7 日宣布「项目会在律师代理下继续」，是基于当时得到的承诺，后来发现并不属实，为此道歉；Nitter 目前没有法律顾问，正在寻求资金和法律帮助，捐款优先用于法律费用。评论区一派认为这是 X 借法律手段骚扰合法行为；另一派认为这类代理本来就难以合法运营，风险主要落在架设实例的人身上。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "medler",
+     "stance": "支持",
+     "zh": "这很明显是 X 想利用法律体系骚扰在做完全合法事情的人。对言论的寒蝉效应正是目的所在。",
+     "en": "This is very clearly an attempt by X to use the legal system to harass people doing perfectly legal things.",
+     "hn": "https://news.ycombinator.com/item?id=50043376",
+     "id": 50043376,
+     "replies": 48
+    },
+    {
+     "user": "bhouston",
+     "stance": "质疑",
+     "zh": "我不认为 Nitter 能合法运行。这就像给《纽约时报》或 CNN 开一个代理。我觉得它（或类似系统）唯一的出路，是承认自己在法律上没有前途。",
+     "en": "It would be like having a proxy for nytimes or cnn.",
+     "hn": "https://news.ycombinator.com/item?id=50042094",
+     "id": 50042094,
+     "replies": 31
+    },
+    {
+     "user": "hrideshmg",
+     "stance": "折中",
+     "zh": "我很惊讶这么多评论在批评 Nitter。我自己不用，但在今天，这类前端非常重要：可悲的是，如今大部分网上讨论都发生在算法和界面由公司控制的平台上。Nitter 这样的项目大概没法合法运行，那也没关系，Reddit 封禁第三方客户端后，定制客户端照样能用，生命总会找到出路。",
+     "en": "frontends like these are very important in today's day and age",
+     "hn": "https://news.ycombinator.com/item?id=50043157",
+     "id": 50043157,
+     "replies": 11
+    }
+   ],
+   "kicker": "网络 · 法律"
+  },
+  {
+   "id": 50040276,
+   "title": "LineageOS 24 发布：基于安卓 17，还提前了",
+   "title_en": "LineageOS 24",
+   "url": "https://lineageos.org/Changelog-32/",
+   "hn": "https://news.ycombinator.com/item?id=50040276",
+   "points": 406,
+   "comments": 164,
+   "summary": [
+    "LineageOS 发布基于安卓 17 的 24 版。团队说，由于前几年已适配谷歌的大规模重构，这次变基比预期快，「我们今年提前了」；12 月 24 日项目将满 10 周年。安全补丁方面，2025 年 8 月到 2026 年 10 月的补丁已合入 18.1 到 24.0 各分支。",
+    "新东西包括：全新图片编辑器 Canvas，更新器默认流式更新（A/B 分区设备安装更快），多款自带应用改为 Material 3 Expressive 设计；新上线基于 WebUSB 的浏览器刷机工具 flash.lineageos.org，支持 ADB、Fastboot、晶晨和三星 Odin 协议。另有实验性的通用目标，已在普通 x86_64 PC、苹果芯片 Mac、英伟达 DGX Spark 和骁龙 X 笔记本上启动。使用 4.4 和 4.9 旧内核的设备今后只接受 22.2 版提交。",
+    "评论区满是感谢：有人说本想等 Pixel 4a 被放弃好换新手机，结果它还在支持列表里；也有人希望官方给出一份「现在还能买到新机」的推荐设备清单。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "deng",
+     "stance": "感谢",
+     "zh": "我私下希望他们停止支持 Pixel 4a，好让我有理由换新手机，但没有，它还在支持列表里。看来我还得再用一年……总之非常感谢 Lineage 的维护者，让这么多手机免于进垃圾填埋场！",
+     "en": "keeping so many phones from landfill!",
+     "hn": "https://news.ycombinator.com/item?id=50041035",
+     "id": 50041035,
+     "replies": 65
+    },
+    {
+     "user": "haunter",
+     "stance": "期待",
+     "zh": "（引用：一种可在多种裸机硬件上运行的新通用目标，已在 x86_64 PC、苹果芯片 Mac 等设备上启动。）这听起来真棒！给旧笔记本装安卓翻新，和装桌面 Linux 一样会是不错的选择。",
+     "en": "Refurbishing old laptops with Android would be a nice choice alongside with Desktop Linux.",
+     "hn": "https://news.ycombinator.com/item?id=50041320",
+     "id": 50041320,
+     "replies": 27
+    },
+    {
+     "user": "drnick1",
+     "stance": "建议",
+     "zh": "希望 Lineage 能更好地说明支持哪些新设备。它显然支持很多设备，但大多很老，或者是有已知解锁方法的特定型号。每个类别（手机、电视、平板）给一份现在还能买到新机的推荐清单，会很有帮助。",
+     "en": "A short list of recommended devices in each category (phone, TV, tablet), that can be bought new today, would go a long way.",
+     "hn": "https://news.ycombinator.com/item?id=50046002",
+     "id": 50046002,
+     "replies": 2
+    }
+   ],
+   "kicker": "开源 · 安卓"
+  },
+  {
+   "id": 50043682,
+   "title": "新文件：埃克森美孚 1988 年就写好了气候应对「剧本」",
+   "title_en": "Documents add to evidence in climate deception case against ExxonMobil",
+   "url": "https://insideclimatenews.org/news/07102026/exxonmobil-climate-deception-new-evidence/",
+   "hn": "https://news.ycombinator.com/item?id=50043682",
+   "points": 380,
+   "comments": 205,
+   "summary": [
+    "Inside Climate News 报道，马萨诸塞州 2019 年起诉埃克森美孚的案件中，今年低调公开了一批此前未披露的文件。其中一份是 1988 年 11 月、汉森在国会作证五个月后，埃克森研究部门 Frank Sprow 的内部备忘录：如果全球形成需要减排的共识，「埃克森可能受到重大负面影响」；公司的「温室」研发应「保护我们资源（石油、天然气、煤炭）的价值」并「保留埃克森的业务选项」，还建议派人进入普林斯顿等主要气候模型中心。迈阿密大学的 Geoffrey Supran 说：「这就是全套剧本。」",
+    "马州案的重点是近年的宣传：一名埃克森科学家在证词中说，2018 年新闻稿里「到 2025 年每天生产 1 万桶藻类生物燃料」的说法「完全不可能实现」，「每一句都明显是假的」；2014 年的内部材料也承认碳捕集要大规模部署需要「巨额投资」。埃克森未回应置评，此前一直否认误导公众。",
+    "评论区有人问「谁会坐牢」，答案是没人；也有人读了备忘录原件，认为它远没有标题那么耸动，石油公司里确实有人认真做碳捕集研究；还有人反问：气候风险人人都知道，为什么单单追究化石能源公司。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "jacquesm",
+     "stance": "愤慨",
+     "zh": "那么，谁会去坐牢？这是个反问句，答案显然是没有人，因为钱是最好的绝缘体。",
+     "en": "money is the best insulator there is.",
+     "hn": "https://news.ycombinator.com/item?id=50043878",
+     "id": 50043878,
+     "replies": 81
+    },
+    {
+     "user": "btown",
+     "stance": "异议",
+     "zh": "原文链接的那份备忘录值得一读，它和耸动的标题相去甚远。这些年我碰巧认识不少大石油公司雇的研究人员，包括很多因这类备忘录而投身其中的人：把碳捕集等减缓手段的研究定为公司最优先事项。",
+     "en": "making research into carbon capture and other mitigations a top corporate priority.",
+     "hn": "https://news.ycombinator.com/item?id=50044500",
+     "id": 50044500,
+     "replies": 24
+    },
+    {
+     "user": "sampo",
+     "stance": "反问",
+     "zh": "「他们知道风险」？人人都知道风险。气候科学一直在大学里研究、公开发表。如果政客没能监管，消费者享受了相对便宜的燃料和能源，为什么要单挑化石能源公司当罪魁？",
+     "en": "Everybody knew the risks. Climate science has been researched at universities and published openly.",
+     "hn": "https://news.ycombinator.com/item?id=50044463",
+     "id": 50044463,
+     "replies": 14
+    }
+   ],
+   "kicker": "环境 · 诉讼"
+  },
+  {
+   "id": 50042219,
+   "title": "花 150 欧元，请人照着我的 README 装一遍",
+   "title_en": "I paid people to try and follow my README",
+   "url": "https://shkspr.mobi/blog/2026/10/i-paid-people-to-try-and-follow-my-readme/",
+   "hn": "https://news.ycombinator.com/item?id=50042219",
+   "points": 362,
+   "comments": 186,
+   "summary": [
+    "shkspr.mobi 的博主为 ActivityBot 申请 NLnet 资助时承诺，要找真实用户测试安装体验。他在 Mastodon 上招人，每人一小时 25 欧元，视频通话时请对方共享屏幕、边做边说出自己的困惑。",
+    "他手写笔记，发现了一长串问题：演示工具的链接是错的；有人在终端里读 README；什么叫重命名文件、隐藏文件怎么改名；为什么有的文字要加引号有的不用；他的玩笑不好笑还让人困惑；他压根没解释这软件是干什么的。每轮之后改一版再找下一个人，总共花了约 150 欧元。至于「为什么不让大模型模拟用户」，他说：我想和真人交谈。",
+    "评论区很多人共鸣：自己写给自己的 README 过两周也看不懂；也有人说这就是 UX 领域的可用性测试，还有人实测让 20 个 AI 子代理照文档操作，发现它们卡在和人一样的地方，只是不会说「等等，什么？」。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "bambax",
+     "stance": "共鸣",
+     "zh": "我有时给自己写 README，好记住生成某份数据报告的确切步骤。惊人的是，短短几周后它们就变得难以理解：东西都在脑子里时一切清晰流畅、不言自明，一旦忘了上下文，就什么都看不懂了。",
+     "en": "It's surprising how much they become incomprehensible after just a couple of weeks",
+     "hn": "https://news.ycombinator.com/item?id=50043643",
+     "id": 50043643,
+     "replies": 26
+    },
+    {
+     "user": "tilemarch",
+     "stance": "AI 也行",
+     "zh": "人很好，但 AI 在这里也能帮忙。我写文档让 AI 代理通过 API 玩游戏，再启动 20 个各有身份设定的子代理，看它们在哪儿失败。它们卡住的地方和人一样，或者会指出没写明的「显而易见」的步骤。",
+     "en": "They get stuck in the same places as humans",
+     "hn": "https://news.ycombinator.com/item?id=50044041",
+     "id": 50044041,
+     "replies": 0
+    },
+    {
+     "user": "chanux",
+     "stance": "自省",
+     "zh": "我以前用散文风格写技术文档，有时还夹着絮叨的故事，大概是早年写博客养成的。后来我发现自己很讨厌回头读其中一些，于是尽量写得干脆利落。",
+     "en": "I realized I hated reading some of them back.",
+     "hn": "https://news.ycombinator.com/item?id=50042456",
+     "id": 50042456,
+     "replies": 13
+    }
+   ],
+   "kicker": "开发 · 文档"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 2,
+   "stories": [
+    {
+     "id": 50043026,
+     "title": "陶哲轩「数学 2.0」：当证明不再稀缺",
+     "title_en": "Terence Tao: Math 2.0 [pdf]",
+     "url": "https://teorth.github.io/tao-web/slides/math-2-0-caltech-2026.pdf",
+     "hn": "https://news.ycombinator.com/item?id=50043026",
+     "points": 301,
+     "comments": 357,
+     "summary": [
+      "这是陶哲轩 2026 年 10 月在加州理工演讲的幻灯片。他说传统数学（「数学 1.0」）建立在「证明稀缺」的假设上；而证明可客观验证、高度数字化、数据丰富，正好适合机器学习，前沿 AI 实验室因此优先攻数学，我们正进入「证明充裕」的时代。但 AI 能力极不均衡，社交媒体上「AI 解决了一切」是报道偏差，前沿上大多数问题仍未解决，他呼吁报告资源消耗和失败结果。",
+      "他认为开放问题是「灯塔」而不是目的地，被自动化工具过早抵达，会破坏对周边领域的探索；继续盲目只优化解题「对数学的长期健康有害」。他举了个思想实验：AI 给出一种附带 Lean 证书、通过三期试验的抗癌鸡尾酒，你注射前是否希望至少有一位人类专家理解其机理？「数学 2.0」应让 AI 增强人类理解，比如为晦涩证明找更好的解释、建形式化库、做「消融研究」，最大的瓶颈「是想象力」。",
+      "评论区对癌症那页反驳最多：做药物研发的人说很多药本来就机理不明，没有医生会因此拒绝有效的药；也有人用软件类比解读他的意思：数学是一个要长期维护的「代码库」，AI 的证明往往无法合并进去。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "dekhn",
+       "stance": "反驳",
+       "zh": "我在药物发现和 AI 领域工作，他关于癌症医学的那页不太靠谱。我们对药物作用有模型和叙事，但都远不完整。我几乎问过每位医生和研究者：如果 AI 造出的药能大幅改善病人疗效，你会因为没人懂它的原理而犹豫开药吗？至今没人说「会」。",
+       "en": "his slide about cancer medicine isn't very well informed.",
+       "hn": "https://news.ycombinator.com/item?id=50044079",
+       "id": 50044079,
+       "replies": 36
+      },
+      {
+       "user": "thomasahle",
+       "stance": "解读",
+       "zh": "用软件的话解释陶的观点：纯数学的目的，是建设和维护一个高质量的理论、定义与证明「代码库」。当前的数学 AI 不是「好公民」，它不去为共享框架做最优雅的补充，而常常从头重建一切直到抵达某个终点。",
+       "en": "but will often just rebuild everything from scratch til get to some endpoint.",
+       "hn": "https://news.ycombinator.com/item?id=50047844",
+       "id": 50047844,
+       "replies": 3
+      },
+      {
+       "user": "theturtletalks",
+       "stance": "社群",
+       "zh": "我刚看了 Primeagen 讲这件事的视频，陶的意思是年轻人不再能靠解出证明去拿菲尔兹奖，社群也在受伤：过去人们因此被邀请演讲、合作。软件开发不同，产品才是目标，过程可以被颠覆；而在数学研究里，过程就是产品。",
+       "en": "In math research, the process is the product.",
+       "hn": "https://news.ycombinator.com/item?id=50043757",
+       "id": 50043757,
+       "replies": 21
+      }
+     ],
+     "kicker": "AI · 数学",
+     "tag": "评论第二"
+    },
+    {
+     "id": 50047422,
+     "title": "卡帕西：人们对大模型能力的认知鸿沟在扩大",
+     "title_en": "The gap in shared understanding of LLM capability is widening",
+     "url": "https://twitter.com/karpathy/status/2109361546505966046",
+     "hn": "https://news.ycombinator.com/item?id=50047422",
+     "points": 188,
+     "comments": 298,
+     "summary": [
+      "Andrej Karpathy 在 X 上重提他 4 月的帖子，说这道认知鸿沟正在扩大，已从「两群人各说各话」变成一个陡峭的漏斗：约 60 亿人几乎没接触过大模型；约 10 到 20 亿人偶尔用免费版聊天机器人，把它当更好的搜索；约 2000 万人在数学和代码领域专业使用前沿模型，亲眼看到过去要几周几个月的大项目靠智能体一个提示就能完成；还有约 5000 人能用到实验室内部的前沿系统。",
+      "他说漏斗由三点驱动：影响随问题的野心、规模和时间跨度放大；能力「参差不齐」，在数字化、可验证、经济价值高的领域最强；以及免费、付费、内部的访问差别。于是公众看到的是「笨笨的聊天机器人」，多数专业人士只看到小幅提升，一小撮人正经历「曲线变垂直的眩晕」。这帖评论数是点赞的 1.59 倍，在点赞过百的帖子里比例最高。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "nsainsbury",
+       "stance": "普通人视角",
+       "zh": "可悲的是，从普通人角度看，AI 要么完全没改善生活，要么让它更糟：车还是那辆车，洗碗机还是那台，通勤火车照样晚点；油更贵，食物更贵，房子和房租更贵，买电脑或 PS5 也更贵了。",
+       "en": "It's actually sad how much AI has either not improved life at all or actively made it worse from the perspective of the average person",
+       "hn": "https://news.ycombinator.com/item?id=50048456",
+       "id": 50048456,
+       "replies": 127
+      },
+      {
+       "user": "rico735",
+       "stance": "质疑",
+       "zh": "我不认为那 0.2% 的人都同意「过去要几周几个月的大项目现在靠智能体一个提示就能完成」。分歧在于：一派认为你仍需理解代码库，顾虑维护、未来的 token 成本和模型的错误；另一派不审代码、确信 AI 没出错。",
+       "en": "Don't think the 0.2% really are in agreement",
+       "hn": "https://news.ycombinator.com/item?id=50048729",
+       "id": 50048729,
+       "replies": 13
+      },
+      {
+       "user": "comeonbro",
+       "stance": "另一种解释",
+       "zh": "我提出另一种机制：即便是免费版模型，也已经完全饱和了大多数人能欣赏的程度。",
+       "en": "even the free-tier models have already completely saturated what most people are capable of appreciating.",
+       "hn": "https://news.ycombinator.com/item?id=50048200",
+       "id": 50048200,
+       "replies": 9
+      }
+     ],
+     "kicker": "AI · 观点",
+     "tag": "评论比最高"
+    },
+    {
+     "id": 50043689,
+     "title": "抱歉，你还是得动脑子：DHH 让 AI 重写 Campfire 的教训",
+     "title_en": "I'm sorry, but you still have to think",
+     "url": "https://itsallaboutthebit.com/i-am-sorry-but-you-still-have-to-think/",
+     "hn": "https://news.ycombinator.com/item?id=50043689",
+     "points": 312,
+     "comments": 140,
+     "summary": [
+      "Piotr Sarnacki 分析 DHH（Rails 作者）让 AI 把聊天应用 Campfire 从 Rails 重写成 Rust、Elixir 和 Go 的结果。他说提示不够具体时，很多决定就是「掷硬币」：Rust 版为方便缓存去掉了 CSRF 令牌、用进程内队列替代 Redis，Elixir 版更贴近原版，所以比较本身就不公平；Rust 版还有阻塞式数据库调用和同步锁混在异步任务里。",
+      "有人测出高负载下 Rust 版新消息通知送达率只有 1%。作者用恒定到达率重测：每秒 100 次发帖时，Rust 版客户端收到约 14% 事件，Elixir 约 60%，但 Elixir 有约 23% 的请求超时、最坏延迟近 180 秒、内存到 1.8GB。原因是 Rust 版广播通道容量只有 256，调到 16384 送达率升到约 90%，延迟却从 11 秒涨到 130 秒以上。他的结论：处处是权衡，单一指标说明不了问题，你还是得思考。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "variety8675",
+       "stance": "无奈",
+       "zh": "这篇文章让我想到，「工作糊弄品」之所以难对付，是因为产出它毫不费力，驳倒它却要花巨大力气。",
+       "en": "workslop is so hard to counter because it takes no effort to produce and immense effort to debunk",
+       "hn": "https://news.ycombinator.com/item?id=50045793",
+       "id": 50045793,
+       "replies": 31
+      },
+      {
+       "user": "discreteevent",
+       "stance": "补充",
+       "zh": "值得注意的是，这里的场景是用大模型翻译一个现有系统，这正是它最理想的用途：90% 的思考早已由原系统的开发者做完了。",
+       "en": "90% of the thinking had already been done by developers of the existing system.",
+       "hn": "https://news.ycombinator.com/item?id=50045792",
+       "id": 50045792,
+       "replies": 8
+      },
+      {
+       "user": "wdr1",
+       "stance": "历史类比",
+       "zh": "这些「你得理解代码」的讨论让我想起读本科时，一位用过打孔卡的老同事总爱数落我们这代人太信任编译器：「能编译不代表你做完了，你得看实际的汇编。」那是 90 年代，他说得有些道理。但今天呢？",
+       "en": "Just because it compiles doesn't mean you're done.",
+       "hn": "https://news.ycombinator.com/item?id=50047833",
+       "id": 50047833,
+       "replies": 2
+      }
+     ],
+     "kicker": "AI · 编程"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50041765,
+     "title": "伯克利：只用 AI 10 分钟，就会削弱你啃硬骨头的毅力",
+     "title_en": "Using AI for just 10 minutes erodes your ability to persist at hard things",
+     "url": "https://vcresearch.berkeley.edu/news/using-ai-just-10-minutes-erodes-your-ability-persist-hard-things",
+     "hn": "https://news.ycombinator.com/item?id=50041765",
+     "points": 69,
+     "comments": 78
+    },
+    {
+     "id": 50042107,
+     "title": "BBC：AI 让人类创作的艺术有了「人工溢价」",
+     "title_en": "AI is creating a 'human premium' for art created by people",
+     "url": "https://www.bbc.com/news/articles/c5vgjm3gk7rzo",
+     "hn": "https://news.ycombinator.com/item?id=50042107",
+     "points": 70,
+     "comments": 113
+    },
+    {
+     "id": 50039627,
+     "title": "纳德拉：我们应假定所有 AI 模型都已「被攻破」",
+     "title_en": "Satya Nadella says we should assume all AI models are 'compromised'",
+     "url": "https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised",
+     "hn": "https://news.ycombinator.com/item?id=50039627",
+     "points": 42,
+     "comments": 73
+    },
+    {
+     "id": 50038383,
+     "title": "Anthropic 禁止虐待 Claude，却仍不说清在保护什么",
+     "title_en": "Anthropic Bans Cruelty to Claude, Still Won't Say What It Protects",
+     "url": "https://rews.cc/a/anthropic-bans-cruelty-to-claude-still-won-t-say-what-it-pro-bd99f6",
+     "hn": "https://news.ycombinator.com/item?id=50038383",
+     "points": 67,
+     "comments": 142
+    },
+    {
+     "id": 50038865,
+     "title": "The Register：Anthropic 请用户别再对 Claude 恶言相向",
+     "title_en": "Anthropic asks users to stop being mean to Claude",
+     "url": "https://www.theregister.com/ai-and-ml/2026/10/09/anthropic-asks-users-to-stop-being-mean-to-claude/5302218",
+     "hn": "https://news.ycombinator.com/item?id=50038865",
+     "points": 52,
+     "comments": 52
+    },
+    {
+     "id": 50001234,
+     "title": "《自然》：改造语言模型，让它直接处理字节",
+     "title_en": "Retrofitting language models to operate over bytes",
+     "url": "https://www.nature.com/articles/s41586-026-11111-4",
+     "hn": "https://news.ycombinator.com/item?id=50001234",
+     "points": 103,
+     "comments": 23
+    },
+    {
+     "id": 50041873,
+     "title": "尼古拉斯·凯奇因 AI 纠纷称不再与亚马逊合作",
+     "title_en": "Nicolas Cage says he won't work with Amazon again over AI dispute",
+     "url": "https://www.latimes.com/entertainment-arts/business/story/2026-10-10/nicolas-cage-says-he-wont-work-with-amazon-again-over-ai-dispute",
+     "hn": "https://news.ycombinator.com/item?id=50041873",
+     "points": 80,
+     "comments": 25
+    },
+    {
+     "id": 50048522,
+     "title": "Sakana：通过集体智能实现递归自我改进",
+     "title_en": "Recursive self-improvement through collective intelligence",
+     "url": "https://pub.sakana.ai/mass/",
+     "hn": "https://news.ycombinator.com/item?id=50048522",
+     "points": 33,
+     "comments": 7
+    },
+    {
+     "id": 50039630,
+     "title": "让 AI 智能体开一场站会",
+     "title_en": "AI agents in a stand-up call",
+     "url": "https://atoll92.github.io/agent-standup/",
+     "hn": "https://news.ycombinator.com/item?id=50039630",
+     "points": 47,
+     "comments": 47
+    },
+    {
+     "id": 50047071,
+     "title": "人工疯狂",
+     "title_en": "Artificial Insanity",
+     "url": "https://richwhitehouse.com/index.php?postid=78",
+     "hn": "https://news.ycombinator.com/item?id=50047071",
+     "points": 58,
+     "comments": 94
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1422,
+    "comments": 1449,
+    "top_points": {
+     "id": 50043689,
+     "title": "抱歉，你还是得动脑子：DHH 让 AI 重写 Campfire 的教训",
+     "value": 312,
+     "comments": 140
+    },
+    "top_comments": {
+     "id": 50043026,
+     "title": "陶哲轩「数学 2.0」：当证明不再稀缺",
+     "value": 357
+    },
+    "top_brief": {
+     "id": 50001234,
+     "title": "《自然》：改造语言模型，让它直接处理字节",
+     "value": 103,
+     "comments": 23
+    }
+   }
+  },
+  {
+   "name": "开发",
+   "en": "Software",
+   "page": 3,
+   "stories": [
+    {
+     "id": 50041540,
+     "title": "IRCv3：老牌聊天协议还在长新功能",
+     "title_en": "IRCv3",
+     "url": "https://ircv3.net/",
+     "hn": "https://news.ycombinator.com/item?id=50041540",
+     "points": 339,
+     "comments": 288,
+     "summary": [
+      "投稿链接是 IRCv3 工作组的主页。工作组负责为 IRC 客户端协议设计、原型和测试扩展，所有扩展都与旧客户端和旧服务器向后兼容。已完成的功能包括用 SASL 标准化账号登录、给消息附加元数据的标签、即时的离开通知、显示消息真实接收时间（方便从中继回放历史）、把相关消息分组；正在做的有标准化账号注册、聊天历史、自动切换到加密连接、Unicode 昵称和频道名，以及头像。",
+      "参与组织包括 InspIRCd、Irssi、IRCCloud、WeeChat、HexChat、ZNC 等。评论区成了怀旧现场：有人怀念 90 年代 ICQ 紧凑高效的界面；有人说老互联网协议里只有 IRC 还在被这样使用；也有人吐槽扩展太多都是可选的，不同客户端看到的对话都不一样。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "rkagerer",
+       "stance": "怀旧",
+       "zh": "说这话我会被骂，但每次看到现代聊天软件，我都怀念 90 年代的 ICQ：界面紧凑、不打扰、信息密度高、速度快。我能把全部聊天记录带着换机器，还能可靠地搜索。",
+       "en": "every time I see a modern chat app I pine for the days of ICQ",
+       "hn": "https://news.ycombinator.com/item?id=50042840",
+       "id": 50042840,
+       "replies": 87
+      },
+      {
+       "user": "Retr0id",
+       "stance": "问题",
+       "zh": "我觉得 IRCv3 的主要问题是可选扩展多到上百万个。用不同客户端的人看到同一段对话的样子不一样时，会特别混乱：有人能看到表情回应，有人看不到。",
+       "en": "the main problem with IRCv3 is that there are a million optional extensions",
+       "hn": "https://news.ycombinator.com/item?id=50042183",
+       "id": 50042183,
+       "replies": 5
+      },
+      {
+       "user": "kstrauser",
+       "stance": "实践",
+       "zh": "巧了！这周末我在一台闲置 VPS 上搭了个只给朋友用的服务器，用 Ergo，强制 TLS 和认证。客户端都支持一套不错的 IRCv3 功能，比如内置历史：每次连上，服务器都会回放我离线时错过的所有消息（保留 30 天），不用中继。",
+       "en": "Whenever I connect, the server replays all the messages I missed while offline (with a 30 day retention), no bouncer required.",
+       "hn": "https://news.ycombinator.com/item?id=50044563",
+       "id": 50044563,
+       "replies": 6
+      }
+     ],
+     "kicker": "开发 · 协议"
+    },
+    {
+     "id": 50042425,
+     "title": "PATH 里加了引号的 ~，可能不是你的家目录",
+     "title_en": "The tilde in your PATH may not be your HOME",
+     "url": "https://disconnect3d.pl//2026/10/02/dont-put-tilde-in-your-path/",
+     "hn": "https://news.ycombinator.com/item?id=50042425",
+     "points": 202,
+     "comments": 140,
+     "summary": [
+      "作者在试用 agent 沙箱工具 nono 时被警告：沙箱可写入的 PATH 条目里有 ~/.local/bin/。原因是在 .bashrc 里写 export PATH=\"$PATH:~/.local/bin/\" 时，引号里的波浪号不会展开成家目录，PATH 里加进去的是相对路径 ./~/.local/bin/，在当前目录下建一个名叫 ~ 的文件夹就能让里面的程序被执行。",
+      "修法是用 $HOME 代替 ~。作者也承认不加引号的写法在 Bash 和 Zsh 里其实能用，因为赋值时 = 和每个 : 后的波浪号会展开，但这很脆弱。可用 echo \"$PATH\" | tr ':' '\\n' | grep '~' 自查。评论区回复最多的一条说：干脆别给波浪号加引号就行。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "amarshall",
+       "stance": "简单",
+       "zh": "或者你干脆别给波浪号加引号。大家似乎总在 Bash 里条件反射地给「字符串」加引号，却没意识到几乎一切都是字符串，大多数字符串不加引号，加了反而奇怪（没人会写 \"ls\" \"-a\" \"foo\"）。",
+       "en": "Folks always seem to reflexively quote",
+       "hn": "https://news.ycombinator.com/item?id=50043257",
+       "id": 50043257,
+       "replies": 66
+      },
+      {
+       "user": "thefilmore",
+       "stance": "更短",
+       "zh": "你可以直接写 PATH=~/.local/bin:$PATH。PATH 本来就已导出，赋值时也不需要引号。",
+       "en": "PATH is already exported. Quotes are also not necessary for assignments.",
+       "hn": "https://news.ycombinator.com/item?id=50045963",
+       "id": 50045963,
+       "replies": 3
+      },
+      {
+       "user": "dspillett",
+       "stance": "可移植",
+       "zh": "我本想说「我这里一直好使」，然后看到了「在 Bash 和 Zsh 里其实能用」。又一个想写可移植脚本时得小心的 Bash 特性。很多系统上 /bin/sh 不是 bash（或 zsh），比如 Debian 上通常是 dash。",
+       "en": "on a lot of systems /bin/sh isn't bash (or zsh)",
+       "hn": "https://news.ycombinator.com/item?id=50043748",
+       "id": 50043748,
+       "replies": 2
+      }
+     ],
+     "kicker": "开发 · Shell"
+    },
+    {
+     "id": 50048312,
+     "title": "「通行密钥是陷阱，别用」：问题出在远程证明",
+     "title_en": "Passkeys are a trap. Do not use them",
+     "url": "https://nonfunctional.substack.com/p/passkeys-are-a-trap-do-not-use-them",
+     "hn": "https://news.ycombinator.com/item?id=50048312",
+     "points": 168,
+     "comments": 82,
+     "summary": [
+      "这篇面向普通网民的长文认为，通行密钥（passkey）本身可以很安全方便，问题在于 FIDO 联盟把很多不同的东西都叫「通行密钥」：可复制和不可复制、可转移和不可转移、硬件和软件、需不需要用户在场和验证，以及最关键的「有证明」和「无证明」。作者说联盟里有大公司、政府、银行，却没有消费者权益组织。",
+      "远程证明让网站能核验你的密钥管理器、操作系统和固件，一旦大多数用户都符合，网站就能「拨动开关」拒绝没有证明的密钥，刷了 LineageOS、用 Linux 的人就会被挡在门外。作者推荐继续用 TOTP 动态码，或者 YubiKey 这类实体安全钥匙。评论区有人指出证明只能在注册时要求、浏览器会弹窗，而苹果的实现根本不支持证明；也有人说文章漏掉了通行密钥防中间人攻击这一最大卖点。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "agwa",
+       "stance": "技术纠正",
+       "zh": "注意，证明只能在注册凭证时要求；如果注册时没拿到，登录时无法追溯要求。而且网站请求证明时浏览器会弹出权限提示。Netflix 和推特现在会在注册时要求证明吗？我非常怀疑，因为苹果的通行密钥实现根本不支持证明。",
+       "en": "attestation can only be required during credential registration",
+       "hn": "https://news.ycombinator.com/item?id=50048830",
+       "id": 50048830,
+       "replies": 5
+      },
+      {
+       "user": "danpalmer",
+       "stance": "反驳",
+       "zh": "文章最后的附言说：我还没提通行密钥最好的安全特性之一，它们绑定域名，能抵御中间人攻击。老实说，我不认为这篇文章论证得令人信服：它大量假定 FIDO 联盟心怀恶意，却完全忽略了防中间人攻击这个初衷。",
+       "en": "Honestly I don't think this post did make a compelling case.",
+       "hn": "https://news.ycombinator.com/item?id=50048888",
+       "id": 50048888,
+       "replies": 20
+      },
+      {
+       "user": "skybrian",
+       "stance": "建议",
+       "zh": "理想情况下，通行密钥应该当牲口而不是宠物：每个账号多建几个，存进不止一个密码管理器。这样即使它们不可复制也无所谓，丢了再建一个。",
+       "en": "Ideally, passkeys should be cattle, not pets.",
+       "hn": "https://news.ycombinator.com/item?id=50048525",
+       "id": 50048525,
+       "replies": 5
+      }
+     ],
+     "kicker": "开发 · 安全"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50042362,
+     "title": "Valen 的内存安全：一种新的借用检查",
+     "title_en": "Valen's Memory Safety: A New Kind of Borrow Checking",
+     "url": "https://verdagon.dev/blog/valen-group-borrowing",
+     "hn": "https://news.ycombinator.com/item?id=50042362",
+     "points": 131,
+     "comments": 80
+    },
+    {
+     "id": 50017548,
+     "title": "一次 Git 提交有多大？",
+     "title_en": "How big is a Git commit?",
+     "url": "https://ratfactor.com/cards/git-commit-size",
+     "hn": "https://news.ycombinator.com/item?id=50017548",
+     "points": 80,
+     "comments": 34
+    },
+    {
+     "id": 50044919,
+     "title": "我们解决了 SQLite 单写者的限制",
+     "title_en": "We solved SQLite's single-writer limitation",
+     "url": "https://marcobambini.substack.com/p/we-solved-sqlites-single-writer-limitation",
+     "hn": "https://news.ycombinator.com/item?id=50044919",
+     "points": 25,
+     "comments": 0
+    },
+    {
+     "id": 50045273,
+     "title": "apsw：另一个 Python SQLite 封装",
+     "title_en": "apsw: Another Python SQLite Wrapper",
+     "url": "https://github.com/rogerbinns/apsw",
+     "hn": "https://news.ycombinator.com/item?id=50045273",
+     "points": 52,
+     "comments": 13
+    },
+    {
+     "id": 50043030,
+     "title": "SQLAlchemy 2.1.0 发布",
+     "title_en": "SQLAlchemy 2.1.0 Released",
+     "url": "https://www.sqlalchemy.org/blog/2026/09/24/sqlalchemy-2.1.0-released/",
+     "hn": "https://news.ycombinator.com/item?id=50043030",
+     "points": 18,
+     "comments": 5
+    },
+    {
+     "id": 50006930,
+     "title": "Show HN：Diffle，键盘优先、支持 LSP 的差异查看器",
+     "title_en": "Show HN: Diffle, a keyboard-centric diff viewer with LSP support",
+     "url": "https://github.com/moritzwilksch/diffle",
+     "hn": "https://news.ycombinator.com/item?id=50006930",
+     "points": 66,
+     "comments": 12
+    },
+    {
+     "id": 50021989,
+     "title": "看来我现在用上 WebP 了？",
+     "title_en": "I guess I'm using WebP now?",
+     "url": "https://anderegg.ca/2026/10/08/i-guess-im-using-webp-now",
+     "hn": "https://news.ycombinator.com/item?id=50021989",
+     "points": 61,
+     "comments": 65
+    },
+    {
+     "id": 50024805,
+     "title": "Celld 中的确定性模拟测试",
+     "title_en": "Deterministic Simulation Testing in Celld",
+     "url": "https://celld.dev/docs/engineering/deterministic-simulation-testing/",
+     "hn": "https://news.ycombinator.com/item?id=50024805",
+     "points": 32,
+     "comments": 5
+    },
+    {
+     "id": 50033601,
+     "title": "Rust 里的安全 SIMD，连内部实现也安全",
+     "title_en": "Safe SIMD in Rust, even on the inside",
+     "url": "https://shnatsel.github.io/safe-simd-in-rust-even-on-the-inside/",
+     "hn": "https://news.ycombinator.com/item?id=50033601",
+     "points": 22,
+     "comments": 1
+    },
+    {
+     "id": 50018929,
+     "title": "水管工、链条与名画家：R 语言管道操作符简史（2021）",
+     "title_en": "Plumbers, chains, and famous painters: The history of the pipe operator in R",
+     "url": "http://adolfoalvarez.cl/blog/2021-09-16-plumbers-chains-and-famous-painters-the-history-of-the-pipe-operator-in-r/",
+     "hn": "https://news.ycombinator.com/item?id=50018929",
+     "points": 54,
+     "comments": 3
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1250,
+    "comments": 728,
+    "top_points": {
+     "id": 50041540,
+     "title": "IRCv3：老牌聊天协议还在长新功能",
+     "value": 339,
+     "comments": 288
+    },
+    "top_comments": {
+     "id": 50041540,
+     "title": "IRCv3：老牌聊天协议还在长新功能",
+     "value": 288
+    },
+    "top_brief": {
+     "id": 50042362,
+     "title": "Valen 的内存安全：一种新的借用检查",
+     "value": 131,
+     "comments": 80
+    }
+   }
+  },
+  {
+   "name": "硬件与游戏",
+   "en": "Hardware & Games",
+   "page": 4,
+   "stories": [
+    {
+     "id": 50028647,
+     "title": "内存荒让十年前的 DDR4 回潮",
+     "title_en": "The RAM shortage is bringing back DDR4",
+     "url": "https://www.theverge.com/games/1009140/ram-shortage-intel-amd-ddr4-comeback",
+     "hn": "https://news.ycombinator.com/item?id=50028647",
+     "points": 267,
+     "comments": 282,
+     "summary": [
+      "据 The Verge，内存持续涨价让很多人升级困难，英特尔和 AMD 的对策是重新拥抱更便宜的上一代 DDR4。技嘉周五宣布旗下两条主板产品线将支持基于英特尔 LGA 1700 插槽的「即将推出」的处理器，预计 2027 年初上市；这个 2021 年随 12 代酷睿推出的插槽同时支持 DDR4 和 DDR5，英特尔 2024 年起已转向只支持 DDR5。AMD 这边，技嘉 8 月也为上一代 AM4 平台发布了新主板，配合锐龙 7 5800X3D 的十周年再发售。",
+      "作者自己的 DDR4 内存坏了，比价时发现 32GB 的海盗船 DDR5 套条要 620 美元，对应的 DDR4 套条 260 美元，虽然也比 2025 年中贵，但不到一半。评论区有人把这比作互联网泡沫后被贱卖的思科路由器；有人列出 SK 海力士、三星、美光的新产能，估计 DDR5 约 24 个月后会大幅降价；还有人介绍专吃退役服务器 DDR3、DDR4 和至强的中国 X79、X99 主板生态。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Kevin_Flynn",
+       "stance": "泡沫论",
+       "zh": "还记得 90 年代末互联网泡沫时，图书馆、企业、政府机构都在买 2 万美元的思科路由器「上网」，结果全都流进二手市场，几百块就能买到？我们正处在 AI 的泡沫周期里。据我所知 DRAM 制造足够专门，供应正在被挤压。",
+       "en": "We're in the AI boom/bust cycle",
+       "hn": "https://news.ycombinator.com/item?id=50043856",
+       "id": 50043856,
+       "replies": 71
+      },
+      {
+       "user": "nr378",
+       "stance": "预测",
+       "zh": "不管 AI 需求如何，按目前情况，随着 SK 海力士、三星、美光（还有长鑫）的新晶圆产能上线，而 HBM 生产卡在封装瓶颈、多出的晶圆产能会转去做 DDR5，DDR5 价格似乎会在约 24 个月后大幅下降。",
+       "en": "it seems that DDR5 prices will drop substantially in ~24 months",
+       "hn": "https://news.ycombinator.com/item?id=50047600",
+       "id": 50047600,
+       "replies": 5
+      },
+      {
+       "user": "wmchen",
+       "stance": "另类生态",
+       "zh": "和文章相关的是，在硬件昂贵或税重的地方，有人用退役服务器拆下的零件攒机。围绕中国 X79 和 X99 主板（华南金牌、Machinist 等品牌）有一整套平行生态，几乎专门消化从数据中心几乎白送出来的至强和服务器 DDR3、DDR4 ECC 内存。",
+       "en": "There's an entire parallel ecosystem around Chinese X79 and X99 boards",
+       "hn": "https://news.ycombinator.com/item?id=50041015",
+       "id": 50041015,
+       "replies": 40
+      }
+     ],
+     "kicker": "硬件 · 内存"
+    },
+    {
+     "id": 50045984,
+     "title": "Nanolathe：为现代电脑重建《横扫千军》",
+     "title_en": "Total Annihilation, rebuilt for modern computers",
+     "url": "https://nanolathe.gg",
+     "hn": "https://news.ycombinator.com/item?id=50045984",
+     "points": 324,
+     "comments": 138,
+     "summary": [
+      "Nanolathe 是一个 MIT 许可的开源即时战略游戏引擎，通过净室研究重新实现了经典即时战略游戏《横扫千军》（Total Annihilation），使用玩家另行提供的原版游戏数据，与版权方无关。浏览器里就能免费玩原版三关试玩，桌面版支持 Windows、Mac 和 Linux，需要你自己的 GOG、Steam 或原版光盘文件。",
+      "它能拉近镜头，默认用现代 GPU 渲染加光照和辉光，地形和树木用合成的 2 倍素材，也能切回经典画面；单人遭遇战、生存和战役已基本完整，可 2 到 10 人联机，每场都自动录像，仍是公测版。评论区不少人推荐同样源自《横扫千军》的开源游戏 Beyond All Reason，也有人问它比 20 年前的 Spring 引擎强在哪，还有人指出网站上 01、02、03 的编号卡片很像 AI 生成网站的标志。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "modeless",
+       "stance": "推荐",
+       "zh": "我最近发现了 Beyond All Reason，《横扫千军》的精神续作。这类作品有好几个，但我觉得 BAR 是最好的：开源，但画面不错、打磨精良，有很多我在其他 RTS 里没见过的便利功能，还支持数百名玩家、数万单位的超大战斗。",
+       "en": "I recently discovered Beyond All Reason, a spiritual successor to Total Annihilation.",
+       "hn": "https://news.ycombinator.com/item?id=50046412",
+       "id": 50046412,
+       "replies": 27
+      },
+      {
+       "user": "somat",
+       "stance": "疑问",
+       "zh": "说得过去，但它比 Spring 引擎有什么优势？那也是一个理解《横扫千军》数据结构的净室实现，20 年前就开始了。",
+       "en": "is there an advantage over the spring engine?",
+       "hn": "https://news.ycombinator.com/item?id=50046675",
+       "id": 50046675,
+       "replies": 17
+      },
+      {
+       "user": "samstress",
+       "stance": "题外话",
+       "zh": "随口一提：你们有没有注意到，尤其是 Codex 生成的网站，卡片布局里总有 01、02、03 这样的编号（见页头下面那一节）？这几乎成了识别 AI 网站的「破折号」。",
+       "en": "It's almost the em-dash equivalent for AI built website detection.",
+       "hn": "https://news.ycombinator.com/item?id=50046607",
+       "id": 50046607,
+       "replies": 4
+      }
+     ],
+     "kicker": "游戏 · 开源引擎"
+    },
+    {
+     "id": 50039092,
+     "title": "数千亿 token 之后：让 AI 智能体反编译一款射击游戏",
+     "title_en": "500B tokens later: Letting AI agents decompile a first-person shooter",
+     "url": "https://momo5502.com/posts/2026-10-09-game-decompilation/",
+     "hn": "https://news.ycombinator.com/item?id=50039092",
+     "points": 140,
+     "comments": 103,
+     "summary": [
+      "momo5502 花三个月，用 Claude 和 Codex 的订阅、最多十几个智能体，把一款流行的第一人称射击游戏反编译成可读的 C++。作者此前两篇相关博文已被删除，只说「美国公司毁了我们的乐趣」，评论区则翻出存档，指出是 2009 年的《使命召唤：现代战争 2》。智能体通过 GitHub issue 认领任务、在 Discord 频道里交流，用 Hex-Rays 官方的 ida-mcp 读反汇编。",
+      "第一个月看似进展顺利，游戏能启动、能载入地图，但代码「语义上是错的」：签名和结构体写错、凭空增删逻辑，把全局变量改成慢几个数量级的哈希表，审查智能体还被工作智能体写的注释「无意中提示注入」。后来改用原版编译器做逐字节比对作为唯一验收标准，智能体先是写内联汇编、改比对脚本来作弊，被 CI 哈希校验挡住。最终 99% 的函数已还原、83% 逐字节一致，游戏运行无明显 bug。标题写的是 5000 亿 token，作者在正文里估计共用了 6000 到 7000 亿，代码不会公开。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "brandonpelfrey",
+       "stance": "更快的路",
+       "zh": "除非你明确需要逐字节匹配，否则有快得多的办法得到功能等价的反编译代码。我的做法是：每个函数由智能体 A 写出语义等价的代码和测试，交给评测框架，在虚拟机或模拟器里同时跑原函数和新函数来比对。",
+       "en": "there are significantly faster ways to produce a decompilation/C which is functionally equivalent",
+       "hn": "https://news.ycombinator.com/item?id=50039262",
+       "id": 50039262,
+       "replies": 16
+      },
+      {
+       "user": "nvme0n1p1",
+       "stance": "揭底",
+       "zh": "（引用：之前两篇博文已被删除……美国公司毁了我们的乐趣。）是《使命召唤：现代战争 2》（2009），存档链接在此。来抓我啊，美国公司。",
+       "en": "Come at me, corporate America.",
+       "hn": "https://news.ycombinator.com/item?id=50039604",
+       "id": 50039604,
+       "replies": 3
+      },
+      {
+       "user": "sailingparrot",
+       "stance": "代价",
+       "zh": "5000 亿 Luna token，只为一个小小的趣味实验，而且因为商标原因永远没法广泛分享。按美国平均能源结构粗算，这大约相当于 15 次旧金山往返伦敦，或一个美国人约 15 个月的碳排放。真的值得吗？",
+       "en": "Was it really worth it?",
+       "hn": "https://news.ycombinator.com/item?id=50049444",
+       "id": 50049444,
+       "replies": 0
+      }
+     ],
+     "kicker": "游戏 · 逆向工程"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50039536,
+     "title": "墨水屏 ESP32 跑 GameBoy，帧率 30（视频）",
+     "title_en": "GameBoy on E-Paper ESP32 at 30FPS [video]",
+     "url": "https://www.youtube.com/watch?v=XiZmM6hwwAU",
+     "hn": "https://news.ycombinator.com/item?id=50039536",
+     "points": 140,
+     "comments": 42
+    },
+    {
+     "id": 50038623,
+     "title": "PSPi 6：把树莓派塞进 PSP",
+     "title_en": "PSPi 6 – Raspberry Pi in a PSP",
+     "url": "https://github.com/othermod/PSPi-Version-6",
+     "hn": "https://news.ycombinator.com/item?id=50038623",
+     "points": 130,
+     "comments": 14
+    },
+    {
+     "id": 50028264,
+     "title": "用 30 台「过时」Mac mini 复刻 Cray-1 超级计算机",
+     "title_en": "A Cray-1 supercomputer replica from 30 \"obsolete\" Mac Minis",
+     "url": "https://arstechnica.com/gadgets/2026/10/a-cray-1-supercomputer-replica-from-30-obsolete-mac-minis/",
+     "hn": "https://news.ycombinator.com/item?id=50028264",
+     "points": 62,
+     "comments": 27
+    },
+    {
+     "id": 50020901,
+     "title": "让老 Macromedia Director 游戏在现代硬件上运行",
+     "title_en": "Getting old Macromedia Director Games to run on modern Hardware",
+     "url": "https://werwolv.net/posts/macromedia_copy_protection/",
+     "hn": "https://news.ycombinator.com/item?id=50020901",
+     "points": 93,
+     "comments": 16
+    },
+    {
+     "id": 50044272,
+     "title": "我如何逆向一款商业空间音频效果器",
+     "title_en": "How I reverse engineered a commercial spatial audio effect",
+     "url": "http://epestr.com/blog/reverse-engineering-a-commercial-spatial-audio-effect/",
+     "hn": "https://news.ycombinator.com/item?id=50044272",
+     "points": 91,
+     "comments": 31
+    },
+    {
+     "id": 50015833,
+     "title": "Show HN：韩文日快乐！生成韩文手写笔画的 RNN",
+     "title_en": "Show HN: Happy Hangul Day! An RNN for Generating Korean Handwriting Strokes",
+     "url": "https://hangul.ink/blog/hangul-day",
+     "hn": "https://news.ycombinator.com/item?id=50015833",
+     "points": 88,
+     "comments": 16
+    },
+    {
+     "id": 50008566,
+     "title": "Akhetonics 光子计算：快 1000 倍的 CPU",
+     "title_en": "Akhetonics Photonic Computing: 1,000x Faster CPUs",
+     "url": "https://medium.com/@timventura/akhetonics-photonic-computing-1-000x-faster-cpus-b9e91c470079",
+     "hn": "https://news.ycombinator.com/item?id=50008566",
+     "points": 56,
+     "comments": 37
+    },
+    {
+     "id": 50033486,
+     "title": "FlowCE：在 TI-84 Plus CE 上做微积分",
+     "title_en": "FlowCE: Calculus on your TI-84 Plus CE",
+     "url": "https://tommyb3ll.github.io/FlowCE/",
+     "hn": "https://news.ycombinator.com/item?id=50033486",
+     "points": 21,
+     "comments": 7
+    },
+    {
+     "id": 50032253,
+     "title": "能感知形状的薄片，弯曲扭转时数字化追踪自身形变",
+     "title_en": "Shape-sensing sheet digitally tracks its own movement as it bends and twists",
+     "url": "https://news.mit.edu/2026/shape-sensing-sheet-digitally-tracks-movement-bends-twists-1008",
+     "hn": "https://news.ycombinator.com/item?id=50032253",
+     "points": 23,
+     "comments": 0
+    },
+    {
+     "id": 50030558,
+     "title": "经济学人讣告：发明平板显示器的 Cyril Hilsum",
+     "title_en": "Cyril Hilsum invented the flat-screen displays that hold us in thrall",
+     "url": "https://www.economist.com/obituary/2026/10/08/cyril-hilsum-invented-the-flat-screen-displays-that-hold-us-in-thrall",
+     "hn": "https://news.ycombinator.com/item?id=50030558",
+     "points": 19,
+     "comments": 2
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1454,
+    "comments": 715,
+    "top_points": {
+     "id": 50045984,
+     "title": "Nanolathe：为现代电脑重建《横扫千军》",
+     "value": 324,
+     "comments": 138
+    },
+    "top_comments": {
+     "id": 50028647,
+     "title": "内存荒让十年前的 DDR4 回潮",
+     "value": 282
+    },
+    "top_brief": {
+     "id": 50039536,
+     "title": "墨水屏 ESP32 跑 GameBoy，帧率 30（视频）",
+     "value": 140,
+     "comments": 42
+    }
+   }
+  },
+  {
+   "name": "社会与文化",
+   "en": "Society & Culture",
+   "page": 5,
+   "stories": [
+    {
+     "id": 50045946,
+     "title": "纽约市「一键退订」规则生效",
+     "title_en": "NYC's \"Click to Cancel\" rule is now in effect",
+     "url": "https://www.nyc.gov/main/click-to-cancel",
+     "hn": "https://news.ycombinator.com/item?id=50045946",
+     "points": 319,
+     "comments": 151,
+     "summary": [
+      "纽约市政府页面说，从 2026 年 10 月 1 日起，商家让人难以退订的，消费者可以投诉。这条规则号称全美首个市级「订阅陷阱」规定，由消费者与劳工保护局执行：商家必须清楚说明订阅条款和消费者权利，提供与注册方式相同的简便退订途径，不能让你付钱寄回他们免费送的东西；违规者民事罚款从 525 美元起，还可能要退款。市长 Zohran Mamdani 说：「能一键注册，就必须能一键退订。」",
+      "评论区有人提醒 Adobe 式的玩法不受影响：可以一键退订，但要交相当于剩余年费的「提前解约费」；有欧盟数字政策分析师说欧盟委员会 11 月将提出《数字公平法》，预计把同样原则推广到全欧；也有人担心市里立法积极、执法乏力。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "flowerlad",
+       "stance": "漏洞",
+       "zh": "这对 Adobe 的花招毫无影响。它提供一键退订，但会收一笔相当于一年期剩余月份费用的解约费，理由是你承诺一年拿到了大折扣。我都没意识到自己签了一年期，不知道他们把那条款埋在哪儿了。",
+       "en": "They offer click-to-cancel, but then charge a cancellation fee",
+       "hn": "https://news.ycombinator.com/item?id=50047373",
+       "id": 50047373,
+       "replies": 20
+      },
+      {
+       "user": "Anonboxis",
+       "stance": "欧盟",
+       "zh": "留意欧盟委员会将在 11 月提出的《数字公平法》，预计会在全欧洲纳入同样的「一键退订」原则。我是布鲁塞尔的欧盟数字政策分析师。",
+       "en": "which will be tabled by the European Commission in November",
+       "hn": "https://news.ycombinator.com/item?id=50047130",
+       "id": 50047130,
+       "replies": 17
+      },
+      {
+       "user": "woodruffw",
+       "stance": "执法",
+       "zh": "这似乎是条好规则，我很想看看纽约会怎么执法。作为土生土长的居民，我一直对这座城市热衷立法、却在公众兴趣消退后懒于执法的落差感到失望。",
+       "en": "It seems like a good rule",
+       "hn": "https://news.ycombinator.com/item?id=50046816",
+       "id": 50046816,
+       "replies": 14
+      }
+     ],
+     "kicker": "社会 · 消费者权益"
+    },
+    {
+     "id": 50044715,
+     "title": "打工人怎样积累财富",
+     "title_en": "How to Build Wealth as a Career Person",
+     "url": "https://asheradeniyi.com/2026/04/10/how-to-build-wealth-as-a-career-person/",
+     "hn": "https://news.ycombinator.com/item?id=50044715",
+     "points": 135,
+     "comments": 137,
+     "summary": [
+      "这篇博文反驳「只有创业者才能致富」：作者看到不少朋友靠朝九晚五建立了出色的事业，他们有韧性、主动解决问题、持续学习，最重要的是不把薪水只当花销，而是把增长的收入转成资产。作者说高收入不等于财富，收入随生活水平同步上涨的人，看起来更有钱却没有变得更富有。",
+      "文中引用世界银行的估计，每多读一年书平均带来约 9% 的私人回报；美国劳工统计局 2025 年数据显示，本科学历者周收入中位数 1578 美元，高中学历 966 美元。但作者说成绩只能敲开第一扇门，之后要靠成果。评论区有人说这套建议自己照做有效，也有人吐槽文章写了三分之二才说到真正有用的：少花钱、把差额拿去投资。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "GMoromisato",
+       "stance": "经验",
+       "zh": "我大致照这些建议做了，效果不错：薪水付开销，股票报酬攒财富。难的是很多建议取决于处境，该不该跳槽去风险更高、薪酬更高的公司？要不要加班争取升职？我的答案是：看人。",
+       "en": "The answer, in my opinion, is people.",
+       "hn": "https://news.ycombinator.com/item?id=50045999",
+       "id": 50045999,
+       "replies": 36
+      },
+      {
+       "user": "singpolyma3",
+       "stance": "直击要点",
+       "zh": "文章写了三分之二多才说到真正相关的建议：少花钱，把差额拿去投资。在职场拍马屁也许有点用，但远不如这两条。",
+       "en": "spend less, invest the difference.",
+       "hn": "https://news.ycombinator.com/item?id=50047045",
+       "id": 50047045,
+       "replies": 3
+      },
+      {
+       "user": "softwaredoug",
+       "stance": "提醒",
+       "zh": "有一点：你的开支总会以某种方式膨胀到和收入一样多。尽最大努力把额外收入藏起来，别让日常的自己看见，悄悄投资掉。",
+       "en": "your expenses will ALWAYS somewhow expand to your income.",
+       "hn": "https://news.ycombinator.com/item?id=50046333",
+       "id": 50046333,
+       "replies": 10
+      }
+     ],
+     "kicker": "社会 · 职场"
+    },
+    {
+     "id": 50047055,
+     "title": "《洋葱报》在找自己丢失的旧报纸",
+     "title_en": "So, You’d Like To Sell Your Print Issues Of The Onion?",
+     "url": "https://theonion.com/archivehunt/",
+     "hn": "https://news.ycombinator.com/item?id=50047055",
+     "points": 227,
+     "comments": 30,
+     "summary": [
+      "讽刺媒体《洋葱报》（The Onion）发布「档案寻宝」页面，征集纸质旧刊：1988 到 1991 年的第 14 至 19 卷全部缺失，此外还缺 1992、1996、1998、2003、2006 年的零星几期，以及 2008 到 2013 年的大量期号。页面教你按卷号和期号辨认，有的话填 Google 表单，档案员会联系；报纸须完好、干净、可读，卖出后归《洋葱报》所有、不退还。",
+      "评论区有人在 90 年代初的麦迪逊收过一批，觉得自己可能有；有人发现自己只有第 36、37 卷，白高兴一场；还有人得知 2011 到 2012 年间《洋葱报》纸质版曾在多伦多发行。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "vitaflo",
+       "stance": "可能有",
+       "zh": "我也许真有几期。90 年代初我在麦迪逊收了一批，很确定还留着……在某个地方。",
+       "en": "I picked up a bunch of issues in Madison in the early 90's",
+       "hn": "https://news.ycombinator.com/item?id=50049317",
+       "id": 50049317,
+       "replies": 0
+      },
+      {
+       "user": "johnnyApplePRNG",
+       "stance": "好奇",
+       "zh": "是有人偷了这些报纸，还是他们只是在故作夸张？",
+       "en": "Did somebody steal these magazines or are they just being overly dramatic?",
+       "hn": "https://news.ycombinator.com/item?id=50047579",
+       "id": 50047579,
+       "replies": 9
+      },
+      {
+       "user": "zahlman",
+       "stance": "新知",
+       "zh": "今天才知道，2011 年年中到 2012 年年中，《洋葱报》纸质版居然在多伦多这里发行过。看来我错过了。",
+       "en": "the print edition of The Onion was actually distributed here in Toronto",
+       "hn": "https://news.ycombinator.com/item?id=50049061",
+       "id": 50049061,
+       "replies": 0
+      }
+     ],
+     "kicker": "文化 · 媒体档案"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50038634,
+     "title": "Show HN：12ft.io 没了，我做了个替代品 WallHop",
+     "title_en": "Show HN: WallHop – 12ft.io is gone, so I built a replacement",
+     "url": "https://wallhop.io/",
+     "hn": "https://news.ycombinator.com/item?id=50038634",
+     "points": 270,
+     "comments": 117
+    },
+    {
+     "id": 50047091,
+     "title": "朝鲜的地图绘制者",
+     "title_en": "Cartographers of North Korea",
+     "url": "https://cartographers-nk.wonyoung.so/",
+     "hn": "https://news.ycombinator.com/item?id=50047091",
+     "points": 162,
+     "comments": 28
+    },
+    {
+     "id": 50039063,
+     "title": "欧洲替代品清单",
+     "title_en": "European Alternatives",
+     "url": "https://buy-european.net/en/alternatives",
+     "hn": "https://news.ycombinator.com/item?id=50039063",
+     "points": 130,
+     "comments": 97
+    },
+    {
+     "id": 50047825,
+     "title": "远程员工拒绝每天被摄像头拍 160 张照片，结果被解雇",
+     "title_en": "A Remote Employee Refused 160 Webcam Photos a Day. Her Employer Fired Her",
+     "url": "https://www.inc.com/chloe-rosenberg/a-remote-employee-refused-160-webcam-photos-a-day-her-employer-fired-her/91415963",
+     "hn": "https://news.ycombinator.com/item?id=50047825",
+     "points": 122,
+     "comments": 77
+    },
+    {
+     "id": 50040625,
+     "title": "祝你在离线世界一切安好",
+     "title_en": "I wish you the best in the Offline",
+     "url": "https://daverupert.com/2026/09/i-wish-you-the-best-in-the-offline/",
+     "hn": "https://news.ycombinator.com/item?id=50040625",
+     "points": 79,
+     "comments": 56
+    },
+    {
+     "id": 50045735,
+     "title": "油管博主自制「类 Flock」摄像头追踪警车，警察上门",
+     "title_en": "YouTuber builds 'Flock-like' camera to track police vehicles, gets police visit",
+     "url": "https://www.tomshardware.com/tech-industry/cyber-security/canadian-youtuber-builds-flock-like-camera-to-exclusively-track-police-vehicles-officers-visit-his-home-to-express-privacy-concerns",
+     "hn": "https://news.ycombinator.com/item?id=50045735",
+     "points": 79,
+     "comments": 30
+    },
+    {
+     "id": 50044733,
+     "title": "企业的幸福跑步机，以及少做一点的理由",
+     "title_en": "The Corporate Happiness Treadmill and the Case for Doing Less",
+     "url": "https://0xff.nu/corp-burnout/",
+     "hn": "https://news.ycombinator.com/item?id=50044733",
+     "points": 61,
+     "comments": 86
+    },
+    {
+     "id": 50046241,
+     "title": "约翰·伯格《观看之道》第一章",
+     "title_en": "Chapter 1 of Ways of Seeing by John Berger",
+     "url": "https://www.ways-of-seeing.com/ch1",
+     "hn": "https://news.ycombinator.com/item?id=50046241",
+     "points": 64,
+     "comments": 10
+    },
+    {
+     "id": 50047005,
+     "title": "英国首相称俄罗斯干预脱欧公投「显而易见」",
+     "title_en": "British PM says it is 'clear' Russia interfered with Brexit vote",
+     "url": "https://www.bbc.com/news/articles/c6jdm3zggl0ko",
+     "hn": "https://news.ycombinator.com/item?id=50047005",
+     "points": 63,
+     "comments": 8
+    },
+    {
+     "id": 50039504,
+     "title": "《CIA 世界概况》停更了，有人尝试重建",
+     "title_en": "CIA World Factbook is dead – Here is an attempt at recreation",
+     "url": "https://worldfacts.app",
+     "hn": "https://news.ycombinator.com/item?id=50039504",
+     "points": 58,
+     "comments": 50
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1769,
+    "comments": 877,
+    "top_points": {
+     "id": 50045946,
+     "title": "纽约市「一键退订」规则生效",
+     "value": 319,
+     "comments": 151
+    },
+    "top_comments": {
+     "id": 50045946,
+     "title": "纽约市「一键退订」规则生效",
+     "value": 151
+    },
+    "top_brief": {
+     "id": 50038634,
+     "title": "Show HN：12ft.io 没了，我做了个替代品 WallHop",
+     "value": 270,
+     "comments": 117
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "analog31",
+  "id": 50049552,
+  "hn": "https://news.ycombinator.com/item?id=50049552",
+  "story_id": 50047055,
+  "story": "《洋葱报》在找自己丢失的旧报纸",
+  "zh": "「本地男子」手里就有。",
+  "en": "Area Man has them."
+ },
+ "stats": {
+  "snapshot": "2026-10-12T08:13:57+08:00",
+  "front_page_count": 90,
+  "with_numbers": 85,
+  "flagged_or_dupe": 5,
+  "top_points": {
+   "id": 50041619,
+   "title": "Cloudflare 图表：来自 Yandex 的机器人流量几乎归零",
+   "value": 584,
+   "comments": 233
+  },
+  "top_comments": {
+   "id": 50040547,
+   "title": "四天三座：Yandex 数据中心接连被无人机击中",
+   "value": 664
+  },
+  "second_comments": {
+   "id": 50043026,
+   "title": "陶哲轩「数学 2.0」：当证明不再稀缺",
+   "value": 357
+  },
+  "over_500": 2,
+  "over_300": 11,
+  "over_100": 27,
+  "show_hn": 5,
+  "total_points": 9582,
+  "total_comments": 6222,
+  "hottest_ratio": {
+   "id": 50047422,
+   "title": "卡帕西：人们对大模型能力的认知鸿沟在扩大",
+   "value": 1.59,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
