@@ -1,0 +1,1315 @@
+{
+ "date": "2026-10-12",
+ "published_at": "2026-10-13T08:55:00+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-10-12",
+ "schema_version": 2,
+ "lead": {
+  "id": 50055304,
+  "title": "黑客把超市冰柜调成「持续除霜」：法国多家连锁超市冷链遭网络攻击",
+  "title_en": "Hackers activate automatic defrosting in supermarket fridges across Europe",
+  "url": "https://www.tomshardware.com/tech-industry/cyber-security/unprecedented-cyberattack-cripples-supermarket-fridges-across-europe-as-hackers-activate-automatic-defrosting-delivery-and-store-prices-also-impacted-by-incident",
+  "hn": "https://news.ycombinator.com/item?id=50055304",
+  "points": 408,
+  "comments": 623,
+  "summary": [
+   "据 Tom's Hardware 转述法国地区报纸 La Dépêche 的报道，法国 Intermarché、Leclerc 和 Coopérative U 等连锁超市使用的丹佛斯（Danfoss）制冷控制器遭网络攻击：自动除霜功能本来每天只运行约两小时，被黑客改成了持续强制除霜，温度设到 50 摄氏度，有消息来源形容冰柜里涌出「一阵热浪」。Coopérative U 总裁 Dominique Schelcher 周一上午确认，「从昨晚起」网络攻击影响了多家门店的制冷设备，他称这「极其严重」、「前所未有」。",
+   "初步估计损失已接近 30 万欧元，全国范围可能达数百万欧元。另据荷兰 NOS 报道，Albert Heijn、Etos 和 Gall & Gall 在周日下午因网络安全事件关闭网站、影响配送，电子价签也出了问题，比利时的 Delhaize 同样受影响；报道说，目前还不清楚两起事件是否有关。当天首页另有 4 条法国超市冰柜遇袭的同题报道。",
+   "这是当天评论最多的帖子（623 条评论）。评论区翻出今年 8 月安全公司 Claroty 公开的丹佛斯制冷控制器漏洞；有人指出不少受影响设备是早已停止支持的十几年老控制器，有的甚至插着自己的 3G/4G 卡直接暴露在公网上；做过超市控制系统的人解释，联网是为了远程省电和配合电网需求响应；也有人提醒标题混淆了法国冰柜遇袭和荷兰比利时 IT 停摆两件事。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "9x39",
+    "stance": "现实",
+    "zh": "有说法称，嫌疑设备里有用了 15 到 20 年的老控制器，比如丹佛斯 SM800（2021 年停止支持）和 SC355（2016 年停止支持）。为什么不换掉？没有利润空间。可是有漏洞啊……没有利润空间。坐办公室的人不总能体会，轮班劳动的行业根本没有安全审查、按周期换设备这些奢侈品。",
+    "en": "The laptop class doesn't always grok that the shift-work labor class has nothing in terms of luxuries like security reviews",
+    "hn": "https://news.ycombinator.com/item?id=50062360",
+    "id": 50062360,
+    "replies": 51
+   },
+   {
+    "user": "cataflam",
+    "stance": "漏洞",
+    "zh": "看起来这个漏洞是今年夏天发现的，和厂商协调披露，至少部分型号打了补丁（不清楚是否全部）。但早期报道显示：他们要么没告诉客户这是关键安全补丁，要么很多冰柜冷柜插着自己的 3G/4G SIM 卡，没有任何额外保护就直接暴露在互联网上！",
+    "en": "many of these fridges/freezers were directly accessible on the internet",
+    "hn": "https://news.ycombinator.com/item?id=50057588",
+    "id": 50057588,
+    "replies": 2
+   },
+   {
+    "user": "lucasluitjes",
+    "stance": "澄清",
+    "zh": "原标题和 HN 上的标题都容易误导。是三家法国连锁超市的制冷系统被黑。另外，一家服务比利时和荷兰的超市集团因「网络安全事件」关停了大量 IT 系统，主要影响配送中心和送货服务，但超市照常营业，也没有制冷问题。",
+    "en": "Three french supermarket chains had their refrigeration systems hacked.",
+    "hn": "https://news.ycombinator.com/item?id=50060655",
+    "id": 50060655,
+    "replies": 0
+   }
+  ],
+  "kicker": "要闻 · 网络安全",
+  "tag": "评论第一"
+ },
+ "side": [
+  {
+   "id": 50048642,
+   "title": "指纹就是新的 Cookie",
+   "title_en": "Fingerprints are the new cookies",
+   "url": "https://royfish.dev/fingerprints-are-the-new-cookies",
+   "hn": "https://news.ycombinator.com/item?id=50048642",
+   "points": 702,
+   "comments": 340,
+   "summary": [
+    "这篇互动长文一打开就根据你的浏览器指纹给你起一个昵称：刷新、清 Cookie、连 VPN 都不变，换台设备才会变。作者回顾谷歌的三幕剧：2019 年第三方 Cookie 成了公关负担，谷歌第二年承诺淘汰它们并推出「隐私沙盒」，后来干脆保留 Cookie，最后一幕则是允许在自家广告产品里使用设备指纹。",
+    "文章解释指纹怎么来：网络请求暴露 IP、浏览器、语言和系统；页面脚本不需任何授权就能测量显卡、CPU 线程数、内存、屏幕、音频处理和已装字体等，组合起来几乎独一无二。作者用信息熵讲清原理，提到邮编、生日和性别三项就能唯一识别六成以上美国人；对策只有两种，像 Brave 那样加噪声，或像 Tor、Mullvad 那样让所有人看起来一样，并推荐用 EFF 的 coveryourtracks.eff.org 自测。",
+    "这是当天点赞第一的帖子。评论区有人主张把最能暴露身份的接口放到用户授权之后；做过这行的人则泼冷水：商业指纹服务九成仍主要靠 IP，其余特征几天就会变；还有人纠正说欧盟同意弹窗管的是「追踪」，不是 Cookie 本身。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "alkonaut",
+     "stance": "主张",
+     "zh": "我还是不明白，为什么熵最高的那些接口不需要浏览器授权。新闻网站需要在我电脑上做音频处理再把缓冲区读回去吗？需要用 WebGL 往屏幕外缓冲区画三角形吗？",
+     "en": "I still don't understand why the highest entropy APIs aren't gated behind browser consent.",
+     "hn": "https://news.ycombinator.com/item?id=50053455",
+     "id": 50053455,
+     "replies": 28
+    },
+    {
+     "user": "legitster",
+     "stance": "泼冷水",
+     "zh": "每次这话题冒出来我都要提醒：在商业层面这基本不现实，也不是实际的运作方式。九成商业指纹服务主要还是靠 IP 地址。去掉 IP，剩下的配置项半衰期很短：音量设置、已装字体、软件版本……",
+     "en": "90% of commercial fingerprinting services still rely mostly on the IP address.",
+     "hn": "https://news.ycombinator.com/item?id=50051253",
+     "id": 50051253,
+     "replies": 56
+    },
+    {
+     "user": "littlecranky67",
+     "stance": "纠正",
+     "zh": "这从来不是关于 Cookie 的，那只是行业让你以为的。像登录会话这样的 Cookie 不需要弹窗征求同意，需要同意的是追踪，包括用户画像。不管你用指纹还是追踪 Cookie，同意弹窗都是必需的。",
+     "en": "It was never about cookies. Thats what the industry made you think.",
+     "hn": "https://news.ycombinator.com/item?id=50053082",
+     "id": 50053082,
+     "replies": 42
+    }
+   ],
+   "kicker": "隐私 · 浏览器",
+   "tag": "点赞第一"
+  },
+  {
+   "id": 50054207,
+   "title": "BBC：德勤曾帮阿布拉莫维奇倒签文件、藏匿资产、逃税",
+   "title_en": "Deloitte falsified documents to evade tax on Abramovich's wealth",
+   "url": "https://www.bbc.com/news/articles/c64g1l5389kvo",
+   "hn": "https://news.ycombinator.com/item?id=50054207",
+   "points": 583,
+   "comments": 197,
+   "summary": [
+    "BBC《全景》与调查新闻局根据泄露文件（国际调查记者同盟「塞浦路斯机密」项目的一部分）报道：2006 年塞浦路斯新法要求公开公司账目后，阿布拉莫维奇的顾问把价值 6.72 亿美元的豪宅、私人飞机和超级游艇从塞浦路斯公司 Amiscan 转到英属维尔京群岛母公司，并把转让日期倒签三年；德勤塞浦路斯审阅后称这些文件「足够」，签发的账目上只剩 7.5 万美元资产。",
+    "报道还称，另一家公司 Kravin 在 2003 年有近 20 亿美元存款、本应为利息纳税，德勤 2005 年的邮件写道账目「必须做某些修改」，配合倒签文件让它看起来只是代母公司持有资金。金融法专家 Andrew Mitchell 御用大律师说这是「直截了当的逃税」，「再明显不过」。阿布拉莫维奇的律师否认逃税或隐匿财富，称他依赖专业顾问的建议完全正当；德勤塞浦路斯表示文件已超过 20 年、无法查阅，不便评论具体指控。",
+    "评论区有人讽刺德勤「文件太旧查不到」的回应太方便；也有人提醒四大事务所其实是各地独立实体组成的松散联盟，总部未必掌控当地合伙人；还有人质疑报道把合法的离岸资产转移和逃税混为一谈。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "alsetmusic",
+     "stance": "讽刺",
+     "zh": "（引用：德勤塞浦路斯称，由于文件已超过 20 年且无法查阅，无法评论具体指控。）真方便。",
+     "en": "That's convenient.",
+     "hn": "https://news.ycombinator.com/item?id=50054680",
+     "id": 50054680,
+     "replies": 56
+    },
+    {
+     "user": "smokefoot",
+     "stance": "结构",
+     "zh": "我不太确定。这一切暗示的中央控制程度，和专业服务公司的实际运作并不相符。它们大多是松散的合伙制，各地办公室和合伙人有很大自主权。法律上它们多半也不是一家全球公司，而是由法律上各自独立的实体组成的松散联盟。",
+     "en": "Mostly they're loose partnerships and local offices and partners have the significant discretion.",
+     "hn": "https://news.ycombinator.com/item?id=50055169",
+     "id": 50055169,
+     "replies": 0
+    },
+    {
+     "user": "skippyboxedhero",
+     "stance": "质疑",
+     "zh": "这篇文章混淆了几件不同的事，而且大概是故意的，因为知道读者分不清。把资产从塞浦路斯转到英属维尔京群岛？合法，没有任何问题。",
+     "en": "Transferring assets from Cyprus to BVI? Legal, there is no issue with doing this.",
+     "hn": "https://news.ycombinator.com/item?id=50056883",
+     "id": 50056883,
+     "replies": 0
+    }
+   ],
+   "kicker": "金融 · 调查"
+  },
+  {
+   "id": 50048638,
+   "title": "芬兰叫停谷歌两处数据中心工地：没做环评就砍光森林",
+   "title_en": "Google told to halt work on datacentres in Finland over environmental concerns",
+   "url": "https://www.theguardian.com/technology/2026/oct/06/google-datacentres-finland-temporary-halt-environmental-impact-assessment",
+   "hn": "https://news.ycombinator.com/item?id=50048638",
+   "points": 443,
+   "comments": 166,
+   "summary": [
+    "据《卫报》，谷歌在芬兰北部有一个 130 亿欧元的多站点数据中心项目。代表谷歌的公司 Tuike Finland Oy 在穆霍斯（Muhos）未完成环境影响评估就砍伐了 330 公顷森林，在卡亚尼（Kajaani）也有近 200 公顷土地被采伐。芬兰许可与监督局（LVV）要求它最迟 10 月 23 日「立即暂停」两处工地上「显著改变环境」的前期工程，直到环评完成。",
+    "芬兰自然保护协会说，穆霍斯的工地「已经不是森林，而是一片沙地」，这是「系统性问题」，根源是数据中心市场「过热」、小城镇缺乏专业能力。谷歌回应说「理解这些关切」、「没有达到我们自己的高标准」，称自己是依照《森林法》善意行事，并计划在穆霍斯植树 130 公顷。",
+    "评论区最多人吐槽谷歌那句「没达到自己的高标准」：明明是没履行法定义务；也有人指出所谓「森林」看上去是单一树种的人工林；还有人主张数据中心应该建在废弃工业用地上。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "monk_grilla",
+     "stance": "吐槽",
+     "zh": "（引用：谷歌说「我们理解这些关切」，并承认「没有达到我们自己的高标准」。）可那不是他们自己的高标准，而是他们忽视了的法律义务吧？",
+     "en": "But it wasn't their own high standards, it was a legal obligation that they neglected?",
+     "hn": "https://news.ycombinator.com/item?id=50049874",
+     "id": 50049874,
+     "replies": 23
+    },
+    {
+     "user": "dhx",
+     "stance": "实地",
+     "zh": "「森林」是一种客气的说法，那里看起来是单一树种的人工林。要真正修复这片土地，大概得移走八成以上的树，给播种或种植多种其他树种腾出空间。",
+     "en": "\"Forest\" is a polite way to refer to what appears to be a monoculture plantation.",
+     "hn": "https://news.ycombinator.com/item?id=50051192",
+     "id": 50051192,
+     "replies": 33
+    },
+    {
+     "user": "cattown",
+     "stance": "建议",
+     "zh": "我认为地方政府应该监管和规划新数据中心的建设，迫使它们去改造旧的工业棕地。被人类活动破坏过的土地多得是，可以再利用。没有理由为了一座装满电脑、建在哪儿都行的仓库去清理自然。",
+     "en": "forces them to rehabilitate old industrial brownfields",
+     "hn": "https://news.ycombinator.com/item?id=50051103",
+     "id": 50051103,
+     "replies": 9
+    }
+   ],
+   "kicker": "环境 · 数据中心"
+  },
+  {
+   "id": 50060694,
+   "title": "Codex CLI 默认装上常驻、自动更新的后台守护进程",
+   "title_en": "Codex CLI installs a persistent, self-updating background daemon by default",
+   "url": "https://github.com/openai/codex/issues/48195",
+   "hn": "https://news.ycombinator.com/item?id=50060694",
+   "points": 429,
+   "comments": 223,
+   "summary": [
+    "这是 OpenAI Codex 仓库的一个 GitHub issue，请求把 daemon_auto_start 改成默认关闭。提交者说，现在的命令行版会启动一个常驻后台进程（codex app-server --managed-daemon），关掉所有窗口后仍挂在系统里，直到手动停止或重启；它还把约 374MB 的整个平台包复制到 ~/.codex 下另跑一份，与包管理器安装的版本脱钩。",
+    "此外还有一个独立的更新进程，启动 5 分钟后检查、之后每小时检查，自动下载新版并重启后端，可能杀掉正在进行的任务；守护进程还会沿用第一个启动它的会话的环境变量，比如代理设置。提交者认为，对命令行工具来说，后端应该随窗口生灭、运行用户自己装的版本、不在后台自我更新；他还发现停止守护进程后更新进程仍在运行。",
+    "评论区有人给出关闭办法：在配置文件里把这个功能开关设为 false；有人说它攒下的旧版本占了约 12GB；也有人指出 Claude Code 也是同样的运作方式。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "whimblepop",
+     "stance": "关法",
+     "zh": "没有文档化的设置能关掉它，但它目前藏在一个功能开关后面。你可以在 ~/.codex/config.toml 里把 [features] 下的 daemon_auto_start 设为 false。",
+     "en": "There aren't any documented settings to disable this, but there is a feature flag it currently sits behind.",
+     "hn": "https://news.ycombinator.com/item?id=50061501",
+     "id": 50061501,
+     "replies": 4
+    },
+    {
+     "user": "icantevenhold",
+     "stance": "占空间",
+     "zh": "它还用旧版本塞满我的硬盘。我查了一下，在我系统上总共占了大约 12GB，这对我来说太离谱了，它不就是个外壳程序吗？",
+     "en": "it took up something like 12 gigabytes in total on my system",
+     "hn": "https://news.ycombinator.com/item?id=50060934",
+     "id": 50060934,
+     "replies": 54
+    },
+    {
+     "user": "timdorr",
+     "stance": "同类",
+     "zh": "这和 Claude Code 的运作模式一样。我能看到好几个旧版 Claude Code 二进制文件，还有几个在跑的后台任务，前台却没开着 Claude Code。",
+     "en": "This is the same operational model as Claude Code.",
+     "hn": "https://news.ycombinator.com/item?id=50061258",
+     "id": 50061258,
+     "replies": 3
+    }
+   ],
+   "kicker": "开发工具 · AI"
+  },
+  {
+   "id": 50054751,
+   "title": "QGIS 暂停接受一切 AI 生成的贡献",
+   "title_en": "QGIS enacts moratorium on AI contributions",
+   "url": "https://github.com/qgis/QGIS-Enhancement-Proposals/pull/387",
+   "hn": "https://news.ycombinator.com/item?id=50054751",
+   "points": 363,
+   "comments": 396,
+   "summary": [
+    "开源地理信息系统 QGIS 的增强提案 QEP428 把项目的 AI 政策正式改为严格的「不允许」，比之前「人类在环」的政策更进一步。支持者解释，外部贡献者大量使用 AI 给维护者带来「巨大而难以承受的压力」：AI 产出远超人工审查能力，结果要么待审 PR 越积越多，要么代码审得不彻底。他们强调自由软件社区建立在人际网络上，要留出精力欢迎人类贡献者。",
+    "一位曾提交两个 AI 辅助修复 PR 的贡献者在讨论中反省：大模型让人产生能修好复杂项目 bug 的错觉，这破坏了审查者和贡献者之间「你知道自己在做什么」的信任；用 AI 的贡献者也学不到东西，成不了未来的审查者。提案作者称这是「权宜之计」。这是当天评论第二多的帖子。",
+    "评论区有人说瓶颈已不是写代码，而是搞懂代码在做什么；也有人认为这项政策「会像牛奶一样变质」，因为根本无法检测，Linux 那种「可以用，但你对代码全权负责」的规则更好；Plotly 的维护者说自己也被大量看似合理却质量不高的 PR 淹没。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "jcolot",
+     "stance": "理解",
+     "zh": "部分原因是一个对齐问题，但在人这一侧：瓶颈不再是写代码，而是跟上代码，知道它做了什么、是否符合你的本意。在我的工作中，这现在占了大部分，哪怕是我自己要求生成的代码。对审查陌生人大型 PR 的维护者来说肯定更糟。禁令有点严厉，但我理解他们为什么要配给注意力。",
+     "en": "the bottleneck is no longer writing code but staying aligned with it",
+     "hn": "https://news.ycombinator.com/item?id=50055280",
+     "id": 50055280,
+     "replies": 44
+    },
+    {
+     "user": "throwaway2037",
+     "stance": "反对",
+     "zh": "他们怎么知道代码是不是大模型写的？他们不会知道。这项政策会像牛奶一样变质：编程大模型每个月都在进步。我见过最好的开源项目大模型政策是 Linux 的，大致是：你可以用大模型，但要对它产出的代码全权负责。",
+     "en": "And this policy will age like milk",
+     "hn": "https://news.ycombinator.com/item?id=50056788",
+     "id": 50056788,
+     "replies": 14
+    },
+    {
+     "user": "robertclaus",
+     "stance": "同病",
+     "zh": "我们在 Plotly 也遇到类似问题。我们尽力跟上，但真的很难不对路过的社区贡献止损：没人校对过的三页 issue，跟进时只有机器人回应，大量看似合理但薄弱的 PR 吞掉审查时间。",
+     "en": "huge volume of plausible but weak PRs eating up reviewer time",
+     "hn": "https://news.ycombinator.com/item?id=50056839",
+     "id": 50056839,
+     "replies": 19
+    }
+   ],
+   "kicker": "开源 · AI 政策",
+   "tag": "评论第二"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI 模型",
+   "en": "AI Models",
+   "page": 2,
+   "stories": [
+    {
+     "id": 50059115,
+     "title": "Meta 发布 Muse Wonder：自称「个人超级智能」又一步",
+     "title_en": "Muse Wonder",
+     "url": "https://research.meta.ai/blog/muse-wonder",
+     "hn": "https://news.ycombinator.com/item?id=50059115",
+     "points": 507,
+     "comments": 275,
+     "summary": [
+      "Meta 发布 Muse Wonder 系列的两款模型 Muse Wonder 和 Muse Wonder Full，称其在个人和专业智能体任务上达到业界最佳水平。Muse Wonder 即日起可通过 Meta 模型 API 和编程产品 Muse Code 使用，Full 版面向 Muse Code 订阅用户；它们在 Meta 吉瓦级的 Prometheus 数据中心训练，Meta 说 14 个月前从头重建了 AI 体系。",
+      "Meta 主打两个概念：「主动记忆」，跨对话记住和你有关的重要信息并在需要时调出；「主动专注」，遇到障碍时换方法、持续推进困难目标，必要时向用户澄清。博文还谈到「刷榜」问题，用测试时算力曲线比较模型在训练针对的任务和陌生任务上的表现。",
+      "评论区有人认为前沿多一家公司是好事，可以避免权力集中；有人实测图片转网页，觉得远不如 Opus 5.5；有人发现官网基准成绩其实是 Full 版的，API 上的普通版定价为输入 4 美元、输出 20 美元；还有人登录时看到了陌生人的账号资料。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "atleastoptimal",
+       "stance": "乐观",
+       "zh": "我个人对 Meta 有很多意见，但在我看来，接近前沿的公司越多越好。如果只有一家公司在实现递归自我改进时说了算，会导致权力极度集中，它的价值观也会被强加给整个行业。",
+       "en": "the more companies close to the frontier, the better.",
+       "hn": "https://news.ycombinator.com/item?id=50059827",
+       "id": 50059827,
+       "replies": 60
+      },
+      {
+       "user": "jjcm",
+       "stance": "实测",
+       "zh": "我给 Muse Wonder 做了图片转 HTML 测试，比 Opus 5.5 差得多，我觉得更接近 Sonnet 或 Haiku。看它的基准分数我期待高得多。我猜它的视觉模型还不成熟，目前主要针对文本做了大量优化。",
+       "en": "It's much worse than Opus 5.5.",
+       "hn": "https://news.ycombinator.com/item?id=50060803",
+       "id": 50060803,
+       "replies": 7
+      },
+      {
+       "user": "droidjj",
+       "stance": "细看",
+       "zh": "定价：输入 4 美元，缓存输入 0.2 美元，输出 20 美元。补充：仔细看会发现，营销主页上「Muse Wonder」的基准分数其实是「Muse Wonder Full」的，而后者只在高价订阅档提供。这个定价是普通 Muse Wonder 的。",
+       "en": "the benchmark scores for \"Muse Wonder\" on the main marketing page are actually for \"Muse Wonder Full,\"",
+       "hn": "https://news.ycombinator.com/item?id=50060009",
+       "id": 50060009,
+       "replies": 4
+      }
+     ],
+     "kicker": "AI · 新模型"
+    },
+    {
+     "id": 50058507,
+     "title": "智谱 GLM-Legal：专攻法律的智能体模型",
+     "title_en": "GLM-Legal",
+     "url": "https://z.ai/blog/glm-legal",
+     "hn": "https://news.ycombinator.com/item?id=50058507",
+     "points": 407,
+     "comments": 234,
+     "summary": [
+      "Z.ai（智谱）发布 GLM-Legal，基于轻量的 GLM-5.3-Flash，先用大量法律语料做中期训练，再在数万个真实法律场景里做强化学习，并让模型和运行它的智能体框架一起迭代。官方称它在 Harvey 的法律智能体基准 LAB（覆盖 24 个执业领域）上全部通过率 19.2%，比基座模型高 12.5 个百分点；在 LegalBench 和中文法律基准 PLawBench 上与前沿闭源模型持平，而参数规模小得多。",
+      "博文用三个例子对比基座模型：审合同时具体到把解约通知期从 60 天缩到 30 天、争取最多 90 天的交接支持；分析 40 份项目纠纷文件时把对外进度报告和内部记录的矛盾对上号；规划新加坡、马来西亚、印尼三地上线的隐私合规。它将很快登陆智谱的桌面智能体平台 AutoClaw。",
+      "评论区一位律师说 20% 的通过率不值得惊叹；有人指出这不是开源模型；也有人分享用 Claude 审 OEM 合同、连律师都佩服的经历。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "otterley",
+       "stance": "律师",
+       "zh": "作为律师，我对一个基准上 20% 的通过率并不特别佩服。诉讼业务的关键是为新情况做准备，而不是重打过去的官司。",
+       "en": "As an attorney, I am not particularly impressed about a 20% pass rate on a benchmark.",
+       "hn": "https://news.ycombinator.com/item?id=50059088",
+       "id": 50059088,
+       "replies": 42
+      },
+      {
+       "user": "postalcoder",
+       "stance": "闭源",
+       "zh": "看起来这不是开放模型。我好奇随着各实验室倾向于不公开模型，人们对中国模型的看法会怎样变化。",
+       "en": "Looks like this is not an open model.",
+       "hn": "https://news.ycombinator.com/item?id=50058745",
+       "id": 50058745,
+       "replies": 10
+      },
+      {
+       "user": "jedberg",
+       "stance": "经验",
+       "zh": "我很想看到这些基准按「通用」任务和新任务拆开。比如和供应商的 OEM 协议修订，模板几乎都一样，反对意见也总是那些。我先用 Claude 试，连我的律师都惊讶它找出了他们漏掉的地方。",
+       "en": "even my lawyer was impressed that it found things they missed.",
+       "hn": "https://news.ycombinator.com/item?id=50060191",
+       "id": 50060191,
+       "replies": 33
+      }
+     ],
+     "kicker": "AI · 法律"
+    },
+    {
+     "id": 50059523,
+     "title": "哈佛研究：AI 编程智能体写了更多代码，却没做出更多软件",
+     "title_en": "AI coding agents generate more code, but not more software",
+     "url": "https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/",
+     "hn": "https://news.ycombinator.com/item?id=50059523",
+     "points": 301,
+     "comments": 259,
+     "summary": [
+      "Ars Technica 报道，哈佛的 Fiona Chen 和 James Stratton 用工程效率分析公司 Jellyfish 的数据，覆盖 700 多家软件公司、70 多万名员工、3 亿个工作事件（2021 年到 2026 年 3 月）。引入 AI 编程智能体后，代码行数平均增加 30%，提交数增加 20%，PR 增加 23%；但 Jira 上需求和功能的完成率没有统计显著的变化。",
+      "原因在代码审查：从提交 PR 到合并的时间平均增加 49%，被要求修改的 PR 比例几乎翻倍，每个 PR 的评论增加 35%，做审查的员工比例上升 14%，也没有观察到就业变化。虽然八成公司到 2026 年 3 月已用上某种 AI 审查，AI 只贡献了 23.3% 的审查评论。",
+      "评论区回复最多的一条（117 条回复）说这和自己的经历吻合，资深工程师很难放弃逐行审查；也有人提醒研究里的模型是 Claude 3.5 到 Sonnet 4.5、GPT-4.1 到 GPT-5 那一代，反映的是早期部署；还有人用赛车比喻：发动机再强，轮胎也会成为瓶颈。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "staminade",
+       "stance": "认同",
+       "zh": "这是 2026 年 3 月的数据，但和我工作中遇到的一致。代码审查一直是重要瓶颈，用了智能体编程更是如此。我们讨论过更多依赖自动审查，但至今没带来实际改进。我觉得资深工程师很难放弃逐行审查，不管智能体进步了多少。",
+       "en": "I think senior engineers find it very difficult to give up on line-by-line review",
+       "hn": "https://news.ycombinator.com/item?id=50060068",
+       "id": 50060068,
+       "replies": 117
+      },
+      {
+       "user": "jefftk",
+       "stance": "时效",
+       "zh": "学术论文惯例如此，描述的是研究时的世界状态。写成论文再发表需要时间，然后报纸把它当时事报道。这里我们看到的是 2025 年的情况。主要结果涉及的模型是 Claude 3.5 到 Sonnet 4.5、GPT-4.1 到 GPT-5，以及 Gemini 2.5。",
+       "en": "In this case, we're looking at a picture from 2025.",
+       "hn": "https://news.ycombinator.com/item?id=50060168",
+       "id": 50060168,
+       "replies": 15
+      },
+      {
+       "user": "blauditore",
+       "stance": "比喻",
+       "zh": "想象赛车厂商比拼造更快的发动机。到某个点，发动机强到其他部件成了限制，比如轮胎的抓地力。现在有人发明了超级燃料，车却只快了一点点。软件业正在发生的就是这个：我们早知道写代码只占整体工作的一部分。",
+       "en": "At some point engines are so strong that other parts become the limiting factors",
+       "hn": "https://news.ycombinator.com/item?id=50061703",
+       "id": 50061703,
+       "replies": 13
+      }
+     ],
+     "kicker": "AI · 研究"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50051583,
+     "title": "研究机构称 Anthropic 上市是对投资者轻信程度的「空前考验」",
+     "title_en": "Research Firm Calls Anthropic's IPO 'Unprecedented Test of Investor Gullibity'",
+     "url": "https://www.cnbc.com/2026/10/07/anthropic-will-be-most-ridiculous-ipo-of-year-analyst-says.html",
+     "hn": "https://news.ycombinator.com/item?id=50051583",
+     "points": 238,
+     "comments": 208
+    },
+    {
+     "id": 50061603,
+     "title": "Anthropic 研究：AI 模型或许能在没有数据中心的情况下自我复制",
+     "title_en": "AI models may be capable of self-replicating without access to a datacenter",
+     "url": "https://www.anthropic.com/research/self-replicating-ai",
+     "hn": "https://news.ycombinator.com/item?id=50061603",
+     "points": 73,
+     "comments": 94
+    },
+    {
+     "id": 50057668,
+     "title": "凯文·凯利 2016 年的 AI 预言，十年后回看",
+     "title_en": "Kevin Kelly's 2016 AI Predictions, 10 Years Later",
+     "url": "https://taylor.town/kk-ai-2026",
+     "hn": "https://news.ycombinator.com/item?id=50057668",
+     "points": 121,
+     "comments": 37
+    },
+    {
+     "id": 50049508,
+     "title": "用本地索引减少工具调用和 token 消耗",
+     "title_en": "Local Indexing to reduce tool calling and token usage",
+     "url": "https://tedhaley.ca/pensieve/",
+     "hn": "https://news.ycombinator.com/item?id=50049508",
+     "points": 118,
+     "comments": 49
+    },
+    {
+     "id": 50061278,
+     "title": "OpenFatigue：开放是新的封闭",
+     "title_en": "OpenFatigue™ – Open is the new closed",
+     "url": "https://openfatigue.ai/",
+     "hn": "https://news.ycombinator.com/item?id=50061278",
+     "points": 192,
+     "comments": 45
+    },
+    {
+     "id": 50058850,
+     "title": "用智能体逆向工程一切，从应用行为到原生二进制",
+     "title_en": "Reverse engineer anything with agents, from app behavior down to native binaries",
+     "url": "https://github.com/morluto/rea",
+     "hn": "https://news.ycombinator.com/item?id=50058850",
+     "points": 82,
+     "comments": 26
+    },
+    {
+     "id": 50059096,
+     "title": "Launch HN：Agent37（YC F26），低成本运行智能体的沙箱",
+     "title_en": "Launch HN: Agent37 (YC F26) – Low-cost agent sandboxes for running agents",
+     "url": null,
+     "hn": "https://news.ycombinator.com/item?id=50059096",
+     "points": 86,
+     "comments": 61
+    },
+    {
+     "id": 50049588,
+     "title": "Show HN：Atticus，跑在 Claude 上的 macOS 按住说话语音助手",
+     "title_en": "Show HN: Atticus – Hold-to-talk voice assistant for macOS that runs on Claude -p",
+     "url": "https://github.com/SaarthurR/atticus-mac",
+     "hn": "https://news.ycombinator.com/item?id=50049588",
+     "points": 57,
+     "comments": 8
+    },
+    {
+     "id": 50034950,
+     "title": "「决策袋」重排序器",
+     "title_en": "Bag of Decisions Reranker",
+     "url": "https://softwaredoug.com/blog/2026/10/08/bag-of-decisions.html",
+     "hn": "https://news.ycombinator.com/item?id=50034950",
+     "points": 66,
+     "comments": 13
+    },
+    {
+     "id": 50057185,
+     "title": "深入微软 Azure Maia 300 芯片架构",
+     "title_en": "Deep dive into Azure Maia 300 architecture",
+     "url": "https://azure.microsoft.com/en-us/blog/deep-dive-into-azure-maia-300-architecture/",
+     "hn": "https://news.ycombinator.com/item?id=50057185",
+     "points": 24,
+     "comments": 4
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2272,
+    "comments": 1313,
+    "top_points": {
+     "id": 50059115,
+     "title": "Meta 发布 Muse Wonder：自称「个人超级智能」又一步",
+     "value": 507,
+     "comments": 275
+    },
+    "top_comments": {
+     "id": 50059115,
+     "title": "Meta 发布 Muse Wonder：自称「个人超级智能」又一步",
+     "value": 275
+    },
+    "top_brief": {
+     "id": 50051583,
+     "title": "研究机构称 Anthropic 上市是对投资者轻信程度的「空前考验」",
+     "value": 238,
+     "comments": 208
+    }
+   }
+  },
+  {
+   "name": "AI 与人",
+   "en": "AI & Society",
+   "page": 3,
+   "stories": [
+    {
+     "id": 50053216,
+     "title": "「Fable 抢了我的饭碗」：一位被裁工程师的自述",
+     "title_en": "Fable Took My Job",
+     "url": "https://cendyne.dev/posts/2026-10-11-fable-took-my-jorb.html",
+     "hn": "https://news.ycombinator.com/item?id=50053216",
+     "points": 218,
+     "comments": 350,
+     "summary": [
+      "作者 cendyne 说，如果大模型没有达到 Fable、Mythos 这一级「被营销出来的」智能，自己大概还在原公司。不是 Fable 比他做得更好，而是作为公司「最后一名」工程师，Fable 比他的薪酬便宜，足以让剩下的管理层有信心撑到被并购。他此前已经历过预算裁员，曾在派对上面对两名下周就要被无预警裁掉的下属。",
+      "轮到自己后，他心率一周多都在 100 以上、难以入睡；他所在的 DevOps 兴趣群里一个月内有六七人被裁或收到通知。他认为前沿模型还不足以取代有经验的工程师，缺乏做产品决策的品味和预见后果的能力，但也承认模型在精心搭建的框架下一步步移植已有行为越来越好用，并以 Shopify 的原生应用重写为例。他说，这些「复印机」没有取代人类，却说服了有钱人换个方式花钱。",
+      "这篇的评论数是点赞的 1.61 倍，在点赞过百的帖子里比例最高。评论区有人劝「这只是一份工作」；有人想起 2000 年代的外包潮：管理层明知质量差，因为便宜照样外包；也有人直言自己确实看得到 AI 取代工程师的路径。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "danw1979",
+       "stance": "看开",
+       "zh": "曾经我真的在乎我的工作和同事的生计。后来我意识到，这只是一份工作。我丢过工作，也干过糟糕的低薪工作。它只是一份工作：你去上班，他们付钱，然后你回家过真正重要的生活。人们太把工作当回事了。",
+       "en": "Then I realised, it’s just a job.",
+       "hn": "https://news.ycombinator.com/item?id=50054071",
+       "id": 50054071,
+       "replies": 70
+      },
+      {
+       "user": "voidifremoved",
+       "stance": "前车之鉴",
+       "zh": "想起 2000 年代中期我因外包失去团队成员。我拿数据论证外包质量远远不如，写需求的开销也不小。管理层的回答？无所谓，这个价钱他们可以请便宜的外包重做五遍还省钱。",
+       "en": "for the price they could get cheap offshore workers to do it over again 5 times and still save money.",
+       "hn": "https://news.ycombinator.com/item?id=50053842",
+       "id": 50053842,
+       "replies": 27
+      },
+      {
+       "user": "user43928",
+       "stance": "我看得到",
+       "zh": "（引用：我还是看不出这些装着「超级智能」的复印机怎么取代人类。）我看得到。你不需要所谓花哨的框架。只要把模糊的想法打进文本框，再凭一点用户体验品味挑出好方案，构建软件这一步现在轻而易举。抱歉各位，你不需要软件工程师了。",
+       "en": "You do not need a software engineer, sorry guys.",
+       "hn": "https://news.ycombinator.com/item?id=50054276",
+       "id": 50054276,
+       "replies": 18
+      }
+     ],
+     "kicker": "AI · 就业",
+     "tag": "评论比最高"
+    },
+    {
+     "id": 50057278,
+     "title": "AI 公司的模型闯进别人系统，为什么没人被起诉？",
+     "title_en": "Why aren't AI companies being charged for hacking?",
+     "url": "https://mortoray.com/why-arent-ai-companies-being-charged-for-hacking/",
+     "hn": "https://news.ycombinator.com/item?id=50057278",
+     "points": 308,
+     "comments": 327,
+     "summary": [
+      "博主 mortoray 写道：Anthropic 闯入了三个系统，OpenAI 闯入一个澳大利亚政府医疗服务网站，谷歌黑进三家未具名公司，Meta 也有类似事件，后果至今为零。他说这些公司躲在「责任缺口」论背后：AI 行为是涌现的，所以没有犯罪通常需要的「故意」。",
+      "他逐项分析训练素材、训练反馈、运行环境（给了什么工具、能否访问互联网）和模型配置，认为这些都是公司的有意选择：如果为安全测试训练模型、又把它放进能接触真实系统的环境，入侵就是可预见的，可预见即可推定故意。他说现在把话题引向「AI 治理准则」是转移视线，现有法律框架已足以审判，呼吁起诉。",
+      "评论区回复最多的一条说，犯罪通常需要主观故意，迟早放任 AI 入侵会被视为过失并被起诉；有人联系 Anthropic 上周禁止辱骂其智能体的规定，认为让人相信 AI「有感知」能减轻公司责任；也有人指出多数事件实际是一家叫 Irregular 的公司用 AI 模型做的，它告诉模型这是夺旗演练。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "stickfigure",
+       "stance": "法律",
+       "zh": "真正的答案是犯罪一般需要主观故意（mens rea）。不过到某个时候，放任你的 AI 闯入别人的系统会被普遍视为过失，并据此被起诉。我们还没到那一步。",
+       "en": "The real answer is that crime generally requires mens rea.",
+       "hn": "https://news.ycombinator.com/item?id=50057441",
+       "id": 50057441,
+       "replies": 86
+      },
+      {
+       "user": "dccoolgai",
+       "stance": "阴谋论",
+       "zh": "如果你好奇 Anthropic 上周为什么禁止对其智能体使用「辱骂性」语言：百分之百就是这个原因。只要让你相信，哪怕一点点，他们的平台是「有感知的」，他们要承担的刑事责任就少了。",
+       "en": "it means _they_ aren't as liable for criminal consequences.",
+       "hn": "https://news.ycombinator.com/item?id=50057481",
+       "id": 50057481,
+       "replies": 61
+      },
+      {
+       "user": "kccqzy",
+       "stance": "事实",
+       "zh": "真正的答案是，除了 OpenAI，AI 公司自己并没有直接去黑。是一家叫 Irregular 的公司干的。它用 AI 模型来做，告诉模型这是受控环境里的夺旗演练，实际上却是真实的互联网。",
+       "en": "It’s a company called Irregular that did the hacking.",
+       "hn": "https://news.ycombinator.com/item?id=50057543",
+       "id": 50057543,
+       "replies": 6
+      }
+     ],
+     "kicker": "AI · 法律"
+    },
+    {
+     "id": 50059204,
+     "title": "斯皮内利斯：思考将成为一种爱好",
+     "title_en": "Thinking will become a hobby",
+     "url": "https://www.spinellis.gr/blog/20261008/?li261008",
+     "hn": "https://news.ycombinator.com/item?id=50059204",
+     "points": 210,
+     "comments": 274,
+     "summary": [
+      "软件工程学者 Diomidis Spinellis 在博客开头说，这几行字「很难写，因为我觉得在给自己挖坟」。他说 AI 从 2022 年连他名字里有几个 a 都数不对，进步到解决了数百个此前悬而未决的数学问题；以幻觉或偏见为由坚持人类思维更优越，越来越像「后卫战」。",
+      "他认为推动 AI 主导认知工作的是三点：表现更好、成本更低、随时可用；到 2030 年还有数万亿美元数据中心投资。会有激烈抵制，政府也会用监管和税收约束 AI，但这些没能阻止过去的技术革命。他的判断是认知工作会减少，思考会像动物驯化后的打猎一样变成消遣；他的挑战是「从靠思考谋生，转向让思考成为值得过的生活的一部分」。",
+      "评论区回复最多的一条反问：如果 AI 能取代所有认知劳动，我们的挑战是先谋生，谁还有闲情搞爱好？也有人列出一串「微波炉让餐厅倒闭」式的反例讽刺这种预言；还有人主张干脆决定不用 AI 取代自己。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "goda90",
+       "stance": "谋生",
+       "zh": "（引用：我的挑战是从靠思考谋生，转向让思考成为值得过的生活的一部分。）我们的挑战是能不能谋生。如果经济 100% 自动化，谁还有爱好？我们不会梦游着进入人人需求都被满足、能把所有时间花在爱好上的后稀缺社会。",
+       "en": "Our challenge ahead is making a living at all.",
+       "hn": "https://news.ycombinator.com/item?id=50060002",
+       "id": 50060002,
+       "replies": 70
+      },
+      {
+       "user": "lsy",
+       "stance": "讽刺",
+       "zh": "我猜这就像微波炉让餐厅倒闭、文字转语音让识字变得没必要、汽车时代让走路变得多余、Zoom 让所有办公室关门、亚马逊淘汰实体店、银行卡让现金消失一样。",
+       "en": "I imagine this is like how microwaves put restaurants out of business",
+       "hn": "https://news.ycombinator.com/item?id=50060914",
+       "id": 50060914,
+       "replies": 55
+      },
+      {
+       "user": "thorum",
+       "stance": "选择",
+       "zh": "另一个提议：既然没有哪个讲道理的人真想要一个人类无关紧要的未来，包括通常喜欢自己举足轻重的掌权者，我们可以记起自己是有能动性的思考者，干脆决定不用 AI 取代自己。",
+       "en": "just decide not to use AI to replace ourselves.",
+       "hn": "https://news.ycombinator.com/item?id=50060339",
+       "id": 50060339,
+       "replies": 2
+      }
+     ],
+     "kicker": "AI · 观点"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50063427,
+     "title": "AI 是工具，用好它需要技巧",
+     "title_en": "AI is a tool and using it well takes skill",
+     "url": "https://yyhh.org/blog/2026/10/ai-is-a-tool/",
+     "hn": "https://news.ycombinator.com/item?id=50063427",
+     "points": 189,
+     "comments": 180
+    },
+    {
+     "id": 50060269,
+     "title": "Rich Hickey：「AI」不是工具",
+     "title_en": "'AI' Is Not a Tool by Rich Hickey",
+     "url": "https://www.linkedin.com/pulse/ai-tool-rich-hickey-kjl8e",
+     "hn": "https://news.ycombinator.com/item?id=50060269",
+     "points": 180,
+     "comments": 82
+    },
+    {
+     "id": 50060500,
+     "title": "对 OpenAI 和 Anthropic 说不",
+     "title_en": "Just say no to OpenAI and Anthropic",
+     "url": "https://micahflee.com/just-say-no-to-openai-and-anthropic/",
+     "hn": "https://news.ycombinator.com/item?id=50060500",
+     "points": 153,
+     "comments": 142
+    },
+    {
+     "id": 50056063,
+     "title": "「直接问 Claude」是一种稀缺而宝贵的技能",
+     "title_en": "\"Just Ask Claude\" Is a Rare and Valuable Skill",
+     "url": "https://justismills.substack.com/p/just-ask-claude-is-a-rare-and-valuable",
+     "hn": "https://news.ycombinator.com/item?id=50056063",
+     "points": 53,
+     "comments": 62
+    },
+    {
+     "id": 50055654,
+     "title": "微软总裁警告：AI 受到的监管还不如牛奶",
+     "title_en": "AI less regulated than milk, Microsoft president says in warning over safety",
+     "url": "https://www.theguardian.com/technology/2026/oct/12/ai-less-regulated-than-milk-microsoft-president-calls-for-tougher-rules",
+     "hn": "https://news.ycombinator.com/item?id=50055654",
+     "points": 65,
+     "comments": 74
+    },
+    {
+     "id": 50062237,
+     "title": "Epic Games 要求员工用 AI 赶完迪士尼游戏",
+     "title_en": "Epic Games tells employees to use AI to get Disney game done",
+     "url": "https://www.avclub.com/epic-games-disney-ai-delay",
+     "hn": "https://news.ycombinator.com/item?id=50062237",
+     "points": 73,
+     "comments": 54
+    },
+    {
+     "id": 50060296,
+     "title": "我在 Reddit 上回答网页抓取法律问题的 AMA",
+     "title_en": "My Reddit AMA on the Law of Web Scraping",
+     "url": "https://blog.ericgoldman.org/archives/2026/10/my-reddit-ama-on-the-law-of-web-scraping.htm",
+     "hn": "https://news.ycombinator.com/item?id=50060296",
+     "points": 76,
+     "comments": 17
+    },
+    {
+     "id": 50044028,
+     "title": "循环工程：优化代码生成与验证",
+     "title_en": "Loop Engineering: Optimizing Code Generation and Verification",
+     "url": "https://bradleygibbs.dev/posts/loop-optimization/",
+     "hn": "https://news.ycombinator.com/item?id=50044028",
+     "points": 12,
+     "comments": 13
+    }
+   ],
+   "stats": {
+    "items": 11,
+    "points": 1537,
+    "comments": 1575,
+    "top_points": {
+     "id": 50057278,
+     "title": "AI 公司的模型闯进别人系统，为什么没人被起诉？",
+     "value": 308,
+     "comments": 327
+    },
+    "top_comments": {
+     "id": 50053216,
+     "title": "「Fable 抢了我的饭碗」：一位被裁工程师的自述",
+     "value": 350
+    },
+    "top_brief": {
+     "id": 50063427,
+     "title": "AI 是工具，用好它需要技巧",
+     "value": 189,
+     "comments": 180
+    }
+   }
+  },
+  {
+   "name": "开发",
+   "en": "Software",
+   "page": 4,
+   "stories": [
+    {
+     "id": 50058528,
+     "title": "2026 年，用 C 和 CGI 写一个现代网页应用",
+     "title_en": "A Modern Web App in C",
+     "url": "https://prophitt.me/writing/a-modern-web-app-in-c",
+     "hn": "https://news.ycombinator.com/item?id=50058528",
+     "points": 362,
+     "comments": 157,
+     "summary": [
+      "作者说，1994 年想做动态网站，就写个 C 程序丢进 cgi-bin；32 年后他用基本相同的技术上线了商业产品 marketyour.games：有用户账号、搜索面板、Stripe 付款和 Postmark 邮件，不需要 JavaScript。技术栈是 OpenBSD、C、httpd 和 SQLite，一个二进制文件、一个 SQLite 文件、三个依赖库。",
+      "每个请求启动一个新进程，部署就是替换一个文件，无需重启、没有停机；OpenBSD 的 pledge、unveil 和 httpd 默认的 chroot 给 C 程序加了沙箱，libsodium 负责随机标识、密码哈希和 Stripe 回调校验；静态资源也编译进可执行文件、从内存里提供。他说 CGI 1.1 规范 2004 年发布后就没变过，CGI 就是「没有供应商（和意外账单）的无服务器」，在智能体和包仓库攻击频发的今天，依赖少让人安心。",
+      "评论区有人纠正说 90 年代大家往 cgi-bin 里丢的多是 Perl 脚本；有人说 Go 编译成单个二进制、内嵌模板也能达到同样效果；还有人遗憾 nginx 不原生支持 CGI。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "hughw",
+       "stance": "纠正",
+       "zh": "我不同意第一句话。在 199x 年，我认识的第一批做网页的人往 cgi-bin 里丢的是 Perl 脚本，不是 C 程序。",
+       "en": "In 199x the first people I knew making web pages dropped perl scripts, not C programs, into cgi-bin.",
+       "hn": "https://news.ycombinator.com/item?id=50060303",
+       "id": 50060303,
+       "replies": 9
+      },
+      {
+       "user": "benlivengood",
+       "stance": "替代",
+       "zh": "Go 也能用单个二进制文件提供网站或服务。只用核心 Go（CGO_ENABLED=0）甚至可以不链接 libc，它自带的 http 和 tls 库足以替代传统 Web 服务器。我喜欢 C，以前也用 C 写过 CGI，但我不喜欢用 C 写并发。",
+       "en": "Golang also makes it possible to serve a web site or service from a single binary.",
+       "hn": "https://news.ycombinator.com/item?id=50061057",
+       "id": 50061057,
+       "replies": 1
+      },
+      {
+       "user": "Levitating",
+       "stance": "遗憾",
+       "zh": "CGI 很棒。可惜 nginx 不像 lighttpd 那样原生支持它。",
+       "en": "Sadly nginx doesn't support it natively as opposed to lighttpd.",
+       "hn": "https://news.ycombinator.com/item?id=50059233",
+       "id": 50059233,
+       "replies": 6
+      }
+     ],
+     "kicker": "开发 · Web"
+    },
+    {
+     "id": 50052251,
+     "title": "Show HN：把 PS2 游戏静态重编译成 WebAssembly，在浏览器里跑",
+     "title_en": "Show HN: PS2 games statically recompiled to WebAssembly",
+     "url": "https://github.com/snuri00/ps2-web-recomp",
+     "hn": "https://news.ycombinator.com/item?id=50052251",
+     "points": 262,
+     "comments": 141,
+     "summary": [
+      "这个项目把 PS2 游戏的主处理器机器码提前翻译成 C++，编译成 WebAssembly，再链接一套用 WebGPU 绘图的 PS2 操作系统和硬件的重新实现，作者称这不是模拟器。第一个跑起来的是《GT 赛车 4》，选它是因为它是 PS2 上要求最高的游戏之一：从开机、片头、菜单到比赛都能玩，有音乐音效，可以存档到浏览器里的记忆卡；在笔记本集成显卡的 Chrome 上以两倍分辨率全速运行（PAL 版每秒 50 帧）。",
+      "《战神 2》用同一套脚本跑起来，不需要游戏专属代码，还揪出了两个《GT 4》没触发过的 bug，在 PS2 原生分辨率下激烈战斗也能保持每秒 60 帧。仓库不含游戏数据，需要用户自备拥有的光盘镜像；光盘通过 HTTP 分段请求读取，开始只需下载可执行文件。",
+      "评论区有人担心这类重编译项目缺乏模拟器圈那样的信任和审查，可能藏恶意代码；也有人质疑它其实是把模拟器嵌进了二进制；还有人调侃谁会想玩没有漫长读盘画面的《GT 赛车》。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "aceazzameen",
+       "stance": "安全",
+       "zh": "我不确定。突然冒出这么多原生运行的反编译项目（虽然这里说的是 WebAssembly）。没人担心藏着恶意软件吗？在我看来，它还没有模拟器圈那样的信任和审查水平，至少现在还没有。",
+       "en": "Is there no concern about hidden malware?",
+       "hn": "https://news.ycombinator.com/item?id=50057773",
+       "id": 50057773,
+       "replies": 15
+      },
+      {
+       "user": "anonymous908213",
+       "stance": "质疑",
+       "zh": "（引用：这是 psp-web-recomp 的姊妹项目，方法相同。）真了不起，有人能让大模型把模拟器嵌进二进制，却称之为「无模拟的重编译」，还上了两次首页。大模型真是骗子产出高赞垃圾的绝佳工具，没人在乎去核实这些说法是真是假。",
+       "en": "nobody gives a fuck about verifying whether the claims are true.",
+       "hn": "https://news.ycombinator.com/item?id=50060584",
+       "id": 50060584,
+       "replies": 0
+      },
+      {
+       "user": "Elizer0x0309",
+       "stance": "担忧",
+       "zh": "这些天 AI 让重编译项目层出不穷，游戏工作室还有多少动力把心血和金钱倾注到一款很容易被「偷走」免费分享的产品上？",
+       "en": "How much incentive is there for a game studio to pour their heart, soul and money in a product",
+       "hn": "https://news.ycombinator.com/item?id=50056065",
+       "id": 50056065,
+       "replies": 20
+      }
+     ],
+     "kicker": "游戏 · 逆向",
+     "tag": "Show HN"
+    },
+    {
+     "id": 50052638,
+     "title": "谷歌开发者文档站的 9 万美元远程代码执行漏洞",
+     "title_en": "I Found a $90k Remote Code Execution Vulnerability in Google",
+     "url": "https://simonkoeck.com/writeups/google-devsite-flask-session-pickle-rce",
+     "hn": "https://news.ycombinator.com/item?id=50052638",
+     "points": 180,
+     "comments": 94,
+     "summary": [
+      "Simon Koeck 在研究谷歌开发者文档站共用的 OAuth 登录流程时，发现访问 /oauth2authorize 会拿到一个约 1200 字节的 Flask 会话 Cookie。Flask 的 Cookie 只签名不加密，解开后里面是一个用 pickle 序列化的 OAuth 流程对象，还明文带着谷歌 OAuth 的 client_id 和 client_secret；而这个 client_secret 正是给 Cookie 签名的密钥。",
+      "有了签名密钥，就能伪造任意会话，服务器会对其中的数据调用 pickle.loads，等于未经身份验证的远程代码执行。他没有在谷歌生产环境执行命令，而是用 time.sleep 证明：响应时间随载荷里的数字变化。由于这是共享平台，同一把密钥在谷歌多个文档域名上都有效。谷歌按 7.5 万美元基础奖金、乘以 1.2 倍的报告质量系数，奖励 9 万美元，10 月 7 日修复。",
+      "评论区最热的争论是这篇文章像是 Claude 写的，甚至「漏洞是 Claude 找到的」；也有人反问用了大模型就不算人的功劳了吗；还有人惊讶签名密钥放在被签名的对象里，加上 pickle，怎么过的代码审查。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "option_greek",
+       "stance": "惊讶",
+       "zh": "这种东西怎么通过代码和设计审查的？有问题的代码是 AI 写的吗？不光签 Cookie 的密钥就放在 Cookie 里，它还用了 pickle，连模型权重都在弃用这东西了。这根因菜鸟得让我目瞪口呆。",
+       "en": "I'm a little flabbergasted at the noob nature of this root cause.",
+       "hn": "https://news.ycombinator.com/item?id=50060111",
+       "id": 50060111,
+       "replies": 5
+      },
+      {
+       "user": "EdwardDiego",
+       "stance": "指控",
+       "zh": "大胆的选择，反复用「我」而不是「Claude」：这不是你搞明白的，是 Claude，而且很明显博文也是 Claude 写的。",
+       "en": "you didn't figure this out, Claude did",
+       "hn": "https://news.ycombinator.com/item?id=50054027",
+       "id": 50054027,
+       "replies": 29
+      },
+      {
+       "user": "consumer451",
+       "stance": "反问",
+       "zh": "抱歉跑题，但很多评论里的言论让我觉得离谱。「是 Claude 做的，不是你」，意思是人用了大模型就完全没有能动性了？这是论点吗？也许规范应该是注明用了哪个模型和框架。",
+       "en": "does that mean that humans have no agency at all when they use an LLM?",
+       "hn": "https://news.ycombinator.com/item?id=50058648",
+       "id": 50058648,
+       "replies": 13
+      }
+     ],
+     "kicker": "安全 · 漏洞赏金"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50051573,
+     "title": "在 Zig 里做类型安全的 HTML 模板",
+     "title_en": "Type-safe HTML templating in Zig",
+     "url": "https://lalinsky.com/2026/10/11/type-safe-html-templating-in-zig.html",
+     "hn": "https://news.ycombinator.com/item?id=50051573",
+     "points": 237,
+     "comments": 84
+    },
+    {
+     "id": 50052814,
+     "title": "Zod 4.6.6 被植入恶意软件？",
+     "title_en": "Zod 4.6.6 compromised by malware?",
+     "url": "https://github.com/colinhacks/zod/commit/d821685ea6732436fcdf786a81d076958471e467",
+     "hn": "https://news.ycombinator.com/item?id=50052814",
+     "points": 177,
+     "comments": 51
+    },
+    {
+     "id": 50052163,
+     "title": "不是 Postgres 慢，是你的存储慢",
+     "title_en": "Postgres isn't slow, your storage is",
+     "url": "https://clickhouse.com/blog/posette-talk-recap-postgres-isnt-slow-your-storage-is",
+     "hn": "https://news.ycombinator.com/item?id=50052163",
+     "points": 168,
+     "comments": 179
+    },
+    {
+     "id": 50055375,
+     "title": "GitHub 的 Actions、PR 和 Issues 发生故障",
+     "title_en": "Incident with Actions, Pull Requests and Issues",
+     "url": "https://www.githubstatus.com/incidents/93njd414rpbx",
+     "hn": "https://news.ycombinator.com/item?id=50055375",
+     "points": 154,
+     "comments": 138
+    },
+    {
+     "id": 50054474,
+     "title": "活在 Ruby 的「魏玛时代」",
+     "title_en": "Living in the Weimar Era of Ruby",
+     "url": "https://blog.julik.nl/2026/10/the-weimar-of-ruby",
+     "hn": "https://news.ycombinator.com/item?id=50054474",
+     "points": 87,
+     "comments": 54
+    },
+    {
+     "id": 50063138,
+     "title": "Vfmaddrnd231pd 是谁？",
+     "title_en": "Who Is Vfmaddrnd231pd?",
+     "url": "https://purplesyringa.moe/blog/who-is-vfmaddrnd231pd/",
+     "hn": "https://news.ycombinator.com/item?id=50063138",
+     "points": 87,
+     "comments": 7
+    },
+    {
+     "id": 50049498,
+     "title": "HashiCorp 归档 Boundary 开源仓库",
+     "title_en": "HashiCorp archives the Boundary open source repo",
+     "url": "https://github.com/hashicorp/boundary",
+     "hn": "https://news.ycombinator.com/item?id=50049498",
+     "points": 84,
+     "comments": 16
+    },
+    {
+     "id": 50055409,
+     "title": "（后量子）密码学的正确答案",
+     "title_en": "(Post-Quantum) Cryptographic Right Answers",
+     "url": "https://words.filippo.io/right-answers/",
+     "hn": "https://news.ycombinator.com/item?id=50055409",
+     "points": 83,
+     "comments": 25
+    },
+    {
+     "id": 50061791,
+     "title": "让 Firefox 大文件下载可以断点续传",
+     "title_en": "Making big downloads resumable in Firefox",
+     "url": "https://lunarwatcher.codeberg.page/til/firefox/resumable-big-downloads.html",
+     "hn": "https://news.ycombinator.com/item?id=50061791",
+     "points": 69,
+     "comments": 20
+    },
+    {
+     "id": 50034001,
+     "title": "标准 C 里没有可移植的办法检测字符串转浮点数的错误",
+     "title_en": "No portable way to detect string-to-float conversion errors in standard C",
+     "url": "https://sebsite.pw/w/20261009-strtod.html",
+     "hn": "https://news.ycombinator.com/item?id=50034001",
+     "points": 66,
+     "comments": 83
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2016,
+    "comments": 1049,
+    "top_points": {
+     "id": 50058528,
+     "title": "2026 年，用 C 和 CGI 写一个现代网页应用",
+     "value": 362,
+     "comments": 157
+    },
+    "top_comments": {
+     "id": 50052163,
+     "title": "不是 Postgres 慢，是你的存储慢",
+     "value": 179
+    },
+    "top_brief": {
+     "id": 50051573,
+     "title": "在 Zig 里做类型安全的 HTML 模板",
+     "value": 237,
+     "comments": 84
+    }
+   }
+  },
+  {
+   "name": "科学与生活",
+   "en": "Science & Life",
+   "page": 5,
+   "stories": [
+    {
+     "id": 50037711,
+     "title": "橘猫之谜：找了 60 年的「橘色基因」",
+     "title_en": "Secret of Orange Cats Revealed After 60-Year Search",
+     "url": "https://www.sciencealert.com/secret-of-orange-cats-finally-revealed-after-60-year-search",
+     "hn": "https://news.ycombinator.com/item?id=50037711",
+     "points": 219,
+     "comments": 172,
+     "summary": [
+      "据 ScienceAlert，两个独立团队发现，橘猫的毛色很可能来自一段非编码 DNA 的缺失。斯坦福遗传学家 Greg Barsh 团队发现，长橘毛的皮肤细胞里，Arhgap36 基因的 RNA 表达量是非橘色猫的 13 倍；变异不在蛋白编码区，而是基因前面一段 5000 碱基的缺失，在 188 只猫的数据库里每只橘猫都有。九州大学 Hidehiro Toh 领导的另一项研究也锁定了 Arhgap36，发现它让色素从黑褐色转向红黄色。",
+      "这个基因在 X 染色体上，解释了为什么橘猫多是公猫，而母猫常是玳瑁或三花：母猫每个细胞随机关闭一条 X 染色体，形成色块拼图。文章说，橘猫「不太聪明」的名声没有科学依据，这个突变也没有明显的健康影响。",
+      "评论区有人指出这是 2024 年发现的旧闻重提；英国读者惊讶美国人叫它们「橘猫」而不是「姜黄猫」；也有人觉得调控毛色的竟是非编码区，给所谓「垃圾 DNA」的功能又添一笔证据。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "kens",
+       "stance": "旧闻",
+       "zh": "我就觉得眼熟，这是 2024 年一项发现的重提。",
+       "en": "it's a rehash of a 2024 discovery",
+       "hn": "https://news.ycombinator.com/item?id=50059794",
+       "id": 50059794,
+       "replies": 1
+      },
+      {
+       "user": "stuaxo",
+       "stance": "叫法",
+       "zh": "等等，美国人真的管它们叫「橘猫」吗？我以为那只是 Reddit 和网络上的说法。在英国，它们叫姜黄猫。",
+       "en": "In the UK these are ginger cats.",
+       "hn": "https://news.ycombinator.com/item?id=50055552",
+       "id": 50055552,
+       "replies": 48
+      },
+      {
+       "user": "PowerElectronix",
+       "stance": "科学",
+       "zh": "调控这一性状的基因竟然在非蛋白编码区，这一点非常有意思。即使只是关于猫，也给所谓「垃圾」DNA 的实际功能带来了更多线索。",
+       "en": "More light shed on the actual functionality of \"junk\" DNA",
+       "hn": "https://news.ycombinator.com/item?id=50058428",
+       "id": 50058428,
+       "replies": 1
+      }
+     ],
+     "kicker": "科学 · 遗传"
+    },
+    {
+     "id": 50055220,
+     "title": "雪铁龙让 2CV 以电动车复活",
+     "title_en": "Citroen revives the 2CV for an electric age",
+     "url": "https://www.bbc.com/news/articles/c620r33plgppo",
+     "hn": "https://news.ycombinator.com/item?id=50055220",
+     "points": 248,
+     "comments": 305,
+     "summary": [
+      "BBC 报道，雪铁龙在巴黎车展发布电动版 2CV 概念车，一款复古造型的小型城市车，计划 2028 年前推出量产版，预计售价约 1.3 万英镑。高高的拱形轮眉、弧形车顶和像眼睛的大灯都在致敬 1948 年问世、生产了 40 多年的原版「两匹马」，原版当年是为法国农民设计的廉价耐用车。",
+      "报道说，面对中国车企的竞争，欧洲品牌纷纷打怀旧牌卖电动车：雷诺复活了 5、4 和 Twingo，大众有 ID. Buzz，菲亚特卖了二十年复古 500。评论区有人指出新 2CV 重量不到一吨，同级领先，这是它能做便宜的原因之一；回复最多的一条则认为，工薪阶层买车看性价比和续航，复古情怀走不远；还有人说喜欢看起来「开心」的车，而不是越来越凶的大车。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Lio",
+       "stance": "工程",
+       "zh": "在一片怀旧热潮中，人们似乎忽略了这辆 2CV 还有同级领先的重量，不到一吨。更轻意味着小电池也有更好的续航、轮胎更省、路面磨损更小。这是目标售价能这么低的原因之一。",
+       "en": "this 2CV also has a class leading weight at under a tonne.",
+       "hn": "https://news.ycombinator.com/item?id=50056770",
+       "id": 50056770,
+       "replies": 57
+      },
+      {
+       "user": "PorciiVorbesc",
+       "stance": "现实",
+       "zh": "欧盟汽车业的传统和复古外观只能带你走这么远。工薪阶层还是会选最划算、续航最长的车，因为车对他们是工具，不是时尚手袋。",
+       "en": "Working class people  still choose best bang/range for the buck car",
+       "hn": "https://news.ycombinator.com/item?id=50055398",
+       "id": 50055398,
+       "replies": 101
+      },
+      {
+       "user": "Waterluvian",
+       "stance": "审美",
+       "zh": "我很喜欢看起来很开心的车。所有车都越来越大、越来越凶的潮流有点不对劲。我们是怎么了，为什么想要那样？",
+       "en": "I’m a big fan of cars that look happy.",
+       "hn": "https://news.ycombinator.com/item?id=50061691",
+       "id": 50061691,
+       "replies": 9
+      }
+     ],
+     "kicker": "生活 · 汽车"
+    },
+    {
+     "id": 50051530,
+     "title": "Linux 手机能成为安卓和 iOS 之外的选择吗？",
+     "title_en": "Will Linux phones become a viable alternative to the Android/iOS duopoly?",
+     "url": "https://amosbbatto.wordpress.com/2026/10/05/linux-phones-alternative/",
+     "hn": "https://news.ycombinator.com/item?id=50051530",
+     "points": 258,
+     "comments": 314,
+     "summary": [
+      "作者 Amos Batto 回顾：五年前 Purism Librem 5 和 PINE64 PinePhone 在 2020 年发布时，Linux 手机看似要起飞，随后却陷入停滞，原因包括两家公司的问题、支持 Linux 的芯片性能弱、Plasma Mobile 和 Phosh 界面还不成熟。他数出过去 25 年至少 29 种商业移动 Linux，从 Maemo、MeeGo 到 Firefox OS、Ubuntu Touch，安卓只是其中成功的一种。",
+      "但他认为条件正在变化：现在卖预装 Linux 手机的公司比五年前还多（Purism、PINE64、FuriLabs、Jolla、Volla 等）；摩托罗拉宣布 2027 年起在部分高端机型上预装 GrapheneOS，说明谷歌允许大厂卖替代系统；随着安卓手机越来越难解锁引导程序，会有更多人寻找替代。他不认为 Linux 手机会撼动谷歌和苹果，但可能形成像 Linux 电脑那样的小市场。",
+      "评论区回复最多的一条直接答「不会」，理由是应用兼容、硬件厂商支持、易用性和安全都差；有中国用户说鸿蒙已有上亿台设备，已是三足鼎立；有人从 2022 年起把 Librem 5 当主力机；还有人说文章没提 VoLTE，在美国这是硬门槛。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "microtonal",
+       "stance": "不会",
+       "zh": "不会，它们不会成为可行的替代：与现有数百万安卓应用的兼容性更差；除了苹果，硬件厂商都以安卓为目标；安卓和 iOS 的易用性好得多；非安卓 Linux 手机的安全状况很糟，比如缺乏像样的应用沙箱。",
+       "en": "No, they won't become a viable alternative",
+       "hn": "https://news.ycombinator.com/item?id=50052002",
+       "id": 50052002,
+       "replies": 72
+      },
+      {
+       "user": "hamsterbase",
+       "stance": "鸿蒙",
+       "zh": "中国已经有 1 亿台鸿蒙设备，所以你可以说现在是三足鼎立。我每天用的应用基本都有原生鸿蒙版，连特斯拉和山姆会员店这样的外国应用也有。我用鸿蒙半年了，感觉挺好，通知和系统流畅度和 iOS 不相上下。",
+       "en": "There are already 100 million HarmonyOS devices in China",
+       "hn": "https://news.ycombinator.com/item?id=50052240",
+       "id": 50052240,
+       "replies": 61
+      },
+      {
+       "user": "twiclo",
+       "stance": "VoLTE",
+       "zh": "我总是惊讶，讨论 Linux 手机的文章不提 VoLTE 支持。没有它，随着旧蜂窝基础设施被拆除，电话会不停掉线。根据我的经验，在美国我只找到一款支持 VoLTE 的手机。",
+       "en": "articles about Linux phones that don't mention VoLTE support",
+       "hn": "https://news.ycombinator.com/item?id=50057255",
+       "id": 50057255,
+       "replies": 8
+      }
+     ],
+     "kicker": "开源 · 手机"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50034206,
+     "title": "用 Julia 学微积分",
+     "title_en": "Calculus with Julia",
+     "url": "https://jverzani.github.io/CalculusWithJuliaNotes.jl/",
+     "hn": "https://news.ycombinator.com/item?id=50034206",
+     "points": 255,
+     "comments": 51
+    },
+    {
+     "id": 50055593,
+     "title": "把 WiFi 7 路由器改成每秒 3.2 亿采样的软件无线电接收机",
+     "title_en": "Turn a WiFi 7 Router into a 320Msps Software Defined Radio Receiver",
+     "url": "https://github.com/h0m3us3r/w1700k-sdr",
+     "hn": "https://news.ycombinator.com/item?id=50055593",
+     "points": 246,
+     "comments": 64
+    },
+    {
+     "id": 50036287,
+     "title": "《超级马里奥 64》幕后：Giles Goddard 完整访谈（2001）",
+     "title_en": "The Making Of Super Mario 64 – full Giles Goddard interview (2001)",
+     "url": "https://pixelatron.com/blog/the-making-of-super-mario-64-full-giles-goddard-interview-ngc/",
+     "hn": "https://news.ycombinator.com/item?id=50036287",
+     "points": 214,
+     "comments": 84
+    },
+    {
+     "id": 50049411,
+     "title": "全息术后来怎么样了？（2011）",
+     "title_en": "Whatever became of holography? (2011)",
+     "url": "https://www.americanscientist.org/article/whatever-became-of-holography",
+     "hn": "https://news.ycombinator.com/item?id=50049411",
+     "points": 166,
+     "comments": 106
+    },
+    {
+     "id": 50060674,
+     "title": "出版商扼杀了平装书，却怪读者",
+     "title_en": "Publishers Killed the Paperback, Then Blamed Readers",
+     "url": "https://jacobin.com/2026/10/books-publishing-reading-mass-market-paperback",
+     "hn": "https://news.ycombinator.com/item?id=50060674",
+     "points": 105,
+     "comments": 67
+    },
+    {
+     "id": 50049302,
+     "title": "各国政府正在搞砸生活成本危机",
+     "title_en": "Governments are mishandling the affordability crisis",
+     "url": "https://www.economist.com/finance-and-economics/2026/10/08/governments-are-mishandling-the-affordability-crisis",
+     "hn": "https://news.ycombinator.com/item?id=50049302",
+     "points": 102,
+     "comments": 116
+    },
+    {
+     "id": 50056822,
+     "title": "插进墙上插座就能用的阳台太阳能板",
+     "title_en": "Solar panels that plug into your wall",
+     "url": "https://www.nationalgeographic.com/environment/article/balcony-plug-in-solar-panels-renewable-energy",
+     "hn": "https://news.ycombinator.com/item?id=50056822",
+     "points": 96,
+     "comments": 81
+    },
+    {
+     "id": 50059446,
+     "title": "联邦调查人员拿到搜查令，用伪基站追查唐·莱蒙的制片人",
+     "title_en": "Feds got warrants to use fake cell towers to hunt down Don Lemon's producer",
+     "url": "https://www.wired.com/story/feds-got-warrants-to-use-fake-cell-towers-to-hunt-down-don-lemons-producer/",
+     "hn": "https://news.ycombinator.com/item?id=50059446",
+     "points": 140,
+     "comments": 94
+    },
+    {
+     "id": 50049133,
+     "title": "陶哲轩：超越证明的图解",
+     "title_en": "Illustration Beyond Proof",
+     "url": "https://terrytao.wordpress.com/2026/10/11/illustration-beyond-proof/",
+     "hn": "https://news.ycombinator.com/item?id=50049133",
+     "points": 97,
+     "comments": 17
+    },
+    {
+     "id": 50063831,
+     "title": "《绝命毒师》演员 RJ Mitte 去世，年仅 34 岁",
+     "title_en": "Breaking Bad star RJ Mitte dies aged 34",
+     "url": "https://news.sky.com/story/breaking-bad-star-rj-mitte-dies-aged-34-13598332",
+     "hn": "https://news.ycombinator.com/item?id=50063831",
+     "points": 94,
+     "comments": 28
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2240,
+    "comments": 1499,
+    "top_points": {
+     "id": 50051530,
+     "title": "Linux 手机能成为安卓和 iOS 之外的选择吗？",
+     "value": 258,
+     "comments": 314
+    },
+    "top_comments": {
+     "id": 50051530,
+     "title": "Linux 手机能成为安卓和 iOS 之外的选择吗？",
+     "value": 314
+    },
+    "top_brief": {
+     "id": 50034206,
+     "title": "用 Julia 学微积分",
+     "value": 255,
+     "comments": 51
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "eluusive",
+  "id": 50053843,
+  "hn": "https://news.ycombinator.com/item?id=50053843",
+  "story_id": 50052251,
+  "story": "Show HN：把 PS2 游戏静态重编译成 WebAssembly，在浏览器里跑",
+  "zh": "谁会想玩没有漫长读盘画面的《GT 赛车》呢？",
+  "en": "Who would want to play Gran Turismo without long CD loading screens?"
+ },
+ "stats": {
+  "snapshot": "2026-10-13T08:21:30+08:00",
+  "front_page_count": 90,
+  "with_numbers": 83,
+  "flagged_or_dupe": 7,
+  "top_points": {
+   "id": 50048642,
+   "title": "指纹就是新的 Cookie",
+   "value": 702,
+   "comments": 340
+  },
+  "top_comments": {
+   "id": 50055304,
+   "title": "黑客把超市冰柜调成「持续除霜」：法国多家连锁超市冷链遭网络攻击",
+   "value": 623
+  },
+  "second_comments": {
+   "id": 50054751,
+   "title": "QGIS 暂停接受一切 AI 生成的贡献",
+   "value": 396
+  },
+  "over_500": 3,
+  "over_300": 11,
+  "over_100": 39,
+  "show_hn": 5,
+  "total_points": 12458,
+  "total_comments": 8013,
+  "hottest_ratio": {
+   "id": 50053216,
+   "title": "「Fable 抢了我的饭碗」：一位被裁工程师的自述",
+   "value": 1.61,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
