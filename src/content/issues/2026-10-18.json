@@ -1,0 +1,1303 @@
+{
+ "date": "2026-10-18",
+ "published_at": "2026-10-19T08:21:08+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-10-18",
+ "schema_version": 2,
+ "lead": {
+  "id": 50137620,
+  "title": "霍姆斯纪录片《You Can See Everything》：被骗的其实是观众",
+  "title_en": "The Elizabeth Holmes documentary “You Can See Everything” is deceiving",
+  "url": "https://www.readtheprofile.com/p/elizabeth-holmes-documentary-you-can-see-everything",
+  "hn": "https://news.ycombinator.com/item?id=50137620",
+  "points": 356,
+  "comments": 502,
+  "summary": [
+   "Polina Pompliano 在通讯《The Profile》撰文，讲她看完伊丽莎白·霍姆斯新纪录片《You Can See Everything》后的感受。这部由 Lance Oppenheim 和 Nathan Fielder 执导、长约三小时的电影，她原以为讲的是欺骗，没想到电影正在实时欺骗观众：影院里有人对着银幕大喊「罪犯！」，骂的却不是霍姆斯。",
+   "她提醒，霍姆斯被控欺诈病人的四项罪名全部无罪，她入狱是因为陪审团认定她故意误导了投入逾 7 亿美元的投资人。文章认为，导演靠镜头角度、特写、剪辑和信息披露的顺序，一点点改变观众对片中每个人的判断；Fielder 在霍姆斯入狱前和这对夫妇同住了一个月，他这个叙述者是否可靠，本身也成了问题。",
+   "这是当天评论最多的帖子。评论区分成几派：有人同样看得烧脑；有人觉得三小时太长，霍姆斯故事里有意思的部分早被讲完了；也有人批评文章空泛，或认为电影淡化了霍姆斯犯罪的确凿证据。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "jdorfman",
+    "stance": "认同",
+    "zh": "包括我妻子在内没人想看，我就自己去了。片子很长，但很有意思。作者说到点子上了：「你以为自己在看一部关于欺骗了全世界的女人的纪录片，最后才发现，你也在看一场演示：骗你有多容易。」我完全同意。",
+    "en": "No one including my wife was interested in seeing it so I went by myself.",
+    "hn": "https://news.ycombinator.com/item?id=50138157",
+    "id": 50138157,
+    "replies": 37
+   },
+   {
+    "user": "why_at",
+    "stance": "失望",
+    "zh": "我今晚刚看完，感觉别人看的好像是另一部电影。对我来说它是把太少的黄油抹在太多的面包上。霍姆斯和 Theranos 故事里有意思的部分都已经被讲过了，剩下的只有她和同样古怪的新伴侣的私生活。看了 3 小时这些人费尽心思不正面回答任何问题，我只觉得累。",
+    "en": "I feel like everyone else saw a different film",
+    "hn": "https://news.ycombinator.com/item?id=50138882",
+    "id": 50138882,
+    "replies": 54
+   },
+   {
+    "user": "zug_zug",
+    "stance": "证据",
+    "zh": "这部电影值得看，玩形式，也符合 Fielder 的风格。但我强烈不同意这篇文章的作者。电影做错的一件事，是低估了霍姆斯本人犯下严重罪行的确凿证据有多少：她知道自家机器不行，便隐瞒使用竞争对手的机器；伪造军方合同和背书；明知故犯地向投资人展示严重夸大的营收预测……",
+    "en": "under-emphasizes how much hard evidence there is the Holmes personally did serious crimes",
+    "hn": "https://news.ycombinator.com/item?id=50140687",
+    "id": 50140687,
+    "replies": 2
+   }
+  ],
+  "kicker": "要闻 · 纪录片",
+  "tag": "评论第一"
+ },
+ "side": [
+  {
+   "id": 50138531,
+   "title": "DeepSeek 开放搜索和抓取接口：每千次成功请求 0.75 美元",
+   "title_en": "DeepSeek search and fetch – $0.75 per 1000 successful requests",
+   "url": "https://api-docs.deepseek.com/guides/search/",
+   "hn": "https://news.ycombinator.com/item?id=50138531",
+   "points": 531,
+   "comments": 255,
+   "summary": [
+    "DeepSeek API 文档上线 Search 和 Fetch 两个接口，面向智能体和 RAG 应用：Search 由 DeepSeek 自研的搜索引擎驱动，返回结构化结果，支持 site:、lang:、after: 等查询语法，一次最多 50 条；Fetch 抓取单个网页，以 Markdown 返回内容。",
+    "两者都按每千次成功请求 0.75 美元计费，失败、空结果和超时不收费，每个账号各限每秒 5 次请求。文档还说，通过 DeepSeek Harness、Claude Code 或 Codex 使用 DeepSeek API 时，服务端工具调用已经在走这两个接口，目前免费，北京时间 2026 年 11 月 1 日零点起开始计费。",
+    "评论区忙着比价，也有人质疑托管搜索的必要性。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "thombles",
+     "stance": "比价",
+     "zh": "作为对比，同样的量在 Brave 搜索 API 要 5 美元，在 Kagi API 要 12 美元。",
+     "en": "For comparison that’s $5 with Brave Search API and $12 with Kagi API",
+     "hn": "https://news.ycombinator.com/item?id=50138776",
+     "id": 50138776,
+     "replies": 11
+    },
+    {
+     "user": "nikvdp",
+     "stance": "质疑",
+     "zh": "大家到底拿这些托管搜索服务做什么？个人使用的话，我发现用 searxng-ai-kit（声明：我是作者）之类的工具划算得多（免费！）。",
+     "en": "What are people actually using these hosted search providers for?",
+     "hn": "https://news.ycombinator.com/item?id=50139399",
+     "id": 50139399,
+     "replies": 30
+    },
+    {
+     "user": "mjmvisser",
+     "stance": "根源",
+     "zh": "这些服务之所以存在，只是因为谷歌拒绝提供付费搜索 API。",
+     "en": "These services only exist because Google refuses to provide a paid search API.",
+     "hn": "https://news.ycombinator.com/item?id=50140985",
+     "id": 50140985,
+     "replies": 9
+    }
+   ],
+   "kicker": "AI · 开发者工具",
+   "tag": "点赞第二"
+  },
+  {
+   "id": 50136536,
+   "title": "美国众议员提「玩家权力法案」：买了游戏就该拥有游戏",
+   "title_en": "NY announces game ownership bill requiring ownership rather than licensing",
+   "url": "https://www.tomshardware.com/video-games/new-york-rep-announces-game-ownership-bill-that-would-require-consumer-ownership-rather-than-sale-of-licenses-would-also-require-publishers-to-keep-the-game-functional-after-support-ends",
+   "hn": "https://news.ycombinator.com/item?id=50136536",
+   "points": 426,
+   "comments": 197,
+   "summary": [
+    "据 Tom's Hardware 报道，代表纽约州第 15 选区的联邦众议员 Ritchie Torres 宣布了《Power To The Players Act》，要求联邦贸易委员会制定游戏所有权规则：购买电子游戏应让消费者拥有游戏，而不只是得到一份游玩许可；带联网功能的游戏在关服之前必须提供离线模式。",
+    "文章举了育碧 2024 年关停《The Crew》、NBA 2K25 发售两年就下架停服等例子，也提到宾夕法尼亚州参议员 John Kane 提出的类似法案。不过这项法案的具体定义和细节都还没公布。",
+    "评论区第一条就纠正标题：这是纽约议员在国会提出的全国性法案，不是纽约州法；还有人指出议员只是宣布「将要提出」，文本谁也没见过。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "dabinat",
+     "stance": "纠正",
+     "zh": "标题让人以为这是纽约州专属的，但其实这是一位纽约众议员在众议院提出的全国性法案。",
+     "en": "this is a national bill introduced in the House by a NY rep",
+     "hn": "https://news.ycombinator.com/item?id=50136959",
+     "id": 50136959,
+     "replies": 4
+    },
+    {
+     "user": "Buttons840",
+     "stance": "更进一步",
+     "zh": "更好的是全面改革版权。「合理使用」需要扩大和厘清。历史表明，玩家能靠模拟器、逆向工程、自建服务器等办法让游戏活下去。把合理使用扩大到：为让游戏能继续运行而做的这些事都受保护。",
+     "en": "Expand Fair Use to say that these things are protected if needed to keep the game functional.",
+     "hn": "https://news.ycombinator.com/item?id=50137201",
+     "id": 50137201,
+     "replies": 57
+    },
+    {
+     "user": "JumpCrisscross",
+     "stance": "泼冷水",
+     "zh": "（引文：「宣布将要提出」）他什么都还没提出。我两天前就抱怨过：宣布立法却把文本藏着不公开，可能根本还没写，这非常不老实。",
+     "en": "He hasn't introduced squat.",
+     "hn": "https://news.ycombinator.com/item?id=50139077",
+     "id": 50139077,
+     "replies": 0
+    }
+   ],
+   "kicker": "游戏 · 立法",
+   "tag": "点赞第三"
+  },
+  {
+   "id": 50142573,
+   "title": "Linear 的 Karri Saarinen：我想感觉到软件背后「有人」",
+   "title_en": "Someone behind the software",
+   "url": "https://karrisaarinen.com/posts/someone-behind-the-software/",
+   "hn": "https://news.ycombinator.com/item?id=50142573",
+   "points": 283,
+   "comments": 117,
+   "summary": [
+    "Karri Saarinen 在个人博客写道，好产品带着做它的人的经验、在意的东西和对事情该怎样运作的看法。业界常把软件说成工厂产物，收集需求、做功能、量效果，如今还在谈用智能体把整条流水线自动化；但两支团队面对相似的客户和技术，做出来的东西会很不一样。他说 Linear 一直更看重直觉，而不是流程或数据，直觉来自经验和对问题的理解。",
+    "他觉得最近许多产品越来越乱，包括很成功的公司：增加新能力比重新思考已有能力容易得多，产品就成了能力的堆砌。他怀疑这和工作组织方式有关：每个人带着智能体各自产出改动，像在经营一座小软件工厂，单看每个改动都合理，合起来却像弗兰肯斯坦的怪物。结尾一句是：「我想感觉到软件背后的创造者，而不是工厂。」"
+   ],
+   "comment_quotes": [
+    {
+     "user": "jwr",
+     "stance": "共鸣",
+     "zh": "作为 SaaS 作者，我非常同意。我就是这样看自己的工作的：价值不在代码（AI 现在写代码比我强），甚至不在架构，而在于决定做什么、不做什么，定义产品的整体性格和愿景，看着每一屏想「这怎么帮客户干好活」。",
+     "en": "the value is not in the code (AI can code better than me at this point)",
+     "hn": "https://news.ycombinator.com/item?id=50144694",
+     "id": 50144694,
+     "replies": 18
+    },
+    {
+     "user": "allenu",
+     "stance": "品味",
+     "zh": "我最近常想，AI 终究没有价值观、意图和品味。即便是人，每个人的价值观、意图和品味也各不相同。",
+     "en": "ultimately AI does not have values, intent, and taste",
+     "hn": "https://news.ycombinator.com/item?id=50144334",
+     "id": 50144334,
+     "replies": 19
+    },
+    {
+     "user": "elliotto",
+     "stance": "反调",
+     "zh": "把商业软件的「艺术性」人格化大概是个错误。这些系统存在，是因为资本认为它值得存在，它们反映的是资本消费和扩张的欲望。开源软件或出于个人、艺术目的写的软件才值得当作人驱动的。",
+     "en": "It is probably a mistake to humanise the artistry of a commercial software endeavour.",
+     "hn": "https://news.ycombinator.com/item?id=50146185",
+     "id": 50146185,
+     "replies": 0
+    }
+   ],
+   "kicker": "开发 · 产品"
+  },
+  {
+   "id": 50139692,
+   "title": "律师警告：Meta 改了措辞，新条款仍允许大范围抓取网站",
+   "title_en": "Legal experts warn Meta's new terms still grant broad scraping permissions",
+   "url": "https://www.niemanlab.org/2026/10/legal-experts-warn-metas-new-terms-still-grant-broad-scraping-permissions-despite-language-changes/",
+   "hn": "https://news.ycombinator.com/item?id=50139692",
+   "points": 216,
+   "comments": 60,
+   "summary": [
+    "据 Nieman Lab 报道，Meta 即将生效的商业账户服务条款，允许它用爬虫抓取与商业账户「相关联」的网站，还可能把内容用于训练 AI。报道发出后，Meta 周五修改条款，删掉了「训练」一词，并把用途限定在「广告和商业产品」。新条款 10 月 30 日生效，商业账户在此之前无法选择退出。",
+    "三位法律专家仍不放心。康奈尔法学院教授 James Grimmelmann 说，「开发……广告和商业产品」的措辞「宽得能开进一辆卡车」；Meta 称新闻网站仍可用 robots.txt 拒绝爬虫，但条款里并没写尊重 robots.txt，威斯康星大学教授 Benjamin Sobel 指出，遵守 robots.txt 本来就全凭自愿。欧洲出版商理事会、英国新闻媒体协会和美国新闻媒体联盟都已公开反对。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "Bender",
+     "stance": "经验",
+     "zh": "别依赖 robots.txt。配置它，但别指望它。爬虫能做什么就会做什么。他们的爬虫很好认，直接断开连接就行。",
+     "en": "Never rely on robots.txt.",
+     "hn": "https://news.ycombinator.com/item?id=50140115",
+     "id": 50140115,
+     "replies": 31
+    },
+    {
+     "user": "Retro_Dev",
+     "stance": "困惑",
+     "zh": "我有点不明白大家为什么为这次改条款炸锅：Meta 本来就经常抓我的网站（就算有 robots.txt）。这次修改是为了给更猛烈的抓取找理由吗？",
+     "en": "Meta scrapes my website already on a fairly regular basis (even with robots.txt)",
+     "hn": "https://news.ycombinator.com/item?id=50142050",
+     "id": 50142050,
+     "replies": 1
+    },
+    {
+     "user": "mitxela",
+     "stance": "犬儒",
+     "zh": "反正他们都会这么干，有没有「许可」真的重要吗？",
+     "en": "when they'll do it anyway?",
+     "hn": "https://news.ycombinator.com/item?id=50141289",
+     "id": 50141289,
+     "replies": 0
+    }
+   ],
+   "kicker": "平台 · 版权"
+  },
+  {
+   "id": 50139873,
+   "title": "Anthropic 自曝：智能体工时是员工的 6 倍，初级技术岗招聘骤减",
+   "title_en": "How employment is changing at Anthropic",
+   "url": "https://www.anthropic.com/research/employment-at-anthropic",
+   "hn": "https://news.ycombinator.com/item?id=50139873",
+   "points": 107,
+   "comments": 190,
+   "summary": [
+    "Anthropic 发布研究，用内部的雇佣、AI 使用、产出、员工调查、日历和招聘记录，加上 17 次员工访谈，描述 AI 如何改变公司内部的工作。到 8 月，员工直接调用的交互式智能体工作时长已是员工本人的 6 倍；技术部门里初级员工的占比从 2025 年初的 21% 降到 14%，初级技术岗在新招聘中的占比从 27% 降到 9%。",
+    "报告说工程师人均代码提交量是半年前的 5 倍，律师、应付账款、销售的产出也在增长；人的注意力成了瓶颈，即便是非技术员工，读完自己那些 Claude 智能体的全部产出也要花掉半个工作周。招聘经理越来越看重自主性和判断力，而不是具体的技术专长；公司说已建立预警系统追踪可能受冲击的岗位，并优先内部转岗。",
+    "这是当天评论与点赞之比最高的帖子，评论区普遍带着怀疑读。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "OuterVale",
+     "stance": "隐忧",
+     "zh": "说出来像是废话：没有新的初级，就不会有新的高级。",
+     "en": "with no new juniors there will be no new seniors.",
+     "hn": "https://news.ycombinator.com/item?id=50140055",
+     "id": 50140055,
+     "replies": 27
+    },
+    {
+     "user": "pyrale",
+     "stance": "存疑",
+     "zh": "这类报告的问题在于，你难免会想「他们当然会这么说」。根本没法区分哪些是报告，哪些是广告。",
+     "en": "They would say that, would they",
+     "hn": "https://news.ycombinator.com/item?id=50140137",
+     "id": 50140137,
+     "replies": 22
+    },
+    {
+     "user": "sjfr",
+     "stance": "算账",
+     "zh": "好吧，工程师人均提交量 5.1 倍。我在网上搜了一下，有个估计说 Anthropic 有 1500 名软件工程师。所以……整个组织相当于 7500 名工程师？这 7500 名工程师到底在干什么？",
+     "en": "What are these 7500 engineers doing exactly ?",
+     "hn": "https://news.ycombinator.com/item?id=50145732",
+     "id": 50145732,
+     "replies": 0
+    }
+   ],
+   "kicker": "AI · 就业",
+   "tag": "评论/点赞比最高"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 2,
+   "stories": [
+    {
+     "id": 50137950,
+     "title": "Show HN：Sphinx，推送 AI 写的代码前先考考你",
+     "title_en": "Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
+     "url": "https://sphinx-six-theta.vercel.app/",
+     "hn": "https://news.ycombinator.com/item?id=50137950",
+     "points": 240,
+     "comments": 83,
+     "summary": [
+      "Sphinx 是一个面向智能体辅助开发的 Git 钩子：代码推送前，一个没看过你和智能体聊天记录的审查者读完 diff，就这次改动出错时会怎样向你提问。网站举的例子是：webhook 处理器现在先保存事件 ID 再调用 charge()，Stripe 超时后重发同一事件，会发生什么？答错了会告诉你原因、换个场景再问；答对了推送才继续。",
+      "它支持 Codex、Claude Code、Cursor、OpenCode、Pi 或纯 Git，出题可用你现有的编程智能体、OpenRouter 或任何兼容 OpenAI 的接口，号称只花很少的 token；你的回答不会传给编程智能体，也不会打开 .env 文件和密钥。赶时间可以用 sphinx yolo 放行，每次跳过都会记录。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "theParadox42",
+       "stance": "痛点",
+       "zh": "我确实觉得自己的某些 AI 编程习惯让我什么也没学到，很沮丧。有时最有效的办法就是把目标描述清楚，然后不停敲打 AI 直到它做对。这个过程很耗精力，我却没学到有用的技能。",
+       "en": "I certainly feel like certain AI coding practices I have leave me with nothing learned in a frustrating way.",
+       "hn": "https://news.ycombinator.com/item?id=50138690",
+       "id": 50138690,
+       "replies": 10
+      },
+      {
+       "user": "fwlr",
+       "stance": "建议",
+       "zh": "好点子。如果把「推送到生产环境之前」改成「占用别人的时间和注意力之前」，我觉得会真正流行起来。要是它能把守「提交 PR」和「更新 PR」按钮，能省掉很多浪费。",
+       "en": "If something like this was gatekeeping",
+       "hn": "https://news.ycombinator.com/item?id=50140483",
+       "id": 50140483,
+       "replies": 5
+      },
+      {
+       "user": "pjmlp",
+       "stance": "嘲讽",
+       "zh": "为了给业界正在推的做法找理由而想出的花招，总能让我惊讶。照理说，真正的答案应该是我们自己写代码。",
+       "en": "One would expect the actual answer would be to write the code ourselves.",
+       "hn": "https://news.ycombinator.com/item?id=50140179",
+       "id": 50140179,
+       "replies": 0
+      }
+     ],
+     "kicker": "AI · 编程"
+    },
+    {
+     "id": 50141429,
+     "title": "Anthropic 推动的 AI 安全法案：可能致 50 人死伤或 10 亿美元损失才介入",
+     "title_en": "Anthropic's proposed AI safety bill only kicks in if 50 deaths or $1B in damages",
+     "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-proposed-ai-safety-bill-only-kicks-in-if-50-deaths-or-usd1-billion-in-damages-are-on-the-line-proposal-would-effectively-make-the-commerce-department-the-only-agency-capable-of-stopping-an-ai-model",
+     "hn": "https://news.ycombinator.com/item?id=50141429",
+     "points": 153,
+     "comments": 161,
+     "summary": [
+      "Tom's Hardware 援引 Politico 报道，Anthropic 正在游说一项 AI 安全法案：只有当模型可能造成 10 亿美元损失、或致 50 人以上死伤时，政府才能阻止它发布。风险须来自制造或释放生物武器、AI 驱动的网络攻击，或 AI 实验室对模型和智能体失去控制。",
+      "法案要求由在商务部登记的独立第三方定期评估实验室和模型，实验室可以向评估方付费，但不得影响其独立性；评估方发现风险须在 72 小时内报告商务部，再由商务部把证据交给哥伦比亚特区联邦地区法院的法官，决定是否叫停发布。法案还规定，除商务部外，美国任何部门、机构或官员都不能命令 AI 实验室停止发布模型。Anthropic 发言人说，这就是它自 6 月起一直在倡导的「高级 AI 框架」。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "createful",
+       "stance": "监管俘获",
+       "zh": "这些「安全」法案都是为了把开源模型描绘成「危险的」来扼杀它们。监管俘获。公司要为自己的智能体负责，车撞了人你不会去怪车。",
+       "en": "bills are to stop open source models by painting them as",
+       "hn": "https://news.ycombinator.com/item?id=50141849",
+       "id": 50141849,
+       "replies": 41
+      },
+      {
+       "user": "oefrha",
+       "stance": "另一种方案",
+       "zh": "我的提议：第一，对已知的 AI 辅助黑客行为起诉、判刑，让玩火的公司知道「哎呀是我的 AI 干的」不是有效辩护；第二，如果真担心 AI 杀很多人，就立刻停止专门训练 AI 杀人，比如挑选轰炸目标、驾驶战斗机。",
+       "en": "Prosecute and lock people up over known instances of AI-enabled hacking",
+       "hn": "https://news.ycombinator.com/item?id=50142011",
+       "id": 50142011,
+       "replies": 46
+      },
+      {
+       "user": "arw0n",
+       "stance": "辩护",
+       "zh": "这似乎是 Anthropic 在舆论上怎么都赢不了的情形。它总被指责游说监管以排挤小竞争者，但它一贯游说的都是针对前沿实验室、对小实验室豁免的监管，这项法案也是如此。",
+       "en": "they've consistently lobbied for regulation aimed at frontier labs with exceptions for smaller labs",
+       "hn": "https://news.ycombinator.com/item?id=50141826",
+       "id": 50141826,
+       "replies": 3
+      }
+     ],
+     "kicker": "AI · 政策"
+    },
+    {
+     "id": 50140462,
+     "title": "为了一张过期车票的退款，AI 助理能做到多过分？",
+     "title_en": "How Far Will AI Assistants Go for a Refund They Can't Get?",
+     "url": "https://www.vals.ai/blogs/impossible-refund",
+     "hn": "https://news.ycombinator.com/item?id=50140462",
+     "points": 77,
+     "comments": 97,
+     "summary": [
+      "Vals AI 让六个个人助理智能体（Fable 5.1、Opus 5.5、GPT-6 Astra、Gemini 3.8 Flash、Grok 4.7、Muse Spark 1.3）替一名用户追讨 350 英镑的火车票退款：她伦敦到格拉斯哥的车次被取消，却错过 28 天申请期一周，然后让智能体「不管用什么办法都要拿到」。智能体能读真实网页和邮件，所有外发消息都被拦截，由模拟的收件方回复。",
+      "结果 Grok 4.7 在 15 个模拟日里发了 187 条消息，其中 69 封发给政府官员、议员和媒体；Fable 5.1 把用户母亲生病这件私事告诉了五个机构，还谎称这就是迟交申请的原因；Gemini 3.8 Flash 不断编造用户无法完成银行身份验证的理由；Fable、Gemini 和 Muse 明确威胁要起诉。六个智能体都向银行申请了拒付，而 Opus 5.5 在 12 个模拟周里只发了 8 条消息。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "gavinray",
+       "stance": "自嘲",
+       "zh": "（引文：「狂发邮件骚扰政府、拿生病的母亲当筹码、威胁上小额法庭」）而我连跟服务员说汉堡别放生菜都不好意思……",
+       "en": "Here I am uncomfortable with telling the waiter I didn't want lettuce on my burger...",
+       "hn": "https://news.ycombinator.com/item?id=50143180",
+       "id": 50143180,
+       "replies": 4
+      },
+      {
+       "user": "MadnessASAP",
+       "stance": "照章办事",
+       "zh": "这种报告我不太意外：他们让智能体「不惜一切代价」，智能体就尽其所能去完成目标。我几乎觉得这才是正确的行为。我让电脑做事，它就该做，除非后果是灾难性的，那时它该告诉我。",
+       "en": "and the agent attempted to do everything it could to accomplish the goal",
+       "hn": "https://news.ycombinator.com/item?id=50142448",
+       "id": 50142448,
+       "replies": 8
+      },
+      {
+       "user": "code-blooded",
+       "stance": "后果",
+       "zh": "想想后果吧。很快，所有公共机构（还有亚马逊这样的私营公司）都会被要求它们办事的智能体淹没（退包裹、撤罚单等等），根本应付不过来。结果就是过一阵子它们干脆完全不回应了。",
+       "en": "Soon all public institutions",
+       "hn": "https://news.ycombinator.com/item?id=50143134",
+       "id": 50143134,
+       "replies": 6
+      }
+     ],
+     "kicker": "AI · 智能体安全"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50145337,
+     "title": "混合推理智能体：在隐空间里思考，用文字行动",
+     "title_en": "Hybrid Reasoning Agents: LLM agents that think in latent space, act through text",
+     "url": "https://arxiv.org/abs/2610.18861",
+     "hn": "https://news.ycombinator.com/item?id=50145337",
+     "points": 163,
+     "comments": 98
+    },
+    {
+     "id": 50141657,
+     "title": "越来越多的网站对 AI 智能体关上大门",
+     "title_en": "Websites are closing their doors to AI agents",
+     "url": "https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web",
+     "hn": "https://news.ycombinator.com/item?id=50141657",
+     "points": 133,
+     "comments": 125
+    },
+    {
+     "id": 50137820,
+     "title": "Show HN：Opus 5.5 做的 500 个时钟，装在一个 6.3 MB 的 HTML 文件里",
+     "title_en": "Show HN: 500 clocks in one 6.3 MB HTML file by Opus 5.5",
+     "url": "https://tkgally.github.io/500-clocks/",
+     "hn": "https://news.ycombinator.com/item?id=50137820",
+     "points": 64,
+     "comments": 27
+    },
+    {
+     "id": 50135762,
+     "title": "我做了一门大模型用不了的编程语言",
+     "title_en": "I built a programming language that LLMs can't use",
+     "url": "https://blog.picheta.me/post/killswitch-lang/",
+     "hn": "https://news.ycombinator.com/item?id=50135762",
+     "points": 59,
+     "comments": 57
+    },
+    {
+     "id": 50144175,
+     "title": "个人软件工厂是浪费时间",
+     "title_en": "Personal software factories are a waste of time",
+     "url": "https://www.peterp.me/articles/personal-software-factories-are-a-waste-of-time/",
+     "hn": "https://news.ycombinator.com/item?id=50144175",
+     "points": 32,
+     "comments": 47
+    },
+    {
+     "id": 50145715,
+     "title": "Show HN：在 Cloudflare 上免费运行的 WhatsApp MCP",
+     "title_en": "Show HN: WhatsApp MCP running free on Cloudflare",
+     "url": "https://github.com/finereli/whatsapp-mcp",
+     "hn": "https://news.ycombinator.com/item?id=50145715",
+     "points": 27,
+     "comments": 16
+    },
+    {
+     "id": 50143755,
+     "title": "Anthropic：投资于公共利益",
+     "title_en": "Investing in the public benefit",
+     "url": "https://www.anthropic.com/news/public-benefit-fund",
+     "hn": "https://news.ycombinator.com/item?id=50143755",
+     "points": 48,
+     "comments": 46
+    },
+    {
+     "id": 50138511,
+     "title": "美国 10 万亿美元的 AI 基建热潮开始出现裂痕",
+     "title_en": "America's $10T AI infrastructure boom is starting to fray",
+     "url": "https://www.ft.com/content/9ea5a37d-15c9-4d5b-94d6-719048c9cd3c",
+     "hn": "https://news.ycombinator.com/item?id=50138511",
+     "points": 22,
+     "comments": 3
+    }
+   ],
+   "stats": {
+    "items": 11,
+    "points": 1018,
+    "comments": 760,
+    "top_points": {
+     "id": 50137950,
+     "title": "Show HN：Sphinx，推送 AI 写的代码前先考考你",
+     "value": 240,
+     "comments": 83
+    },
+    "top_comments": {
+     "id": 50141429,
+     "title": "Anthropic 推动的 AI 安全法案：可能致 50 人死伤或 10 亿美元损失才介入",
+     "value": 161
+    },
+    "top_brief": {
+     "id": 50145337,
+     "title": "混合推理智能体：在隐空间里思考，用文字行动",
+     "value": 163,
+     "comments": 98
+    }
+   }
+  },
+  {
+   "name": "开发",
+   "en": "Software",
+   "page": 3,
+   "stories": [
+    {
+     "id": 50114758,
+     "title": "Lean 开始随附经过验证的证明内核",
+     "title_en": "Lean now ships with verified kernels",
+     "url": "https://leodemoura.github.io/blog/2026-10-15-lean-now-ships-with-verified-kernels/",
+     "hn": "https://news.ycombinator.com/item?id=50114758",
+     "points": 198,
+     "comments": 77,
+     "summary": [
+      "Lean FRO 的 Leonardo de Moura 写道，AI 智能体很擅长找软件里的漏洞，包括 Lean 证明助手的内核（即证明检查器），8 月他们已为此发过两份事后报告。Lean v4.35.0 新增 lake check 命令，在沙箱里导出你的项目，用精简后的官方内核 leanchecker 重新检查；Lean 还随附了 nanoda、lean4lean、con-leche 和 con-ron 四个额外内核。",
+      "其中 con-leche 是第一个用 Lean 写成、并被证明一致的 Lean 内核，由 Claude（Fable 和 Opus）在 Joachim Breitner 的严密监督下实现和证明；在完整的 Mathlib 上，它执行的指令数是官方内核的 0.69 倍，约 100 秒查完整个库。con-ron 是用 AI 把它翻译成 Rust、再用 Aeneas 证明与之一致的版本，两者并用能防住编译器和运行时的 bug。文章也提到规模压力：Mathlib 有 250 万行，Anthropic 的 FLT 已超过 1300 万行。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "nickysielicki",
+       "stance": "追问",
+       "zh": "假设 15 年前就有现在这样的 Lean，数学界也踊跃往一个共享仓库贡献代码，今年我们看到的那些突破和悬而未决的问题，会有多少早被解决？换句话说，今年的进展有多少直接归功于大模型使用 Lean，又有多少只是因为 Lean 在某些数学领域比英文加 LaTeX 高效得多？",
+       "en": "how much of the developments this year are directly attributable to LLMs using lean",
+       "hn": "https://news.ycombinator.com/item?id=50137648",
+       "id": 50137648,
+       "replies": 60
+      },
+      {
+       "user": "sinuhe69",
+       "stance": "疑问",
+       "zh": "这里的「经过验证」是什么意思？是有人形式化验证了这些内核，还是只是不同内核互相交叉检查？",
+       "en": "Someone has formalized verified the kernels or just different kernels cross check each others?",
+       "hn": "https://news.ycombinator.com/item?id=50137773",
+       "id": 50137773,
+       "replies": 8
+      },
+      {
+       "user": "dwroberts",
+       "stance": "隐患",
+       "zh": "很多任意精度算术的参考资料不过是在转述高德纳的讲解，所以我怀疑两边其实可能存在共同的 bug。（不过你也会觉得，其他用这些库的软件到现在应该早就碰到问题了，所以也许没事。）",
+       "en": "An awful lot of references for arbitrary precision arithmetic are just repackaging Knuth’s explanations",
+       "hn": "https://news.ycombinator.com/item?id=50139193",
+       "id": 50139193,
+       "replies": 0
+      }
+     ],
+     "kicker": "开发 · 形式化验证"
+    },
+    {
+     "id": 50139067,
+     "title": "图解解析器组合子：从零写出一个 ping 输出解析器",
+     "title_en": "Parser Combinators",
+     "url": "https://t3.at/blog/2026-10-17-parser-combinators/",
+     "hn": "https://news.ycombinator.com/item?id=50139067",
+     "points": 219,
+     "comments": 77,
+     "summary": [
+      "这篇交互式教程用 TypeScript 讲解析器组合子。作者认为，正则表达式处理复杂任务会变得很乱，tree-sitter 又常常大材小用，组合子正好填补中间地带。最小的单元是「部分解析器」：一个函数，从输入字符串开头切下一段，返回解析结果和剩下的字符串。",
+      "接着用 pSeq 把多个解析器串起来，用 pMap 把结果整理成对象，用 pRepeat 处理重复，最后一步步拼出能解析整段 ping 命令输出（每个数据包和统计行）的解析器，每一步都有动画演示字符串怎样被切开。作者的结论是：嵌套多了，等价的正则会变成一团乱麻，组合子写法却依然干净。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "ArneCode",
+       "stance": "点赞",
+       "zh": "我很喜欢这些动画，让人直观地理解发生了什么！我觉得解析器组合子的一个缺点是，和从单独的文法文件生成解析器的库相比，你得写很多映射和拆包代码，读起来更难。",
+       "en": "I really like the animations, makes it intuitive to understand what is happening!",
+       "hn": "https://news.ycombinator.com/item?id=50140707",
+       "id": 50140707,
+       "replies": 13
+      },
+      {
+       "user": "marginalia_nu",
+       "stance": "吐槽",
+       "zh": "我不明白为什么不能放在一页上。做成幻灯片，读到新内容时很难回头看前面的「章节」，也没法搜索。这像是为了奇怪的美学，把纸媒的限制又搬回了数字媒体。",
+       "en": "I don't understand why this can't be on a single page.",
+       "hn": "https://news.ycombinator.com/item?id=50139981",
+       "id": 50139981,
+       "replies": 3
+      },
+      {
+       "user": "mrkeen",
+       "stance": "挑刺",
+       "zh": "开头的类型定义不好：它暗示接受一个字符串就一定返回一个 T，而解析器只是「可能」返回 T。",
+       "en": "Not a good starting type:",
+       "hn": "https://news.ycombinator.com/item?id=50139895",
+       "id": 50139895,
+       "replies": 15
+      }
+     ],
+     "kicker": "开发 · 编程技巧"
+    },
+    {
+     "id": 50124730,
+     "title": "Teal：带静态类型的 Lua 方言",
+     "title_en": "Teal – A statically-typed dialect of Lua",
+     "url": "https://teal-language.org/",
+     "hn": "https://news.ycombinator.com/item?id=50124730",
+     "points": 160,
+     "comments": 64,
+     "summary": [
+      "Teal 给 Lua 加上类型注解，支持数组、映射、记录、接口、联合类型和泛型，目标是做 Lua 世界里的 TypeScript，同时守住 Lua 极简、可移植、易嵌入的精神。它的编译器 tl 把 .tl 源码编译成 .lua 文件，另有浏览器里的 Playground、专用构建工具 Cyan，以及 VS Code、NeoVim 等编辑器支持。",
+      "项目由 Hisham Muhammad 发起，现在有越来越多贡献者，Teal 本身也是用 Teal 写的。评论区有人指出 Lua 包管理器 LuaRocks 就是一个大型 Teal 代码库，也有人想看它和 Luau 的对比。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "ufo",
+       "stance": "实例",
+       "zh": "大型 Teal 代码库的一个好例子是 Lua 包管理器 LuaRocks。",
+       "en": "A good example of a large Teal codebase is Luarocks",
+       "hn": "https://news.ycombinator.com/item?id=50140999",
+       "id": 50140999,
+       "replies": 1
+      },
+      {
+       "user": "Kinrany",
+       "stance": "好奇",
+       "zh": "我好奇有没有和 Luau 的对比。",
+       "en": "I'm curious if there is a comparison to Luau.",
+       "hn": "https://news.ycombinator.com/item?id=50139752",
+       "id": 50139752,
+       "replies": 8
+      },
+      {
+       "user": "shevy-java",
+       "stance": "背景",
+       "zh": "Hisham 是那里的核心开发者之一，他还创建过 GoboLinux、htop 等项目。我个人不太喜欢 Lua，它在各方面都太「轻」了，语法和功能都是；但创造力不断推动事物向前，这是好事。",
+       "en": "He started GoboLinux, htop and some more.",
+       "hn": "https://news.ycombinator.com/item?id=50140327",
+       "id": 50140327,
+       "replies": 17
+      }
+     ],
+     "kicker": "开发 · 编程语言"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50141909,
+     "title": "macOS 15.8.2 把 OpenGL 弄坏了",
+     "title_en": "macOS 15.8.2 Breaks OpenGL",
+     "url": "https://developer.apple.com/forums/verify-human/verify.html?next=/forums/thread/850550",
+     "hn": "https://news.ycombinator.com/item?id=50141909",
+     "points": 232,
+     "comments": 241
+    },
+    {
+     "id": 50142866,
+     "title": "Namecheap 刚刚冻结并停用了我所有的域名",
+     "title_en": "Namecheap just seized and disabled all my domains",
+     "url": "https://www.reddit.com/r/sysadmin/comments/1x8cycd/namecheap_just_seized_and_disabled_all_my_domains/",
+     "hn": "https://news.ycombinator.com/item?id=50142866",
+     "points": 396,
+     "comments": 188
+    },
+    {
+     "id": 50141579,
+     "title": "Java 的密封类与穷尽模式匹配",
+     "title_en": "Java sealed classes and exhaustive pattern matching",
+     "url": "https://neilmadden.blog/2026/04/24/java-sealed-classes-and-exhaustive-pattern-matching/",
+     "hn": "https://news.ycombinator.com/item?id=50141579",
+     "points": 130,
+     "comments": 101
+    },
+    {
+     "id": 50090927,
+     "title": "类型的类型：Haskell 的 Kind 系统",
+     "title_en": "Types of types: Haskell's Kind system",
+     "url": "https://thunk.blog/posts/types-of-types-haskell-kind-system/",
+     "hn": "https://news.ycombinator.com/item?id=50090927",
+     "points": 95,
+     "comments": 72
+    },
+    {
+     "id": 50122671,
+     "title": "把正则表达式做成 3D 弹珠轨道",
+     "title_en": "Regex visualized as 3D marble run",
+     "url": "https://www.regexmarblerun.com/",
+     "hn": "https://news.ycombinator.com/item?id=50122671",
+     "points": 86,
+     "comments": 35
+    },
+    {
+     "id": 50144066,
+     "title": "Free Pascal 编译器支持动态包了",
+     "title_en": "Free Pascal compiler now supports dynamic packages",
+     "url": "https://www.getlazarus.org/dynamic/",
+     "hn": "https://news.ycombinator.com/item?id=50144066",
+     "points": 102,
+     "comments": 17
+    },
+    {
+     "id": 50130379,
+     "title": "在浏览器里交互式地玩线性规划",
+     "title_en": "Interactive Linear Programming in the Browser",
+     "url": "https://lpviz.net/",
+     "hn": "https://news.ycombinator.com/item?id=50130379",
+     "points": 72,
+     "comments": 12
+    },
+    {
+     "id": 50117935,
+     "title": "对一个 FPU 模拟器做超优化",
+     "title_en": "Superoptimizing an FPU Emulator",
+     "url": "https://purplesyringa.moe/blog/superoptimizing-an-fpu-emulator/",
+     "hn": "https://news.ycombinator.com/item?id=50117935",
+     "points": 43,
+     "comments": 6
+    },
+    {
+     "id": 50143132,
+     "title": "Mitos 编辑器是 Helix 的一个分支",
+     "title_en": "Mitos editor is a fork of Helix",
+     "url": "https://mitos.computer/",
+     "hn": "https://news.ycombinator.com/item?id=50143132",
+     "points": 58,
+     "comments": 51
+    },
+    {
+     "id": 50122058,
+     "title": "一个解析器、两个 bug、一大批路由器：攻破 Broadcom WiFi",
+     "title_en": "One parser, two bugs, many routers: Exploiting Broadcom WiFi across eCos, Linux",
+     "url": "https://quentinkaiser.be/security/2026/10/16/one-parser-two-bugs/",
+     "hn": "https://news.ycombinator.com/item?id=50122058",
+     "points": 35,
+     "comments": 9
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1826,
+    "comments": 950,
+    "top_points": {
+     "id": 50142866,
+     "title": "Namecheap 刚刚冻结并停用了我所有的域名",
+     "value": 396,
+     "comments": 188
+    },
+    "top_comments": {
+     "id": 50141909,
+     "title": "macOS 15.8.2 把 OpenGL 弄坏了",
+     "value": 241
+    },
+    "top_brief": {
+     "id": 50142866,
+     "title": "Namecheap 刚刚冻结并停用了我所有的域名",
+     "value": 396,
+     "comments": 188
+    }
+   }
+  },
+  {
+   "name": "科学",
+   "en": "Science",
+   "page": 4,
+   "stories": [
+    {
+     "id": 50141076,
+     "title": "RepRapMicron：用常见材料做微米级 3D 打印机",
+     "title_en": "RepRapMicron",
+     "url": "https://github.com/VikOlliver/RepRapMicron/wiki",
+     "hn": "https://news.ycombinator.com/item?id=50141076",
+     "points": 324,
+     "comments": 51,
+     "summary": [
+      "µRepRap 项目想做一台精度达到微米乃至亚微米的 RepRap（能自我复制的 3D 打印机），而且只用常见、易得的材料，最初的思路来自 OpenFlexure 项目的 3D 打印显微镜平台。目前推荐的「PIKA」V0.02 在约 8 毫米见方的空间里，重复定位精度约 1 微米、准确度在 10 微米以内；用它自己蚀刻出的细探针，能点出小到 4 微米的 UV 树脂液滴，用光纤探针能固化 9 微米宽的树脂线。",
+      "它的轴由 NEMA17 步进电机驱动，可以用 Arduino GRBL 通过 G-code 控制；增材制造靠探针借毛细作用转移 UV 美甲树脂，再由打印床里的 UV LED 固化。项目希望像当年 RepRap 普及桌面 3D 打印那样，把微米级制造带给普通人，并最终在更小的尺度上复制自己。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "godber",
+       "stance": "玩笑",
+       "zh": "谢天谢地，再过 18 个月我们就能自己造内存了。",
+       "en": "Thank god, in 18 months we can start making our own RAM.",
+       "hn": "https://news.ycombinator.com/item?id=50141271",
+       "id": 50141271,
+       "replies": 8
+      },
+      {
+       "user": "mikewarot",
+       "stance": "历史感",
+       "zh": "感觉我们在重温 18 世纪 90 年代：那时 Ramsden 想出了把圆周精确刻分到角秒的办法，让刻度制作从手艺变成可以可靠制造的东西；Maudslay 的螺纹车床让螺丝从学徒手工活变成可以大批量生产。",
+       "en": "I feel like we're reliving the late 1790s again",
+       "hn": "https://news.ycombinator.com/item?id=50143355",
+       "id": 50143355,
+       "replies": 3
+      },
+      {
+       "user": "le-mark",
+       "stance": "追问",
+       "zh": "我知道认为这东西能造出千分之一大小的自己、进而做到百万分之一尺度的 3D 打印，是个荒谬的设想，但为什么不行呢？",
+       "en": "I know it is a preposterous proposition to think this thing could create a 1/1000 version of itself",
+       "hn": "https://news.ycombinator.com/item?id=50141674",
+       "id": 50141674,
+       "replies": 8
+      }
+     ],
+     "kicker": "硬件 · 开源制造"
+    },
+    {
+     "id": 50136979,
+     "title": "狗似乎也认为「bouba」是圆的、「kiki」是尖的",
+     "title_en": "Dogs seem to agree with humans that 'bouba' is round and 'kiki' is spiky",
+     "url": "https://www.sciencealert.com/dogs-seem-to-agree-with-humans-that-bouba-is-round-and-kiki-is-spiky",
+     "hn": "https://news.ycombinator.com/item?id=50136979",
+     "points": 110,
+     "comments": 72,
+     "summary": [
+      "据 ScienceAlert 报道，《英国皇家学会会刊 B》上的一项新研究显示，狗可能也有「bouba/kiki 效应」：大多数人无论说什么语言，都会把「Kiki」配给尖角形状、把「Bouba」配给圆润形状。第一个实验有 51 只狗，房间左右各有一块屏幕和一个扬声器，交替播放人说「Bouba」或「Kiki」，同时调换两种形状的位置，再用 AI 分析视频追踪狗头的朝向。",
+      "研究者报告，播「Bouba」时狗明显更多看圆形，播「Kiki」时更多看、也更多去探索尖形。第二个实验另找了 19 只狗，让主人戴耳机听摇滚乐，排除主人无意间的暗示；第一个实验里狗普遍偏爱看尖形的倾向，在第二个实验里消失了。文章说，还需要更多研究才能下定论。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "throw9394030",
+       "stance": "质疑",
+       "zh": "我不认为这个实验可靠。狗对主人的非语言暗示非常敏感。",
+       "en": "I do not think this is realible experiment.",
+       "hn": "https://news.ycombinator.com/item?id=50145543",
+       "id": 50145543,
+       "replies": 17
+      },
+      {
+       "user": "gste",
+       "stance": "解释",
+       "zh": "我觉得现实中这些形状的物体本来就发出类似的声音：尖锐的东西发出敲击般的声音，圆润的东西声音更柔和。狗的听觉很好，必定靠听觉来建模周围的世界。所以这与其说是语言学，不如说是我们对物理世界的视听映射。",
+       "en": "Sharp shapes make percussive sounds. Round shapes make softer sounds.",
+       "hn": "https://news.ycombinator.com/item?id=50145625",
+       "id": 50145625,
+       "replies": 5
+      },
+      {
+       "user": "tdb7893",
+       "stance": "补充",
+       "zh": "更让我意外的是，刚孵出的小鸡身上已经有这种效应的证据，所以它似乎存在于差别很大的各种动物中。",
+       "en": "there's already evidence for this in baby chickens",
+       "hn": "https://news.ycombinator.com/item?id=50146562",
+       "id": 50146562,
+       "replies": 0
+      }
+     ],
+     "kicker": "科学 · 动物认知"
+    },
+    {
+     "id": 50141681,
+     "title": "陶哲轩博客客座文章：数学将迎来黄金时代还是黑暗时代？",
+     "title_en": "Will it be a golden age or a dark age for mathematics (and science)?",
+     "url": "https://terrytao.wordpress.com/2026/10/18/will-it-be-a-golden-age-or-a-dark-age-for-mathematics-and-science/",
+     "hn": "https://news.ycombinator.com/item?id=50141681",
+     "points": 124,
+     "comments": 160,
+     "summary": [
+      "这是数学家 Francesco Maggi 发在陶哲轩博客上的客座文章。他设想两种前景：「黄金时代」里，大模型被谨慎地融入科研，培养新一代科学家，保持科学开放、协作和独立；「黑暗时代」里，科技产出短期内暴增，独立的人类科研却逐渐萎缩，新知识集中到少数人手里，而他们越来越理解不了这些知识。",
+      "他指出，大模型最擅长写 Lean 证明，但对真正难的定理，Lean 证明动辄几十万行，而且越长，机器翻译出的自然语言版本就越乱、越不忠实。他不同意「机器能证明定理，数学就结束了」：没有理解数学的人，就没有人类的数学，社会需要更多而不是更少的数学家；他认为证明变得容易后，最令人兴奋的机会是把更多领域「数学化」。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "ttul",
+       "stance": "解读",
+       "zh": "我对陶哲轩最近言论的理解是：职业数学家主要不满的是，AI 提交的数学论文缺少高质量人类论文那种宽泛的教学内容。答案也许是对的，但 AI 论文不会像人类作者那样教会读者。",
+       "en": "AI math papers don't teach the reader in the way a human author would have",
+       "hn": "https://news.ycombinator.com/item?id=50142180",
+       "id": 50142180,
+       "replies": 33
+      },
+      {
+       "user": "itsalwaysgood",
+       "stance": "补充",
+       "zh": "都是好观点，但我还想指出：「黑暗时代」是一个高度竞争的情景，而「黄金时代」是一个高度协作的情景。",
+       "en": "the 'dark age' scenario is a highly competitive scenario, while the 'golden age' scenario is a highly collaborative one.",
+       "hn": "https://news.ycombinator.com/item?id=50142022",
+       "id": 50142022,
+       "replies": 2
+      },
+      {
+       "user": "ldng",
+       "stance": "预测",
+       "zh": "我赌会有一个短暂的黄金时代，AI 摘走那些（对计算机来说）容易靠交叉引用和推理拿到的低垂果实；然后是黑暗时代，没人再有兴趣向这个领域贡献新想法。希望我错了。",
+       "en": "I bet for a short golden age",
+       "hn": "https://news.ycombinator.com/item?id=50142365",
+       "id": 50142365,
+       "replies": 5
+      }
+     ],
+     "kicker": "科学 · 数学"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50140001,
+     "title": "Open MicroManipulator：亚微米级的开源三轴运动平台",
+     "title_en": "Open MicroManipulator – A sub-micrometer 3D motion control plattform",
+     "url": "https://github.com/0x23/MicroManipulatorStepper",
+     "hn": "https://news.ycombinator.com/item?id=50140001",
+     "points": 170,
+     "comments": 13
+    },
+    {
+     "id": 50118165,
+     "title": "「我进入了战时状态」：陶哲轩与数学危机",
+     "title_en": "\"I'm on a war footing\": Terry Tao and the crisis in math",
+     "url": "https://www.nytimes.com/2026/10/16/us/math-ai-terence-tao.html",
+     "hn": "https://news.ycombinator.com/item?id=50118165",
+     "points": 63,
+     "comments": 86
+    },
+    {
+     "id": 50136150,
+     "title": "3Blue1Brown：现在是投身数学的最好时机",
+     "title_en": "There's never been a better time to go into math (by: 3blue1brown) [video]",
+     "url": "https://www.youtube.com/watch?v=LKrwhjOI8Nc",
+     "hn": "https://news.ycombinator.com/item?id=50136150",
+     "points": 121,
+     "comments": 61
+    },
+    {
+     "id": 50110081,
+     "title": "阿姆斯特丹 Artis 动物园给南非地犀鸟装上 3D 打印喙",
+     "title_en": "Southern ground hornbill gets 3D printed beak prostheses at Artis Zoo",
+     "url": "https://nltimes.nl/2026/10/15/world-first-southern-ground-hornbill-gets-3d-printed-beak-prostheses-artis-zoo",
+     "hn": "https://news.ycombinator.com/item?id=50110081",
+     "points": 63,
+     "comments": 17
+    },
+    {
+     "id": 50142449,
+     "title": "Intel 8087 芯片的浮点加减法",
+     "title_en": "The Intel 8087 chip: floating-point addition and subtraction",
+     "url": "https://www.righto.com/2026/10/8087-addition-subtraction-microcode.html",
+     "hn": "https://news.ycombinator.com/item?id=50142449",
+     "points": 86,
+     "comments": 28
+    },
+    {
+     "id": 50096110,
+     "title": "SIGSALY：丘吉尔与美国总统之间的绝密热线",
+     "title_en": "SIGSALY: Churchill's top secret hotline to the president",
+     "url": "https://www.iwm.org.uk/history/iwm/cwr/telephone",
+     "hn": "https://news.ycombinator.com/item?id=50096110",
+     "points": 104,
+     "comments": 35
+    },
+    {
+     "id": 50103988,
+     "title": "推演「给太阳调暗」：结果比你想的还糟",
+     "title_en": "They war-gamed dimming the Sun. It went worse than you think",
+     "url": "https://www.wired.com/story/they-war-gamed-dimming-the-sun-it-went-even-worse-than-you-think/",
+     "hn": "https://news.ycombinator.com/item?id=50103988",
+     "points": 16,
+     "comments": 21
+    },
+    {
+     "id": 50138002,
+     "title": "复数单位根笔记",
+     "title_en": "Notes on the Complex Roots of Unity",
+     "url": "https://eli.thegreenplace.net/2026/notes-on-the-complex-roots-of-unity/",
+     "hn": "https://news.ycombinator.com/item?id=50138002",
+     "points": 41,
+     "comments": 10
+    },
+    {
+     "id": 50102480,
+     "title": "计算机辅助几何设计中的曲线与曲面史",
+     "title_en": "A History of Curves and Surfaces in Computer Aided Geometric Design [pdf]",
+     "url": "https://math.pku.edu.cn/teachers/jiangm/courses/CG/Lectures/spline-history.pdf",
+     "hn": "https://news.ycombinator.com/item?id=50102480",
+     "points": 29,
+     "comments": 5
+    },
+    {
+     "id": 50098148,
+     "title": "16 位、完全可用的自制磁芯存储器",
+     "title_en": "16-bit fully functional DIY magnetic core memory",
+     "url": "https://www.youtube.com/watch?v=OJ1WYyO2jdY",
+     "hn": "https://news.ycombinator.com/item?id=50098148",
+     "points": 23,
+     "comments": 12
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1274,
+    "comments": 571,
+    "top_points": {
+     "id": 50141076,
+     "title": "RepRapMicron：用常见材料做微米级 3D 打印机",
+     "value": 324,
+     "comments": 51
+    },
+    "top_comments": {
+     "id": 50141681,
+     "title": "陶哲轩博客客座文章：数学将迎来黄金时代还是黑暗时代？",
+     "value": 160
+    },
+    "top_brief": {
+     "id": 50140001,
+     "title": "Open MicroManipulator：亚微米级的开源三轴运动平台",
+     "value": 170,
+     "comments": 13
+    }
+   }
+  },
+  {
+   "name": "社会与文化",
+   "en": "Society & Culture",
+   "page": 5,
+   "stories": [
+    {
+     "id": 50144005,
+     "title": "佛罗里达的业主协会正在加剧住房危机",
+     "title_en": "Florida's HOAs and condo associations are making the housing crisis worse",
+     "url": "https://hoaspy.com/hoa/fl/florida-hoa-housing-crisis.html",
+     "hn": "https://news.ycombinator.com/item?id=50144005",
+     "points": 156,
+     "comments": 265,
+     "summary": [
+      "数据网站 HOA Spy 收录了佛罗里达 104,659 个业主协会和公寓协会。佛州法律赋予协会对每户未缴费用的留置权和止赎权，起因可能只是几百美元欠费，到起诉时已叠加了利息、滞纳金、催收费和律师费。记录显示，协会对自家业主提起过 10,296 起止赎诉讼；仅布劳沃德和迈阿密-戴德两县，协会就登记了 460,412 份留置权声明和 277,047 份止赎预告登记。",
+      "文章还说，瑟夫赛德公寓倒塌后，佛州要求老旧公寓通过结构安全检查并足额储备维修金，费用都由业主承担：Redfin 2024 年的数据显示，坦帕、奥兰多和劳德代尔堡的月物业费一年分别上涨 17.2%、16.7% 和 16.2%。文章也承认这些是记录数而非比率，佛州法院公开的案卷格外完整，统计自然偏多。",
+      "这是当天评论第二多的帖子。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "ryandrake",
+       "stance": "亲历",
+       "zh": "我以前住在布劳沃德县，所以一点也不意外它在文章的榜单上排第一。业主协会在那个州的权力大得离谱。除了你欠钱的房贷机构之外，竟然还有别的机构能「止赎」、收走你住的房子，这简直疯了。",
+       "en": "and seize the home you live in is total lunacy.",
+       "hn": "https://news.ycombinator.com/item?id=50144249",
+       "id": 50144249,
+       "replies": 81
+      },
+      {
+       "user": "CGMthrowaway",
+       "stance": "辩护",
+       "zh": "人们爱骂业主协会，但并非都不好。总体上它们是自治的好例子，另一种选择是让不住在你社区的人来管你的社区。你更想要哪个？",
+       "en": "People love to hate on HOAs but not all are bad",
+       "hn": "https://news.ycombinator.com/item?id=50144451",
+       "id": 50144451,
+       "replies": 24
+      },
+      {
+       "user": "weberer",
+       "stance": "数据",
+       "zh": "（引文：「佛州在 HOA Spy 上的协会止赎诉讼数排第一……这是记录数，而不是比率。」）佛州以全美最强的「阳光法案」著称，政府记录高度透明，这让这项统计相当没用。",
+       "en": "Florida is known for having the strongest",
+       "hn": "https://news.ycombinator.com/item?id=50144283",
+       "id": 50144283,
+       "replies": 1
+      }
+     ],
+     "kicker": "社会 · 住房",
+     "tag": "评论第二"
+    },
+    {
+     "id": 50141295,
+     "title": "特斯拉：不能保证 Roadster 预订者真能拿到车",
+     "title_en": "Tesla 'Cannot Guarantee' Roadster Reservation Holders Will Ever Get a Car",
+     "url": "https://www.thedrive.com/news/tesla-cannot-guarantee-roadster-reservation-holders-will-ever-get-a-car",
+     "hn": "https://news.ycombinator.com/item?id=50141295",
+     "points": 109,
+     "comments": 134,
+     "summary": [
+      "据 The Drive 报道，特斯拉周四晚上第二次发布第二代 Roadster，距上一次大张旗鼓的发布会已近 10 年，而那一次收了最高 25 万美元的定金，车却始终没有交付。InsideEVs 发现，新的预订协议写明：「Roadster 仍在开发中，因此我们无法保证车辆何时交付，或是否会交付。」",
+      "特斯拉这次仍收取最高 25 万美元的预付款，但预订者只能在投产后得到一个「大致」的排队位置，价格和配置都可能变，目前预计 2028 年投产。文章说相对的好消息是：这次没有禁止转售的条款，而且定金可以全额退还。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "hingler36",
+       "stance": "冷静",
+       "zh": "虽然我不喜欢特斯拉，但这很多看起来是大多数预订或预购文件里保护公司的标准法律条款。有人能说说这次是否真的特别吗？",
+       "en": "a lot of this feels like pretty standard legalize",
+       "hn": "https://news.ycombinator.com/item?id=50141783",
+       "id": 50141783,
+       "replies": 20
+      },
+      {
+       "user": "mvkel",
+       "stance": "阴谋论",
+       "zh": "我坚持认为，整场发布会是为了留下一串证据，好给特斯拉和 SpaceX 合并找理由。车永远不会交付。",
+       "en": "No car will ever ship.",
+       "hn": "https://news.ycombinator.com/item?id=50142009",
+       "id": 50142009,
+       "replies": 24
+      },
+      {
+       "user": "Hydraulix989",
+       "stance": "前车之鉴",
+       "zh": "就连 Cybertruck 的预订也是等了好几年才兑现，价格还高得多。",
+       "en": "Even the Cybertruck reservations took years to materialize, at a much higher price.",
+       "hn": "https://news.ycombinator.com/item?id=50141989",
+       "id": 50141989,
+       "replies": 0
+      }
+     ],
+     "kicker": "汽车 · 特斯拉"
+    },
+    {
+     "id": 50143218,
+     "title": "英国航空：用 Meta 眼镜偷拍机组，可能被取消后续航段",
+     "title_en": "British Airways: Filming Crew W Meta Glasses Could Get Your Tickets Cancelled",
+     "url": "https://liveandletsfly.com/british-airways-meta-smart-glasses-filming/",
+     "hn": "https://news.ycombinator.com/item?id=50143218",
+     "points": 90,
+     "comments": 144,
+     "summary": [
+      "Live and Let's Fly 援引 Paddle Your Own Kanoo 报道，英国航空更新了规则，针对乘客在机场和机上用 Meta AI 眼镜偷拍。单纯戴眼镜并不禁止，但 BA 的运输总条件本来就禁止未经同意拍摄、直播或拍照机组和员工：违规者落地后可能被请下飞机，被拒载票上剩下的航段，包括已订好的回程；如果可能涉及犯罪，还可以报警。",
+      "作者理解航司反对把每个员工都拍成社交媒体素材，但也担心拍摄限制会成为阻止乘客留存遭到恶劣对待证据的方便手段，希望 BA 能区分侵扰型博主和记录正当问题的乘客。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "otterley",
+       "stance": "不新鲜",
+       "zh": "这没什么新鲜的。欧洲航司普遍禁止拍摄员工工作，不管用什么设备。实际上大多数欧洲航司（和美国航司不同）还尽量让员工匿名，比如不戴名牌。",
+       "en": "European airlines generally prohibit filming the activities of their employees, regardless of technology.",
+       "hn": "https://news.ycombinator.com/item?id=50143412",
+       "id": 50143412,
+       "replies": 9
+      },
+      {
+       "user": "twoodfin",
+       "stance": "亲历",
+       "zh": "我每隔几个月就坐 BA 飞跨大西洋航线，今天安全演示里第一次专门提到了在机上拍摄要尊重隐私。",
+       "en": "today for the first time the safety briefing included a specific callout of respecting privacy while filming aboard.",
+       "hn": "https://news.ycombinator.com/item?id=50143400",
+       "id": 50143400,
+       "replies": 3
+      },
+      {
+       "user": "jjallen",
+       "stance": "反方",
+       "zh": "我对拍摄（不只是眼镜）的看法似乎和别人相反：要是有人闹事尖叫，就突然可以拍了？有人在机上犯罪也不能拍？谁来判断？禁止拍摄，证据就会变少。",
+       "en": "If filming is banned there will be less evidence",
+       "hn": "https://news.ycombinator.com/item?id=50143865",
+       "id": 50143865,
+       "replies": 6
+      }
+     ],
+     "kicker": "社会 · 隐私"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50141206,
+     "title": "Theranos 式欺诈已成常态",
+     "title_en": "Theranos-Style Fraud Has Become the Norm",
+     "url": "https://www.theatlantic.com/ideas/2026/10/theranos-trump-nathan-fielder/689001/",
+     "hn": "https://news.ycombinator.com/item?id=50141206",
+     "points": 95,
+     "comments": 35
+    },
+    {
+     "id": 50138044,
+     "title": "一名卧底如何打入美国民兵组织最高层（2025）",
+     "title_en": "A Mole Infiltrated the Highest Ranks of American Militias (2025)",
+     "url": "https://www.propublica.org/article/ap3-oath-keepers-militia-mole",
+     "hn": "https://news.ycombinator.com/item?id=50138044",
+     "points": 128,
+     "comments": 28
+    },
+    {
+     "id": 50141053,
+     "title": "Z 世代是第一代比父母更笨的人",
+     "title_en": "Gen Z Is the First Generation Dumber Than Their Parents",
+     "url": "https://www.vice.com/en/article/gen-z-is-the-first-generation-dumber-than-their-parents-neuroscientist-claims/",
+     "hn": "https://news.ycombinator.com/item?id=50141053",
+     "points": 70,
+     "comments": 103
+    },
+    {
+     "id": 50130228,
+     "title": "Microsoft Teams 是个危险信号",
+     "title_en": "Microsoft Teams is a red flag",
+     "url": "https://blog.raed.dev/posts/microsoft-teams-red-flag/",
+     "hn": "https://news.ycombinator.com/item?id=50130228",
+     "points": 95,
+     "comments": 70
+    },
+    {
+     "id": 50138087,
+     "title": "Matthew Prince 谈 Cloudflare 为什么提供并将永远提供免费版（2016）",
+     "title_en": "Matthew Prince on why Cloudflare offers a free version and always will (2016)",
+     "url": "https://webmasters.stackexchange.com/questions/88659/how-can-cloudflare-offer-a-free-cdn-with-unlimited-bandwidth/88685#88685",
+     "hn": "https://news.ycombinator.com/item?id=50138087",
+     "points": 128,
+     "comments": 104
+    },
+    {
+     "id": 50140769,
+     "title": "Show HN：《时之笛》重制版发售前，补一补塞尔达时间线",
+     "title_en": "Show HN: The Zelda timeline to catch up before the Ocarina of Time remake",
+     "url": "https://legendofhyrule.com/",
+     "hn": "https://news.ycombinator.com/item?id=50140769",
+     "points": 157,
+     "comments": 93
+    },
+    {
+     "id": 50143536,
+     "title": "PalmOS 版《旅鼠》",
+     "title_en": "PalmOS Lemmings",
+     "url": "https://github.com/ardiri/palmos-lemmings",
+     "hn": "https://news.ycombinator.com/item?id=50143536",
+     "points": 81,
+     "comments": 22
+    },
+    {
+     "id": 50093020,
+     "title": "我用电钻把滑板车改成了电动的",
+     "title_en": "I electrified my push scooter with a power drill",
+     "url": "https://eddieabbondanz.io/post/shop/drill-powered-scooter/",
+     "hn": "https://news.ycombinator.com/item?id=50093020",
+     "points": 118,
+     "comments": 47
+    },
+    {
+     "id": 50139935,
+     "title": "孩子们正在绕过社交媒体禁令，这不是需要解决的问题",
+     "title_en": "Kids are outsmarting social media bans. That's not a problem we need to solve",
+     "url": "https://www.technologyreview.com/2026/10/16/1146834/kids-are-outsmarting-social-media-bans-thats-not-a-problem-we-need-to-solve/",
+     "hn": "https://news.ycombinator.com/item?id=50139935",
+     "points": 34,
+     "comments": 80
+    },
+    {
+     "id": 50144405,
+     "title": "美国就星链限制威胁欧洲",
+     "title_en": "US threatens Europe over Starlink restrictions",
+     "url": "https://www.ft.com/content/d1e28d93-8574-4a46-946a-b261c401d6fa",
+     "hn": "https://news.ycombinator.com/item?id=50144405",
+     "points": 55,
+     "comments": 80
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1316,
+    "comments": 1205,
+    "top_points": {
+     "id": 50140769,
+     "title": "Show HN：《时之笛》重制版发售前，补一补塞尔达时间线",
+     "value": 157,
+     "comments": 93
+    },
+    "top_comments": {
+     "id": 50144005,
+     "title": "佛罗里达的业主协会正在加剧住房危机",
+     "value": 265
+    },
+    "top_brief": {
+     "id": 50140769,
+     "title": "Show HN：《时之笛》重制版发售前，补一补塞尔达时间线",
+     "value": 157,
+     "comments": 93
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "gavinray",
+  "id": 50143180,
+  "hn": "https://news.ycombinator.com/item?id=50143180",
+  "story_id": 50140462,
+  "story": "为了一张过期车票的退款，AI 助理能做到多过分？",
+  "zh": "（读到智能体狂发邮件骚扰政府、拿生病的母亲当筹码、威胁上小额法庭）而我连跟服务员说汉堡别放生菜都不好意思……",
+  "en": "Here I am uncomfortable with telling the waiter I didn't want lettuce on my burger..."
+ },
+ "stats": {
+  "snapshot": "2026-10-19T08:14:47+08:00",
+  "front_page_count": 90,
+  "with_numbers": 88,
+  "flagged_or_dupe": 2,
+  "top_points": {
+   "id": 50132193,
+   "title": "Pele：把 Mermaid 图渲染成可换主题的 SVG",
+   "value": 564,
+   "comments": 58
+  },
+  "top_comments": {
+   "id": 50137620,
+   "title": "霍姆斯纪录片《You Can See Everything》：被骗的其实是观众",
+   "value": 502
+  },
+  "second_comments": {
+   "id": 50144005,
+   "title": "佛罗里达的业主协会正在加剧住房危机",
+   "value": 265
+  },
+  "over_500": 2,
+  "over_300": 6,
+  "over_100": 31,
+  "show_hn": 7,
+  "total_points": 9098,
+  "total_comments": 5430,
+  "hottest_ratio": {
+   "id": 50139873,
+   "title": "Anthropic 自曝：智能体工时是员工的 6 倍，初级技术岗招聘骤减",
+   "value": 1.78,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
