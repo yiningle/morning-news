@@ -1,0 +1,1297 @@
+{
+ "date": "2026-10-21",
+ "published_at": "2026-10-22T08:23:21+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-10-21",
+ "schema_version": 2,
+ "lead": {
+  "id": 50172041,
+  "title": "PHP 爆出两个可远程执行代码的严重漏洞：过去十年的版本几乎全中，官方紧急发布补丁",
+  "title_en": "Security advisory: Critical remote code execution vulnerabilities, update now",
+  "url": "https://www.php.net/archive/2026.php#2026-10-21-5",
+  "hn": "https://news.ycombinator.com/item?id=50172041",
+  "points": 1503,
+  "comments": 650,
+  "summary": [
+   "PHP 官方发布 8.5.12、8.4.27、8.3.36 和 8.2.35 四个安全版本，修复两个可让未经身份验证的攻击者远程执行代码的严重漏洞，并「强烈建议所有 PHP 用户立即更新」。受影响的是所有处理网页请求的 PHP 部署，包括 PHP-FPM、Apache 的 mod_php、php-cgi、FrankenPHP 和 LiteSpeed；官方认为 mod_php 风险最高，已有演示表明一个未认证请求就能在任何应用代码运行之前触发攻击。",
+   "两个漏洞分别是 CVE-2026-109618（内存不足处理可能在请求数据只初始化了一半时打断 PHP，清理阶段再把无效数据当成有效数据）和 CVE-2026-109619（属于某个请求的内部状态在内存释放后仍残留，同一工作进程处理的下一个请求可能用到它）。发行版和 LTS 厂商已提前拿到补丁；8.1 及更早版本官方不再维护，但这次额外为 7.4、8.0、8.1 提供了最小源码补丁。暂时无法升级的，可以把 memory_limit 设为 -1、调低 post_max_size、关闭 session.upload_progress 等，但官方强调这些只能缩小攻击面，「更新是唯一安全的选择」。",
+   "这条公告最初是 10 月 20 日的预告，原定 21 日 14:00（UTC）发布，以 1503 点赞成为当天点赞最多的帖子。评论区一边在问补丁为什么还没出、要不要先把网站下线，一边在实时播报：荷兰的政府登录服务 DigiD、电视台 RTL 和议会都关掉了网站。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "bwoebi",
+    "stance": "内情",
+    "zh": "给所有在问补丁为什么还没出的人：负责发版的就那么几个人，他们还在睡觉。说实话我也很震惊漏洞利用这么快就被公开了，起因是那段泄露的视频（这也是公告恰好在那个时间发出的原因）。即便有大模型，我们原以为还能多一点时间……",
+    "en": "We expected a bit more time, even with LLMs...",
+    "hn": "https://news.ycombinator.com/item?id=50175654",
+    "id": 50175654,
+    "replies": 35
+   },
+   {
+    "user": "TekMol",
+    "stance": "两难",
+    "zh": "很多人呼吁提前发补丁。但提前发布到底会让损失变小还是变大并不清楚：有了补丁，写出漏洞利用大概更容易，攻击会变多。全世界也没法协调到一个更早的时间。现在敲响警钟、让尽可能多的人先关掉服务器、14 点再打补丁，可能才是把损失降到最低的做法。",
+    "en": "it is not clear if releasing the fix early would make the damage smaller or larger",
+    "hn": "https://news.ycombinator.com/item?id=50177855",
+    "id": 50177855,
+    "replies": 41
+   },
+   {
+    "user": "yread",
+    "stance": "现场",
+    "zh": "DigiD.nl（政府服务登录入口）、RTL（大型电视台）和议会都关掉了自己的网站。",
+    "en": "DigiD.nl (login to government services), RTL (major broadcaster) and parliament shut down their websites.",
+    "hn": "https://news.ycombinator.com/item?id=50179059",
+    "id": 50179059,
+    "replies": 14
+   }
+  ],
+  "kicker": "要闻 · 安全",
+  "tag": "点赞第一"
+ },
+ "side": [
+  {
+   "id": 50177911,
+   "title": "联合国环境署：《巴黎协定》1.5°C 目标已不可能实现，新目标是先守住 2°C 再降回来",
+   "title_en": "The 1.5°C goal of the Paris Agreement is no longer viable",
+   "url": "https://unric.org/en/unep-emissions-gap-report-2026-1-5-degree-overshoot/",
+   "hn": "https://news.ycombinator.com/item?id=50177911",
+   "points": 611,
+   "comments": 745,
+   "summary": [
+    "联合国环境规划署在 2026 年《排放差距报告》（题为「回归之点」）中说，「在无超调或有限超调的情况下弥合 1.5°C 排放差距的机会已经失去」，升温超过工业化前 1.5°C 已迫在眉睫、不可避免。报告说现在唯一的选项是把升温控制在 2°C 以下，并争取在本世纪末降回 1.5°C。",
+    "为此，全球温室气体排放需要在 2025 年基础上到 2030 年减少 18%、2035 年减少 45%、2040 年减少 69%；而即使各国承诺全部兑现，到 2030 年也只能减 5% 到 8%。报告还估计本世纪末前要从大气中移除 3200 亿吨二氧化碳，约为 2024 年排放量的八倍。环境署负责人也指出，《巴黎协定》以来全球可再生电力装机的增长比预期快三倍，光伏快七倍。这篇帖子有 745 条评论，是当天评论最多的。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "mbgerring",
+     "stance": "坚持",
+     "zh": "我 38 岁，在气候科技行业干了 12 年。在我不长的人生和职业生涯里，政治行动的环境和气候方案的资金起伏了大概六次。但物理规律不会变，我们面前的任务也不会变。我刚花了十个月才找到工作，因为我坚持要做清洁能源硬件。",
+     "en": "The physics, however, don’t change, and neither does the task in front of us.",
+     "hn": "https://news.ycombinator.com/item?id=50178365",
+     "id": 50178365,
+     "replies": 201
+    },
+    {
+     "user": "throwfaraway135",
+     "stance": "核电",
+     "zh": "气候倡导者因为游说反核而失去了全部公信力。因为他们宗教般的狂热，德国关闭了核电站，转而烧煤来补。要不是这么悲惨，这简直是一出喜剧。",
+     "en": "The climate change advocates have lost all their credibility by lobbying against nuclear.",
+     "hn": "https://news.ycombinator.com/item?id=50178419",
+     "id": 50178419,
+     "replies": 29
+    },
+    {
+     "user": "js8",
+     "stance": "迟滞",
+     "zh": "不幸的是，即使我们超过之后再把温度降回 1.5 度，损害也已经造成了。许多生态系统和物种会消失，很多反馈过程（比如北极海冰）有迟滞效应，温度名义上降回来也回不到原来的状态。所以靠某种未明确的新技术捕集二氧化碳只是分散注意力，理想情况是一开始就别排放。",
+     "en": "the damage has already been done",
+     "hn": "https://news.ycombinator.com/item?id=50178150",
+     "id": 50178150,
+     "replies": 38
+    }
+   ],
+   "kicker": "科学 · 气候",
+   "tag": "评论第一"
+  },
+  {
+   "id": 50184586,
+   "title": "EA 关闭 BioWare：《质量效应》《龙腾世纪》的缔造者谢幕，新《质量效应》同时叫停",
+   "title_en": "EA is shutting down BioWare",
+   "url": "https://www.theverge.com/games/1015647/ea-is-shutting-down-bioware",
+   "hn": "https://news.ycombinator.com/item?id=50184586",
+   "points": 494,
+   "comments": 292,
+   "summary": [
+    "据 The Verge 报道，EA 确认关闭打造《质量效应》《龙腾世纪》和《星球大战：旧共和国武士》的工作室 BioWare，并停止开发处于早期阶段的下一部《质量效应》。彭博社称 EA 同时裁员约 400 人，其中约 50 人在 BioWare。此前 EA 被沙特公共投资基金、Silver Lake 和 Affinity Partners 牵头的投资方以 550 亿美元私有化，交易于 8 月完成。",
+    "BioWare 的告别信列出了《博德之门》《无冬之夜》《旧共和国武士》《龙腾世纪》《质量效应》和《圣歌》。报道指出 BioWare 近年并不成功：2017 年的《质量效应：仙女座》被视为失误，2019 年押注服务型游戏《圣歌》失败，2025 年《龙腾世纪：影障守护者》销量不及预期后已经裁过员。IGN 报道亚马逊的《质量效应》剧集仍在开发。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "aresant",
+     "stance": "忒修斯之船",
+     "zh": "BioWare 关门很令人难过，但这其实是典型的忒修斯之船：做出经典《博德之门》《旧共和国武士》《质量效应》的大部分团队，早就因为自然流动和几轮残酷裁员散了。好在人才并没消失，Archetype、Stoic 等团队还在做游戏。",
+     "en": "it’s really a classic ship of theseus situation",
+     "hn": "https://news.ycombinator.com/item?id=50185466",
+     "id": 50185466,
+     "replies": 40
+    },
+    {
+     "user": "kobalsky",
+     "stance": "对比",
+     "zh": "西方游戏工作室的人才就是摆脱不了创业模式：争取做出爆款、争取被收购、套现走人。暴雪看似是例外，但它很久以前就死了，只剩空壳。和日本游戏公司的对比非常鲜明。",
+     "en": "Talent in western game studios just can't shake the startup mode.",
+     "hn": "https://news.ycombinator.com/item?id=50185120",
+     "id": 50185120,
+     "replies": 54
+    },
+    {
+     "user": "mrandish",
+     "stance": "泡沫",
+     "zh": "眼下商业游戏工作室的大崩塌对工作和生活的冲击很悲惨，但它不可避免。2020 年前后行业靠疫情需求泡沫、追逐服务型游戏利润预期的私募资本、以及 Embracer 和微软的投机式并购，迅速多出了约 35% 的岗位。",
+     "en": "Around 2020 the industry quickly added around 35% more jobs",
+     "hn": "https://news.ycombinator.com/item?id=50187639",
+     "id": 50187639,
+     "replies": 3
+    }
+   ],
+   "kicker": "文化 · 游戏"
+  },
+  {
+   "id": 50181114,
+   "title": "LiteLLM 1.107.0 在 PyPI 上被投毒：装上就偷凭证、留后门，不导入也会运行",
+   "title_en": "Compromised LiteLLM 1.107.0 on PyPI Installs a Credential Stealer and Backdoor",
+   "url": "https://safedep.io/litellm-pypi-compromise-credential-stealer-backdoor/",
+   "hn": "https://news.ycombinator.com/item?id=50181114",
+   "points": 419,
+   "comments": 131,
+   "summary": [
+    "供应链安全公司 SafeDep 报告，PyPI 上的 LiteLLM 1.107.0 全部七个安装包（Linux、macOS、Windows）都带有凭证窃取程序和远程代码执行后门，PyPI 已下架该版本；1.106.2 和两个候选版是干净的，GitHub 上的源码里也没有这些文件。安装后会在 site-packages 放入三个文件，借助 Python 启动时自动加载 .pth 和 sitecustomize.py 的机制，任何 Python 进程一启动就会运行，哪怕它从没导入 litellm。",
+    "窃取程序收集 SSH 密钥、云凭证、CI/CD 密钥、AI 工具令牌、浏览器密码以及 LiteLLM 代理数据库里的大模型服务商密钥，加密后外发；后门守护进程每小时从 GitHub 上的一个文件读取服务器地址。SafeDep 比对后认为，这些包与 BerriAI 正常发布流水线的产物一致，且公开的 GitHub Actions 里没有对应构建，因此「中到高置信度」判断是私有发布流水线从被攻击者改过的源码构建的，被盗 PyPI 令牌的解释则不太吻合证据。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "crossroadsguy",
+     "stance": "疲劳",
+     "zh": "再多的 sandbox-exec 和 Lulu 规则也防不住这种事。到某个时候权限弹窗疲劳就来了，我们把任何权限都当正常的给出去，装工具也麻木了。有了智能体之后，这不是会不会发生，而是什么时候发生。操作系统得做点什么。",
+     "en": "At one point permission pop-up fatigue sets in",
+     "hn": "https://news.ycombinator.com/item?id=50184801",
+     "id": 50184801,
+     "replies": 16
+    },
+    {
+     "user": "rsanheim",
+     "stance": "又来",
+     "zh": "这是一两年内 LiteLLM 第二次遭遇重大攻击了吧？我昨晚正好翻到一个旧的 Claude 会话留下的笔记和脚本，用来审计所有项目依赖、确认没有用到 litellm。查了一下，那是今年 3 月。大模型时代时间都乱了。",
+     "en": "This is the second significant exploit against LiteLLM in what, a year or two ?",
+     "hn": "https://news.ycombinator.com/item?id=50187074",
+     "id": 50187074,
+     "replies": 2
+    },
+    {
+     "user": "threecheese",
+     "stance": "系统性",
+     "zh": "（官方事件说明里的）「攻击者攻破了 3 名开发者的 GitHub 凭证」有点吓人，这看起来是系统性的：如果三个开发者的密钥都被偷了，说明真正的问题在别处。他们撤销了除一人外所有开发者的权限，大概是对的。",
+     "en": "this seems systemic",
+     "hn": "https://news.ycombinator.com/item?id=50186105",
+     "id": 50186105,
+     "replies": 0
+    }
+   ],
+   "kicker": "安全 · 供应链"
+  },
+  {
+   "id": 50184820,
+   "title": "Meta 在新墨西哥州剑桥分析案中被判罚 250 亿美元",
+   "title_en": "Meta ordered to pay $25B penalty in New Mexico Cambridge Analytica case",
+   "url": "https://www.cnbc.com/2026/10/21/meta-new-mexico-cambridge-analytica-penalty.html",
+   "hn": "https://news.ycombinator.com/item?id=50184820",
+   "points": 324,
+   "comments": 198,
+   "summary": [
+    "CNBC 报道，新墨西哥州一家地区法院判令 Meta 支付 250 亿美元罚款。此前圣菲的陪审团在 9 月认定，Meta 在如何保护和收集用户数据、如何防止有害信息传播上误导了该州居民，违反该州《不正当行为法》超过 4300 万次，每次最高可罚 5000 美元。法院文件显示州政府原本获判 2195 亿美元，最终减至 250 亿美元，未付清前按每年 15% 计息。",
+    "法官 Francis Mathew 写道，Facebook 没有进行它在剑桥分析丑闻后承诺的全面调查，违规次数之多、持续时间之长和高层的参与，支持按每次 5000 美元的最高标准处罚。Meta 首席法务官 C.J. Mahoney 称公司「有信心在上诉中胜诉」，并说这一裁决「几乎让在新墨西哥州做生意变得不可能」。新墨西哥州没有参加 8 月那项近 170 亿美元的多州和解，因此案子单独进入了审判。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "j_horvat",
+     "stance": "追责",
+     "zh": "可是高管的牢狱之灾在哪里？这也许比平时的轻拍手腕重一点，但对 Meta 这样的公司算不上真正要紧的后果。只要高层不为自己签字批准的罪行承担个人责任，这种事就会一直发生。",
+     "en": "where's the jail time for executives",
+     "hn": "https://news.ycombinator.com/item?id=50187773",
+     "id": 50187773,
+     "replies": 54
+    },
+    {
+     "user": "bananamogul",
+     "stance": "对比",
+     "zh": "参加集体诉讼和解的各州加起来拿到 7.25 亿美元，新墨西哥决定单干，拿到 250 亿。对 11 月 3 日要竞选连任的总检察长来说时机绝佳（虽然当初做决定的是前任）。",
+     "en": "New Mexico decided to go it alone and gets $25 billion.",
+     "hn": "https://news.ycombinator.com/item?id=50185490",
+     "id": 50185490,
+     "replies": 17
+    },
+    {
+     "user": "binarymax",
+     "stance": "量级",
+     "zh": "这相当于年收入的 12%（2025 年约 2000 亿）。不是小数目。",
+     "en": "12% of annual revenue (~200B for 2025).",
+     "hn": "https://news.ycombinator.com/item?id=50187516",
+     "id": 50187516,
+     "replies": 6
+    }
+   ],
+   "kicker": "社会 · 隐私"
+  },
+  {
+   "id": 50175070,
+   "title": "CSS 的未来：Josh Comeau 盘点他为 Interop 2027 投票的十个特性",
+   "title_en": "The Future of CSS",
+   "url": "https://www.joshwcomeau.com/css/interop-2027/",
+   "hn": "https://news.ycombinator.com/item?id=50175070",
+   "points": 590,
+   "comments": 261,
+   "summary": [
+    "各大浏览器厂商联合推进的 Interop 项目正在规划 2027 年的重点，Mozilla 做了一个排名页让开发者为最想要的特性投票。Josh W. Comeau 用这篇文章介绍他投票的十个特性，并举例说 CSS 子网格 2019 年就在 Firefox 实现，多年没进展，进了 Interop 2023 后当年就在所有现代浏览器普及。",
+    "他最期待的是 CSS 自定义函数：用 @function 定义、用 result 返回值，Chromium 已经实现，他打算用它做极坐标和直角坐标的换算。其他还有 corner-shape（除圆角外还能做斜角、超椭圆等，边框、轮廓和阴影都会跟着变形，他认为现在就可以作为渐进增强使用）、更底层的 border-shape、能感知是否翻转了位置的锚点定位、滚动触发动画，以及检测粘性元素是否已经「粘住」的容器查询。他还写道，在智能体时代，要让智能体用上现代网页特性，我们自己先得了解它们。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "paczki",
+     "stance": "安利",
+     "zh": "我一直尽量只写原生 HTML/CSS/JS，说真的，很难向只在框架里写代码的人解释它现在有多好用。当然要用合适的工具，但它真的让人开心！",
+     "en": "it's honestly hard to explain to people who only write within frameworks how good it's gotten",
+     "hn": "https://news.ycombinator.com/item?id=50175911",
+     "id": 50175911,
+     "replies": 75
+    },
+    {
+     "user": "fodkodrasz",
+     "stance": "不满",
+     "zh": "哇，更多花哨的边框样式！为没用的视觉效果堆无限的复杂度。日期选择器到现在都勉强能用，上次我要做戴手套、工业场景用的触屏界面，日期、时间和数字输入框全得自己写组件和 JS。",
+     "en": "Date pickers are still barely working",
+     "hn": "https://news.ycombinator.com/item?id=50176887",
+     "id": 50176887,
+     "replies": 35
+    },
+    {
+     "user": "thisislife2",
+     "stance": "反对",
+     "zh": "「CSS 里的函数」，呸！这下 CSS 就更绕了，还要跟 JavaScript 竞争。这些功能蔓延就是为了确保再也没人能造出另一个浏览器引擎。",
+     "en": "All these feature creep is just to make sure nobody else can create another browser engine.",
+     "hn": "https://news.ycombinator.com/item?id=50177605",
+     "id": 50177605,
+     "replies": 10
+    }
+   ],
+   "kicker": "开发 · 前端"
+  }
+ ],
+ "sections": [
+  {
+   "name": "安全",
+   "en": "Security",
+   "page": 2,
+   "stories": [
+    {
+     "id": 50182987,
+     "title": "PHP 基金会复盘：漏洞早在 2024 年就露出端倪，修复因决策机制停滞数月",
+     "title_en": "Today's PHP security release, and how we're strengthening security",
+     "url": "https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/",
+     "hn": "https://news.ycombinator.com/item?id=50182987",
+     "points": 653,
+     "comments": 323,
+     "summary": [
+      "PHP 基金会的长文解释了这次漏洞是怎么发现和修复的。2024 年 PHP 多年来首次接受外部安全审计（由德国主权技术署出资、Quarkslab 执行），基金会聘请的核心开发者在修其中一个问题时发现了内存不足问题的最初迹象，但当时没找到具体攻击途径。安全团队提出了几种修复方案，各有兼容性破坏、新的拒绝服务风险或需要大量第三方扩展配合等代价，团队按共识决策迟迟定不下来，修复工作反复停滞。文章直言「这次拖延是结构性失败」，团队已改为可以多数决。",
+      "转折发生在今年：Calif 的研究员 Ryan A 在 8 月 11 日报告了同根源的无条件远程代码执行，OpenAI 同日独立报告，Wiz 在 8 月 24 日也提交了攻击路径，修复从此成为最高优先级。原定 10 月 22 日发布，但 20 日两个 CVE 编号连同错误的发布时间和错误的 CVSS 评分 10.0 在网上流传，官方提前一天；随后 Calif 误发了一段演示视频，Chainguard 又在 21 日协调发布前六个多小时擅自发布了含补丁的镜像，文章称这「无视了多方数周的工作」。基金会最后呼吁依赖 PHP 的公司、云平台和政府出钱支持安全工作。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "dofm",
+       "stance": "感谢 HN",
+       "zh": "我这个愤世嫉俗的人可能不会再说第二次：谢天谢地有 HN。我今天到处奔波处理不同的服务器，结果凌晨（格林尼治时间）写的三行 nginx 缓解规则（拦截 multipart 上传）一直在默默保护一台我没法关机的有漏洞机器，挡住了来自各家主流 AI 智能体工具的攻击，包括补丁正式发布前的一个小时。",
+       "en": "a three line nginx mitigation (blocking multipart uploads)",
+       "hn": "https://news.ycombinator.com/item?id=50186149",
+       "id": 50186149,
+       "replies": 43
+      },
+      {
+       "user": "dannyw",
+       "stance": "意外",
+       "zh": "这是最让我吃惊的部分：听起来 Calif 看到泄露，以为禁令已经被打破，就抢着发布了他们（带动漫跳舞的）营销视频？我原本期待好得多的表现。",
+       "en": "I'd have expected much better.",
+       "hn": "https://news.ycombinator.com/item?id=50183349",
+       "id": 50183349,
+       "replies": 17
+      },
+      {
+       "user": "eviks",
+       "stance": "批评",
+       "zh": "2024 年 PHP 做了多年来第一次外部安全审计，安全团队却按共识决策、迟迟选不定方案，这次审计真是浪费了（共识显然是决策中的缺陷）。PHP 支撑着大量网站，安全工作却仍靠一小群人，这个结构性问题大概也不会改变。",
+       "en": "consensus is an obvious flaw in decision making",
+       "hn": "https://news.ycombinator.com/item?id=50185281",
+       "id": 50185281,
+       "replies": 13
+      }
+     ],
+     "kicker": "安全 · PHP",
+     "tag": "点赞第四"
+    },
+    {
+     "id": 50180836,
+     "title": "Wiz 详解 PHP2Shell：AI 把潜伏十多年的漏洞变成了能打 WordPress 的利用链",
+     "title_en": "PHP2Shell: AI uncovers critical RCE in PHP",
+     "url": "https://www.wiz.io/blog/php2shell-php-rce",
+     "hn": "https://news.ycombinator.com/item?id=50180836",
+     "points": 431,
+     "comments": 172,
+     "summary": [
+      "Wiz Research 称，这批漏洞是 PHP 核心引擎里的内存安全问题，从 PHP 5.4 起几乎每个版本都至少受其中一个影响，可导致未认证远程代码执行，或读取进程内存中其他请求的密码、令牌、API 密钥和证书。根源在于 PHP 处理请求时的致命错误（尤其是内存不足）可能留下被破坏的内部状态，后续请求或工作进程再复用它。他们把几个漏洞合成一个名为 php2shell 的脚本，在 WordPress、Drupal 和 Joomla 的最新官方容器镜像上演示了无认证执行代码，并强调就算是一个「Hello World」应用也可能中招。",
+      "文章说这些缺陷存在了十多年，难的是把多个漏洞串起来并适配每个目标的内存布局，这在过去接近人工研究的极限；前沿模型能分析失败、反复调整，把针对不同部署的利用开发缩短到几个小时。他们研究中用了 Wiz Atlas、Gemini 4 Argon 和 GPT-5.6 Sol，并特别称赞 Gemini 4 Argon。Wiz 把它与 2014 年的 Heartbleed、2021 年的 Log4Shell 相提并论。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "airtnp",
+       "stance": "梳理",
+       "zh": "看完 Wiz 和 Calif 的文章，我理解是 5 到 6 个问题归到了 2 个 CVE 下。Wiz（用 GPT 5.6 Sol 和 Gemini 4 Argon）找到了远程进程内存泄露、OPcache 类型混淆和致命错误回溯的释放后使用，在 WordPress、Drupal、Joomla 上做了演示；Calif 找到了 Zend 哈希表的内存不足问题；上传进度反序列化器的释放后使用两家都发现了。",
+       "en": "there are 5-6 issues mapped to 2 CVEs",
+       "hn": "https://news.ycombinator.com/item?id=50182057",
+       "id": 50182057,
+       "replies": 30
+      },
+      {
+       "user": "WJW",
+       "stance": "追问",
+       "zh": "两篇文章都描述了怎样让已释放的内存里仍留有指针。我明白这本不该发生，但两篇似乎都跳过了最关键的一步：到底怎么把它变成远程代码执行？",
+       "en": "both articles skip the very important step of how to actually turn this into RCE?",
+       "hn": "https://news.ycombinator.com/item?id=50182847",
+       "id": 50182847,
+       "replies": 2
+      },
+      {
+       "user": "ang_cire",
+       "stance": "感叹",
+       "zh": "（引文：PHP 驱动了约 70% 的网站）好吧，这就是我今天份的令人沮丧的统计数字……",
+       "en": "Well, that's my depressing statistic for the day...",
+       "hn": "https://news.ycombinator.com/item?id=50182769",
+       "id": 50182769,
+       "replies": 16
+      }
+     ],
+     "kicker": "安全 · 漏洞研究"
+    },
+    {
+     "id": 50188228,
+     "title": "Railway 披露安全事件：环境变量遭未授权访问，部分已被解密，全平台暂停部署",
+     "title_en": "Railway Security Disclosure",
+     "url": "https://blog.railway.com/p/security-disclosure-wednesday-october-21st",
+     "hn": "https://news.ycombinator.com/item?id=50188228",
+     "points": 247,
+     "comments": 114,
+     "summary": [
+      "云部署平台 Railway 发布公告称，当天早上检测到存储客户环境变量的系统出现异常活动；目前调查显示，未授权的第三方可能访问了加密的环境变量，其中一部分还拿到了解密后的内容，而环境变量里可能有 API 密钥、数据库和镜像仓库凭证。Railway 认为这属于近期一系列针对平台公司、意在攻破 AI 推理服务商的攻击，已通知上游服务商主动吊销所有密钥。",
+      "Railway 说初步分析显示影响可能只限于部分用户，但仍建议所有用户立即轮换存放在 Railway 的全部环境变量、API 密钥和私有仓库凭证，并检查相关服务日志。调查期间所有部署暂停，无法上线新版本；确认受影响的账户会收到邮件通知。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "MattIPv4",
+       "stance": "证实",
+       "zh": "Railway 的 Discord 里已经有好几个人确认，他们存在 Railway 的密钥被第三方用过了，所以攻击者确实能读到解密后的环境变量。",
+       "en": "their secrets stored in Railway have been used by third parties",
+       "hn": "https://news.ycombinator.com/item?id=50188398",
+       "id": 50188398,
+       "replies": 7
+      },
+      {
+       "user": "fyzix",
+       "stance": "矛盾",
+       "zh": "部署都停了，怎么轮换密钥？这基本是在叫我们把服务下线。",
+       "en": "How is it possible rotate keys if you disable deployments?",
+       "hn": "https://news.ycombinator.com/item?id=50188750",
+       "id": 50188750,
+       "replies": 4
+      },
+      {
+       "user": "martinald",
+       "stance": "预感",
+       "zh": "我有种不好的预感：以后每天都会有点像今天，没完没了的紧急补丁和数据泄露。顺带一提，这听起来和 opencode 上周末遭遇的入侵很像。",
+       "en": "every day is going to look a bit like today with endless urgent patches and breaches",
+       "hn": "https://news.ycombinator.com/item?id=50188541",
+       "id": 50188541,
+       "replies": 20
+      }
+     ],
+     "kicker": "安全 · 云平台"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50180873,
+     "title": "PHP 8.2.35 发布（GitHub 版本页）",
+     "title_en": "PHP 8.2.35",
+     "url": "https://github.com/php/php-src/releases/tag/php-8.2.35",
+     "hn": "https://news.ycombinator.com/item?id=50180873",
+     "points": 957,
+     "comments": 529
+    },
+    {
+     "id": 50176077,
+     "title": "PHP session.upload_progress 堆上释放后使用漏洞详解",
+     "title_en": "PHP session.upload_progress heap UAF (CVE-2026-109618 / -109619)",
+     "url": "https://jackalsyn.com/posts/php-up-2026.html",
+     "hn": "https://news.ycombinator.com/item?id=50176077",
+     "points": 184,
+     "comments": 62
+    },
+    {
+     "id": 50181175,
+     "title": "OpenAI「Patch the Planet」：AI 不断挖出漏洞时的全球协调响应",
+     "title_en": "Patch the Planet: global response coordination as agents uncover vulnerabilities",
+     "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/",
+     "hn": "https://news.ycombinator.com/item?id=50181175",
+     "points": 228,
+     "comments": 151
+    },
+    {
+     "id": 50179828,
+     "title": "荷兰国家网络安全中心网站因使用 PHP 而下线",
+     "title_en": "Dutch National Cyber Security Center is Offline because it uses PHP",
+     "url": "https://www.ncsc.nl/actueel",
+     "hn": "https://news.ycombinator.com/item?id=50179828",
+     "points": 266,
+     "comments": 94
+    },
+    {
+     "id": 50181326,
+     "title": "Cloudflare 为 php2shell 漏洞部署防护",
+     "title_en": "Cloudflare deploys protections against php2shell vulnerability",
+     "url": "https://blog.cloudflare.com/php-vulnerabilities-waf-protection/",
+     "hn": "https://news.ycombinator.com/item?id=50181326",
+     "points": 101,
+     "comments": 15
+    },
+    {
+     "id": 50187708,
+     "title": "AWS 安全公告：PHP 网页运行时漏洞",
+     "title_en": "PHP web runtimes (CVE-2026-109618 and CVE-2026-109619)",
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-143-aws/",
+     "hn": "https://news.ycombinator.com/item?id=50187708",
+     "points": 100,
+     "comments": 25
+    },
+    {
+     "id": 50177916,
+     "title": "八比特的信任：eMudhra 的 CA 私钥几毫秒即可破解",
+     "title_en": "Eight Bits of Trust: eMudhra's CA keys cracked in milliseconds",
+     "url": "https://scotthelme.co.uk/eight-bits-of-trust-emudhras-ca-keys-cracked-in-milliseconds/",
+     "hn": "https://news.ycombinator.com/item?id=50177916",
+     "points": 825,
+     "comments": 394
+    },
+    {
+     "id": 50185869,
+     "title": "GitLab 发布紧急补丁版本",
+     "title_en": "GitLab Critical Patch Release",
+     "url": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/",
+     "hn": "https://news.ycombinator.com/item?id=50185869",
+     "points": 226,
+     "comments": 56
+    },
+    {
+     "id": 50173716,
+     "title": "PingCAP TiDB 数据泄露",
+     "title_en": "PingCap TiDB Leaks",
+     "url": "https://fulcrumsec.vg/pingcap/",
+     "hn": "https://news.ycombinator.com/item?id=50173716",
+     "points": 182,
+     "comments": 23
+    },
+    {
+     "id": 50185630,
+     "title": "Canary Tokens：免费的入侵诱饵令牌",
+     "title_en": "Canary Tokens",
+     "url": "https://canarytokens.org/",
+     "hn": "https://news.ycombinator.com/item?id=50185630",
+     "points": 125,
+     "comments": 22
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 4525,
+    "comments": 1980,
+    "top_points": {
+     "id": 50180873,
+     "title": "PHP 8.2.35 发布（GitHub 版本页）",
+     "value": 957,
+     "comments": 529
+    },
+    "top_comments": {
+     "id": 50180873,
+     "title": "PHP 8.2.35 发布（GitHub 版本页）",
+     "value": 529
+    },
+    "top_brief": {
+     "id": 50180873,
+     "title": "PHP 8.2.35 发布（GitHub 版本页）",
+     "value": 957,
+     "comments": 529
+    }
+   }
+  },
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 3,
+   "stories": [
+    {
+     "id": 50174687,
+     "title": "Meta 的 AI 智能体 Muse 分享链接可被公开搜到：标题写在子域名里，DNS 记录全泄露",
+     "title_en": "Muse exposes users' personal and business secrets when they share conversations",
+     "url": "https://arstechnica.com/security/2026/10/meta-muse-exposes-users-personal-and-business-secrets-when-they-share-conversations/",
+     "hn": "https://news.ycombinator.com/item?id=50174687",
+     "points": 380,
+     "comments": 163,
+     "summary": [
+      "Ars Technica 报道，安全公司 Claroc 的研究人员枚举出 6800 个 Muse 用户为分享对话而生成的链接，打开几百个后看到了显然不该公开的内容：有人为与某前沿 AI 实验室的保密高管招聘通话做的准备笔记、一家全国性营销公司给 CEO 的内部收入复盘、含部分银行账号的待办清单、房地产投资人的业绩报告，以及一家单位全年的员工休假表。研究人员说「原以为要费点功夫，结果只用了一次查询」。",
+      "问题出在链接设计：所有分享页都在 cf.metaaiusercontent.com 下，而且把对话标题放进了子域名，例如 q3-revenue-review-7b1e42f0 这种形式。收件人一点开链接，DNS 解析就会被被动 DNS 服务记录下来，任何人都能在商业数据库里搜到。Claroc 说 10 月 8 日就通过漏洞赏金计划报告过，但没得到回应；Meta 在 Ars 询问后表示已暂停分享功能进行审查。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "omoikane",
+       "stance": "教训",
+       "zh": "这里的教训是：子域名会因为被动 DNS 记录而被查到，把不该被猜到的东西放进子域名是个坏主意。",
+       "en": "putting stuff that is not supposed to be guessable in subdomain names is a bad idea",
+       "hn": "https://news.ycombinator.com/item?id=50176326",
+       "id": 50176326,
+       "replies": 3
+      },
+      {
+       "user": "JumpCrisscross",
+       "stance": "追问",
+       "zh": "澄清一下：用户是有意要把这些对话分享给别人吗？所以 Meta 只是做了一个可被猜到的凭据式链接？还是说所有 Muse 对话默认都是公开的，只是藏在一个不起眼的网址后面？",
+       "en": "Meta just created a guessable capability URL?",
+       "hn": "https://news.ycombinator.com/item?id=50177116",
+       "id": 50177116,
+       "replies": 12
+      },
+      {
+       "user": "lmf4lol",
+       "stance": "同行",
+       "zh": "我们在欧洲做个人 AI 助理平台。天哪，这真是太难了！我们现在有 20 个付费用户，他们干的事你根本想不到：每个人都定制了自己的沙箱，跑着定时任务，搭了应用和自动化。想到 Meta Muse 几乎瞬间就有了一百万用户，我一点也不惊讶。",
+       "en": "It is FREAKING HARD!",
+       "hn": "https://news.ycombinator.com/item?id=50177257",
+       "id": 50177257,
+       "replies": 45
+      }
+     ],
+     "kicker": "AI · 隐私"
+    },
+    {
+     "id": 50186037,
+     "title": "Anthropic 推出 Claude Duet：会主动找你的常驻智能体，研究预览中",
+     "title_en": "Claude Duet",
+     "url": "https://claude.com/product/claude-duet",
+     "hn": "https://news.ycombinator.com/item?id=50186037",
+     "points": 295,
+     "comments": 250,
+     "summary": [
+      "Anthropic 发布 Claude Duet 研究预览版，定位是「主动型」智能体：每天早上给你做简报、起草下一步，然后保持安静，直到有事需要你。你通过文字或语音给它发消息派活，它在云端自己的电脑上使用你连接的应用干活，完成后或需要你决定时再来找你；发送消息、付款等敏感操作前会先征求同意，审批、登录和安全检查在你自己的云端电脑里进行。",
+      "它沿用 Claude 账户里的记忆、技能和连接器，可以筛出收件箱和日历里需要处理的事并起草回复，也能找出未付发票、准备工资单供审核、整理合同，或做简报、幻灯片和仪表盘。目前只面向美国的 Claude Pro 和 Max 订阅用户排队开放，团队版和企业版暂不包括；后台检查会计入套餐用量。官方也提醒它可能读错消息、误判轻重缓急。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "roarcher",
+       "stance": "担忧",
+       "zh": "这东西显然能和 1Password 集成。是我在这个 AI 新世界里落伍了，还是让大模型访问密码管理器本来就是最糟糕的主意？",
+       "en": "giving an LLM access to your password manager the mother of all bad ideas?",
+       "hn": "https://news.ycombinator.com/item?id=50186284",
+       "id": 50186284,
+       "replies": 10
+      },
+      {
+       "user": "ttul",
+       "stance": "生意经",
+       "zh": "我猜 Dots 和 Duet 对各家实验室是利润率很高的产品。个人助理会话不需要实时，可以排在低优先级批次里，有更高价值的任务时就让它等。推理服务商总想把批次填满，这类请求能塞进原本会空着的批次，又不拖慢实时聊天。",
+       "en": "very high margin drivers for the labs",
+       "hn": "https://news.ycombinator.com/item?id=50186527",
+       "id": 50186527,
+       "replies": 7
+      },
+      {
+       "user": "herodoturtle",
+       "stance": "疲惫",
+       "zh": "我理解 AI 的影响和它对人类的长远意义，但 HN 上这么多 AI 相关标题让我有点累了。也许只是我，但感觉每天首页大半都是大模型相关的发布。",
+       "en": "I am getting kinda tired of seeing so many AI-related headlines here on HN.",
+       "hn": "https://news.ycombinator.com/item?id=50186245",
+       "id": 50186245,
+       "replies": 53
+      }
+     ],
+     "kicker": "AI · 智能体"
+    },
+    {
+     "id": 50180079,
+     "title": "OpenAI 模型将登陆谷歌云 Model Garden，还会进入 Antigravity 和 Gemini Agent",
+     "title_en": "OpenAI models are coming to Google Cloud",
+     "url": "https://openai.com/index/openai-models-google-cloud/",
+     "hn": "https://news.ycombinator.com/item?id=50180079",
+     "points": 224,
+     "comments": 96,
+     "summary": [
+      "OpenAI 宣布与谷歌云合作，把前沿模型和 Codex 智能体工作流接入谷歌云的 Model Garden，搭配谷歌云的访问控制和集中数据治理。客户可通过谷歌云市场购买，已有谷歌云消费承诺的企业可以用承诺额度抵扣。OpenAI 模型稍后还会出现在谷歌的 Google Antigravity 和 Gemini Agent 中。",
+      "公告引用了 OpenAI 总裁 Greg Brockman 和谷歌云 CEO Thomas Kurian 的话，正式上线计划在未来几周；文末特意注明「微软仍是 OpenAI 的主要云合作伙伴」。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "nsagent",
+       "stance": "彩蛋",
+       "zh": "最爱文末那句免责声明：微软仍是 OpenAI 的主要云合作伙伴。",
+       "en": "Gotta love the disclaimer at the bottom",
+       "hn": "https://news.ycombinator.com/item?id=50183965",
+       "id": 50183965,
+       "replies": 15
+      },
+      {
+       "user": "londons_explore",
+       "stance": "账本",
+       "zh": "（引文：有谷歌云消费承诺的企业可以用承诺额度抵扣）这是谷歌相当大的一步：这意味着他们已经入账并向股东报告的收入，现在可能要让出去，甚至全部让出去。会计最讨厌这个！",
+       "en": "It means revenue they have already booked and reported to shareholders they now might have to give away",
+       "hn": "https://news.ycombinator.com/item?id=50185535",
+       "id": 50185535,
+       "replies": 8
+      },
+      {
+       "user": "anthonypasq",
+       "stance": "内斗",
+       "zh": "布林最好真的进入「创始人模式」，否则谷歌云负责人 Thomas Kurian 会继续抢 DeepMind 的饭碗。又对外卖 TPU、又托管竞争对手的模型，Gemini 显然没得到 Alphabet 资本分配者的充分信任，我也不怪他们。",
+       "en": "Gemini just doesnt have the full faith of the Alphabet capital allocators",
+       "hn": "https://news.ycombinator.com/item?id=50186241",
+       "id": 50186241,
+       "replies": 10
+      }
+     ],
+     "kicker": "AI · 云服务"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50180752,
+     "title": "OpenAI：用数千个 AI 智能体在生物数据中寻找新线索",
+     "title_en": "Using thousands of AI agents to uncover new leads in biological data",
+     "url": "https://openai.com/index/scaling-ai-research-for-complex-biological-data/",
+     "hn": "https://news.ycombinator.com/item?id=50180752",
+     "points": 125,
+     "comments": 81
+    },
+    {
+     "id": 50175779,
+     "title": "Anthropic：用 Claude 缩小代码的攻击面",
+     "title_en": "Using Claude to reduce the attack surface of code",
+     "url": "https://www.anthropic.com/research/attack-surface-reduction",
+     "hn": "https://news.ycombinator.com/item?id=50175779",
+     "points": 130,
+     "comments": 85
+    },
+    {
+     "id": 50186043,
+     "title": "谷歌员工因公司与军方的 AI 合同辞职抗议",
+     "title_en": "Google staff resign in backlash over its AI contracts with military",
+     "url": "https://www.bbc.com/news/articles/cmreyvepnv0po",
+     "hn": "https://news.ycombinator.com/item?id=50186043",
+     "points": 105,
+     "comments": 19
+    },
+    {
+     "id": 50185045,
+     "title": "编译器当年也被认为会终结编程",
+     "title_en": "The compiler was supposed to end programming too",
+     "url": "https://hrih.si/articles/the-compiler-was-supposed-to-end-programming/",
+     "hn": "https://news.ycombinator.com/item?id=50185045",
+     "points": 94,
+     "comments": 133
+    },
+    {
+     "id": 50176908,
+     "title": "Launch HN：Alter（YC S25），多用户智能体的访问控制",
+     "title_en": "Launch HN: Alter (YC S25) – Access control for multi-user agents",
+     "url": "https://alterauth.com/",
+     "hn": "https://news.ycombinator.com/item?id=50176908",
+     "points": 44,
+     "comments": 20
+    },
+    {
+     "id": 50179857,
+     "title": "LayerFS：为 AI 编程智能体设计的文件系统",
+     "title_en": "LayerFS: The filesystem for AI coding agents",
+     "url": "https://layerfs.ai/",
+     "hn": "https://news.ycombinator.com/item?id=50179857",
+     "points": 69,
+     "comments": 42
+    },
+    {
+     "id": 50183344,
+     "title": "GitHub：通往智能体规模 Git 基础设施的桥梁",
+     "title_en": "The bridge to agent-scale Git infrastructure",
+     "url": "https://github.blog/engineering/architecture-optimization/the-bridge-to-agent-scale-git-infrastructure/",
+     "hn": "https://news.ycombinator.com/item?id=50183344",
+     "points": 55,
+     "comments": 15
+    },
+    {
+     "id": 50151175,
+     "title": "文学骗局的暴利世界",
+     "title_en": "The Lucrative World of Literary Scams",
+     "url": "https://www.thedial.world/articles/news/ai-book-scams",
+     "hn": "https://news.ycombinator.com/item?id=50151175",
+     "points": 70,
+     "comments": 13
+    }
+   ],
+   "stats": {
+    "items": 11,
+    "points": 1591,
+    "comments": 917,
+    "top_points": {
+     "id": 50174687,
+     "title": "Meta 的 AI 智能体 Muse 分享链接可被公开搜到：标题写在子域名里，DNS 记录全泄露",
+     "value": 380,
+     "comments": 163
+    },
+    "top_comments": {
+     "id": 50186037,
+     "title": "Anthropic 推出 Claude Duet：会主动找你的常驻智能体，研究预览中",
+     "value": 250
+    },
+    "top_brief": {
+     "id": 50175779,
+     "title": "Anthropic：用 Claude 缩小代码的攻击面",
+     "value": 130,
+     "comments": 85
+    }
+   }
+  },
+  {
+   "name": "开发",
+   "en": "Software",
+   "page": 4,
+   "stories": [
+    {
+     "id": 50181136,
+     "title": "DuckDB 2.0.0 LTS 发布：客户端-服务器协议、异步 I/O、VARIANT 类型和触发器",
+     "title_en": "DuckDB 2.0.0 LTS “Cinnamon Teal”",
+     "url": "https://duckdb.org/2026/10/21/announcing-duckdb-200",
+     "hn": "https://news.ycombinator.com/item?id=50181136",
+     "points": 354,
+     "comments": 43,
+     "summary": [
+      "DuckDB 团队发布 2.0.0 长期支持版，代号「Cinnamon Teal」（桂红鸭），称这是迄今最大的功能版本，自 1.5 以来近两万次提交。如果说 1.0 讲的是稳定和向后兼容，2.0 首先是功能版本：打磨后的 Quack 协议让 DuckDB 可以按传统的客户端-服务器方式运行，新的 CONNECT 语句一条命令就能连上并切换到远程数据库（也支持 PostgreSQL 和 MySQL，并把查询直接下推到远端），命令行加了 -serve 和 -connect 参数。",
+      "读取 Parquet、CSV 和原生存储格式改为异步 I/O，I/O 层与查询处理独立扩展，对 s3:// 等对象存储的查询大幅加快；VARIANT 类型能在列式执行下存放每行结构不同的半结构化数据，并自动识别共同结构拆分存储。此外还有智能体模式、触发器和可扩展的 SQL 解析器。2.0 支持到至少 2027 年 10 月，1.5 的支持也延长到 2027 年 3 月。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "RobinL",
+       "stance": "实测",
+       "zh": "我们发现 DuckDB 2.0 在 EC2 的高核数机器上快得多，不只是从 S3 读数据，计算本身也是。它更可能在 128 或 192 个 vCPU 内跑满 100%；2.0 之前速度大约在 64 个 vCPU 就封顶了。这让我们的开源记录链接工具 Splink 能在 10 分钟内处理 10 亿条记录、100 亿次比对。",
+       "en": "prior to 2.0, speed would top out at more like 64vCPU",
+       "hn": "https://news.ycombinator.com/item?id=50181617",
+       "id": 50181617,
+       "replies": 6
+      },
+      {
+       "user": "datadrivenangel",
+       "stance": "期待",
+       "zh": "非常期待触发器。DuckDB 现在真的接近「盒装数据仓库」了。",
+       "en": "Now DuckDB really is close to being a data warehouse in a box.",
+       "hn": "https://news.ycombinator.com/item?id=50182578",
+       "id": 50182578,
+       "replies": 2
+      },
+      {
+       "user": "mikkelam",
+       "stance": "困惑",
+       "zh": "我很想用 DuckDB，但一直没在公司里找到用武之地。你们都拿它做什么？",
+       "en": "I have struggled to find a use case in my company.",
+       "hn": "https://news.ycombinator.com/item?id=50183371",
+       "id": 50183371,
+       "replies": 10
+      }
+     ],
+     "kicker": "开发 · 数据库"
+    },
+    {
+     "id": 50175510,
+     "title": "NetWasm：C# 编译到 WebAssembly 的体积首次小过 Rust",
+     "title_en": "C# now beats Rust on WASM size",
+     "url": "https://github.com/zion-sati/NetWasm",
+     "hn": "https://news.ycombinator.com/item?id=50175510",
+     "points": 152,
+     "comments": 102,
+     "summary": [
+      "NetWasm 是一个独立的编译器、核心库、运行时和 SDK，能把 C# 和 .NET 中间语言直接编译成 WebAssembly，生产环境里不带桌面 CLR、Mono 或 dotnet.js。README 的标题就是「C# 现在在 Wasm 体积上赢过 Rust」：同样打印 42 的程序，NetWasm 连同运行时和精确垃圾回收器共 47,895 字节，按体积优化配置的 Rust 1.95.0 是 53,635 字节，原始小 10.7%、Brotli 压缩后小 19.5%；Kotlin/Wasm 和 TinyGo 分别是 79,293 和 93,043 字节。",
+      "作者也写明这只是特定负载的测量，不是语言之间的体积排名，两边都能做得更小，但那就要放弃大部分标准库。在分配和垃圾回收基准上，NetWasm 比微软的 Mono AOT 快 26% 到 40%；它支持用普通的 dotnet 命令行构建、测试和发布，并能把 C# 导出为可在网页或 Web Worker 里运行的 JavaScript 模块。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "sondr3",
+       "stance": "不公平",
+       "zh": "这个比较有点不公平，测的 C# 代码还做了后处理，其他目标都没有。看作者在 r/dotnet 发帖下的这条评论，Rust 可以做得小得多。标题往轻了说是误导，往重了说就是撒谎。",
+       "en": "Rust can go much, much lower",
+       "hn": "https://news.ycombinator.com/item?id=50177223",
+       "id": 50177223,
+       "replies": 8
+      },
+      {
+       "user": "weinzierl",
+       "stance": "改口",
+       "zh": "这比较有点不公平吧？WASM 自带 C# 能用的垃圾回收器，而 Rust 要自己管理内存。（编辑：仔细读了原文，我好像错了。看起来参与比较的 C# 版本自己带了一个含垃圾回收器的运行时。）",
+       "en": "Apparently in the compared versions, the C# version ships a runtime with garbage collector.",
+       "hn": "https://news.ycombinator.com/item?id=50177115",
+       "id": 50177115,
+       "replies": 19
+      },
+      {
+       "user": "Scaled",
+       "stance": "许可",
+       "zh": "值得指出这不是开源的，如果你在比较两者时在意这一点的话（我很在意）。",
+       "en": "Worth pointing out this is not open source",
+       "hn": "https://news.ycombinator.com/item?id=50178268",
+       "id": 50178268,
+       "replies": 1
+      }
+     ],
+     "kicker": "开发 · WebAssembly"
+    },
+    {
+     "id": 50159726,
+     "title": "Windows 11 里至今藏着 Windows 95 的堆管理器",
+     "title_en": "Why Windows 11 still ships with Windows 95's memory manager hidden inside it",
+     "url": "https://www.windowslatest.com/2026/10/19/why-windows-11-still-ships-with-windows-95s-memory-manager-hidden-inside-it/",
+     "hn": "https://news.ycombinator.com/item?id=50159726",
+     "points": 121,
+     "comments": 86,
+     "summary": [
+      "Windows Latest 报道，Windows 11 26H2 仍带着一个叫 EmulateHeap 的兼容性修复，它会给依赖 Windows 95 宽松内存行为的老程序换上 Windows 95 的堆管理器。微软工程师 Raymond Chen 在 2010 年的专栏里解释过：一些程序会读取已释放的内存并指望旧值还在，到新版 Windows 就会崩溃；EmulateHeap 把这类程序的堆调用重定向到模仿 Windows 95 的实现，做法是「直接拿 Windows 95 堆管理器的源码重新编译，加进兼容性框架」，只有为某个程序启用时才从硬盘加载。",
+      "文章把这种传统追溯到 SimCity：据 Joel Spolsky 2000 年的文章，Windows 95 测试版上 SimCity 因为释放后读取内存的 bug 崩溃，微软就让系统在检测到 SimCity 时让内存分配器不立即释放内存。作者在 Windows 11 26H2 上用 Windows ADK 里的兼容性管理器找到了 EmulateHeap，但也提到有用户反映 22H2 之后启用它的部分老游戏会没声音或崩溃。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "LASR",
+       "stance": "赞叹",
+       "zh": "不管你怎么看 Windows 和微软，三十多年前的应用今天还能跑，这一点很了不起。",
+       "en": "the idea that you can still run apps that are 30+ years old is incredible",
+       "hn": "https://news.ycombinator.com/item?id=50187188",
+       "id": 50187188,
+       "replies": 21
+      },
+      {
+       "user": "abanana",
+       "stance": "纠错",
+       "zh": "文章关于 SimCity 的部分写得不好，作者似乎误以为那是一次性的特例。我回头看了 Joel Spolsky 的原文，他说得很清楚 SimCity 只是众多例子之一：微软在这点上非常执着，花了大笔钱测试能找到的所有老程序。",
+       "en": "It seems the author has misunderstood it to have been a one-off special case.",
+       "hn": "https://news.ycombinator.com/item?id=50186610",
+       "id": 50186610,
+       "replies": 14
+      },
+      {
+       "user": "adwf",
+       "stance": "隐患",
+       "zh": "这类向后兼容大概会是 AI 辅助漏洞挖掘的金矿。我打赌微软未来几年得移除其中相当一部分。",
+       "en": "this sort of backwards compatibility is an absolute goldmine for AI assisted vulnerability searches",
+       "hn": "https://news.ycombinator.com/item?id=50188250",
+       "id": 50188250,
+       "replies": 0
+      }
+     ],
+     "kicker": "开发 · 操作系统"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50186010,
+     "title": "谷歌的 Rust 风格指南",
+     "title_en": "Google's Rust Style Guide",
+     "url": "https://google.github.io/styleguide/rustguide.html",
+     "hn": "https://news.ycombinator.com/item?id=50186010",
+     "points": 175,
+     "comments": 105
+    },
+    {
+     "id": 50161346,
+     "title": "别再默认给每个菜单项配图标",
+     "title_en": "No More Icons in Every Menu by Default",
+     "url": "https://blog.jim-nielsen.com/2026/icons-in-every-menu/",
+     "hn": "https://news.ycombinator.com/item?id=50161346",
+     "points": 134,
+     "comments": 97
+    },
+    {
+     "id": 50158408,
+     "title": "Drupal 如今已远远超过它的名声",
+     "title_en": "Drupal is now light-years ahead of its reputation",
+     "url": "https://dri.es/state-of-drupal-presentation-september-2026",
+     "hn": "https://news.ycombinator.com/item?id=50158408",
+     "points": 111,
+     "comments": 116
+    },
+    {
+     "id": 50180039,
+     "title": "Show HN：Sumi.css，一个 CSS 框架",
+     "title_en": "Show HN: Sumi.css – CSS Framework",
+     "url": "https://github.com/vladocar/Sumi.css",
+     "hn": "https://news.ycombinator.com/item?id=50180039",
+     "points": 72,
+     "comments": 18
+    },
+    {
+     "id": 50165215,
+     "title": "使用 Decker 的四年",
+     "title_en": "Four Years with Decker",
+     "url": "https://beyondloom.com/blog/fouryearsdecker.html",
+     "hn": "https://news.ycombinator.com/item?id=50165215",
+     "points": 57,
+     "comments": 16
+    },
+    {
+     "id": 50175882,
+     "title": "在 macOS 上用 Touch ID 保护 SSH 密钥",
+     "title_en": "Setting Up SSH Keys on macOS with Touch ID",
+     "url": "https://nmattia.com/posts/2026-10-19-setting-up-ssh-keys-touch-id/",
+     "hn": "https://news.ycombinator.com/item?id=50175882",
+     "points": 88,
+     "comments": 46
+    },
+    {
+     "id": 50151771,
+     "title": "零成本循环可变性的借用检查",
+     "title_en": "Borrow Checking Zero-Cost Cyclic Mutability",
+     "url": "https://antelang.org/blog/safe_cyclic_mutability/",
+     "hn": "https://news.ycombinator.com/item?id=50151771",
+     "points": 38,
+     "comments": 4
+    },
+    {
+     "id": 50155751,
+     "title": "C++ futures 第一部分：心智模型",
+     "title_en": "C++ futures part 1: The mental model",
+     "url": "https://devblogs.microsoft.com/oldnewthing/20261012-00/?p=112767/",
+     "hn": "https://news.ycombinator.com/item?id=50155751",
+     "points": 61,
+     "comments": 13
+    },
+    {
+     "id": 50183727,
+     "title": "Rust off Rails：AI 时代的主张式 Web 技术栈",
+     "title_en": "Rust off Rails: The opinionated web stack for the AI era",
+     "url": "https://rustoffrails.org/",
+     "hn": "https://news.ycombinator.com/item?id=50183727",
+     "points": 67,
+     "comments": 74
+    },
+    {
+     "id": 50158314,
+     "title": "Ruby on Rails 现在还有意义吗？",
+     "title_en": "Does Ruby on Rails still make sense?",
+     "url": "https://tech.dirkjonker.nl/does-ruby-on-rails-make-sense/",
+     "hn": "https://news.ycombinator.com/item?id=50158314",
+     "points": 73,
+     "comments": 77
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1503,
+    "comments": 797,
+    "top_points": {
+     "id": 50181136,
+     "title": "DuckDB 2.0.0 LTS 发布：客户端-服务器协议、异步 I/O、VARIANT 类型和触发器",
+     "value": 354,
+     "comments": 43
+    },
+    "top_comments": {
+     "id": 50158408,
+     "title": "Drupal 如今已远远超过它的名声",
+     "value": 116
+    },
+    "top_brief": {
+     "id": 50186010,
+     "title": "谷歌的 Rust 风格指南",
+     "value": 175,
+     "comments": 105
+    }
+   }
+  },
+  {
+   "name": "社会与文化",
+   "en": "Society & Culture",
+   "page": 5,
+   "stories": [
+    {
+     "id": 50181137,
+     "title": "No Kings 的 Instagram 账号被封一小时：别把扩音器租给扎克伯格",
+     "title_en": "The No Kings Takedown Is Why You Shouldn't Rent Your Megaphone from Zuck",
+     "url": "https://www.techdirt.com/2026/10/20/accident-or-not-the-no-kings-takedown-is-why-you-shouldnt-rent-your-megaphone-from-zuck/",
+     "hn": "https://news.ycombinator.com/item?id=50181137",
+     "points": 489,
+     "comments": 473,
+     "summary": [
+      "Techdirt 的 Mike Masnick 写道，上周末又一轮大规模「No Kings」抗议（这次是为中期选举动员提前投票）进行期间，No Kings 的 Instagram 账号被封了约一小时，管理员访问又被锁了好几个小时。很多支持者怀疑是扎克伯格在帮特朗普，但作者认为这不太可能是故意的，并说原因会在文末交代。",
+      "他的重点是 Will Robinson 和 Tim Chambers 的观点：是不是故意都不重要，问题在于这件事有可能发生。他们给数字组织者的建议是准备第三方无法轻易关掉的沟通渠道、在开放平台上开账号、提前想好账号被封时怎么应对。Masnick 进一步主张去中心化和用户自主，引用 Danny O'Brien 关于「认知自由」的文字：把言论交给无法带着内容和关系退出的第三方，就放弃了一项基本自由。这篇有 473 条评论，评论/点赞比在点赞过百的帖子里排第四。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "fullshark",
+       "stance": "反讽",
+       "zh": "所以我把抗议组织在 Mastodon 上。一个人都没来，但我的订阅者都夸我组织得太棒了。",
+       "en": "That's why I organized my protest on mastodon.",
+       "hn": "https://news.ycombinator.com/item?id=50181934",
+       "id": 50181934,
+       "replies": 146
+      },
+      {
+       "user": "vlyan",
+       "stance": "回旋镖",
+       "zh": "我不禁想起「去平台化」时代那些欢呼声。「言论自由不适用于公司」这句话让我记忆犹新。",
+       "en": "\"Freedom of speech doesn't apply to companies\" is a particularly vivid memory.",
+       "hn": "https://news.ycombinator.com/item?id=50182122",
+       "id": 50182122,
+       "replies": 114
+      },
+      {
+       "user": "slibhb",
+       "stance": "就事论事",
+       "zh": "这是个真问题，但似乎跟扎克伯格或 Meta 本身没什么关系，文章也承认这次一小时的封号不太可能是高层决定。在所有大平台上，人都会被封号且投诉无门。解决办法确实是自己托管内容和网站，或者「要协议，不要平台」。",
+       "en": "it doesn't seem to have anything to do with Zuckerberg or Meta in particular",
+       "hn": "https://news.ycombinator.com/item?id=50182039",
+       "id": 50182039,
+       "replies": 5
+      }
+     ],
+     "kicker": "社会 · 平台"
+    },
+    {
+     "id": 50173891,
+     "title": "另一场流行病：一个人戒掉服用十九年的苯二氮䓬类药物",
+     "title_en": "The Other Epidemic: Trying to get off benzodiazepines",
+     "url": "https://www.thebeliever.net/the-other-epidemic/",
+     "hn": "https://news.ycombinator.com/item?id=50173891",
+     "points": 289,
+     "comments": 235,
+     "summary": [
+      "艺术家兼作家 Brad Phillips 在《The Believer》上讲述了他停用氯硝西泮（Klonopin）的经历。2021 年 4 月他因自杀念头去了多伦多成瘾与心理健康中心，医生看了病历后说他不该长期每天服用，给了他三周减完的方案。减量两天就开始手麻出汗，之后是四肢麻木、颈部刺痛、剧烈耳鸣、失眠、大汗、人格解体、肌肉抽动、每天早上呕吐，以及连续几小时像被电击的感觉；他被误诊为神经受压和关节炎，并第一次有了具体的自杀计划。",
+      "文章引用研究估计，2015 到 2016 年约 3060 万美国成年人在一年内用过苯二氮䓬类药物；《Ashton 手册》作者推测其中 10% 到 15% 会出现长期戒断反应，也有研究者认为可能高达 40%，而医学院学生只花几个小时学习这类药。作者如今 52 岁，仍在戒断后遗症里，正犹豫要不要听新医生的建议尝试另一种药。The Believer 向该中心询问时，对方未作具体回应。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "gavinray",
+       "stance": "亲历",
+       "zh": "我曾经蠢到几乎对除了酒精以外的所有东西都上过瘾、又都戒过。苯二氮䓬类药物的戒断是人间地狱，无法形容，我不希望我最恨的人经历。它比阿片类戒断强烈一个数量级，时间以周和月计，而不是几天。我和作者一样，靠一年的 Ashton 方案慢慢减量才戒掉。",
+       "en": "It is an order of magnitude more intense than opiate withdrawals",
+       "hn": "https://news.ycombinator.com/item?id=50173991",
+       "id": 50173991,
+       "replies": 23
+      },
+      {
+       "user": "yodsanklai",
+       "stance": "另一面",
+       "zh": "换个角度：我服用溴西泮 25 年了，但只在非常焦虑或睡不着时偶尔用，一年几次，从不连续超过一两天，从没出现过一点成瘾迹象。这不是医疗建议，我也不会只凭个人经历下结论，但这些药确实能帮到一些人。",
+       "en": "These drugs can certainly be helpful to some people.",
+       "hn": "https://news.ycombinator.com/item?id=50174255",
+       "id": 50174255,
+       "replies": 18
+      },
+      {
+       "user": "soniczentropy",
+       "stance": "家人",
+       "zh": "我母亲吃了二十多年每天四次的赞安诺，她的精神科医生决定让她骤停，我陪她熬过了这一切：五次急诊、三次住院，痛苦了整整一年才开始缓解。我看过家人死于艾滋病、癌症和阿尔茨海默病，我自己也戒过酒，但这辈子没有什么比得上苯二氮䓬戒断的地狱。",
+       "en": "Nothing in all my life has ever held a candle to how hellish Benzo withdrawal is.",
+       "hn": "https://news.ycombinator.com/item?id=50174587",
+       "id": 50174587,
+       "replies": 10
+      }
+     ],
+     "kicker": "社会 · 医疗"
+    },
+    {
+     "id": 50178455,
+     "title": "外挂消防梯去哪儿了？一部建筑规范演变史",
+     "title_en": "Whatever Happened to Fire Escapes",
+     "url": "https://practical.engineering/blog/2026/10/20/whatever-happened-to-fire-escapes",
+     "hn": "https://news.ycombinator.com/item?id=50178455",
+     "points": 185,
+     "comments": 151,
+     "summary": [
+      "Practical Engineering 的 Grady 讲述了美国外挂消防梯的兴衰。19 世纪中期纽约、波士顿、芝加哥大量兴建拥挤的廉租公寓，楼梯成了烟火上窜的通道；1860 年 2 月纽约一栋六层公寓底层面包房起火，消防梯子只够到四楼，十人遇难，舆论推动纽约通过法律，要求这类楼有防火楼梯或外部逃生途径，外挂铁楼梯由此遍布老城区。",
+      "但它的缺点越积越多：破坏立面、方便小偷爬上楼、容易生锈需要维护、平时没人练习、最下面那段折叠梯常常放不下来、医院等建筑不适用，还常被住户堆满杂物。1968 年纽约修订建筑规范，禁止新建筑使用外部出口。取而代之的正是富兰克林研究所 1881 年的建议：依靠每天使用的、砖砌不燃、有自闭门防烟的室内楼梯。作者借此说明建筑规范的惯性，并举例说美国电梯因一项要求能放下担架的修订变得更大更贵，反而让更多楼干脆不装电梯。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Ensorceled",
+       "stance": "进步",
+       "zh": "和火灾有关的一切都变好了：更多更好的烟雾和一氧化碳报警器、室内喷淋、阻燃服装和床垫的规定、吸烟率下降、响应更快、更好的公寓检查……火灾越来越少，人们也能提前得到充分预警，所以我们其实不太需要多个逃生出口了。安大略的消防员闲得发慌，被派去处理各种事，连小剐蹭都出动。",
+       "en": "fires are occurring less often and people are getting plenty of warning",
+       "hn": "https://news.ycombinator.com/item?id=50179010",
+       "id": 50179010,
+       "replies": 112
+      },
+      {
+       "user": "pinum",
+       "stance": "存疑",
+       "zh": "让主楼梯更防火当然好，但我不完全认同拆掉外挂消防梯而不是两者都留的理由。万一主楼梯真的走不通，我宁愿有个冒险走外部消防梯的选项，哪怕它生锈了或堆着杂物。",
+       "en": "I'm not fully convinced by the arguments for removing external ones instead of having both.",
+       "hn": "https://news.ycombinator.com/item?id=50179698",
+       "id": 50179698,
+       "replies": 6
+      },
+      {
+       "user": "ezconnect",
+       "stance": "日本",
+       "zh": "在日本，楼房的主楼梯就设计得像消防梯，不封闭，大多在建筑侧面。我第一次见时觉得雨雪天还露天很傻，后来才明白它有双重用途。在韩国，几乎所有公寓楼都在窗边配有逃生绳，门口柜子里放着防火毯。",
+       "en": "In Japan, the main stairs of the building is designed like fire escapes.",
+       "hn": "https://news.ycombinator.com/item?id=50179932",
+       "id": 50179932,
+       "replies": 0
+      }
+     ],
+     "kicker": "文化 · 工程"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50175185,
+     "title": "在希尔伯特空间里，一切在量子意义上皆有可能",
+     "title_en": "In Hilbert space, all things are quantumly possible",
+     "url": "https://www.quantamagazine.org/in-hilbert-space-all-things-are-quantumly-possible-20260826/",
+     "hn": "https://news.ycombinator.com/item?id=50175185",
+     "points": 141,
+     "comments": 75
+    },
+    {
+     "id": 50162044,
+     "title": "被认为已灭绝 6000 年的小型负鼠和滑翔袋貂在西巴布亚偏远地区现身",
+     "title_en": "Tiny possum and glider thought extinct for 6000 years found in remote West Papua",
+     "url": "https://www.bbc.com/news/articles/cp814l80pw2o",
+     "hn": "https://news.ycombinator.com/item?id=50162044",
+     "points": 141,
+     "comments": 25
+    },
+    {
+     "id": 50170917,
+     "title": "学者有责任捍卫维基百科这样的开放知识系统",
+     "title_en": "Academics have a duty to defend open knowledge systems like Wikipedia",
+     "url": "https://blogs.lse.ac.uk/impactofsocialsciences/2026/10/19/academics-have-a-duty-to-defend-open-knowledge-systems-like-wikipedia/",
+     "hn": "https://news.ycombinator.com/item?id=50170917",
+     "points": 227,
+     "comments": 145
+    },
+    {
+     "id": 50175059,
+     "title": "逆境中的好字体",
+     "title_en": "Good type against all odds",
+     "url": "https://unsung.aresluna.org/good-type-against-all-odds/",
+     "hn": "https://news.ycombinator.com/item?id=50175059",
+     "points": 197,
+     "comments": 20
+    },
+    {
+     "id": 50150214,
+     "title": "在 Apple Vision Pro 上玩《超级马里奥 64》",
+     "title_en": "Way to Play Super Mario 64: On Apple Vision Pro",
+     "url": "https://www.pagetable.com/303",
+     "hn": "https://news.ycombinator.com/item?id=50150214",
+     "points": 199,
+     "comments": 85
+    },
+    {
+     "id": 50182526,
+     "title": "俄勒冈议员批准拨款，买下挂在 Redfin 上出售的标志性瀑布",
+     "title_en": "Oregon lawmakers approve money to buy an iconic waterfall listed on Redfin",
+     "url": "https://apnews.com/article/oregon-waterfall-for-sale-lawmakers-996de63462d49ec3ad9bee1629fb9488",
+     "hn": "https://news.ycombinator.com/item?id=50182526",
+     "points": 166,
+     "comments": 79
+    },
+    {
+     "id": 50186318,
+     "title": "Plex 裁掉了整个播放器团队",
+     "title_en": "Plex laid off the whole player team",
+     "url": "https://forums.plex.tv/t/2026-20-0-beta-ios-and-tvos-4k-dovi-hdr10-won-t-play-infinite-spinning-circle/943966?page=5",
+     "hn": "https://news.ycombinator.com/item?id=50186318",
+     "points": 115,
+     "comments": 87
+    },
+    {
+     "id": 50180444,
+     "title": "大多数建议只对给建议的人才是对的",
+     "title_en": "Most advice is right for the person giving it",
+     "url": "https://coached.com/essays/most-advice-is-right-for-the-person-giving-it/",
+     "hn": "https://news.ycombinator.com/item?id=50180444",
+     "points": 143,
+     "comments": 142
+    },
+    {
+     "id": 50147799,
+     "title": "ZX Spectrum Next 笔记本电脑",
+     "title_en": "ZX Spectrum Next Laptop",
+     "url": "https://www.dorchester3d.com/printing/blog/2020/11/zx-spectrum-next-laptop-version-2",
+     "hn": "https://news.ycombinator.com/item?id=50147799",
+     "points": 124,
+     "comments": 26
+    },
+    {
+     "id": 50183512,
+     "title": "新型塑料污染「塑料珊瑚」：珊瑚碎屑与塑料熔结在一起",
+     "title_en": "New plastic pollution discovered: 'Plasticorals' coral rubble fused with plastic",
+     "url": "https://www.oist.jp/news-center/news/2026/9/18/new-form-plastic-pollution-discovered-shores-vulnerable-coral-reefs",
+     "hn": "https://news.ycombinator.com/item?id=50183512",
+     "points": 93,
+     "comments": 33
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2509,
+    "comments": 1576,
+    "top_points": {
+     "id": 50181137,
+     "title": "No Kings 的 Instagram 账号被封一小时：别把扩音器租给扎克伯格",
+     "value": 489,
+     "comments": 473
+    },
+    "top_comments": {
+     "id": 50181137,
+     "title": "No Kings 的 Instagram 账号被封一小时：别把扩音器租给扎克伯格",
+     "value": 473
+    },
+    "top_brief": {
+     "id": 50170917,
+     "title": "学者有责任捍卫维基百科这样的开放知识系统",
+     "value": 227,
+     "comments": 145
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "fullshark",
+  "id": 50181934,
+  "hn": "https://news.ycombinator.com/item?id=50181934",
+  "story_id": 50181137,
+  "story": "No Kings 的 Instagram 账号被封一小时：别把扩音器租给扎克伯格",
+  "zh": "所以我把抗议组织在 Mastodon 上。一个人都没来，但我的订阅者都夸我组织得太棒了。",
+  "en": "No one showed up but my subscribers told me how awesome it was that I organized it."
+ },
+ "stats": {
+  "snapshot": "2026-10-22T08:16:02+08:00",
+  "front_page_count": 90,
+  "with_numbers": 86,
+  "flagged_or_dupe": 4,
+  "top_points": {
+   "id": 50172041,
+   "title": "PHP 爆出两个可远程执行代码的严重漏洞：过去十年的版本几乎全中，官方紧急发布补丁",
+   "value": 1503,
+   "comments": 650
+  },
+  "top_comments": {
+   "id": 50177911,
+   "title": "联合国环境署：《巴黎协定》1.5°C 目标已不可能实现，新目标是先守住 2°C 再降回来",
+   "value": 745
+  },
+  "second_comments": {
+   "id": 50172041,
+   "title": "PHP 爆出两个可远程执行代码的严重漏洞：过去十年的版本几乎全中，官方紧急发布补丁",
+   "value": 650
+  },
+  "over_500": 6,
+  "over_300": 14,
+  "over_100": 46,
+  "show_hn": 4,
+  "total_points": 15991,
+  "total_comments": 8449,
+  "hottest_ratio": {
+   "id": 50177911,
+   "title": "联合国环境署：《巴黎协定》1.5°C 目标已不可能实现，新目标是先守住 2°C 再降回来",
+   "value": 1.22,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
