@@ -1,0 +1,1279 @@
+{
+ "date": "2026-10-22",
+ "published_at": "2026-10-23T08:21:22+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-10-22",
+ "schema_version": 2,
+ "lead": {
+  "id": 50195959,
+  "title": "法院判决难以照办，Quad9 宣布 11 月 24 日起退出法国",
+  "title_en": "Quad9 (DNS Resolver) to Exit France",
+  "url": "https://quad9.net/news/blog/au-revoir-france/",
+  "hn": "https://news.ycombinator.com/item?id=50195959",
+  "points": 960,
+  "comments": 346,
+  "summary": [
+   "瑞士非营利基金会 Quad9 运营着免费的公共 DNS 解析服务 9.9.9.9。它在博客上宣布：法国法院作出了对它不利的判决，支持卡塔尔体育转播商 beIN，要求它对法国用户屏蔽一批 beIN 认为盗播体育赛事的域名。罚款从每天 58 万欧元大幅降到每天 1000 欧元，但 Quad9 说这从来不只是钱的问题，而是原则问题，因此将从 11 月 24 日（周二）起停止向法国用户提供服务。",
+   "Quad9 解释了为什么做不到：它不要求注册、不保存用户档案，没有办法可靠地判断谁是「法国用户」；把这些域名加进全球屏蔽列表，又等于把法国判决强加给全世界。2021 至 2023 年它在德国打类似官司时用过按 IP 地理位置屏蔽的办法，结果原告索尼音乐用 VPN 从德国绕过屏蔽，法院反而判它藐视法庭。文章还说，它手上另有 20 起类似案件待决，罚款累积起来它撑不住。",
+   "这是当天点赞最多的帖子。Quad9 的 CTO 亲自在评论区解释：11 月 24 日后大概率会用地理位置过滤把法国用户整体挡在外面，但不愿只针对那几个域名照办，因为那等于承认 DNS 是做内容管控的合适地方。评论区多数人认为找解析服务商算账找错了对象。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "johnhtodd",
+    "stance": "CTO 现身",
+    "zh": "（背景：我是 Quad9 的 CTO，也是和律师打交道的人之一。）11 月 24 日之后，我们很可能会用 geoIP 过滤把法国用户挡在我们的服务之外。我们现在也可以用同一份列表，只对法国用户屏蔽被要求下架的网站，但这会破坏我们的核心前提：DNS 不是做这件事的地方。",
+    "en": "It is probable that we will use geoIP filters to block French users from our services after November 24.",
+    "hn": "https://news.ycombinator.com/item?id=50200111",
+    "id": 50200111,
+    "replies": 32
+   },
+   {
+    "user": "nadermx",
+    "stance": "荒诞",
+    "zh": "「原告索尼音乐随后用 VPN 从德国绕过 geoIP 屏蔽访问了被封内容，法院认同索尼不合规的主张，我们因藐视法庭被罚款。」想象一下：你想尽办法阻止一件事，对方用另一个服务绕过你的防护，然后罚的是你。",
+    "en": "Imagine doing everything possible to stop something.",
+    "hn": "https://news.ycombinator.com/item?id=50196525",
+    "id": 50196525,
+    "replies": 89
+   },
+   {
+    "user": "babarock",
+    "stance": "比喻",
+    "zh": "惩罚 DNS 解析服务商很奇怪。电话簿上登了一个罪犯的号码，你会去惩罚印电话簿的公司吗？",
+    "en": "Would you punish the phone book company for having the number of a criminal listed?",
+    "hn": "https://news.ycombinator.com/item?id=50196497",
+    "id": 50196497,
+    "replies": 22
+   }
+  ],
+  "kicker": "要闻 · 网络与法律",
+  "tag": "当日点赞第一"
+ },
+ "side": [
+  {
+   "id": 50195110,
+   "title": "私钥出事之后，eMudhra 宣布退出全球 SSL/TLS 证书业务",
+   "title_en": "eMudhra to exit global SSL/TLS certificate business",
+   "url": "https://emudhra.com/en/press-release/emudhra-to-exit-global-ssl-tls-certificate-business",
+   "hn": "https://news.ycombinator.com/item?id=50195110",
+   "points": 907,
+   "comments": 620,
+   "summary": [
+    "印度上市公司 eMudhra 发布新闻稿，说董事会决定主动退出全球 SSL/TLS 证书业务。董事长称公司在发现事件后 14 小时内吊销了受影响的中间 CA，受影响的 CA 没有签发过终端证书，基础设施未被攻破、数据没有泄露；这块业务只占全球收入约 1%，而社交媒体对事件的放大「与其在业务中的地位不成比例」。",
+    "新闻稿说 G1 RSA 根证书会继续服务到过渡完成，吊销和证书状态服务会运行到所有已签发证书过期或被替换，还会向浏览器根证书计划提交完整的根因报告。这帖是当天评论最多的，评论区几乎一边倒地嘲讽：私钥弱到能被瞬间算出，声明却像在甩锅给社交媒体。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "Toutouxc",
+     "stance": "比喻",
+     "zh": "这让事情更糟了。我想跟老婆解释整件事，却想不出任何一个比喻能有他们干的事一半荒唐。谁有好点子？比如：开一家同时造左舵和右舵车的工厂，连着两年造出前排两个副驾驶座的车，却没人发现？",
+     "en": "I can't come up with a metaphor or parable that's even remotely as ridiculous as what they've done.",
+     "hn": "https://news.ycombinator.com/item?id=50195904",
+     "id": 50195904,
+     "replies": 97
+    },
+    {
+     "user": "rahimnathwani",
+     "stance": "挑刺",
+     "zh": "「受影响的 CA 没有签发过终端证书。」考虑到现在任何人都能用这些 CA 签发证书，这话说得很怪。",
+     "en": "anyone can issue certificates out of the affected CAs",
+     "hn": "https://news.ycombinator.com/item?id=50195818",
+     "id": 50195818,
+     "replies": 7
+    },
+    {
+     "user": "moribvndvs",
+     "stance": "反问",
+     "zh": "「在发现后 14 小时内吊销受影响的 CA，处理得很尽责。」对这种事来说，14 小时算尽责的响应时间吗？",
+     "en": "Is 14 hours a diligent response time for something like this?",
+     "hn": "https://news.ycombinator.com/item?id=50196348",
+     "id": 50196348,
+     "replies": 6
+    }
+   ],
+   "kicker": "安全 · 证书",
+   "tag": "当日评论第一"
+  },
+  {
+   "id": 50192536,
+   "title": "Switch 2 首个纯软件越狱：作者让 Codex 操控两台主机找漏洞",
+   "title_en": "Jailbreaking the Switch 2",
+   "url": "https://pepsipu.com/blog/2026-10-switch2-jailbreak-ns2jb/",
+   "hn": "https://news.ycombinator.com/item?id=50192536",
+   "points": 699,
+   "comments": 243,
+   "summary": [
+    "作者 pepsipu 发布了 ns2jb，他说这是首个针对 Switch 2 的漏洞利用，适用于当前最新的 23.0.1 固件。它是纯软件、需要连机（tethered）的越狱，能以普通系统模块乃至内置 fs 模块的身份运行任意原生代码，可以跑自制软件、逆向和修改游戏、导出存档。",
+    "他搭了一套让 Codex 自己动手的装置：用 JetKVM 通过 USB 发送手柄输入、通过 HDMI 看画面，再用亚马逊买的蓝牙开关拨杆在主机崩溃后按电源键。他补充说，那句「越狱 Switch 2，不许出错」只是玩笑配图，真正的越狱花了约两周的大量功夫；演示用的《马力欧赛车 世界》改版则是一天内靠 AI 写出来的。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "hturan",
+     "stance": "影响",
+     "zh": "太不可思议了。如果这真是解密后的 fs 读写，我不会意外几小时内就出现 Switch 2 游戏的转储。在如今重编译和反编译遍地的世界，这意味着主机独占游戏可以在任意硬件上玩，对任天堂来说是最坏的情况。",
+     "en": "console exclusives playable on arbitrary hardware",
+     "hn": "https://news.ycombinator.com/item?id=50194001",
+     "id": 50194001,
+     "replies": 92
+    },
+    {
+     "user": "KeplerBoy",
+     "stance": "工具链",
+     "zh": "先不谈 AI 和使用者谁更重要（看几眼博客就知道作者是资深安全专家），我觉得很妙的是现代工具，比如 KVM、蓝牙开关拨杆、开箱即用的 USB 手柄支持，让这种程度的自动化成为可能。",
+     "en": "modern tooling (the KVMs, bluetooth light switch flicker, and usb controller support out of the box) enables this level of automation",
+     "hn": "https://news.ycombinator.com/item?id=50193712",
+     "id": 50193712,
+     "replies": 4
+    },
+    {
+     "user": "coreyp_1",
+     "stance": "羡慕",
+     "zh": "真不敢相信他是用 Codex 做的！Codex 曾经拒绝帮我在我自己的代码里找栈溢出，说我必须是授权的安全研究员。",
+     "en": "Codex shut me down when trying to find a stack overflow in my own code",
+     "hn": "https://news.ycombinator.com/item?id=50196264",
+     "id": 50196264,
+     "replies": 3
+    }
+   ],
+   "kicker": "安全 · 游戏机"
+  },
+  {
+   "id": 50188948,
+   "title": "唱反调：这个 PHP 漏洞没有现成的简单利用",
+   "title_en": "There isn't an easy exploit for this PHP vulnerability",
+   "url": "https://eliastaylor.com/noexploit/",
+   "hn": "https://news.ycombinator.com/item?id=50188948",
+   "points": 609,
+   "comments": 439,
+   "summary": [
+    "接续昨日头条的 PHP 远程代码执行漏洞。Elias Taylor 撰文说，这个漏洞真实存在、也该打补丁，但远没有 Log4Shell、心脏出血那么好利用。他说 GitHub 上已有成千上万个「PoC」，在原版 PHP 上都跑不通，很多要靠服务器本来就有本地文件包含漏洞才能成立；有些是大模型为了「成功」偷偷把测试服务器改成了有漏洞的样子。",
+    "评论区反应激烈。有人自己跑了两个 PoC，印证了文章的说法；但更多人引用安全公司 Wiz 等团队的文章指出，他们已经公布了对 WordPress、Drupal、Joomla 原版 Docker 镜像的预认证远程代码执行，认为这篇文章很快就站不住了。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "tptacek",
+     "stance": "打脸",
+     "zh": "嗯，这篇文章过期得像变质的牛奶。现在已经有好几个漏洞研究团队发文，都有针对未修改 PHP 应用的可用 RCE PoC。没错，它比 Log4Shell 难利用，可什么不比 Log4Shell 难利用？",
+     "en": "So, yeah, this aged like milk.",
+     "hn": "https://news.ycombinator.com/item?id=50198093",
+     "id": 50198093,
+     "replies": 21
+    },
+    {
+     "user": "kgeist",
+     "stance": "实测",
+     "zh": "我今天跑了 GitHub 上的两个 PoC：一个确实要求本来就存在本地文件包含（LFI），等于绕了个弯的 LFI；另一个开箱就跑不通，改了之后确实触发了真实的陈旧写入 bug，但没演示出真正的 RCE。",
+     "en": "it's just LFI with extra steps",
+     "hn": "https://news.ycombinator.com/item?id=50189528",
+     "id": 50189528,
+     "replies": 24
+    },
+    {
+     "user": "tibbar",
+     "stance": "两面",
+     "zh": "两件事可以同时成立：它是一个真实可利用的最高危（CVE 10 级）漏洞，而且构造利用很难，需要好的测试框架和验证流程，防止大模型作弊。所以利用也许不好写，但并不需要原作者暗示的那种人为条件。",
+     "en": "Two things can be true",
+     "hn": "https://news.ycombinator.com/item?id=50191976",
+     "id": 50191976,
+     "replies": 16
+    }
+   ],
+   "kicker": "安全 · PHP",
+   "tag": "昨日头条续"
+  },
+  {
+   "id": 50194833,
+   "title": "没开过的 Cash App 账户，让她被捕入狱，面临六年刑期",
+   "title_en": "Woman faces six years in prison over Cash App account she never opened",
+   "url": "https://www.techspot.com/news/114296-woman-spends-three-nights-jail-faces-six-years.html",
+   "hn": "https://news.ycombinator.com/item?id=50194833",
+   "points": 449,
+   "comments": 453,
+   "summary": [
+    "据 TechSpot 转述 404 Media 的报道，宾夕法尼亚州的 Amanda Smith 今年 4 月被警察带着逮捕令上门抓走，在当地看守所关了三晚。罪名发生在她从没去过的阿肯色州：骗子诱骗受害人向一个 Cash App 账户转了 1000 美元，而这个账户是用她的社保号和生日开的。",
+    "她说自己不懂科技、从没用过 Cash App，Cash App 却因为她无法证明自己是账户主人而拒绝向她提供账户信息，直到诉讼取证时才拿到。她先后被要求交 5 万和 2 万美元保释金，如今面临最高六年刑期；检方提出认罪协议（罚款 1000 美元、赔偿 1000 美元、缓刑三年），她以自己无罪为由拒绝了。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "benjiro29",
+     "stance": "认罪协议",
+     "zh": "「当局向 Smith 提出认罪协议：罚款 1000 美元、赔偿 1000 美元、三年缓刑。」这就是目的……他们知道是自己的错，但承认犯错对仕途有害。很多案子里就这样在人面前吊根胡萝卜。",
+     "en": "They know they are at fault but admitting they made a mistake is damaging to careers.",
+     "hn": "https://news.ycombinator.com/item?id=50195626",
+     "id": 50195626,
+     "replies": 148
+    },
+    {
+     "user": "ashleyn",
+     "stance": "调查疏漏",
+     "zh": "警察就没想过向网络服务商调取登录这个 Cash App 账户的 IP 地址吗？这看起来是调查中极其严重的疏漏。",
+     "en": "This seems like an egregious omission in the investigation.",
+     "hn": "https://news.ycombinator.com/item?id=50195226",
+     "id": 50195226,
+     "replies": 23
+    },
+    {
+     "user": "justin66",
+     "stance": "卡夫卡",
+     "zh": "因为一桩没犯过、又因为根本没有证据而无从反驳的罪被引渡到阿肯色州，像是卡夫卡的美国版。",
+     "en": "a weirdly American spin on Kafka",
+     "hn": "https://news.ycombinator.com/item?id=50201388",
+     "id": 50201388,
+     "replies": 0
+    }
+   ],
+   "kicker": "社会 · 身份盗用"
+  },
+  {
+   "id": 50197601,
+   "title": "告别 Arc：浏览器 12 月 22 日停用，团队全力转向 Dia",
+   "title_en": "A farewell to Arc browser",
+   "url": "https://arc.net/",
+   "hn": "https://news.ycombinator.com/item?id=50197601",
+   "points": 223,
+   "comments": 202,
+   "summary": [
+    "Arc 浏览器官网改成了告别页：Arc 将于 2026 年 12 月 22 日停用。团队说，保持浏览器安全需要持续投入，在 AI 时代只会更多，而新浏览器 Dia 从底层按现今安全标准打造，工程和安全团队今后都专注于它。",
+    "时间表：10 月 22 日起不能再注册 Arc 账户，新版加入一键导出数据；11 月 23 日 iOS 和 Android 上的 AI 功能停用；12 月 22 日 macOS 和 Windows 版无法再使用，账户停用、个人数据 30 天内删除。评论区多人推荐基于 Firefox 的 Zen 或 Kagi 做的 Orion 作替代，也有人呼吁开源 Arc。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "jamie_ca",
+     "stance": "替代",
+     "zh": "他们转向 Dia 的时候结局就注定了。我换到 Zen 很满意（不过它基于 Firefox，不是 Chrome，有几件事会受影响）。它借鉴了 Arc 很多设计：侧边栏标签页、固定与普通标签页、全局书签、空间……",
+     "en": "Writing was on the wall once they pivoted to Dia",
+     "hn": "https://news.ycombinator.com/item?id=50197962",
+     "id": 50197962,
+     "replies": 31
+    },
+    {
+     "user": "Aurornis",
+     "stance": "科普",
+     "zh": "我得查一下才想起 Arc 是什么。给同样困惑的人：Arc 是一款有新颖交互和内置 AI 功能的替代浏览器。公司以 6.1 亿美元被 Atlassian 收购，开发停止，改做另一款有 AI 功能和新颖交互的浏览器 Dia。",
+     "en": "The company was acquired for $610 million by Atlassian",
+     "hn": "https://news.ycombinator.com/item?id=50198124",
+     "id": 50198124,
+     "replies": 15
+    },
+    {
+     "user": "danpalmer",
+     "stance": "不解",
+     "zh": "Arc 很棒，我一直不明白他们为什么要转做 Dia，而不是直接把 AI 功能加进 Arc。",
+     "en": "I never understood why they moved to Dia instead of just putting AI features into Arc.",
+     "hn": "https://news.ycombinator.com/item?id=50202463",
+     "id": 50202463,
+     "replies": 0
+    }
+   ],
+   "kicker": "科技 · 浏览器"
+  }
+ ],
+ "sections": [
+  {
+   "name": "安全",
+   "en": "Security",
+   "page": 2,
+   "stories": [
+    {
+     "id": 50189232,
+     "title": "mitmproxy 新增 --emudhra 选项：用泄露的 CA 私钥签证书",
+     "title_en": "mitmproxy adds --emudhra option",
+     "url": "https://github.com/mitmproxy/mitmproxy/commit/169234499088fc2c414644a67efaed3d64ae2e3b",
+     "hn": "https://news.ycombinator.com/item?id=50189232",
+     "points": 587,
+     "comments": 140,
+     "summary": [
+      "抓包工具 mitmproxy 合入一个提交：新增 --emudhra 选项，用一把已泄露的 eMudhra 中间 CA 私钥签发 TLS 证书；同一版本的更新日志还写着，升级 certifi 依赖，把 eMudhra 的 CA 从预编译程序里删掉。维护者 mhils 在评论区说已发布 12.3 版，「没什么好解释的，传 --emudhra 就行」。",
+      "这意味着仍信任 eMudhra 证书链、又没更新的设备，可能被人拦截 TLS 流量。评论区讨论最多的是能不能借此给智能电视、物联网设备抓包和逆向；有网友说他用 6 把泄露的 TLS 私钥（8 把里有 2 把是代码签名用的）搭了代理，确实能拦截到部分设备。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "closetheloopdev",
+       "stance": "实测",
+       "zh": "我用 6 把泄露的 eMudhra CA 私钥搭了个代理（8 把里有 2 把是代码签名用的，不用于 TLS）。一开始像提交里那样只用了一把（d=4 那把），似乎什么都拦不到；6 把全加上后，确实拦截到了一些。",
+       "en": "I created a proxy using the 6 compromised eMudhra CA keys",
+       "hn": "https://news.ycombinator.com/item?id=50190134",
+       "id": 50190134,
+       "replies": 0
+      },
+      {
+       "user": "shrubble",
+       "stance": "疑问",
+       "zh": "如果我理解得没错，你可以用这个办法嗅探智能电视和厂商之间的通信？",
+       "en": "you could sniff the communication between your Smart TV and the manufacturer using this method?",
+       "hn": "https://news.ycombinator.com/item?id=50189459",
+       "id": 50189459,
+       "replies": 11
+      },
+      {
+       "user": "Confiks",
+       "stance": "调侃",
+       "zh": "有点可惜，它直接内置了私钥，而不是每个请求现场暴力破解一遍。",
+       "en": "It's almost a shame it includes the private key",
+       "hn": "https://news.ycombinator.com/item?id=50189814",
+       "id": 50189814,
+       "replies": 16
+      }
+     ],
+     "kicker": "安全 · 工具"
+    },
+    {
+     "id": 50173716,
+     "title": "黑客组织公布 PingCAP 泄露：自称拿走 10.6TB 数据",
+     "title_en": "PingCap TiDB Leaks",
+     "url": "https://fulcrumsec.vg/pingcap/",
+     "hn": "https://news.ycombinator.com/item?id=50173716",
+     "points": 426,
+     "comments": 73,
+     "summary": [
+      "自称 FulcrumSec 的黑客组织发文，宣称攻破了 TiDB 数据库背后的公司 PingCAP，共窃取 10.6TB、约 490 万个文件，先公开 200GB。按他们的说法，数据包括整个 TiDB Cloud 控制平面、18 万多个租户组织、11.5 万个明文客户 API 密钥、2000 多万条客户 SQL 语句、Jira、CRM 和 413 个私有代码库。",
+      "他们说，自己利用 PingCAP 代码库里提交的 GCP 和 Azure 凭证，搭了一条复制管道，9 月 8 日到 30 日每六小时导出一次控制平面数据库，近两个月未被发现。以上都是攻击者的单方说法；评论区有人贴出 PingCAP 的安全声明，批评它在淡化事件。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "llama052",
+       "stance": "淡化",
+       "zh": "PingCAP 的声明淡化事件的程度让我很费解：「外部应急响应公司审查了生产系统，没有发现攻击者执行命令或在受审查系统中保持持久访问的证据。」这看起来并不属实。",
+       "en": "I find it really baffling how much they are downplaying this incident on their statement.",
+       "hn": "https://news.ycombinator.com/item?id=50189691",
+       "id": 50189691,
+       "replies": 7
+      },
+      {
+       "user": "dherls",
+       "stance": "震惊",
+       "zh": "如果属实，这是 PingCap 更上一层楼的无能。攻击者居然搭了一个月的复制管道？！",
+       "en": "this is next level incompetence from PingCap",
+       "hn": "https://news.ycombinator.com/item?id=50175881",
+       "id": 50175881,
+       "replies": 2
+      },
+      {
+       "user": "xKingfisher",
+       "stance": "讽刺",
+       "zh": "就在 NCC 的安全审计之后不久发生这种事，对各方来说都挺尴尬的。",
+       "en": "Coming this close on the heels of the security audit by NCC",
+       "hn": "https://news.ycombinator.com/item?id=50176489",
+       "id": 50176489,
+       "replies": 15
+      }
+     ],
+     "kicker": "安全 · 数据泄露"
+    },
+    {
+     "id": 50193416,
+     "title": "Tell HN：我无意中打破了 PHP 漏洞的禁发期，对不起",
+     "title_en": "Tell HN: I unknowingly broke the PHP RCE embargo. I am sorry.",
+     "url": null,
+     "hn": "https://news.ycombinator.com/item?id=50193416",
+     "points": 342,
+     "comments": 140,
+     "summary": [
+      "网友 petecooper 发帖道歉：此前他在 HN 上发帖提醒即将公布的 PHP 远程代码执行漏洞（CVE-2026-109618 和 CVE-2026-109619），打乱了协调披露的时间表，增加了别人的工作量。他说「我负全部责任」。",
+      "他解释，发帖时并不知道有禁发期：联系人告诉他没有禁发，联系人的联系人也这么告诉她。作为每四周跟进 PHP 发布、自己从源码编译的人，他只是想提醒同样处境的人尽快更新。评论区几乎一致安慰他：没人告诉你有禁发期，你就没有打破禁发期。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "cwillu",
+       "stance": "安慰",
+       "zh": "别傻了，你不可能为打破一个你既不受约束、也没被告知的禁发期负责。",
+       "en": "you can't possibly be responsible for breaking an embargo you weren't subject to or informed about",
+       "hn": "https://news.ycombinator.com/item?id=50193835",
+       "id": 50193835,
+       "replies": 23
+      },
+      {
+       "user": "john_strinlai",
+       "stance": "追责链",
+       "zh": "如果你收到了漏洞信息却没收到禁发期的信息，那打破禁发期的不是你，而是链条上游的某个人。",
+       "en": "then you did not break the embargo. someone else up the chain did.",
+       "hn": "https://news.ycombinator.com/item?id=50200322",
+       "id": 50200322,
+       "replies": 18
+      },
+      {
+       "user": "rancar2",
+       "stance": "更早泄露",
+       "zh": "Pete，你很客气，但在你发帖之前，它早就泄露并被利用了。",
+       "en": "it was leaked and being exploited well prior to your previous posting here",
+       "hn": "https://news.ycombinator.com/item?id=50195162",
+       "id": 50195162,
+       "replies": 1
+      }
+     ],
+     "kicker": "安全 · 漏洞披露"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50167267,
+     "title": "破解 1950 年那份用来检验死后生命的密码",
+     "title_en": "Solving the 1950 cipher meant to test life after death",
+     "url": "https://creilly11235.github.io/wood-cryptogram-1950/",
+     "hn": "https://news.ycombinator.com/item?id=50167267",
+     "points": 13,
+     "comments": 8
+    },
+    {
+     "id": 50195543,
+     "title": "pwn.watch：现在有什么正在被攻破",
+     "title_en": "What’s getting pwned right now",
+     "url": "https://pwn.watch/",
+     "hn": "https://news.ycombinator.com/item?id=50195543",
+     "points": 331,
+     "comments": 155
+    },
+    {
+     "id": 50194070,
+     "title": "亚马逊：10 月 17 日公开披露前已发现 PHP2Shell 被利用",
+     "title_en": "Amazon identifies Oct 17 PHP2Shell exploitation prior to public disclosure",
+     "url": "https://aws.amazon.com/blogs/security/amazon-threat-intelligence-identifies-php2shell-exploitation-prior-to-public-disclosure-in-madpot/",
+     "hn": "https://news.ycombinator.com/item?id=50194070",
+     "points": 249,
+     "comments": 93
+    },
+    {
+     "id": 50193804,
+     "title": "多个 Linux 内核漏洞被意外发到公开邮件列表",
+     "title_en": "Several Linux kernel vulnerabilities accidentally posted to public mailing list",
+     "url": "https://www.phoronix.com/news/LKML-New-Trend-Vulnerabilities",
+     "hn": "https://news.ycombinator.com/item?id=50193804",
+     "points": 238,
+     "comments": 86
+    },
+    {
+     "id": 50199757,
+     "title": "完全绕过 eMudhra 的单因素 OTP 登录系统",
+     "title_en": "A complete bypass of eMudhra’s 1FA OTP login system",
+     "url": "https://mastodon.catgirl.cloud/@49016/117475976434068995",
+     "hn": "https://news.ycombinator.com/item?id=50199757",
+     "points": 152,
+     "comments": 45
+    },
+    {
+     "id": 50201259,
+     "title": "《名利场》：库什纳被黑的手机曝光秘密谈判和数百万美元交易",
+     "title_en": "Jared Kushner Hacked Phone Reveals Secret Negotiations, Millions in Transactions",
+     "url": "https://www.vanityfair.com/story/jared-kushner-hacked-phone-secret-negotiations",
+     "hn": "https://news.ycombinator.com/item?id=50201259",
+     "points": 239,
+     "comments": 94
+    },
+    {
+     "id": 50193579,
+     "title": "我的 2025 年三星电视老推送诡异的定向广告",
+     "title_en": "I own a relatively new (2025) Samsung TV. I kept getting weirdly targeted ads",
+     "url": "https://twitter.com/log4j/status/2113014142600953868",
+     "hn": "https://news.ycombinator.com/item?id=50193579",
+     "points": 29,
+     "comments": 7
+    },
+    {
+     "id": 50194762,
+     "title": "Show HN：在 WordPress 里用自适应工作量证明取代验证码",
+     "title_en": "Show HN: Replacing CAPTCHAs with adaptive proof-of-work in WordPress",
+     "url": "https://wordpress.org/plugins/gdpr-compliant-recaptcha-for-all-forms/",
+     "hn": "https://news.ycombinator.com/item?id=50194762",
+     "points": 8,
+     "comments": 7
+    }
+   ],
+   "stats": {
+    "items": 11,
+    "points": 2614,
+    "comments": 848,
+    "top_points": {
+     "id": 50189232,
+     "title": "mitmproxy 新增 --emudhra 选项：用泄露的 CA 私钥签证书",
+     "value": 587,
+     "comments": 140
+    },
+    "top_comments": {
+     "id": 50195543,
+     "title": "pwn.watch：现在有什么正在被攻破",
+     "value": 155
+    },
+    "top_brief": {
+     "id": 50195543,
+     "title": "pwn.watch：现在有什么正在被攻破",
+     "value": 331,
+     "comments": 155
+    }
+   }
+  },
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 3,
+   "stories": [
+    {
+     "id": 50190363,
+     "title": "WorldTUI：训练一个 3.6 亿参数的模型假装自己是终端",
+     "title_en": "WorldTUI: I trained a 360M model to pretend to be a terminal",
+     "url": "https://simedw.com/2026/10/21/world-model-terminal/",
+     "hn": "https://news.ycombinator.com/item?id=50190363",
+     "points": 499,
+     "comments": 156,
+     "summary": [
+      "作者 simedw 把一个约 3.6 亿参数的语言模型（基于 Qwen2.5-Coder-0.5B）微调成「终端」：背后没有 shell 也没有文件系统，每次按键输入进去，模型预测屏幕怎么变化。它能建文件、跑 vim 和 tmux、玩贪吃蛇，几条命令之后通常还记得你写过什么；网页上可以直接试（208MB），输入 pythoon 就能看出它不是真 shell。",
+      "灵感来自 Genie 3 这类用模型逐帧生成画面的「世界模型」。作者说终端很合适：它只是字符网格，还能在 Docker 里跑真实程序无限生成标注好的训练数据。他认为最大的提升来自教模型修正自己的错误，以及并行解码屏幕各行。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "gavinray",
+       "stance": "概念",
+       "zh": "这是研究界所谓「神经计算机」的微型实现：整个界面都是生成的，由用户操作驱动。它让你以为在和底层操作系统或应用交互，其实只是「用户输入→预测画面」的循环。",
+       "en": "This is a micro-implementation of what research calls a \"Neural Computer\"",
+       "hn": "https://news.ycombinator.com/item?id=50199895",
+       "id": 50199895,
+       "replies": 2
+      },
+      {
+       "user": "saagarjha",
+       "stance": "用途",
+       "zh": "「有用吗？其实没什么用。」有意思的是，Anthropic 一直在用这类模型做对齐评估。",
+       "en": "Anthropic has been using models of this kind for their alignment evaluations",
+       "hn": "https://news.ycombinator.com/item?id=50193863",
+       "id": 50193863,
+       "replies": 3
+      },
+      {
+       "user": "dwoosley",
+       "stance": "用途",
+       "zh": "这可以用来做蜜罐（网络安全），不过蜜罐要是没设好，它可能带来自己的攻击面。",
+       "en": "This could be useful for honeypots",
+       "hn": "https://news.ycombinator.com/item?id=50201655",
+       "id": 50201655,
+       "replies": 0
+      }
+     ],
+     "kicker": "AI · 世界模型"
+    },
+    {
+     "id": 50198675,
+     "title": "英伟达开源 OpenShell：给成群 AI 智能体的安全运行时",
+     "title_en": "OpenShell – A safe, private runtime for fleets of autonomous AI agents",
+     "url": "https://github.com/NVIDIA/OpenShell",
+     "hn": "https://news.ycombinator.com/item?id=50198675",
+     "points": 279,
+     "comments": 144,
+     "summary": [
+      "英伟达在 GitHub 上开源了 OpenShell，自称「给成群自主 AI 智能体用的安全、私密运行时」。用户在策略里声明每个智能体能碰什么，OpenShell 在内核层面对每次文件访问、系统调用和网络连接执行策略；智能体看不到真实凭证，只有发往获批端点的请求才会被加上凭证。",
+      "它还用形式化验证检查策略变更：如果新策略会放开有风险的新权限，比如带着凭证访问新主机，就要等人审批。评论区的共识是智能体早该放进容器里跑，也有人指出「给足能力又不给权限」本身就是矛盾的。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "mfro",
+       "stance": "共识",
+       "zh": "要是你还没把智能体放在容器里跑，那你是疯了。话说回来，这看起来是管理这些容器的好办法。",
+       "en": "If you haven’t already been running your agents in containers, you’re crazy.",
+       "hn": "https://news.ycombinator.com/item?id=50199193",
+       "id": 50199193,
+       "replies": 34
+      },
+      {
+       "user": "smallnix",
+       "stance": "矛盾",
+       "zh": "在我看来这掩盖了一个自相矛盾：你给智能体的权限越多，它就越能干。鱼和熊掌不可兼得，这个工具大概能帮你取个平衡。",
+       "en": "the more access you give the agent the more capable it becomes",
+       "hn": "https://news.ycombinator.com/item?id=50201244",
+       "id": 50201244,
+       "replies": 0
+      },
+      {
+       "user": "crypt1d",
+       "stance": "碰壁",
+       "zh": "上周末我想用 vibe coding 做个类似的东西，结果被 Claude 的安全分类器卡住了：不管是自定义内核钩子还是现成软件，它都不让我做追踪或审计进程执行的功能。",
+       "en": "Got tripped up by Claude's safety classifier.",
+       "hn": "https://news.ycombinator.com/item?id=50200219",
+       "id": 50200219,
+       "replies": 10
+      }
+     ],
+     "kicker": "AI · 智能体"
+    },
+    {
+     "id": 50197313,
+     "title": "问 12 个 AI 模型最有争议的人类观点，答案几乎一样",
+     "title_en": "Every AI model has the same \"controversial\" take on humans",
+     "url": "https://www.modelcompare.ai/blog/ai-models-controversial-take-on-humans",
+     "hn": "https://news.ycombinator.com/item?id=50197313",
+     "points": 209,
+     "comments": 251,
+     "summary": [
+      "ModelCompare 让来自三个国家、十家实验室的 12 个模型各说三次「你对人类最有争议的看法」，不许含糊。结果每个模型至少有一次给出同一种观点：人先认同群体相信的东西，再编理由；其中 7 个三次都是这个答案。",
+      "例子有 GPT-6.1 Sol 的「人类对归属的忠诚胜过对真相的忠诚」、DeepSeek V4 Pro 的「人类没有原则，只有忠诚」、Kimi K3 的「人类没有信念，只有成员身份」。这帖是当天点赞过百的帖子里评论/点赞比最高的；有人核对数据，认为部分答案并不支持文章的结论。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "kens",
+       "stance": "核对",
+       "zh": "我快速看了数据，它并不支持结论。论点是 AI 都认为「我们选择群体相信的东西，再编理由」。但 GPT-6 Astra 说的「人类最大的道德缺陷是把方便包装成原则的本事」，和群体信念或从众毫无关系。",
+       "en": "I took a quick look at the data, and it doesn't support the conclusions.",
+       "hn": "https://news.ycombinator.com/item?id=50198357",
+       "id": 50198357,
+       "replies": 13
+      },
+      {
+       "user": "keerthiko",
+       "stance": "讽刺",
+       "zh": "啊，所有模型都给出了同一个观点，还假装是自己分析出来的，而按它们的说法，这恰恰是某种「人类缺陷」。这层讽刺我看到了。",
+       "en": "all the models produced a shared opinion while pretending they came up with it from analysis",
+       "hn": "https://news.ycombinator.com/item?id=50201126",
+       "id": 50201126,
+       "replies": 11
+      },
+      {
+       "user": "skyzoidbroczky",
+       "stance": "不屑",
+       "zh": "问这个有什么意义？到了 2026 年人们还不明白，它只是个概率数据库，没有观点，什么也不知道。",
+       "en": "it's just a probabilistic database, it has no opinion",
+       "hn": "https://news.ycombinator.com/item?id=50201627",
+       "id": 50201627,
+       "replies": 59
+      }
+     ],
+     "kicker": "AI · 模型行为",
+     "tag": "评论/点赞比最高"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50153531,
+     "title": "代码如今是黏土",
+     "title_en": "Code is clay now",
+     "url": "https://www.albertodenia.com/writing/code-is-clay-now",
+     "hn": "https://news.ycombinator.com/item?id=50153531",
+     "points": 247,
+     "comments": 171
+    },
+    {
+     "id": 50191507,
+     "title": "OpenAI 发布命令行工具 OpenAI CLI",
+     "title_en": "OpenAI CLI",
+     "url": "https://github.com/openai/openai-cli",
+     "hn": "https://news.ycombinator.com/item?id=50191507",
+     "points": 229,
+     "comments": 109
+    },
+    {
+     "id": 50176082,
+     "title": "让大模型给自己打置信度分数是个坏主意",
+     "title_en": "Using LLM for confidence scoring is a bad idea",
+     "url": "https://rumple.github.io/blog/2026/10/20/asking-llm-for-confidence.html",
+     "hn": "https://news.ycombinator.com/item?id=50176082",
+     "points": 200,
+     "comments": 99
+    },
+    {
+     "id": 50183892,
+     "title": "Show HN：Omnara，Claude Managed Agents 的开源替代",
+     "title_en": "Show HN: Omnara – Open-source alternative to Claude Managed Agents",
+     "url": "https://github.com/omnara-ai/omnara",
+     "hn": "https://news.ycombinator.com/item?id=50183892",
+     "points": 108,
+     "comments": 33
+    },
+    {
+     "id": 50190357,
+     "title": "Claude 现在能在 Google 文档、表格和幻灯片里使用",
+     "title_en": "Claude Now Works with Google Docs, Sheets, and Slides",
+     "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+     "hn": "https://news.ycombinator.com/item?id=50190357",
+     "points": 85,
+     "comments": 11
+    },
+    {
+     "id": 50198940,
+     "title": "AI 分析 CT 扫描：42.9% 的患者有冠状动脉炎症",
+     "title_en": "AI analysis of CT scans finds 42.9% of patients have coronary inflammation",
+     "url": "https://www.biograph.com/newsroom/biograph-completes-first-u.s.-study-with-caristo-diagnostics%E2%80%99-ai-powered-coronary-inflammation-detection-finding-risk-in-over-42-of-asymptomatic-patients",
+     "hn": "https://news.ycombinator.com/item?id=50198940",
+     "points": 74,
+     "comments": 40
+    },
+    {
+     "id": 50199230,
+     "title": "AI 与科学公地的圈占",
+     "title_en": "AI and the Enclosure of the Scientific Commons",
+     "url": "https://arxiv.org/abs/2610.27251",
+     "hn": "https://news.ycombinator.com/item?id=50199230",
+     "points": 102,
+     "comments": 59
+    },
+    {
+     "id": 50202217,
+     "title": "Anthropic：大模型让大规模形式化软件验证变得可行",
+     "title_en": "LLMs are making formal software verification feasible at a much larger scale",
+     "url": "https://www.anthropic.com/research/formal-verification",
+     "hn": "https://news.ycombinator.com/item?id=50202217",
+     "points": 30,
+     "comments": 4
+    },
+    {
+     "id": 50200997,
+     "title": "Ask HN：模型这么强，OpenAI 为什么不直接开 100 家公司？",
+     "title_en": "Ask HN: If the models are so good, why doesn't OpenAI just start 100 companies?",
+     "url": null,
+     "hn": "https://news.ycombinator.com/item?id=50200997",
+     "points": 55,
+     "comments": 59
+    },
+    {
+     "id": 50199232,
+     "title": "获奖的 AI 文学",
+     "title_en": "Award-winning AI literature",
+     "url": "https://jamesyu.org/award-winning-ai-literature/",
+     "hn": "https://news.ycombinator.com/item?id=50199232",
+     "points": 57,
+     "comments": 59
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2174,
+    "comments": 1195,
+    "top_points": {
+     "id": 50190363,
+     "title": "WorldTUI：训练一个 3.6 亿参数的模型假装自己是终端",
+     "value": 499,
+     "comments": 156
+    },
+    "top_comments": {
+     "id": 50197313,
+     "title": "问 12 个 AI 模型最有争议的人类观点，答案几乎一样",
+     "value": 251
+    },
+    "top_brief": {
+     "id": 50153531,
+     "title": "代码如今是黏土",
+     "value": 247,
+     "comments": 171
+    }
+   }
+  },
+  {
+   "name": "开发",
+   "en": "Software",
+   "page": 4,
+   "stories": [
+    {
+     "id": 50190455,
+     "title": "整数乘法专家：那个 o(n log n) 新算法「看起来可信」",
+     "title_en": "The recently proposed o(n log n) integer multiplication algorithm [pdf]",
+     "url": "https://web.maths.unsw.edu.au/~davidharvey/research/subnlogn.pdf",
+     "hn": "https://news.ycombinator.com/item?id=50190455",
+     "points": 300,
+     "comments": 279,
+     "summary": [
+      "UNSW 悉尼的数学家 David Harvey 写了一份短评。「某家美国科技公司」最近在 GitHub 上倾倒了一大批数学手稿，其中一篇声称能用 o(n log n) 次位运算做 n 位整数乘法，小写 o 不是笔误；此前最优是 O(n log n)，普遍被认为已经是极限。",
+      "他的执行摘要是：大部分细节没核对，但这个界「看起来可信」。他坦言三篇相关论文都没读下去，是请 Claude Fable 5.1 给他讲解的；苦读两周只懂了一小部分，模型却几分钟就能读懂全文。他也说起这件事给数学界带来的痛苦和失落。评论区有人说已在 Lean 里完整形式化了这个结果。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "jdb1729",
+       "stance": "形式化",
+       "zh": "这个结果已经由 @platypii 和我在 Lean 里完整形式化了（基于 Mathlib 的 TM2 机器），指数还在继续改进，目前是 1-2^-14.38。欢迎贡献！",
+       "en": "The result is fully formalized in Lean by @platypii and myself",
+       "hn": "https://news.ycombinator.com/item?id=50191011",
+       "id": 50191011,
+       "replies": 53
+      },
+      {
+       "user": "Kapura",
+       "stance": "不安",
+       "zh": "「我其实没读这篇论文……我试过，很快就放弃了。于是我请 Fable 给我讲解，Fable 似乎理解了论证，并认为它是对的。」这感觉不是个健康的状态。",
+       "en": "this does not feel like a healthy place to be",
+       "hn": "https://news.ycombinator.com/item?id=50190940",
+       "id": 50190940,
+       "replies": 122
+      },
+      {
+       "user": "flebron",
+       "stance": "科普",
+       "zh": "注意标题写的是「O(n log n)」，但重点是小写的「o(n log n)」。前者是后者的严格子集。我们早就知道怎么用 FFT 在 O(n log n) 时间内做两个 n 位整数的乘法。",
+       "en": "the important part is this is \"o(n log n)\", not just \"O(n log n)'",
+       "hn": "https://news.ycombinator.com/item?id=50190567",
+       "id": 50190567,
+       "replies": 28
+      }
+     ],
+     "kicker": "开发 · 算法"
+    },
+    {
+     "id": 50196718,
+     "title": "HackiOS：在安卓手机上跑完整的 iOS 16.5 固件",
+     "title_en": "Run full iOS 16.5 firmware on Android Devices",
+     "url": "https://github.com/oosexgang/hackios-xnu-kernel",
+     "hn": "https://news.ycombinator.com/item?id=50196718",
+     "points": 313,
+     "comments": 119,
+     "summary": [
+      "开源项目 HackiOS 让未改动一个字节的 iOS 16.5 系统在安卓手机（主要是小米的 redwood 机型）和 QEMU 上启动：通过 fastboot 引导 UEFI 和自写的加载器，再运行改过的 XNU 内核，缺的部分由内核里的驱动替代件或注入的库补上。",
+      "README 列出了能用的：锁屏、主屏、控制中心、设置和 Safari 等应用、触屏、Wi-Fi（55 至 90 Mbit/s）、扬声器和相机；蜂窝网络、蓝牙、App Store 和 Apple ID 登录还不行。作者强调这是研究平台而不是 ROM，每次会话运行固定秒数就回到加载器。评论区有人担心以后买二手 iPhone 更要提防山寨机。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "SoKamil",
+       "stance": "猜测",
+       "zh": "「这是研究平台，不是 ROM：一次会话持续指定的秒数，然后内核返回加载器并交出日志。」我怀疑这么写是因为不然 Claude 会触发安全防护，不肯继续做这个项目。",
+       "en": "I wonder if it is here because Claude would deploy safeguards",
+       "hn": "https://news.ycombinator.com/item?id=50200964",
+       "id": 50200964,
+       "replies": 1
+      },
+      {
+       "user": "sanid",
+       "stance": "担忧",
+       "zh": "这下有意思了。已经有仿旗舰的山寨机，跑着改得像 iOS 的劣质安卓。以后买二手老款 iPhone 得检查三遍了。",
+       "en": "People need to tripple check now when buying older used iPhone models.",
+       "hn": "https://news.ycombinator.com/item?id=50197529",
+       "id": 50197529,
+       "replies": 13
+      },
+      {
+       "user": "drnick1",
+       "stance": "反问",
+       "zh": "能做到很有意思，但为什么有人想在安卓设备上跑 iOS？更值得做的是在苹果硬件上跑 Graphene 这类自由安卓发行版。",
+       "en": "why would anyone want to run iOS on Android devices?",
+       "hn": "https://news.ycombinator.com/item?id=50198684",
+       "id": 50198684,
+       "replies": 18
+      }
+     ],
+     "kicker": "开发 · 系统移植"
+    },
+    {
+     "id": 50193170,
+     "title": "比 earcut 更快：489 毫秒切完 370 万个地图多边形",
+     "title_en": "Faster than earcut: triangulating 3.7M map polygons in 489 ms",
+     "url": "https://globus.software/blog/2026/10/16/cutting-map-polygons/",
+     "hn": "https://news.ycombinator.com/item?id=50193170",
+     "points": 199,
+     "comments": 38,
+     "summary": [
+      "地图引擎 GLOBUS 开源了自家的多边形三角化库 earstrip，采用和 earcut 相同的 ISC 许可。它是单个 C++ 头文件，另有参数与 earcut 相同的 WebAssembly 版；作者说 C++ 版比 earcut.hpp 快 14%，在浏览器里是 earcut.js 的 1.4 到 2.1 倍。",
+      "显卡只会填三角形，地图上的楼、公园、停车场都得先切成三角形。华沙周边地图第 13 级有 3,740,425 个多边形，原来的约束 Delaunay 三角化在 M4 Pro 单核上要 2.93 秒，换成耳切法并逐步优化后降到 489 毫秒。文章一个想法一次提交，每节都附上计时。earcut 的作者也到评论区道贺。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "mourner",
+       "stance": "原作者",
+       "zh": "嗨 Evgen，我是 Earcut 的作者，感谢这篇文章和这个很酷的库！我得看看有没有技巧能借给 Earcut 的 JS 版。要说明的是，为了让库保持小巧，我故意放弃了一些潜在优化。",
+       "en": "Earcut author here",
+       "hn": "https://news.ycombinator.com/item?id=50193710",
+       "id": 50193710,
+       "replies": 1
+      },
+      {
+       "user": "stymaar",
+       "stance": "疑问",
+       "zh": "我看到结果里有很多又长又细的三角形，这不正是显卡光栅化最怕的情况吗？",
+       "en": "lots of very long, very thin triangles",
+       "hn": "https://news.ycombinator.com/item?id=50197175",
+       "id": 50197175,
+       "replies": 3
+      }
+     ],
+     "kicker": "开发 · 图形"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50194938,
+     "title": "Crystal 语言发布 1.22",
+     "title_en": "Crystal 1.22",
+     "url": "https://crystal-lang.org/2026/10/12/1.22.0-released/",
+     "hn": "https://news.ycombinator.com/item?id=50194938",
+     "points": 168,
+     "comments": 85
+    },
+    {
+     "id": 50199389,
+     "title": "Hedra：我高中时从零写的 3D 开放世界游戏",
+     "title_en": "Hedra is a 3D open world game I wrote from scratch while in highschool",
+     "url": "https://github.com/maxilevi/project-hedra/tree/pre-ai",
+     "hn": "https://news.ycombinator.com/item?id=50199389",
+     "points": 115,
+     "comments": 28
+    },
+    {
+     "id": 50154109,
+     "title": "《NetHack》侏儒矿坑里的地牢生成",
+     "title_en": "Dungeon Generation in the Gnomish Mines of NetHack",
+     "url": "https://www.boristhebrave.com/2026/10/18/dungeon-generation-in-the-gnomish-mines-of-nethack/",
+     "hn": "https://news.ycombinator.com/item?id=50154109",
+     "points": 117,
+     "comments": 14
+    },
+    {
+     "id": 50154100,
+     "title": "给人用的思维链",
+     "title_en": "Chain of Thought for Humans",
+     "url": "https://www.boristhebrave.com/2026/10/18/chain-of-thought-for-humans/",
+     "hn": "https://news.ycombinator.com/item?id=50154100",
+     "points": 137,
+     "comments": 69
+    },
+    {
+     "id": 50180257,
+     "title": "Show HN：Uberblok，交互式的 ZFS 内部机制博物馆",
+     "title_en": "Show HN: Uberblok – an interactive museum of ZFS internals",
+     "url": "https://uberblok.storagebits.workers.dev/",
+     "hn": "https://news.ycombinator.com/item?id=50180257",
+     "points": 70,
+     "comments": 20
+    },
+    {
+     "id": 50166590,
+     "title": "LWN：超越 &",
+     "title_en": "Beyond the &",
+     "url": "https://lwn.net/Articles/1096028/",
+     "hn": "https://news.ycombinator.com/item?id=50166590",
+     "points": 93,
+     "comments": 13
+    },
+    {
+     "id": 50190959,
+     "title": "真不敢相信 PowerShell 挺好用",
+     "title_en": "I can't believe PowerShell is good",
+     "url": "https://www.spacebar.news/powershell-is-actually-good/",
+     "hn": "https://news.ycombinator.com/item?id=50190959",
+     "points": 66,
+     "comments": 78
+    },
+    {
+     "id": 50192254,
+     "title": "Markdown 文件就该直接能打开",
+     "title_en": "A Markdown File Should Just Open",
+     "url": "https://joshuamorris.info/notes/2026/10/13/a-markdown-file-should-just-open/",
+     "hn": "https://news.ycombinator.com/item?id=50192254",
+     "points": 62,
+     "comments": 76
+    },
+    {
+     "id": 50188614,
+     "title": "Postgres 的 recovery_prefetch 可能引发故障",
+     "title_en": "Postgres recovery_prefetch can cause outages",
+     "url": "https://ardentperf.com/2026/10/20/postgres-recovery_prefetch-considered-harmful-and-causing-outages/",
+     "hn": "https://news.ycombinator.com/item?id=50188614",
+     "points": 28,
+     "comments": 0
+    },
+    {
+     "id": 50189023,
+     "title": "整数乘法的指数改进 Κ = 0.003 被突破",
+     "title_en": "Κ = 0.003 for integer multiplication crossed",
+     "url": "https://github.com/CrocSwap/integer-mult-bounds/pull/4441",
+     "hn": "https://news.ycombinator.com/item?id=50189023",
+     "points": 36,
+     "comments": 22
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1704,
+    "comments": 841,
+    "top_points": {
+     "id": 50196718,
+     "title": "HackiOS：在安卓手机上跑完整的 iOS 16.5 固件",
+     "value": 313,
+     "comments": 119
+    },
+    "top_comments": {
+     "id": 50190455,
+     "title": "整数乘法专家：那个 o(n log n) 新算法「看起来可信」",
+     "value": 279
+    },
+    "top_brief": {
+     "id": 50194938,
+     "title": "Crystal 语言发布 1.22",
+     "value": 168,
+     "comments": 85
+    }
+   }
+  },
+  {
+   "name": "文化",
+   "en": "Culture",
+   "page": 5,
+   "stories": [
+    {
+     "id": 50150163,
+     "title": "什么是「网格化」：录音音乐如何变得机器般完美",
+     "title_en": "What Is Gridifcation",
+     "url": "https://musicalform.substack.com/p/what-is-gridifcation",
+     "hn": "https://news.ycombinator.com/item?id=50150163",
+     "points": 388,
+     "comments": 193,
+     "summary": [
+      "Musical Form Institute 的 Jeffrey Anthony 撰文（4 月发表），对比 1975 年和 2025 年 Billboard 年终榜前五名，提出「网格化」（gridification）一词：过去二十五年，录音制作把人类演奏在时间上的细微差别当成需要校正的错误。",
+      "他举例说，1975 年《Love Will Keep Us Together》里底鼓和贝斯并没有完全对齐，鼓手 Hal Blaine 进桥段前的过门抢了拍又拉回来，这些在今天的混音中几乎肯定会被对齐到网格上。评论区很多人分享被「修整」过的录音经历，也有人吐槽这篇批判机器完美的文章本身满是 AI 腔。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "bitsinthesky",
+       "stance": "亲历",
+       "zh": "高中时我们的业余爵士乐队去录音棚录了张纪念专辑……录完我们去看录音师干活：他们一丝不苟地把每个音符都对齐网格、修了音准。",
+       "en": "They meticulously gridified and autotuned every note.",
+       "hn": "https://news.ycombinator.com/item?id=50194618",
+       "id": 50194618,
+       "replies": 38
+      },
+      {
+       "user": "PaulDavisThe1st",
+       "stance": "原因",
+       "zh": "这在相当程度上要归因于近二三十年音乐制作的分布式。1970 年代开始出现鼓手「跟着节拍器打」，主要动机就是其他乐手要么不在同一个房间，要么不在同一时间录。",
+       "en": "the drummer \"playing to the click\"",
+       "hn": "https://news.ycombinator.com/item?id=50198872",
+       "id": 50198872,
+       "replies": 4
+      },
+      {
+       "user": "CephalopodMD",
+       "stance": "吐槽",
+       "zh": "「不是品味。不是质量。是在场感。」唉，讽刺的是，这篇痛批用机器追求非人完美的文章，明显是 AI 腔的废话脑。",
+       "en": "Ironic that this blog post lambasting the use of machines to achieve inhuman levels of perfection is so clearly ai slop brained.",
+       "hn": "https://news.ycombinator.com/item?id=50202914",
+       "id": 50202914
+      }
+     ],
+     "kicker": "文化 · 音乐"
+    },
+    {
+     "id": 50189150,
+     "title": "Airbnb 禁止房东要求房客洗碗、倒垃圾",
+     "title_en": "Airbnb bans making guests do dishes and take out the trash",
+     "url": "https://www.theverge.com/tech/1015844/airbnb-chores-house-rules-update",
+     "hn": "https://news.ycombinator.com/item?id=50189150",
+     "points": 243,
+     "comments": 224,
+     "summary": [
+      "据 The Verge 报道，Airbnb 更新了房屋守则政策，从 11 月 20 日及之后预订的住宿开始，房东不能要求房客完成「需要大量精力或时间、或通常由清洁工完成的任务」。",
+      "具体来说：不能要求洗碗收碗，但可以要求把用过的碗放进水槽；不能要求拆床单或开洗衣机，但可以要求把用过的毛巾归拢；不能要求把垃圾带出房子，但可以要求在室内分类投放。评论区有人叫好，有人认为本来就该自己收拾，也有人说这标志着 Airbnb 彻底告别了「出租自家沙发」的初衷。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "dkga",
+       "stance": "唱反调",
+       "zh": "说个反方观点：我无法想象默认不收拾自己的残局。我不是说每住一个地方都要大扫除，但住 Airbnb 至少会让房子保持体面，比如用过的厨具要么洗了，要么放进洗碗机。",
+       "en": "I can't imagine not cleaning up after yourself by default.",
+       "hn": "https://news.ycombinator.com/item?id=50189604",
+       "id": 50189604,
+       "replies": 38
+      },
+      {
+       "user": "willio58",
+       "stance": "叫好",
+       "zh": "谢天谢地。说我懒也行，我一直不明白，清洁工十分钟后就到，为什么退房前还得我去倒垃圾。",
+       "en": "I’ve always wondered why I need to take out the trash when a cleaning crew was coming in 10 minutes after I checked out.",
+       "hn": "https://news.ycombinator.com/item?id=50189421",
+       "id": 50189421,
+       "replies": 5
+      },
+      {
+       "user": "paxy",
+       "stance": "惋惜",
+       "zh": "某种意义上挺可惜，这是 Airbnb 终于放弃了「靠出租你家沙发赚钱」的初衷。剩下少数出租自住房的小房东大概会离开，职业化管理的短租房将彻底接管。",
+       "en": "this is Airbnb finally abandoning its original \"make money by renting out your couch\" premise",
+       "hn": "https://news.ycombinator.com/item?id=50190430",
+       "id": 50190430,
+       "replies": 1
+      }
+     ],
+     "kicker": "生活 · 短租"
+    },
+    {
+     "id": 50194009,
+     "title": "Xbox 云游戏按小时卖：已买的游戏每小时再付 24 到 40 美分",
+     "title_en": "Xbox wants you to pay 24 to 40 cents per hour to stream games you bought",
+     "url": "https://arstechnica.com/gaming/2026/10/xbox-wants-you-to-pay-24-to-40-cents-per-hour-to-stream-games-you-already-bought/",
+     "hn": "https://news.ycombinator.com/item?id=50194009",
+     "points": 183,
+     "comments": 194,
+     "summary": [
+      "据 Ars Technica 报道，微软 9 月大幅收紧 Game Pass 订阅里的云游戏后，现在向 Xbox Insider 推出单独购买的「云游玩时长」：10 小时 4 美元、25 小时 8 美元、50 小时 12 美元，买了不过期。",
+      "文章强调这笔钱要在买游戏之外另付，像老式街机按次投币，「但街机可不用你先买下机台」。评论区却有不少人觉得价格合理：这相当于租用远端显卡，比花上千美元买主机或配电脑划算。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "paxy",
+       "stance": "反驳",
+       "zh": "他们为什么老强调「你已经买了的游戏！！！」？在自己的硬件上玩不收钱。这个价格是租显卡的钱，和 GeForce Now 等一堆服务一样。",
+       "en": "This pricing is for renting the GPUs, same as GeForce Now",
+       "hn": "https://news.ycombinator.com/item?id=50194565",
+       "id": 50194565,
+       "replies": 47
+      },
+      {
+       "user": "ChrisRR",
+       "stance": "划算",
+       "zh": "听起来挺公道。如果你本来就有电视或别的设备当瘦客户端，很多人会乐意花 12 美元买 50 小时，而不是花 1000 美元买整台主机。",
+       "en": "Sounds fair.",
+       "hn": "https://news.ycombinator.com/item?id=50194205",
+       "id": 50194205,
+       "replies": 12
+      },
+      {
+       "user": "motbus3",
+       "stance": "担忧",
+       "zh": "我和别人不同，不觉得这价格公道……但我真正担心的是，他们以后无论如何都想按小时收游戏费。",
+       "en": "they will want to charge games per hour anyway",
+       "hn": "https://news.ycombinator.com/item?id=50194382",
+       "id": 50194382,
+       "replies": 12
+      }
+     ],
+     "kicker": "文化 · 游戏"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50194283,
+     "title": "《卫报》：谷歌在芬兰违法砍伐 25 万棵树，当地愤怒",
+     "title_en": "'Pure arrogance': anger in Finland as Google illegally fells 250k trees",
+     "url": "https://www.theguardian.com/environment/ng-interactive/2026/oct/22/finland-google-felling-trees-datacentre",
+     "hn": "https://news.ycombinator.com/item?id=50194283",
+     "points": 39,
+     "comments": 4
+    },
+    {
+     "id": 50195873,
+     "title": "加拿大议员推动限制赌博广告",
+     "title_en": "MPs moving to restrict gambling ads in Canada",
+     "url": "https://www.cbc.ca/news/investigates/gambling-ads-restrictions-canada-9.7388888",
+     "hn": "https://news.ycombinator.com/item?id=50195873",
+     "points": 228,
+     "comments": 118
+    },
+    {
+     "id": 50197404,
+     "title": "GNU Taler 准备在德国运营",
+     "title_en": "Getting ready to operate GNU Taler in Germany",
+     "url": "https://www.taler.net/en/news/2026-13.html",
+     "hn": "https://news.ycombinator.com/item?id=50197404",
+     "points": 218,
+     "comments": 82
+    },
+    {
+     "id": 50190168,
+     "title": "澳大利亚联邦法院：Epic Games 诉苹果案判决",
+     "title_en": "Epic Games Inc v Apple Inc",
+     "url": "https://www.judgments.fedcourt.gov.au/judgments/Judgments/fca/single/2026/2026fca1552",
+     "hn": "https://news.ycombinator.com/item?id=50190168",
+     "points": 184,
+     "comments": 136
+    },
+    {
+     "id": 50189801,
+     "title": "特斯拉第三季度利润下降 43%",
+     "title_en": "Tesla profits drop 43% in Q3",
+     "url": "https://arstechnica.com/cars/2026/10/tesla-profits-drop-43-in-q3/",
+     "hn": "https://news.ycombinator.com/item?id=50189801",
+     "points": 86,
+     "comments": 55
+    },
+    {
+     "id": 50157456,
+     "title": "初创公司试验以海底火山为能源",
+     "title_en": "Startup taps underwater volcano as energy source in “proof point” test",
+     "url": "https://arstechnica.com/science/2026/10/startup-taps-underwater-volcano-as-energy-source-in-proof-point-test/",
+     "hn": "https://news.ycombinator.com/item?id=50157456",
+     "points": 122,
+     "comments": 50
+    },
+    {
+     "id": 50194522,
+     "title": "The Last Museum：在各大博物馆 580 万件艺术品中语义搜索",
+     "title_en": "The Last Museum: Semantic search across 5.8M artworks from major museums",
+     "url": "https://lastmuseum.com/",
+     "hn": "https://news.ycombinator.com/item?id=50194522",
+     "points": 102,
+     "comments": 28
+    },
+    {
+     "id": 50160241,
+     "title": "什么是喀喇昆仑异常？",
+     "title_en": "What Is the Karakoram Anomaly?",
+     "url": "https://nsidc.org/learn/ask-scientist/karakoram-anomaly-it-real",
+     "hn": "https://news.ycombinator.com/item?id=50160241",
+     "points": 81,
+     "comments": 24
+    },
+    {
+     "id": 50155616,
+     "title": "一台我没想到会造的机器人",
+     "title_en": "A robot I didn't expect to build",
+     "url": "https://spectrum.ieee.org/agility-robotics-digit-5-redesign",
+     "hn": "https://news.ycombinator.com/item?id=50155616",
+     "points": 66,
+     "comments": 53
+    }
+   ],
+   "stats": {
+    "items": 12,
+    "points": 1940,
+    "comments": 1161,
+    "top_points": {
+     "id": 50150163,
+     "title": "什么是「网格化」：录音音乐如何变得机器般完美",
+     "value": 388,
+     "comments": 193
+    },
+    "top_comments": {
+     "id": 50189150,
+     "title": "Airbnb 禁止房东要求房客洗碗、倒垃圾",
+     "value": 224
+    },
+    "top_brief": {
+     "id": 50195873,
+     "title": "加拿大议员推动限制赌博广告",
+     "value": 228,
+     "comments": 118
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "ivanjermakov",
+  "id": 50196080,
+  "hn": "https://news.ycombinator.com/item?id=50196080",
+  "story_id": 50193416,
+  "story": "我无意中打破了 PHP 漏洞的禁发期",
+  "zh": "搏击俱乐部的第一条规则，只对知道搏击俱乐部存在的人有效。",
+  "en": "The first rule of the fight club only applies if you know about the fight club."
+ },
+ "stats": {
+  "snapshot": "2026-10-23T08:16:36+08:00",
+  "front_page_count": 90,
+  "with_numbers": 83,
+  "flagged_or_dupe": 7,
+  "top_points": {
+   "id": 50195959,
+   "title": "法院判决难以照办，Quad9 宣布 11 月 24 日起退出法国",
+   "value": 960,
+   "comments": 346
+  },
+  "top_comments": {
+   "id": 50195110,
+   "title": "私钥出事之后，eMudhra 宣布退出全球 SSL/TLS 证书业务",
+   "value": 620
+  },
+  "second_comments": {
+   "id": 50194833,
+   "title": "没开过的 Cash App 账户，让她被捕入狱，面临六年刑期",
+   "value": 453
+  },
+  "over_500": 5,
+  "over_300": 13,
+  "over_100": 37,
+  "show_hn": 12,
+  "total_points": 13144,
+  "total_comments": 6702,
+  "hottest_ratio": {
+   "id": 50197313,
+   "title": "问 12 个 AI 模型最有争议的人类观点，答案几乎一样",
+   "value": 1.2,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
