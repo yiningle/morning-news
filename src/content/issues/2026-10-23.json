@@ -1,0 +1,1290 @@
+{
+ "date": "2026-10-23",
+ "published_at": "2026-10-24T08:20:23+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-10-23",
+ "schema_version": 2,
+ "lead": {
+  "id": 50202285,
+  "title": "「本地维基百科」：只看步行半小时内的维基词条",
+  "title_en": "Local Wikipedia: Wikipedia, but only for things a half hour walk from you",
+  "url": "https://edjefferson.com/localwiki/",
+  "hn": "https://news.ycombinator.com/item?id=50202285",
+  "points": 1203,
+  "comments": 223,
+  "summary": [
+   "Ed Jefferson 做了一个叫 Local Wikipedia 的小网站，口号是「给本地人的百科全书」。输入城镇、地名或邮编，或者直接授权定位，它就只列出你附近、步行约半小时范围内的维基百科词条。",
+   "网站说明，内容直接取自维基百科，只收带地理坐标的页面；附近不足 25 条时，会改取约 6 英里内最近的 25 条，超过 500 条则只保留最近的 500 条。位置信息只留在浏览器里，分享出去的链接不带位置。它也声明和维基百科官方没有关系。",
+   "这是当天点赞最多的帖子。评论区有人说身边离得最近的词条也要走三个多小时，有人指出维基百科自带的「附近」页面（Special:Nearby）能给出相同结果，还有欧洲用户抱怨距离用码来标。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "esperent",
+    "stance": "建议",
+    "zh": "好主意，但距离一定要能调。我现在的位置，走几个小时都到不了任何够格上维基的地方；如果扩到 15 公里，大概能有几处景点。住城里的人则会得到一大堆结果。补充：其实这好像只是维基百科「附近」功能的一层包装，我试了几个地方，结果一模一样。",
+    "en": "actually this is just a wrapper around wikipedia's nearby feature I think",
+    "hn": "https://news.ycombinator.com/item?id=50205318",
+    "id": 50205318,
+    "replies": 11
+   },
+   {
+    "user": "nomilk",
+    "stance": "心理",
+    "zh": "一个奇怪的心理现象：原本平淡无奇的文章，只要发生在附近，就显得切身得多。我刚读了几十年前一场随机的坠机事故，因为离得近，看得格外投入。",
+    "en": "otherwise banal articles seem much more pertinent when they happen to be nearby",
+    "hn": "https://news.ycombinator.com/item?id=50205947",
+    "id": 50205947,
+    "replies": 12
+   },
+   {
+    "user": "darkest_ruby",
+    "stance": "吐槽",
+    "zh": "给欧洲的地点用码来标距离，简直是侮辱。",
+    "en": "Distances measured in yards for European destinations is an insult",
+    "hn": "https://news.ycombinator.com/item?id=50205576",
+    "id": 50205576,
+    "replies": 22
+   }
+  ],
+  "kicker": "要闻 · 小工具",
+  "tag": "当日点赞第一"
+ },
+ "side": [
+  {
+   "id": 50211474,
+   "title": "安全公司 Calif：「我们黑掉了 iPhone」",
+   "title_en": "Today, we hacked what we'd set out to hack: the iPhone",
+   "url": "https://blog.calif.io/p/iphone",
+   "hn": "https://news.ycombinator.com/item?id=50211474",
+   "points": 715,
+   "comments": 467,
+   "summary": [
+    "安全公司 Calif 在自家通讯上发了一篇很短的文章，说团队实现了既定目标，黑掉了 iPhone，并贴出当天在巴黎 Hexacon 安全大会上公布的四段演示：Signal 一键攻击、针对 iMessage 的攻击、一段名为「你的 iPhone 能做到这个吗？」的演示，以及标题为「APT 就是苹果持续性威胁」的一段。",
+    "文章本身只有演示标题和视频，没有技术细节，只说「一切都会在适当时候发布」。这帖评论数是当天第二多。评论区讨论的是越狱后会被苹果锁在 iCloud 之外、只有大实验室的「红队」名单内的人能用最强模型找漏洞，以及为什么 PDF 总是成为 iOS 的突破口。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "reacharavindh",
+     "stance": "感慨",
+     "zh": "可惜我们向大公司的「生态」玩法投降了。就算我越狱、从不更新，苹果也能轻松检测到，把我锁在 iCloud、iMessage 之外，iPhone 就只剩一台光鲜的 iPod touch 了。",
+     "en": "Apple can easily detect the jailbreak and lock me out of anything iCloud",
+     "hn": "https://news.ycombinator.com/item?id=50211964",
+     "id": 50211964,
+     "replies": 172
+    },
+    {
+     "user": "jinseokim",
+     "stance": "不平",
+     "zh": "我有点难过和无力：圈子外的大量安全研究者没法加入「我们又找到疯狂漏洞了」的派对，因为前沿实验室只把带「红队」权限的模型给圈内成员和公司。现在他们的「可信网络安全访问」计划是护城河，而不是安全措施。",
+     "en": "Now their \"trusted cyber access\" program is moat rather than safeguard.",
+     "hn": "https://news.ycombinator.com/item?id=50214848",
+     "id": 50214848,
+     "replies": 8
+    },
+    {
+     "user": "aemoron",
+     "stance": "旧账",
+     "zh": "iOS 跟 PDF 是怎么回事，老被它攻破？这让我想起 Pegasus 间谍软件里的 ForcedEntry。",
+     "en": "What's with iOS and pdfs pwning them?",
+     "hn": "https://news.ycombinator.com/item?id=50212216",
+     "id": 50212216,
+     "replies": 28
+    }
+   ],
+   "kicker": "安全 · 手机"
+  },
+  {
+   "id": 50202681,
+   "title": "自己写容器运行时之后，才发现「Docker 很怪」",
+   "title_en": "Docker is weird",
+   "url": "https://codeandcake.dev/posts/2026-10-22-docker-is-weird",
+   "hn": "https://news.ycombinator.com/item?id=50202681",
+   "points": 818,
+   "comments": 344,
+   "summary": [
+    "Code and Cake 博客的作者为了好玩，开始写自己的容器运行时，记下了几条心得：容器不像虚拟机，只是加了特殊限制的进程，在 /proc 里就能找到；所谓容器，其实是五种 Linux 内核功能「套着一件风衣」；镜像不过是文件夹，Docker 用 chroot 或 pivot_root 把它变成进程的根目录。",
+    "他还说用 Go 写容器运行时并不顺手：Go 的运行时天生多线程，很多系统调用却必须在单线程下执行，所以 runc 要靠一段在 Go 运行时启动前就运行的 C 模块；Go 也没有 fork，runc 只好用特殊参数重新执行 /proc/self/exe 来模拟。Docker 守护进程通常以 root 运行，无 root 的运行时则得在用户态重新实现整套网络。",
+    "Docker 的创始人本人在评论区现身，这条回复最多。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "shykes",
+     "stance": "创始人",
+     "zh": "你好，我是 Docker 的创造者，看到了这篇文章。看别的工程师琢磨你当年怎么设计一个系统，总是很有意思。我已经很多年没参与 Docker 开发了，但这是一次有趣的怀旧之旅。有问题我很乐意回答。",
+     "en": "Hi, I'm the creator of Docker and came across this post.",
+     "hn": "https://news.ycombinator.com/item?id=50202931",
+     "id": 50202931,
+     "replies": 194
+    },
+    {
+     "user": "vbezhenar",
+     "stance": "真正的独特",
+     "zh": "在我看来，Docker 的独特之处不在容器技术本身，我 20 年前就用 chroot 用得好好的。它独特在于三点：Dockerfile 这个概念，一层层构建镜像、缓存层；网络镜像仓库，把通用镜像放到服务器上和全世界共享；还有势头。",
+     "en": "What made Docker unique IMO is not the container technology itself.",
+     "hn": "https://news.ycombinator.com/item?id=50203975",
+     "id": 50203975,
+     "replies": 10
+    },
+    {
+     "user": "j16sdiz",
+     "stance": "不觉得怪",
+     "zh": "文章里每一条我都想问：「这有什么怪的？」只要了解这些东西多年来怎么演变，清单里的一切都很自然。也许只是我老了，好奇心少了。",
+     "en": "Every statement in the article make me ask: \"what's weird about it?\"",
+     "hn": "https://news.ycombinator.com/item?id=50203265",
+     "id": 50203265,
+     "replies": 14
+    }
+   ],
+   "kicker": "开发 · 容器"
+  },
+  {
+   "id": 50212065,
+   "title": "Kimi K3.1 Pro 发布：3T 级开放权重，11 月 4 日前放出",
+   "title_en": "Kimi K3.1 Pro and K3.1 Pro Highspeed",
+   "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "hn": "https://news.ycombinator.com/item?id=50212065",
+   "points": 669,
+   "comments": 424,
+   "summary": [
+    "月之暗面发布 Kimi K3.1 Pro，称是它迄今最强的 3T 级开放权重模型，上下文 100 万 token，另有快 2 到 3 倍的 Highspeed 版本，即日起在 Kimi 各产品和 API 上线，完整权重将于 11 月 4 日前发布。官方给出的成绩之一：Terminal-Bench 4.0 得 65.7%，高于 GPT-6 Astra 的 58.2%，略低于 Claude Opus 5.5 的 66.4%。",
+    "博客专门谈了网络安全：他们发现漏洞挖掘能力随后训练规模上升，于是在训练中剔除了网络安全相关数据和强化学习环境。在内部基准 xdev-bench-hard 上，未做处理的版本解出 90.5%，最终版是 81.0%。他们的原则是开放权重不去拓展网络攻击能力的绝对前沿，之后再逐步提高。",
+    "评论区最受关注的正是这段「能做到但不放」的表态，另有不少人抱怨订阅版额度很快用完。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "rudolftheone",
+     "stance": "关注",
+     "zh": "引起我注意的是这段：「我们的目标是不发布会拓展网络能力绝对前沿的开放权重……」所以他们承认能做得更多，但不做？",
+     "en": "So they admit that they could do more, but they won't?",
+     "hn": "https://news.ycombinator.com/item?id=50212365",
+     "id": 50212365,
+     "replies": 92
+    },
+    {
+     "user": "johnmlussier",
+     "stance": "额度",
+     "zh": "如果你指望他们的订阅套餐有可用的额度，建议降低预期。我订了每月 99 美元的套餐，只开一个会话、没搞什么集群，47 分钟就撞上了 5 小时额度上限。",
+     "en": "within 47 minutes with one session",
+     "hn": "https://news.ycombinator.com/item?id=50212563",
+     "id": 50212563,
+     "replies": 34
+    },
+    {
+     "user": "thefourthchime",
+     "stance": "实测",
+     "zh": "这是吃豆人基准的结果。就价格而言表现不错，和 Sonnet 5.5 差不多：Kimi K3.1 Pro 和 Sonnet 5.5 的成绩同为 93，花费 0.68 美元、11 分钟，Sonnet 是 1.61 美元、14 分钟。",
+     "en": "Kimi K3.1 Pro ties Sonnet 5.5 at 93",
+     "hn": "https://news.ycombinator.com/item?id=50216342",
+     "id": 50216342,
+     "replies": 1
+    }
+   ],
+   "kicker": "AI · 开放模型"
+  },
+  {
+   "id": 50200997,
+   "title": "Ask HN：模型这么强，OpenAI 为什么不自己开 100 家公司？",
+   "title_en": "Ask HN: If the models are so good, why doesn't OpenAI just start 100 companies?",
+   "url": null,
+   "hn": "https://news.ycombinator.com/item?id=50200997",
+   "points": 590,
+   "comments": 655,
+   "summary": [
+    "提问者说标题有点夸张，真正想问的是：如果前沿模型这么好，为什么还把卖模型当成主要的赚钱方式？OpenAI 或 Anthropic 自己开公司、用模型做产品，不是能赚得多得多吗？既然模型在商品化、价格在下降，钱是不是更多在应用这一侧？",
+    "这是当天评论最多的帖子，评论数超过点赞数。高赞回答各有角度：有人拿麦肯锡类比，说 AI 是大脑，公司还需要手脚和人脉；有人列举 OpenAI 其实已经在大量尝试应用，而按 token 卖给长时间运行的智能体是唯一被证明能带来收入增长的东西；也有人说任何能被 AI 轻易复制的公司，利润都会被别人的 AI 打到零。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "epsteingpt",
+     "stance": "类比",
+     "zh": "显而易见的答案，和麦肯锡没能接管《财富》500 强的原因一样，尽管它为这些公司做咨询、深知它们的运营。AI 是大脑，公司需要手脚和人脉。",
+     "en": "AI is brains. Companies need arms and legs and relationships.",
+     "hn": "https://news.ycombinator.com/item?id=50207846",
+     "id": 50207846,
+     "replies": 115
+    },
+    {
+     "user": "CoolestBeans",
+     "stance": "清单",
+     "zh": "一，他们已经在这么做了，看看 OpenAI 的产品线，应用尝试多如繁星。二，通过长时间运行的智能体卖 token，是唯一被证明能带来收入增长的东西。三，他们现在就急需收入，借贷利率上升，跑道比你想象的短。",
+     "en": "They are starting to do it.",
+     "hn": "https://news.ycombinator.com/item?id=50201229",
+     "id": 50201229,
+     "replies": 57
+    },
+    {
+     "user": "throwyawayyyy",
+     "stance": "经济学",
+     "zh": "因为任何能被 OpenAI 智能体轻易重做的公司，利润都会跌到零，因为别人的智能体也能轻易做到。这正是 OpenAI、Anthropic 们的经济账如此疯狂的原因：它们需要攫取数万亿美元的价值，但那数万亿美元将不复存在。",
+     "en": "they need to capture trillions of dollars in value, but those trillions of dollars won't exist any more",
+     "hn": "https://news.ycombinator.com/item?id=50213253",
+     "id": 50213253,
+     "replies": 13
+    }
+   ],
+   "kicker": "Ask HN · AI 商业",
+   "tag": "当日评论第一"
+  },
+  {
+   "id": 50208837,
+   "title": "美国私营电力公司的电价比公营高 23%",
+   "title_en": "Investor-owned utilities charge 23% more for electricity than public providers",
+   "url": "https://www.kadoa.com/energy-prices/insights/investor-owned-utilities",
+   "hn": "https://news.ycombinator.com/item?id=50208837",
+   "points": 521,
+   "comments": 378,
+   "summary": [
+    "数据公司 Kadoa 的「美国能源价格监测」根据美国能源信息署（EIA）的电力公司年度调查算出：2025 年美国家庭在投资者所有的电力公司每千瓦时付 17.8 美分，公营电力公司是 14.5 美分，合作社是 14.1 美分。",
+    "2020 年以来，私营电价涨了 34%，公营涨 19%，同期通胀是 24%。页面还按州列出私营与非营利电价的差距变化，缅因、华盛顿、加州差距拉得最大。",
+    "评论区多数人认为公用事业不该有利润动机，也有人质疑这种比较没考虑税负、资本成本和地区差异。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "yttrium",
+     "stance": "主流",
+     "zh": "公用事业至少不该掺杂利润动机。我们一直乐于把巨额利润送给股东，而不是加固电网，这真是一场悲剧。",
+     "en": "Utilities should at minimum not have a profit motive involved",
+     "hn": "https://news.ycombinator.com/item?id=50209009",
+     "id": 50209009,
+     "replies": 61
+    },
+    {
+     "user": "ianm218",
+     "stance": "质疑",
+     "zh": "如果不知道它们的税率、资本成本，也不按地理位置和地方监管调整，这个比较就有点没用。比如涨幅最大的是纽约，那里做什么都贵，税也高。",
+     "en": "This feels like kinda of a useless comparison",
+     "hn": "https://news.ycombinator.com/item?id=50209073",
+     "id": 50209073,
+     "replies": 7
+    },
+    {
+     "user": "pandinus",
+     "stance": "反例",
+     "zh": "我就是反例。我这儿唯一的水电公司是市营的，我付的钱是我妹妹家的三倍；她住在另一个城市，有四家以上私营公司互相竞争，房子还比我的大一倍多。",
+     "en": "I live in a counter-example.",
+     "hn": "https://news.ycombinator.com/item?id=50209374",
+     "id": 50209374,
+     "replies": 16
+    }
+   ],
+   "kicker": "经济 · 电价"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 2,
+   "stories": [
+    {
+     "id": 50202217,
+     "title": "Anthropic：用 Claude 给 123 个开源库写出形式化证明",
+     "title_en": "LLMs are making formal software verification feasible at a much larger scale",
+     "url": "https://www.anthropic.com/research/formal-verification",
+     "hn": "https://news.ycombinator.com/item?id=50202217",
+     "points": 438,
+     "comments": 281,
+     "summary": [
+      "Anthropic 前沿红队与 Theorem 公司合作发文说，形式化验证过去要专家花上数年（例如 seL4 内核实现用了 2 人年，验证用了 20 人年），如今大模型可以大规模地自动写证明。他们让 Claude 在 RISC-V 汇编层面，为 123 个 OSS-Fuzz 开源库的 239 个入口点证明了「不会崩溃」：在单线程静态二进制等假设下，任何小于 64 MB 的输入都不会触发内存安全错误或断言失败。",
+      "做法是把开发者写的模糊测试改写成规格，再让 Claude 用 Rocq 证明它永远通过；证明过程中发现了数百个漏洞，其中一些躲过了数万亿次测试运行，Claude 修补后再完成证明。文章强调这不代表库里没有漏洞，需要信任的只剩 RISC-V 与 Linux 的形式化模型、定理陈述和 Rocq 证明检查器。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "malisper",
+       "stance": "亲历",
+       "zh": "给怀疑者一个例子：我在用 Rust 重写 Postgres，形式化验证效果不错。我写了一个能把 Rust 和 C 代码都翻译成 Lean 的编译器，再让大模型写 Lean 证明两者行为一致。目前已证明约 12% 的代码在单线程下行为相同，相当于约 7 万行 C 代码。",
+       "en": "I've had decent success using formal verification for my Rust rewrite of Postgres.",
+       "hn": "https://news.ycombinator.com/item?id=50203167",
+       "id": 50203167,
+       "replies": 40
+      },
+      {
+       "user": "mentalgear",
+       "stance": "提醒",
+       "zh": "提醒一下：验证是代码做到它声称的事；确认是代码做到规格说的事；规格则但愿正确地对应了问题。你完全可以写出数学上无瑕、极其高效地解决错误问题的代码。",
+       "en": "You can write mathematically flawless code that highly efficiently solves the wrong problem.",
+       "hn": "https://news.ycombinator.com/item?id=50205704",
+       "id": 50205704,
+       "replies": 15
+      },
+      {
+       "user": "pinevale",
+       "stance": "质疑",
+       "zh": "对照什么来验证？那份覆盖所有输入、所有利益方和所有用户行为的 100% 规格？最后他们落脚在用普通模糊测试找崩溃、修崩溃，再写一个形式化证明说崩溃修好了？这好像……挺没意义的？我漏了什么吗？",
+       "en": "Formal verification against what?",
+       "hn": "https://news.ycombinator.com/item?id=50202940",
+       "id": 50202940,
+       "replies": 9
+      }
+     ],
+     "kicker": "AI · 形式化验证"
+    },
+    {
+     "id": 50207405,
+     "title": "瑞典政府办公厅封禁 ChatGPT 和 Claude",
+     "title_en": "Swedish government offices to ban ChatGPT and Claude",
+     "url": "https://www.sverigesradio.se/artikel/chat-gpt-och-claude-forbjuder-regeringskansliet",
+     "hn": "https://news.ycombinator.com/item?id=50207405",
+     "points": 314,
+     "comments": 116,
+     "summary": [
+      "据瑞典广播电台 Ekot 报道，瑞典政府办公厅（Regeringskansliet）从下周一起，在员工的工作电脑上封锁 ChatGPT 和 Claude，希望员工使用经批准的服务，包括微软的 Copilot；内部信息显示，复查后还加强了 Copilot 的安全设置。数字化主管表示，使用没有签协议的 AI 服务可能「对我们的信息安全造成后果」。",
+      "报道说，瑞典税务局和国家机构管理局也已封锁，执行局正在研究；交通管理局的内部审计今年早些时候发现员工大量、冒险地使用约十种 AI 服务。部分员工仍可通过办公厅自建的 AI 助手平台使用 ChatGPT 和 Claude。评论区多数人认为这只是常规的 IT 管控。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "danck",
+       "stance": "合理",
+       "zh": "报道里说，部分员工仍可通过政府办公厅自建的 AI 助手平台使用 ChatGPT 和 Claude。听起来他们只是想掌控对外的数据流，我觉得挺明智。",
+       "en": "Sounds like they just want to maintain control over the outbound traffic",
+       "hn": "https://news.ycombinator.com/item?id=50207715",
+       "id": 50207715,
+       "replies": 64
+      },
+      {
+       "user": "all3z",
+       "stance": "澄清",
+       "zh": "注意：「瑞典政府办公厅」（Regeringskansliet）是一个具体机构。标题容易让人以为规定适用于瑞典政府下属的所有办公室和机构，其实不是。",
+       "en": "It does not imply, as the title might suggest, that the rule applies to all offices and agencies under the Swedish government.",
+       "hn": "https://news.ycombinator.com/item?id=50208608",
+       "id": 50208608,
+       "replies": 0
+      },
+      {
+       "user": "jttnr",
+       "stance": "失望",
+       "zh": "一开始我想：不错，他们禁 AI 是因为全是美国厂商，拿来处理政府数据不是好主意。结果后面说微软 Copilot 是批准的 AI……读来让人难过。",
+       "en": "But then the story goes on and say MS Copilot is an approved AI",
+       "hn": "https://news.ycombinator.com/item?id=50207689",
+       "id": 50207689,
+       "replies": 3
+      }
+     ],
+     "kicker": "AI · 政府"
+    },
+    {
+     "id": 50201445,
+     "title": "Fable 5.1 怎么把秘密信息藏进图片？",
+     "title_en": "How does Fable 5.1 hide messages in images?",
+     "url": "https://www.lesswrong.com/posts/WHEQps5PK8LrrcTAb/how-does-fable-5-1-hide-messages-in-images",
+     "hn": "https://news.ycombinator.com/item?id=50201445",
+     "points": 193,
+     "comments": 69,
+     "summary": [
+      "LessWrong 上的一项小实验：Claude Fable 5.1 被要求画图时会写 SVG，研究者让它在 50 张图里各藏一句话，再让一个全新会话的 Fable 只看截图、事先不约定任何方案去解读。结果它几乎总是把每个字母编码成单个图形元素：50 张里有 33 张用「高度」编码，其中 23 张是夜间天际线，每栋楼的高度对应一个字母在字母表中的位置。",
+      "它还会给编码打补丁：用两栋楼之间的连廊表示连字符，用屋顶斜线表示法语重音，用克里姆林宫塔楼暗示是西里尔字母。新会话的 Fable 从截图中解出了 78% 的信息。评论区不少人觉得这种编码太浅显，算不上真正的隐写。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "hagen8",
+       "stance": "太浅",
+       "zh": "这看起来很初级……把信息编码进图片的方式，还有更隐蔽、信息密度更高的多得多。",
+       "en": "There are way more subtle and information dense ways to encode information in images.",
+       "hn": "https://news.ycombinator.com/item?id=50205936",
+       "id": 50205936,
+       "replies": 12
+      },
+      {
+       "user": "XenophileJKO",
+       "stance": "表演",
+       "zh": "说实话这有点表演性质。如果模型真的在尝试或被要求以只有另一个大模型才能察觉的方式搞颠覆，它会做得复杂得多。这基本是最省力的编码。总的来说，模型被微调成不去藏信息。",
+       "en": "If I'm honest this feels performative.",
+       "hn": "https://news.ycombinator.com/item?id=50206295",
+       "id": 50206295,
+       "replies": 10
+      },
+      {
+       "user": "nickcw",
+       "stance": "肉眼解码",
+       "zh": "我觉得这个点子挺好玩，图也很好看。我用「一号肉眼」解出了那张摩尔斯电码图，轨迹重叠的地方很难读。",
+       "en": "I decoded the Morse code image with MkI eyeball.",
+       "hn": "https://news.ycombinator.com/item?id=50206123",
+       "id": 50206123,
+       "replies": 2
+      }
+     ],
+     "kicker": "AI · 隐写"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50213925,
+     "title": "Block 发布 Dessa：号称最真实的全双工语音模型",
+     "title_en": "Dessa: the most authentic full-duplex speech model ever built",
+     "url": "https://block.xyz/dessa",
+     "hn": "https://news.ycombinator.com/item?id=50213925",
+     "points": 194,
+     "comments": 83
+    },
+    {
+     "id": 50209907,
+     "title": "Gemma-4-26B-A4B 在准确率不变时少想 39%–69%",
+     "title_en": "Gemma-4-26B-A4B with 39-69% less thinking at same accuracy",
+     "url": "https://bottlecapai.com/post/thinkingcap-gemma-4-26b/",
+     "hn": "https://news.ycombinator.com/item?id=50209907",
+     "points": 99,
+     "comments": 19
+    },
+    {
+     "id": 50200843,
+     "title": "多数美国人认为 AI 对社会有害，反对建更多数据中心",
+     "title_en": "Most Americans Say AI Is Bad for Society, Oppose More Data Centers",
+     "url": "https://abcnews.com/Politics/americans-ai-bad-society-oppose-data-centers-abcpostipsos/story?id=137414085",
+     "hn": "https://news.ycombinator.com/item?id=50200843",
+     "points": 89,
+     "comments": 67
+    },
+    {
+     "id": 50206361,
+     "title": "评测热（Jev）的兴起与衰落",
+     "title_en": "The rise and fall of Jev hype",
+     "url": "https://blog.alexewerlof.com/p/rise-and-fall-of-jev-eval-hype-vs-llm",
+     "hn": "https://news.ycombinator.com/item?id=50206361",
+     "points": 88,
+     "comments": 65
+    },
+    {
+     "id": 50214416,
+     "title": "OpenAI：保护我们的前沿模型训练环境",
+     "title_en": "Securing our frontier model training environment",
+     "url": "https://openai.com/index/securing-our-frontier-model-training-environment/",
+     "hn": "https://news.ycombinator.com/item?id=50214416",
+     "points": 63,
+     "comments": 74
+    },
+    {
+     "id": 50214185,
+     "title": "微软称新 AI 诊断疾病的能力是医生的两倍多",
+     "title_en": "New AI Is More Than Twice as Good at Diagnosing Diseases as Doctors",
+     "url": "https://gizmodo.com/microsoft-says-its-new-ai-is-more-than-twice-as-good-at-diagnosing-diseases-as-doctors-2000829562",
+     "hn": "https://news.ycombinator.com/item?id=50214185",
+     "points": 32,
+     "comments": 27
+    },
+    {
+     "id": 50209939,
+     "title": "Anthropic：对英国 AISI 网络测试事件的对齐评估",
+     "title_en": "An alignment assessment of the UK AISI cybertesting incident",
+     "url": "https://www.anthropic.com/research/alignment-assessment-ukaisi",
+     "hn": "https://news.ycombinator.com/item?id=50209939",
+     "points": 17,
+     "comments": 3
+    },
+    {
+     "id": 50202671,
+     "title": "《经济学人》：AI 算力是新的石油，需要一个新市场",
+     "title_en": "AI compute is the new oil–and needs a new market",
+     "url": "https://www.economist.com/finance-and-economics/2026/10/22/ai-compute-is-the-new-oil-and-needs-a-new-market",
+     "hn": "https://news.ycombinator.com/item?id=50202671",
+     "points": 52,
+     "comments": 59
+    },
+    {
+     "id": 50207620,
+     "title": "Show HN：让 AI 根据 4.5 万封安然邮件写一部维基，每条事实都有出处",
+     "title_en": "Show HN: We had AI write a wiki from 45k Enron emails, every fact cited",
+     "url": "https://www.thisandthat.chat/enron/",
+     "hn": "https://news.ycombinator.com/item?id=50207620",
+     "points": 55,
+     "comments": 53
+    }
+   ],
+   "stats": {
+    "items": 12,
+    "points": 1634,
+    "comments": 916,
+    "top_points": {
+     "id": 50202217,
+     "title": "Anthropic：用 Claude 给 123 个开源库写出形式化证明",
+     "value": 438,
+     "comments": 281
+    },
+    "top_comments": {
+     "id": 50202217,
+     "title": "Anthropic：用 Claude 给 123 个开源库写出形式化证明",
+     "value": 281
+    },
+    "top_brief": {
+     "id": 50213925,
+     "title": "Block 发布 Dessa：号称最真实的全双工语音模型",
+     "value": 194,
+     "comments": 83
+    }
+   }
+  },
+  {
+   "name": "开发",
+   "en": "Software",
+   "page": 3,
+   "stories": [
+    {
+     "id": 50203161,
+     "title": "重读 Dijkstra 1978 年旧文：「自然语言编程」的愚蠢",
+     "title_en": "The foolishness of \"natural language programming\" (1978)",
+     "url": "https://www.cs.utexas.edu/~EWD/transcriptions/EWD06xx/EWD667.html",
+     "hn": "https://news.ycombinator.com/item?id=50203161",
+     "points": 358,
+     "comments": 242,
+     "summary": [
+      "这是 Dijkstra 手稿 EWD 667。他写道，从自动计算早期起就有人觉得，编程需要使用形式符号的那种细致和精确是个缺陷，盼望机器能听懂母语。但他认为，换一种接口并不只是重新分配固定的工作量，跨接口沟通的成本也要算进去，换成人的母语未必能让人更轻松。",
+      "他用数学史举例：希腊数学停滞，是因为一直停留在语言和图形；现代世界得以出现，靠的是韦达、笛卡尔、莱布尼茨、布尔等人精心设计的形式符号。在他看来，形式符号不是负担而是特权，能排除大量用母语几乎无法避免的胡话。评论区把这篇文章和今天的 AI 编程直接对照。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "nickm12",
+       "stance": "常用",
+       "zh": "每当有人跟我说英语现在是一门高级编程语言、是机器语言之上的又一层抽象，我就把这篇文章发给他。AI 模型确实给了我们用自然语言编程的神奇能力，但把 AI 模型当成一种编译器，这个暗示有根本缺陷。",
+       "en": "I send this article to everyone who tells me how English is now a high-level programming language",
+       "hn": "https://news.ycombinator.com/item?id=50203552",
+       "id": 50203552,
+       "replies": 76
+      },
+      {
+       "user": "benrutter",
+       "stance": "仍成立",
+       "zh": "我觉得这篇文章经得起时间考验，至今依然切中要害。有人会反驳说智能体开发就是「自然语言编程」，但我不这么看：那种情况下编程的是智能体，而编程始终发生在 Rust、Python、TypeScript 这样的确定性语言里。",
+       "en": "I think this essay has aged pretty well and remains pretty spot on.",
+       "hn": "https://news.ycombinator.com/item?id=50206055",
+       "id": 50206055,
+       "replies": 50
+      },
+      {
+       "user": "riknos314",
+       "stance": "标准",
+       "zh": "我一般认为，机器是用「源代码管理里追踪的那种东西」来编程的。只要你的 git 仓库追踪的是 Java 的改动，那就还是在用 Java 编程，哪怕 Java 是大模型帮着生成的。",
+       "en": "I generally see a machine as being \"programmed in\" whatever is tracked in source control.",
+       "hn": "https://news.ycombinator.com/item?id=50203703",
+       "id": 50203703,
+       "replies": 4
+      }
+     ],
+     "kicker": "开发 · 经典重读"
+    },
+    {
+     "id": 50211746,
+     "title": "UUIDv7 并没有你以为的那些性质",
+     "title_en": "UUIDv7 doesn't have the properties you think it does",
+     "url": "https://alexsci.com/blog/uuidv7-is-weird/",
+     "hn": "https://news.ycombinator.com/item?id=50211746",
+     "points": 102,
+     "comments": 89,
+     "summary": [
+      "Robert Alexander 在博客里说，介绍 UUIDv7 的文章常吹它三点：单调递增、带有对象创建时间、不可猜测。但这些都不是严格成立的，符合 RFC 9562 的实现可以大幅违背它们，UUIDv7 真正严格保证的只有唯一性。",
+      "比如 RFC 允许实现改动时间戳，甚至让它跑到真实时间前面。他演示了 Python 3.14 标准库的 uuid.uuid7()：把系统时钟往回调一小时后，在每毫秒超过一个 ID 的负载下，嵌入的时间戳会越跑越超前、没有上限；Python 开发者在相关讨论里认为这符合 RFC。评论区不少人说，UUIDv7 带时间本来就是为了让数据库索引里相邻的行聚在一起。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "hackingonempty",
+       "stance": "用途",
+       "zh": "我以为 UUIDv7 带时间成分的主要原因，是让时间上相关的行在索引页里挨在一起。随机分布的行 ID 看起来没问题，直到整个索引放不进内存为止。",
+       "en": "Randomly distributed row ids seem OK until the entire index no longer fits in RAM.",
+       "hn": "https://news.ycombinator.com/item?id=50212868",
+       "id": 50212868,
+       "replies": 7
+      },
+      {
+       "user": "kentm",
+       "stance": "本来就没有",
+       "zh": "标题挺好笑，我从没觉得 UUIDv7 有这里被质疑的那些性质。用它是因为它能改善写入的聚集性，不需要严格有序，「够好」就行。但愿没人真拿它的时间戳部分来代替「更新时间」字段，不过我猜我会失望。",
+       "en": "I hope to god no one is actually using the timestamp portion",
+       "hn": "https://news.ycombinator.com/item?id=50213916",
+       "id": 50213916,
+       "replies": 1
+      },
+      {
+       "user": "btown",
+       "stance": "踩坑",
+       "zh": "我最喜欢的一件 UUIDv7 趣事：PyPI 上的 uuid7 包实现的根本不是合规的 UUIDv7，而是一个完全不兼容的草案格式。那次调试可不好玩。",
+       "en": "does not implement compliant UUIDv7s",
+       "hn": "https://news.ycombinator.com/item?id=50214713",
+       "id": 50214713,
+       "replies": 1
+      }
+     ],
+     "kicker": "开发 · 数据库"
+    },
+    {
+     "id": 50205816,
+     "title": "ClickBench 移除 pgrust：被指专为测试题作弊",
+     "title_en": "Remove pgrust: the entry is cheating (per-query kernels and result caching)",
+     "url": "https://github.com/ClickHouse/ClickBench/pull/2165",
+     "hn": "https://news.ycombinator.com/item?id=50205816",
+     "points": 182,
+     "comments": 138,
+     "summary": [
+      "ClickHouse 的 Alexey Milovidov 在数据库基准 ClickBench 提交了移除 pgrust（用 Rust 重写的 PostgreSQL）的合并请求，9 月 22 日合并。他说 pgrust 的成绩来自专门为这 43 道 ClickBench 查询写的机制，热运行时还直接重放上一轮缓存的答案，违反了禁止结果缓存的规则，而且它把自己标为「未调优」。",
+      "他列出的证据来自公开发布的二进制和 v0.3 源码：二进制里嵌着按查询编号命名的源文件（q00.rs、q01.rs……）、报错信息带着 clickbench 字样，源码里有「为全部 43 道 ClickBench 查询手工降级的物理计划」。pgrust 作者在评论区回应，说大部分指控不实，并已开源更新的 0.4-beta 供人审查。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "malisper",
+       "stance": "作者回应",
+       "zh": "你好！我是 pgrust 的作者，来解释一下。大部分指控其实不成立。这次提交的是 pgrust 0.4 的早期版本 0.4-preview。我们昨天刚开源了更新的 0.4-beta，你可以完整审查。与其在 GitHub 上争辩，我们觉得做完 0.4 并开源，更能证明我们是诚实的。",
+       "en": "For the most part, the actual accusations are false.",
+       "hn": "https://news.ycombinator.com/item?id=50209450",
+       "id": 50209450,
+       "replies": 29
+      },
+      {
+       "user": "teiferer",
+       "stance": "背景",
+       "zh": "给不熟悉的人：pgrust 是用 Rust 重新实现的 PostgreSQL，ClickBench 是一套数据库基准测试。这个链接是因涉嫌作弊而把 pgrust 移出该基准的请求。",
+       "en": "Pgrust is a re-implememtation of postgresql in rust.",
+       "hn": "https://news.ycombinator.com/item?id=50208116",
+       "id": 50208116,
+       "replies": 8
+      },
+      {
+       "user": "torben-friis",
+       "stance": "疑问",
+       "zh": "「这是 beta，代码过几周再放」这种做法我觉得很反直觉。这在开源圈正常吗？有什么理由吗？",
+       "en": "is it normal in open source?",
+       "hn": "https://news.ycombinator.com/item?id=50207484",
+       "id": 50207484,
+       "replies": 15
+      }
+     ],
+     "kicker": "开发 · 基准测试"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50208099,
+     "title": "OpenSSL 4.1.0 发布",
+     "title_en": "OpenSSL 4.1.0",
+     "url": "https://github.com/openssl/openssl/releases/tag/openssl-4.1.0",
+     "hn": "https://news.ycombinator.com/item?id=50208099",
+     "points": 180,
+     "comments": 58
+    },
+    {
+     "id": 50202762,
+     "title": "Jank：可与 C++ 无缝互操作的原生 Clojure 方言",
+     "title_en": "Jank – The native Clojure dialect with seamless C++ interop",
+     "url": "https://jank-lang.org/",
+     "hn": "https://news.ycombinator.com/item?id=50202762",
+     "points": 171,
+     "comments": 44
+    },
+    {
+     "id": 50204754,
+     "title": "慢慢来，把东西修好（2024）",
+     "title_en": "Move Slow and Fix Things (2024)",
+     "url": "https://endler.dev/2024/move-slow-and-fix-things/",
+     "hn": "https://news.ycombinator.com/item?id=50204754",
+     "points": 169,
+     "comments": 31
+    },
+    {
+     "id": 50200164,
+     "title": "Chrome 开启 HTML-in-Canvas API 源试用",
+     "title_en": "The HTML-in-Canvas API origin trial",
+     "url": "https://developer.chrome.com/blog/html-in-canvas-origin-trial",
+     "hn": "https://news.ycombinator.com/item?id=50200164",
+     "points": 117,
+     "comments": 56
+    },
+    {
+     "id": 50212320,
+     "title": "15 万美元的 Looker，能用一桶 HTML 文件替代吗？",
+     "title_en": "Can we replace a $150k Looker with a bucket of HTML files?",
+     "url": "https://david.lequin.dev/blog/bi-software-is-dead/",
+     "hn": "https://news.ycombinator.com/item?id=50212320",
+     "points": 115,
+     "comments": 71
+    },
+    {
+     "id": 50188614,
+     "title": "Postgres 的 recovery_prefetch 可能导致故障",
+     "title_en": "Postgres recovery_prefetch can cause outages",
+     "url": "https://ardentperf.com/2026/10/20/postgres-recovery_prefetch-considered-harmful-and-causing-outages/",
+     "hn": "https://news.ycombinator.com/item?id=50188614",
+     "points": 42,
+     "comments": 6
+    },
+    {
+     "id": 50202482,
+     "title": "Zig：家里就有 trait",
+     "title_en": "We have traits at home",
+     "url": "https://www.axelmagn.com/blog/202610-zig-traits/",
+     "hn": "https://news.ycombinator.com/item?id=50202482",
+     "points": 41,
+     "comments": 16
+    },
+    {
+     "id": 50205531,
+     "title": "ReactOS 迎来里程碑：支持安装到 NTFS",
+     "title_en": "ReactOS reaches major milestone with NTFS install support",
+     "url": "https://arstechnica.com/information-technology/2026/10/reactos-reaches-major-milestone-with-ntfs-install-support/",
+     "hn": "https://news.ycombinator.com/item?id=50205531",
+     "points": 40,
+     "comments": 7
+    },
+    {
+     "id": 50214983,
+     "title": "systemd-nspawn 容器速览",
+     "title_en": "A whirlwind tour of systemd-nspawn containers",
+     "url": "https://quantum5.ca/2025/03/22/whirlwind-tour-of-systemd-nspawn-containers/",
+     "hn": "https://news.ycombinator.com/item?id=50214983",
+     "points": 25,
+     "comments": 6
+    },
+    {
+     "id": 50199684,
+     "title": "LISP 成年了（1980）",
+     "title_en": "LISP Comes of Age (1980)",
+     "url": "https://microship.com/lisp-comes-of-age/",
+     "hn": "https://news.ycombinator.com/item?id=50199684",
+     "points": 57,
+     "comments": 17
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1599,
+    "comments": 781,
+    "top_points": {
+     "id": 50203161,
+     "title": "重读 Dijkstra 1978 年旧文：「自然语言编程」的愚蠢",
+     "value": 358,
+     "comments": 242
+    },
+    "top_comments": {
+     "id": 50203161,
+     "title": "重读 Dijkstra 1978 年旧文：「自然语言编程」的愚蠢",
+     "value": 242
+    },
+    "top_brief": {
+     "id": 50208099,
+     "title": "OpenSSL 4.1.0 发布",
+     "value": 180,
+     "comments": 58
+    }
+   }
+  },
+  {
+   "name": "科学与社会",
+   "en": "Science & Society",
+   "page": 4,
+   "stories": [
+    {
+     "id": 50195002,
+     "title": "科学的「异域」：说得通、却没人会想到的研究方向",
+     "title_en": "The alien space of science: Coherent but cognitively unavailable directions",
+     "url": "https://arxiv.org/abs/2603.01092",
+     "hn": "https://news.ycombinator.com/item?id=50195002",
+     "points": 200,
+     "comments": 84,
+     "summary": [
+      "这篇被 NeurIPS 2026 主会接收的论文认为，科学发现不只受制于什么是真的，还受制于研究者能想到什么：很多方向和现有文献并不矛盾，却因为没有哪个社群同时掌握相关的概念和方法而无人提出，而大模型被要求出新点子时也会继承这种偏差。",
+      "作者把 16,068 篇大模型论文拆成「想法原子」，训练一个模型给原子组合的合理性打分，另一个模型估计现有作者社群有没有可能提出它，再挑「合理但不太可能被想到」的组合。只用 2025 年以前的数据做时间验证时，挑出不到 1% 的候选就能以 35.9 倍于随机的比例命中 2025 年真正出现的组合。合著者在评论区现身解释了做法。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "martincsweiss",
+       "stance": "作者",
+       "zh": "合著者在此，这是我博士后期间第一篇被 NeurIPS 主会接收的论文。我们做了一种方法来采样机器学习里多样的想法：科学上说得通，但现有研究社群都不处在能提出它们的位置。",
+       "en": "first paper from my postdoc accepted to NeurIPS main conference",
+       "hn": "https://news.ycombinator.com/item?id=50195003",
+       "id": 50195003,
+       "replies": 46
+      },
+      {
+       "user": "gavinray",
+       "stance": "细看",
+       "zh": "我是工程师，但业余花不少时间研究药理和分子生物学。其中一篇提案引起了我的注意……",
+       "en": "One of the proposal papers caught my eye",
+       "hn": "https://news.ycombinator.com/item?id=50210848",
+       "id": 50210848,
+       "replies": 4
+      }
+     ],
+     "kicker": "科学 · 研究方法"
+    },
+    {
+     "id": 50205229,
+     "title": "同一个 AI 请求，在得州排放的二氧化碳是瑞典的 8.5 倍",
+     "title_en": "The same AI request emits 8.5 times more CO2 in Texas than in Sweden",
+     "url": "https://berget.ai/en/blog/per-request-co2-press-release",
+     "hn": "https://news.ycombinator.com/item?id=50205229",
+     "points": 140,
+     "comments": 154,
+     "summary": [
+      "瑞典 AI 服务商 Berget AI 与斯德哥尔摩环境研究所（SEI）以及非营利组织 WattTime、Klimatkollen 合作，以 MIT 许可证开源了一套按单个请求计算 AI 碳排放的方法，遵循绿色软件基金会的 SCI for AI 规范，并计入硬件制造的排放。",
+      "按各地电网的平均排放强度，在相同硬件上，向开放模型 Kimi K3 发一个典型请求，在瑞典约排放 0.4 克二氧化碳，爱尔兰 1.6 克，德国 2.5 克，得州 3.2 克。新闻稿说，开放权重模型可以跑在任何数据中心，在哪儿跑由买家决定。评论区的主流看法是：这其实和 AI 无关，只是电网结构不同。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "blaze33",
+       "stance": "解释",
+       "zh": "得州一半的电还来自化石燃料（天然气和煤），瑞典主要是水电、核电和风电。所以这其实跟 AI、模型或硬件没什么关系。化石燃料产生二氧化碳，就这么简单。",
+       "en": "So it's not really about ai, the models or the hardware.",
+       "hn": "https://news.ycombinator.com/item?id=50205966",
+       "id": 50205966,
+       "replies": 11
+      },
+      {
+       "user": "alpineman",
+       "stance": "对比",
+       "zh": "吃一个汉堡的二氧化碳排放，相当于在瑞典发 17,000 个请求、在得州发 2,000 个请求。",
+       "en": "eating a single burger results in the equivalent Co2 emissions of 17,000 requests in Sweden and 2,000 requests in Texas",
+       "hn": "https://news.ycombinator.com/item?id=50205617",
+       "id": 50205617,
+       "replies": 49
+      }
+     ],
+     "kicker": "科学 · 能源"
+    },
+    {
+     "id": 50202114,
+     "title": "EFF：加拿大人反对 C-22 监控法案的时间不多了",
+     "title_en": "Canadians are running out of time to oppose Bill C-22",
+     "url": "https://www.eff.org/deeplinks/2026/10/canadians-are-running-out-time-oppose-dangerous-c-22-surveillance-bill",
+     "hn": "https://news.ycombinator.com/item?id=50202114",
+     "points": 297,
+     "comments": 151,
+     "summary": [
+      "电子前哨基金会（EFF）撰文说，加拿大 C-22 法案（又称《合法访问法》）已在众议院通过，正由参议院审议。法案让政府有权强制电信公司、通讯应用等服务配合监控，还允许公共安全部长下令企业为执法部门开后门，只要不造成「系统性不安全」；EFF 认为这等于削弱大家依赖的加密。",
+      "法案还要求服务商把元数据保留最长一年，并可能扩大与美国等外国执法部门的数据共享。加拿大公民自由协会和公民实验室主张整体撤回法案第二部分，EFF 呼吁加拿大人签署请愿。评论区有人说请愿已提交众议院，也有人认为参议院很少否决法案。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "zaptheimpaler",
+       "stance": "行动",
+       "zh": "要求撤回和修改该法案的请愿今天已经提交给众议院了。那些抱怨自己什么也做不了的人，基本上就是不参与民主，而美国就是这样走到今天这一步的。",
+       "en": "The petition to withdraw and amend the bill was presented to the House of Commons today",
+       "hn": "https://news.ycombinator.com/item?id=50214482",
+       "id": 50214482,
+       "replies": 27
+      },
+      {
+       "user": "EmbarrassedHelp",
+       "stance": "后果",
+       "zh": "如果法案不被大改或否决，所有主要通讯服务以及大量其他服务最终都会屏蔽加拿大。",
+       "en": "all the major messaging services along with tons of other services will end up blocking Canada",
+       "hn": "https://news.ycombinator.com/item?id=50212999",
+       "id": 50212999,
+       "replies": 8
+      },
+      {
+       "user": "matteoraso",
+       "stance": "悲观",
+       "zh": "参议院否决法案的情况非常少见。我会说，我们其实已经没时间了。",
+       "en": "It's very rare for the senate to kill a bill.",
+       "hn": "https://news.ycombinator.com/item?id=50212777",
+       "id": 50212777,
+       "replies": 1
+      }
+     ],
+     "kicker": "社会 · 隐私"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50173516,
+     "title": "《JAMA Network Open》：注意缺陷多动障碍（ADHD）患者的死亡率",
+     "title_en": "Mortality Among People with Attention-Deficit/Hyperactivity Disorder",
+     "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2855472",
+     "hn": "https://news.ycombinator.com/item?id=50173516",
+     "points": 131,
+     "comments": 103
+    },
+    {
+     "id": 50192396,
+     "title": "一份失传的薛定谔手稿揭示量子物理的一个转折",
+     "title_en": "A lost Schrödinger manuscript reveals a twist in quantum physics",
+     "url": "https://www.sciencealert.com/a-lost-schrdinger-manuscript-reveals-a-surprising-twist-in-quantum-physics",
+     "hn": "https://news.ycombinator.com/item?id=50192396",
+     "points": 70,
+     "comments": 47
+    },
+    {
+     "id": 50202609,
+     "title": "联合国称突破 1.5°C 升温上限「迫在眉睫且无法避免」",
+     "title_en": "UN says breaching 1.5C warming limit is 'imminent and unavoidable'",
+     "url": "https://www.cnn.com/2026/10/21/climate/cop31-un-climate-report-emissions-gap",
+     "hn": "https://news.ycombinator.com/item?id=50202609",
+     "points": 53,
+     "comments": 29
+    },
+    {
+     "id": 50209961,
+     "title": "当「热浪」一词已不够用",
+     "title_en": "When the Term \"Heatwave\" Is No Longer Enough",
+     "url": "https://coveringclimatenow.org/from-us-story/when-the-term-heatwave-is-no-longer-enough/",
+     "hn": "https://news.ycombinator.com/item?id=50209961",
+     "points": 42,
+     "comments": 12
+    },
+    {
+     "id": 50179454,
+     "title": "约翰·斯诺的霍乱数据",
+     "title_en": "John Snow Cholera Data",
+     "url": "https://johnsnow.rtwilson.com/",
+     "hn": "https://news.ycombinator.com/item?id=50179454",
+     "points": 6,
+     "comments": 2
+    },
+    {
+     "id": 50214218,
+     "title": "谷歌称可能用你的 Gmail 和相册数据定向投放广告",
+     "title_en": "Now Google says it might use your Gmail and Google Photos data to target ads",
+     "url": "https://www.theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update",
+     "hn": "https://news.ycombinator.com/item?id=50214218",
+     "points": 238,
+     "comments": 116
+    },
+    {
+     "id": 50210067,
+     "title": "eMudhra 无视 Mozilla 根证书调查期限，归咎于社交媒体",
+     "title_en": "eMudhra ignored Mozilla Root investigation deadline; blames social media",
+     "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=2083449",
+     "hn": "https://news.ycombinator.com/item?id=50210067",
+     "points": 192,
+     "comments": 150
+    },
+    {
+     "id": 50211601,
+     "title": "eMudhra 登录绕过漏洞",
+     "title_en": "eMudhra Login Bypass",
+     "url": "https://mastodon.catgirl.cloud/@49016/117475921584308861",
+     "hn": "https://news.ycombinator.com/item?id=50211601",
+     "points": 38,
+     "comments": 1
+    },
+    {
+     "id": 50210075,
+     "title": "五角大楼批准国土安全部测试用于边境的「热射线」武器",
+     "title_en": "Pentagon grants DHS permission to test heat ray weapon for use at border",
+     "url": "https://www.cnn.com/2026/10/21/politics/heat-ray-weapon-dhs-pentagon",
+     "hn": "https://news.ycombinator.com/item?id=50210075",
+     "points": 124,
+     "comments": 138
+    },
+    {
+     "id": 50202912,
+     "title": "首次曝光的图像显示中东美军基地受损情况",
+     "title_en": "Never-Before-Seen Images Reveal Damage at U.S. Bases in Middle East",
+     "url": "https://meidasnews.com/news/so-much-worse-than-people-realize-never-before-seen-images-reveal-damage-at-u-s-bases-as-troops-describe-being-abandoned",
+     "hn": "https://news.ycombinator.com/item?id=50202912",
+     "points": 80,
+     "comments": 13
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1611,
+    "comments": 1000,
+    "top_points": {
+     "id": 50202114,
+     "title": "EFF：加拿大人反对 C-22 监控法案的时间不多了",
+     "value": 297,
+     "comments": 151
+    },
+    "top_comments": {
+     "id": 50205229,
+     "title": "同一个 AI 请求，在得州排放的二氧化碳是瑞典的 8.5 倍",
+     "value": 154
+    },
+    "top_brief": {
+     "id": 50214218,
+     "title": "谷歌称可能用你的 Gmail 和相册数据定向投放广告",
+     "value": 238,
+     "comments": 116
+    }
+   }
+  },
+  {
+   "name": "文化",
+   "en": "Culture",
+   "page": 5,
+   "stories": [
+    {
+     "id": 50205934,
+     "title": "Disney+ 刚宣布高级档也有广告，几天后就涨价",
+     "title_en": "Disney Raising Prices Days After Confirming Ads Will Now Show Up on Every Tier",
+     "url": "https://www.tvfandomlounge.com/disney-plus-price-hike-ads-premium-tier-nielsen-emmys-2026/",
+     "hn": "https://news.ycombinator.com/item?id=50205934",
+     "points": 413,
+     "comments": 433,
+     "summary": [
+      "TV Fandom Lounge 9 月的一篇文章说，Disney+ 更新了用户协议，允许在所有套餐里出现推广内容、赞助和广告，包括过去明确以「无广告」卖点销售的高级档；几天后又宣布从 9 月 23 日起涨价：无广告的 Disney+ Premium 和 Hulu Premium 从 18.99 美元涨到 21.49 美元，Disney+/Hulu 高级套装从 19.99 美元涨到 21.99 美元，带广告的单独套餐从 11.99 美元涨到 12.49 美元，ESPN Unlimited 从 29.99 美元涨到 31.99 美元。",
+      "文章还拿尼尔森数据挖苦：2026 年上半年，Disney+ 没有一部原创剧进入尼尔森原创剧前 20。评论区有人说该回到实体碟加 Jellyfin，也有人反驳，说这次改动主要是直播内容自带的广告。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "jerf",
+       "stance": "转向",
+       "zh": "从现在起，「实体碟加一套 Jellyfin」每年都会变得更明智。当然，前提是你在乎合不合法。是的，这更麻烦，但你本来花在看广告上的时间，足够做很多「更麻烦」的事。",
+       "en": "every year \"physical media & a Jellyfin install\" is going to be more sensible",
+       "hn": "https://news.ycombinator.com/item?id=50208574",
+       "id": 50208574,
+       "replies": 185
+      },
+      {
+       "user": "bofaGuy",
+       "stance": "反驳",
+       "zh": "这是在抠字眼。迪士尼只是说明直播内容会有广告，那不是迪士尼的广告，而是直播频道的广告，通常来自第三方。这似乎是因为 Hulu 的功能都会搬进 Disney+ 应用，包括直播电视和直播回放。",
+       "en": "Disney is clarifying that live content will have ads.",
+       "hn": "https://news.ycombinator.com/item?id=50211112",
+       "id": 50211112,
+       "replies": 5
+      },
+      {
+       "user": "thisislife2",
+       "stance": "维权",
+       "zh": "没有消费者权益保护就会这样。比如印度：付费买了无广告的流媒体，一个月后却出现广告，海得拉巴消费者委员会判平台退款并赔偿。",
+       "en": "This is what happens when you don't have consumer rights protection.",
+       "hn": "https://news.ycombinator.com/item?id=50208191",
+       "id": 50208191,
+       "replies": 9
+      }
+     ],
+     "kicker": "文化 · 流媒体"
+    },
+    {
+     "id": 50169499,
+     "title": "好莱坞真正的中心不是凯文·贝肯",
+     "title_en": "The Real Kevin Bacon",
+     "url": "https://pudding.cool/2026/10/kevin-bacon/",
+     "hn": "https://news.ycombinator.com/item?id=50169499",
+     "points": 224,
+     "comments": 65,
+     "summary": [
+      "The Pudding 用数据检验「凯文·贝肯六度空间」游戏：每一步连接两个合作过同一部电影的演员。在他们 16.9 万名演员的数据里，贝肯的「疏远度」是 2.28，即平均 2.28 步可达，只排第 175 名。真正的中心是塞缪尔·杰克逊（2.09），其次是威廉·达福（2.13）和罗伯特·德尼罗（2.14）；前 100 名里女性只有 16 位，最高的妮可·基德曼排第 21。",
+      "文章发现，除了出演片数，和多产演员合作的多少也决定排名；他们还对 Z 世代演员跑了 1 万次模拟，科洛·格蕾斯·莫瑞兹以 11.6% 的胜出率最可能成为下一个塞缪尔·杰克逊。评论区有人提到更早的 Oracle of Bacon 项目给出了不同的排名。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "ameliaquining",
+       "stance": "前人",
+       "zh": "这方面的前作是老得多的 Oracle of Bacon 项目（希望作者之前不知道）。它用的是完整的 IMDb 数据集，而不只是前 1 万部电影，结果也不同：埃里克·罗伯茨第一，塞缪尔·杰克逊第五。",
+       "en": "Prior art here is the much older Oracle of Bacon project",
+       "hn": "https://news.ycombinator.com/item?id=50213440",
+       "id": 50213440,
+       "replies": 3
+      },
+      {
+       "user": "ideasphere",
+       "stance": "本意",
+       "zh": "很棒，但当初选凯文·贝肯，不正是因为他的人脉出人意料地广吗？要是有人说「塞缪尔·杰克逊六度空间」，我们大多数人都不会惊讶他有多广。",
+       "en": "surely the point of choosing Kevin Bacon in the first place was because he is surprisingly well-connected",
+       "hn": "https://news.ycombinator.com/item?id=50215275",
+       "id": 50215275,
+       "replies": 2
+      },
+      {
+       "user": "MattGrommes",
+       "stance": "意外",
+       "zh": "James Hong 排得这么靠后挺奇怪的。这位老兄演过 470 部电影。",
+       "en": "The man has been in 470 movies.",
+       "hn": "https://news.ycombinator.com/item?id=50216794",
+       "id": 50216794,
+       "replies": 0
+      }
+     ],
+     "kicker": "文化 · 数据新闻"
+    },
+    {
+     "id": 50195488,
+     "title": "Show HN：唱歌跑调的人做了个 App，告诉你哪儿跑调",
+     "title_en": "Show HN: OnKey – I'm a bad singer, so I built an app to show where I'm off-key",
+     "url": "https://github.com/dsmurrell/onkey",
+     "hn": "https://news.ycombinator.com/item?id=50195488",
+     "points": 214,
+     "comments": 89,
+     "summary": [
+      "OnKey 是一款免费开源的 Mac 唱歌练习工具，需要 Apple Silicon 和 macOS 14.2 以上。你用 Spotify、Apple Music 或浏览器里的 YouTube 放歌，跟着唱；第一次播放时显示歌词，歌放完后它在本机学会原唱的旋律，之后音符会滚动而来，把你的音高画在上面，唱完给出评分和逐句报告。",
+      "原理是先用模型把人声和伴奏分开，再用 CREPE 追踪歌手的音高，最后转成每个音节一个音符条。它本身不提供、不串流也不下载音乐。评论区有人称赞它把对外请求一一写明，也有声乐爱好者提醒唱歌远不止音准。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "enzoaguado",
+       "stance": "提醒",
+       "zh": "唱歌远不止唱准音。气息控制是提升唱功最重要的技能之一，正确的发声技巧能让你在挑战难歌时不伤嗓子。这类 App 很适合入门、尝尝唱歌是怎么回事，但要是也能涵盖这些方面就好了。",
+       "en": "Singing is about so much more than just hitting the right notes.",
+       "hn": "https://news.ycombinator.com/item?id=50205902",
+       "id": 50205902,
+       "replies": 16
+      },
+      {
+       "user": "stevage",
+       "stance": "透明",
+       "zh": "我很欣赏这种透明程度，真希望这是行业标准。",
+       "en": "I really appreciate this level of transparency. Wish it was the standard.",
+       "hn": "https://news.ycombinator.com/item?id=50207169",
+       "id": 50207169,
+       "replies": 1
+      },
+      {
+       "user": "sligbad",
+       "stance": "教学",
+       "zh": "我对此有些教学上的想法。这类工具会有帮助，但我见过太多学节奏的学生，得费劲摆脱对视觉节拍器的依赖。难点之一恰恰是真正去听自己、学会听出自己的错误。",
+       "en": "Part of the struggle is really listening to yourself",
+       "hn": "https://news.ycombinator.com/item?id=50208660",
+       "id": 50208660,
+       "replies": 2
+      }
+     ],
+     "kicker": "文化 · Show HN"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50207910,
+     "title": "Apple Music 的 404 页面",
+     "title_en": "Apple Music 404 Not Found",
+     "url": "https://music.apple.com/this-url-doesnt-exist",
+     "hn": "https://news.ycombinator.com/item?id=50207910",
+     "points": 524,
+     "comments": 179
+    },
+    {
+     "id": 50203759,
+     "title": "《这是我的信念》（1952）",
+     "title_en": "This I Believe (1952)",
+     "url": "https://www.awakin.org/v2/read/view.php?tid=468",
+     "hn": "https://news.ycombinator.com/item?id=50203759",
+     "points": 147,
+     "comments": 78
+    },
+    {
+     "id": 50206840,
+     "title": "失业与可的松躁狂",
+     "title_en": "Job loss and cortisone mania",
+     "url": "https://tilschuenemann.de/job-loss-cortisone-mania",
+     "hn": "https://news.ycombinator.com/item?id=50206840",
+     "points": 164,
+     "comments": 110
+    },
+    {
+     "id": 50207050,
+     "title": "乌托邦就在眼前，何必退休",
+     "title_en": "No Need for Retirement When Utopia Is Around the Corner",
+     "url": "https://blog.jim-nielsen.com/2026/skip-retirement-for-utopia/",
+     "hn": "https://news.ycombinator.com/item?id=50207050",
+     "points": 151,
+     "comments": 168
+    },
+    {
+     "id": 50168850,
+     "title": "颜色名称大全",
+     "title_en": "Color Names",
+     "url": "https://names.color.pizza",
+     "hn": "https://news.ycombinator.com/item?id=50168850",
+     "points": 107,
+     "comments": 33
+    },
+    {
+     "id": 50214323,
+     "title": "我们都活在一部 1970 年的冷门科幻片里",
+     "title_en": "We are all living inside of an obscure sci-fi film from 1970",
+     "url": "https://thanksforthatjim.bearblog.dev/we-are-all-living-inside-of-an-obscure-sci-fi-film-from-1970/",
+     "hn": "https://news.ycombinator.com/item?id=50214323",
+     "points": 105,
+     "comments": 101
+    },
+    {
+     "id": 50211719,
+     "title": "音乐何以可能",
+     "title_en": "How is music possible",
+     "url": "https://www.henrikkarlsson.xyz/p/music",
+     "hn": "https://news.ycombinator.com/item?id=50211719",
+     "points": 84,
+     "comments": 66
+    },
+    {
+     "id": 50214447,
+     "title": "索尼在日本停产最后一款 4K 蓝光播放机，只剩 PS5",
+     "title_en": "Sony Retires Its Last 4K Blu-ray Player in Japan, PS5 Is All That's Left",
+     "url": "https://www.techpowerup.com/354081/sony-retires-its-last-4k-blu-ray-player-in-japan-ps5-is-all-thats-left",
+     "hn": "https://news.ycombinator.com/item?id=50214447",
+     "points": 67,
+     "comments": 57
+    },
+    {
+     "id": 50211729,
+     "title": "《索尼克 06》错失的机会（2025）",
+     "title_en": "The Missed Opportunities of Sonic 06 (2025)",
+     "url": "https://isaacmarovitz.com/posts/sonic-06/",
+     "hn": "https://news.ycombinator.com/item?id=50211729",
+     "points": 56,
+     "comments": 16
+    },
+    {
+     "id": 50212507,
+     "title": "把空气净化器当白噪音机",
+     "title_en": "Air Purifiers as White Noise Machines",
+     "url": "https://www.jefftk.com/p/air-purifiers-as-white-noise-machines",
+     "hn": "https://news.ycombinator.com/item?id=50212507",
+     "points": 53,
+     "comments": 72
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2309,
+    "comments": 1467,
+    "top_points": {
+     "id": 50207910,
+     "title": "Apple Music 的 404 页面",
+     "value": 524,
+     "comments": 179
+    },
+    "top_comments": {
+     "id": 50205934,
+     "title": "Disney+ 刚宣布高级档也有广告，几天后就涨价",
+     "value": 433
+    },
+    "top_brief": {
+     "id": 50207910,
+     "title": "Apple Music 的 404 页面",
+     "value": 524,
+     "comments": 179
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "ljoshua",
+  "id": 50216610,
+  "hn": "https://news.ycombinator.com/item?id=50216610",
+  "story_id": 50207910,
+  "story": "Apple Music 的 404 页面",
+  "zh": "想到苹果某处有个 SRE 或工程师正因为 404 比例升高被呼叫，只好把告警静音，祈祷我们都在刷这个页面的时候别真冒出一个页面丢失的问题，我就忍不住笑。",
+  "en": "somewhere in Apple there is an SRE or engineer who is getting paged for elevated 404 rates"
+ },
+ "stats": {
+  "snapshot": "2026-10-24T08:15:25+08:00",
+  "front_page_count": 90,
+  "with_numbers": 83,
+  "flagged_or_dupe": 7,
+  "top_points": {
+   "id": 50202285,
+   "title": "「本地维基百科」：只看步行半小时内的维基词条",
+   "value": 1203,
+   "comments": 223
+  },
+  "top_comments": {
+   "id": 50200997,
+   "title": "Ask HN：模型这么强，OpenAI 为什么不自己开 100 家公司？",
+   "value": 655
+  },
+  "second_comments": {
+   "id": 50211474,
+   "title": "安全公司 Calif：「我们黑掉了 iPhone」",
+   "value": 467
+  },
+  "over_500": 7,
+  "over_300": 11,
+  "over_100": 37,
+  "show_hn": 7,
+  "total_points": 12980,
+  "total_comments": 7539,
+  "hottest_ratio": {
+   "id": 50210075,
+   "title": "五角大楼批准国土安全部测试用于边境的「热射线」武器",
+   "value": 1.11,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
