@@ -1,0 +1,1315 @@
+{
+ "date": "2026-10-25",
+ "published_at": "2026-10-26T08:20:48+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-10-25",
+ "schema_version": 2,
+ "lead": {
+  "id": 50226419,
+  "title": "四年少了 20 多万个岗位：美国创意行业的寒冬有多少是 AI 造成的？",
+  "title_en": "America has lost 200k of jobs in media, film and the arts. How much is AI?",
+  "url": "https://www.apricitas.io/p/ai-and-the-fall-of-the-creative-class",
+  "hn": "https://news.ycombinator.com/item?id=50226419",
+  "points": 500,
+  "comments": 537,
+  "summary": [
+   "经济博客 Apricitas 的 Joseph Politano 写道，过去四年美国「创意」行业流失了 20 多万个岗位，仅最近一年就约 5 万个；如此强度和长度的媒体业失业，近代只在 2001 和 2008 年两次大衰退时出现过，而眼下并没有全面衰退。他说很难证明其中多少是 AI 造成的：媒体公司对 AI 使用讳莫如深，好莱坞整合、外包制作和社交媒体创作者的冲击也搅在一起。但最明显的迹象是，数字艺术的各个细分行业都在裁员，线下娱乐却在健康增长。",
+   "受冲击最重的是电影与录音业：影视业四年少了 10 万多个岗位，接近全行业的三分之一，媒体失业将近一半集中在这里，其次是出版业，少了 7 万多。他拿互联网时代作比：音乐靠巡演和周边撑住了，报业却几乎崩溃，雇员比高峰少了近 85%。他认为最坏的情形是重演报业的命运，但新技术的影响很难预测，比如 TikTok 上的「BookTok」意外带动图书销量六年涨了七成。",
+   "这帖评论数是当天第二多。评论区最受认同的观点是：问题不只在 AI，而在各行业对「效率」的追逐；也有人说商业插画早已被自动化，还有人认为利率和通胀的影响远大于 AI。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "jparishy",
+    "stance": "不只是 AI",
+    "zh": "我喜欢这篇文章，欣赏它没有硬说是或不是 AI。在我看来，娱乐业和其他追逐「效率」的行业有很多同样的问题。比如为了「省钱」把拍摄搬离洛杉矶，会产生很长时间的连锁反应：依赖影视业的本地商家因活少而倒闭，专业人才变少，价格变高，最后在洛杉矶拍片贵得离谱，剩下的工作也走了。",
+    "en": "I appreciate that it didn't try to say it is or isn't AI.",
+    "hn": "https://news.ycombinator.com/item?id=50227130",
+    "id": 50227130,
+    "replies": 240
+   },
+   {
+    "user": "Animats",
+    "stance": "商业插画",
+    "zh": "真正的失业大概在商业美术。如果你在为广告画插图，现在几乎肯定已经自动化了。看衰退开始的时间，大约就是 Stable Diffusion 兴起的时候。",
+    "en": "The real job losses are probably in commercial art.",
+    "hn": "https://news.ycombinator.com/item?id=50227625",
+    "id": 50227625,
+    "replies": 1
+   },
+   {
+    "user": "wewewedxfgdf",
+    "stance": "利率",
+    "zh": "利率和通胀的影响远比 AI 大。",
+    "en": "Interest rates and inflation have vastly more impact than AI.",
+    "hn": "https://news.ycombinator.com/item?id=50226752",
+    "id": 50226752,
+    "replies": 3
+   }
+  ],
+  "kicker": "要闻 · AI 与就业",
+  "tag": "当日评论第二"
+ },
+ "side": [
+  {
+   "id": 50224100,
+   "title": "Goose：没有堆、没有垃圾回收的内存安全系统语言",
+   "title_en": "The Goose Programming Language",
+   "url": "https://aardappel.github.io/goose/",
+   "hn": "https://news.ycombinator.com/item?id=50224100",
+   "points": 564,
+   "comments": 347,
+   "summary": [
+    "Goose 是一门新的系统编程语言，语法接近 C 和 Rust，但没有堆分配器、垃圾回收或生命周期标注：所有动态值都放在编译器管理的若干「数据栈」上，增长只是挪动指针，作用域结束时一次性释放。官网称，在 16 个基准测试中它的速度是惯用 C++ 的 3.3 倍、手工优化 C++ 的 1.16 倍、最好的安全 Rust 的 1.12 倍，内存也更省，并说基准里也列出了它输掉的情况。",
+    "它还有不少特别设计：增长中的数组引用不会失效；嵌套数据整块连续存放、不含指针，可以直接写入文件再读回校验；线程之间不共享内存，只通过类型化队列拷贝数据，所以语言里不存在数据竞争和锁；最终编译成一个 C 文件。作者在评论区开了 AMA，有人纠正了教程里关于 C++ 的说法，也有人追问它怎么表示数量不定的可变长数据。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "Aardappel",
+     "stance": "作者",
+     "zh": "顺便说一句，这门语言是我做的，有问题尽管问（AMA）。",
+     "en": "Btw I made the language, AMA.",
+     "hn": "https://news.ycombinator.com/item?id=50224534",
+     "id": 50224534,
+     "replies": 171
+    },
+    {
+     "user": "jcmoyer",
+     "stance": "纠错",
+     "zh": "你教程的第一点就有事实错误。你举的例子里，字符串短到可以用小字符串优化，根本不需要为每个字符串单独分配内存，所有主流 STL 实现都会做这个优化。",
+     "en": "The very first point under your tutorial is factually incorrect.",
+     "hn": "https://news.ycombinator.com/item?id=50230524",
+     "id": 50230524,
+     "replies": 15
+    },
+    {
+     "user": "malisper",
+     "stance": "追问",
+     "zh": "我很好奇：怎么表示任意数量的可变大小值？如果栈的数量是固定的，似乎同一时间只能有固定数量的值改变大小。比如一个值为字符串的哈希表，程序随机插入或删除字符串，该怎么办？顺便说，我确实觉得 Goose 很酷！",
+     "en": "how do you represent an arbitrary number of dynamically sized values?",
+     "hn": "https://news.ycombinator.com/item?id=50225039",
+     "id": 50225039,
+     "replies": 12
+    }
+   ],
+   "kicker": "开发 · 编程语言",
+   "tag": "当日点赞第二"
+  },
+  {
+   "id": 50229587,
+   "title": "巴西大选前，Meta 被指无视法院的「平等对待」命令",
+   "title_en": "Meta Ignores Brazilian Court Order to End Bolsonaro Favoritism",
+   "url": "https://www.panamericandispatch.org/p/meta-ignores-brazilian-court-order",
+   "hn": "https://news.ycombinator.com/item?id=50229587",
+   "points": 467,
+   "comments": 324,
+   "summary": [
+    "据 Panamerican Dispatch 转述《圣保罗页报》的报道，巴西团体 Sleeping Giants Brasil 和 CTRL+Z 向高等选举法院提交新证据，称 Meta 的工具仍在偏向自由党候选人弗拉维奥·博索纳罗、并把总统卢拉和负面内容挂钩，尽管法院已命令 Meta 平等对待两位候选人。例子包括：在 WhatsApp 搜「brasil」动图，三个账号的第一个结果都是弗拉维奥的竞选图；在 Instagram 搜「lula」，第一个推荐标签是「卢拉小偷」。",
+    "他们还让 Meta AI 在 1 到 25 之间挑一个数，两次分别答了 13 和 22，正是两党的选票号码；文章也承认，单凭这一点不能断定是选举偏好。法官要求 Meta 在 24 小时内证明已整改，并警告每日 50 万雷亚尔（约 9.9 万美元）的罚款可能翻倍。Meta 否认故意偏袒，称此前的问题是技术故障。评论区很多人认为证据站不住，尤其是「挑数字」那一条。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "Paracompact",
+     "stance": "证据太弱",
+     "zh": "看到「让 AI 挑个数」这里，我对他们说法的信任直线下降。我完全支持监管社交媒体算法的透明度，但能不能别挑数字命理和动图这种蠢阵地？标题完全得不到证据支持。",
+     "en": "Headline is not remotely supported by the evidence.",
+     "hn": "https://news.ycombinator.com/item?id=50229880",
+     "id": 50229880,
+     "replies": 79
+    },
+    {
+     "user": "armchairhacker",
+     "stance": "怪谁",
+     "zh": "我的印象是，偏向博索纳罗的现象有一部分是真的，但这是 Meta 的错，还是一个大体中立的算法（比如按点赞排序）因为他的支持者（或机器人）多而偏向了他？如果是后者，Facebook 该怎么做？",
+     "en": "what should Facebook do?",
+     "hn": "https://news.ycombinator.com/item?id=50231267",
+     "id": 50231267,
+     "replies": 14
+    },
+    {
+     "user": "microtonal",
+     "stance": "罚款太少",
+     "zh": "每天的罚款（9.9 万美元）小得毫无意义，几乎没有动力去做任何事。",
+     "en": "The daily fine is so meaninglessly small",
+     "hn": "https://news.ycombinator.com/item?id=50229788",
+     "id": 50229788,
+     "replies": 1
+    }
+   ],
+   "kicker": "科技 · 选举"
+  },
+  {
+   "id": 50233779,
+   "title": "十年前的 CNN 看皮肤癌，比两个前沿大模型都准",
+   "title_en": "A 10-year-old CNN outperforms frontier LLMs for skin cancer diagnosis",
+   "url": "https://lynchlab.net/llm-skin-cancer",
+   "hn": "https://news.ycombinator.com/item?id=50233779",
+   "points": 394,
+   "comments": 189,
+   "summary": [
+    "皮肤科医生 Lynch Lab 的作者从公开数据集 MILK10k 随机抽了 200 个经病理确诊的皮损，每个都有临床照片和皮肤镜照片，分别交给 GPT-6 Astra、Claude Fable 5.1，以及一个在公开皮肤科图片上微调了约二十分钟的 Inception v3 卷积神经网络（2015 年谷歌发布）。在六种诊断里选第一诊断，CNN 对了 125 个（62%），两个大模型分别是 84 和 85 个（42%）；30 个黑色素瘤里，三者分别认出 13、8、11 个。",
+    "他说两个大模型各有偏爱的答案：GPT-6 Astra 把 75 个病变判成基底细胞癌，实际只有 25 个；Claude 把 53 个判成光化性角化病，实际只有 20 个。他也列出局限：样本小、每个病例只问一次、数据集公开可能被大模型见过，而 CNN 本身并非最先进。评论区一派说专用分类器胜过通用模型理所当然，另一派质疑 CNN 是在同一来源的数据上微调的。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "snitty",
+     "stance": "专用模型",
+     "zh": "这正是我搞不懂大家为什么对通用决策模型那么兴奋的原因。任何大规模应用，用架构合适的专用分类器都准确得多。大模型把做这种模型的成本降到近乎为零。就用大模型去做一个真正擅长你所需任务的东西吧。",
+     "en": "Just use the LLM to make a thing that's actually good at what you need it to do.",
+     "hn": "https://news.ycombinator.com/item?id=50234199",
+     "id": 50234199,
+     "replies": 98
+    },
+    {
+     "user": "Legend2440",
+     "stance": "刷榜",
+     "zh": "这就是刷榜。针对基准优化过的模型总能赢过没优化的，但它会很脆弱。在训练/测试划分上微调小模型总能打赢某个特定数据集，但它对「野外」图片泛化得不好，因为那超出了它的分布。",
+     "en": "This is just benchmaxxing.",
+     "hn": "https://news.ycombinator.com/item?id=50234247",
+     "id": 50234247,
+     "replies": 9
+    },
+    {
+     "user": "tasuki",
+     "stance": "不意外",
+     "zh": "他很惊讶，我倒对他的惊讶感到惊讶。一个 3000 万参数的 KataGo 网络只走一步搜索就能下出超人水平的围棋，而前沿大模型参数多一万倍以上，却不太会下围棋。它们擅长别的事，比如帮你做出一个擅长下围棋的网络。",
+     "en": "I'm surprised he's surprised.",
+     "hn": "https://news.ycombinator.com/item?id=50235094",
+     "id": 50235094,
+     "replies": 4
+    }
+   ],
+   "kicker": "AI · 医疗"
+  },
+  {
+   "id": 50233929,
+   "title": "「我拒绝接受被审查的互联网」：FOSDEM 27 新设数字异见者分会场",
+   "title_en": "I refuse to accept a censored Internet. Join Me at FOSDEM 27",
+   "url": "https://talkweb.eu/openweb/4558/",
+   "hn": "https://news.ycombinator.com/item?id=50233929",
+   "points": 369,
+   "comments": 180,
+   "summary": [
+    "Bogomil Shopov 作为 FOSDEM 27「数字异见者」（Digital Dissident）分会场的组织者之一发出征稿邀请。他写道，生活在俄罗斯、伊朗、中国、白俄罗斯、缅甸等地的人从来不只用一个工具，他们的安全取决于一整条工具链：能连上网络、通信不泄露元数据、安全收集和保存证据、匿名发布，而且设备本身也可能是风险，最弱的一环决定结果。",
+    "他说审查手段越来越精细，包括国家级白名单断网、TLS 和 QUIC 指纹识别、主动探测、下架翻墙应用、强制使用官方通讯软件；反审查工具进步很快但很零散，FOSDEM 2026 上相关演讲散落在不同会场。这个分会场关注受威胁的人和整条工具链，而不是某一种技术。评论区有人追问到底存不存在不受审查的互联网，也有人说审查和内容管理很难分开。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "saidnooneever",
+     "stance": "存在吗",
+     "zh": "真的有不受审查的互联网吗？我不这么认为。就算有，它也能被关掉，因为它是包在加密里、跑在受审查的网络上的。话虽如此，这让我对这个演讲很感兴趣。",
+     "en": "Is there an uncensored intetnet, because i dont think there is.",
+     "hn": "https://news.ycombinator.com/item?id=50234225",
+     "id": 50234225,
+     "replies": 81
+    },
+    {
+     "user": "Dwedit",
+     "stance": "管理即审查",
+     "zh": "「审查」对「内容管理」。没有管理就不可能有网上讨论，而管理就是某种形式的审查。所以没有某种审查就不可能有网上讨论，区别只在于谁来审查。",
+     "en": "Only difference is who is doing the censoring.",
+     "hn": "https://news.ycombinator.com/item?id=50234339",
+     "id": 50234339,
+     "replies": 32
+    },
+    {
+     "user": "talkingtab",
+     "stance": "宣传",
+     "zh": "互联网的大问题不是审查，而是宣传。网上每个人都在卖东西，因为只有这样才能负担在网上的成本。如果为互联网买单的不是用户，那它会为谁服务？不会是用户。",
+     "en": "The big problem with the internet - which is very dysfunctional - is not censorship but propaganda.",
+     "hn": "https://news.ycombinator.com/item?id=50234714",
+     "id": 50234714,
+     "replies": 11
+    }
+   ],
+   "kicker": "社会 · 网络自由"
+  },
+  {
+   "id": 50234232,
+   "title": "查一名警察的记录，俄勒冈警方开价 250 万美元",
+   "title_en": "Oregon Police Are Charging a Local News Outlet $2.5M for Records About One Cop",
+   "url": "https://theintercept.com/2026/10/01/oregon-police-misconduct-public-records-cost-fee/",
+   "hn": "https://news.ycombinator.com/item?id=50234232",
+   "points": 355,
+   "comments": 86,
+   "summary": [
+    "据 The Intercept 刊登的新闻自由基金会 Lauren Harper 的文章，俄勒冈州尤金市的本地媒体 Double Sided Media 在 8 月申请公开警员 Justin Peckels 2018 至 2026 年可能存在不当行为的记录，此人曾因在交通拦查时一拳打在居民脸上而被投诉。尤金警察局回复称，检索和处理需要至少 44816 个工时，费用约 2484599.04 美元；另一名前警员的类似申请报价 195869.52 美元。",
+    "市政府的理由是无法缩小保管人范围，必须检索所有现任和前任市府雇员的记录。作者认为这是故意把请求做大、用天价吓退记者，并指出该局刚签了两年 34.2 万美元的合同，购买近 60 台 Flock 车牌识别摄像头。她还列举了国防部 2015 年开出 1500 万工时、6.6 亿美元的先例。评论区有人算出 4.4 万工时相当于一个人干 21 年，也有人说另一种手段是「拖」。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "cactacea",
+     "stance": "21 年",
+     "zh": "4.4 万小时大约是 21 年，荒唐透顶。",
+     "en": "44k hours is ~21 years. Beyond absurd",
+     "hn": "https://news.ycombinator.com/item?id=50234409",
+     "id": 50234409,
+     "replies": 7
+    },
+    {
+     "user": "rahimnathwani",
+     "stance": "拖字诀",
+     "zh": "有些机构用的是另一种手段：拖得非常慢。我在 2026 年 3 月 9 日向本地学区提交了公开记录申请。他们 3 月 19 日回复说 4 月底答复。此后每个月发来一小部分记录，附一封信说下个月再补。我已经收到 8 次，完全看不出什么时候能拿全。",
+     "en": "Some agencies have a different tactic: go really slowly.",
+     "hn": "https://news.ycombinator.com/item?id=50234574",
+     "id": 50234574,
+     "replies": 26
+    },
+    {
+     "user": "ghusto",
+     "stance": "英国",
+     "zh": "在英国，信息自由法意味着我提出申请，30 天内就拿到所要的信息。没有借口，没有乱七八糟的「费用」。美国到底怎么了？",
+     "en": "Just what in the hell is happening in the USA?",
+     "hn": "https://news.ycombinator.com/item?id=50235013",
+     "id": 50235013,
+     "replies": 10
+    }
+   ],
+   "kicker": "社会 · 新闻自由"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 2,
+   "stories": [
+    {
+     "id": 50227356,
+     "title": "Cerebras 解释怎么用晶圆级芯片跑三万亿参数模型",
+     "title_en": "Cerebras Deploys Trillion-Parameter AI Models",
+     "url": "https://www.cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras",
+     "hn": "https://news.ycombinator.com/item?id=50227356",
+     "points": 350,
+     "comments": 127,
+     "summary": [
+      "Cerebras 的 Sarah Chieng 撰文解释，一块 WSE-3T 晶圆只有 44 GB 片上内存，而万亿参数模型光权重就要几 TB，所以要把模型拆到多块晶圆上。她以约 3 万亿参数的开源模型 Kimi K3 为例：4 比特量化后每层约 16 GB；24 个全注意力层每层要额外放 KV 缓存，所以一块晶圆放一层，69 个线性注意力层不需要 KV 缓存，一块放两层，总共 35 + 24 = 59 块晶圆。",
+      "晶圆之间按流水线排列，权重留在原地，只有激活值经以太网 RDMA 传到下一块，每跳约 2 微秒；流水线里同时塞满不同请求，可并发的请求数受 KV 缓存占用的片上内存限制。她认为衡量推理系统更有意义的指标是同一生成速度下每兆瓦的 token 吞吐量。评论区有人吐槽 Cerebras 上能用的模型不够好，也有人指出文章引用全精度跑分、实际却用 4 比特量化。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "keyle",
+       "stance": "模型不够",
+       "zh": "Cerebras 纸面上很好，但我实际能用的只有 GPT OSS 120b 和 Qwen 3.8 27B，对我的用途来说都不太行。我在 Cerebras 上试过 GPT OSS 120b，快得飞起，但大多是错的。",
+       "en": "I have tried GPT OSS 120b on cerebras and it flies. But it's mostly wrong.",
+       "hn": "https://news.ycombinator.com/item?id=50228806",
+       "id": 50228806,
+       "replies": 28
+      },
+      {
+       "user": "ilaksh",
+       "stance": "供不应求",
+       "zh": "从我的测试看，Cerebras 的问题是要给人尝鲜才能拉来新客户，但这种速度需要大量硬件，他们又没有 OpenAI 那样的钱，所以根本跟不上需求。于是他们推出便宜套餐让人尝尝速度，但一点都不可靠，因为资源有限。",
+       "en": "there is just no way for them to keep up with the demand",
+       "hn": "https://news.ycombinator.com/item?id=50235615",
+       "id": 50235615,
+       "replies": 2
+      },
+      {
+       "user": "tgtweak",
+       "stance": "跑分",
+       "zh": "引用全精度的跑分，然后用的却是 4 比特量化。",
+       "en": "Citing full precision benchmarks then just going with 4 bit quants",
+       "hn": "https://news.ycombinator.com/item?id=50229054",
+       "id": 50229054,
+       "replies": 2
+      }
+     ],
+     "kicker": "AI · 推理硬件"
+    },
+    {
+     "id": 50233304,
+     "title": "伯克利菲尔兹奖得主：学生都用 AI，作业已「没必要」批改",
+     "title_en": "AI use leads UC Berkeley math professor to see 'no point' in grading homework",
+     "url": "https://www.dailycal.org/news/campus/academics/ai-use-leads-uc-berkeley-math-professor-to-see-no-point-in-grading-homework/article_bdf1eae2-c08b-491f-b9f1-81a7cea177de.html",
+     "hn": "https://news.ycombinator.com/item?id=50233304",
+     "points": 189,
+     "comments": 267,
+     "summary": [
+      "据伯克利学生报《每日加州人》报道，菲尔兹奖得主、伯克利教授 Richard Borcherds 不再为学生作业批改对错。他看到许多学生靠 AI 一直拿满分，觉得再花钱雇助教批改「没有意义」，现在只要交了作业就给分，他承认这「不是好办法」，但暂时没有替代方案。采访是在 OpenAI 宣布 AI 智能体似乎解决了纳维-斯托克斯方程存在性与光滑性问题之后进行的。",
+      "他说：「如果 AI 照现在的速度进步，几年后人类数学家能做的事，AI 都会做得更好。」他已不知道该不该鼓励学生读数学，「我甚至问了 ChatGPT，它也说不知道」。学校试过 Turnitin 等 AI 检测工具，认为都不够可靠，AI 政策由教师自定。这帖的评论/点赞比是当天点赞过百帖子里最高的。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "parsimo2010",
+       "stance": "讽刺",
+       "zh": "很多人可能没注意到其中的讽刺：他本来就不批改作业，是花钱请助教批改的。抛开这点，想想作业的目的：它帮助你学习。你读完一章可能以为自己懂了，但做作业会让你更投入。",
+       "en": "He didn’t grade homework in the first place.",
+       "hn": "https://news.ycombinator.com/item?id=50234369",
+       "id": 50234369,
+       "replies": 73
+      },
+      {
+       "user": "vhiremath4",
+       "stance": "可惜",
+       "zh": "这挺可悲的。就算学生互相抄作业，总得有人做。哪怕是一起抄，也总在逼着我或别人思考内容。有了 AI，这完全没了。",
+       "en": "Even if students would cheat off each other, someone had to do the homework.",
+       "hn": "https://news.ycombinator.com/item?id=50233448",
+       "id": 50233448,
+       "replies": 49
+      },
+      {
+       "user": "TrackerFF",
+       "stance": "挪威经验",
+       "zh": "我在挪威上学时，作业从来不计分。最终成绩 100% 取决于期末考试（有的课加项目），而且都是纸笔考试。作业是参加期末考试的必要条件，但不打分。所以抄作业对成绩毫无帮助。",
+       "en": "In any case, cheating on homework wouldn't help their grade.",
+       "hn": "https://news.ycombinator.com/item?id=50233664",
+       "id": 50233664,
+       "replies": 1
+      }
+     ],
+     "kicker": "AI · 教育",
+     "tag": "评论/点赞比最高"
+    },
+    {
+     "id": 50236102,
+     "title": "几个月里降价八成：OpenAI 和 Anthropic 为什么拼命砍价？",
+     "title_en": "OpenAI and Anthropic cut their LLM prices by up to 80% within a few months. Why?",
+     "url": "https://minimaxir.com/2026/10/cheap-llms/",
+     "hn": "https://news.ycombinator.com/item?id=50236102",
+     "points": 88,
+     "comments": 113,
+     "summary": [
+      "Max Woolf 梳理了 2026 年 6 月以来两家公司的降价时间线：GPT-5.6 Luna 降价 80%；Claude Fable 5.1 的缓存读取价降了 75%，他说编程智能体的支出 96% 到 99% 是缓存读取，这相当于用模型的成本降了七成左右；GPT-6.1 Sol 和 Claude Opus 5.5 让各自的模型系列累计便宜了一半到四分之三。他认为这些降价没有明显牺牲质量。",
+      "他给出的原因是：模型越来越像大宗商品，切换几乎零成本；开源权重模型带来价格压力，比如 DeepSeek V4.1 Flash 在 OpenRouter 上已有 29 家托管商。他认为「token 价格迟早会涨回真实成本」的说法得不到行为经济学和价格趋势的支持，并指出两家都传出即将上市，降价时机耐人寻味。评论区多数人的结论很简单：竞争。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "buckleyourshoe",
+       "stance": "竞争",
+       "zh": "竞争把价格压了下来。我们在 OpenAI 和 Anthropic 上碰到「网络安全」拦截后，试了 Kimi 和 GLM 模型，发现便宜得多，还帮我们完成了工作，没有被「网络安全」拒绝挡住。",
+       "en": "Competition drives prices down.",
+       "hn": "https://news.ycombinator.com/item?id=50236347",
+       "id": 50236347,
+       "replies": 32
+      },
+      {
+       "user": "332451b",
+       "stance": "账本",
+       "zh": "DeepSeek 称 Flash V4 每块 GPU 每小时收入 38 美元，也就是每块 GPU 每年 332880 美元。对 Anthropic 和 OpenAI 更大、更贵的模型，未知因素很多，但他们大概也在努力优化，说他们曾经或仍然有很大降价空间并不离谱。",
+       "en": "DeepSeek claims $38 of revenue per GPU, per hour for Flash V4.",
+       "hn": "https://news.ycombinator.com/item?id=50237279",
+       "id": 50237279
+      },
+      {
+       "user": "chakintosh",
+       "stance": "不可持续",
+       "zh": "这是一场看谁先眨眼、先破产的逐底竞赛，不可持续。",
+       "en": "It’s a race to the bottom to see who blinks first and goes bankrupt.",
+       "hn": "https://news.ycombinator.com/item?id=50236548",
+       "id": 50236548,
+       "replies": 6
+      }
+     ],
+     "kicker": "AI · 商业"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50228167,
+     "title": "五个 Qwen3.8-27B 模型借 GVS5H 框架追平 Fable 5",
+     "title_en": "Five Qwen3.8-27B models match Fable 5 Using GVS5H Harness",
+     "url": "https://github.com/slee-persis/GVS5H",
+     "hn": "https://news.ycombinator.com/item?id=50228167",
+     "points": 182,
+     "comments": 69
+    },
+    {
+     "id": 50229827,
+     "title": "科学家看出 AI 痕迹，尼康摄影赛冠军被取消资格",
+     "title_en": "Nikon photography contest winner loses title after scientists spot signs of AI",
+     "url": "https://www.techspot.com/news/114171-nikon-photography-contest-winner-loses-title-after-scientists.html",
+     "hn": "https://news.ycombinator.com/item?id=50229827",
+     "points": 130,
+     "comments": 68
+    },
+    {
+     "id": 50233347,
+     "title": "一位数学家眼中的 AI 未来",
+     "title_en": "A mathematician reads the AI future",
+     "url": "https://www.theatlantic.com/ideas/2026/10/ai-math-human-future/689133/",
+     "hn": "https://news.ycombinator.com/item?id=50233347",
+     "points": 44,
+     "comments": 65
+    },
+    {
+     "id": 50232682,
+     "title": "Adobe 对 ArtCraft 一事给我们的启示",
+     "title_en": "What Adobe v ArtCraft teaches us",
+     "url": "https://techbronerd.substack.com/p/openai-and-anthropic-wanted-to-replace",
+     "hn": "https://news.ycombinator.com/item?id=50232682",
+     "points": 85,
+     "comments": 96
+    },
+    {
+     "id": 50230995,
+     "title": "设想一个被封号就等于失去经济价值的 AI 未来",
+     "title_en": "Imagine an AI future where being banned means you are now economically useless",
+     "url": "https://twitter.com/boneGPT/status/2114035719853265264",
+     "hn": "https://news.ycombinator.com/item?id=50230995",
+     "points": 94,
+     "comments": 74
+    },
+    {
+     "id": 50231722,
+     "title": "Reddit r/opensource 禁止所有个人项目和使用大模型的项目",
+     "title_en": "R/open source bans all solo projects and projects using LLMs",
+     "url": "https://www.reddit.com/r/opensource/comments/1xelcuf/your_tokens_arent_valuable_no_more_ai",
+     "hn": "https://news.ycombinator.com/item?id=50231722",
+     "points": 77,
+     "comments": 106
+    },
+    {
+     "id": 50235780,
+     "title": "上下文工程现状",
+     "title_en": "The State of Context Engineering",
+     "url": "https://www.dbreunig.com/2026/10/24/the-state-of-context-engineering.html",
+     "hn": "https://news.ycombinator.com/item?id=50235780",
+     "points": 59,
+     "comments": 13
+    },
+    {
+     "id": 50188440,
+     "title": "反应式优化器：在训练中改写优化器自己的源代码",
+     "title_en": "Reactive Optimizers: rewrite the optimizer's source code during training",
+     "url": "https://xingjianbai.com/reactive-optimizers/",
+     "hn": "https://news.ycombinator.com/item?id=50188440",
+     "points": 32,
+     "comments": 2
+    },
+    {
+     "id": 50233294,
+     "title": "JetBrains Thinkrail",
+     "title_en": "JetBrains Thinkrail",
+     "url": "https://github.com/JetBrains/thinkrail",
+     "hn": "https://news.ycombinator.com/item?id=50233294",
+     "points": 165,
+     "comments": 113
+    },
+    {
+     "id": 50227330,
+     "title": "Show HN：Hurston-1，会说美国南方口音和非裔英语的开源语音合成",
+     "title_en": "Show HN: Hurston-1 open source TTS that speak Southern American and Afro-English",
+     "url": "https://huggingface.co/destined/hurston-1",
+     "hn": "https://news.ycombinator.com/item?id=50227330",
+     "points": 40,
+     "comments": 22
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1535,
+    "comments": 1135,
+    "top_points": {
+     "id": 50227356,
+     "title": "Cerebras 解释怎么用晶圆级芯片跑三万亿参数模型",
+     "value": 350,
+     "comments": 127
+    },
+    "top_comments": {
+     "id": 50233304,
+     "title": "伯克利菲尔兹奖得主：学生都用 AI，作业已「没必要」批改",
+     "value": 267
+    },
+    "top_brief": {
+     "id": 50228167,
+     "title": "五个 Qwen3.8-27B 模型借 GVS5H 框架追平 Fable 5",
+     "value": 182,
+     "comments": 69
+    }
+   }
+  },
+  {
+   "name": "开发",
+   "en": "Software",
+   "page": 3,
+   "stories": [
+    {
+     "id": 50224210,
+     "title": "SpeedCrunch 1.1：老牌高精度计算器时隔多年再更新",
+     "title_en": "SpeedCrunch 1.1",
+     "url": "https://www.speedcrunch.org/",
+     "hn": "https://news.ycombinator.com/item?id=50224210",
+     "points": 225,
+     "comments": 51,
+     "summary": [
+      "开源科学计算器 SpeedCrunch 发布 1.1 版，支持 Windows、macOS 和 Linux。官网列出的功能包括：最高 50 位精度并支持复数，140 多个函数以及大量单位和常数，自定义变量、函数和单位，向量与矩阵，可改写历史记录、按结果单独设置，键盘布局可自定义，多会话标签页，40 多种语言和 40 多套配色。",
+      "评论区有老用户说十年里几乎天天用 0.12 版，没碰到过问题，新版输入框变大、还出现了输入延迟，「有时候软件真的已经完成了」；也有人发现新版修好了一个运算顺序的老毛病，还有人推荐 Qalculate 和 numbat。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Gormo",
+       "stance": "已完成",
+       "zh": "我用了很多年，惊讶地看到十年后出了新版。装上后，最明显的变化是输入框毫无必要地大了一倍、套了个多余的边框，周围多了空白，而且出现了以前从没有的明显输入延迟。我欣赏改进和创新的愿望，但有时候软件真的已经完成了。",
+       "en": "sometimes, software really is finished.",
+       "hn": "https://news.ycombinator.com/item?id=50227880",
+       "id": 50227880,
+       "replies": 14
+      },
+      {
+       "user": "unanimous",
+       "stance": "修了个 bug",
+       "zh": "很高兴看到这个，这个版本（也许更早的版本也有？）包含一个很久没发布的运算顺序小修复。1/2(-9.8) 现在等于 -4.9，而不是 -0.05102040816326530612。我喜欢它把表达式渲染成带乘号的样子来说明：1 / 2 × (−9.8)。",
+       "en": "1/2(-9.8) now equals -4.9 rather than -0.05102040816326530612.",
+       "hn": "https://news.ycombinator.com/item?id=50226148",
+       "id": 50226148,
+       "replies": 5
+      },
+      {
+       "user": "terlisimo",
+       "stance": "自己改",
+       "zh": "SpeedCrunch 很棒，但我一直有个小烦恼：它写死了超过 5 位就转成科学计数法，对写脚本和编程不太方便。我在它还在 Bitbucket 时提过 issue，回复大概是「这是有意的」。现在他们把上限提到了 14 位。多年来我一直用自己改的版本。开源万岁！",
+       "en": "blessed be the open source!",
+       "hn": "https://news.ycombinator.com/item?id=50230774",
+       "id": 50230774,
+       "replies": 0
+      }
+     ],
+     "kicker": "开发 · 工具"
+    },
+    {
+     "id": 50225674,
+     "title": "小程序与小语言：46 字节的 Forth 告诉我们什么",
+     "title_en": "Small Programs and Languages",
+     "url": "https://ratfactor.com/cards/pl-small",
+     "hn": "https://news.ycombinator.com/item?id=50225674",
+     "points": 184,
+     "comments": 29,
+     "summary": [
+      "ratfactor 的作者说，小程序之所以吸引人，是因为它们好接近：200 行的代码他更愿意读，如果一个本以为要 2000 行的东西只用了 20 行，那就更想读了。他举的例子有 25 行的 DOM 差分库 ijk、读者寄来的 46 字节「Forth」、Arthur Whitney 一个下午写在一页纸上的 J 解释器雏形，以及被称为「最美程序」的 Lisp 元解释器。",
+      "他借柯尔莫哥洛夫复杂度说，代码高尔夫其实给出了一类程序的最小复杂度，比如带垃圾回收的 Lisp 可以只有 436 字节，这意味着它能装进脑子里。在小语言里，他推崇 Forth、Lisp、Tcl，并认为 Lua 是既小又不用「献祭」的选择，核心语言说明只有 27 页。评论区有人分享自己写的小程序，也有人想做直接生成机器码的简单脚本语言。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "abainbridge",
+       "stance": "直接出机器码",
+       "zh": "我想做一个非常简单的编译型脚本语言。我不明白为什么多数脚本语言要编译成字节码再解释：得设计字节码、写编译器、写解释器。不如跳过第一步和第三步，直接把机器码当字节码，附带好处是程序跑得更快。",
+       "en": "I don't understand why most scripting languages compile to bytecode and then interpret that.",
+       "hn": "https://news.ycombinator.com/item?id=50229866",
+       "id": 50229866,
+       "replies": 16
+      },
+      {
+       "user": "tromp",
+       "stance": "21 字节",
+       "zh": "有一门语言就是为了让柯尔莫哥洛夫复杂度具体化而设计的：二进制 lambda 演算，它的自解释器只要 168 比特（21 字节）。和文中的 Lisp 自解释器不同，它处理的是比特流，所以还得包含一个解析器。",
+       "en": "a self interpreter of which takes only 168 bits (21 bytes)",
+       "hn": "https://news.ycombinator.com/item?id=50229718",
+       "id": 50229718,
+       "replies": 1
+      },
+      {
+       "user": "zzo38computer",
+       "stance": "uxn",
+       "zh": "我用 uxn 写过一些有用的小程序，比如 39 字节的十六进制解码器（能处理可选的空格和换行、大小写等），125 字节的 JSON 转 NDJSON 程序，以及 1024 字节的 BLAKE2s。",
+       "en": "hex decoder in 39 bytes",
+       "hn": "https://news.ycombinator.com/item?id=50227735",
+       "id": 50227735,
+       "replies": 2
+      }
+     ],
+     "kicker": "开发 · 编程文化"
+    },
+    {
+     "id": 50234329,
+     "title": "可观测性只要「宽事件」就够了？（2024）",
+     "title_en": "All you need is Wide Events, not \"Metrics, Logs and Traces\"",
+     "url": "https://isburmistrov.substack.com/p/all-you-need-is-wide-events-not-metrics",
+     "hn": "https://news.ycombinator.com/item?id=50234329",
+     "points": 81,
+     "comments": 34,
+     "summary": [
+      "曾在 Meta 工作的 Ivan Burmistrov 在这篇 2024 年的文章里说，可观测性行业陷入「大混乱」，他把一部分责任归给 OpenTelemetry：它一开始就把指标、日志、链路追踪分成三样东西，光术语表就有 60 多个词。他怀念 Meta 内部的 Scuba，说它是离职员工最想念的东西：一切都记成「宽事件」，也就是一个像 JSON 文档的字段集合，尽量把可能相关的信息都放进去，以便事后应对没想到的问题。",
+      "他认为链路追踪、日志和指标都能映射成宽事件：日志就是带元数据的消息，指标就是定时记录的系统状态快照，而且不必担心基数问题。评论区的反对声音主要是成本：只有 Meta 那样的财力才撑得起无限的存储和计算；也有十年运维老兵说，记录的信息绝大多数毫无用处。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "viraptor",
+       "stance": "成本",
+       "zh": "作者实际上说的是：有 Meta 级别的资金、近乎无限的分布式存储和计算很好。在需要盈利的其他行业，指标就是指标，因为你提交的只是两个整数用来聚合，而不是每分钟几十 MB 的 JSON 日志。一旦你要证明成本合理，就明白为什么是指标、日志和（常常采样的）链路追踪了。",
+       "en": "once you try to justify the cost",
+       "hn": "https://news.ycombinator.com/item?id=50236575",
+       "id": 50236575,
+       "replies": 1
+      },
+      {
+       "user": "bcvvvy",
+       "stance": "少记点",
+       "zh": "作为干了十年这行的人：我们能不能别再造那些需要这堆垃圾和专职人员来运行的复杂东西了？我们在线存着 50TB 的日志和追踪数据，还有 50G 的 Prometheus 实例。我们记录的信息 99.99999% 完全没用，还要花钱。造简单点的东西，只记录异常情况。",
+       "en": "Make simpler things, log only exceptional things",
+       "hn": "https://news.ycombinator.com/item?id=50236266",
+       "id": 50236266,
+       "replies": 9
+      },
+      {
+       "user": "theteapot",
+       "stance": "不是一回事",
+       "zh": "指标是一种可以随时间聚合的度量。你能从日志里推导出指标（计数），但这不意味着两者相同。Span 有开始时间、结束时间和父指针。",
+       "en": "A metric is a measure that can be aggregated over time.",
+       "hn": "https://news.ycombinator.com/item?id=50236280",
+       "id": 50236280,
+       "replies": 0
+      }
+     ],
+     "kicker": "开发 · 运维"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50218633,
+     "title": "在三星电视上拿到 root shell",
+     "title_en": "Root shell on Samsung TV",
+     "url": "https://twitter.com/log4j/status/2113014142600953868?s=46",
+     "hn": "https://news.ycombinator.com/item?id=50218633",
+     "points": 759,
+     "comments": 570
+    },
+    {
+     "id": 50233438,
+     "title": "UTS #39：Unicode 安全机制",
+     "title_en": "UTS #39: Unicode Security Mechanisms",
+     "url": "https://unicode.org/reports/tr39/",
+     "hn": "https://news.ycombinator.com/item?id=50233438",
+     "points": 31,
+     "comments": 10
+    },
+    {
+     "id": 50223777,
+     "title": "Bbtree：最快的有序映射",
+     "title_en": "Bbtree: Fastest Ordered Map",
+     "url": "https://bbtree.xiangpeng.systems/post/",
+     "hn": "https://news.ycombinator.com/item?id=50223777",
+     "points": 154,
+     "comments": 21
+    },
+    {
+     "id": 50186289,
+     "title": "一个其实不是 bug 的 Figma bug（2021）",
+     "title_en": "A story of a Figma bug that wasn't a bug at all (2021)",
+     "url": "https://aresluna.org/this-is-a-story-of-a-figma-bug/",
+     "hn": "https://news.ycombinator.com/item?id=50186289",
+     "points": 69,
+     "comments": 9
+    },
+    {
+     "id": 50194645,
+     "title": "用 Jai 重写一个商业引擎",
+     "title_en": "Rewriting a Commercial Engine in Jai",
+     "url": "https://polygonjs.com/blog/why-i-rewrote-polygon-from-scratch",
+     "hn": "https://news.ycombinator.com/item?id=50194645",
+     "points": 68,
+     "comments": 59
+    },
+    {
+     "id": 50226577,
+     "title": "2026 年为什么还用 Gopher？",
+     "title_en": "Why Gopher in 2026?",
+     "url": "https://gopher.muffinlabs.com/sdf.org/users/nervtoji/phlog/001.txt",
+     "hn": "https://news.ycombinator.com/item?id=50226577",
+     "points": 120,
+     "comments": 78
+    },
+    {
+     "id": 50235017,
+     "title": "我为什么是程序员",
+     "title_en": "Why I Am a Programmer",
+     "url": "https://www.alfie.wtf/programming/why-i-am-a-programmer.html",
+     "hn": "https://news.ycombinator.com/item?id=50235017",
+     "points": 107,
+     "comments": 33
+    },
+    {
+     "id": 50235010,
+     "title": "Gheist 行动：用盗来的 GitHub 令牌植入窃取密钥的工作流",
+     "title_en": "Gheist campaign plants secret-dumping workflows using stolen GitHub tokens",
+     "url": "https://www.wiz.io/blog/gheist-attempted-scaled-abuse-of-stolen-github-tokens-stumbles",
+     "hn": "https://news.ycombinator.com/item?id=50235010",
+     "points": 46,
+     "comments": 0
+    },
+    {
+     "id": 50231349,
+     "title": "Show HN：Farol，给批准者看的拉取请求风险地图",
+     "title_en": "Show HN: Farol – A risk map of a pull request for the person who approves it",
+     "url": "https://github.com/winnin/farol",
+     "hn": "https://news.ycombinator.com/item?id=50231349",
+     "points": 58,
+     "comments": 37
+    },
+    {
+     "id": 50231166,
+     "title": "Dreamhost 正在处理安全事件，强制用户重置密码",
+     "title_en": "Active incident at Dreamhost forcing password reset",
+     "url": "https://www.dreamhoststatus.com/",
+     "hn": "https://news.ycombinator.com/item?id=50231166",
+     "points": 105,
+     "comments": 39
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2007,
+    "comments": 970,
+    "top_points": {
+     "id": 50218633,
+     "title": "在三星电视上拿到 root shell",
+     "value": 759,
+     "comments": 570
+    },
+    "top_comments": {
+     "id": 50218633,
+     "title": "在三星电视上拿到 root shell",
+     "value": 570
+    },
+    "top_brief": {
+     "id": 50218633,
+     "title": "在三星电视上拿到 root shell",
+     "value": 759,
+     "comments": 570
+    }
+   }
+  },
+  {
+   "name": "科学与社会",
+   "en": "Science & Society",
+   "page": 4,
+   "stories": [
+    {
+     "id": 50235217,
+     "title": "Moderna 和默沙东：个性化 mRNA 癌症疫苗让复发或死亡风险降 42%",
+     "title_en": "Moderna and Merck say their mRNA cancer vaccine cut death, recurrence by 42%",
+     "url": "https://arstechnica.com/health/2026/10/personalized-mrna-cancer-vaccine-cut-melanoma-death-recurrence-by-42/",
+     "hn": "https://news.ycombinator.com/item?id=50235217",
+     "points": 156,
+     "comments": 31,
+     "summary": [
+      "据 Ars Technica 报道，Moderna 和默沙东公布三期试验结果：个性化 mRNA 疫苗 intismeran（mRNA-4157）与 Keytruda 联用，治疗手术切除后的 IIB 至 IV 期黑色素瘤，两年时复发或死亡风险比单用 Keytruda 降低 42%：联用组 82% 存活且未复发，对照组为 70%；远处转移或死亡风险降低 38%。试验共 1137 名患者，按 2:1 随机分组。",
+      "这种疫苗比对患者癌细胞和正常细胞的基因序列，挑出最多 34 个癌症特有突变编进 mRNA。原定在欧洲肿瘤内科学会大会上公布，因一家肿瘤新闻网站提前曝光而先发了新闻稿，完整数据已被《新英格兰医学杂志》接收。疗效不及五年期二期试验的 49% 和 59%。评论区有人换算出绝对风险从 30% 降到 18%，也有人说数据泄露后 Moderna 股价反而大跌。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "TaupeRanger",
+       "stance": "绝对风险",
+       "zh": "所以单用 Keytruda 的复发或死亡绝对风险是 30%，加上 intismeran 降到 18%。如果真实世界的结果也成立，对这种病肯定会有明显的影响。",
+       "en": "So the absolute risk of recurrence/death on Keytruda alone was 30%, reduced to 18%",
+       "hn": "https://news.ycombinator.com/item?id=50235864",
+       "id": 50235864,
+       "replies": 1
+      },
+      {
+       "user": "zetazzed",
+       "stance": "股价",
+       "zh": "神奇的是，这份（我觉得相当不错的）数据泄露后，Moderna 股价大跌。看来大家期待的是「治愈癌症」那种惊人结果，早就把股价炒高了。",
+       "en": "Moderna stock took a huge drop",
+       "hn": "https://news.ycombinator.com/item?id=50235747",
+       "id": 50235747,
+       "replies": 7
+      },
+      {
+       "user": "londons_explore",
+       "stance": "等大会",
+       "zh": "「推迟公布细节，直到能在即将召开的学术会议上展示」——如果你握着拯救一百万人的钥匙，却为了在知名会议上登台而让这些人等死，你还算好人吗？",
+       "en": "are you a good person?",
+       "hn": "https://news.ycombinator.com/item?id=50235722",
+       "id": 50235722,
+       "replies": 2
+      }
+     ],
+     "kicker": "科学 · 医学"
+    },
+    {
+     "id": 50229861,
+     "title": "法国总理曾让运营商准备在抗议日切断社交平台",
+     "title_en": "France asked ISPs to prepare temporary DNS blocks for major social platforms",
+     "url": "https://www.blast-info.fr/articles/2026/information-exclusive-blast-le-premier-ministre-a-prepare-la-coupure-des-reseaux-sociaux-pour-le-24-octobre-9D8cgrU5S5iiW14Sb9nMzQ",
+     "hn": "https://news.ycombinator.com/item?id=50229861",
+     "points": 145,
+     "comments": 170,
+     "summary": [
+      "法国独立媒体 Blast 报道，在 10 月 24 日的示威前两天，法国总理塞巴斯蒂安·勒科尔尼要求 Orange、SFR、Free 和 Bouygues Telecom 做好切断 TikTok、Instagram、Snapchat 和 X 访问的准备；Blast 称拿到了这封信以及随后会议的纪要，会上运营商表达了疑虑。报道提到，政府 2024 年曾在新喀里多尼亚用过这一手段，后被最高行政法院否定。",
+      "这篇报道我们只读到导语，HN 标题称要求的是临时 DNS 封锁。评论区有人质疑切断通信平台的逻辑，有人指出加密 DNS 能绕过，也有人担心法国会走向「全民 VPN」。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "nomilk",
+       "stance": "为何断网",
+       "zh": "为什么不允许真正和平的抗议，对其他形式的抗议严厉执法？我不理解切断通信平台的逻辑，这像是绕远路解决问题。",
+       "en": "I don't understand the logic behind cutting access to communications platforms.",
+       "hn": "https://news.ycombinator.com/item?id=50230427",
+       "id": 50230427,
+       "replies": 79
+      },
+      {
+       "user": "CreepyHunterX",
+       "stance": "绕过",
+       "zh": "DoH 走 443 端口，可以绕过这种封锁。不过 DoT 用的是单独的 853 端口，很容易整个封掉，而过滤 DoH 得依靠 SNI 或 IP 地址列表。",
+       "en": "DoH allows this to be bypassed, as they operate over port 443.",
+       "hn": "https://news.ycombinator.com/item?id=50235436",
+       "id": 50235436,
+       "replies": 0
+      },
+      {
+       "user": "gregor123915",
+       "stance": "全民 VPN",
+       "zh": "看来法国社会很快会走上全民用 VPN 的路。政府一旦尝到封锁网络资源的甜头，就不会停手。",
+       "en": "Once the government gets a taste of blocking Internet resources, it won't stop.",
+       "hn": "https://news.ycombinator.com/item?id=50230452",
+       "id": 50230452,
+       "replies": 5
+      }
+     ],
+     "kicker": "社会 · 网络管制"
+    },
+    {
+     "id": 50230917,
+     "title": "1505 年一位纽伦堡骑士的「工具书」，被逐页解读",
+     "title_en": "Tool book of a Nuremberg knight from 1505",
+     "url": "https://loeffelholz-codex.org/en/",
+     "hn": "https://news.ycombinator.com/item?id=50230917",
+     "points": 161,
+     "comments": 80,
+     "summary": [
+      "1505 年，纽伦堡贵族、骑士马丁·勒费尔霍尔茨开始画一本书：不是日记，也不是家族编年史，而是一本工具书，里面有可换钻头的手摇钻、螺纹和切螺纹的工具、带台钳的工作台、带脚轮的转椅、可以移开的螺旋楼梯、拆成零件的十字弩，还有摇杆里灌了水银的摇篮。原书藏于克拉科夫，已全部数字化并进入公有领域，但网站称五百多年来没人完整读过它，也没有转写和译本。",
+      "工程师 Dirk Schornstein 正借助 AI 逐页制作高清图、原文转写、现代英语释读和功能解读，154 页里已审校 128 页；未审校的页面会标明是 AI 生成的初稿，不确定处用颜色标出。评论区普遍喜欢这本书，但不少人反感网站浓重的 AI 文风和 AI 复原图，认为这削弱了可信度。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "BlackRabbit1",
+       "stance": "AI 痕迹",
+       "zh": "整个网站看起来大量由大模型撰写或分析，我说的不是设计，设计我没意见。这大大降低了它的学术价值，因为每一行都得核对正误和出处。书本身非常美，我很感谢这些高质量图片。",
+       "en": "This devalues the scientific value a lot",
+       "hn": "https://news.ycombinator.com/item?id=50231701",
+       "id": 50231701,
+       "replies": 30
+      },
+      {
+       "user": "kornork",
+       "stance": "复原图",
+       "zh": "我觉得 AI 复原图在这里适得其反，而且特别误导。原图本身有很多模糊之处，透视和比例不准，很多细节存疑。AI 图把这些存疑的细节直接画成了「真的」。",
+       "en": "the AI renderings are counterproductive and especially misleading",
+       "hn": "https://news.ycombinator.com/item?id=50232515",
+       "id": 50232515,
+       "replies": 7
+      },
+      {
+       "user": "dustfinger",
+       "stance": "好奇",
+       "zh": "有人能告诉我他们当时怎么造纸、画里用的什么颜料吗？这是水彩吗？我能照着当时的配方自己做纸和颜料吗？",
+       "en": "how they would have made the paper and the pigments",
+       "hn": "https://news.ycombinator.com/item?id=50232318",
+       "id": 50232318,
+       "replies": 3
+      }
+     ],
+     "kicker": "科学 · 技术史"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50236081,
+     "title": "路透社：塞尔维亚总统武契奇承认败选，学生运动取得历史性胜利",
+     "title_en": "Serbia's Vucic concedes election defeat in historic win for student movement",
+     "url": "https://www.reuters.com/world/europe/serbia-votes-students-seek-unseat-vucic-snap-election-2026-10-25/",
+     "hn": "https://news.ycombinator.com/item?id=50236081",
+     "points": 189,
+     "comments": 88
+    },
+    {
+     "id": 50227639,
+     "title": "半岛电视台：Meta 员工称巴西大选中卢拉的账号受到限制",
+     "title_en": "Meta employees say Lula’s accounts restricted in Brazil election: Report",
+     "url": "https://www.aljazeera.com/economy/2026/10/16/meta-employees-say-lulas-accounts-restricted-in-brazil-election-report",
+     "hn": "https://news.ycombinator.com/item?id=50227639",
+     "points": 179,
+     "comments": 135
+    },
+    {
+     "id": 50224422,
+     "title": "收听并阅读 11175 kHz 上的美国核力量紧急行动电文",
+     "title_en": "Listen and read USA nuclear forces Emergency Action Messages, heard on 11175 kHz",
+     "url": "https://missileer.watch",
+     "hn": "https://news.ycombinator.com/item?id=50224422",
+     "points": 196,
+     "comments": 126
+    },
+    {
+     "id": 50169450,
+     "title": "中世纪欧洲有毒金属产业的社会图景",
+     "title_en": "Social dynamics of toxic metal industry in medieval Europe",
+     "url": "https://www.cambridge.org/core/journals/antiquity/article/social-dynamics-of-toxic-metal-industry-in-medieval-europe-peak-district-lead-production-ad-6001500/34A2A16AC99B1B12E3EB99CEA1DDB829",
+     "hn": "https://news.ycombinator.com/item?id=50169450",
+     "points": 77,
+     "comments": 42
+    },
+    {
+     "id": 50226434,
+     "title": "谷歌正式把这些 Nest 恒温器变回了「傻」恒温器",
+     "title_en": "Google has officially turned these Nest thermostats back into dumb thermostats",
+     "url": "https://www.makeuseof.com/google-nest-thermostats-unsupported/",
+     "hn": "https://news.ycombinator.com/item?id=50226434",
+     "points": 76,
+     "comments": 69
+    },
+    {
+     "id": 50196623,
+     "title": "美国电网",
+     "title_en": "The U.S. Power Grid",
+     "url": "https://nomagicpill.site/knowledge/powergrid.html",
+     "hn": "https://news.ycombinator.com/item?id=50196623",
+     "points": 68,
+     "comments": 19
+    },
+    {
+     "id": 50231310,
+     "title": "美国不平等正以意想不到的方式加剧",
+     "title_en": "US inequality is getting worse in ways you might not expect",
+     "url": "https://theconversation.com/us-inequality-is-getting-worse-in-ways-you-might-not-expect-294075",
+     "hn": "https://news.ycombinator.com/item?id=50231310",
+     "points": 71,
+     "comments": 138
+    },
+    {
+     "id": 50233828,
+     "title": "科学家重新找到古罗马变色玻璃的制法",
+     "title_en": "Scientists rediscover how to make ancient Roman colour-changing glass",
+     "url": "https://www.theguardian.com/science/2026/oct/25/scientists-rediscover-ancient-roman-colour-changing-glass",
+     "hn": "https://news.ycombinator.com/item?id=50233828",
+     "points": 55,
+     "comments": 6
+    },
+    {
+     "id": 50236455,
+     "title": "欧洲今夏热浪在城市地区造成超过 5 万人死亡",
+     "title_en": "Europe's summer heat wave killed more han 50k people in urban areas",
+     "url": "https://www.science.org/content/article/europe-s-summer-heat-wave-killed-more-50-000-people-urban-areas",
+     "hn": "https://news.ycombinator.com/item?id=50236455",
+     "points": 22,
+     "comments": 14
+    },
+    {
+     "id": 50167528,
+     "title": "洗衣机为什么花了几十年才普及",
+     "title_en": "Washing machines took decades to catch on",
+     "url": "https://daily.jstor.org/why-washing-machines-took-decades-to-catch-on/",
+     "hn": "https://news.ycombinator.com/item?id=50167528",
+     "points": 49,
+     "comments": 67
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1444,
+    "comments": 985,
+    "top_points": {
+     "id": 50224422,
+     "title": "收听并阅读 11175 kHz 上的美国核力量紧急行动电文",
+     "value": 196,
+     "comments": 126
+    },
+    "top_comments": {
+     "id": 50229861,
+     "title": "法国总理曾让运营商准备在抗议日切断社交平台",
+     "value": 170
+    },
+    "top_brief": {
+     "id": 50224422,
+     "title": "收听并阅读 11175 kHz 上的美国核力量紧急行动电文",
+     "value": 196,
+     "comments": 126
+    }
+   }
+  },
+  {
+   "name": "文化",
+   "en": "Culture",
+   "page": 5,
+   "stories": [
+    {
+     "id": 50234474,
+     "title": "多莉·帕顿的「想象力图书馆」：每月给孩子寄一本书",
+     "title_en": "Dolly Parton's Imagination Library",
+     "url": "https://imaginationlibrary.com/",
+     "hn": "https://news.ycombinator.com/item?id=50234474",
+     "points": 334,
+     "comments": 59,
+     "summary": [
+      "乡村歌手多莉·帕顿的「想象力图书馆」免费给出生到五岁的孩子邮寄图书，经费由她和当地社区合作方共同承担，目前覆盖美国、加拿大、英国、澳大利亚和爱尔兰。官网说，她因父亲不识字而在 1995 年为家乡东田纳西的县里创办这个项目，希望不论家庭收入如何，每个孩子每月都能收到一本精选的适龄好书，如今每月寄出数百万本。",
+      "评论区几乎全是家长的好评。有人研究了它怎么维持：书的批发价约 2.5 美元一本，总部负责选书、物流和议价，每本书的钱则来自各地慈善伙伴，所以项目能随当地支持增减；也有人问，孩子还不识字，书有什么用？"
+     ],
+     "comment_quotes": [
+      {
+       "user": "arjie",
+       "stance": "怎么维持",
+       "zh": "我女儿通过这个项目收书，我好奇它怎么靠每本 2.5 美元的批发成本维持下来。有意思的是，负责选书、协调发行、谈批发价的是多莉·帕顿想象力图书馆，但每本书的钱其实全部来自当地慈善机构等。这意味着没有慈善伙伴的地方孩子就收不到书，但也让项目能随当地支持伸缩。",
+       "en": "per-book funding is actually entirely through local charities",
+       "hn": "https://news.ycombinator.com/item?id=50235262",
+       "id": 50235262,
+       "replies": 4
+      },
+      {
+       "user": "bengotow",
+       "stance": "家长",
+       "zh": "我有个两岁的孩子，他出生起每个月都收到想象力图书馆的书。这是个很棒的非营利项目。注册很简单，书直接寄到信箱，每本都有一页由教育工作者写的说明，教你怎么读给孩子听（指出那只狗，狗怎么叫？男孩最后心情怎样？等等）。强烈推荐！",
+       "en": "each one has a page written by an educator describing how to read it to your child",
+       "hn": "https://news.ycombinator.com/item?id=50235208",
+       "id": 50235208,
+       "replies": 0
+      },
+      {
+       "user": "LinaLauneBaer",
+       "stance": "疑问",
+       "zh": "真心提问，也许因为我是没书长大的……不识字的话，书有什么价值？我 6 岁才开始学认字。那些是只有图的书吗？",
+       "en": "What values do books have if you cannot read?",
+       "hn": "https://news.ycombinator.com/item?id=50236176",
+       "id": 50236176,
+       "replies": 9
+      }
+     ],
+     "kicker": "文化 · 阅读",
+     "tag": "文化版点赞第一"
+    },
+    {
+     "id": 50193936,
+     "title": "世上最硬的食物：日本柴鱼是怎么做出来的",
+     "title_en": "How Japanese Dried Bonito Is Made",
+     "url": "https://kottke.org/26/10/how-japanese-dried-bonito-is-made",
+     "hn": "https://news.ycombinator.com/item?id=50193936",
+     "points": 185,
+     "comments": 50,
+     "summary": [
+      "kottke.org 分享了一段视频：在日本西伊豆，创立于 1882 年的作坊金佐柴鱼店，第五代匠人芹泽安久仍用约 200 年历史的「手火山式」焙干法制作柴鱼（鲣节）。新鲜鲣鱼切片后煮 90 分钟，在手工照看的柴火上反复熏干十多次，用鲣鱼泥修补，再接种曲霉发酵、日晒数月，前后半年以上，直到硬得像木头、亮得像宝石。",
+      "作坊官网介绍，这种方法要挖一个约 2 米深的竖坑，在坑底烧伊豆本地的橡木、樱木等柴火，用明火高温一次性熏透鱼身表面，锁住鲜味，如今全日本只有少数几家还在用。评论区有人回忆旧筑地市场的刨柴鱼场景，也有人好奇这种工艺最初是怎么被发现的。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "ggm",
+       "stance": "筑地记忆",
+       "zh": "在老筑地市场，你会走过一箱箱随风轻轻飘动的柴鱼片，看人用绿色珐琅的电动工业刨子刨它。柴鱼刨花让我想起木工车床旁的碎屑，在那里是废料，在这里却是全部目的。我好像在关东煮上吃过当配菜的柴鱼片，它们会跳舞。",
+       "en": "They dance.",
+       "hn": "https://news.ycombinator.com/item?id=50229091",
+       "id": 50229091,
+       "replies": 7
+      },
+      {
+       "user": "spike021",
+       "stance": "过敏之谜",
+       "zh": "我其实对这个工艺很好奇。我对鱼过敏（金枪鱼、三文鱼都不能吃），但几乎所有用柴鱼高汤做的东西我都能吃，比如火锅、土豆炖肉、青森风浓厚煮干拉面汤底。一直没搞明白。",
+       "en": "I'm allergic to fish",
+       "hn": "https://news.ycombinator.com/item?id=50229457",
+       "id": 50229457,
+       "replies": 12
+      },
+      {
+       "user": "mrlonglong",
+       "stance": "怎么想到的",
+       "zh": "他们是怎么想到这种方法的？是几百年前偶然发现的，还是仔细琢磨出来的？",
+       "en": "Was it an accidental discovery hundreds of years ago",
+       "hn": "https://news.ycombinator.com/item?id=50230556",
+       "id": 50230556,
+       "replies": 3
+      }
+     ],
+     "kicker": "文化 · 饮食"
+    },
+    {
+     "id": 50197434,
+     "title": "逆向 PC-98 东方游戏 13 年后，ReC98 作者宣布退休",
+     "title_en": "Reverse engineer of PC-98 Touhou games retires",
+     "url": "https://rec98.nmlgc.net/blog/2026-10-05",
+     "hn": "https://news.ycombinator.com/item?id=50197434",
+     "points": 68,
+     "comments": 45,
+     "summary": [
+      "ReC98 项目长期靠众筹逆向和反编译 PC-98 时代的东方 Project 游戏，并为相关游戏《秋霜玉》做跨平台移植。作者在这篇超长博文里先讲技术：把游戏逻辑拆成可在 Windows 和 Linux 上构建的独立库，做了回放校验命令行工具，还发现原版有个负分点数道具的怪现象。文章最后是退休声明。",
+      "他写道，订阅收入从春天起停滞，同时社区里接连有人用 AI 快速 fork 和反编译他的代码，有人一天用 Claude 生成了 18 万多行代码的 TH01 移植；他自认离被免费的竞争者取代只差一次公告，而社区光喊支持却不付钱。文中他对东方圈、AI 编程者和 FreeBSD 用户都言辞激烈。评论区有人惋惜 AI 伤害了老手，也有人觉得他早已倦怠，AI 只是最后一根稻草。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "haunter",
+       "stance": "读完再说",
+       "zh": "大家真该把全文读完（至少最后一章），因为事情并不是「氛围编程者把他赶走了」那么简单。作者对 ZUN、氛围编程者和 AI 反对者一样厌恶。",
+       "en": "it's not as simple as \"vibe coders made meg go away\"",
+       "hn": "https://news.ycombinator.com/item?id=50230694",
+       "id": 50230694,
+       "replies": 2
+      },
+      {
+       "user": "oceansky",
+       "stance": "惋惜",
+       "zh": "虽然我喜欢大模型辅助逆向的新时代，但看到它对热爱这一行的老手造成的负面影响，真让我心碎。",
+       "en": "it really breaks my heart how much it negatively affect veterans in their area of passion",
+       "hn": "https://news.ycombinator.com/item?id=50230515",
+       "id": 50230515,
+       "replies": 13
+      },
+      {
+       "user": "ndiddy",
+       "stance": "倦怠",
+       "zh": "我断断续续关注这个项目很久，坦白说这篇文章很怪。他似乎倦怠了很久，AI 只是最后一根稻草。他讲到自己不喜欢东方游戏、不喜欢东方角色、也不喜欢东方社区。",
+       "en": "It seems like he'd been burning out for a long time and AI was the last straw.",
+       "hn": "https://news.ycombinator.com/item?id=50231299",
+       "id": 50231299,
+       "replies": 1
+      }
+     ],
+     "kicker": "文化 · 复古游戏"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50230384,
+     "title": "fheroes2：重制《魔法门之英雄无敌 II》游戏引擎",
+     "title_en": "fheroes2: A recreation of Heroes of Might and Magic II game engine",
+     "url": "https://github.com/ihhub/fheroes2",
+     "hn": "https://news.ycombinator.com/item?id=50230384",
+     "points": 201,
+     "comments": 71
+    },
+    {
+     "id": 50227892,
+     "title": "Xbox 拒绝 Netflix 5 亿美元报价",
+     "title_en": "Xbox Turns Down Netflix $500M Offer",
+     "url": "https://www.darkhorizons.com/xbox-turns-down-netflix-500-million-offer/",
+     "hn": "https://news.ycombinator.com/item?id=50227892",
+     "points": 90,
+     "comments": 135
+    },
+    {
+     "id": 50231001,
+     "title": "乐高与蠢朋克（Daft Punk）联名",
+     "title_en": "Lego collaboration with Daft Punk",
+     "url": "https://www.lego.com/en-us/categories/adults-welcome/article/daft-punk",
+     "hn": "https://news.ycombinator.com/item?id=50231001",
+     "points": 77,
+     "comments": 62
+    },
+    {
+     "id": 50235738,
+     "title": "做一部动画电影要经过什么？",
+     "title_en": "What goes into making an animated film?",
+     "url": "https://www.disneyanimation.com/process/",
+     "hn": "https://news.ycombinator.com/item?id=50235738",
+     "points": 73,
+     "comments": 31
+    },
+    {
+     "id": 50229599,
+     "title": "网络审查正在压垮独立网络漫画",
+     "title_en": "Online censorship is crushing indie webcomics",
+     "url": "https://xtramagazine.com/culture/online-censorship-indie-webcomics-284463",
+     "hn": "https://news.ycombinator.com/item?id=50229599",
+     "points": 120,
+     "comments": 102
+    },
+    {
+     "id": 50233775,
+     "title": "《Sabre Wulf》重制版",
+     "title_en": "Sabre Wulf Remastered",
+     "url": "https://gp-64.com/swr/",
+     "hn": "https://news.ycombinator.com/item?id=50233775",
+     "points": 56,
+     "comments": 8
+    },
+    {
+     "id": 50195184,
+     "title": "把酷炫的存档界面带回来",
+     "title_en": "Bring Back the Cool Save File Screens",
+     "url": "https://scabshack.lol/posts/bring-back-the-cool-save-file-screens",
+     "hn": "https://news.ycombinator.com/item?id=50195184",
+     "points": 64,
+     "comments": 23
+    },
+    {
+     "id": 50197108,
+     "title": "Overgrown：当植物侵占你闲置的标签页",
+     "title_en": "Overgrown, when plants invade your abandoned tabs",
+     "url": "https://charliegerard.dev/blog/overgrown-extension/",
+     "hn": "https://news.ycombinator.com/item?id=50197108",
+     "points": 109,
+     "comments": 30
+    },
+    {
+     "id": 50234879,
+     "title": "罗马人在哪里打过仗（交互地图）",
+     "title_en": "Where the Romans Fought (interactive map)",
+     "url": "https://iosiflazaridis.github.io/battles-of-the-romans/",
+     "hn": "https://news.ycombinator.com/item?id=50234879",
+     "points": 35,
+     "comments": 11
+    },
+    {
+     "id": 50226665,
+     "title": "定格动画电影《Wildwood》是一部惊人的杰作",
+     "title_en": "Stop-motion movie Wildwood is a staggering masterpiece",
+     "url": "https://www.cbc.ca/news/entertainment/wildwood-review-laika-9.7393321",
+     "hn": "https://news.ycombinator.com/item?id=50226665",
+     "points": 34,
+     "comments": 15
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1446,
+    "comments": 642,
+    "top_points": {
+     "id": 50234474,
+     "title": "多莉·帕顿的「想象力图书馆」：每月给孩子寄一本书",
+     "value": 334,
+     "comments": 59
+    },
+    "top_comments": {
+     "id": 50227892,
+     "title": "Xbox 拒绝 Netflix 5 亿美元报价",
+     "value": 135
+    },
+    "top_brief": {
+     "id": 50230384,
+     "title": "fheroes2：重制《魔法门之英雄无敌 II》游戏引擎",
+     "value": 201,
+     "comments": 71
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "MitPitt",
+  "id": 50234140,
+  "hn": "https://news.ycombinator.com/item?id=50234140",
+  "story_id": 50233779,
+  "story": "十年前的 CNN 看皮肤癌，比两个前沿大模型都准",
+  "zh": "而计算器做乘除法也胜过大模型……",
+  "en": "And a calculator outperforms LLMs at multiplication and division..."
+ },
+ "stats": {
+  "snapshot": "2026-10-26T08:15:26+08:00",
+  "front_page_count": 90,
+  "with_numbers": 86,
+  "flagged_or_dupe": 4,
+  "top_points": {
+   "id": 50218633,
+   "title": "在三星电视上拿到 root shell",
+   "value": 759,
+   "comments": 570
+  },
+  "top_comments": {
+   "id": 50218633,
+   "title": "在三星电视上拿到 root shell",
+   "value": 570
+  },
+  "second_comments": {
+   "id": 50226419,
+   "title": "四年少了 20 多万个岗位：美国创意行业的寒冬有多少是 AI 造成的？",
+   "value": 537
+  },
+  "over_500": 3,
+  "over_300": 9,
+  "over_100": 30,
+  "show_hn": 4,
+  "total_points": 9935,
+  "total_comments": 5867,
+  "hottest_ratio": {
+   "id": 50233304,
+   "title": "伯克利菲尔兹奖得主：学生都用 AI，作业已「没必要」批改",
+   "value": 1.41,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
