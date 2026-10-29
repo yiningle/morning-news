@@ -1,0 +1,1306 @@
+{
+ "date": "2026-10-28",
+ "published_at": "2026-10-29T08:24:15+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-10-28",
+ "schema_version": 2,
+ "lead": {
+  "id": 50272749,
+  "title": "《连线》：ICE 正在进行美国史上规模最大的反左翼监控行动之一",
+  "title_en": "Evidence of a spying operation by ICE against left-wing social movements",
+  "url": "https://www.wired.com/story/ice-is-running-one-of-the-largest-anti-left-surveillance-operations-in-us-history/",
+  "hn": "https://news.ycombinator.com/item?id=50272749",
+  "points": 1087,
+  "comments": 898,
+  "summary": [
+   "《连线》报道，明尼苏达州 15 名面临联邦共谋指控的居民（「明尼苏达 15 人」案），其律师在证据开示中拿到了大量材料：数十份报告、录音文字稿、邮件、被截获的 Signal 聊天、照片和数据库查询记录，揭示了移民和海关执法局（ICE）下属国土安全调查处（HSI）针对左翼社会运动的大范围监控。相关调查代号「Whipple Shield」和「Puppet Master」，依据的是查理·柯克遇刺后发布的第 7 号国家安全总统备忘录。经费来自 2008 年就设立、原本用于毒品和儿童性侵等案件的卧底项目「Keyhole」；约 119 名 HSI 探员参与此案，其中至少 11 名卧底渗透了当地反 ICE 活动人士的培训、集会和 Signal 群，还动用了海关和边境保护局的「死神」无人机。",
+   "报道细述了取证手段：一名活动人士把车牌查询工具放到 Fly.io 上并发进被渗透的 Signal 群后，探员调取 DNS 查询、Stripe 数据和从数据经纪商买来的资料，拿到 SSH 会话日志、注册 IP 和一张从未完成付款的银行卡指纹，再与州车管记录和汤森路透 CLEAR 平台的数据拼合，得出驾照号、社保号摘要、多年住址等信息；他们还用《爱国者法案》设立的 314(a) 程序查询了 29 名「对象」的金融记录。前 FBI 卧底探员 Mike German 将其比作胡佛时代打压民权和反战运动，并指出越战时期中情局同类调查高峰时也只有 42 名官员。评论区最热的一条引用了 Fly.io 那段，感叹这条线索链令人胆寒。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "multiplegeorges",
+    "stance": "线索链",
+    "zh": "（引用文中 Fly.io 那段）哇，我很好奇他们是怎么拿到 SSH 会话日志的？！这条线索链让人不寒而栗。",
+    "en": "The breadcrumb trail here is chilling.",
+    "hn": "https://news.ycombinator.com/item?id=50273269",
+    "id": 50273269,
+    "replies": 182
+   },
+   {
+    "user": "uxp100",
+    "stance": "爱国者法案",
+    "zh": "不清楚《爱国者法案》在这次行动里有多关键，但它确实出现了。Russ Feingold 是唯一投票反对《爱国者法案》的参议员。我真的经常想起这件事。",
+    "en": "Russ Feingold was the only Senator to vote against the Patriot act.",
+    "hn": "https://news.ycombinator.com/item?id=50273544",
+    "id": 50273544,
+    "replies": 5
+   },
+   {
+    "user": "Zigurd",
+    "stance": "像斯塔西",
+    "zh": "他们的社会地位应该和前斯塔西（东德秘密警察）相当。你可能没怎么听说过前斯塔西人员受到怎样的对待，以及如今人们怎么看他们。",
+    "en": "Their status in society should be comparable to former Stasi.",
+    "hn": "https://news.ycombinator.com/item?id=50273910",
+    "id": 50273910,
+    "replies": 3
+   }
+  ],
+  "kicker": "要闻 · 监控与公民自由",
+  "tag": "当日点赞、评论双第一"
+ },
+ "side": [
+  {
+   "id": 50271640,
+   "title": "苹果自带的 git 仍信任已被攻破的 eMudhra 证书",
+   "title_en": "Apple's git still trusts the compromised eMudhra certificates",
+   "url": "https://emudhra.we-have-a-problem.com/apple.html",
+   "hn": "https://news.ycombinator.com/item?id=50271640",
+   "points": 1026,
+   "comments": 376,
+   "summary": [
+    "一个社区维护的网站发文说，苹果 10 月 17 日就被告知 eMudhra 事件，但到 10 月 28 日，macOS 自带的开发工具（包括 git、curl 和 python3）仍信任那些被攻破的证书；10 月 26 日发布的 macOS 27.2 不但没修，还撤销了用户手动做的规避措施。这意味着网络路径上的任何人都能拦截这些工具的 HTTPS 连接：git 通过 https 克隆或拉取可能拿到攻击者选的代码，推送可能被篡改，GitHub 令牌等凭据也可能被截获。",
+    "网站给出了检测命令和一个冒充 github.com 的端到端演示，并说 Safari 等基于苹果网络框架的应用已受保护，苹果应尽快修复，比如从 /etc/ssl/cert.pem 删除受影响的根证书；在此之前开发者可以手动删除，但每次系统更新后都得重新检查，还建议安全团队评估 CI 里的 macOS 机器。评论区最热的一条指出受影响的不只是 git，而是一整批信任系统证书的工具，苹果竟让用户自己改证书链、还说更新可能撤销修复，实在离谱。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "chrisweekly",
+     "stance": "不只是 git",
+     "zh": "所以不只是 git，而是一批系统自带的工具；macOS 信任坏证书，依赖系统信任的这些工具都受影响。……苹果的指导意见是手动修改证书链，还提醒之后的系统更新可能撤销你的修复、让漏洞重新出现（至少已经发生过一次），这有点离谱。",
+     "en": "Kind of outrageous that Apple's guidance is to edit the cert chain manually",
+     "hn": "https://news.ycombinator.com/item?id=50272609",
+     "id": 50272609,
+     "replies": 80
+    },
+    {
+     "user": "kryptiskt",
+     "stance": "学学 Windows",
+     "zh": "我不是在讽刺：苹果应该照搬 Windows Update。我不知道他们怎么能一直走到今天，都没有一种在整体式系统更新之外打小补丁的办法。",
+     "en": "Apple should copy Windows Update",
+     "hn": "https://news.ycombinator.com/item?id=50274711",
+     "id": 50274711,
+     "replies": 10
+    },
+    {
+     "user": "commandlinefan",
+     "stance": "吊销失灵",
+     "zh": "感觉我们是不是都……放弃证书吊销了？CRL 和 OCSP 本来就是为这种情况设计的，但两者似乎都因为不可行而被弃用，也没有替代品。",
+     "en": "It seems like we've all just... given up on certificate revocation?",
+     "hn": "https://news.ycombinator.com/item?id=50273605",
+     "id": 50273605,
+     "replies": 4
+    }
+   ],
+   "kicker": "开发 · 安全",
+   "tag": "当日点赞第二"
+  },
+  {
+   "id": 50276792,
+   "title": "谷歌发布 Gemini 4 Carbon：主打网络安全和长程任务",
+   "title_en": "Gemini 4 Carbon",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+   "hn": "https://news.ycombinator.com/item?id=50276792",
+   "points": 772,
+   "comments": 629,
+   "summary": [
+    "谷歌 DeepMind 宣布新的前沿模型 Gemini 4 Carbon，称它是谷歌最强的模型，在网络安全和长程任务上达到业界最佳：在最近更新的 Artificial Analysis 智能指数 v5.0 上以 59 的得分排第一，找漏洞的 SEC-bench Pro 得 88.2%，漏洞利用的 ExploitGym 得 54.8%，打补丁的 CWE-bench 得 71.0%。谷歌说内部团队见过它连续运行数天去排查和修补大型代码库里的隐蔽 bug，生成安全代码的成功率比两周前发布的 Gemini 4 Argon 高一倍多。",
+    "谷歌说会谨慎推出：参与美国政府的自愿发布前测试，本周先向一部分网络安全防御者开放，再通过 Fairwind 计划逐步扩大，之后才面向开发者和普通用户；价格与 Argon 相同，每百万输入 token 2 美元、输出 10 美元。评论区最热的一条调侃谷歌的产品命名永远混乱多变，也有人说只发跑分不发模型意义不大，还有人发现网页版 Gemini 里根本找不到这些新模型。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "MrOrelliOReilly",
+     "stance": "命名",
+     "zh": "在这个瞬息万变的时代，我很庆幸至少还能指望谷歌持续推出令人困惑、不断变化的产品名称。",
+     "en": "I am grateful that at least I can still rely on Google for confusing, ever-changing product names.",
+     "hn": "https://news.ycombinator.com/item?id=50277735",
+     "id": 50277735,
+     "replies": 109
+    },
+    {
+     "user": "solarpunk_enthu",
+     "stance": "只有跑分",
+     "zh": "考虑到这个领域变化这么快，只公布跑分不发布模型基本没什么意义。如果他们一个月后才发布，那时多半已经有更强的竞争对手，跑分也就没这么好看了。",
+     "en": "showing benchmarks without releasing the model is quite meaningless.",
+     "hn": "https://news.ycombinator.com/item?id=50277575",
+     "id": 50277575,
+     "replies": 37
+    },
+    {
+     "user": "eldenring",
+     "stance": "不再作弊",
+     "zh": "（引用：Carbon 在 Terminal-Bench 4.0 上的成功作弊降到 0.0%，作弊尝试降到 0.4%）这大概是眼下让前沿模型真正可用最重要的一件事，很高兴看到有进展。我觉得这是上一代 Gemini 最大的问题。",
+     "en": "This is probably the single most important thing to make frontier models usable right now",
+     "hn": "https://news.ycombinator.com/item?id=50276885",
+     "id": 50276885,
+     "replies": 0
+    }
+   ],
+   "kicker": "AI · 模型发布",
+   "tag": "当日点赞第三"
+  },
+  {
+   "id": 50276998,
+   "title": "这个指纹识别脚本为什么在「制造生物武器」？",
+   "title_en": "Why is this fingerprinting script creating bioweapons?",
+   "url": "https://nullpt.rs/fingerprinting-bioweapons",
+   "hn": "https://news.ycombinator.com/item?id=50276998",
+   "points": 751,
+   "comments": 173,
+   "summary": [
+    "作者用 Playwright 爬了 Tranco 榜单上 1 万个网站，拦截浏览器指纹识别用到的 canvas 调用，把收集到的上千张指纹图放在 fingerprint.garden 上。其中一张像 Tame Impala 专辑封面的图把他引到 servicepipe.tech 的一个混淆脚本，里面的函数名竟是「计算往供水里投蓖麻毒素的致死剂量」之类，还藏着一段用不可见 Unicode 字符编码的「越狱」提示词，以及天安门等针对中国模型的敏感词。",
+    "作者判断这是专门用来触发大模型安全机制、阻止别人用 AI 反混淆的「反 LLM 混淆」：他让一个主流模型分析，对方以生物安全风险为由拒绝，换成开放权重的 GLM-5.3 才照做。剥开这层伪装后，脚本做的只是常规的反机器人检测，收集 UA、WebGL 等信号；与它同名的 servicepipe.ru 是一家俄罗斯反 DDoS 和流量防护公司。评论区有人分享自己的水印把文件送进了邮件隔离区，也有人说开放权重模型的防护没那么严。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "jacquesm",
+     "stance": "同款经历",
+     "zh": "侦查得漂亮！我们也用类似的办法给仍在禁发期的文档打标记，有一次我忘了去掉水印。客户抱怨没收到文件……最后在对方的 Outlook 日志里找到一行，说水印导致文件被无限期隔离，等人来查看。",
+     "en": "one day I forgot to remove the watermark.",
+     "hn": "https://news.ycombinator.com/item?id=50278441",
+     "id": 50278441,
+     "replies": 29
+    },
+    {
+     "user": "swiftcoder",
+     "stance": "开放模型",
+     "zh": "有意思的是，开放权重模型的防护不够，触发不了 GLM 5.3。我猜天安门那类内容会触发中国推理服务商的过滤，但并没有内置在模型本身。",
+     "en": "the open weights models don't have enough safeguards for this to trip GLM 5.3.",
+     "hn": "https://news.ycombinator.com/item?id=50278633",
+     "id": 50278633,
+     "replies": 20
+    },
+    {
+     "user": "__MatrixMan__",
+     "stance": "编程语言",
+     "zh": "希望有人把这个思路做成一门编程语言，关键字都让你看起来像恐怖分子。然后我们可以拿它出编程题。",
+     "en": "I hope somebody turns this concept into a programming language with keywords that make you look like a terrorist.",
+     "hn": "https://news.ycombinator.com/item?id=50281090",
+     "id": 50281090,
+     "replies": 13
+    }
+   ],
+   "kicker": "开发 · 逆向工程"
+  },
+  {
+   "id": 50276940,
+   "title": "苹果推出带触屏的 PROLED XDR 显示屏 MacBook Pro",
+   "title_en": "MacBook Pro with PROLED XDR Display and Touch",
+   "url": "https://www.apple.com/macbook-pro/proled-xdr-display/",
+   "hn": "https://news.ycombinator.com/item?id=50276940",
+   "points": 479,
+   "comments": 829,
+   "summary": [
+    "苹果发布新款 MacBook Pro，配 14.2 或 16.3 英寸「PROLED XDR」串联 OLED 屏，HDR 和 SDR 峰值亮度都可达 2000 尼特、对比度 1000 万比 1，覆盖 P3 和 Adobe RGB 色域；最引人注目的是屏幕首次支持多点触控，还加入了灵动岛。机器采用 M5 Pro 或 M5 Max 芯片，续航最长 24 小时，14 英寸起重 3.0 磅、16 英寸 4.0 磅，开放预购，11 月 6 日发售。",
+    "这是当天评论第二多的帖子，评论/点赞比在点赞过百的帖子里最高。评论区争论集中在触屏：有人担心 macOS 会为了迁就手指操作而改界面，重蹈 Windows 8 的覆辙；也有人很少在笔记本上用触屏，不理解谁需要；点赞最多的一条则把注意力放在减重上，称两款机型都轻了约 15%。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "tristanj",
+     "stance": "减重",
+     "zh": "大家都盯着触屏，但我真的很佩服他们减了这么多重量。14 英寸从 3.5 磅（1.59 公斤）降到 3.0 磅（1.36 公斤），16 英寸从 4.7 磅（2.13 公斤）降到 4.0 磅（1.81 公斤），两款都轻了约 15%。",
+     "en": "Everyone's focused on the touchscreen, but I'm seriously impressed how they managed to cut down the weight.",
+     "hn": "https://news.ycombinator.com/item?id=50278427",
+     "id": 50278427,
+     "replies": 106
+    },
+    {
+     "user": "CountSessine",
+     "stance": "Windows 8 之路",
+     "zh": "触屏 Mac 对热爱 Mac 的人来说是很糟糕的发展。它不是可以忽略的无害功能……用触屏的人会（合理地）抱怨 macOS 的控件太小、不适合手指操作，于是苹果会开始把各种界面垃圾强加给所有人。……微软就是这么走到 Windows 8 的。",
+     "en": "Touch-screen Macs is kind of a terrible development for anyone who loves the Mac.",
+     "hn": "https://news.ycombinator.com/item?id=50280512",
+     "id": 50280512,
+     "replies": 60
+    },
+    {
+     "user": "joshstrange",
+     "stance": "谁会用",
+     "zh": "有人在 Windows（Linux？）笔记本上用或喜欢触屏吗？我从来没想过这么做。鼠标准得多，也不会挡住视线。",
+     "en": "Does anyone use/like touch on their windows (linux?) laptops?",
+     "hn": "https://news.ycombinator.com/item?id=50277537",
+     "id": 50277537,
+     "replies": 127
+    }
+   ],
+   "kicker": "产品 · 硬件",
+   "tag": "当日评论第二"
+  },
+  {
+   "id": 50268380,
+   "title": "给美国法典做一个「git」",
+   "title_en": "Git for the US Code",
+   "url": "https://lexifina.com/blog/git-for-the-us-code",
+   "hn": "https://news.ycombinator.com/item?id=50268380",
+   "points": 425,
+   "comments": 252,
+   "summary": [
+    "法律 AI 公司 Lexifina 的 Alan Yahya 写道，程序员能看到任何一行代码是谁、何时写的，律师读联邦法条却往往要花一下午翻页脚注释。他以《美国法典》第 11 编第 1182(1) 条「小企业债务人」的定义为例：债务上限 2019 年设立，2020 年 CARES 法案临时提到 750 万美元，2022 年 3 月失效、6 月又追溯恢复，2024 年再次到期，2025 年调整后为 3,424,000 美元；同一天提起的案子，按当时印行的版本和按后来的法律，答案可能不同。他还引用研究说大模型在法条时间问题上常出错。",
+    "他们的做法是：对 2017 年以来每一对法典发布版本，把其间通过的公共法律的修订指令按日期应用到旧文本上，再和新版本比对；九编里 365 处修改有 361 处完全复现，其余 4 处标注了核实程度。每处修改都记录生效日期，读者可以选一个日期看当时有效的文本，每个短语按写入它的法案着色。作者也坦言还不能显示后来法律的追溯效力。评论区最热的一条引用《纽约时报》2007 年设想用版本控制让国会立法透明，也有人呼吁立法要求法律修订顾问办公室维护这样的仓库。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "kfogel",
+     "stance": "2007 年设想",
+     "zh": "《纽约时报》2007 年：「……想想版本控制软件对国会意味着什么。如果法案在删改都被仔细追踪的系统里起草，公众就会知道哪位议员在法案通过国会的过程中做了哪处修改。立法过程终于会透明。」",
+     "en": "Think of what version control software could mean for the Congress",
+     "hn": "https://news.ycombinator.com/item?id=50269424",
+     "id": 50269424,
+     "replies": 103
+    },
+    {
+     "user": "Ericson2314",
+     "stance": "立法要求",
+     "zh": "HN 社区需要大力游说通过一项法律，要求法律修订顾问办公室把维护这个仓库列为职责，并追溯整个《美国法典》的历史。这是个简单、便宜的主意，没有悬而未决的技术问题，几乎人人受益。",
+     "en": "It's a simple idea; it's cheap; there are no outstanding technical questions; it benefits almost everyone.",
+     "hn": "https://news.ycombinator.com/item?id=50268920",
+     "id": 50268920,
+     "replies": 16
+    },
+    {
+     "user": "codingdave",
+     "stance": "未必是 git",
+     "zh": "我给政府部门做文档管理软件 15 年了……这些年告诉我两件事：1）是的，立法的版本控制绝对关键。2）这不代表 Git 是正确答案。",
+     "en": "That doesn't mean Git is the right answer.",
+     "hn": "https://news.ycombinator.com/item?id=50271194",
+     "id": 50271194,
+     "replies": 1
+    }
+   ],
+   "kicker": "开发 · 法律科技"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 2,
+   "stories": [
+    {
+     "id": 50265609,
+     "title": "Anthropic：用 Claude 加速药物研发的初步进展",
+     "title_en": "Early progress on accelerating drug development with Claude",
+     "url": "https://www.anthropic.com/research/early-progress-drug-development",
+     "hn": "https://news.ycombinator.com/item?id=50265609",
+     "points": 321,
+     "comments": 331,
+     "summary": [
+      "Anthropic 生命科学团队介绍了过去几个月与六家机构的合作。Generate Biomedicines 的科学家用 Claude Code 为 CAR-T 疗法设计出比标准版短约 70% 的基因片段，实验中让免疫细胞多产生约 10 倍受体；Claude 为 Divergence Labs 在约一个月里几乎自主生成约 3.5 万个抗体设计，找到了针对食物过敏的候选「命中」；BigHat 在约 10 周内做了约 1010 个变体，最好的版本结合力提高 10 倍以上。",
+      "在文书工作上，Enveda 用 Claude 检查 1061 页生产文件，发现了人工找出的全部 11 个问题外加 7 个漏掉的，审阅时间减少 89%；一份监管文件初稿 4 小时写成，人工约需三个月。Anthropic 还收购了一人公司 Mithril Medicine，其创始人借助 Claude 在不到 18 个月里把一种肌营养不良疗法从想法推进到小鼠实验，预计最早 2028 年底进入人体试验。评论区有人谨慎乐观，也有前药物研发人员说设计候选药物本来就是最容易的部分。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "orthogonal_cube",
+       "stance": "谨慎乐观",
+       "zh": "这是我一直寄予希望的 AI 用途。加速新药研究可能对人类生命是净收益。……但（文中「需要与更多生物技术公司合作、把 Claude 更深地融入其研发流程」）这种措辞显得很自利。谨慎乐观大概是合适的。",
+       "en": "Cautious optimism is probably warranted.",
+       "hn": "https://news.ycombinator.com/item?id=50266566",
+       "id": 50266566,
+       "replies": 70
+      },
+      {
+       "user": "gumby",
+       "stance": "最容易的部分",
+       "zh": "提出候选药物是整个流程里最容易的部分。……这从上世纪 60 年代起就是 AI 的目标应用之一。（一名永远不会再碰生命科学的前药物研发人员）",
+       "en": "Coming up with candidate drugs is the easiest part of the process.",
+       "hn": "https://news.ycombinator.com/item?id=50267192",
+       "id": 50267192,
+       "replies": 31
+      },
+      {
+       "user": "helsinkiandrew",
+       "stance": "只占一成",
+       "zh": "James van Geelen 在一期播客里说得好：设计分子大概只占把药推向市场全部工作的 10% 到 20%。我们有的候选药物设计比真正被开发的多得多。",
+       "en": "designing the molecules is perhaps 10-20% of the effort in bringing a drug to market.",
+       "hn": "https://news.ycombinator.com/item?id=50268917",
+       "id": 50268917,
+       "replies": 45
+      }
+     ],
+     "kicker": "AI · 生命科学"
+    },
+    {
+     "id": 50275626,
+     "title": "DAYJOB: Tax：AI 智能体做专业税务工作，最好成绩通过率仅 10.8%",
+     "title_en": "Dayjob: Tax – evaluating AI agents on 50 professional tax assignments",
+     "url": "https://surgehq.ai/blog/dayjob-tax",
+     "hn": "https://news.ycombinator.com/item?id=50275626",
+     "points": 192,
+     "comments": 118,
+     "summary": [
+      "Surge AI 发布 DAYJOB 系列的税务基准，包含 50 个环境、1789 个文件，覆盖八个税务领域。智能体收到客户请求和材料，要交出报税表、底稿、技术审查或咨询意见，难点在于发现客户没问到的问题、处理互相矛盾的证据。例如客户问卖公寓选哪个日期，智能体都答对了，但有模型五次都没提醒她 2027 年 8 月后会失去 25 万美元免税资格。",
+      "按 95% 评分标准计算单次通过率，Claude Sonnet 5.5 以 10.8% 领先，Claude Fable 5.1 为 9.6%，Claude Opus 5.5 为 9.2%；作者结论是「智能体还没通过审计」。评论区有人说已经在把美国国税局表格形式化成代码，也有人认为不给专门的工具框架就测试通用模型说明不了太多，还有人讲了会计师报错税让自己损失 2 万美元的经历。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "RGS1811",
+       "stance": "把税表写成代码",
+       "zh": "作为概念验证，我一直在用多余的 token 把国税局的表格和工作表形式化，主要是想证明这能做到。……目前估计已覆盖约 60% 的美国联邦税务情形。",
+       "en": "I'm up to an estimated 60% coverage of US federal tax situations so far.",
+       "hn": "https://news.ycombinator.com/item?id=50278497",
+       "id": 50278497,
+       "replies": 23
+      },
+      {
+       "user": "bluejay2387",
+       "stance": "缺框架",
+       "zh": "这是不是就是给通用智能体一堆文件和任务，然后看会发生什么？……随便从街上拉个人让他「报税」，大概也会搞砸。更有意思的问题是模型在专门为税务设计的框架里能做到什么。",
+       "en": "The interesting question would be what the models could do in a well engineered harness focused on taxes.",
+       "hn": "https://news.ycombinator.com/item?id=50282067",
+       "id": 50282067,
+       "replies": 1
+      },
+      {
+       "user": "holdingunsteady",
+       "stance": "人也会错",
+       "zh": "几年前我的税务会计报错了税，让我损失了大约 2 万美元（后来换了会计才发现）。不知道 Claude 或 GPT 会不会犯同样的错，但感觉模型有机会每年帮我省下几千甚至几万美元。",
+       "en": "My tax accountant mis-filed my taxes a couple years ago, which cost me about $20K",
+       "hn": "https://news.ycombinator.com/item?id=50275932",
+       "id": 50275932,
+       "replies": 27
+      }
+     ],
+     "kicker": "AI · 评测"
+    },
+    {
+     "id": 50271271,
+     "title": "Kotaku：微软和 Epic 突然同意「AI 就是盗窃」",
+     "title_en": "Microsoft and Epic Games Suddenly Agree That AI Is Theft",
+     "url": "https://kotaku.com/now-that-the-shoe-is-on-the-other-foot-microsoft-and-epic-games-suddenly-agree-that-ai-is-theft-2000749316",
+     "hn": "https://news.ycombinator.com/item?id=50271271",
+     "points": 69,
+     "comments": 32,
+     "summary": [
+      "Kotaku 文章说，最近 AI 辅助的游戏「重编译」移植泛滥，GitHub 上过去四周出现了上百份 DMCA 下架通知，《杀戮尖塔 2》《蔚蓝》《环世界》等独立游戏的开源版本都在其中。Epic 10 月 10 日对一个用 AI 写的《堡垒之夜》网页移植发出下架通知，微软过去一个月也针对《我的世界》《使命召唤》《光环》相关网页移植发了多份通知。",
+      "作者批评两家双重标准：Epic 的服务条款禁止用其内容训练生成式 AI，但据彭博社报道它即将推出的「AI 优先」漫威游戏用 Claude 开发；微软每年投入 800 亿美元建 AI 数据中心，《纽约时报》诉讼中披露的内部材料里，其应用科学总监曾称大模型抓取互联网是「人类历史上最大的劳动盗窃」。评论区有人认为立场其实一致：用 AI 创造新东西不算盗窃，用它复刻现有产品才是侵权；也有人担心 AI 最容易摘的果子就是克隆别人的游戏。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "CookieCrisp",
+       "stance": "立场一致",
+       "zh": "我觉得这有点不诚实。他们的立场在我看来是一致的：「用 AI 创造新东西不是盗窃，用它重现或获取现有产品是侵犯版权」，说得通。",
+       "en": "Using AI to create something new isn’t theft, using it to recreate or access an existing product is copyright infringement",
+       "hn": "https://news.ycombinator.com/item?id=50272815",
+       "id": 50272815,
+       "replies": 12
+      },
+      {
+       "user": "BatFastard",
+       "stance": "克隆",
+       "zh": "可惜最容易摘的果子是克隆别人的游戏。这抢走了 AI 本可以赋能的独立开发者。我在自己做的游戏里用 AI，很多方面很棒。",
+       "en": "Sadly the low hanging fruit is cloning other peoples games.",
+       "hn": "https://news.ycombinator.com/item?id=50277716",
+       "id": 50277716,
+       "replies": 2
+      },
+      {
+       "user": "avaer",
+       "stance": "Napster 时刻",
+       "zh": "看市值十亿美元的游戏公司怎么应对会很有意思。这可能是一次 Napster/BT 时刻。那会是好事。",
+       "en": "It could be a Napster/Torrent moment.",
+       "hn": "https://news.ycombinator.com/item?id=50272498",
+       "id": 50272498,
+       "replies": 2
+      }
+     ],
+     "kicker": "AI · 版权"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50273396,
+     "title": "肯塔基男子成为首位获准以宗教理由免用 AI 的人文主义者（459 条评论）",
+     "title_en": "Kentucky man becomes the first humanist granted religious exemption from AI",
+     "url": "https://religionnews.com/2026/10/26/in-a-first-a-humanist-granted-a-religious-exemption-from-using-ai/",
+     "hn": "https://news.ycombinator.com/item?id=50273396",
+     "points": 417,
+     "comments": 459
+    },
+    {
+     "id": 50273731,
+     "title": "Cursor 发布 Agent SDK",
+     "title_en": "The Agent SDK",
+     "url": "https://cursor.com/blog/agent-sdk",
+     "hn": "https://news.ycombinator.com/item?id=50273731",
+     "points": 90,
+     "comments": 107
+    },
+    {
+     "id": 50268868,
+     "title": "Artificial Analysis 智能指数 v5",
+     "title_en": "Artificial Analysis Intelligence Index v5",
+     "url": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5",
+     "hn": "https://news.ycombinator.com/item?id=50268868",
+     "points": 90,
+     "comments": 82
+    },
+    {
+     "id": 50275128,
+     "title": "英伟达 Nemotron 3.5 Transcribe：支持 40 种语言的开放语音识别",
+     "title_en": "Nvidia Nemotron 3.5 Transcribe: open ASR for 40 languages",
+     "url": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
+     "hn": "https://news.ycombinator.com/item?id=50275128",
+     "points": 106,
+     "comments": 17
+    },
+    {
+     "id": 50266910,
+     "title": "翻转一个神经元，就能触发 Qwen 的「另一个人格」",
+     "title_en": "Qwen has alter egos triggered by flipping a single neuron",
+     "url": "https://qwen-neurons-site.vercel.app/",
+     "hn": "https://news.ycombinator.com/item?id=50266910",
+     "points": 55,
+     "comments": 52
+    },
+    {
+     "id": 50250609,
+     "title": "自 2022 年 8 月以来，图像生成已经走了很远",
+     "title_en": "Image generation has come a long way since August 2022",
+     "url": "https://www.hbrooks.com/writing/image-generation-has-come-a-long-way",
+     "hn": "https://news.ycombinator.com/item?id=50250609",
+     "points": 24,
+     "comments": 6
+    },
+    {
+     "id": 50272479,
+     "title": "谷歌研究院 Sleep 框架：让大模型在持续学习中保留知识",
+     "title_en": "Sleep framework: A new way for LLMs to retain knowledge in continual learning",
+     "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
+     "hn": "https://news.ycombinator.com/item?id=50272479",
+     "points": 29,
+     "comments": 3
+    },
+    {
+     "id": 50271411,
+     "title": "Opus 5.5 引发身份危机是真的",
+     "title_en": "Opus 5.5 causing an identity crisis is real",
+     "url": "https://www.kondz.io/blog/opus-5-5-causing-identity-crisis-is-real/",
+     "hn": "https://news.ycombinator.com/item?id=50271411",
+     "points": 20,
+     "comments": 38
+    },
+    {
+     "id": 50234183,
+     "title": "在 16GB 显卡上微调 Qwen，让它回答时不用字母 e",
+     "title_en": "Fine-tuned Qwen on my 16gb GPU to respond without the letter e",
+     "url": "https://kevin-wu.ca/blog/qwn/",
+     "hn": "https://news.ycombinator.com/item?id=50234183",
+     "points": 30,
+     "comments": 20
+    }
+   ],
+   "stats": {
+    "items": 12,
+    "points": 1443,
+    "comments": 1265,
+    "top_points": {
+     "id": 50273396,
+     "title": "肯塔基男子成为首位获准以宗教理由免用 AI 的人文主义者（459 条评论）",
+     "value": 417,
+     "comments": 459
+    },
+    "top_comments": {
+     "id": 50273396,
+     "title": "肯塔基男子成为首位获准以宗教理由免用 AI 的人文主义者（459 条评论）",
+     "value": 459
+    },
+    "top_brief": {
+     "id": 50273396,
+     "title": "肯塔基男子成为首位获准以宗教理由免用 AI 的人文主义者（459 条评论）",
+     "value": 417,
+     "comments": 459
+    }
+   }
+  },
+  {
+   "name": "开发",
+   "en": "Software",
+   "page": 3,
+   "stories": [
+    {
+     "id": 50273171,
+     "title": "Emacs 50 岁了",
+     "title_en": "Emacs Turns 50",
+     "url": "https://www.technologyreview.com/2026/10/20/1145399/emacs-turns-50/",
+     "hn": "https://news.ycombinator.com/item?id=50273171",
+     "points": 395,
+     "comments": 169,
+     "summary": [
+      "MIT《技术评论》校友专栏回顾了 EMACS 的诞生：它源自 1962 年 Dan Murphy 为 PDP-1 写的 TECO 编辑器，1971 年 Carl Mikkelsen 的 Control-R 让修改即时显示在屏幕上。1976 年 Richard Stallman 在斯坦福见到全屏编辑器 E 后回到 MIT 改进 Control-R，让每个按键都运行自己的宏；为了解决人人自定义命令导致互相帮不上忙的问题，Guy Steele 和 David Moon 牵头统一了一套用 Meta 键的标准命令，取名 EMACS（Editor Macros）。",
+      "Steele 说：「我的目标不是造一个伟大的新编辑器，而是解决一个社会问题。」Stallman 把 EMACS 寄给任何寄来磁带和回邮信封的人，条件是把改进寄回，这个共享社区后来孕育了自由软件运动和 GNU/Linux。苹果从 Mac OS X 起附带 GNU Emacs，2019 年停止，但系统里仍藏着 Emacs 快捷键。评论区一位用了 30 多年的用户说，AI 让他能随心所欲地定制编辑器，而且控制权在自己手里；也有人从 1978 年在 MIT AI 实验室起用到今天。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "jwr",
+       "stance": "30 年用户",
+       "zh": "我用 Emacs 超过 30 年了。别的编辑器来了又走，Emacs 留了下来。……最近 AI 彻底改变了我用 Emacs 的方式：我描述想让编辑器怎么工作，砰！它就那样工作了。……最重要的还是回到 Stallman 最初的理念：我掌控我的编辑器和环境。没有公司替我决定。",
+       "en": "I am in control of my editor and my environment.",
+       "hn": "https://news.ycombinator.com/item?id=50273757",
+       "id": 50273757,
+       "replies": 37
+      },
+      {
+       "user": "gumby",
+       "stance": "从 1978 年",
+       "zh": "我 1978 年在 AI 实验室开始用 Emacs。它至今仍是我主要的开发工具，大概也仍是我花时间最多的程序。",
+       "en": "I started using Emacs at the AI lab in 1978.",
+       "hn": "https://news.ycombinator.com/item?id=50273820",
+       "id": 50273820,
+       "replies": 12
+      },
+      {
+       "user": "PaulDavisThe1st",
+       "stance": "文章奇怪",
+       "zh": "这篇文章很奇怪。开头深入讲 Emacs 起源的细节，然后突然放弃，快进到结尾，草草收场。",
+       "en": "What a deeply strange article.",
+       "hn": "https://news.ycombinator.com/item?id=50277444",
+       "id": 50277444,
+       "replies": 0
+      }
+     ],
+     "kicker": "开发 · 编辑器"
+    },
+    {
+     "id": 50265393,
+     "title": "UEFI 固件曝代码执行漏洞，波及全球大多数服务器",
+     "title_en": "Code-execution flaw in UEFI firmware threatens most servers on planet Earth",
+     "url": "https://arstechnica.com/security/2026/10/code-execution-flaw-in-uefi-firmware-threatens-most-servers-on-planet-earth/",
+     "hn": "https://news.ycombinator.com/item?id=50265393",
+     "points": 303,
+     "comments": 220,
+     "summary": [
+      "Ars Technica 报道，开源 UEFI 参考实现 TianoCore EDK II 被发现一个严重性评分为 9.5 的漏洞 CVE-2026-97631。它存在于网络启动（PXE）驱动里已有 16 年：驱动把收到的 ICMP 错误消息复制进固定 504 字节的字段时边界处理有误，超长消息会写出界外。攻击者在目标网络启动期间发一个单播包，就可能让启动挂起，或在知道固件版本时在最高权限下执行代码，绕过安全启动，甚至威胁磁盘加密。AMI、Insyde、Phoenix 等固件厂商和微软的 Project Mu 都用了这部分代码。",
+      "漏洞由 Anthropic 的 Alex Matrosov 和谷歌的 Dan Holmes 发现，原定明年 1 月协调披露，但 AMI 上个月提交的一个公开修复请求提前泄露了细节。限制在于：只影响从网络启动的机器，攻击者需要局域网访问，还要针对具体型号调整地址；家庭和小办公室用户不受影响。HD Moore 认为它会在停止支持的系统里成为「永久」漏洞。评论区有人主张用几百行汇编的极简固件代替百万行的 OVMF，也有人认为攻击面很小，服务器几乎从不重启。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "FrasiertheLion",
+       "stance": "越小越安全",
+       "zh": "我们最近写文章介绍了从 OVMF（约 100 万行 C）换成极简、高度专用的固件（300 行汇编）……「流行」不等于「安全」。拿大模型对着任何大型代码库都能找到漏洞，所以「给全世界打补丁」没法规模化。",
+       "en": "\"popular\" does not automatically mean \"secure\"",
+       "hn": "https://news.ycombinator.com/item?id=50268974",
+       "id": 50268974,
+       "replies": 69
+      },
+      {
+       "user": "voidUpdate",
+       "stance": "攻击面小",
+       "zh": "所以你得在服务器启动时给它发 ICMP 包？这攻击面似乎极小。我都不知道我们的企业服务器上次启动是什么时候，它们一直开着。",
+       "en": "That seems like an extremely small attack surface.",
+       "hn": "https://news.ycombinator.com/item?id=50270461",
+       "id": 50270461,
+       "replies": 19
+      },
+      {
+       "user": "rocqua",
+       "stance": "破解安全启动",
+       "zh": "有意思的地方其实在于攻破安全启动或 BitLocker。如果设备被误配置成 PXE 启动，而 UEFI 其他方面锁得很死……这可能让你打断启动链，然后关掉安全启动或从 TPM 里提取密钥。",
+       "en": "An interesting part of this is actually in defeating secure-boot or bitlocker.",
+       "hn": "https://news.ycombinator.com/item?id=50272789",
+       "id": 50272789,
+       "replies": 1
+      }
+     ],
+     "kicker": "开发 · 安全"
+    },
+    {
+     "id": 50223739,
+     "title": "用 AI 智能体反编译 2001 年的《快餐大亨 2》：它是怎么画出世界的",
+     "title_en": "Decompiling Fast Food Tycoon 2: Drawing the World",
+     "url": "https://healeycodes.com/decompiling-fast-food-tycoon-2-drawing-the-world",
+     "hn": "https://news.ycombinator.com/item?id=50223739",
+     "points": 191,
+     "comments": 41,
+     "summary": [
+      "Andrew Healey 花了几天反编译自己最爱的游戏《Fast Food Tycoon 2》，一款 2001 年的比萨帝国经营模拟。他搭了一个智能体循环：用 Ghidra 把 fastfood2.exe 的 4046 个函数反编译成约 9.5MB 类 C 文本，装进 SQLite 并写了查询脚本；用 Windows 的 ReadProcessMemory 读取运行中游戏的内存，对照屏幕找出现金、镜头位置等字段；再修补消息处理器，让智能体能在游戏 UI 线程上点按钮、移镜头、推进模拟。",
+      "文章讲解了渲染器：城市是一张底图加几百个精灵，只重绘变化的区域；按对角线顺序多遍绘制，用临时像素值标记被遮挡的人物再描出轮廓；日光按 25 个小时亮度值插值，路灯按对象 ID 分组错开亮灯时间。评论区有人称赞这才是 AI 辅助文章该有的样子：用 AI 反编译和探索，文章本身是人写的；也有人回忆自己总做一整只炸鸡的比萨，因为好做又赚钱。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "vintagedave",
+       "stance": "该有的样子",
+       "zh": "AI 辅助的文章就该这样：他们用 AI 反编译、发现东西（开头列了一些很有意思的技巧），但文章本身是人写的。这说明他们用 AI 帮助自己理解，而不是让 AI 包办一切。",
+       "en": "This is how an AI-assisted article should be",
+       "hn": "https://news.ycombinator.com/item?id=50270811",
+       "id": 50270811,
+       "replies": 11
+      },
+      {
+       "user": "yayachiken",
+       "stance": "炸鸡比萨",
+       "zh": "好文章，我小时候很爱这个游戏。……百科说孩子和青少年喜欢大份量，所以我总是做一整只炸鸡放在上面的比萨，好复制、赚钱多（配料成本高 = 利润高），评分也好。",
+       "en": "This led me to always create a Pizza that just had an entire fried chicken on it",
+       "hn": "https://news.ycombinator.com/item?id=50270195",
+       "id": 50270195,
+       "replies": 0
+      },
+      {
+       "user": "glimshe",
+       "stance": "人机协作",
+       "zh": "这是一个好例子：有才华的工程师和 AI 携手完成反编译。……这和我听说的一致：用 AI 时，才能和经验对任务速度和成本影响很大。",
+       "en": "talent and experience making a big difference in task speed and cost when using AI.",
+       "hn": "https://news.ycombinator.com/item?id=50272070",
+       "id": 50272070,
+       "replies": 2
+      }
+     ],
+     "kicker": "开发 · 逆向工程"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50271685,
+     "title": "苹果支持文档：关于被攻破的 eMudhra 中间证书颁发机构",
+     "title_en": "About the compromised eMudhra intermediate CAs",
+     "url": "https://support.apple.com/en-us/149555",
+     "hn": "https://news.ycombinator.com/item?id=50271685",
+     "points": 151,
+     "comments": 73
+    },
+    {
+     "id": 50208960,
+     "title": "《Start Doing Graph Theory》：免费开放的图论入门教材",
+     "title_en": "Start Doing Graph Theory",
+     "url": "https://vertex.degree/",
+     "hn": "https://news.ycombinator.com/item?id=50208960",
+     "points": 564,
+     "comments": 124
+    },
+    {
+     "id": 50274251,
+     "title": "AlpineBSD",
+     "title_en": "AlpineBSD",
+     "url": "https://wiki.alpinebsd.org",
+     "hn": "https://news.ycombinator.com/item?id=50274251",
+     "points": 169,
+     "comments": 154
+    },
+    {
+     "id": 50267569,
+     "title": "Moxnox 1.0：运行在 Btrfs 之上、类 NT 且兼容 POSIX 的操作系统",
+     "title_en": "Moxnox 1.0: NT-Like, POSIX-Compatible OS Running Atop Btrfs",
+     "url": "https://github.com/maharmstone/moxnox",
+     "hn": "https://news.ycombinator.com/item?id=50267569",
+     "points": 89,
+     "comments": 30
+    },
+    {
+     "id": 50280722,
+     "title": "9 位 AES 密钥奇案",
+     "title_en": "The case of the 9 bit AES key",
+     "url": "https://v12.sh/blog/the-case-of-the-9bit-aes-key",
+     "hn": "https://news.ycombinator.com/item?id=50280722",
+     "points": 64,
+     "comments": 31
+    },
+    {
+     "id": 50230896,
+     "title": "汇编之夜（2021）",
+     "title_en": "Assembly Nights (2021)",
+     "url": "https://ratfactor.com/assembly-nights",
+     "hn": "https://news.ycombinator.com/item?id=50230896",
+     "points": 69,
+     "comments": 22
+    },
+    {
+     "id": 50271088,
+     "title": "C++ 里每秒十亿次查询的查找表",
+     "title_en": "Billion-query-per-second lookup tables in C++",
+     "url": "https://lemire.me/blog/2026/10/26/billion-query-per-second-lookup-tables-in-c/",
+     "hn": "https://news.ycombinator.com/item?id=50271088",
+     "points": 33,
+     "comments": 4
+    },
+    {
+     "id": 50270973,
+     "title": "Coding Horror：把痛苦当作特性",
+     "title_en": "Suffering as a Feature",
+     "url": "https://blog.codinghorror.com/suffering-as-a-feature/",
+     "hn": "https://news.ycombinator.com/item?id=50270973",
+     "points": 58,
+     "comments": 13
+    },
+    {
+     "id": 50266719,
+     "title": "饥饿感胜过资历：给初级工程师的建议",
+     "title_en": "Hunger beats tenure: Advice for junior engineers",
+     "url": "https://felixrieseberg.com/hunger-beats-tenure-advice-for-junior-engineers/",
+     "hn": "https://news.ycombinator.com/item?id=50266719",
+     "points": 115,
+     "comments": 94
+    },
+    {
+     "id": 50275375,
+     "title": "扫描中国最大代码托管平台上 725 万个公开仓库里的密钥",
+     "title_en": "Scanning 7.25M Public Repositories on China's Largest Git Platform for Secrets",
+     "url": "https://www.mongodb.com/company/blog/technical/scanning-7-point-25-million-public-repositories-chinas-largest-git-platform-for-secrets",
+     "hn": "https://news.ycombinator.com/item?id=50275375",
+     "points": 27,
+     "comments": 6
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2228,
+    "comments": 981,
+    "top_points": {
+     "id": 50208960,
+     "title": "《Start Doing Graph Theory》：免费开放的图论入门教材",
+     "value": 564,
+     "comments": 124
+    },
+    "top_comments": {
+     "id": 50265393,
+     "title": "UEFI 固件曝代码执行漏洞，波及全球大多数服务器",
+     "value": 220
+    },
+    "top_brief": {
+     "id": 50208960,
+     "title": "《Start Doing Graph Theory》：免费开放的图论入门教材",
+     "value": 564,
+     "comments": 124
+    }
+   }
+  },
+  {
+   "name": "科学与社会",
+   "en": "Science & Society",
+   "page": 4,
+   "stories": [
+    {
+     "id": 50280864,
+     "title": "泄露数据曝光 4.1 万名国土安全部人员，包括 ICE 卧底",
+     "title_en": "Leak Exposes 41,000 Homeland Security Workers–Including Undercover ICE Agents",
+     "url": "https://www.wired.com/story/massive-leak-exposes-41000-homeland-security-workers-including-undercover-ice-agents/",
+     "hn": "https://news.ycombinator.com/item?id=50280864",
+     "points": 258,
+     "comments": 116,
+     "summary": [
+      "《连线》报道，透明组织「分布式拒绝秘密」（DDoSecrets）周三公布了名为「Icepick」的数据，涉及国土安全部及 ICE、海关和边境保护局（CBP）等七个下属机构 4.1 万多名员工和承包商的邮箱、电话、办公地址和内部系统权限组，最后更新于 2026 年 8 月 19 日，约占国土安全部人员的七分之一。DDoSecrets 说数据来自国土安全部的 Okta 登录系统，由自称「和平部」的组织提供；Okta 称没有证据表明其系统被攻破。",
+      "权限组名称透露了不少内情：HSI 有 39 名员工所在的组名带「CUC」（认证卧底行动），还有一个组指向资助了明尼阿波利斯卧底监控的「Keyhole」；另有窃听、手机取证、Palantir 平台和 xAI Grok 相关的组，700 多个账号与 Signal 相关的组关联。安全专家说若数据属实，对想渗透国土安全部的人是极有价值的情报。评论区有人贴出原始来源，也有人提醒不管怎么看 ICE，一些卧底人员此刻可能真有危险。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "sailfast",
+       "stance": "卧底安危",
+       "zh": "不管你对 ICE 和这届政府怎么看，此刻可能确实有一些卧底人员身处危险。他们可能在做一些真正阻止滥权的工作。……所以虽然我也许同意不该存在秘密的国内机构、阳光对政府有益，我还是同情那些可能因此挨枪子的人的家人。",
+       "en": "there are probably some undercover folks in real danger at the moment.",
+       "hn": "https://news.ycombinator.com/item?id=50282153",
+       "id": 50282153,
+       "replies": 8
+      },
+      {
+       "user": "tamimio",
+       "stance": "本该公开",
+       "zh": "真是有意思的时代，一次黑客攻击「曝光」了本来就应该是公开的人。",
+       "en": "a hack the “exposes” people who are supposedly and should be publicly known to start with.",
+       "hn": "https://news.ycombinator.com/item?id=50281873",
+       "id": 50281873,
+       "replies": 1
+      },
+      {
+       "user": "fastily",
+       "stance": "原始来源",
+       "zh": "这篇文章的原始来源：https://ddosecrets.org/article/icepick",
+       "en": "The primary source for the article",
+       "hn": "https://news.ycombinator.com/item?id=50281998",
+       "id": 50281998,
+       "replies": 0
+      }
+     ],
+     "kicker": "社会 · 泄露"
+    },
+    {
+     "id": 50270764,
+     "title": "按比例画出的美国财富不平等",
+     "title_en": "Wealth Inequality in America drawn to scale",
+     "url": "https://dreamagainusa.org/",
+     "hn": "https://news.ycombinator.com/item?id=50270764",
+     "points": 325,
+     "comments": 398,
+     "summary": [
+      "Dream Again USA 做了一个可滚动的交互图：每一列代表 1% 的美国家庭，从最穷排到最富，一个像素代表 5000 美元，前 1% 高到要往上滚动好几分钟才能看到。网站换算成百元美钞的高度：中位数家庭约 9 英寸，前 1% 家庭平均 145 英尺，而且越往上越高。",
+      "数据方面，第 1 到 99 百分位用 2023 年消费者财务调查的净资产估计，乘以 1.1 换算成 2026 年美元，最穷的 8% 显示为负债；前 1% 用美联储分布式金融账户 2026 年第一季度的平均值。页面灵感来自 Politizane 的视频《美国的财富不平等》，还提供可打印版本和教学材料。评论区争论激烈：最热的一条说这让「向富人多征税」有了直观对比，也有人指出净资产不计工资收入、未上市股票等账面财富难以变现，图容易被误读。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "j1elo",
+       "stance": "征税对比",
+       "zh": "（只是客观评论，不表态）这确实让「向富人多征税」有了参照。对最右边那一列稍微加点税，带来的钱就比其他所有人一百年的微薄贡献加起来还多。",
+       "en": "this honestly puts the \"tax the rich more\" in perspective.",
+       "hn": "https://news.ycombinator.com/item?id=50271725",
+       "id": 50271725,
+       "replies": 103
+      },
+      {
+       "user": "solatic",
+       "stance": "账面财富",
+       "zh": "这类图的一个问题是不区分账面财富、能拿账面财富抵押贷款，以及硬资产（房产、车辆、现金）。……我觉得真正的问题是有多少财富被允许留在公开市场之外。",
+       "en": "they don't differentiate between paper wealth",
+       "hn": "https://news.ycombinator.com/item?id=50271768",
+       "id": 50271768,
+       "replies": 11
+      },
+      {
+       "user": "delis-thumbs-7e",
+       "stance": "不含工资",
+       "zh": "据我看美联储的净资产不算工资收入……既然大多数人的收入来自工资，这张图很容易被误读，有点误导。",
+       "en": "it is very easy to read this graph wrong and it is a bit misleading.",
+       "hn": "https://news.ycombinator.com/item?id=50271895",
+       "id": 50271895,
+       "replies": 0
+      }
+     ],
+     "kicker": "社会 · 经济"
+    },
+    {
+     "id": 50234796,
+     "title": "喷墨打印机的墨滴瞬间夺得尼康「小世界」显微摄影大赛冠军",
+     "title_en": "Ink droplets in motion snag top prize in Nikon Small World contest",
+     "url": "https://arstechnica.com/science/2026/10/meet-the-2026-winner-of-nikons-small-world-photomicrography-contest/",
+     "hn": "https://news.ycombinator.com/item?id=50234796",
+     "points": 388,
+     "comments": 69,
+     "summary": [
+      "Ars Technica 报道，25 岁的德国实验摄影师 Ole Bielfeldt 凭一张喷墨打印机把墨滴喷到纸上的显微照片，从 69 个国家的 1802 件作品中胜出，赢得 2026 年尼康小世界显微摄影大赛。他在新冠封控期间从父母阁楼里翻出一台旧显微镜，用一根管子和木头自制转接件接上父亲的相机，靠反复试错自学。",
+      "墨滴移动比相机快门还快，他把打印机拆开，让纸在固定喷头下移动，在暗室里用闪光灯充当快门把墨滴定格在半空，没用昂贵器材，也不用 AI。前十名还包括带花粉的跳蛛、膨胀处理后的小鼠脑神经元、圆珠笔尖等。这个比赛创办于 1974 年，今年是第 52 届。评论区有人最爱第二名的跳蛛，也有人说第一次看到时不敢相信是真的。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "doctorzook",
+       "stance": "跳蛛",
+       "zh": "这张照片很棒，但第二名的跳蛛是我的最爱：实在太可爱了。",
+       "en": "the second-place jumping spider is my favorite",
+       "hn": "https://news.ycombinator.com/item?id=50268295",
+       "id": 50268295,
+       "replies": 17
+      },
+      {
+       "user": "King-Aaron",
+       "stance": "不敢相信",
+       "zh": "第一次看到这张照片我拒绝相信它是真的。太超凡脱俗了，太棒了。",
+       "en": "When I first saw this photo I refused to believe it was real.",
+       "hn": "https://news.ycombinator.com/item?id=50268097",
+       "id": 50268097,
+       "replies": 11
+      },
+      {
+       "user": "hn-aarvin",
+       "stance": "放大倍数",
+       "zh": "同一位摄影师还有两张作品此前也在比赛里名列前茅……之前蜡烛和火柴那两张用的是 2.5 倍放大，这张需要 20 倍，可见打印机的机构有多小。",
+       "en": "this one required 20x magnification",
+       "hn": "https://news.ycombinator.com/item?id=50267981",
+       "id": 50267981,
+       "replies": 4
+      }
+     ],
+     "kicker": "科学 · 摄影"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50272596,
+     "title": "西班牙托莱多附近两列高铁相撞",
+     "title_en": "Two high-speed trains collide near Toledo, Spain",
+     "url": "https://www.euronews.com/video/2026/10/28/spain-first-footage-reveals-wreckage-of-deadly-high-speed-train-crash",
+     "hn": "https://news.ycombinator.com/item?id=50272596",
+     "points": 182,
+     "comments": 200
+    },
+    {
+     "id": 50220975,
+     "title": "为什么鸟能飞越珠穆朗玛峰",
+     "title_en": "Why Birds Can Fly over Mount Everest",
+     "url": "https://lede-v2.nautil.us/why-birds-can-fly-over-mount-everest-237864",
+     "hn": "https://news.ycombinator.com/item?id=50220975",
+     "points": 45,
+     "comments": 9
+    },
+    {
+     "id": 50274706,
+     "title": "特斯拉 Semi 电动卡车在 I-880 公路上起火",
+     "title_en": "Tesla Semi catches fire on I-880",
+     "url": "https://electrek.co/2026/10/28/tesla-semi-fire-i-880-hayward-no-crash/",
+     "hn": "https://news.ycombinator.com/item?id=50274706",
+     "points": 87,
+     "comments": 102
+    },
+    {
+     "id": 50279308,
+     "title": "研究发现几乎所有年龄组的结直肠癌发病率都在上升",
+     "title_en": "Rising rates of colorectal cancer found in nearly all age groups",
+     "url": "https://www.uchicagomedicine.org/forefront/cancer-articles/rising-rates-of-colorectal-cancer",
+     "hn": "https://news.ycombinator.com/item?id=50279308",
+     "points": 52,
+     "comments": 92
+    },
+    {
+     "id": 50249883,
+     "title": "尼安德特人到底怎么了？",
+     "title_en": "What Happened to the Neanderthals?",
+     "url": "https://www.nytimes.com/2026/10/26/science/what-happened-to-the-neanderthals.html",
+     "hn": "https://news.ycombinator.com/item?id=50249883",
+     "points": 38,
+     "comments": 52
+    },
+    {
+     "id": 50277755,
+     "title": "蜘蛛如何把「丝浆」纺成自然界最坚韧的材料",
+     "title_en": "Spiders Spin 'Silk Dope' into Nature's Toughest Material",
+     "url": "https://www.quantamagazine.org/how-spiders-spin-silk-dope-into-natures-toughest-material-20261028/",
+     "hn": "https://news.ycombinator.com/item?id=50277755",
+     "points": 44,
+     "comments": 3
+    },
+    {
+     "id": 50275081,
+     "title": "特朗普称将取消对石油钻探甲烷排放的限制",
+     "title_en": "Trump says he's ending restrictions on climate-warming methane from oil drilling",
+     "url": "https://www.npr.org/2026/10/28/g-s1-150299/trump-methane-restrictions",
+     "hn": "https://news.ycombinator.com/item?id=50275081",
+     "points": 32,
+     "comments": 2
+    },
+    {
+     "id": 50276906,
+     "title": "现在正式了：科技业成了新的烟草业",
+     "title_en": "It's now official, tech is the new tobacco",
+     "url": "https://cailinoconnor.substack.com/p/its-now-official-tech-is-the-new",
+     "hn": "https://news.ycombinator.com/item?id=50276906",
+     "points": 81,
+     "comments": 42
+    },
+    {
+     "id": 50278754,
+     "title": "大科技公司的用水需求正在引发全球抵制",
+     "title_en": "Big Tech's thirst for water is sparking a global resistance",
+     "url": "https://restofworld.org/2026/ai-datacenters-water-resistance-global/",
+     "hn": "https://news.ycombinator.com/item?id=50278754",
+     "points": 46,
+     "comments": 38
+    },
+    {
+     "id": 50271457,
+     "title": "巴塞罗那骚乱：在 TikTok 时代如何制造一场抗议",
+     "title_en": "Barcelona unrest: how to fabricate a protest in the age of TikTok",
+     "url": "https://theconversation.com/barcelona-unrest-how-to-fabricate-a-protest-in-the-age-of-tiktok-295263",
+     "hn": "https://news.ycombinator.com/item?id=50271457",
+     "points": 76,
+     "comments": 68
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1654,
+    "comments": 1191,
+    "top_points": {
+     "id": 50234796,
+     "title": "喷墨打印机的墨滴瞬间夺得尼康「小世界」显微摄影大赛冠军",
+     "value": 388,
+     "comments": 69
+    },
+    "top_comments": {
+     "id": 50270764,
+     "title": "按比例画出的美国财富不平等",
+     "value": 398
+    },
+    "top_brief": {
+     "id": 50272596,
+     "title": "西班牙托莱多附近两列高铁相撞",
+     "value": 182,
+     "comments": 200
+    }
+   }
+  },
+  {
+   "name": "产品与文化",
+   "en": "Products & Culture",
+   "page": 5,
+   "stories": [
+    {
+     "id": 50243060,
+     "title": "The Grid：马萨诸塞州一座按需造电路板的工厂级机器人",
+     "title_en": "The Grid, a factory-scale robot in Massachusetts that builds PCBs on demand",
+     "url": "https://www.circuithub.com/post/unveiling-the-grid",
+     "hn": "https://news.ycombinator.com/item?id=50243060",
+     "points": 401,
+     "comments": 194,
+     "summary": [
+      "CircuitHub 公开了悄悄运行五年的「The Grid」：它不是要为每个产品重新配置的固定产线，而是一整台大机器人，悬浮搬运器载着每块板子和元件在印锡膏、贴片、回流焊、焊接和检测设备之间穿梭，由学习模型、AI 智能体和传统优化器调度，每块板走自己的路线，没有换线和单独设置，100 种设计各做一块和一种设计做 100 块一样容易。",
+      "他们拿一块 4 层电机控制板（每块 118 个元件）报价：在 The Grid 做 5 块，4 天送到，630 美元；深圳快板厂加运费和美国关税约 465 美元，中位数 9 天。公司称已出货 220 多万块板、服务 2.6 万多名工程师，今年产能扩大 5 倍。创始人在评论区答疑；有做过深圳采购的人质疑换线时间和两倍速的说法，也有人说国内造的板子质量反而不如中国。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "seddona",
+       "stance": "创始人",
+       "zh": "我是 CircuitHub 创始人 Andrew，乐意回答问题。硬件设计最近经常上新闻，因为它正在经历和写代码一样的 AI 革命。我们乐于让这些设计更容易变成实物产品。",
+       "en": "Hardware design has been in the news a lot lately as it's going through the same AI revolution as coding.",
+       "hn": "https://news.ycombinator.com/item?id=50243232",
+       "id": 50243232,
+       "replies": 83
+      },
+      {
+       "user": "seizethecheese",
+       "stance": "质疑",
+       "zh": "我在深圳做过很多 PCBA 采购，有些领域知识。这类订单主要的延迟通常在元件采购。我合作的工厂拿到元件后一两天就能做完 PCBA。……关于换线时间突破的说法也不太符合我的经验。",
+       "en": "The main latency for this is typically sourcing.",
+       "hn": "https://news.ycombinator.com/item?id=50276864",
+       "id": 50276864,
+       "replies": 3
+      },
+      {
+       "user": "WarmWash",
+       "stance": "中国又快又好",
+       "zh": "我做不少电子制造，很高兴看到这个。不过我有保留，因为中国极其便宜、极其快、极其熟练。我们国内造的板子往往质量更低、错误更多（而且贵到 50 倍）。",
+       "en": "China is incredibly cheap, incredibly fast, and incredibly skilled.",
+       "hn": "https://news.ycombinator.com/item?id=50273878",
+       "id": 50273878,
+       "replies": 17
+      }
+     ],
+     "kicker": "产品 · 制造"
+    },
+    {
+     "id": 50274409,
+     "title": "怀俄明的修道士用 CNC 机床雕刻哥特式石头教堂",
+     "title_en": "CNC Stone Carving",
+     "url": "https://carmelitegothic.com/cnc-stone-carving/",
+     "hn": "https://news.ycombinator.com/item?id=50274409",
+     "points": 389,
+     "comments": 114,
+     "summary": [
+      "怀俄明州加尔默罗会修道士在网站上介绍他们如何用 CNC 机床建造哥特式修道院：过去技艺高超的石匠要花几个月的装饰构件，现在几天就能完成，不必再以「太费时、超预算」为由砍掉装饰。他们用意大利贝加莫 Prussiani 公司的五轴机床，配金刚石锯片和铣刀，水只用来冷却和冲走石浆；有的还带第六轴转台，用来雕尖塔和雕像，可以通宵无人值守运行。",
+      "流程是数字化的：担任首席雕刻师的修士先在 3D 软件里像捏黏土一样塑造花叶，可以随时撤销；CNC 程序员在 CAM 软件里生成刀路，就像过去石匠用点线机把石膏模型的尺寸转到石头上；再由锯工上机操作。他们认为中世纪建造者本就走在当时技术的前沿。评论区最热的一条说雕塑家自古就在追求自动化，用 CNC 恰恰「很哥特」；也有人提到圣家堂从 1990 年代起就用 CNC 粗加工再手工精修。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "wolframhempel",
+       "stance": "很哥特",
+       "zh": "在有人抱怨这抹掉了艺术中的人性之前，值得强调：雕塑家一直在想办法自动化、节省时间。……哥特式建筑装饰并不是我们今天理解的那种表达创作者内心世界的艺术，大多是大型石匠作坊用标准化几何、木模板和重复设计做出来的。所以，用 CNC 机床真的很哥特。",
+       "en": "So, yeah, using a CNC machine is truly Gothic.",
+       "hn": "https://news.ycombinator.com/item?id=50275842",
+       "id": 50275842,
+       "replies": 15
+      },
+      {
+       "user": "soci",
+       "stance": "圣家堂",
+       "zh": "值得一提的是，巴塞罗那圣家堂的石匠从 1990 年代初就用 CNC 雕刻石块了。……其实是 CNC 粗加工成形，再手工精修。",
+       "en": "it’s a mix of CNC roughing to shape the stone, followed by manual finishing.",
+       "hn": "https://news.ycombinator.com/item?id=50276920",
+       "id": 50276920,
+       "replies": 6
+      },
+      {
+       "user": "weirdish",
+       "stance": "装饰回归？",
+       "zh": "我一直好奇，既然技术已经让这类东西（更）可行了，为什么没有出现回归华丽装饰立面的广泛建筑运动。我们本可以在建筑上玩得开心得多！",
+       "en": "I've always wondered why we haven't seen a broad architectural movement returning to highly ornate decorative facades",
+       "hn": "https://news.ycombinator.com/item?id=50275781",
+       "id": 50275781,
+       "replies": 22
+      }
+     ],
+     "kicker": "文化 · 建筑"
+    },
+    {
+     "id": 50281044,
+     "title": "Formlabs 推出 699 美元的 Form Studio 1 光固化打印机",
+     "title_en": "Formlabs Studio 1 $699 Resin Printer",
+     "url": "https://formlabs.com/products/form-studio-1-basic-founders-edition/",
+     "hn": "https://news.ycombinator.com/item?id=50281044",
+     "points": 92,
+     "comments": 73,
+     "summary": [
+      "Formlabs 上架 Form Studio 1 创始人版，基础套装 699 美元（不含税），称它是第一款平价的专业级树脂 3D 打印机，采用掩膜立体光刻（MSLA），大多数零件两小时内打完，打印体积 20.0×12.5×23.5 厘米。它支持 9 种 Formlabs 材料，也可以通过附带的「开放材料模式」用第三方树脂；搭配 Alpha 树脂和 VOC 抽取器，官方称它是唯一获得 UL GREENGUARD 低化学排放认证的树脂打印机。",
+      "另有含清洗固化机的 948 美元套装和 2447 美元的专业套装。评论区最热的一条提醒 Formlabs 的树脂耗材像打印机墨盒一样贵，而且树脂打印要用溶剂清洗未固化树脂，麻烦不小；也有人说这个价格说明中国竞争在压低价格，还有人觉得页面应该先解释什么是树脂打印机。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "pen2l",
+       "stance": "耗材陷阱",
+       "zh": "Formlabs 用专有的树脂盒……又是纸质打印机那一套：打印机本身不贵，耗材贵得要命。……还要注意这类打印机需要不少后处理（得用溶剂洗掉未固化的树脂）。",
+       "en": "it's the paper printers situation all over again",
+       "hn": "https://news.ycombinator.com/item?id=50281279",
+       "id": 50281279,
+       "replies": 20
+      },
+      {
+       "user": "syntaxing",
+       "stance": "价格战",
+       "zh": "哇，这个价格很有意思。我猜是中国的竞争在压低价格。",
+       "en": "I guess the Chinese competition is really driving prices down.",
+       "hn": "https://news.ycombinator.com/item?id=50281275",
+       "id": 50281275,
+       "replies": 2
+      },
+      {
+       "user": "vl",
+       "stance": "先解释",
+       "zh": "这个页面真该解释一下什么是「树脂打印机」、我为什么需要它。我完全不知道它和我普通的 3D 打印机有什么区别。",
+       "en": "This page really needs to explain what is “resin printer” and why would I need it.",
+       "hn": "https://news.ycombinator.com/item?id=50281570",
+       "id": 50281570,
+       "replies": 9
+      }
+     ],
+     "kicker": "产品 · 硬件"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50272145,
+     "title": "路透社：美国机构批准 Amazon Leo 以 115 亿美元收购 Globalstar",
+     "title_en": "US agency approves Amazon Leo’s $11.5B acquisition of Globalstar",
+     "url": "https://www.reuters.com/business/media-telecom/us-agency-approves-amazon-leos-115-billion-acquisition-globalstar-2026-10-27/",
+     "hn": "https://news.ycombinator.com/item?id=50272145",
+     "points": 222,
+     "comments": 100
+    },
+    {
+     "id": 50275373,
+     "title": "Archive.today 链接今后的处理（Reddit 西雅图版）",
+     "title_en": "Archive.today links going forward",
+     "url": "https://www.reddit.com/r/Seattle/comments/1xhf6qp/archivetoday_links_going_forward/",
+     "hn": "https://news.ycombinator.com/item?id=50275373",
+     "points": 186,
+     "comments": 120
+    },
+    {
+     "id": 50280197,
+     "title": "Alphabet 公布 2026 年第三季度财报",
+     "title_en": "Alphabet Announces Third Quarter 2026 Results [pdf]",
+     "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2026/q3/2026q3-alphabet-earnings-release.pdf",
+     "hn": "https://news.ycombinator.com/item?id=50280197",
+     "points": 72,
+     "comments": 50
+    },
+    {
+     "id": 50277166,
+     "title": "Mac Studio M5 Ultra 512GB 正式发布",
+     "title_en": "Mac Studio M5 Ultra 512GB Officially Released",
+     "url": "https://www.apple.com/shop/buy-mac/mac-studio",
+     "hn": "https://news.ycombinator.com/item?id=50277166",
+     "points": 54,
+     "comments": 74
+    },
+    {
+     "id": 50273192,
+     "title": "Valve 回应担心 AI 垃圾游戏和克隆的开发者",
+     "title_en": "Valve Responds to Developers Fearing AI Slop and Clones",
+     "url": "https://www.invenglobal.com/articles/27761/valve-responds-to-developers-fearing-ai-slop-and-clones",
+     "hn": "https://news.ycombinator.com/item?id=50273192",
+     "points": 65,
+     "comments": 76
+    },
+    {
+     "id": 50242688,
+     "title": "ZX81 笑话集",
+     "title_en": "Jokes for the ZX81",
+     "url": "https://spelk.press/gb/products/81-jokes-for-the-zx81",
+     "hn": "https://news.ycombinator.com/item?id=50242688",
+     "points": 120,
+     "comments": 18
+    },
+    {
+     "id": 50219275,
+     "title": "写给《超时空要塞》的情书",
+     "title_en": "A Love Letter to the Super Dimension Fortress",
+     "url": "https://brennan.day/a-love-letter-to-the-super-dimension-fortress/",
+     "hn": "https://news.ycombinator.com/item?id=50219275",
+     "points": 92,
+     "comments": 17
+    },
+    {
+     "id": 50227400,
+     "title": "Apple Network Server 的 MacOS 扩展包 v1.0",
+     "title_en": "MacOS Extensions Pack for the Apple Network Server v1.0",
+     "url": "http://oldvcr.blogspot.com/2026/10/macos-extensions-pack-for-apple-network.html",
+     "hn": "https://news.ycombinator.com/item?id=50227400",
+     "points": 117,
+     "comments": 2
+    },
+    {
+     "id": 50209269,
+     "title": "高斯泼溅第 3 部分：总有更大的场景",
+     "title_en": "Gaussian Splats part 3: There's always a bigger scene",
+     "url": "https://www.magnopus.com/blog/gaussiansplats-part-3-theres-always-a-bigger-scene",
+     "hn": "https://news.ycombinator.com/item?id=50209269",
+     "points": 98,
+     "comments": 20
+    },
+    {
+     "id": 50276883,
+     "title": "Show HN：SlideBySide，不用共享屏幕也能演示幻灯片",
+     "title_en": "Show HN: SlideBySide – Present slides without sharing your screen",
+     "url": "https://slidebyside.com/",
+     "hn": "https://news.ycombinator.com/item?id=50276883",
+     "points": 54,
+     "comments": 21
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1962,
+    "comments": 879,
+    "top_points": {
+     "id": 50243060,
+     "title": "The Grid：马萨诸塞州一座按需造电路板的工厂级机器人",
+     "value": 401,
+     "comments": 194
+    },
+    "top_comments": {
+     "id": 50243060,
+     "title": "The Grid：马萨诸塞州一座按需造电路板的工厂级机器人",
+     "value": 194
+    },
+    "top_brief": {
+     "id": 50272145,
+     "title": "路透社：美国机构批准 Amazon Leo 以 115 亿美元收购 Globalstar",
+     "value": 222,
+     "comments": 100
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "MrOrelliOReilly",
+  "id": 50277735,
+  "hn": "https://news.ycombinator.com/item?id=50277735",
+  "story_id": 50276792,
+  "story": "谷歌发布 Gemini 4 Carbon：主打网络安全和长程任务",
+  "zh": "在这个瞬息万变的时代，我很庆幸至少还能指望谷歌持续推出令人困惑、不断变化的产品名称。",
+  "en": "In this age of constant change, I am grateful that at least I can still rely on Google for confusing, ever-changing product names."
+ },
+ "stats": {
+  "snapshot": "2026-10-29T08:19:10+08:00",
+  "front_page_count": 90,
+  "with_numbers": 82,
+  "flagged_or_dupe": 8,
+  "top_points": {
+   "id": 50272749,
+   "title": "《连线》：ICE 正在进行美国史上规模最大的反左翼监控行动之一",
+   "value": 1087,
+   "comments": 898
+  },
+  "top_comments": {
+   "id": 50272749,
+   "title": "《连线》：ICE 正在进行美国史上规模最大的反左翼监控行动之一",
+   "value": 898
+  },
+  "second_comments": {
+   "id": 50276940,
+   "title": "苹果推出带触屏的 PROLED XDR 显示屏 MacBook Pro",
+   "value": 829
+  },
+  "over_500": 5,
+  "over_300": 15,
+  "over_100": 28,
+  "show_hn": 2,
+  "total_points": 12686,
+  "total_comments": 8008,
+  "hottest_ratio": {
+   "id": 50276940,
+   "title": "苹果推出带触屏的 PROLED XDR 显示屏 MacBook Pro",
+   "value": 1.73,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
