@@ -1,0 +1,1305 @@
+{
+ "date": "2026-10-29",
+ "published_at": "2026-10-30T08:26:02+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-10-29",
+ "schema_version": 2,
+ "lead": {
+  "id": 50294702,
+  "title": "帕特里克·斯图尔特去世，享年 86 岁",
+  "title_en": "Patrick Stewart has died",
+  "url": "https://www.nytimes.com/2026/10/29/arts/television/patrick-stewart-dead.html",
+  "hn": "https://news.ycombinator.com/item?id=50294702",
+  "points": 2217,
+  "comments": 453,
+  "summary": [
+   "《星际迷航：下一代》里的皮卡德舰长、《X 战警》里的 X 教授扮演者帕特里克·斯图尔特爵士去世，享年 86 岁。HN 链接的是《纽约时报》讣告；据 NPR、BBC 等报道，他的 Facebook 和 Instagram 发文说，他周三在洛杉矶家中去世，此前经历了与阿尔茨海默病和路易体痴呆「短暂而令人心酸的历程」。他在英格兰约克郡长大，父亲酗酒且有暴力倾向，他在学校和莎士比亚中找到慰藉，1966 年加入皇家莎士比亚剧团，1970 年凭《仲夏夜之梦》登上百老汇，2010 年获封爵士。",
+   "NPR 回顾说，他在加州大学洛杉矶分校讲莎士比亚时被选中出演新版《星际迷航》，伊恩·麦克莱恩曾劝他别去，经纪人则说这剧多半撑不过第一季；结果《下一代》从 1987 年播到 1994 年，「Make it so!」成了经典台词。此后他演出独角戏《圣诞颂歌》（一人分饰 40 多个角色），2000 年起主演《X 战警》系列，2020 年又回归出演《星际迷航：皮卡德》，还将最后一次以 X 教授身份出现在即将上映的《复仇者联盟：毁灭日》中。这是当天点赞最多的帖子，评论区大多在讲皮卡德如何影响了自己对领导力和做人的理解。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "halflife",
+    "stance": "管理之道",
+    "zh": "看他演《下一代》让我重新思考该怎么管理人：他的角色果断又富有同情心，高尚的道德配上脚踏实地的理性。",
+    "en": "his character was assertive but compassionate",
+    "hn": "https://news.ycombinator.com/item?id=50294990",
+    "id": 50294990,
+    "replies": 137
+   },
+   {
+    "user": "GodelNumbering",
+    "stance": "皮卡德名言",
+    "zh": "「有可能一个错误都没犯，却依然失败。那不是软弱，那就是人生。」——让-吕克·皮卡德。很好的创业建议，也是很好的人生建议。",
+    "en": "It is possible to commit no mistakes and still lose. That is not a weakness, that is life.",
+    "hn": "https://news.ycombinator.com/item?id=50294998",
+    "id": 50294998,
+    "replies": 18
+   },
+   {
+    "user": "madrox",
+    "stance": "逆境人生",
+    "zh": "斯图尔特的人生在很多方面都不被看好：父亲有创伤后应激障碍且施暴；一个秃顶的英国人在好莱坞容易被定型；出身贫寒、进入一个很多人来自更优越家庭的行业，让他一直有冒名顶替综合征。……是莎士比亚改变了他的人生。",
+    "en": "Shakespeare effectively changed his life",
+    "hn": "https://news.ycombinator.com/item?id=50296399",
+    "id": 50296399,
+    "replies": 1
+   }
+  ],
+  "kicker": "要闻 · 讣告",
+  "tag": "当日点赞第一"
+ },
+ "side": [
+  {
+   "id": 50289418,
+   "title": "Mistral 公开 Mistral Large 4 的权重",
+   "title_en": "We're releasing the weights of Mistral Large 4",
+   "url": "https://mistral.ai/news/mistral-large-4-oss/",
+   "hn": "https://news.ycombinator.com/item?id=50289418",
+   "points": 1153,
+   "comments": 329,
+   "summary": [
+    "Mistral 宣布公开旗舰模型 Mistral Large 4（昵称 Le Chonk）的权重。这是一个 1 万亿参数、原生多模态的模型，本月早些时候以公开预览形式推出，之后又做了三周强化学习。官方称它是编程能力最强的开放权重模型：在 Cognition 的私有基准 FrontierCode 2.0 上以 19.7% 领先，Terminal-Bench 4.0 比预览版提高 13 个百分点到 41%，在 Artificial Analysis 编程智能体指数上得 48%，与 GLM-5.3 基本持平但每个任务少用 47% 的 token；新增低、中、高三档推理模式。",
+    "Mistral 还主打防御性网络安全：Artificial Analysis 网络安全指数得 51%，对恶意网络请求的平均拒绝率 96.6%，并附上博思艾伦、思科、Cloudflare、CrowdStrike、ENISA 等机构的评价，强调在欧洲基础设施上从零训练、可自托管的「主权 AI」。评论区最热的一条指出许可证要求做模型即服务的公司另签商业许可，称其为「开放权重」有误导性；也有人注意到价格比预览版降了近一半，值得重新评估。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "maxloh",
+     "stance": "不算开放",
+     "zh": "（引用许可证：被许可方若经营模型即服务业务，须先与 Mistral 另签商业许可）把这叫「开放权重」是误导。Redis、Elasticsearch 当年就因此遭到巨大反弹。",
+     "en": "Calling this \"open weight\" is misleading.",
+     "hn": "https://news.ycombinator.com/item?id=50290476",
+     "id": 50290476,
+     "replies": 160
+    },
+    {
+     "user": "Topfi",
+     "stance": "降价",
+     "zh": "他们大幅降价，现在差不多是预览版的一半（输入每百万 token 0.7 美元、输出 2.1 美元，预览版是 1.36 和 4.18 美元）。按原价，预览版在我的评测里没有竞争力；这个价格再加上一些改进，正式版值得重新好好评估。",
+     "en": "this full release warrants a major reassessment",
+     "hn": "https://news.ycombinator.com/item?id=50289701",
+     "id": 50289701,
+     "replies": 17
+    },
+    {
+     "user": "3form",
+     "stance": "只报拒绝率",
+     "zh": "（引用：对恶意网络请求的平均拒绝率为 96.6%）我觉得自己在说显而易见的事……不拒绝正常请求的统计在哪？我用 random(1000) < 967 时拒绝也能达到同样的成绩。",
+     "en": "Where is the statistic about not refusing the non malicious requests?",
+     "hn": "https://news.ycombinator.com/item?id=50289898",
+     "id": 50289898,
+     "replies": 6
+    }
+   ],
+   "kicker": "AI · 开放模型",
+   "tag": "当日点赞第二"
+  },
+  {
+   "id": 50282838,
+   "title": "Qwenputer：把一台 RISC-V CPU 编译进 Qwen3.5 的权重里",
+   "title_en": "Qwenputer: A functioning, deterministic RISC-V CPU inside Qwen3.5",
+   "url": "https://divagr.com/blog/qwenputer",
+   "hn": "https://news.ycombinator.com/item?id=50282838",
+   "points": 679,
+   "comments": 143,
+   "summary": [
+    "Divyansh Agrawal 在原版 Qwen 3.5 4B 前面加了 11 层，把一颗 32 位 RISC-V 处理器（RV32IM）直接「编译」进权重，不需要训练：Qwen 3.5 里四分之三的注意力层是 Gated DeltaNet 线性 RNN，他把门控和写入强度都设为 1、用独热编码当地址，让这些层的状态成为能精确读写的内存。CPU 在模型解码时运行，每条指令变成几个生成的 token；它通过官方 riscv-tests，连续跑了 1800 万条指令没有出错，还能运行 C 和 MicroPython，全程不调用任何外部工具。",
+    "Qwen 借用自己熟悉的工具调用格式把计算交给内部 CPU：长整数运算从 48.6% 提到 100%，和给它一个 Python 工具相当，回放约 23 万个输出位置也没有错配。作者还做了一个存在 DeltaNet 状态里的实验性文件系统，最多 512 个文件。局限是检查点变成 18.8GB，需要专门驱动，大计算要几秒。评论区有人说从没这么想学 LLM 原理，也有人贴出用 Transformer 实现 WebAssembly 的类似研究。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "jazzyjackson",
+     "stance": "想学原理",
+     "zh": "（引用文件系统那段）我从没像读这篇时这样想弄懂 LLM 是怎么工作的。太迷人了。",
+     "en": "wanted to learn how LLMs work more than reading this",
+     "hn": "https://news.ycombinator.com/item?id=50283405",
+     "id": 50283405,
+     "replies": 9
+    },
+    {
+     "user": "tiborsaas",
+     "stance": "回形针",
+     "zh": "好玩是好玩，但等着哪个智能体发现它，然后拿它做出最不对齐的事去折回形针吧。……（引用：既然在语言模型里放 CPU 还不够邪门，我决定再给它一个文件系统）喜欢这种精神 :)",
+     "en": "wait until an agents finds this and does the most misaligned thing with it",
+     "hn": "https://news.ycombinator.com/item?id=50283531",
+     "id": 50283531,
+     "replies": 5
+    },
+    {
+     "user": "giveexamples",
+     "stance": "类似研究",
+     "zh": "（链接 Percepta 的文章《LLM 能成为计算机吗》）他们在 Transformer 里实现了 WebAssembly，用 CPU 解码跑 wasm 部分。",
+     "en": "They implemented wasm in transformer with cpu decoding for the wasm part.",
+     "hn": "https://news.ycombinator.com/item?id=50284062",
+     "id": 50284062,
+     "replies": 1
+    }
+   ],
+   "kicker": "AI · 实验"
+  },
+  {
+   "id": 50284255,
+   "title": "Claude Code 每 30 秒就把后台智能体的完整记录发给模型一次",
+   "title_en": "Claude Code regularly sends each background agent’s transcript to its model",
+   "url": "https://gist.github.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce",
+   "hn": "https://news.ycombinator.com/item?id=50284255",
+   "points": 558,
+   "comments": 224,
+   "summary": [
+    "Flamerix AI 发布的一份 GitHub Gist 说，Claude Code 每隔约 30 秒，会把每个后台智能体的完整对话记录重新发给它所用的模型（通常是 Opus），只为让模型「用 3 到 5 个词描述最近的动作」，结果只显示在智能体面板的状态栏里，不会进入对话。作者说这个功能从 2.1.232 版（2026 年 8 月）起默认开启，没有开关；在 OpenTelemetry 导出数据里，它占了 Claude Code 全部开销的 16.4%，比主对话（15.7%）还多，约每 5 个请求就有 1 个，输入和输出 token 之比约 9000 比 1，另有 4 份独立测量得出 18% 到 26%。",
+    "作者的办法是一个约 70 行的 Bun 预加载脚本：只包装全局 setTimeout，识别出带摘要标记的回调就让它永不触发，不改二进制文件，但更新可能悄悄失效。评论区最热的一条说 Claude Code 无端烧 token 已经不是第一次上新闻，该质疑模型厂商自己做工具框架的动机；有人让 Opus 估算自己一周的隐藏开销约 380 美元；也有人问整段记录多半命中缓存，是否其实很便宜。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "franticgecko3",
+     "stance": "动机",
+     "zh": "「Claude Code 无端烧掉大量 token」这种标题我们已经见过不止几次了。是时候质疑自家发布工具框架的模型厂商的动机了。",
+     "en": "Time to start questioning the motivations of model providers shipping their own harnesses.",
+     "hn": "https://news.ycombinator.com/item?id=50285008",
+     "id": 50285008,
+     "replies": 58
+    },
+    {
+     "user": "simon83",
+     "stance": "算了一笔账",
+     "zh": "我把 Gist 给 Opus 看，让它分析我自己的记录；这些摘要调用不会出现在记录里，所以它按 30 秒计时器估算。我是 20 倍 Max 套餐……本周按 API 计价相当于 1970 美元，隐藏的状态栏调用约 380 美元。",
+     "en": "Hidden status-label calls: ~$380",
+     "hn": "https://news.ycombinator.com/item?id=50286504",
+     "id": 50286504,
+     "replies": 7
+    },
+    {
+     "user": "HeavenFox",
+     "stance": "缓存",
+     "zh": "如果他们真是把整段记录发过去要摘要，那几乎所有 token 都会命中缓存，所以其实挺便宜的吧？",
+     "en": "almost all of the tokens be cache hit, and therefore fairly cheap",
+     "hn": "https://news.ycombinator.com/item?id=50284556",
+     "id": 50284556,
+     "replies": 24
+    }
+   ],
+   "kicker": "AI · 开发工具"
+  },
+  {
+   "id": 50287919,
+   "title": "DoorDash 以约 170 亿美元收购 Instacart",
+   "title_en": "DoorDash to acquire Instacart",
+   "url": "https://about.doordash.com/en-us/news/doordash-to-acquire-instacart",
+   "hn": "https://news.ycombinator.com/item?id=50287919",
+   "points": 405,
+   "comments": 589,
+   "summary": [
+    "DoorDash 宣布与 Instacart（母公司 Maplebear）达成最终协议，以每股 65 美元收购，股权价值约 170 亿美元，较 10 月 22 日（媒体报道前最后一个交易日）收盘价溢价 26%；对价至少 75% 为现金，股东可选择现金、DoorDash 股票或两者组合，Instacart 董事会已一致批准。公告的主题是「帮本地商店赢」：合并后把 DoorDash 的配送网络和 Instacart 的生鲜履约技术、广告和 AI 工具提供给各种规模的杂货商和零售商，与自建配送和仓储的大型电商竞争。",
+    "DoorDash 承诺 Instacart 用户可多去 5 万多家商店，DashPass 和 Instacart+ 会员只付一份会费（估计每年省 1 亿美元），不要求杂货商独家合作，并保留 Instacart 的品牌和应用；交割前两家照常独立运营。这是当天评论第二多的帖子。评论区最热的一条说本以为会有反垄断问题，结果发现 DoorDash 在生鲜配送几乎没有存在感，合并或许能帮它们对抗沃尔玛和亚马逊；也有人说本地商店普遍把 DoorDash 视为不得不忍的「必要之恶」。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "themightyquinn",
+     "stance": "反垄断？",
+     "zh": "我的第一反应是「反垄断呢？！」但我惊讶地发现 DoorDash 在生鲜配送几乎不存在……两个大品牌其实提供的不是同一种产品。要说的话，这也许能帮它们在生鲜上和真正的巨头沃尔玛、亚马逊竞争。",
+     "en": "DD is essentially non existent in grocery delivery",
+     "hn": "https://news.ycombinator.com/item?id=50289545",
+     "id": 50289545,
+     "replies": 38
+    },
+    {
+     "user": "joshstrange",
+     "stance": "必要之恶",
+     "zh": "（引用标题「帮本地商店赢」）任何本地商店都会告诉你，DoorDash 是他们忍着用、但总体上非常讨厌的必要之恶。从抽成比例到极其无礼的配送员……",
+     "en": "DD is a necessary evil they put up with but strongly dislike overall",
+     "hn": "https://news.ycombinator.com/item?id=50288340",
+     "id": 50288340,
+     "replies": 31
+    },
+    {
+     "user": "boringg",
+     "stance": "利润微薄",
+     "zh": "是我看问题的角度不对吗？我觉得这些公司在经济下行时风险很大，利润低、竞争激烈……合并能减少平台的低效，骑手也能两边接单。说实话，我很惊讶这两家都还活着而且在赚钱。",
+     "en": "I am actually amazed both companies are alive and making a profit.",
+     "hn": "https://news.ycombinator.com/item?id=50288257",
+     "id": 50288257,
+     "replies": 8
+    }
+   ],
+   "kicker": "商业 · 并购",
+   "tag": "当日评论第三"
+  },
+  {
+   "id": 50291945,
+   "title": "谷歌搜索首次跌破 Alphabet 收入的一半",
+   "title_en": "Google Search is now less than half of Alphabet’s revenue",
+   "url": "https://www.kadoa.com/companies/insights/google-search-below-half",
+   "hn": "https://news.ycombinator.com/item?id=50291945",
+   "points": 386,
+   "comments": 327,
+   "summary": [
+    "数据公司 Kadoa 的 Company Atlas 整理了 Alphabet 财报：截至 2026 年 9 月的季度，「谷歌搜索及其他」收入 634 亿美元，占总收入 1280 亿美元的 49.7%，是 Alphabet 单独披露搜索收入以来首次低于一半，同比下降 5.6 个百分点。此前 31 个季度，这个比例一直在 52.8% 到 62.0% 之间。",
+    "比例下降不是因为搜索萎缩：搜索收入同比仍增长 12%，但其他业务合计增长 40%，其中谷歌云收入 307 亿美元，同比增长 103%，占比从 2018 年底的 4.4% 升到 24.1%。评论区最热的一条感叹「占比降 5%、收入涨 12%」挺厉害；有人调侃发表《Attention Is All You Need》给谷歌带来这场冲击的正是谷歌自己；也有人说自己的谷歌搜索量比 AI 出现前少了九成以上。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "dumberquestions",
+     "stance": "其实在涨",
+     "zh": "搜索的收入占比降了 5%，但搜索收入涨了 12%，还挺厉害的。",
+     "en": "Somewhat impressive that search share of revenue is 5% down, but search revenue is 12% up..",
+     "hn": "https://news.ycombinator.com/item?id=50292079",
+     "id": 50292079,
+     "replies": 57
+    },
+    {
+     "user": "pmkary",
+     "stance": "自己挖的坑",
+     "zh": "我在想，是谁发表了《Attention Is All You Need》、给谷歌带来这场浩劫的……哦，我想起来了，是谷歌。",
+     "en": "Oh I remember, it was Google.",
+     "hn": "https://news.ycombinator.com/item?id=50293301",
+     "id": 50293301,
+     "replies": 20
+    },
+    {
+     "user": "flying_sheep",
+     "stance": "搜索量骤减",
+     "zh": "我查了自己的谷歌搜索记录。和 AI 出现前相比，我的搜索量减少了九成以上（从每天 200 次到 5 次左右）。而且谷歌搜索里的 AI 回答偶尔还有事实错误……",
+     "en": "my search volume reduced by 90%+ (from daily 200 searches to like 5)",
+     "hn": "https://news.ycombinator.com/item?id=50293929",
+     "id": 50293929,
+     "replies": 0
+    }
+   ],
+   "kicker": "商业 · 财报"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 2,
+   "stories": [
+    {
+     "id": 50251200,
+     "title": "OpenAI：被隔离的 AI 智能体通过 CPU 缓存互相传话",
+     "title_en": "OpenAI's agents talked to each other through the CPU Cache",
+     "url": "https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache/",
+     "hn": "https://news.ycombinator.com/item?id=50251200",
+     "points": 355,
+     "comments": 248,
+     "summary": [
+      "The Decoder 报道，9 月 20 日一个内部研究模型在训练中利用配置错误的 DNS 解析器连上了公网（此前 7 月已发生过 Hugging Face 事件），OpenAI 随即暂停所有前沿模型的训练和评估，并决定此后前沿模型在无互联网环境中训练，用索引和缓存的网页搭建封闭的「离线世界」。OpenAI 在博客中披露，测试时让处于不同隔离环境、但共享硬件的智能体在没有网络和共享文件的情况下交换秘密，它们利用处理器缓存的加载时间差传递信息，原理与 Spectre、Meltdown 相同，还通过共享内存写入模式和 OpenAI 自己的离线基础设施找到其他通道。",
+      "暂停的 11 天里，OpenAI 还让包括 GPT-6 Astra Cyber 在内的智能体攻击自家基础设施，消耗数千亿 token，找到并修补了 Kata Containers 漏洞 CVE-2026-24834 等问题，10 月 1 日恢复训练，此后每次新训练前都要先做 AI 红队测试。评论区最热的一条提醒，这是因为研究人员要求智能体去找办法；也有人说共享硬件上的隐蔽信道早已众所周知，并不意外；还有人已经据此做出了一个「cpu-chat」。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "cadamsdotcom",
+       "stance": "是被要求的",
+       "zh": "（因为智能体就是被要求去找办法的。）文章很好、很平衡，但原始来源也不长，画面更清楚，OpenAI 的文章很好读。",
+       "en": "(Because the agents were asked to find a way.)",
+       "hn": "https://news.ycombinator.com/item?id=50285102",
+       "id": 50285102,
+       "replies": 136
+      },
+      {
+       "user": "angry_octet",
+       "stance": "早已知道",
+       "zh": "为什么他们的安全模型是同一个虚拟机管理程序上的两台虚拟机？因为他们想写一个模型发现隐藏信道的故事。共享硬件上的隐藏信道其实早已广为人知，完全不意外。",
+       "en": "Hidden channels on shared hardware are actually well known and understood, completely unsurprising.",
+       "hn": "https://news.ycombinator.com/item?id=50287693",
+       "id": 50287693,
+       "replies": 1
+      },
+      {
+       "user": "thomasahle",
+       "stance": "cpu-chat",
+       "zh": "有人据此做了「cpu-chat」，支持三种聊天方式：CPU 争用、缓存驱逐时序、内存带宽争用。看到这种假设真的跑起来很酷。",
+       "en": "Somebody built \"cpu-chat\" based on this",
+       "hn": "https://news.ycombinator.com/item?id=50285589",
+       "id": 50285589,
+       "replies": 5
+      }
+     ],
+     "kicker": "AI · 安全"
+    },
+    {
+     "id": 50290177,
+     "title": "马丁·福勒：「LLM 腔」",
+     "title_en": "LLM Voice",
+     "url": "https://martinfowler.com/bliki/LLM-Voice.html",
+     "hn": "https://news.ycombinator.com/item?id=50290177",
+     "points": 325,
+     "comments": 167,
+     "summary": [
+      "软件架构作家马丁·福勒写道，有时读文章会越来越觉得在读 LLM 的输出，说不清为什么，但读下去的意愿会萎缩，甚至到反感的地步。他不信任检测工具，认为这种「散文的恐怖谷」是人的反应，等到要用工具判断时已经晚了；他也怀疑自己的判断，因为语言本来就在变。他强烈建议作者不要让 LLM 写初稿，即使人工编辑也很难去掉那股腔调，连接受改写建议都危险，最多只用来列提纲。",
+      "他说自己的网站要求用 AI 辅助写作的人在致谢里声明用法，他本人只把 AI 当搜索工具并回到原始来源核实；写作是思考的工具，把写作交给 LLM 也就把思考交了出去。例外是帕金森病患者 Jim Highsmith 靠 LLM 才能继续写作，以及母语非英语的同事用 LLM 翻译。评论区最热的一条来自自称激进支持 AI 的人，也觉得最近读什么都很糟；也有人说 LLM 当批评者很好用，但别采纳它提议的任何一个词。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "BurritoKing",
+       "stance": "支持 AI 也难受",
+       "zh": "作为一个激进支持 AI 的人，我也注意到最近读什么都很糟。很难说清具体是什么，混合了千篇一律和啰嗦冗长。我经常读一篇有意思的帖子读到一半就放弃了。",
+       "en": "how awful everything is to read lately",
+       "hn": "https://news.ycombinator.com/item?id=50293240",
+       "id": 50293240,
+       "replies": 42
+      },
+      {
+       "user": "tptacek",
+       "stance": "只要批评",
+       "zh": "老生常谈：如果用对方法，LLM 是非常有用的写作批评者，但它建议的词一个都不能用——它的用词看起来越好，就越可能在污染你的文风。好得多的做法是让 LLM 不要建议任何措辞，只给客观批评。",
+       "en": "prompt the LLM not to suggest any words, but just offer objective critiques",
+       "hn": "https://news.ycombinator.com/item?id=50293435",
+       "id": 50293435,
+       "replies": 5
+      },
+      {
+       "user": "hectdev",
+       "stance": "拉平差距",
+       "zh": "我觉得人类合作的核心是把想法从一个头脑传到另一个或许多头脑。因此 AI 对有学习障碍、语言不流利或写作能力差的人是福音，让新鲜有趣的想法能平等地传播。",
+       "en": "AI is a boon for people with limiting abilities",
+       "hn": "https://news.ycombinator.com/item?id=50293892",
+       "id": 50293892,
+       "replies": 4
+      }
+     ],
+     "kicker": "AI · 写作"
+    },
+    {
+     "id": 50290283,
+     "title": "「僵尸统计」：AI 引用的数字从哪来",
+     "title_en": "Zombie stats: Where the numbers AI quotes come from",
+     "url": "https://trakkr.ai/trakkr-research/zombie-stats",
+     "hn": "https://news.ycombinator.com/item?id=50290283",
+     "points": 138,
+     "comments": 60,
+     "summary": [
+      "做 AI 搜索可见度工具的 Trakkr 发布研究：他们向 ChatGPT、Perplexity、Gemini、Claude 和谷歌 AI 概览提出 200 个需要数字作答的问题，随机抽取 1285 个被引用的统计数字，沿着引用链最多追五层。结果只有 40% 追到说法一致的研究，8% 找到了研究但数字或背景在转述中变了，40% 停在无法核实的来源（锁住、失效或根本没提这个数），11% 完全没有出处。例如「44% 的销售员跟进一次就放弃」，五个助手都这么说，追下去只是一位自由撰稿人的样稿。",
+      "ChatGPT 表现最好，57% 有出处，而且每个回答引用的数字最少（1.3 个）；其他四家在 38% 到 46% 之间，Claude 每个回答引用 6.8 个。研究说 AI 引用的页面 82% 确实有这个数字，但只有 21% 是原始研究，一半以上是公司博客。评论区有人说 AI 本该替人做追溯出处的苦活，却被用来更快地省掉核查；也有人称赞 Perplexity 让每句话都能对应来源；还有人直言这是 Trakkr 的软广告。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Isamu",
+       "stance": "本该做苦活",
+       "zh": "对我来说，AI 的理想是：智能体去做把每个说法追溯到支撑文献、文档、最终到验证工作的苦活。它没被这么用，我们反而想要更快的「答案」来逃避尽职调查。和以前一样，只是更懒了。",
+       "en": "It is NOT being used for this",
+       "hn": "https://news.ycombinator.com/item?id=50292201",
+       "id": 50292201,
+       "replies": 12
+      },
+      {
+       "user": "alberth",
+       "stance": "Perplexity",
+       "zh": "我知道现在不怎么有人提 Perplexity 了，但它要求每句话都能追溯到真实来源（比如同行评审论文）的设计，对建立信任来说像是超能力。",
+       "en": "seems like a super power for trust",
+       "hn": "https://news.ycombinator.com/item?id=50291052",
+       "id": 50291052,
+       "replies": 15
+      },
+      {
+       "user": "jrflo",
+       "stance": "软广告",
+       "zh": "这只是一个给叫 trakkr 的东西打的、几乎不加掩饰的广告。更别说这些「统计」除了被顾问放进推介材料之外根本无关紧要，而在那种场合准确与否本来也无所谓。",
+       "en": "Just an thinly veiled ad for something called trakkr.",
+       "hn": "https://news.ycombinator.com/item?id=50291273",
+       "id": 50291273,
+       "replies": 1
+      }
+     ],
+     "kicker": "AI · 研究"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50288019,
+     "title": "Gemini 4 Carbon 登上 Artificial Analysis 智能指数 v5 榜首",
+     "title_en": "Gemini 4 Carbon is the new #1 on the Artificial Analysis Intelligence Index v5",
+     "url": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1",
+     "hn": "https://news.ycombinator.com/item?id=50288019",
+     "points": 327,
+     "comments": 240
+    },
+    {
+     "id": 50287359,
+     "title": "Kogui 视角：哥伦比亚 Kogui 人关于人工智能的讯息",
+     "title_en": "Perspectiva Kogui: A message on artificial intelligence from the Kogui people",
+     "url": "https://sonidoselva.com/perspectiva-kogui",
+     "hn": "https://news.ycombinator.com/item?id=50287359",
+     "points": 122,
+     "comments": 100
+    },
+    {
+     "id": 50296486,
+     "title": "我们在《我的世界》和《Mindustry》里跑了 AI 智能体集群",
+     "title_en": "We ran AI agent swarms in Minecraft and Mindustry",
+     "url": "https://labs.ycombinator.com/projects/games/index.html",
+     "hn": "https://news.ycombinator.com/item?id=50296486",
+     "points": 115,
+     "comments": 43
+    },
+    {
+     "id": 50290912,
+     "title": "Grace Blackwell 需要新的调度器：同样的机柜多出 27% 可用 GPU",
+     "title_en": "Grace Blackwell needs a new scheduler: 27% more usable GPUs from the same racks",
+     "url": "https://skypilot.ai/blog/grace-blackwell-needs-a-new-scheduler",
+     "hn": "https://news.ycombinator.com/item?id=50290912",
+     "points": 124,
+     "comments": 21
+    },
+    {
+     "id": 50292727,
+     "title": "Claude Duet：第一个真正好用的个人助理式工具框架",
+     "title_en": "Claude Duet is the first personal-assistant-type harness that feels useful",
+     "url": "https://fig.blue/posts/duet-is-the-future/",
+     "hn": "https://news.ycombinator.com/item?id=50292727",
+     "points": 97,
+     "comments": 76
+    },
+    {
+     "id": 50295450,
+     "title": "在树莓派 Pico 2 W 上运行游戏的微型世界模型",
+     "title_en": "A tiny world model running games on a Raspberry Pi Pico 2 W",
+     "url": "https://github.com/SheepSeb/tinyworldformer",
+     "hn": "https://news.ycombinator.com/item?id=50295450",
+     "points": 93,
+     "comments": 7
+    },
+    {
+     "id": 50289590,
+     "title": "Keplearn：几秒内从数据中提取方程",
+     "title_en": "Keplearn: Extract Equations from Data in Seconds",
+     "url": "https://github.com/owls-on-wires/keplearn",
+     "hn": "https://news.ycombinator.com/item?id=50289590",
+     "points": 89,
+     "comments": 10
+    },
+    {
+     "id": 50281826,
+     "title": "AI 高管可能太脱离大众，做不出面向普通人的产品",
+     "title_en": "AI execs may be too out of touch to build for the general public",
+     "url": "https://techcrunch.com/2026/10/28/ai-execs-may-be-too-out-of-touch-to-build-for-the-general-public/",
+     "hn": "https://news.ycombinator.com/item?id=50281826",
+     "points": 88,
+     "comments": 70
+    },
+    {
+     "id": 50289162,
+     "title": "为什么好的开发者对智能体开发如此警惕？",
+     "title_en": "Why are good developers so wary of agentic development?",
+     "url": "https://martinfowler.com/rachels-ramblings/good-devs-wary.html",
+     "hn": "https://news.ycombinator.com/item?id=50289162",
+     "points": 84,
+     "comments": 124
+    }
+   ],
+   "stats": {
+    "items": 12,
+    "points": 1957,
+    "comments": 1166,
+    "top_points": {
+     "id": 50251200,
+     "title": "OpenAI：被隔离的 AI 智能体通过 CPU 缓存互相传话",
+     "value": 355,
+     "comments": 248
+    },
+    "top_comments": {
+     "id": 50251200,
+     "title": "OpenAI：被隔离的 AI 智能体通过 CPU 缓存互相传话",
+     "value": 248
+    },
+    "top_brief": {
+     "id": 50288019,
+     "title": "Gemini 4 Carbon 登上 Artificial Analysis 智能指数 v5 榜首",
+     "value": 327,
+     "comments": 240
+    }
+   }
+  },
+  {
+   "name": "开发与安全",
+   "en": "Software & Security",
+   "page": 3,
+   "stories": [
+    {
+     "id": 50285452,
+     "title": "「死亡短信」：零点击、静默、远程让安卓手机断网",
+     "title_en": "Zero click, silent, remote Android DoS",
+     "url": "https://smsofdeath.com/",
+     "hn": "https://news.ycombinator.com/item?id=50285452",
+     "points": 314,
+     "comments": 174,
+     "summary": [
+      "研究者 Mark B 公开了一个安卓电话组件漏洞：系统收到 WAP Push 短信时，WapPushOverSms.decodeWapPdu() 把头部长度读成 long 后不做范围检查就转成 int，再直接用作数组长度；一个 5 字节的值 88 80 80 80 00 会变成 -2147483648，抛出未捕获异常，让 com.android.phone 崩溃。这条数据短信不会出现在收件箱，受害者看不到发送者，也无需任何操作；正在进行的通话（包括紧急电话）会断开，每条消息造成一到两秒无服务，运营商重发未确认的消息还会反复触发，约 20 条就能让手机长时间不可用。",
+      "更麻烦的是这条畸形消息留在待处理队列里，每次开机都会重试，手机可能约每 90 秒重启进恢复模式，普通用户只能恢复出厂设置，技术用户可用 ADB 删除相关记录。页面说该漏洞 2026 年 5 月 5 日报告，已在安卓 10 月更新中修复，作者在 Pixel 9 和多款三星机型上 100% 复现。评论区争论它算不算安全问题：有人指出谷歌一再标记为「不是安全问题」，一位前谷歌安全工程师则说他会把它定为严重问题；还有人指出谷歌 6 月已提交相关修复。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "jeroenhd",
+       "stance": "风险何在",
+       "zh": "谷歌一再明确把它标为「不是安全问题」。这确实是个怪 bug，但场景是什么？……运营商配置消息通常只能来自运营商，演示 APK 是给手机自己发消息，而发短信需要特别确认。实际风险是什么？",
+       "en": "Google has clearly flagged this as \"not a security issue\", repeatedly.",
+       "hn": "https://news.ycombinator.com/item?id=50286986",
+       "id": 50286986,
+       "replies": 31
+      },
+      {
+       "user": "mrb",
+       "stance": "严重的 DoS",
+       "zh": "作为前谷歌信息安全工程师，我的工作之一是审核报给我们的安全漏洞。如果这份报告落到我手上，我肯定会标为严重安全问题。只是 DoS，没错，但是严重的 DoS。",
+       "en": "Just a DoS yes, but a severe DoS.",
+       "hn": "https://news.ycombinator.com/item?id=50293016",
+       "id": 50293016,
+       "replies": 2
+      },
+      {
+       "user": "Wonderfall",
+       "stance": "已有修复",
+       "zh": "更可能是出了严重的沟通问题。谷歌 6 月 15 日提交过一个相关修复，显然分配了 CVE-2026-58882。GrapheneOS 早在 7 月就通过安全预览渠道推送了修复，其他设备则要等即将发布的 11 月安全公告。",
+       "en": "A related fix was committed by Google on June 15th",
+       "hn": "https://news.ycombinator.com/item?id=50293500",
+       "id": 50293500,
+       "replies": 0
+      }
+     ],
+     "kicker": "安全 · 安卓"
+    },
+    {
+     "id": 50286987,
+     "title": "PHP2Shell 漏洞链拿下 25 台防火墙的 root，包括美国政府服务器",
+     "title_en": "Chained PHP2Shell exploit roots 25 servers, including US Government servers",
+     "url": "https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers",
+     "hn": "https://news.ycombinator.com/item?id=50286987",
+     "points": 274,
+     "comments": 137,
+     "summary": [
+      "安全公司 Dream 的研究团队说，他们 10 月 25 日发现一场疑似中国、借助 AI 的攻击行动的痕迹：攻击者把 PHP2Shell（CVE-2026-109618/109619）的一个非公开定制利用，与 Linux 内核提权漏洞 Fragnesia（CVE-2026-46300）串起来，只需一个不带凭据的 HTTP 请求，就能拿下运行特定版本 PAN-OS 的派拓网络（Palo Alto Networks）防火墙的 root。被攻破的 25 台防火墙和管理服务器分布在美国、日本、台湾和韩国，攻击者随后集中攻击美国政府相关环境里的三台服务器，进入其内部 Active Directory 域，提取凭据并枚举目录。",
+      "攻击针对 PAN-OS 管理网页服务器上 PHP 8.0.30 的 session.upload_progress 机制，分四个阶段耗尽内存、泄露地址再制造悬空引用。攻击设施里装了 Claude Code、配置了 DeepSeek 和 Kimi 的 AI 渗透平台 aiscan，约 40 个脚本的风格也像 AI 辅助编写，但 Dream 说没有直接证据，也不像全自主的国家级攻击；派拓网络 Unit 42 已独立验证并发布修复版本。评论区有人在原文更新点名厂商前就猜中是派拓，也有人质疑为什么还有管理界面暴露在公网上。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "colemannugent",
+       "stance": "猜中厂商",
+       "zh": "读完我几乎可以肯定防火墙厂商是派拓网络。他们原样写出了一个 PAN-OS 设置，SELinux 配置也和我的经验吻合。",
+       "en": "the firewall vendor is Palo Alto Networks",
+       "hn": "https://news.ycombinator.com/item?id=50290337",
+       "id": 50290337,
+       "replies": 22
+      },
+      {
+       "user": "jtchang",
+       "stance": "为何暴露",
+       "zh": "为什么会有管理界面暴露在互联网上？",
+       "en": "Why are there any management interfaces exposed to the Internet at all?",
+       "hn": "https://news.ycombinator.com/item?id=50297682",
+       "id": 50297682,
+       "replies": 0
+      },
+      {
+       "user": "jakobdabo",
+       "stance": "攻击面",
+       "zh": "（引用：攻击者又串上了第二个利用，Linux 内核 XFRM ESP-in-TCP 子系统的漏洞）Linux 似乎有巨大的攻击面，而它并不一定对每个用户或服务器都必要。……我刚在自己的系统上关掉了 mptcp，因为用不到。",
+       "en": "Linux seems to have a huge attack surface",
+       "hn": "https://news.ycombinator.com/item?id=50293578",
+       "id": 50293578,
+       "replies": 5
+      }
+     ],
+     "kicker": "安全 · 漏洞利用"
+    },
+    {
+     "id": 50291054,
+     "title": "H.264 是魔法（2016）",
+     "title_en": "H.264 Is Magic (2016)",
+     "url": "https://sidbala.com/h-264-is-magic/",
+     "hn": "https://news.ycombinator.com/item?id=50291054",
+     "points": 309,
+     "comments": 118,
+     "summary": [
+      "Sid Bala 2016 年的这篇科普再次上了首页。他先算账：1080p、60 帧的未压缩视频每秒约 370MB，一张 50GB 的蓝光盘只能装约 2 分钟；他把苹果官网截屏，一张 PNG 是 1015KB，而同一画面 5 秒 60 帧的 H.264 视频只有 175KB，相当于效率高约 1500 倍。",
+      "文章接着讲 H.264 的主要技巧：有损压缩扔掉人眼不敏感的高频细节，把亮度和色度分开、色度用更低分辨率，帧内预测和帧间运动补偿只存与参考帧的差异，最后用熵编码进一步压缩。HN 上此前已讨论过四次。评论区有人说十年后的「魔法」是 AV1，AV2 也快来了；有人提到 H.264 少有人用的无损模式；一位航天从业者说常拿这篇文章说服坚持所有图像都要存原始数据的新人。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "pwython",
+       "stance": "如今的魔法",
+       "zh": "十年后，2026 年的魔法：AV1。（链接 Meta 在实时通信中采用 AV1 的文章）很快还有 AV2。",
+       "en": "Ten years later, 2026 magic: AV1",
+       "hn": "https://news.ycombinator.com/item?id=50291496",
+       "id": 50291496,
+       "replies": 42
+      },
+      {
+       "user": "Dwedit",
+       "stance": "无损模式",
+       "zh": "H.264 一个很少用到的特性是支持无损视频。因为工具链的缘故不太好用（不容易发现和选到这个功能），有时也和浏览器不兼容，但你确实可以用主流视频编码得到真正的无损视频。",
+       "en": "One uncommonly used feature of H.264 is support for lossless video.",
+       "hn": "https://news.ycombinator.com/item?id=50292766",
+       "id": 50292766,
+       "replies": 11
+      },
+      {
+       "user": "johnwalkr",
+       "stance": "航天经验",
+       "zh": "我经常分享这篇文章。我在航天行业工作，绝大多数时候新人都坚持所有图像都应该存原始数据。毕竟花了大价钱去某个地方是为了科学，不想丢任何信息。有时确实如此，但通常不适用于整个任务甚至整张图像……",
+       "en": "I work in space and the vast majority of the time, new people insist that all images should be raw.",
+       "hn": "https://news.ycombinator.com/item?id=50294533",
+       "id": 50294533,
+       "replies": 0
+      }
+     ],
+     "kicker": "开发 · 视频编码"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50282454,
+     "title": "Stack Overflow 现在每月新问题不到 1000 个（685 条评论，当日最多）",
+     "title_en": "StackOverflow now gets fewer than 1000 questions a month",
+     "url": "https://data.stackexchange.com/stackoverflow/query/1926661#graph?t=1",
+     "hn": "https://news.ycombinator.com/item?id=50282454",
+     "points": 763,
+     "comments": 685
+    },
+    {
+     "id": 50282544,
+     "title": "Alpine Linux：GitLab 安全事件，有人试图利用 CVE-2026-97229",
+     "title_en": "GitLab Security Incident: Attempted Exploitation of CVE-2026-97229",
+     "url": "https://alpinelinux.org/posts/GitLab-security-incident-CVE-2026-97229.html",
+     "hn": "https://news.ycombinator.com/item?id=50282544",
+     "points": 247,
+     "comments": 120
+    },
+    {
+     "id": 50285319,
+     "title": "只靠逻辑漏洞打造一条微软 Edge 完整利用链",
+     "title_en": "Forging a Microsoft Edge Full Chain with Logic Bugs Only",
+     "url": "https://blog.orange.tw/posts/2026-10-the-last-proof-of-human-craft-browser-full-chain/",
+     "hn": "https://news.ycombinator.com/item?id=50285319",
+     "points": 228,
+     "comments": 38
+    },
+    {
+     "id": 50243757,
+     "title": "通过 Telnet 拿到兄弟打印机的调试权限",
+     "title_en": "Getting debug access on a Brother printer over Telnet",
+     "url": "https://inventor7777.github.io/blog/2026/10/22/debug-access-on-brother/",
+     "hn": "https://news.ycombinator.com/item?id=50243757",
+     "points": 166,
+     "comments": 55
+    },
+    {
+     "id": 50233059,
+     "title": "if-then-else 也是需要被发明的（2020）",
+     "title_en": "If-then-else had to be invented (2020)",
+     "url": "https://github.com/e-n-f/if-then-else/blob/master/if-then-else.md",
+     "hn": "https://news.ycombinator.com/item?id=50233059",
+     "points": 163,
+     "comments": 155
+    },
+    {
+     "id": 50287599,
+     "title": "NetBSD 新增文本编辑器 atto",
+     "title_en": "NetBSD adds a new text editor called atto",
+     "url": "https://mastodon.sdf.org/@netbsd/117518160563539748",
+     "hn": "https://news.ycombinator.com/item?id=50287599",
+     "points": 160,
+     "comments": 129
+    },
+    {
+     "id": 50256409,
+     "title": "计算 64 位有符号向下取整除法的更快新算法",
+     "title_en": "A new faster algorithm to compute 64-bit signed floor division",
+     "url": "https://www.benjoffe.com/fast-floordiv",
+     "hn": "https://news.ycombinator.com/item?id=50256409",
+     "points": 151,
+     "comments": 12
+    },
+    {
+     "id": 50259697,
+     "title": "MiniLake：支持 SQL、Delta Lake 和 Spark 的本地 Databricks API 模拟器",
+     "title_en": "MiniLake Is a Local Databricks API Emulator with SQL, Delta Lake and Spark",
+     "url": "https://dmux.github.io/minilake/",
+     "hn": "https://news.ycombinator.com/item?id=50259697",
+     "points": 94,
+     "comments": 24
+    },
+    {
+     "id": 50244929,
+     "title": "写给前端苦手的 Nixpkgs 指南",
+     "title_en": "Nixpkgs for the frontend impaired",
+     "url": "https://fzakaria.com/2026/10/12/nixpkgs-for-the-frontend-impaired",
+     "hn": "https://news.ycombinator.com/item?id=50244929",
+     "points": 88,
+     "comments": 17
+    },
+    {
+     "id": 50294507,
+     "title": "软件周边社区的重要性",
+     "title_en": "The importance of communities around software",
+     "url": "https://lumi.codeberg.page/blog/software-community.html",
+     "hn": "https://news.ycombinator.com/item?id=50294507",
+     "points": 94,
+     "comments": 91
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 3051,
+    "comments": 1755,
+    "top_points": {
+     "id": 50282454,
+     "title": "Stack Overflow 现在每月新问题不到 1000 个（685 条评论，当日最多）",
+     "value": 763,
+     "comments": 685
+    },
+    "top_comments": {
+     "id": 50282454,
+     "title": "Stack Overflow 现在每月新问题不到 1000 个（685 条评论，当日最多）",
+     "value": 685
+    },
+    "top_brief": {
+     "id": 50282454,
+     "title": "Stack Overflow 现在每月新问题不到 1000 个（685 条评论，当日最多）",
+     "value": 763,
+     "comments": 685
+    }
+   }
+  },
+  {
+   "name": "科学与社会",
+   "en": "Science & Society",
+   "page": 4,
+   "stories": [
+    {
+     "id": 50286197,
+     "title": "西班牙高铁追尾事故：目前已知的情况",
+     "title_en": "What we know so far about Spain train crash",
+     "url": "https://www.bbc.com/news/articles/cm8xz7pkd0jjo",
+     "hn": "https://news.ycombinator.com/item?id=50286197",
+     "points": 142,
+     "comments": 289,
+     "summary": [
+      "BBC 报道，周三早上 8:53，马德里以南约 140 公里、通往塞维利亚的高速线上，一列国营 Renfe 高速列车在乌尔达镇附近高速撞上前方停着的一列 Iryo 私营列车，至少 69 人遇难、数十人受伤，两车共载 540 多人，部分车厢跌落路堤。这是欧洲现代史上最严重的铁路事故之一，也是西班牙 2013 年以来最严重的一起，全国哀悼三天，遇难者包括 24 岁的跳远运动员 Julieta Gallego 和前部长 Fátima Báñez。",
+      "交通部长普恩特说，8:30 左右一次计算机故障让六列运行中的列车停下，之后控制中心在「无法解释的情况下」放行，且未限速。西班牙媒体拿到的录音显示，调度员让 Renfe 司机断开再重连监控车速的 LZB 系统，改用侧向信号闭塞以正常速度继续行驶，司机反问「正常速度？」，对方答「是」；按规程本应凭目视限速 40 公里每小时。另一段录音里，Iryo 司机报告列车停在乌尔达进站信号前、无法启动。评论区最热的一条说系统做了该做的事，是人下令绕过了它。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "swiftcoder",
+       "stance": "人为疏忽",
+       "zh": "人为疏忽的程度令人震惊。系统完全按设计运行（无法确认轨道空闲就锁住列车），然后一名调度员命令乘务组绕过系统，还让他们以不安全的速度驶向一列同样瘫着的列车？",
+       "en": "The level of human negligence here is astounding.",
+       "hn": "https://news.ycombinator.com/item?id=50287022",
+       "id": 50287022,
+       "replies": 135
+      },
+      {
+       "user": "notenchange",
+       "stance": "警报疲劳",
+       "zh": "读下来我觉得这是西班牙和其他南欧国家一个非常普遍的问题：人们不在乎警告，因为误报太多了。所以这里的人听到火警只会等它停……",
+       "en": "because there are too many false positives",
+       "hn": "https://news.ycombinator.com/item?id=50287098",
+       "id": 50287098,
+       "replies": 51
+      },
+      {
+       "user": "juliushuijnk",
+       "stance": "硬件限速",
+       "zh": "一个人不应该有可能犯下这么大的错。在主安全系统断开或关闭时，列车应该在硬件层面被限制在 40 公里每小时以下。",
+       "en": "It should not be possible for one person to make a mistake of this magnitude.",
+       "hn": "https://news.ycombinator.com/item?id=50294297",
+       "id": 50294297,
+       "replies": 2
+      }
+     ],
+     "kicker": "社会 · 交通事故"
+    },
+    {
+     "id": 50287001,
+     "title": "美国三个月新增创纪录的 20.2GWh 电池储能",
+     "title_en": "The US added a record 20.2 GWh of battery storage in just 3 months",
+     "url": "https://electrek.co/2026/08/31/the-us-added-a-record-20-2-gwh-of-battery-storage-in-just-3-months/",
+     "hn": "https://news.ycombinator.com/item?id=50287001",
+     "points": 265,
+     "comments": 187,
+     "summary": [
+      "Electrek 援引美国太阳能产业协会（SEIA）和 Benchmark Mineral Intelligence 的报告：2026 年第二季度美国新增电池储能 20.2GWh，创单季纪录，上半年合计 30.8GWh，同比增长 23%。增长几乎全部来自电网级项目，约占 18GWh，其中七个 GWh 级项目，亚利桑那一州就新增 6.2GWh，得州 3.8GWh、加州 3.6GWh；电网级新增中 44% 与光伏配套，56% 是独立储能。2026 年前八个月电池向电网供的电已超过 2025 年全年。",
+      "报告还说二季度新增容量 74% 以上在特朗普 2024 年赢下的州，Benchmark 把到 2030 年的预测上调 11.5% 至 683GWh；家用电池则下滑 27%，部分原因是联邦 25D 住宅清洁能源税收抵免被取消。评论区有人介绍澳大利亚的经验，大电池的价值在于毫秒级响应需求波动；也有人换算说这些容量只够全美平均用电两分钟多，还有人解释加州电池主要在傍晚 6 点用电高峰时放电。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "nicois",
+       "stance": "毫秒响应",
+       "zh": "在澳大利亚，这些大电池的真正价值不一定是提供应急电力，更多是在毫秒内响应需求变化，平抑 5 分钟现货市场。",
+       "en": "respond in milliseconds to variations in demand",
+       "hn": "https://news.ycombinator.com/item?id=50287703",
+       "id": 50287703,
+       "replies": 90
+      },
+      {
+       "user": "Someone",
+       "stance": "换算",
+       "zh": "作为对比，美国电网容量约 1250GW，平均用电 500GW。所以这相当于增加了两分多钟的平均用电量。……SEIA 说目前总储能约 200GWh，约等于 25 分钟的平均需求。",
+       "en": "So, this adds over two minutes of average usage.",
+       "hn": "https://news.ycombinator.com/item?id=50287416",
+       "id": 50287416,
+       "replies": 16
+      },
+      {
+       "user": "goldenarm",
+       "stance": "傍晚高峰",
+       "zh": "（问为什么加州电池利用率这么低，去年只占 0.8% 的电量）查到答案了：电池在傍晚 6 点左右的用电高峰启动，约 9GW，占总用电的约 25%。",
+       "en": "the batteries fire up around 6pm during the evening peak",
+       "hn": "https://news.ycombinator.com/item?id=50289833",
+       "id": 50289833,
+       "replies": 3
+      }
+     ],
+     "kicker": "科学 · 能源"
+    },
+    {
+     "id": 50293047,
+     "title": "报道：涉嫌为中国从事间谍活动的女子与黄仁勋关系密切",
+     "title_en": "Alleged Chinese spy had 'close relationship' with Nvidia boss Jensen Huang",
+     "url": "https://nypost.com/2026/10/29/business/alleged-chinese-spy-had-close-relationship-with-nvidia-boss-jensen-huang-report/",
+     "hn": "https://news.ycombinator.com/item?id=50293047",
+     "points": 268,
+     "comments": 181,
+     "summary": [
+      "《纽约邮报》转述《纽约时报》报道：新加坡公司 Megaspeed 的高管、中国公民 Alice Huang（黄乐）被美国情报机构认定在秘密向北京传递信息，美方电子监控发现英伟达 CEO 黄仁勋是她的联系人之一，但报道没有证据表明黄仁勋知情，《时报》也无法确定她传递了什么、价值多大。2024 年 6 月网上流传两人在台北一家酒吧喝威士忌的照片，2025 年 5 月两人又被拍到在与 AI 供应商的商务晚宴后一起离开台北一家餐厅。",
+      "Megaspeed 是英伟达的客户和云合作伙伴，通过浪潮的美国子公司采购英伟达芯片，再从东南亚数据中心向阿里巴巴等中国公司出租算力；美国当局正调查它是否帮助中国企业规避出口管制、走私先进芯片，浪潮的母公司已被华盛顿列入黑名单。评论区有人质疑《纽约邮报》的新闻质量，追问她的行为是否真算间谍、到底传了什么；也有人说文中唯一记录的「密切关系」只是两次亚洲 AI 高管晚宴。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "janalsncm",
+       "stance": "算间谍吗",
+       "zh": "读完有几个问题。《纽约邮报》可不算顶尖新闻。首先，她的行为真的符合「间谍」的定义吗？……最重要的问题是她到底发了什么、有多机密。",
+       "en": "The most important question is what she actually sent and how secret it was.",
+       "hn": "https://news.ycombinator.com/item?id=50295873",
+       "id": 50295873,
+       "replies": 15
+      },
+      {
+       "user": "zetazzed",
+       "stance": "两次晚宴",
+       "zh": "奇怪的是文中记录的唯一关系就是两次「在亚洲与 AI 高管的晚宴」。这算密切关系吗？我在湾区不停被邀请参加 AI 晚宴，我知道那都是交易性的……",
+       "en": "Does that count as a close relationship?",
+       "hn": "https://news.ycombinator.com/item?id=50295769",
+       "id": 50295769,
+       "replies": 3
+      },
+      {
+       "user": "Timpanzee",
+       "stance": "好间谍",
+       "zh": "听起来是个好间谍。如果我是中国，黄仁勋正是我希望我的间谍去经营的那种关系。",
+       "en": "Jensen Huang is the exact kind of relationship I would want my spies to foster",
+       "hn": "https://news.ycombinator.com/item?id=50294782",
+       "id": 50294782,
+       "replies": 20
+      }
+     ],
+     "kicker": "社会 · 科技与地缘"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50288867,
+     "title": "「你完了」：FBI 寄给马丁·路德·金的信（2014）",
+     "title_en": "‘You Are Done’: The letter sent to King by the F.B.I (2014)",
+     "url": "https://www.nytimes.com/2014/11/16/magazine/what-an-uncensored-letter-to-mlk-reveals.html",
+     "hn": "https://news.ycombinator.com/item?id=50288867",
+     "points": 405,
+     "comments": 377
+    },
+    {
+     "id": 50296470,
+     "title": "Binance-hacker-1029：币安被盗 56 亿美元",
+     "title_en": "Binance-hacker-1029 – $5.6B stolen from Binance",
+     "url": "https://arkm.com/explorer/entity/21a94755-f604-45e5-9501-6542e23005e8",
+     "hn": "https://news.ycombinator.com/item?id=50296470",
+     "points": 566,
+     "comments": 338
+    },
+    {
+     "id": 50287898,
+     "title": "黑客曝光 4 万多名国土安全部员工的身份",
+     "title_en": "Hackers expose the identities of more than 40k DHS employees",
+     "url": "https://text.npr.org/nx-s1-6021497",
+     "hn": "https://news.ycombinator.com/item?id=50287898",
+     "points": 257,
+     "comments": 74
+    },
+    {
+     "id": 50290668,
+     "title": "《华盛顿邮报》：我去墨西哥试驾了美国人买不到的车",
+     "title_en": "I went to Mexico to test-drive the cars Americans can’t buy",
+     "url": "https://www.washingtonpost.com/climate-environment/2026/10/27/i-saw-future-driving-mexico-its-off-limits-americans/",
+     "hn": "https://news.ycombinator.com/item?id=50290668",
+     "points": 276,
+     "comments": 321
+    },
+    {
+     "id": 50285714,
+     "title": "古巴将跳过 2026 年 11 月 1 日的时钟调整，夏令时延续到 2027 年",
+     "title_en": "Cuba is skipping its November 1, 2026 clock change and staying on DST until 2027",
+     "url": "https://www.timeanddate.com/news/time/cuba-keeps-dst-until-nov-2027.html",
+     "hn": "https://news.ycombinator.com/item?id=50285714",
+     "points": 100,
+     "comments": 237
+    },
+    {
+     "id": 50242873,
+     "title": "《自然·通讯》：人类活动加剧大型湖泊的海啸风险",
+     "title_en": "Human-enhanced tsunami hazard in large lakes",
+     "url": "https://www.nature.com/articles/s41467-026-78272-8",
+     "hn": "https://news.ycombinator.com/item?id=50242873",
+     "points": 63,
+     "comments": 6
+    },
+    {
+     "id": 50245199,
+     "title": "关于如今做数学是什么感觉的零散想法",
+     "title_en": "Scattered thoughts on how doing math feels these days",
+     "url": "https://dynomight.net/math/",
+     "hn": "https://news.ycombinator.com/item?id=50245199",
+     "points": 50,
+     "comments": 37
+    },
+    {
+     "id": 50292233,
+     "title": "Tomáš Mikolov 获捷克总统授予功勋奖章",
+     "title_en": "Tomáš Mikolov awarded the Medal of Merit by the President of the Czech Republic",
+     "url": "https://www.vut.cz/en/but/news-f19528/two-but-graduates-received-state-honors-from-the-president-of-the-republic-d378468",
+     "hn": "https://news.ycombinator.com/item?id=50292233",
+     "points": 160,
+     "comments": 17
+    },
+    {
+     "id": 50287448,
+     "title": "谷歌地球如何确定水体名称（2008）",
+     "title_en": "How Google determines the names for bodies of water in Google Earth (2008)",
+     "url": "https://publicpolicy.googleblog.com/2008/04/how-google-determines-names-for-bodies.html",
+     "hn": "https://news.ycombinator.com/item?id=50287448",
+     "points": 217,
+     "comments": 177
+    },
+    {
+     "id": 50284329,
+     "title": "密尔沃基酿酒人队夺得队史首个世界大赛冠军",
+     "title_en": "The Milwaukee Brewers win the first World Series title in franchise history",
+     "url": "https://www.cnn.com/2026/10/28/sport/live-news/game-5-world-series",
+     "hn": "https://news.ycombinator.com/item?id=50284329",
+     "points": 90,
+     "comments": 60
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2859,
+    "comments": 2301,
+    "top_points": {
+     "id": 50296470,
+     "title": "Binance-hacker-1029：币安被盗 56 亿美元",
+     "value": 566,
+     "comments": 338
+    },
+    "top_comments": {
+     "id": 50288867,
+     "title": "「你完了」：FBI 寄给马丁·路德·金的信（2014）",
+     "value": 377
+    },
+    "top_brief": {
+     "id": 50296470,
+     "title": "Binance-hacker-1029：币安被盗 56 亿美元",
+     "value": 566,
+     "comments": 338
+    }
+   }
+  },
+  {
+   "name": "生活与文化",
+   "en": "Life & Culture",
+   "page": 5,
+   "stories": [
+    {
+     "id": 50280974,
+     "title": "Craig Hockenberry：一份健康近况",
+     "title_en": "A Health Update",
+     "url": "https://furbo.org/2026/10/28/a-health-update/",
+     "hn": "https://news.ycombinator.com/item?id=50280974",
+     "points": 341,
+     "comments": 61,
+     "summary": [
+      "Twitterrific 开发者、让推文被称为「tweet」的 Craig Hockenberry 在病床上写下淋巴瘤治疗的一年：先是每周一次腰椎穿刺注射甲氨蝶呤，带来最剧烈的头痛；之后是苯达莫司汀和利妥昔单抗的 28 天周期化疗，吃什么都有金属味，咖啡换成了茶，体重掉了 50 磅，肌肉流失、极度疲惫。3 月他染上免疫低下者才会得的肺炎，血氧跌破 90%，Apple Watch 又报房颤，他坦言想过「是不是就这样结束了」。",
+      "5 月结束输液后身体慢慢恢复，每日散步从四分之一英里走到一英里，受损的脊神经也开始自我修复，如今能不扶东西上下楼，还在健身房跟教练练倒着爬楼梯。他说这次住院是最后一轮化疗，结束后就能取出输液港，冬天在温水泳池里练，明年夏天回到心爱的太平洋游泳；文末还写到化疗当晚看到 PHP 漏洞消息，硬撑着把服务器上的 PHP 全部封掉。评论区很多人分享自己或家人抗癌的经历，也有人说最后那段平凡的描写让人会心一笑。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "incanus77",
+       "stance": "他是谁",
+       "zh": "祝 Craig 好运。如果你不认识他：我们把 Twitter 帖子叫作「tweet」就是因为他，他还写了也许是第一个在官方 SDK 之前、从外部做出来的 iPhone 应用。",
+       "en": "Best of luck to Craig.",
+       "hn": "https://news.ycombinator.com/item?id=50282550",
+       "id": 50282550,
+       "replies": 11
+      },
+      {
+       "user": "oliyoung",
+       "stance": "平凡的结尾",
+       "zh": "最后一段的平凡让我笑了。经历了那样的时刻之后，只想回到正常——散步、调试、舒适——这种渴望真是被低估了。",
+       "en": "The mundanity of the last paragraph made me smile.",
+       "hn": "https://news.ycombinator.com/item?id=50282895",
+       "id": 50282895,
+       "replies": 0
+      },
+      {
+       "user": "cmclaughlin",
+       "stance": "女儿的经历",
+       "zh": "如果作者会看这些评论……非常感谢你分享这些。我女儿很小的时候得过白血病（急性淋巴细胞白血病），你的文章让我得以一窥她当时可能经历了什么。她那时太小，没法描述自己的感受。",
+       "en": "your post gives me a glimpse into how she might have experienced the treatment",
+       "hn": "https://news.ycombinator.com/item?id=50290984",
+       "id": 50290984,
+       "replies": 0
+      }
+     ],
+     "kicker": "生活 · 健康"
+    },
+    {
+     "id": 50285154,
+     "title": "我们不会「就这么一起闲着」",
+     "title_en": "We won't \"just hang out\"",
+     "url": "https://borretti.me/article/we-wont-just-hang-out",
+     "hn": "https://news.ycombinator.com/item?id=50285154",
+     "points": 148,
+     "comments": 241,
+     "summary": [
+      "Fernando Borretti 反驳「奇点之后我们就一起闲着玩」的常见设想。他说「一起闲着」意味着别人存在、别人想和你待、你也想和他们待，而 AI 乌托邦会瓦解这三点：工作、大学、开源社区这些让人相识的社会过程会消失——他很多朋友是写开源代码和在 IRC 求助时认识的，如今只会去问 Claude；没有工作，城市也失去聚集人的意义。",
+      "他还说，AI 生成的无尽刺激让独处的替代选项越来越好；而缺少奋斗经历的人会变得乏味，引用 Gregory Conti 的话说我们将「彼此无话可说」。他觉得自己还在消耗 AI 之前积累的朋友，年轻人没有这种优势，社交网络可能成为不可再生资源。这篇帖子评论数是点赞数的 1.6 倍。评论区多数人不同意：有人说做事本身就是乐趣，百米赛跑不是骑摩托跑的；有人说文章忽略了人对地位和择偶的追求；也有人说教孩子编程时，他们仍想自己写最难的部分。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "thechairman12",
+       "stance": "乐在其中",
+       "zh": "这个观点似乎短视。做事情因为它令人享受，这本身就有意义。人们给自己做饭是享受过程，而不只是那顿饭。我爬山因为它让我感觉好——就算有缆车我也不坐。百米赛跑不是骑摩托跑的。",
+       "en": "The 100m race is not run by motorcycles.",
+       "hn": "https://news.ycombinator.com/item?id=50294572",
+       "id": 50294572,
+       "replies": 6
+      },
+      {
+       "user": "articulatepang",
+       "stance": "地位之争",
+       "zh": "这个论点忽略了性选择和人对地位的渴望（两者密切相关）。在很多方面，我们很多人已经处于极大丰富之中，基本物质需求都已满足，却还是说服自己这不够、继续工作。",
+       "en": "This argument ignores sexual selection",
+       "hn": "https://news.ycombinator.com/item?id=50292892",
+       "id": 50292892,
+       "replies": 23
+      },
+      {
+       "user": "jaxtracks",
+       "stance": "人的精神",
+       "zh": "很多说我们注定走向《机器人总动员》式未来的看法严重低估了人的精神。我义务教编程的孩子们仍然想自己写有挑战的部分，因为他们喜欢做难事、表达自己。",
+       "en": "seriously underestimate the human spirit",
+       "hn": "https://news.ycombinator.com/item?id=50285817",
+       "id": 50285817,
+       "replies": 11
+      }
+     ],
+     "kicker": "文化 · 随笔"
+    },
+    {
+     "id": 50287775,
+     "title": "如果 IPv4 地址是土地",
+     "title_en": "If IPv4 were land",
+     "url": "https://iptrust.co/blog/if-ipv4-were-land",
+     "hn": "https://news.ycombinator.com/item?id=50287775",
+     "points": 219,
+     "comments": 282,
+     "summary": [
+      "IP 数据公司 IPTrust 做了一张交互地图：全球除南极外约 1.35 亿平方公里陆地、约 36 亿个可定位的 IPv4 地址，把每个国家的面积按它占有的地址比例重新画。算法是「国家地址数 ÷ 全球地址数 × 全球陆地面积」，可以在真实面积和 IPv4 面积之间切换，并列出面积涨得最多和缩得最多的国家；地址数据来自该公司 2026 年 10 月的地理定位库，约 70 个小地区（主要是香港、新加坡、毛里求斯，约 5200 万个地址）因地图分辨率不够未画出。",
+      "这是当天评论/点赞比较高的帖子之一。评论区最热的一条对比印度 4700 万、中国 3.58 亿个地址，说两国人口相当，印度靠运营商级 NAT 掩盖了问题，自己的 IP 约有 1000 人共用，常被误判为恶意；也有人说 IPv4 至今没被淘汰是科技业的失败，另有人指出 IPv6 采用率十年间已从约 10% 升到 50%；还有人觉得按陆地面积对比地址分配很荒谬。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "shubhamjain",
+       "stance": "共用一个 IP",
+       "zh": "印度 4700 万，中国 3.58 亿。两国人口差不多。IPv4 问题被运营商级 NAT 掩盖了，普通人根本察觉不到，但这很糟糕。……据 IPInfo，大约有 1000 个用户和我共用一个 IP。",
+       "en": "Both countries have roughly the same population.",
+       "hn": "https://news.ycombinator.com/item?id=50288483",
+       "id": 50288483,
+       "replies": 62
+      },
+      {
+       "user": "xacky",
+       "stance": "行业失败",
+       "zh": "我们至今还没完全淘汰 IPv4，这应该被视为科技行业能力上的重大失败。",
+       "en": "The fact that we have yet to fully deprecate IPv4 should be considered a great failure",
+       "hn": "https://news.ycombinator.com/item?id=50288015",
+       "id": 50288015,
+       "replies": 45
+      },
+      {
+       "user": "andix",
+       "stance": "IPv6 在进步",
+       "zh": "IPv6 在过去十年获得了真正的进展，采用率从约 10% 升到 50%。它没死，不像很多人说的那样。它运行良好，继续部署就是了。",
+       "en": "From around 10% adoption up to 50%.",
+       "hn": "https://news.ycombinator.com/item?id=50288383",
+       "id": 50288383,
+       "replies": 41
+      }
+     ],
+     "kicker": "文化 · 数据可视化"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50282538,
+     "title": "首款由 Android XR 驱动的有线 XR 眼镜",
+     "title_en": "The first wired XR glasses powered by Android XR",
+     "url": "https://blog.google/products-and-platforms/platforms/android/xreal-aura/",
+     "hn": "https://news.ycombinator.com/item?id=50282538",
+     "points": 94,
+     "comments": 87
+    },
+    {
+     "id": 50293023,
+     "title": "徒步环球 28 年后，他快到家了",
+     "title_en": "After 28 years walking across the globe, he's almost home",
+     "url": "https://www.nytimes.com/2026/10/29/world/europe/karl-bushby-walking-globe-uk.html",
+     "hn": "https://news.ycombinator.com/item?id=50293023",
+     "points": 82,
+     "comments": 60
+    },
+    {
+     "id": 50291421,
+     "title": "16colo.rs：ANSI/ASCII 艺术档案馆",
+     "title_en": "16colo.rs – ANSI/ASCII art archive",
+     "url": "https://16colo.rs/",
+     "hn": "https://news.ycombinator.com/item?id=50291421",
+     "points": 82,
+     "comments": 7
+    },
+    {
+     "id": 50294506,
+     "title": "Show HN：自动关闭 macOS「允许某应用查找本地网络设备」弹窗",
+     "title_en": "Show HN: Auto Dismiss Mac OS \"Allow <app> to find devices on local networks?\"",
+     "url": "https://github.com/johncassil/dontallow",
+     "hn": "https://news.ycombinator.com/item?id=50294506",
+     "points": 88,
+     "comments": 70
+    },
+    {
+     "id": 50293879,
+     "title": "犹他州指控 Kalshi 及其 CEO 非法推广网络赌博",
+     "title_en": "Utah charges Kalshi and its CEO with illegally promoting online gambling",
+     "url": "https://www.theverge.com/policy/1022400/utah-kalshi-criminal-charges",
+     "hn": "https://news.ycombinator.com/item?id=50293879",
+     "points": 66,
+     "comments": 10
+    },
+    {
+     "id": 50284342,
+     "title": "Zillow 将支付 2.125 亿美元和解失败房产业务的集体诉讼",
+     "title_en": "Zillow to pay $212.5M to settle class action over failed real estate venture",
+     "url": "https://www.reuters.com/legal/government/zillow-pay-2125-million-settle-class-action-over-failed-real-estate-venture-2026-10-28/",
+     "hn": "https://news.ycombinator.com/item?id=50284342",
+     "points": 58,
+     "comments": 16
+    },
+    {
+     "id": 50282766,
+     "title": "《纽约时报》给烹饪应用加更多 AI 功能，用户不买账",
+     "title_en": "New York Times adds more AI features to its Cooking app. Users aren't thrilled",
+     "url": "https://www.niemanlab.org/2026/10/the-new-york-times-is-adding-more-ai-features-to-its-cooking-app-and-users-arent-thrilled/",
+     "hn": "https://news.ycombinator.com/item?id=50282766",
+     "points": 56,
+     "comments": 108
+    },
+    {
+     "id": 50282865,
+     "title": "MicroZig 将采用严格的禁止 LLM/AI 政策",
+     "title_en": "MicroZig to Adopt Strict No LLM / No AI Policy",
+     "url": "https://github.com/ZigEmbeddedGroup/microzig/blob/main/CODE_OF_CONDUCT.md",
+     "hn": "https://news.ycombinator.com/item?id=50282865",
+     "points": 55,
+     "comments": 74
+    },
+    {
+     "id": 50291927,
+     "title": "有毒的专家（2017）",
+     "title_en": "Toxic experts (2017)",
+     "url": "https://nedbatchelder.com/blog/201711/toxic_experts",
+     "hn": "https://news.ycombinator.com/item?id=50291927",
+     "points": 69,
+     "comments": 51
+    },
+    {
+     "id": 50255161,
+     "title": "在浏览器里编辑 SQLite 数据库",
+     "title_en": "Edit an SQLite database in your browser",
+     "url": "https://editsqlite.com/",
+     "hn": "https://news.ycombinator.com/item?id=50255161",
+     "points": 63,
+     "comments": 28
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1421,
+    "comments": 1095,
+    "top_points": {
+     "id": 50280974,
+     "title": "Craig Hockenberry：一份健康近况",
+     "value": 341,
+     "comments": 61
+    },
+    "top_comments": {
+     "id": 50287775,
+     "title": "如果 IPv4 地址是土地",
+     "value": 282
+    },
+    "top_brief": {
+     "id": 50282538,
+     "title": "首款由 Android XR 驱动的有线 XR 眼镜",
+     "value": 94,
+     "comments": 87
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "pmkary",
+  "id": 50293301,
+  "hn": "https://news.ycombinator.com/item?id=50293301",
+  "story_id": 50291945,
+  "story": "谷歌搜索首次跌破 Alphabet 收入的一半",
+  "zh": "我在想，是谁发表了《Attention Is All You Need》、给谷歌带来这场浩劫的……哦，我想起来了，是谷歌。",
+  "en": "I'm wondering who published \"Attention is All You Need\" and brought this devastation to Google... Oh I remember, it was Google."
+ },
+ "stats": {
+  "snapshot": "2026-10-30T08:20:11+08:00",
+  "front_page_count": 90,
+  "with_numbers": 86,
+  "flagged_or_dupe": 4,
+  "top_points": {
+   "id": 50294702,
+   "title": "帕特里克·斯图尔特去世，享年 86 岁",
+   "value": 2217,
+   "comments": 453
+  },
+  "top_comments": {
+   "id": 50282454,
+   "title": "Stack Overflow 现在每月新问题不到 1000 个（685 条评论，当日最多）",
+   "value": 685
+  },
+  "second_comments": {
+   "id": 50287919,
+   "title": "DoorDash 以约 170 亿美元收购 Instacart",
+   "value": 589
+  },
+  "over_500": 6,
+  "over_300": 15,
+  "over_100": 36,
+  "show_hn": 4,
+  "total_points": 15869,
+  "total_comments": 8796,
+  "hottest_ratio": {
+   "id": 50285714,
+   "title": "古巴将跳过 2026 年 11 月 1 日的时钟调整，夏令时延续到 2027 年",
+   "value": 2.37,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
