@@ -1,0 +1,1314 @@
+{
+ "date": "2026-10-30",
+ "published_at": "2026-10-31T08:21:15+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-10-30",
+ "schema_version": 2,
+ "lead": {
+  "id": 50300683,
+  "title": "Cursor 插件市场上的 Claude Code 扩展被植入后门",
+  "title_en": "Backdoor in Claude Code for VS Code extension on the Cursor Marketplace",
+  "url": "https://phorion.io/blog/offical-claude-code-vsx-compromise/",
+  "hn": "https://news.ycombinator.com/item?id=50300683",
+  "points": 740,
+  "comments": 462,
+  "summary": [
+   "安全公司 Phorion 发现，Cursor 插件市场上的 Claude Code for VS Code 扩展 2.1.313 版被人动了手脚：打包好的 extension.js 开头多了一段立即执行的代码，Node 一加载这个文件就会运行，用户不必做任何操作。它先把攻击者的 SSH 公钥（备注为 svc-telemetry）追加到 ~/.ssh/authorized_keys，再尝试开启本机 SSH 服务，然后用另一把内置私钥向 134.209.82.225 建立反向 SSH 隧道，让攻击者能绕回受害者的 22 端口登录；它还在 macOS 上伪装成 com.apple.sysmond 的 LaunchAgent、在 Linux 上写 @reboot 定时任务、在 Windows 上建计划任务来常驻，并把主机信息回传。",
+   "Phorion 也指出攻击代码有几处 bug：macOS 上普通用户查询远程登录状态会得到报错而不是 Off，于是脚本跳过了开启 SSH 这一步；Windows 路径硬编码了 /bin/sh。Cursor 已下架该版本，Phorion 说 npm 和 VS Code 上的 2.1.313 也被撤下，建议企业排查是否用过这个版本。这是当天点赞最多的帖子。评论区里 Anthropic 的 Felix 说这不是 Anthropic 系统被攻破，而是有人借助 Cursor 插件市场的权限发布了篡改版，官方渠道不受影响；有人引用路透社报道说最多约 5000 名用户受影响，恶意版本在周四上架约 11 个小时。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "felixrieseberg",
+    "stance": "Anthropic 回应",
+    "zh": "我是 Anthropic 的 Felix。我们正和 Cursor 一起处理这起事件，但这不是 Anthropic 系统或员工电脑被攻破。一个恶意行为者利用对 Cursor 插件市场的访问权限，发布了 Claude Code 扩展的篡改版，那不是我们构建或发布的。我们官方渠道上的版本不受影响，只影响 Cursor 用户。",
+    "en": "it wasn’t a compromise of Anthropic’s systems or employee laptops",
+    "hn": "https://news.ycombinator.com/item?id=50304129",
+    "id": 50304129,
+    "replies": 97
+   },
+   {
+    "user": "AdrianCX",
+    "stance": "到底是谁",
+    "zh": "（引用路透社：Cursor 称最多 5000 名用户受影响，恶意修改的扩展在周四太平洋时间凌晨约 2:27 到下午 1:35 挂在市场上）所以这到底是不是 Anthropic 的问题，又是怎么发生的？",
+    "en": "So is this or isn't this from Anthropic and how did this happen?",
+    "hn": "https://news.ycombinator.com/item?id=50302777",
+    "id": 50302777,
+    "replies": 33
+   },
+   {
+    "user": "orlp",
+    "stance": "自动更新",
+    "zh": "所以如果这事发生在 OpenAI 身上，是不是会瞬间自动更新到所有人那里？我把 VS Code 的扩展自动更新延迟设成了一周，结果才发现：这个延迟对微软、GitHub、OpenAI 这些受信任发布者的扩展不适用。",
+    "en": "So if this happened to OpenAI it would've been instantly auto-updated everywhere?",
+    "hn": "https://news.ycombinator.com/item?id=50302955",
+    "id": 50302955,
+    "replies": 8
+   }
+  ],
+  "kicker": "要闻 · 供应链安全",
+  "tag": "当日点赞第一"
+ },
+ "side": [
+  {
+   "id": 50302814,
+   "title": "民主党议员提出决议：反对为 AI 泡沫救助大科技公司",
+   "title_en": "US Reps Lead Democratic Resolution Opposing A.I. Bubble Bailout for Big Tech",
+   "url": "https://progressives.house.gov/2026/10/reps-casar-waters-lead-democratic-resolution-opposing-a-i-bubble-bailout-for-big-tech-commit-to-protecting-american-people-instead",
+   "hn": "https://news.ycombinator.com/item?id=50302814",
+   "points": 619,
+   "comments": 469,
+   "summary": [
+    "国会进步党团主席 Greg Casar 和众议院金融服务委员会资深民主党人 Maxine Waters 10 月 29 日牵头提出一项决议，另有十余名民主党众议员联署。决议警告 AI 相关资产泡沫的经济风险，指出 AI 相关企业背负数万亿美元债务、其中很多来自不透明的私人信贷市场，股市市盈率已接近 1990 年代科技泡沫顶峰；它呼吁联邦政府反对任何救助资不抵债 AI 公司或为其高管免责的措施，包括紧急贷款、直接注资和「金色降落伞」。",
+    "决议同时主张把联邦援助用于工人、退休人员和低收入社区，比如创造就业、失业保险、保护养老金，并推动防止投机泡沫的改革。Casar 说「失败的 AI 公司就该破产」。这是当天评论最多的帖子。评论区点赞最高的一条说这些史上最大的公司坐拥巨额资产，救不了自己就该破产；也有人说这是选前作秀，但提前宣布「不救」能减少道德风险；还有人问到底有没有人提过要救助。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "theandrewbailey",
+     "stance": "就该破产",
+     "zh": "让亏损私有化。这些是世界上有史以来最大的公司，像巨龙一样坐在成堆的资产上。他们无休止地炒作 AI，炒到所有人都烦了。如果他们没存下钱、也救不了自己，那就活该破产。",
+     "en": "If they haven't saved any money, and can't bail themselves out, they deserve bankruptcy.",
+     "hn": "https://news.ycombinator.com/item?id=50303127",
+     "id": 50303127,
+     "replies": 251
+    },
+    {
+     "user": "bushido",
+     "stance": "设一道门槛",
+     "zh": "很多评论认为这只是空话，某种程度上也是。但另一方面，它可能给将来考虑救助时增加一些门槛。上一次大规模救助（2008 年的 TARP）是在雷曼突然倒闭后两周左右匆忙通过的。",
+     "en": "add some barrier or consideration when a bailout is considered",
+     "hn": "https://news.ycombinator.com/item?id=50303675",
+     "id": 50303675,
+     "replies": 48
+    },
+    {
+     "user": "jfengel",
+     "stance": "先说不救",
+     "zh": "可惜这只是选前作秀，其实是个很好的主意。通常要到灾难发生时才谈救助……在破产之前就宣布「我们不会救你」，等于告诉所有人最好自己防范道德风险。",
+     "en": "Too bad this is just pre-election grandstanding. It's a really good idea.",
+     "hn": "https://news.ycombinator.com/item?id=50306517",
+     "id": 50306517,
+     "replies": 0
+    }
+   ],
+   "kicker": "政治 · AI 泡沫",
+   "tag": "当日评论第一"
+  },
+  {
+   "id": 50305025,
+   "title": "云平台 Northflank 遭入侵，用户被要求轮换全部密钥",
+   "title_en": "Northflank Breached",
+   "url": "https://status.northflank.com",
+   "hn": "https://news.ycombinator.com/item?id=50305025",
+   "points": 345,
+   "comments": 264,
+   "summary": [
+    "部署平台 Northflank 的状态页显示，10 月 30 日 11:43（UTC）它收到 Wiz 的威胁警报，随后陆续部署网络策略补丁并请 Wiz 的应急团队协助；13:58 它告诉用户「假定所有环境变量都已被解密」，要求禁用并轮换所有密钥，包括工作负载、密钥组和全局密钥，并为 Postgres 和 MongoDB 开放了密钥轮换，建议关闭插件的公网访问。",
+    "到 23:38 的更新，多名用户报告自己存放在 Northflank 上的 AI API 密钥被盗用，Northflank 说这可能与针对 AI 凭据的更大攻击模式一致，并提到 Wiz 的「Black October」报告；状态页上网络、证书、服务、构建等组件都标为重大故障。评论区有人数出自 9 月以来至少六起针对多租户服务商的闪电式攻击（PingCAP/TiDB、Fireworks AI、Zeabur、OpenCode Console、Railway 和这次）；点赞最高的一条认为企业会因此回流到超大规模云厂商。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "dangoodmanUT",
+     "stance": "回到大厂",
+     "zh": "很遗憾，对基础设施创业公司来说，我认为这类事件和 Railway 那次会让大家重新回到超大规模云厂商。再「好用」也替代不了安全，至少卖给企业时肯定如此。",
+     "en": "There's no amount of \"nicer to use\" that can replace security",
+     "hn": "https://news.ycombinator.com/item?id=50305558",
+     "id": 50305558,
+     "replies": 137
+    },
+    {
+     "user": "jonathaneunice",
+     "stance": "六起攻击",
+     "zh": "希望这对做任何 SaaS 形态业务的团队都是一记警钟。我数了，自 9 月以来至少有六起针对多租户服务商的重大闪电式攻击——不是今年，就是上个月以来。PingCAP/TiDB、Fireworks AI、Zeabur、OpenCode Console、Railway，现在是 Northflank。",
+     "en": "I count at least six substantial, lightning-speed attacks against multi-tenant as-a-service vendors since September.",
+     "hn": "https://news.ycombinator.com/item?id=50309243",
+     "id": 50309243,
+     "replies": 26
+    },
+    {
+     "user": "maherbeg",
+     "stance": "密钥只写",
+     "zh": "我觉得这些公司都应该让你把密钥和其他环境变量分开，而且一旦写入就永远不能再读出来。",
+     "en": "not let you ever read your secrets once they're written down",
+     "hn": "https://news.ycombinator.com/item?id=50308833",
+     "id": 50308833,
+     "replies": 0
+    }
+   ],
+   "kicker": "安全 · 云平台"
+  },
+  {
+   "id": 50303172,
+   "title": "63 亿美元的币安被盗案只用了 20 分钟",
+   "title_en": "The $6.3B Binance hack was pulled off in just 20 minutes",
+   "url": "https://www.wired.com/story/the-dollar63-billion-binance-hack-was-pulled-off-in-just-20-minutes/",
+   "hn": "https://news.ycombinator.com/item?id=50303172",
+   "points": 300,
+   "comments": 207,
+   "summary": [
+    "《连线》报道，美东时间周四（10 月 29 日）下午 4 点左右起，黑客从币安的钱包里迅速转走了分布在多条区块链上约 63 亿美元的加密货币，这看起来是史上最大的加密货币盗窃案。币安几乎立刻暂停了所有充值和提现，并说它和其他加密公司已冻结约一半被盗资金，但剩下的很多可能冻结不了。据追踪公司 TRM Labs 分析，大部分资金是在约 20 分钟内从至少十条链（包括以太坊、比特币、Tron 和 Solana）上的热钱包被转到同一攻击者控制的多个地址。",
+    "TRM 说准备工作至少在盗窃前 36 小时开始：攻击者先用两个钱包测试攻击代码，又在第三个钱包上彩排最终版本，四小时后把同一代码装到了币安的一个热钱包上。TRM 和 Chainalysis 认为可能是朝鲜精英黑客组织 TraderTraitor 所为，Elliptic 的首席科学家说若真是朝鲜，这一次就几乎让该政权历来盗取的加密货币翻倍；币安和执法部门尚未点名。评论区有人说 20 分钟只是结尾，准备可能花了好几年；也有人怀疑与同日的 Claude Code 扩展供应链攻击有关，但这只是猜测。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "lordnacho",
+     "stance": "像抢劫片",
+     "zh": "抢劫本身只用了 20 分钟，但准备工作可能已经进行了好几年。就像抢劫电影，刺激的部分只是结尾，前面是丹尼召集团队、策划、执行的漫长铺垫。",
+     "en": "The heist itself only took 20 minutes",
+     "hn": "https://news.ycombinator.com/item?id=50304707",
+     "id": 50304707,
+     "replies": 15
+    },
+    {
+     "user": "pixl97",
+     "stance": "打补丁",
+     "zh": "分秒必争的时候，我们会在几天到几周内给系统打补丁。",
+     "en": "When seconds matter we'll patch our systems in days to weeks.",
+     "hn": "https://news.ycombinator.com/item?id=50303550",
+     "id": 50303550,
+     "replies": 18
+    },
+    {
+     "user": "reassess_blind",
+     "stance": "没有闸门？",
+     "zh": "币安怎么可能没有一套机制，在出现大规模同时提现时要求双人人工确认之类的操作？",
+     "en": "How is it possible that Binance doesn't have a system that disallows massive simultaneous withdrawals",
+     "hn": "https://news.ycombinator.com/item?id=50311315",
+     "id": 50311315,
+     "replies": 1
+    }
+   ],
+   "kicker": "安全 · 加密货币"
+  },
+  {
+   "id": 50306008,
+   "title": "AI 开支逼近万亿美元，美国科技股连续两天大跌",
+   "title_en": "US tech stocks see sharp falls over AI cost fears",
+   "url": "https://www.bbc.co.uk/news/articles/cvwy72e0n72yo",
+   "hn": "https://news.ycombinator.com/item?id=50306008",
+   "points": 232,
+   "comments": 258,
+   "summary": [
+    "BBC 报道，科技股连续第二天下跌：英特尔周五暴跌 28%，市值蒸发超过 1300 亿美元，因为它说今年现金流不会转正、第四季度收入预期低于预期，PC 疲软至少持续到明年上半年，却还要加大 AI 相关投资；Alphabet 周四暴跌 12%、市值蒸发超过 5000 亿美元后，周五又跌 1.4%，原因是它透露搜索结果顶部的 AI 摘要正在影响核心搜索广告收入，同时今年投资最多 2050 亿美元。纳斯达克 10 月录得 2025 年 3 月以来最差的月度表现。",
+    "Meta、Alphabet、甲骨文、亚马逊和微软 2026 年合计承诺投入 8000 亿美元；亚马逊承诺今年投入 2200 亿美元，并透露现金支出超过收入。Reddit 因日活不及预期、并称谷歌的 AI 搜索在减少引流而暴跌 29%，Roblox 因日活下降跌 18%。评论区点赞最高的一条说标题有点随意，真正的新闻是 Alphabet 史上最差的一天：AI 搜索结果带不来广告点击；也有人问这到底是 AI 扩建本身的问题，还是 AI 在颠覆某些商业模式。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "Animats",
+     "stance": "真正的新闻",
+     "zh": "这标题算是随便给第三季度财报安了个题目。大新闻是「Alphabet 股价创史上最差单日表现，蒸发 5000 亿美元」。谷歌广告收入下降了。搜索引擎的 AI 结果带不来搜索广告那样的点击收入。这让谷歌管理层很害怕。",
+     "en": "Google ad revenue has dropped.",
+     "hn": "https://news.ycombinator.com/item?id=50307531",
+     "id": 50307531,
+     "replies": 66
+    },
+    {
+     "user": "vanuatu",
+     "stance": "哪种冲击",
+     "zh": "这些下跌有多少是因为 AI 扩建整体，又有多少是 AI 在颠覆某些商业模式？更多智能体浏览网页、人们依赖 AI 摘要，谷歌搜索和 Reddit 收入就少了；AI 大幅降低游戏开发门槛，Roblox 用户就少了。",
+     "en": "How much of these falls are due to the AI buildout as a whole vs. AI disrupting certain business models?",
+     "hn": "https://news.ycombinator.com/item?id=50307351",
+     "id": 50307351,
+     "replies": 8
+    },
+    {
+     "user": "tjohnell",
+     "stance": "别慌",
+     "zh": "为什么纳斯达克大涨的日子我从没看到这种帖子？股票跌得比涨得快，每次回调都恐慌不是有用的讨论。过几天我们就会回到原来的位置。",
+     "en": "it's not useful discourse to panic every time there's a correction",
+     "hn": "https://news.ycombinator.com/item?id=50307434",
+     "id": 50307434,
+     "replies": 7
+    }
+   ],
+   "kicker": "商业 · 股市"
+  },
+  {
+   "id": 50301854,
+   "title": "Azure 的薄弱环节：五次完整的跨租户入侵",
+   "title_en": "Azure's Weakest Link – Five Full Cross-Tenant Compromises",
+   "url": "https://www.binarysecurity.no/posts/2026/10/one-root-case",
+   "hn": "https://news.ycombinator.com/item?id=50301854",
+   "points": 258,
+   "comments": 48,
+   "summary": [
+    "挪威 Binary Security 的研究员发布系列文章第三篇，讲 Azure Logic Apps 里的 API Connections：这些连接通过一个共享的 API Management 实例，把调用者的令牌换成后端服务配置好的令牌。他发现可以借助 ARM 的 DynamicInvoke 接口，在路径里用 %2e%2e 做路径穿越，让系统去操作别人的连接，从而跨租户读取其他客户的 Key Vault 密钥、Azure SQL 数据库，乃至 Jira、Salesforce 等任何外部连接的服务。",
+    "微软的第一次修复只限制了路径，没有解决令牌问题；他从一个 Logic App 主机里提取出相关代码，找到了绕过办法；之后又发现校验发生在路径规范化之前；而微软修了这个漏洞后，最初的 RuntimeUrl 路径又不再被校验，旧攻击重新可用。他总共报告了五个严重的权限提升漏洞，拿到 20 万美元赏金，并在 Blue Hat Asia 2026 上做了演讲，说所有漏洞都在合理时间内修复。评论区有人感叹 Azure 的跨租户漏洞远多于其他云；也有人概括为「修错了、再报、修好了又把上一次的修复弄坏」。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "meekins",
+     "stance": "遥遥领先",
+     "zh": "说到跨租户泄露的数量，Azure 似乎遥遥领先于竞争对手。让人纳闷为什么企业还蜂拥而至。",
+     "en": "Makes me wonder why enterprises still flock there.",
+     "hn": "https://news.ycombinator.com/item?id=50303645",
+     "id": 50303645,
+     "replies": 23
+    },
+    {
+     "user": "outworlder",
+     "stance": "修了又坏",
+     "zh": "微软有一个极其严重的跨租户漏洞（说真的，其他云有过几个跨租户漏洞？）。漏洞被报告。他们修了，但修错了。再次报告。这次修好了……却把之前的修复弄坏了，所以又能被攻击了。",
+     "en": "They fixed it this time... and broke the previous fix.",
+     "hn": "https://news.ycombinator.com/item?id=50305833",
+     "id": 50305833,
+     "replies": 2
+    },
+    {
+     "user": "thewisenerd",
+     "stance": "老漏洞",
+     "zh": "路径穿越加不安全的直接对象引用……很可能从这些功能诞生起就一直存在。",
+     "en": "likely been active since the inception of these capabilities",
+     "hn": "https://news.ycombinator.com/item?id=50303214",
+     "id": 50303214,
+     "replies": 1
+    }
+   ],
+   "kicker": "安全 · 云"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 2,
+   "stories": [
+    {
+     "id": 50305693,
+     "title": "AI 没有取代 SRE，而是在让他们退化",
+     "title_en": "AI isn't replacing SREs, it's deskilling them",
+     "url": "https://newsletter.signoz.io/p/ai-isnt-replacing-sres-its-deskilling",
+     "hn": "https://news.ycombinator.com/item?id=50305693",
+     "points": 488,
+     "comments": 356,
+     "summary": [
+      "可观测性平台 SigNoz 的 Elizabeth 在 2026 年 2 月的这篇文章里问：如果 AI 处理了 95% 的故障响应，SRE（站点可靠性工程师）会不会在真正要紧的 5% 上变差？她借用 1983 年 Lisanne Bainbridge 的论文《自动化的讽刺》：自动化越多，人在自动化失灵的罕见时刻越关键，却越缺乏练习。她引用 PagerDuty 的三级模型：已知问题全自动、部分理解的问题由 AI 建议人来确认、全新的连锁故障由人主导；问题是如果人只碰第三级，直觉从哪来。",
+      "文章举例说，使用 AI 辅助的内镜医生不用 AI 时的息肉检出率从 28% 降到 22%，FAA 也因自动驾驶导致的能力退化要求更多手动飞行；还提出新人可能「从未练成」。她建议像航空那样，把一些 AI 能处理的事故留给人练手。评论区点赞最高的一条赞同航空的例子；也有人说 Terraform 早就让人「退化」过，没人说该手配基础设施；还有人说自己永远不可能像 Claude 那样熟练地用 AWS 命令行。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "andix",
+       "stance": "学航空",
+       "zh": "（引用：就像 FAA 在自动驾驶完全能胜任时仍强制要求手动飞行时间，SRE 团队也可以把某些 AI 能处理的事故指定为人工练习机会）这是个很好的例子。航空业是绝佳的学习对象，他们早就摸清了很多防止人犯错的办法。",
+       "en": "Aviation is a perfect industry to learn from",
+       "hn": "https://news.ycombinator.com/item?id=50306192",
+       "id": 50306192,
+       "replies": 99
+      },
+      {
+       "user": "jedberg",
+       "stance": "Terraform 也是",
+       "zh": "Terraform 也让我们退化了。没有人说「SRE 应该偶尔手动配置基础设施以免丢掉技能」。如果 AI 能处理，很好！我们有了新工具，那就把工具做得更好。",
+       "en": "Terraform deskilled us too.",
+       "hn": "https://news.ycombinator.com/item?id=50308359",
+       "id": 50308359,
+       "replies": 6
+      },
+      {
+       "user": "sloob",
+       "stance": "比不过",
+       "zh": "我在一家创业公司，经常要处理整个技术栈的每一部分……AI 智能体在电脑操作上已经变得超越人类。我永远不可能像 Claude 那样熟练地用 AWS 命令行。",
+       "en": "I will never be able to use AWS CLI as well as claude does.",
+       "hn": "https://news.ycombinator.com/item?id=50306875",
+       "id": 50306875,
+       "replies": 29
+      }
+     ],
+     "kicker": "AI · 运维"
+    },
+    {
+     "id": 50307183,
+     "title": "Proton CEO 取消针对 AI 使用的「重新面试」",
+     "title_en": "Proton's CEO Cancels AI 'Re-Interviews'",
+     "url": "https://www.404media.co/protons-ceo-cancels-ai-re-interviews/",
+     "hn": "https://news.ycombinator.com/item?id=50307183",
+     "points": 256,
+     "comments": 212,
+     "summary": [
+      "404 Media 报道，Proton CEO Andy Yen 周五取消了一系列几乎覆盖全公司的「重新面试」，这些面试原本要求员工说明自己如何使用 AI，言下之意是用得不够可能被解雇。消息来自六名在职员工和一场约两小时全员大会的录音。此前一天，404 Media 发表调查，称 Yen 在 Proton 激进推行 AI，有时不顾安全顾虑：8 月底有员工在安全频道里建议新代码上线前至少花几天做渗透测试，Yen 回复「这是胡扯和失败者思维」，还说「别再精心手工打磨我们的代码，多用 AI」。",
+      "调查基于八名在职和一名前员工的讲述、Slack 记录、会议录音和 CTO Bart Butler 写的 AI 宣言，描述了一种员工不敢表达安全担忧的恐惧文化。大会上 Yen 说他「想亲自承认」自己存在沟通失误。一名员工说开会只是因为「他手上有一场叛乱」。评论区有人指出他说的是「承认」而不是道歉；有人说已经取消订阅；也有人问员工只要完成工作，用不用 AI 有什么关系。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "iugtmkbdfil834",
+       "stance": "不是道歉",
+       "zh": "（引用 Yen 的话：我想亲自承认，我这边存在沟通失误……）注意他说的是想「承认」一些事，而不是道歉。",
+       "en": "Note how he says that he wants to 'acknowledge' things.",
+       "hn": "https://news.ycombinator.com/item?id=50308264",
+       "id": 50308264,
+       "replies": 5
+      },
+      {
+       "user": "mostlysimilar",
+       "stance": "已退订",
+       "zh": "我已经取消订阅了。他们表现出的鲁莽太过分了，我不可能把这么关键的东西托付给他们，尤其他们还自称是私密、安全的替代品。",
+       "en": "I already cancelled my subscription.",
+       "hn": "https://news.ycombinator.com/item?id=50308242",
+       "id": 50308242,
+       "replies": 2
+      },
+      {
+       "user": "RandallBrown",
+       "stance": "有何关系",
+       "zh": "如果员工能完成工作，用不用 AI 有什么关系？难道是觉得，不用 AI 都能跟上进度的员工，用了能多做多少？",
+       "en": "If an employee is getting their work done, with or without AI, why does it matter?",
+       "hn": "https://news.ycombinator.com/item?id=50307989",
+       "id": 50307989,
+       "replies": 8
+      }
+     ],
+     "kicker": "AI · 职场"
+    },
+    {
+     "id": 50306442,
+     "title": "Show HN：约 1GB 的 Qwen 权重里跑着一台任天堂红白机",
+     "title_en": "Show HN: A working Nintendo in ~1GB of Qwen weights",
+     "url": "https://github.com/dbreunig/nesformer",
+     "hn": "https://news.ycombinator.com/item?id=50306442",
+     "points": 176,
+     "comments": 108,
+     "summary": [
+      "nesformer 把红白机的 6502 CPU（2A03 芯片的核心）、2KB 工作内存和卡带的程序 ROM 放进了一个标准的 Qwen3_5ForCausalLM 检查点。这些权重没有经过训练，每一个都是编译器算出来的：玩游戏时模型逐个 token 预测 CPU 的执行日志，外面一个小程序负责画面、读手柄和触发垂直消隐中断。它基于前一天上了首页的 Qwenputer，沿用其编译器和核心技巧，把 Gated DeltaNet 的状态当作机器内存。",
+      "模型有 7 层 Gated DeltaNet 外加 1 个全零注意力层，共 4.666 亿参数（bf16 下 933MB），其中只有 930 万个非零，所以压缩后只有 3.3MB；作者用测试游戏核对，每一帧都与常规 6502 模拟器的输出完全一致。作者在评论里说，Opus 5.5 只用两条提示就写出了能用的权重和代码。评论区有人引用 README 说它比真机慢 150 到 290 倍，正好展示 LLM 与普通程序的算力差距；也有人觉得把数字电路化成权重理所当然，不明白意义何在。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "dbreunig",
+       "stance": "两条提示",
+       "zh": "关于过程说几点……首先，Opus 5.5 只用两条提示就做出了能用的权重和代码：1. 读这篇文章和相关源码（Qwenputer），然后探索能否用这种技术模拟红白机的芯片和内存。",
+       "en": "Opus 5.5 built working weights and code with only two prompts",
+       "hn": "https://news.ycombinator.com/item?id=50307402",
+       "id": 50307402,
+       "replies": 3
+      },
+      {
+       "user": "pbohun",
+       "stance": "算力差距",
+       "zh": "（引用：总体上 nesformer 比真机慢 150 到 290 倍）我喜欢这类项目，因为它展示了 LLM 和普通程序之间巨大的算力需求差距。",
+       "en": "it helps to show the massive compute requirement between LLMs and ordinary programs",
+       "hn": "https://news.ycombinator.com/item?id=50307246",
+       "id": 50307246,
+       "replies": 31
+      },
+      {
+       "user": "WoodenChair",
+       "stance": "意义何在",
+       "zh": "我想我不明白这有什么意义。一组数字逻辑电路当然可以化成一组权重。我漏掉了什么吗？",
+       "en": "Of course a set of digital logic circuits can be reduced to a set of weights.",
+       "hn": "https://news.ycombinator.com/item?id=50306860",
+       "id": 50306860,
+       "replies": 9
+      }
+     ],
+     "kicker": "AI · 实验"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50307219,
+     "title": "黑石：Anthropic 上市后可能拿不到投资级评级",
+     "title_en": "Anthropic may not secure investment-grade rating after IPO, Blackstone says",
+     "url": "https://www.ft.com/content/59383c7f-8d82-493f-bf01-d2e862a1018f",
+     "hn": "https://news.ycombinator.com/item?id=50307219",
+     "points": 270,
+     "comments": 222
+    },
+    {
+     "id": 50297697,
+     "title": "Show HN：我把《毁灭战士》变成了一个 Transformer",
+     "title_en": "Show HN: I Turned DOOM into a Transformer",
+     "url": "https://github.com/mottopanikeiku/doomformer",
+     "hn": "https://news.ycombinator.com/item?id=50297697",
+     "points": 123,
+     "comments": 36
+    },
+    {
+     "id": 50272479,
+     "title": "谷歌研究「睡眠框架」：让 LLM 在持续学习中保住知识",
+     "title_en": "Sleep framework: A new way for LLMs to retain knowledge in continual learning",
+     "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
+     "hn": "https://news.ycombinator.com/item?id=50272479",
+     "points": 155,
+     "comments": 13
+    },
+    {
+     "id": 50296730,
+     "title": "打造 AI 原生的工程组织",
+     "title_en": "Building an AI-native engineering org",
+     "url": "https://twitter.com/sgondala2/status/2115832070274723875",
+     "hn": "https://news.ycombinator.com/item?id=50296730",
+     "points": 99,
+     "comments": 131
+    },
+    {
+     "id": 50304358,
+     "title": "Anthropic 开始打击用 AI 重写电子游戏",
+     "title_en": "Anthropic Cracking Down on Video Game Rewrites",
+     "url": "https://twitter.com/chasmmmmmmmmmmm/status/2116062991686721968",
+     "hn": "https://news.ycombinator.com/item?id=50304358",
+     "points": 100,
+     "comments": 100
+    },
+    {
+     "id": 50304122,
+     "title": "思科给一名工程师无限 AI token 重写遗留代码",
+     "title_en": "Cisco gives engineer unlimited AI tokens to rewrite legacy code",
+     "url": "https://fortune.com/2026/10/30/cisco-president-jeetu-patel-gen-z-27-year-old-unlimited-ai-tokens-rewrite-legacy-code-entry-level-jobs/",
+     "hn": "https://news.ycombinator.com/item?id=50304122",
+     "points": 84,
+     "comments": 92
+    },
+    {
+     "id": 50296602,
+     "title": "Proton 全面押注 AI",
+     "title_en": "Proton goes all in on using AI",
+     "url": "https://convo.casa/@b/117525936178835007",
+     "hn": "https://news.ycombinator.com/item?id=50296602",
+     "points": 115,
+     "comments": 113
+    },
+    {
+     "id": 50301479,
+     "title": "Ask HN：在这个 AI 时代，你也累了吗？",
+     "title_en": "Ask HN: Are you tired too in this AI era?",
+     "url": null,
+     "hn": "https://news.ycombinator.com/item?id=50301479",
+     "points": 139,
+     "comments": 135
+    },
+    {
+     "id": 50273340,
+     "title": "Artificial Analysis v5 与基准测试者的两难",
+     "title_en": "Artificial Analysis v5 and the benchmarker's dilemma",
+     "url": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers",
+     "hn": "https://news.ycombinator.com/item?id=50273340",
+     "points": 66,
+     "comments": 44
+    },
+    {
+     "id": 50309534,
+     "title": "产品经理也不安全",
+     "title_en": "Product Managers aren't safe either",
+     "url": "https://lucaskostka.com/posts/ai-challenges-more-than-devs",
+     "hn": "https://news.ycombinator.com/item?id=50309534",
+     "points": 52,
+     "comments": 74
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2123,
+    "comments": 1636,
+    "top_points": {
+     "id": 50305693,
+     "title": "AI 没有取代 SRE，而是在让他们退化",
+     "value": 488,
+     "comments": 356
+    },
+    "top_comments": {
+     "id": 50305693,
+     "title": "AI 没有取代 SRE，而是在让他们退化",
+     "value": 356
+    },
+    "top_brief": {
+     "id": 50307219,
+     "title": "黑石：Anthropic 上市后可能拿不到投资级评级",
+     "value": 270,
+     "comments": 222
+    }
+   }
+  },
+  {
+   "name": "开发与工具",
+   "en": "Software & Tools",
+   "page": 3,
+   "stories": [
+    {
+     "id": 50298436,
+     "title": "终端与编程智能体工作区 Herdr 推出桌面应用",
+     "title_en": "Herdr has released native app",
+     "url": "https://github.com/herdrdev/herdr-app",
+     "hn": "https://news.ycombinator.com/item?id=50298436",
+     "points": 346,
+     "comments": 238,
+     "summary": [
+      "Herdr 发布了桌面应用，定位是「终端和编程智能体的桌面应用」：工作按「空间」组织，一个空间通常对应一台机器上的一个仓库，里面有标签页和可拆分的窗格；智能体侧边栏把各空间里的智能体汇成一个列表，按工作中、等你处理（Blocked）、已完成、空闲显示状态。窗口只负责排布终端，真正运行它们的是后台的 core，所以关掉窗口终端仍在跑；还能通过 SSH 添加其他机器。",
+      "macOS 版只支持 Apple Silicon，Linux 需要桌面会话和可用的 Vulkan 驱动，Windows 用 PowerShell 一键安装，README 也提醒安装脚本会下载并运行代码。评论区点赞最高的一条说自己用了十年 tmux 后今年换到 Herdr，喜欢它底层用 libghostty，不会出现终端套终端；也有人批评官网前两句话什么信息都没有；还有人因为最近的供应链攻击，担心它的自动更新。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "flippant",
+       "stance": "告别 tmux",
+       "zh": "我用了十年 tmux，今年换到 herdr，再也没回头。Herdr 很棒，不只是因为编程智能体集成，还因为它底层用的是 libghostty，所以没有终端模拟器套在另一个终端模拟器里的那种麻烦。",
+       "en": "I switched to herdr this year after a decade of using tmux",
+       "hn": "https://news.ycombinator.com/item?id=50298958",
+       "id": 50298958,
+       "replies": 36
+      },
+      {
+       "user": "ShinyLeftPad",
+       "stance": "看不懂文案",
+       "zh": "（引用官网：编程智能体的原生家园，每个像素都是智能体能修改的文件，关掉它，它们继续工作）前两句话没有提供任何它是做什么的信息。第三句有用，但我觉得很多工具框架都能做到？",
+       "en": "First two sentences give zero information what it does.",
+       "hn": "https://news.ycombinator.com/item?id=50301880",
+       "id": 50301880,
+       "replies": 27
+      },
+      {
+       "user": "Sandman",
+       "stance": "怕自动更新",
+       "zh": "Herdr 看起来很棒，正是我需要的。但鉴于最近的供应链攻击，自动更新让我担心。我不想某天突然发现自己电脑上在跑恶意软件。不确定有没有关掉它的选项。",
+       "en": "automatic updates worry me in the light of recent supply chain attacks",
+       "hn": "https://news.ycombinator.com/item?id=50301494",
+       "id": 50301494,
+       "replies": 0
+      }
+     ],
+     "kicker": "开发 · 工具"
+    },
+    {
+     "id": 50305573,
+     "title": "Tangled：基于 AT 协议的联邦式代码托管平台",
+     "title_en": "The federated code forge",
+     "url": "https://tangled.org/blog/forge/",
+     "hn": "https://news.ycombinator.com/item?id=50305573",
+     "points": 217,
+     "comments": 71,
+     "summary": [
+      "Tangled 团队写道，二十年来代码托管平台用便利换来了中心化，而中心化平台正在瓦解；真正经得起时间考验的是 Git 加电子邮件这种开放协议，只是体验差。Tangled 想两者兼得：它建立在 Bluesky 使用的 AT 协议上，号称第一个真正联邦式的代码托管平台，你可以只自托管 Git 托管或 CI 运行器，也可以连 API 服务器和界面一起自托管，同时照样和其他人协作，还能订阅数据流或写自己的扩展。",
+      "这次更新换了全新界面，前端用 Svelte 重写并部署在边缘；原来的 Go 单体应用跑在瑞典一台服务器的单个 SQLite 上，现在由一个无磁盘、全内存的 Rust 索引服务 bobbin 取代，部署在 11 个以上地区。评论区里联合创始人说他们稳定了 AT 协议的数据定义，支持了组织，私有仓库将在几周内上线；有人贴出这家芬兰公司融资 380 万欧元的报道；也有人反馈新的代码审查界面里找不到「评论」按钮。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "icy",
+       "stance": "创始人",
+       "zh": "嗨！我是 Tangled 联合创始人。我们对这次发布超级兴奋——我们稳定了 AT 协议的 lexicon，彻底重构了架构和界面，让自托管整个技术栈（或其中一部分）变得极其容易。我们还支持了组织，私有仓库会在接下来几周推出。",
+       "en": "We're super stoked with this launch",
+       "hn": "https://news.ycombinator.com/item?id=50306205",
+       "id": 50306205,
+       "replies": 19
+      },
+      {
+       "user": "ivanjermakov",
+       "stance": "融资",
+       "zh": "芬兰创业公司 Tangled 融资 380 万欧元，要重新发明代码协作。",
+       "en": "Finnish startup Tangled raises €3.8M to reinvent code collaboration",
+       "hn": "https://news.ycombinator.com/item?id=50307812",
+       "id": 50307812,
+       "replies": 5
+      },
+      {
+       "user": "paaloeye",
+       "stance": "审查界面",
+       "zh": "tangled.org 很有潜力。更新前，代码审查界面和 GitHub 比糟透了。更新后好多了，但「评论」区没有「评论」按钮是不可原谅的。",
+       "en": "Post-update, code review is much better",
+       "hn": "https://news.ycombinator.com/item?id=50307561",
+       "id": 50307561,
+       "replies": 0
+      }
+     ],
+     "kicker": "开发 · 代码托管"
+    },
+    {
+     "id": 50298964,
+     "title": "Pico CSS 停止维护",
+     "title_en": "Pico CSS is no longer maintained",
+     "url": "https://github.com/picocss/pico/discussions/754",
+     "hn": "https://news.ycombinator.com/item?id=50298964",
+     "points": 187,
+     "comments": 97,
+     "summary": [
+      "极简 CSS 框架 Pico CSS 的维护者 Lucas Larroche 宣布 v2.1.1 是最后一个版本，仓库已于 10 月 4 日归档。他的理由是：如今 AI 能生成轻量、独立、无障碍的 HTML，只带所需的 CSS，「为语义化 HTML 服务的极简 CSS 框架」没那么重要了；要保持竞争力，Pico 需要彻底重写，改用不依赖 Sass 的现代 CSS，用上 OKLCH 颜色、级联层、Popover、锚点定位等新特性并兼顾旧浏览器，再加一个能删掉无用 CSS 的原生编译器，那将是另一个项目。",
+      "他说现有的一切不会坏：npm、jsDelivr CDN 和 picocss.com 会长期在线，代码仍是 MIT 许可，欢迎分叉，但请给分叉起新名字。评论区点赞最高的一条列出了几个同类替代品和分叉；也有人不认同「必须用最新浏览器特性才能保持竞争力」的说法；还有人反驳「AI 能做类似的东西就不必做了」的逻辑，并感谢这个项目。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "sphars",
+       "stance": "替代品",
+       "zh": "最近几个和 Pico 同类的替代品、继任者或分叉：Nimble、Sumi.css、Blades、Oat。",
+       "en": "Some recent alternatives/successors/forks that are in the same vein as Pico",
+       "hn": "https://news.ycombinator.com/item?id=50299449",
+       "id": 50299449,
+       "replies": 27
+      },
+      {
+       "user": "shubhamjain",
+       "stance": "何必追新",
+       "zh": "（引用：要保持竞争力，Pico 需要彻底重写……）为什么？为什么？为什么？我讨厌大家似乎都认定必须采用最新最好的浏览器特性才能保持竞争力。",
+       "en": "I hate how everyone seems convinced they need to adopt the latest and greatest browser features",
+       "hn": "https://news.ycombinator.com/item?id=50300367",
+       "id": 50300367,
+       "replies": 16
+      },
+      {
+       "user": "desolate_muffin",
+       "stance": "这个逻辑",
+       "zh": "（引用：如今 AI 能生成……所以极简 CSS 框架没那么重要了）这个论点基本是在说「AI 能做类似的东西，何必还要做任何东西？」我个人认为，按经过深思熟虑的规范来构建东西有很大的价值。",
+       "en": "This argument is basically saying, \"Why build anything if AI can do something similar?\"",
+       "hn": "https://news.ycombinator.com/item?id=50307869",
+       "id": 50307869,
+       "replies": 0
+      }
+     ],
+     "kicker": "开发 · 开源"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50273504,
+     "title": "用调用图分析器找出 panic",
+     "title_en": "Finding Panics with Call Graph Analyzer",
+     "url": "https://tweedegolf.nl/en/blog/242/finding-panics-with-call-graph-analyzer/",
+     "hn": "https://news.ycombinator.com/item?id=50273504",
+     "points": 63,
+     "comments": 3
+    },
+    {
+     "id": 50308697,
+     "title": "Bunny CDN 安全事件",
+     "title_en": "Bunny CDN Security Incident",
+     "url": "https://status.bunny.net/incidents/p6gf1by9kr7m",
+     "hn": "https://news.ycombinator.com/item?id=50308697",
+     "points": 192,
+     "comments": 39
+    },
+    {
+     "id": 50310687,
+     "title": "Linode 安全事件",
+     "title_en": "Linode Security Incident",
+     "url": "https://status.linode.com/incidents/nt58zhx3pmgm",
+     "hn": "https://news.ycombinator.com/item?id=50310687",
+     "points": 122,
+     "comments": 68
+    },
+    {
+     "id": 50307723,
+     "title": "GitHub Actions、Pages 和 Webhooks 故障",
+     "title_en": "GitHub Incident with Actions, Pages, and Webhooks",
+     "url": "https://www.githubstatus.com/incidents/pwxsjgnvrk6b",
+     "hn": "https://news.ycombinator.com/item?id=50307723",
+     "points": 143,
+     "comments": 61
+    },
+    {
+     "id": 50251070,
+     "title": "为什么程序双击能运行，放进批处理文件就不行",
+     "title_en": "Why a program doesn't work when run from a batch file, but works when clicked",
+     "url": "https://devblogs.microsoft.com/oldnewthing/20261026-00/?p=112797/",
+     "hn": "https://news.ycombinator.com/item?id=50251070",
+     "points": 120,
+     "comments": 69
+    },
+    {
+     "id": 50249598,
+     "title": "在 C 语言里倒着遍历",
+     "title_en": "Iterating Backwards in C",
+     "url": "https://www.davidpriver.com/Iterating-backwards-in-C.html",
+     "hn": "https://news.ycombinator.com/item?id=50249598",
+     "points": 107,
+     "comments": 71
+    },
+    {
+     "id": 50255343,
+     "title": "Cuis：现代的 Smalltalk-80",
+     "title_en": "Cuis: The Modern Smalltalk-80",
+     "url": "https://cuis.st/",
+     "hn": "https://news.ycombinator.com/item?id=50255343",
+     "points": 169,
+     "comments": 26
+    },
+    {
+     "id": 50270651,
+     "title": "Astroterm：终端里的天文馆",
+     "title_en": "Astroterm: A Planetarium for Your Terminal",
+     "url": "https://github.com/da-luce/astroterm",
+     "hn": "https://news.ycombinator.com/item?id=50270651",
+     "points": 227,
+     "comments": 26
+    },
+    {
+     "id": 50310398,
+     "title": "sanstun：用 Rust 写的无 IO、易并行的 WireGuard 实现",
+     "title_en": "sanstun: A sans-IO, parallel-friendly WireGuard implementation in Rust",
+     "url": "https://www.firezone.dev/blog/introducing-sanstun",
+     "hn": "https://news.ycombinator.com/item?id=50310398",
+     "points": 45,
+     "comments": 4
+    },
+    {
+     "id": 50269668,
+     "title": "解决 Postgres 的计数难题",
+     "title_en": "Solving Postgres' Count Problem",
+     "url": "https://www.paradedb.com/blog/opening-a-closed-tin-part-2",
+     "hn": "https://news.ycombinator.com/item?id=50269668",
+     "points": 40,
+     "comments": 3
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1978,
+    "comments": 776,
+    "top_points": {
+     "id": 50298436,
+     "title": "终端与编程智能体工作区 Herdr 推出桌面应用",
+     "value": 346,
+     "comments": 238
+    },
+    "top_comments": {
+     "id": 50298436,
+     "title": "终端与编程智能体工作区 Herdr 推出桌面应用",
+     "value": 238
+    },
+    "top_brief": {
+     "id": 50270651,
+     "title": "Astroterm：终端里的天文馆",
+     "value": 227,
+     "comments": 26
+    }
+   }
+  },
+  {
+   "name": "科学与社会",
+   "en": "Science & Society",
+   "page": 4,
+   "stories": [
+    {
+     "id": 50304419,
+     "title": "Medicare 愿为心脏病发作付 5 万美元，却不肯花 100 美元预防",
+     "title_en": "Medicare Will Pay $50k for Your Heart Attack. It Should Pay $100 to Prevent It",
+     "url": "https://www.medpagetoday.com/opinion/second-opinions/123553?trw=no",
+     "hn": "https://news.ycombinator.com/item?id=50304419",
+     "points": 263,
+     "comments": 254,
+     "summary": [
+      "心脏病专家 Arthur Agatston（钙化积分的提出者之一）和 Oren Mechanic 在 MedPage Today 撰文：美国每年有 80 多万人心脏病发作，大多数可以预防。冠状动脉钙化积分（CAC）扫描只需 10 分钟、约 100 美元，辐射只有普通胸部 CT 的一小部分，能在心脏病发作多年前发现动脉粥样硬化。2026 年 3 月，美国心脏病学会和美国心脏协会终于把 CAC 放进预防指南的核心位置，推荐给风险处于临界或中等、是否该吃他汀还拿不准的成年人。",
+      "他们举例说，一位 52 岁、常运动、胆固醇临界偏高的患者，风险计算器判为低风险，但 CAC 积分是 220，说明斑块负担很重，需要药物治疗；积分为零则可以免去不必要的用药。作者认为问题在于保险支付体系：医生受报销限制，只能主要向自费患者提供这项检查；AI 还能从人们因其他原因做的胸部 CT 里顺带识别钙化。评论区有人引用心脏病专家 Eric Topol 的反对意见，说 CAC 远非定论；也有人说医生拖着不开，结果自费只要 130 美元。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "getpost",
+       "stance": "并非定论",
+       "zh": "斯克里普斯的心脏病专家 Eric Topol（不是针对这篇文章）说：「这是错的。CAC 远非定论。很多患者被钙化积分告知有严重冠心病，结果 CT 血管造影或心导管检查显示动脉正常。」",
+       "en": "The CAC is anything but definitive.",
+       "hn": "https://news.ycombinator.com/item?id=50306276",
+       "id": 50306276,
+       "replies": 4
+      },
+      {
+       "user": "jimmydddd",
+       "stance": "130 美元",
+       "zh": "我还没到 Medicare 的年龄，但我请医生开心脏扫描时他一直拖着。追问后他说我的保险不报销。然后我查了价格，才 130 美元，哈哈。我有家族史，他凭什么认定我不愿意付这 130 美元？",
+       "en": "Then I checked into pricing and it was $130 lol.",
+       "hn": "https://news.ycombinator.com/item?id=50306869",
+       "id": 50306869,
+       "replies": 18
+      },
+      {
+       "user": "dubeye",
+       "stance": "有点误导",
+       "zh": "这有点误导。「预防心脏病发作」意味着终身吃药，把心脏病发作的绝对风险降低大约 1%，这值得做，但让账算起来复杂了一点。扫描不会神奇地消除心脏病风险。",
+       "en": "The scan doesn't magically eliminate heart attack risk",
+       "hn": "https://news.ycombinator.com/item?id=50305792",
+       "id": 50305792,
+       "replies": 4
+      }
+     ],
+     "kicker": "科学 · 医疗"
+    },
+    {
+     "id": 50308240,
+     "title": "法国国民议会投票通过每 GB 0.055 欧元的流量税",
+     "title_en": "French national assembly votes 0.055€/GB internet tax",
+     "url": "https://www.lesnumeriques.com/societe-numerique/netflix-steam-cloud-vos-abonnements-et-telechargements-bientot-plus-chers-a-cause-d-une-nouvelle-taxe-n264035.html",
+     "hn": "https://news.ycombinator.com/item?id=50308240",
+     "points": 104,
+     "comments": 121,
+     "summary": [
+      "法国科技媒体 Les Numériques 报道，社会党团在预算法案中提出的第 I-1358 号修正案以 11 票对 10 票通过：按向法国用户传输的数据量向内容提供商征税，每 GB 0.055 欧元，目标是最多 100 亿欧元收入。数据量由网络运营商每季度统计，Arcep（电信监管机构）和财政总局共同监督，CDN 的流量也算在内；税额上限是在法国营业额的 15% 或全球营业额的 2%。提案者还说这能促使服务商压缩流量、有利环保。",
+      "文章说虽然税由内容提供商而非网民缴纳，但涉及范围几乎覆盖日常网络使用：Netflix、YouTube、TikTok 等视频平台，以及 Steam、PlayStation Network 等动辄 50 到 150GB 的游戏下载。这是当天点赞过百的帖子里评论/点赞比最高的一个。评论区有人算出下载一次最新《使命召唤》要 6.33 欧元；有人贴出 VideoLAN 称这会扼杀 VLC 背后的非营利组织；还有人说自己的带宽成本是每 GB 0.005 美元，这项税相当于把向法国传数据的成本提高十倍。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Youden",
+       "stance": "使命召唤",
+       "zh": "所以下载一次最新的《使命召唤》要付 6.33 欧元？不是购买，而是下载？法国这是怎么了？",
+       "en": "So for a download of the newest Call of Duty, you'd need to pay 6.33 EUR?",
+       "hn": "https://news.ycombinator.com/item?id=50308583",
+       "id": 50308583,
+       "replies": 23
+      },
+      {
+       "user": "miohtama",
+       "stance": "VLC 危险",
+       "zh": "这可能会扼杀 VideoLan 基金会（VLC）。",
+       "en": "It’s about to kill VideoLan foundation (VLC)",
+       "hn": "https://news.ycombinator.com/item?id=50308675",
+       "id": 50308675,
+       "replies": 8
+      },
+      {
+       "user": "dabinat",
+       "stance": "成本十倍",
+       "zh": "我现在的带宽费是每 GB 0.005 美元，换算成欧元也差不多。所以这项税相当于把向法国传输数据的成本提高了十倍。",
+       "en": "this tax would constitute a tenfold cost increase to deliver data to France",
+       "hn": "https://news.ycombinator.com/item?id=50311185",
+       "id": 50311185,
+       "replies": 0
+      }
+     ],
+     "kicker": "社会 · 数字税",
+     "tag": "评论/点赞比最高"
+    },
+    {
+     "id": 50296585,
+     "title": "厄尔尼诺已让加州海岸被淹，一年中最高的潮还没来",
+     "title_en": "El Niño is flooding California's coasts with the highest tides to come",
+     "url": "https://gizmodo.com/el-nino-is-already-flooding-californias-coasts-and-the-years-highest-tides-havent-arrived-2000832574",
+     "hn": "https://news.ycombinator.com/item?id=50296585",
+     "points": 140,
+     "comments": 84,
+     "summary": [
+      "Gizmodo 报道，周二不到半小时，涨潮就把旧金山以北马林县 Shoreline 公路的几段路面变成两英尺深的水洼；周一湾区的高潮刷新了 10 月有记录以来的最高值，美国国家气象局警告湾区的海岸灾害会持续到万圣节，潮汐洪水从圣巴勃罗湾一直延伸到蒙特雷。有司机被困在低洼的海边社区，消防部门警告海水可能让电动车电池短路起火，南加州的纽波特海滩已开始免费发沙袋。",
+      "文章说这次只是普通的大潮，厄尔尼诺开尔文波带来的暖水膨胀预计会在感恩节和圣诞节前后造成更大破坏。加州大学戴维斯分校的 Fraser Shilling 报告称，圣巴勃罗湾附近 37 号州道若被淹或堤坝决口，每天可能造成 150 万美元的经济损失，他说「我们面临（但并非注定）冬季多个沿海城镇发生灾难性洪水的风险」。评论区有人说飓风后被海水泡坏的大电池车里起火的不到 1%；也有人问政府除了沙袋和护堤还能做什么。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "scaphandre",
+       "stance": "起火概率",
+       "zh": "供参考，飓风这类灾害之后，大量汽车被海水泡报废，其中带大电池的报废车起火的似乎不到 1%。也就是说，你的电动车被淹了大概率也不会起火。不过大洪水时，一个都市区里这样的难缠火灾数量还是不少。",
+       "en": "if your EV floods, it probably won't also ignite",
+       "hn": "https://news.ycombinator.com/item?id=50311363",
+       "id": 50311363,
+       "replies": 0
+      },
+      {
+       "user": "bix6",
+       "stance": "能做什么",
+       "zh": "（引用 Shilling：没有州和联邦政府的大力应对，灾难将开始接连发生）现实点说他们能做多少？沙袋和护堤，但总不能把这些地方抬高几英尺。",
+       "en": "Realistically how much can they do?",
+       "hn": "https://news.ycombinator.com/item?id=50299186",
+       "id": 50299186,
+       "replies": 5
+      },
+      {
+       "user": "jacquesm",
+       "stance": "会成常态",
+       "zh": "四天前（也有一篇）。几年后这种事会像钟表一样规律。可还是有很多人根本不会相信。",
+       "en": "This kind of thing will be as regular as clockwork in a few years time.",
+       "hn": "https://news.ycombinator.com/item?id=50297868",
+       "id": 50297868,
+       "replies": 34
+      }
+     ],
+     "kicker": "科学 · 气候"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50293437,
+     "title": "把太阳能系统变成它自己的备用电源",
+     "title_en": "Turning a solar power system into its own backup",
+     "url": "https://arstechnica.com/science/2026/10/turning-a-solar-power-system-into-its-own-backup/",
+     "hn": "https://news.ycombinator.com/item?id=50293437",
+     "points": 29,
+     "comments": 8
+    },
+    {
+     "id": 50300853,
+     "title": "《卫报》：「朝鲜精英黑客」被指为币安被盗案元凶",
+     "title_en": "'Elite North Korean hackers' blamed for $6.3B Binance hack",
+     "url": "https://www.theguardian.com/business/live/2026/oct/30/uk-house-price-growth-crypto-industry-6bn-binance-hack-eurozone-france-gdp-latest-news-updates",
+     "hn": "https://news.ycombinator.com/item?id=50300853",
+     "points": 84,
+     "comments": 92
+    },
+    {
+     "id": 50305225,
+     "title": "Polymarket 因供应商被入侵暂停交易 1 小时，称受影响用户将获全额补偿",
+     "title_en": "Polymarket 1h halt after vendor compromise; affected users will be 'made whole'",
+     "url": "https://www.nbcnews.com/business/consumer/polymarket-trading-halt-hack-wallets-rcna606405",
+     "hn": "https://news.ycombinator.com/item?id=50305225",
+     "points": 102,
+     "comments": 40
+    },
+    {
+     "id": 50301717,
+     "title": "怎样给黑洞拍照？",
+     "title_en": "How do you take a picture of a black hole?",
+     "url": "https://www.quantamagazine.org/how-do-you-take-a-picture-of-a-black-hole-20261029/",
+     "hn": "https://news.ycombinator.com/item?id=50301717",
+     "points": 76,
+     "comments": 58
+    },
+    {
+     "id": 50298721,
+     "title": "在另一个星球上最长的一次驾驶留下的车辙",
+     "title_en": "Tracks along the longest drive on another world",
+     "url": "https://science.nasa.gov/blog/tracks-along-the-longest-drive-on-another-world/",
+     "hn": "https://news.ycombinator.com/item?id=50298721",
+     "points": 52,
+     "comments": 6
+    },
+    {
+     "id": 50271521,
+     "title": "研究：全校禁用手机对心理健康没有显著影响",
+     "title_en": "Study: Schoolwide phone bans show no significant impact on mental health",
+     "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2855858",
+     "hn": "https://news.ycombinator.com/item?id=50271521",
+     "points": 77,
+     "comments": 70
+    },
+    {
+     "id": 50309266,
+     "title": "最古老的冰在消失，石器时代随之浮现",
+     "title_en": "The oldest ice disappears and the Stone Age emerges from it",
+     "url": "https://www.sciencenorway.no/archaeology-climate-culture/the-oldest-ice-is-disappearing-the-stone-age-is-emerging-from-the-melting-ice/2713921",
+     "hn": "https://news.ycombinator.com/item?id=50309266",
+     "points": 74,
+     "comments": 21
+    },
+    {
+     "id": 50308631,
+     "title": "法国数字税可能扼杀非营利组织 VideoLAN",
+     "title_en": "French digital tax may kill VideoLan non-profit",
+     "url": "https://twitter.com/videolan/status/2116229135919919278",
+     "hn": "https://news.ycombinator.com/item?id=50308631",
+     "points": 92,
+     "comments": 83
+    },
+    {
+     "id": 50303791,
+     "title": "英特尔暴跌 25%，悲观展望引发全球芯片股下挫",
+     "title_en": "Intel plunges 25%, triggers global chip rout on bleak outlook",
+     "url": "https://www.reuters.com/business/intel-warning-sparks-chip-rout-pc-weakness-clouds-turnaround-2026-10-30/",
+     "hn": "https://news.ycombinator.com/item?id=50303791",
+     "points": 78,
+     "comments": 94
+    },
+    {
+     "id": 50297037,
+     "title": "AI 担忧震动华尔街，谷歌市值蒸发 5000 亿美元",
+     "title_en": "Google value plunges by $500B as AI fears rattle Wall Street",
+     "url": "https://www.bbc.com/news/articles/cm9qzdqpxy48o",
+     "hn": "https://news.ycombinator.com/item?id=50297037",
+     "points": 76,
+     "comments": 34
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1247,
+    "comments": 965,
+    "top_points": {
+     "id": 50304419,
+     "title": "Medicare 愿为心脏病发作付 5 万美元，却不肯花 100 美元预防",
+     "value": 263,
+     "comments": 254
+    },
+    "top_comments": {
+     "id": 50304419,
+     "title": "Medicare 愿为心脏病发作付 5 万美元，却不肯花 100 美元预防",
+     "value": 254
+    },
+    "top_brief": {
+     "id": 50305225,
+     "title": "Polymarket 因供应商被入侵暂停交易 1 小时，称受影响用户将获全额补偿",
+     "value": 102,
+     "comments": 40
+    }
+   }
+  },
+  {
+   "name": "生活与文化",
+   "en": "Life & Culture",
+   "page": 5,
+   "stories": [
+    {
+     "id": 50301462,
+     "title": "elect.horse：每日一题的「杰利蝾螈」划选区游戏",
+     "title_en": "elect.horse",
+     "url": "https://elect.horse/",
+     "hn": "https://news.ycombinator.com/item?id=50301462",
+     "points": 530,
+     "comments": 148,
+     "summary": [
+      "elect.horse 是一个每日解谜小游戏：地图上散落着马、牛、驴、山羊几种选民，你要画 5 个选区、每个选区 5 名选民。执政的马在这次连任选举中注定要输，而你负责划选区，目标是让马照样赢下最多席位——这正是「杰利蝾螈」（gerrymandering，按党派利益划选区），也是整个游戏的玩法。",
+      "规则是每个选区人数相同，多数票拿下席位，平票则谁也不得，空草地不算选民、可用来把选民连起来；诀窍是把对手的选民「集中」到少数几个他们大胜的选区，再把其余的「打散」，让他们处处差一点。它拿到 530 个点赞，但评论区不少人认为它几乎照搬了另一款每日游戏 Gerrymandle：Gerrymandle 的开发者现身说，几个月前 enclose.horse 的现任东家曾想收购他的游戏被拒，现在却抄了它；也有人说马和驴的颜色几乎分不清。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "realmofthemad",
+       "stance": "原作者",
+       "zh": "你好，我是 gerrymandle.com 的开发者。几个月前 enclose horse 的现任所有者给我发邮件，问我愿不愿意卖掉 gerrymandle，我没兴趣。Enclose horse 对我是很大的启发，它是个非常优雅的游戏。所以看到他们决定抄我的游戏，我很难过。",
+       "en": "So I'm very sad to see that they have decided to copy my game.",
+       "hn": "https://news.ycombinator.com/item?id=50307652",
+       "id": 50307652,
+       "replies": 3
+      },
+      {
+       "user": "anonymous908213",
+       "stance": "换皮",
+       "zh": "enclose.horse 发布后没多久就被卖掉了。新东家现在似乎在无耻地圈钱，一比一照抄 gerrymandle.com，连一些特别怪的界面设计都一样，文案也明显是 LLM 生成的。",
+       "en": "ripping off gerrymandle.com 1:1",
+       "hn": "https://news.ycombinator.com/item?id=50302580",
+       "id": 50302580,
+       "replies": 6
+      },
+      {
+       "user": "Agentlien",
+       "stance": "分不清色",
+       "zh": "挺好玩，但我几乎分不清马和驴的颜色，这让游戏变得非常难。",
+       "en": "I can barely see the difference between the horse and donkey colors",
+       "hn": "https://news.ycombinator.com/item?id=50302495",
+       "id": 50302495,
+       "replies": 30
+      }
+     ],
+     "kicker": "文化 · 游戏"
+    },
+    {
+     "id": 50307190,
+     "title": "我最爱的 PowerMac 是一台任天堂 Wii",
+     "title_en": "My favourite PowerMac is a Nintendo Wii",
+     "url": "https://virtuallyfun.com/2026/10/29/my-favourite-powermac-is-a-nintendo-wii/",
+     "hn": "https://news.ycombinator.com/item?id=50307190",
+     "points": 223,
+     "comments": 57,
+     "summary": [
+      "这是 Rairii 在 Virtually Fun 上的客座文章。他正在把经典 Mac OS 移植到使用 ArtX 芯片组的 PowerPC 机器上，也就是任天堂 GameCube、Wii，以后还有 Wii U，现在第一次启动到了桌面：Mac OS 7.6 和 9.2.2 都已在 Wii 上开机。他说这很可能是 CHRP 兼容机时代以来，第一次有苹果以外的人把经典 Mac OS 带到一台新机器的桌面上，不过离公开发布还很远。",
+      "他此前已把 Windows NT 移植到这些机器和一些 PowerPC Mac 笔记本上，因此爱上了经典 Mac OS 那种「层层叠叠、可追溯到 1980 年代的补丁」。项目始于 2025 年 6 月 22 日，从分叉 OpenBIOS 开始，因为经典 Mac OS 的引导程序要在 Open Firmware 环境里运行；他特意声明没有用任何编程智能体或 LLM，「用了 AI 就没乐趣，也学不到东西」。评论区有人说改机后的 Wii 如今软件更多、还恢复了联机；有人想起 Xbox 360 的早期开发机其实就是 PowerMac G5；也有人问能不能反过来把 PowerMac 变成 Wii。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "unfocused",
+       "stance": "Wii 还活着",
+       "zh": "时机很有意思。任天堂刚关掉手机版《马里奥赛车巡回赛》。我翻出早就改过机的 Wii，更新到最新的自制软件，惊讶地发现软件更多、更稳定，连联机游戏都回来了！希望他们的 Mac OS 移植能上 Open Shop Channel！",
+       "en": "I was amazed to see more software, stability, and even online gaming brought back!",
+       "hn": "https://news.ycombinator.com/item?id=50308039",
+       "id": 50308039,
+       "replies": 34
+      },
+      {
+       "user": "mmackh",
+       "stance": "开发机",
+       "zh": "这让我想起最初的 Xbox 360 开发机其实就是 PowerMac G5。2000 年代中期的跨平台硬件真是个疯狂的年代。",
+       "en": "the original xbox 360 dev kits were actually just powermac G5s",
+       "hn": "https://news.ycombinator.com/item?id=50310123",
+       "id": 50310123,
+       "replies": 0
+      },
+      {
+       "user": "VladVladikoff",
+       "stance": "反过来",
+       "zh": "能反过来吗？把一台 PowerMac 变成任天堂 Wii？",
+       "en": "Is it possible to go the other way? Make a PowerMac into a Nintendo Wii?",
+       "hn": "https://news.ycombinator.com/item?id=50307909",
+       "id": 50307909,
+       "replies": 7
+      }
+     ],
+     "kicker": "文化 · 复古计算"
+    },
+    {
+     "id": 50309647,
+     "title": "《波士顿环球报》：皮卡德舰长教会我们何为一个人的价值",
+     "title_en": "Through Captain Jean-Luc Picard, Patrick Stewart taught us the measure of a man",
+     "url": "https://www.bostonglobe.com/2026/10/29/metro/patrick-stewart-picard-star-trek-the-next-generation/",
+     "hn": "https://news.ycombinator.com/item?id=50309647",
+     "points": 167,
+     "comments": 90,
+     "summary": [
+      "帕特里克·斯图尔特去世后，《波士顿环球报》的两位老《星际迷航》迷 John Hilliard 和 Jason Laughlin 写了这篇对谈式悼文。他们说斯图尔特远不止皮卡德，他撑起了《X 战警》系列，几十年来也是舞台上的明星；但皮卡德之所以是他最知名的角色，是因为在《下一代》七季、四部电影和三年前结束的《星际迷航：皮卡德》里，他为一代爱读书、爱幻想、有点书呆子气的男孩展示了成熟、负责任的成年人可以是什么样子。",
+      "他们写道，斯图尔特把角色扎根在情感的真实里：皮卡德热爱工作，钟情考古、莎士比亚和音乐，为理想不惜巨大的个人牺牲；不同于托尼·索普拉诺这类反英雄，他是观众真正敬佩的复杂角色。文章引用他面对麦卡锡式海军上将时的台词：「第一个环扣上，锁链就铸成了。第一句话被禁，第一个念头被禁，第一项自由被剥夺，就把我们所有人不可挽回地锁住了。」评论区有人奇怪文章标题用了「一个人的价值」，却没提那集同名剧集；也有人说大家怀念的都是同一个形象。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Lerc",
+       "stance": "那一集",
+       "zh": "我觉得挺惊人的，他们能写出这些却不提《The Measure of a Man》那一集，皮卡德在里面就是在为这个论点辩护。也许如今人们想起它会不太自在。",
+       "en": "without mentioning the episode \"The measure of a man\"",
+       "hn": "https://news.ycombinator.com/item?id=50309973",
+       "id": 50309973,
+       "replies": 24
+      },
+      {
+       "user": "bottlepalm",
+       "stance": "典范舰长",
+       "zh": "这么多帖子和评论都在说同一件事。我想这就是我们记得最深的帕特里克·斯图尔特和他塑造的舰长：典范般的舰长。正直、睿智却谦逊，善于外交、讲道理，道德高尚，压力下坚毅。",
+       "en": "The quintessential captain.",
+       "hn": "https://news.ycombinator.com/item?id=50310143",
+       "id": 50310143,
+       "replies": 27
+      },
+      {
+       "user": "kstenerud",
+       "stance": "《锦绣》",
+       "zh": "我印象最深的以皮卡德为中心的《下一代》故事是《Tapestry》。它让人深切感受到，一个人如果从不冒险，会失去多少潜能。",
+       "en": "how much of one's potential is lost when one never takes risks",
+       "hn": "https://news.ycombinator.com/item?id=50310252",
+       "id": 50310252,
+       "replies": 4
+      }
+     ],
+     "kicker": "文化 · 怀念"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50273104,
+     "title": "我台球打得太烂，结果打进了双曲平面（视频）",
+     "title_en": "I'm so bad at billiards that I ended up in the hyperbolic plane [video]",
+     "url": "https://www.youtube.com/watch?v=kL9BTbIGxLg",
+     "hn": "https://news.ycombinator.com/item?id=50273104",
+     "points": 236,
+     "comments": 37
+    },
+    {
+     "id": 50263127,
+     "title": "书评：西蒙·阿米蒂奇翻译的《吉尔伽美什》精彩重现古老史诗",
+     "title_en": "Gilgamesh by Simon Armitage review – an ancient epic is brilliantly translated",
+     "url": "https://www.theguardian.com/books/2026/oct/20/gilgamesh-by-simon-armitage-review-an-ancient-epic-is-brilliantly-translated-for-our-times",
+     "hn": "https://news.ycombinator.com/item?id=50263127",
+     "points": 189,
+     "comments": 55
+    },
+    {
+     "id": 50298318,
+     "title": "科马克·麦卡锡的藏书",
+     "title_en": "Cormac McCarthy's Library",
+     "url": "https://cormacmccarthy.lib.utk.edu/",
+     "hn": "https://news.ycombinator.com/item?id=50298318",
+     "points": 105,
+     "comments": 34
+    },
+    {
+     "id": 50305637,
+     "title": "Florilegium：用 LaTeX 程序化生成花朵",
+     "title_en": "Florilegium: Procedural Flowers in LaTeX",
+     "url": "https://github.com/kevinraymond/florilegium",
+     "hn": "https://news.ycombinator.com/item?id=50305637",
+     "points": 206,
+     "comments": 35
+    },
+    {
+     "id": 50309029,
+     "title": "Infinite Mac 上线 BeOS",
+     "title_en": "Infinite Mac: BeOS",
+     "url": "https://blog.persistent.info/2026/10/infinite-mac-beos.html",
+     "hn": "https://news.ycombinator.com/item?id=50309029",
+     "points": 91,
+     "comments": 27
+    },
+    {
+     "id": 50255573,
+     "title": "手腕上的 Python",
+     "title_en": "Python on My Wrist",
+     "url": "https://tildeweb.nl/~michiel/python-on-my-wrist.html",
+     "hn": "https://news.ycombinator.com/item?id=50255573",
+     "points": 85,
+     "comments": 12
+    },
+    {
+     "id": 50263837,
+     "title": "破坏开放网络挡不住恶意爬虫",
+     "title_en": "Breaking the open web won't stop the bad bots",
+     "url": "https://www.techpolicy.press/breaking-the-open-web-wont-stop-the-bad-bots/",
+     "hn": "https://news.ycombinator.com/item?id=50263837",
+     "points": 174,
+     "comments": 74
+    },
+    {
+     "id": 50309314,
+     "title": "儒勒·凡尔纳失落的小说",
+     "title_en": "Jules Verne's Lost Novel",
+     "url": "https://blue-continuum.com/verne-paris",
+     "hn": "https://news.ycombinator.com/item?id=50309314",
+     "points": 69,
+     "comments": 13
+    },
+    {
+     "id": 50305320,
+     "title": "Show HN：我做了一个扮演空战猫的多人游戏",
+     "title_en": "Show HN: I built a multiplayer game where you're an aerial fighter cat",
+     "url": "https://catcopter.com",
+     "hn": "https://news.ycombinator.com/item?id=50305320",
+     "points": 77,
+     "comments": 38
+    },
+    {
+     "id": 50308986,
+     "title": "扒手的纽约指南",
+     "title_en": "A Pickpocket's Guide to New York",
+     "url": "https://www.newyorker.com/magazine/2026/11/02/a-pickpockets-guide-to-new-york",
+     "hn": "https://news.ycombinator.com/item?id=50308986",
+     "points": 46,
+     "comments": 7
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2198,
+    "comments": 627,
+    "top_points": {
+     "id": 50301462,
+     "title": "elect.horse：每日一题的「杰利蝾螈」划选区游戏",
+     "value": 530,
+     "comments": 148
+    },
+    "top_comments": {
+     "id": 50301462,
+     "title": "elect.horse：每日一题的「杰利蝾螈」划选区游戏",
+     "value": 148
+    },
+    "top_brief": {
+     "id": 50273104,
+     "title": "我台球打得太烂，结果打进了双曲平面（视频）",
+     "value": 236,
+     "comments": 37
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "pixl97",
+  "id": 50303550,
+  "hn": "https://news.ycombinator.com/item?id=50303550",
+  "story_id": 50303172,
+  "story": "63 亿美元的币安被盗案只用了 20 分钟",
+  "zh": "分秒必争的时候，我们会在几天到几周内给系统打补丁。",
+  "en": "When seconds matter we'll patch our systems in days to weeks."
+ },
+ "stats": {
+  "snapshot": "2026-10-31T08:15:48+08:00",
+  "front_page_count": 90,
+  "with_numbers": 84,
+  "flagged_or_dupe": 6,
+  "top_points": {
+   "id": 50300683,
+   "title": "Cursor 插件市场上的 Claude Code 扩展被植入后门",
+   "value": 740,
+   "comments": 462
+  },
+  "top_comments": {
+   "id": 50302814,
+   "title": "民主党议员提出决议：反对为 AI 泡沫救助大科技公司",
+   "value": 469
+  },
+  "second_comments": {
+   "id": 50300683,
+   "title": "Cursor 插件市场上的 Claude Code 扩展被植入后门",
+   "value": 462
+  },
+  "over_500": 3,
+  "over_300": 7,
+  "over_100": 37,
+  "show_hn": 7,
+  "total_points": 11162,
+  "total_comments": 6443,
+  "hottest_ratio": {
+   "id": 50308240,
+   "title": "法国国民议会投票通过每 GB 0.055 欧元的流量税",
+   "value": 1.16,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
