@@ -1,0 +1,1313 @@
+{
+ "date": "2026-10-31",
+ "published_at": "2026-11-01T08:22:21+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-10-31",
+ "schema_version": 2,
+ "lead": {
+  "id": 50314654,
+  "title": "塞尔维亚选出了世界上「最有学问」的议会",
+  "title_en": "Serbia just elected the world's brainiest parliament",
+  "url": "https://www.science.org/content/article/serbia-just-elected-world-s-brainiest-parliament",
+  "hn": "https://news.ycombinator.com/item?id=50314654",
+  "points": 799,
+  "comments": 460,
+  "summary": [
+   "《科学》杂志报道，在 10 月 25 日的塞尔维亚议会选举中，学生运动推出的「学生名单——学生正在获胜」拿下 250 席国民议会中的 141 席，其中几十人来自学术界，超过一半拥有博士或医学博士学位：有研究星系演化的天体物理学家、参与设计机器人的电气工程师、疫情期间研发新冠药物的有机化学家，也有教育研究者、社会学家、政治学家、经济学家和医生。这场运动源于 2024 年 11 月诺维萨德火车站雨棚坍塌致 16 人死亡后的全国学生抗议；学生们自己不参选，而是推举信得过的人，除学者外还有农民、律师、艺术家、教师和一名前篮球运动员。",
+   "名单排第一的是心脏病专家 Ilija Srdanović，但他不是正式领导人，未来角色不明。他们现在要组建政府、选出总理，结束武契奇 13 年的民粹威权统治，承诺反腐、任人唯贤和法治，科研界则期待更多学术自主、更稳定的经费和独立的科学基金。这是当天点赞和评论都最多的帖子。评论区点赞最高的一条好奇没有领袖人物的组阁会怎样；有人担心博士们在陌生领域过于自信；也有人说，在他的祖国，学生推翻政府后让一位诺贝尔奖得主经济学家掌权，结果经济增长崩溃、治安堪忧。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "duke_sam",
+    "stance": "看组阁",
+    "zh": "学生名单运动能让这样一群多元的新政治人物当选，是了不起的成就。我很好奇没有领袖人物的组阁会怎么进行。大多数议会民主制默认你选的是一个人，指望党魁最后坐上那把大椅子……我真心希望他们的成功能延续到治理上。",
+    "en": "I really hope their success carries over into governance.",
+    "hn": "https://news.ycombinator.com/item?id=50314750",
+    "id": 50314750,
+    "replies": 157
+   },
+   {
+    "user": "DataDaoDe",
+    "stance": "怕自负",
+    "zh": "我对这场运动一无所知，我预见的主要危险基本上是自负：博士们会因为在自己领域的专长，对完全陌生的新领域里的政治决策过于自信，进而导致灾难性的政策。",
+    "en": "the main danger I foresee is essentially hubris",
+    "hn": "https://news.ycombinator.com/item?id=50314935",
+    "id": 50314935,
+    "replies": 47
+   },
+   {
+    "user": "rayiner",
+    "stance": "前车之鉴",
+    "zh": "希望他们能成功。在我的祖国，学生推翻了政府，让一位诺贝尔奖得主经济学家掌权。如今 GDP 增长崩了，治安形势也变得岌岌可危。",
+    "en": "put a Nobel Prize winning economist in charge",
+    "hn": "https://news.ycombinator.com/item?id=50315663",
+    "id": 50315663,
+    "replies": 21
+   }
+  ],
+  "kicker": "要闻 · 政治与科学",
+  "tag": "当日点赞、评论双第一"
+ },
+ "side": [
+  {
+   "id": 50319510,
+   "title": "HackerTube：只收录 HN 推荐视频的 YouTube",
+   "title_en": "HackerTube: YouTube built from videos recommended by HN",
+   "url": "https://karpathy.bearblog.dev/hacker-tube/",
+   "hn": "https://news.ycombinator.com/item?id=50319510",
+   "points": 563,
+   "comments": 207,
+   "summary": [
+    "Andrej Karpathy 写道，周五晚上 11 点他打开 YouTube，看到的是夸张缩略图和老套推荐堆成的一堵「烂泥墙」，于是周六上午让 Opus 5.5 做一个由 HN 推荐视频组成的 YouTube 克隆：模型下载了 HN 的全部评论，用 Sonnet 跑工作流过滤掉垃圾和低质量内容，筛出约 4 万条推荐 YouTube 视频的评论，最后得到 2007 到 2026 年间被几位 HN 用户推荐过的 6454 个视频、分属 150 个主题，再套上 YouTube 式界面、买域名、部署到 VPS，上线为 hackertube.org。",
+    "网站用视频播到 50% 处的画面代替上传者的缩略图，推荐不需要账号、状态只存在浏览器会话里，有键盘快捷键，还提供整站数据导出，方便交给自己的智能体做个人版本；他说整个过程现在只要约 2 小时。评论区点赞最高的一条说浏览它比 YouTube 轻松得多，不用时刻提防被诱导；有人惊讶一个不做个性化的推荐流比 YouTube 的「个性化」推荐还准；也有人希望加上按新旧排序。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "murm",
+     "stance": "松一口气",
+     "zh": "浏览这个和 YouTube 比真让人耳目一新，感觉不必时刻高度警惕会被诱进什么陷阱。让人想到，如果这些科技巨头不是一味为参与度和成瘾优化，互联网本可以是什么样子。",
+     "en": "it feels like I don't have to constantly be on high alert at being baited into some trap",
+     "hn": "https://news.ycombinator.com/item?id=50320462",
+     "id": 50320462,
+     "replies": 19
+    },
+    {
+     "user": "reorder9695",
+     "stance": "比算法准",
+     "zh": "这里的首页和我在 YouTube 上真正看的、想看的东西如此接近，真让我惊讶。也许不该意外，但一个不个性化的推荐流（除了基于 HN）命中率不该明显高于 YouTube 的「个性化」推荐才对。",
+     "en": "I find it amazing how close the front page of this is to what I actually watch/want to watch on YouTube.",
+     "hn": "https://news.ycombinator.com/item?id=50319961",
+     "id": 50319961,
+     "replies": 5
+    },
+    {
+     "user": "minimaxa",
+     "stance": "纯书呆子",
+     "zh": "我喜欢它的一点是：百分之百纯书呆子内容，没有偷偷摸摸的网红视频或标题党新闻。不过它确实需要一个从新到旧的排序，这很容易加。",
+     "en": "It does need a new-to-old sort though",
+     "hn": "https://news.ycombinator.com/item?id=50320482",
+     "id": 50320482,
+     "replies": 1
+    }
+   ],
+   "kicker": "AI · 个人项目"
+  },
+  {
+   "id": 50312756,
+   "title": "Tell HN：Scribd 遭入侵，支付信息可能外泄",
+   "title_en": "Tell HN: Scribd Breached",
+   "url": null,
+   "hn": "https://news.ycombinator.com/item?id=50312756",
+   "points": 335,
+   "comments": 120,
+   "summary": [
+    "一位 HN 用户贴出 10 月 26 日（周一）收到的邮件：Scribd 公司（旗下有 Scribd、Slideshare、Everand 和 Fable）通过通知合作方 Epiq 告知，有未经授权的第三方可能访问了其某个系统中的用户数据，可能涉及邮箱地址、信用卡后四位及国家、发卡机构、到期日和支付记录（不含完整卡信息）。公司说没有证据显示数据被滥用，已封堵受影响系统、终止未授权访问，通知了执法部门和数据保护机构，并请第三方安全公司加强访问控制和监控。",
+    "邮件提醒用户警惕冒充 Scribd 旗下品牌的钓鱼邮件，称公司绝不会通过邮件或短信索要用户名、密码等敏感信息。评论区有人说自己 10 月 30 日才收到同样的邮件，并指出 Scribd 10 月 1 日就在帮助中心发过安全事件说明；有人翻出 13 年前 Scribd 泄露邮箱和哈希密码的旧帖；点赞最高的一条则说，坏人可以随便尝试入侵，而想检验关键基础设施的安全研究员光是尝试就可能犯重罪。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "Buttons840",
+     "stance": "白帽难做",
+     "zh": "如果我知道有红队安全研究员在全力尝试攻破关键国家基础设施、确保它没那么容易被攻破，我会安心得多，但这大概没有发生，因为光是尝试就是重罪。坏人倒是可以随便试。",
+     "en": "it would be a felony to even try. The bad guys are free to try though.",
+     "hn": "https://news.ycombinator.com/item?id=50313252",
+     "id": 50313252,
+     "replies": 35
+    },
+    {
+     "user": "smurda",
+     "stance": "通知太慢",
+     "zh": "我几小时前（10 月 30 日）才收到同样的邮件。为什么不一次性通知所有客户，尤其涉及支付信息的时候？而且他们 10 月 1 日就在博客上发过安全事件的说明。",
+     "en": "Why not tell all customers at once, especially if payment information was involved?",
+     "hn": "https://news.ycombinator.com/item?id=50313006",
+     "id": 50313006,
+     "replies": 3
+    },
+    {
+     "user": "x______________",
+     "stance": "不是第一次",
+     "zh": "看来 Scribd 13 年前就因为同样的问题上过新闻，还有一条 archive.org 链接存着那份原始的、现已删除的公告！",
+     "en": "Seems Scribd made the news 13 years ago for the same issue",
+     "hn": "https://news.ycombinator.com/item?id=50313857",
+     "id": 50313857,
+     "replies": 0
+    }
+   ],
+   "kicker": "安全 · 数据泄露"
+  },
+  {
+   "id": 50313661,
+   "title": "Vitalik Buterin：数字极简主义",
+   "title_en": "Digital minimalism",
+   "url": "https://vitalik.eth.limo/general/2026/10/31/digital_minimalism.html",
+   "hn": "https://news.ycombinator.com/item?id=50313661",
+   "points": 303,
+   "comments": 224,
+   "summary": [
+    "以太坊联合创始人 Vitalik Buterin 写道，他多年来奉行物质上的极简，如今认为还需要「数字极简」：有意识地选择每一次使用数字技术的方式，而不是默认被吸进去。今年大部分时间他没有离开 X 这个平台，但离开了 X 的界面，改用把 X、Bluesky、Farcaster 和 Lens 合在一起的多平台客户端 Firefly，并发现自己感觉好多了；他猜主要原因是 Firefly 没有「算法」，并描述了在 X 上出于病态好奇点开拥护希特勒的推文、算法随即推来十条、一百条的循环。",
+    "他还做了 100 天手机始终开飞行模式的实验，只用 Wi-Fi、不用蜂窝网络，理由一是隐私（联网的手机就是全天候定位器，匿名 SIM 卡也挡不住 IMEI 关联和 AI 对行为模式的重建），二是心理健康；导航改用下载 OpenStreetMap 数据、本地运行的 CoMaps。文章后半部分还谈到网页应用对隐私不利，以及本地优先、借助 LLM 的应用。评论区点赞最高的一条说自己约 8 年前就停了手机套餐、至今不带手机；也有人觉得断开蜂窝网络有点过头，有家庭的人很难做到。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "lrvick",
+     "stance": "更彻底",
+     "zh": "我大约十年前就走上了同样的路，从飞行模式开始，不断删应用，直到手机无聊到很少用，大约 8 年前我干脆停掉了手机套餐。之后再也没带过手机。",
+     "en": "I canceled my cell subscription about 8 years ago",
+     "hn": "https://news.ycombinator.com/item?id=50318628",
+     "id": 50318628,
+     "replies": 6
+    },
+    {
+     "user": "advis",
+     "stance": "有点过头",
+     "zh": "我觉得这……有点太过了吧？尤其是蜂窝网络那部分。我理解远离网络的吸引力，但有家庭的人肯定很难做到，更别说会带来的诸多不便。而且换个客户端继续用 Twitter/X……这也算不上极简吧？",
+     "en": "I feel like this is... a bit too much, no? Particularly the cellular part.",
+     "hn": "https://news.ycombinator.com/item?id=50315048",
+     "id": 50315048,
+     "replies": 18
+    },
+    {
+     "user": "Shank",
+     "stance": "第三方客户端",
+     "zh": "看到 Twitter 的第三方客户端居然还在运作，真的很有意思。这怎么还可能？这看起来像是未经授权的第三方黑科技。",
+     "en": "It is really interesting to see a third-party client for Twitter still operational.",
+     "hn": "https://news.ycombinator.com/item?id=50314696",
+     "id": 50314696,
+     "replies": 3
+    }
+   ],
+   "kicker": "生活 · 数字健康"
+  },
+  {
+   "id": 50314699,
+   "title": "只需点开一个分享链接，就能接管 ChatGPT 账号",
+   "title_en": "Do the math: How we took over ChatGPT accounts",
+   "url": "https://www.parameter.ai/labs/we-found-a-gap-at-openai",
+   "hn": "https://news.ycombinator.com/item?id=50314699",
+   "points": 298,
+   "comments": 145,
+   "summary": [
+    "安全公司 Parameter 的 Mukul Goyal 写道，他们 10 月发现，可以把一个普通的 ChatGPT 公开分享链接变成在打开者已登录会话里运行的攻击者 JavaScript：攻击者发布一段恶意对话、把链接发给受害者，对方一打开，代码就以 chatgpt.com 的身份运行，能列出受害者的对话、读取从未分享过的私密对话并发到外部服务器，相当于接管账号。受害者不需要安装应用、加入项目、粘贴代码或打开开发者工具。",
+    "攻击链从两个看似无害的功能开始：能把 HTML 代码块变成小网页的 Preview（运行在另一个网址的受限框架里），以及对话里的交互式图表。图表加载的数学库 MathLive 会在主页面装一个接收屏幕键盘消息的 postMessage 监听器，却不检查发送方，还允许键盘布局带 HTML 并直接写进 innerHTML；作者再借助带 srcdoc 的 iframe 等手段一步步拿到脚本执行。OpenAI 于 10 月 26 日修复，评为 P1。评论区点赞最高的一条引用文中 OpenAI 共发了 5000 美元赏金，认为太低；也有人说文章写法让人很难看懂到底发生了什么。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "yellow_lead",
+     "stance": "赏金太低",
+     "zh": "（引用：OpenAI 确认两个前端都会拒绝报告中的消息，已修复问题，并共发放 5000 美元赏金。）这需要用户点开链接。但我仍然觉得这笔赏金非常低，别人发现了可能就不报了。",
+     "en": "But I still find this bounty very low.",
+     "hn": "https://news.ycombinator.com/item?id=50315474",
+     "id": 50315474,
+     "replies": 60
+    },
+    {
+     "user": "zahlman",
+     "stance": "看不懂",
+     "zh": "这里的写作风格让我很难跟上到底发生了什么。比如 JSONP 那一节似乎在解释 JSONP 怎么工作、它本是为绕开这类攻击而设计的，但这番解释却被当成了他们如何绕过防护的说明。",
+     "en": "Something about the writing style here makes it hard for me to follow what actually happened.",
+     "hn": "https://news.ycombinator.com/item?id=50318963",
+     "id": 50318963,
+     "replies": 5
+    },
+    {
+     "user": "6thbit",
+     "stance": "老派组合",
+     "zh": "欣赏这种逐步扩大概念验证范围的写法。我喜欢它用来达成目的的这串老派手段：postMessage、JSONP、iframe、img 标签。",
+     "en": "I like the chain of regular old school things used to achieve it",
+     "hn": "https://news.ycombinator.com/item?id=50316169",
+     "id": 50316169,
+     "replies": 0
+    }
+   ],
+   "kicker": "安全 · AI 产品"
+  },
+  {
+   "id": 50319143,
+   "title": "Linux TCP 释放后使用漏洞 CVE-2026-98432，CVSS 9.8",
+   "title_en": "TCP Use-After-Free: CVE-2026-98432 / CVSS 9.8",
+   "url": "https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf",
+   "hn": "https://news.ycombinator.com/item?id=50319143",
+   "points": 281,
+   "comments": 139,
+   "summary": [
+    "Atlas 的追踪页面汇总了 CVE-2026-98432：Linux IPv4 TCP 握手中的一个释放后使用漏洞，远程未认证的对端即可触达，内核自己的 CVE 编号机构评为 CVSS 9.8（严重），问题可追溯到 Linux 4.4。上游修复只有四行，稳定版内核 10 月 11 日和 15 日发布了 5.10.272、5.15.223、6.1.190、6.6.159、6.12.113、6.18.56、7.2.10 等修复版本。报告者是 Anthropic 的 Xinyang Ge；Anthropic 说其 Claude 模型写出了能在「带多路径 TCP 监听器的 Linux 服务器」上无需凭据以 root 执行命令的概念验证利用，但没有公开。",
+    "截至美国中部夏令时 10 月 31 日下午 5:15，Ubuntu 所有版本仍标为「易受攻击」，红帽 10 月 30 日把评级上调为严重，列出 RHEL 8、9、10 受影响但尚无修复；Debian、当前的 SUSE 企业版、Oracle UEK 和 Amazon Linux 已有修复内核。Go 安全团队说 Go 程序默认开启多路径 TCP 监听，所以利用条件比最初看起来更常见；暂时打不了补丁的，可以丢弃带 IPv4 选项的 TCP 包、关掉不用的多路径 TCP。评论区点赞最高的一条质问 Ubuntu 和 RHEL 为何还没修；有人整理笔记说多路径 TCP 并非必要条件、多数 ISP 路由器会丢弃带 IP 选项的包；还有人问家用 Linux 和路由器怎么办。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "swinglock",
+     "stance": "发行版呢",
+     "zh": "Ubuntu 和 RHEL 怎么还没修好？没有几个操作系统比它们更标榜适合做服务器了。他们在干什么？",
+     "en": "How are Ubuntu and RHEL not fixed?",
+     "hn": "https://news.ycombinator.com/item?id=50319570",
+     "id": 50319570,
+     "replies": 21
+    },
+    {
+     "user": "peanut-walrus",
+     "stance": "几点笔记",
+     "zh": "我整理的几点：多路径 TCP 不是必要条件，这是一个通用的释放后使用漏洞；通过互联网利用不太可能，大多数 ISP 路由器会丢弃带 IP 选项字段的包；至少按红帽的说法，自己丢弃带 IP 选项的包有帮助，但不是完整的缓解措施；成功利用需要多个 CPU 核心处理数据包。",
+     "en": "MPTCP is not a requirement, it is a generic use-after-free.",
+     "hn": "https://news.ycombinator.com/item?id=50319726",
+     "id": 50319726,
+     "replies": 4
+    },
+    {
+     "user": "gadtfly",
+     "stance": "桌面和路由器",
+     "zh": "大家都在说服务器，那典型配置的桌面 Linux 呢？家用调制解调器和路由器呢？各种物联网垃圾呢？",
+     "en": "what about desktop Linux in typical setups?",
+     "hn": "https://news.ycombinator.com/item?id=50319761",
+     "id": 50319761,
+     "replies": 9
+    }
+   ],
+   "kicker": "安全 · Linux 内核"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 2,
+   "stories": [
+    {
+     "id": 50316531,
+     "title": "信息窃取木马让大模型给受害者「估价」",
+     "title_en": "Malware uses LLMs to rank victims by how much they're worth",
+     "url": "https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer/",
+     "hn": "https://news.ycombinator.com/item?id=50316531",
+     "points": 229,
+     "comments": 126,
+     "summary": [
+      "思科 Talos 的 Ryan Fetterman 分析了一款自称 VOLTA-AUTODOXER 的 Windows 信息窃取木马：它在偷走浏览器密码、Cookie、支付卡、加密钱包助记词，Discord、Telegram、Steam、Roblox 会话，微软 OAuth 令牌和 SSH、云服务密钥后，会把受害者整理成一份结构化证据包，包括地理位置和住址、雇主、推测的出生年份、卡号后四位、Slack 工作区、文档作者信息和 Roblox 账号估值，还用偷来的会话去 Gmail 搜购物收据来印证住址、拉取 UberEats 和 DoorDash 的订单记录。",
+      "然后它把证据包发到 OpenRouter，系统提示要求模型扮演「起草目标评估的法证情报分析师」，输出里要有「他们值多少钱」（按变现价值分高中低档排列）和「他们的安全习惯」等部分；默认模型是 anthropic/claude-opus-4.6，若回复出现「I can't」之类的拒绝字样，就依次换到 kimi-k2 和 gemini-2.5-flash，温度设为 0.2。Talos 说它会自删，也没有攻击者自有的基础设施。评论区点赞最高的一条说这类东西让人睡不着，各种自动更新的工具每月推送上万次代码改动，一次被投毒的更新就可能全盘皆输；有人指出在受害者机器上跑会暴露 OpenRouter 密钥；还有人调侃「终于，穷有穷的好处」。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "akersten",
+       "stance": "睡不着",
+       "zh": "这种东西让我夜里睡不着。Claude、ArtCraft 和大量自动下载更新的工具，每月滚动推出上万次代码改动。只要有一次被攻破的更新把这家伙塞进来，基本就全完了。",
+       "en": "If one compromised update snuck this guy in, it's kind of game over.",
+       "hn": "https://news.ycombinator.com/item?id=50317572",
+       "id": 50317572,
+       "replies": 87
+      },
+      {
+       "user": "goatsi",
+       "stance": "暴露密钥",
+       "zh": "把这一步放在受害者机器上运行（暴露 OpenRouter 密钥）而不是放在攻击者的基础设施上，是个奇怪的选择。我猜这样能让买家用起来极其简单，只需选一个 Telegram 频道来接收日志。",
+       "en": "It's an odd choice to run this on the victim's machine (exposing the open router key)",
+       "hn": "https://news.ycombinator.com/item?id=50319395",
+       "id": 50319395,
+       "replies": 0
+      },
+      {
+       "user": "steve1977",
+       "stance": "穷的好处",
+       "zh": "哈，我穷终于有回报了！",
+       "en": "Ha, finally me being poor pays off!",
+       "hn": "https://news.ycombinator.com/item?id=50318462",
+       "id": 50318462,
+       "replies": 1
+      }
+     ],
+     "kicker": "AI · 网络犯罪"
+    },
+    {
+     "id": 50318871,
+     "title": "GPT-5.6 Sol 打通了和平模式的《异星工厂》",
+     "title_en": "GPT-5.6 Sol can beat Factorio on peaceful mode",
+     "url": "https://ryanmadden.net/gpt-56-beats-factorio/",
+     "hn": "https://news.ycombinator.com/item?id=50318871",
+     "points": 153,
+     "comments": 168,
+     "summary": [
+      "Ryan Madden 让在 Codex 里以低思考档运行的 GPT-5.6 Sol 打通了一局和平模式（没有虫子）的《异星工厂》（Factorio），游戏内用时 13.5 小时。模型通过一个小型 Python 库操作游戏，这个库会施加人类玩家在图形界面里同样受到的限制，比如角色的够取范围和战争迷雾。他原本打算在蓝瓶科研后停止，但 Sol 表现超出预期，于是一直跑了下去。",
+      "他也说，预想中的扩张问题来得比蓝瓶阶段晚，但确实出现了：火箭发射是靠 Sol 大量「手动」在工厂各区之间来回搬运物资、弥补后期没能把某些生产系统连起来才完成的；不过比起完全不会用传送带的 GPT-5.5 已有进步，他认为《异星工厂》像编程一样、却更容易让旁观者看懂模型能力。评论区有人笑称「机器人：和我们一样」；有人说它没理解游戏的核心玩法，即把产出放上传送带送到下一道工序；也有人指出和平模式让反应速度无关紧要，而且模型读过所有攻略。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "mwt",
+       "stance": "和我们一样",
+       "zh": "（引用：火箭发射是靠 Sol 大量「手动」搬运物资、弥补后期生产系统没连起来的失败才完成的。）机器人：和我们一样！",
+       "en": "Robots: they're just like us!",
+       "hn": "https://news.ycombinator.com/item?id=50319162",
+       "id": 50319162,
+       "replies": 27
+      },
+      {
+       "user": "fasterik",
+       "stance": "不会用传送带",
+       "zh": "它似乎不理解《异星工厂》的核心机制，也就是把产出放到传送带上、送去别的输入口。它在少数地方这样做了，但大部分东西都是放进箱子，由角色搬来搬去。",
+       "en": "It doesn't seem to understand the core mechanic of Factorio",
+       "hn": "https://news.ycombinator.com/item?id=50319387",
+       "id": 50319387,
+       "replies": 9
+      },
+      {
+       "user": "program_whiz",
+       "stance": "并不公平",
+       "zh": "这类演示的局限在于：一、和平模式让反应时间不再是因素；二、这些模型读过、也能查到这个游戏所有公开的攻略和视频。大多数人，尤其第一次玩时，是从零学习游戏系统，再通过试错摸出策略。",
+       "en": "These models have read and have access to every guide and video ever published on the subject.",
+       "hn": "https://news.ycombinator.com/item?id=50319877",
+       "id": 50319877,
+       "replies": 5
+      }
+     ],
+     "kicker": "AI · 游戏"
+    },
+    {
+     "id": 50315226,
+     "title": "Prospero：一个省资源的 C++ 编程智能体框架",
+     "title_en": "Prospero: A new coding harness for a more civilized age",
+     "url": "https://nullprogram.com/blog/2026/10/31/",
+     "hn": "https://news.ycombinator.com/item?id=50315226",
+     "points": 180,
+     "comments": 118,
+     "summary": [
+      "nullprogram 博客的作者写道，他着迷本地 LLM 已有两年，如今较好的开源权重模型已足以处理较简单的编程任务，但现有的编程智能体框架大多用网页技术栈写、吃掉大量内存，而「说到底，编程框架基本就是把 curl 粘到 popen() 上」。于是他自己写了 Prospero：用他自己的 C++ 风格和 Dear ImGui 停靠式界面，资源占用比其他框架少约两个数量级。",
+      "它不内置模型提供方，要自己接 llama.cpp、公司内部模型、OpenRouter、Anthropic 或 OpenAI 的 API（不能用 Claude 订阅）；支持子智能体并互相通信，能通过 SSH 或 WSL 把无界面的引擎部署到其他主机，界面在本机连上去，断开后引擎还能继续跑；模型支持视觉时还能看桌面、点击输入来测试图形程序。配置是 INI 文件，可以通过 URL 引入共享配置。评论区有人说很高兴看到图形界面的编程智能体；有人调侃要不是 Claude 订阅补贴得离谱，有很多酷框架可用；也有人不认同它「永不无限等待」的设计原则。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "brainless",
+       "stance": "要 GUI",
+       "zh": "很高兴看到图形界面的编程智能体。我一直用终端界面的智能体，但自己在做一个图形界面的。Claude Code、Codex、opencode 等我都用，但我不喜欢它们的开发体验和交互。",
+       "en": "Nice to see a gui coding agent.",
+       "hn": "https://news.ycombinator.com/item?id=50316615",
+       "id": 50316615,
+       "replies": 14
+      },
+      {
+       "user": "bensyverson",
+       "stance": "订阅太香",
+       "zh": "要不是我有一份补贴得离谱的 Claude 订阅，有好多很酷的框架可以用。",
+       "en": "if I didn't have an outrageously subsidized Claude subscription",
+       "hn": "https://news.ycombinator.com/item?id=50316357",
+       "id": 50316357,
+       "replies": 15
+      },
+      {
+       "user": "x3haloed",
+       "stance": "太有主见",
+       "zh": "好吧，我非常喜欢这个概念，尤其喜欢它高效、无界面、可以挂接 GUI。但我不喜欢它这么有主见：「Prospero 的首要设计原则：永不无限等待，每个操作都有截止时间。」我尊重这个观点，但我不认同，所以围绕它打造的整个框架对我没帮助。",
+       "en": "I respect that opinion, but I don't share it",
+       "hn": "https://news.ycombinator.com/item?id=50318391",
+       "id": 50318391,
+       "replies": 0
+      }
+     ],
+     "kicker": "AI · 编程工具"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50290652,
+     "title": "AI、Lean 与形式化验证的未来：对话 Lean 作者 Leo de Moura",
+     "title_en": "AI, Lean, and the Future of Formal Verification, with Lean Creator Leo de Moura",
+     "url": "https://thedataexchange.media/leo-de-moura-lean-aws/",
+     "hn": "https://news.ycombinator.com/item?id=50290652",
+     "points": 188,
+     "comments": 43
+    },
+    {
+     "id": 50319358,
+     "title": "Anthropic 封禁任何涉及训练更大模型的用户",
+     "title_en": "Anthropic blocks users for anything touching training larger models",
+     "url": "https://twitter.com/jiahaoshao1/status/2116475922190922088",
+     "hn": "https://news.ycombinator.com/item?id=50319358",
+     "points": 157,
+     "comments": 60
+    },
+    {
+     "id": 50312922,
+     "title": "OpenAI 融资不到 300 亿美元目标的一半",
+     "title_en": "OpenAI raises less than half of $30B target",
+     "url": "https://www.wsj.com/tech/ai/openai-raises-less-than-half-of-30-billion-target-in-latest-round-91aecdc5",
+     "hn": "https://news.ycombinator.com/item?id=50312922",
+     "points": 181,
+     "comments": 186
+    },
+    {
+     "id": 50318401,
+     "title": "生成式 AI 对批判性思维的影响：一项自我报告研究（2025）",
+     "title_en": "The Impact of Generative AI on Critical Thinking: Self-Reported (2025)",
+     "url": "https://dl.acm.org/doi/full/10.1145/3706598.3713778",
+     "hn": "https://news.ycombinator.com/item?id=50318401",
+     "points": 73,
+     "comments": 49
+    },
+    {
+     "id": 50311311,
+     "title": "Anthropic 上市后预计会被信用评级机构评为「垃圾级」",
+     "title_en": "Anthropic to receive high 'junk' rating from credit agencies following IPO",
+     "url": "https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/",
+     "hn": "https://news.ycombinator.com/item?id=50311311",
+     "points": 99,
+     "comments": 75
+    },
+    {
+     "id": 50320255,
+     "title": "Anthropic 采取措施阻止 Claude 逆向工程电子游戏",
+     "title_en": "Anthropic takes steps to block Claude from reverse-engineering video games",
+     "url": "https://mashable.com/tech/anthropic-takes-steps-to-block-video-game-cloning-and-reverse-engineering",
+     "hn": "https://news.ycombinator.com/item?id=50320255",
+     "points": 89,
+     "comments": 61
+    },
+    {
+     "id": 50315574,
+     "title": "为什么 Anthropic 的招股文件让科技股暴跌",
+     "title_en": "Why Anthropic's filing crushed tech stocks",
+     "url": "https://www.thebignewsletter.com/p/why-anthropics-filing-crushed-tech",
+     "hn": "https://news.ycombinator.com/item?id=50315574",
+     "points": 49,
+     "comments": 75
+    },
+    {
+     "id": 50310431,
+     "title": "AI 烧钱担忧引发科技股抛售，华尔街大幅收跌",
+     "title_en": "Wall Street closes sharply lower as AI cash burn fears spark tech selloff",
+     "url": "https://www.reuters.com/business/nasdaq-futures-tumble-amazon-intel-results-deepen-ai-spending-woes-2026-10-30/",
+     "hn": "https://news.ycombinator.com/item?id=50310431",
+     "points": 69,
+     "comments": 15
+    },
+    {
+     "id": 50315782,
+     "title": "Show HN：一个住在引导扇区里的语言模型",
+     "title_en": "Show HN: A language model that lives in a boot sector",
+     "url": "https://github.com/kerlenton/bootgpt",
+     "hn": "https://news.ycombinator.com/item?id=50315782",
+     "points": 47,
+     "comments": 0
+    },
+    {
+     "id": 50318442,
+     "title": "我用演示场景作品对一个模型做了后训练",
+     "title_en": "I post trained a model on Demoscenes",
+     "url": "https://datavorous.com/writing/demoscener/",
+     "hn": "https://news.ycombinator.com/item?id=50318442",
+     "points": 45,
+     "comments": 33
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1559,
+    "comments": 1009,
+    "top_points": {
+     "id": 50316531,
+     "title": "信息窃取木马让大模型给受害者「估价」",
+     "value": 229,
+     "comments": 126
+    },
+    "top_comments": {
+     "id": 50312922,
+     "title": "OpenAI 融资不到 300 亿美元目标的一半",
+     "value": 186
+    },
+    "top_brief": {
+     "id": 50290652,
+     "title": "AI、Lean 与形式化验证的未来：对话 Lean 作者 Leo de Moura",
+     "value": 188,
+     "comments": 43
+    }
+   }
+  },
+  {
+   "name": "开发与安全",
+   "en": "Software & Security",
+   "page": 3,
+   "stories": [
+    {
+     "id": 50277379,
+     "title": "不用无头浏览器的 Cloudflare Turnstile 破解库",
+     "title_en": "Cloudflare Turnstile solver library (no headless browser required)",
+     "url": "https://github.com/chris124567/cfsolve",
+     "hn": "https://news.ycombinator.com/item?id=50277379",
+     "points": 302,
+     "comments": 104,
+     "summary": [
+      "cfsolve 是一个 Rust 库和命令行工具，不用无头浏览器就能解开 Cloudflare 的 Turnstile 验证组件和质询页面，返回 Turnstile 令牌或 cf_clearance Cookie。它按配置文件冒充特定浏览器，自带一个 iPhone 版 Safari 的配置，配置里引用了录制好的浏览器检查应答；README 说制作这些文件需要一些手工（或 AI）功夫，可以在真浏览器里过质询时挂上它的抓包代理，记录发给 Cloudflare 的解码后数据。目前只支持 Safari 和 Chrome（Chromium）类型的配置。",
+      "作者在评论区说，他几天前提交过，被放进「第二次机会」池后才上了首页；有用户反馈用欧洲代理解不开、用美国代理可以，Cloudflare 可能对不同地区下发不同版本，他会尽快修。评论区点赞最高的一条提醒别这么公开地去捅马蜂窝，只会加速对抗升级；有人说这就像 yt-dlp，是和 Cloudflare 的持续赛跑，所以并不可靠；还有人问绕过 Turnstile 有什么法律后果。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "costco",
+       "stance": "作者",
+       "zh": "我是作者。几天前提交过，似乎被加进了第二次机会池，所以现在上了首页。另外，有用户报告这个破解器用欧洲代理不行、用美国代理可以……所以他们可能对不同地区下发不同版本。我会尽快修。",
+       "en": "this solver did not work for them with European proxies but did with US proxies",
+       "hn": "https://news.ycombinator.com/item?id=50311942",
+       "id": 50311942,
+       "replies": 8
+      },
+      {
+       "user": "userbinator",
+       "stance": "别捅马蜂窝",
+       "zh": "「隔墙有耳。」我个人会小心，不要这么公开地去捅这只熊。这只会加速对抗升级，让我们这些受过 User-Agent 歧视、自己找到绕过办法的人更难过。",
+       "en": "Personally I would be careful about poking this bear so publicly.",
+       "hn": "https://news.ycombinator.com/item?id=50313540",
+       "id": 50313540,
+       "replies": 22
+      },
+      {
+       "user": "paaloeye",
+       "stance": "像 yt-dlp",
+       "zh": "不管好坏，它就像 yt-dlp：和 CF 的持续赛跑，所以并不可靠。这也许是好事。",
+       "en": "constant race against CF, so it's not reliable",
+       "hn": "https://news.ycombinator.com/item?id=50312105",
+       "id": 50312105,
+       "replies": 14
+      }
+     ],
+     "kicker": "开发 · 反爬"
+    },
+    {
+     "id": 50314666,
+     "title": "Signal 分支 Molly 三个月没更新，仍有已修复的漏洞",
+     "title_en": "Molly (Signal fork) has not been updated since 3 months and is vulnerable",
+     "url": "https://piefed.world/post/1503394",
+     "hn": "https://news.ycombinator.com/item?id=50314666",
+     "points": 294,
+     "comments": 172,
+     "summary": [
+      "PieFed 上一篇「你应该知道」帖子说，Signal 的第三方分支 Molly 最新版本还停在 7 月 31 日的 v8.19.2-4，含有主线 Signal 已修复的漏洞，例如 10 月披露的最新漏洞已在 Signal 8.27.1 修复，而 Molly 仍受影响；发帖人建议先改用主线 Signal、删掉 Molly，直到它恢复正常更新。原帖评论里，有人说用 Molly 主要是为了 UnifiedPush（不依赖谷歌服务的推送），也有人是为了能从 F-Droid 安装和更新。",
+      "HN 评论区点赞最高的一条说，有时感觉 Signal 讨厌不是普通用户的人，UnifiedPush 和无谷歌版本明明很容易做却不肯做；另一派认为这恰好说明了 Signal 为什么不想要第三方客户端；有人澄清 Signal 最近只有一个 CVE，能让攻击者在挂断后保持音视频流，并不会泄露聊天内容；还有维护 Molly 分支 Polly 的开发者说，已发布一个包含 RingRTC 挂断修复和吊销八个被攻破的 eMudhra TLS 中间证书的临时版本。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "ada-h00k",
+       "stance": "嫌弃极客",
+       "zh": "有时我感觉 Signal 讨厌那些不是彻底普通用户的人。在 Molly 上完美运行的 UnifiedPush，常规客户端很容易就能实现。他们也很容易提供一个无谷歌版本，给 F-Droid 或只是不想和谷歌有任何关系的人。但他们就是拒绝。",
+       "en": "Sometimes I get the feeling that Signal hates users who aren't total normies.",
+       "hn": "https://news.ycombinator.com/item?id=50315322",
+       "id": 50315322,
+       "replies": 103
+      },
+      {
+       "user": "palata",
+       "stance": "务实之选",
+       "zh": "这完美解释了 Signal 为什么不想要第三方客户端。对喷子们说一句：我不是说这很完美，理想世界里我们可以有安全的第三方客户端。我只是说这很务实：在我们的世界里，没有。",
+       "en": "It explains perfectly why Signal does not want third-party clients.",
+       "hn": "https://news.ycombinator.com/item?id=50316514",
+       "id": 50316514,
+       "replies": 10
+      },
+      {
+       "user": "markasoftware",
+       "stance": "没那么严重",
+       "zh": "Signal 最近只有一个 CVE，它能让攻击者在你挂断后仍保持音频或视频流开着。它不会泄露比如你和其他人的聊天。",
+       "en": "Signal only has one recent CVE",
+       "hn": "https://news.ycombinator.com/item?id=50318476",
+       "id": 50318476,
+       "replies": 3
+      }
+     ],
+     "kicker": "安全 · 通讯软件"
+    },
+    {
+     "id": 50316100,
+     "title": "Jepsen 测试 ParticleDB 1.1.4：发现 96 个问题",
+     "title_en": "Jepsen: ParticleDB 1.1.4",
+     "url": "https://jepsen.io/analyses/particledb-1.1.4",
+     "hn": "https://news.ycombinator.com/item?id=50316100",
+     "points": 178,
+     "comments": 95,
+     "summary": [
+      "Jepsen 的 Kyle Kingsbury 测试了 ParticleDB，这是 Orkes 公司为其工作流编排平台 Conductor 用 Rust 从头写的多模型数据库，面向 AI 工作负载，号称兼容 Postgres、比 Postgres 快几个数量级且同样安全，主页还称有 TLA+ 形式化证明，但合作期间并没有任何 TLA+ 规格。测试覆盖 1.1.4 到 1.1.18.11.rc-22，共发现 96 个问题，从崩溃、死锁、丢数据，到删不掉的半隐形行、WHERE 4 = 5、被删的表以扭曲形态重现、列错乱、字符串变成整数，大多只需单服务器、单客户端、不注入故障就能触发。",
+      "到 1.1.18.11.rc-22 时除十个外都看似已修复，但默认的 occ 事务模式在正常运行中仍会丢失已提交的写入，最强的 serializable 设置下也仍有内部异常和丢失更新。报告说，鉴于错误的严重程度和产生它们的过程，Jepsen 建议用户停止继续部署 ParticleDB、尽快迁移到其他数据库；Orkes 称新发布的 1.1.19-rc.13 解决了所有剩余问题，这项研究由 Orkes 出资。评论区点赞最高的一条直呼「残暴」；有评论猜它是 AI 写出来的（报告本身没这么说）；antirez 说如今的智能体这么强，应该先自己把低垂的果子摘了再请人审查。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "the_duke",
+       "stance": "残暴",
+       "zh": "残暴！（引用：ParticleDB 1.1.4 号称兼容 Postgres……我们发现的却是一座混乱图书馆；它在几乎所有我们能测量的方面都频繁出现深刻的事务异常，我们经常观察到已提交写入丢失、内部一致性被破坏……）",
+       "en": "Brutal!",
+       "hn": "https://news.ycombinator.com/item?id=50318160",
+       "id": 50318160,
+       "replies": 34
+      },
+      {
+       "user": "mxey",
+       "stance": "为什么不先测",
+       "zh": "糟糕得离谱。对一个氛围编程写出来的数据库来说不意外，但他们为什么先请 Kyle 来测，而不是自己先做任何测试？",
+       "en": "why did they hire Kyle for a test, instead of first doing ANY testing themselves?",
+       "hn": "https://news.ycombinator.com/item?id=50318385",
+       "id": 50318385,
+       "replies": 3
+      },
+      {
+       "user": "antirez",
+       "stance": "先自查",
+       "zh": "想象一下，还没用今天这些强大得惊人的智能体检查完所有低垂的果子，就先请人审查。以我们现在的水平，你大概可以做到极高程度的自动化找 bug，在内部完成整个测试。",
+       "en": "Imagine asking for a review before checking with the brutally powerful agents we have today all the low hanging fruits.",
+       "hn": "https://news.ycombinator.com/item?id=50318762",
+       "id": 50318762,
+       "replies": 2
+      }
+     ],
+     "kicker": "开发 · 数据库"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50314085,
+     "title": "GCC 如何把 switch 语句降级为机器码",
+     "title_en": "Switch Lowering in GCC",
+     "url": "https://xoranth.net/gcc-switch/",
+     "hn": "https://news.ycombinator.com/item?id=50314085",
+     "points": 196,
+     "comments": 38
+    },
+    {
+     "id": 50318720,
+     "title": "笨蛋，关键是内存延迟",
+     "title_en": "It's the Memory Latency, Stupid",
+     "url": "https://pivotlake.io/blog/its-the-memory-latency-stupid/",
+     "hn": "https://news.ycombinator.com/item?id=50318720",
+     "points": 105,
+     "comments": 34
+    },
+    {
+     "id": 50271052,
+     "title": "读和写的不对称，比你以为的更严重",
+     "title_en": "Reading and writing are less symmetric than you (probably) think",
+     "url": "https://fgiesen.wordpress.com/2015/10/25/reading-and-writing-are-less-symmetric-than-you-probably-think/",
+     "hn": "https://news.ycombinator.com/item?id=50271052",
+     "points": 75,
+     "comments": 22
+    },
+    {
+     "id": 50276613,
+     "title": "用 Cloudflare Queues 做双缓冲",
+     "title_en": "Double Buffering with Cloudflare Queues",
+     "url": "https://bellone.com/technical/double-buffering-with-cloudflare-queues",
+     "hn": "https://news.ycombinator.com/item?id=50276613",
+     "points": 56,
+     "comments": 8
+    },
+    {
+     "id": 50300902,
+     "title": "Show HN：Ghostman，快速、键盘驱动的终端 API 客户端和 Webhook 检查器",
+     "title_en": "Show HN: Ghostman – A fast, keyboard-driven TUI API client and webhook inspector",
+     "url": "https://github.com/4yk5/Ghostman",
+     "hn": "https://news.ycombinator.com/item?id=50300902",
+     "points": 51,
+     "comments": 27
+    },
+    {
+     "id": 50274186,
+     "title": "Redox：环形缓冲区项目总结",
+     "title_en": "Redox: Ring Buffers Project Summary",
+     "url": "https://www.redox-os.org/news/nlnet-rb-summary/",
+     "hn": "https://news.ycombinator.com/item?id=50274186",
+     "points": 54,
+     "comments": 11
+    },
+    {
+     "id": 50297068,
+     "title": "None 的是是非非：Python 里的哨兵值",
+     "title_en": "Much Ado About None: Sentinel Values in Python",
+     "url": "https://florianwilhelm.info/2026/10/sentinel_values/",
+     "hn": "https://news.ycombinator.com/item?id=50297068",
+     "points": 40,
+     "comments": 27
+    },
+    {
+     "id": 50291812,
+     "title": "Show HN：我为 ESP32 微控制器重做了 Kubernetes",
+     "title_en": "Show HN: I rebuilt Kubernetes for ESP32 microcontrollers",
+     "url": "https://github.com/arterialist/kube32",
+     "hn": "https://news.ycombinator.com/item?id=50291812",
+     "points": 52,
+     "comments": 16
+    },
+    {
+     "id": 50320003,
+     "title": "通用桌面环境 CDE 现已开源",
+     "title_en": "Common Desktop Environment available now as open-source",
+     "url": "https://sourceforge.net/projects/cdesktopenv/",
+     "hn": "https://news.ycombinator.com/item?id=50320003",
+     "points": 21,
+     "comments": 11
+    },
+    {
+     "id": 50317534,
+     "title": "Enlightenment 0.28 发布，带来大量改进",
+     "title_en": "Enlightenment 0.28 Released with Many Improvements",
+     "url": "https://www.phoronix.com/news/Enlightenment-0.28",
+     "hn": "https://news.ycombinator.com/item?id=50317534",
+     "points": 41,
+     "comments": 21
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1465,
+    "comments": 586,
+    "top_points": {
+     "id": 50277379,
+     "title": "不用无头浏览器的 Cloudflare Turnstile 破解库",
+     "value": 302,
+     "comments": 104
+    },
+    "top_comments": {
+     "id": 50314666,
+     "title": "Signal 分支 Molly 三个月没更新，仍有已修复的漏洞",
+     "value": 172
+    },
+    "top_brief": {
+     "id": 50314085,
+     "title": "GCC 如何把 switch 语句降级为机器码",
+     "value": 196,
+     "comments": 38
+    }
+   }
+  },
+  {
+   "name": "科学与社会",
+   "en": "Science & Society",
+   "page": 4,
+   "stories": [
+    {
+     "id": 50318189,
+     "title": "英国绿党放弃长期以来的反核立场",
+     "title_en": "UK Green party drops longstanding opposition to nuclear power",
+     "url": "https://www.theguardian.com/politics/2026/oct/05/green-party-nuclear-power-policy",
+     "hn": "https://news.ycombinator.com/item?id=50318189",
+     "points": 199,
+     "comments": 228,
+     "summary": [
+      "《卫报》10 月 5 日报道（帖子 10 月 31 日才上首页），英格兰和威尔士绿党在大会上投票通过动议，取消对核裂变的「一概反对」和逐步淘汰核电的承诺，改为把核电项目与其他低碳技术一起评估；发电政策仍以海上风电、陆上风电和屋顶太阳能为主，但允许当选代表逐案支持新反应堆。绿党议员 Carla Denyer 说这并不意味着支持新核电，而是承认在过渡期核电还会存在；她主张让现有核电站继续运行，因为核电碳足迹的很大部分来自建设，而 2023 年她还说核电「慢得离谱、贵得离谱」。",
+      "文章说，绿党此前反核源于其创党原则之一的反核武器立场，党魁 Zack Polanski 曾把投资新反应堆比作「造传真机」；支持动议的 Greens for Nuclear 联合创始人 Eugene McCarthy 说，气候危机已到「什么办法都得扔上去」的阶段。这是当天点赞过百的帖子里评论/点赞比最高的一个。评论区点赞最高的一条问反核是切尔诺贝利之后才有的吗；有人指出这是 10 月 5 日的旧闻，而且绿党在英国只是小党；也有人说战争中的核电站（如扎波罗热）是被忽视的风险。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "droppedasbaby",
+       "stance": "从何而来",
+       "zh": "我一直不理解反对核电的立场。这是对切尔诺贝利的反应，还是更早就开始了？",
+       "en": "I've never understood the opposition to nuclear power.",
+       "hn": "https://news.ycombinator.com/item?id=50319083",
+       "id": 50319083,
+       "replies": 40
+      },
+      {
+       "user": "FailMore",
+       "stance": "旧闻小党",
+       "zh": "奇怪这条在 HN 上排这么高。第一，绿党在英国是小众政党；第二，这是 10 月 5 日（周一）的新闻。",
+       "en": "this is from Mon 5 Oct",
+       "hn": "https://news.ycombinator.com/item?id=50318739",
+       "id": 50318739,
+       "replies": 17
+      },
+      {
+       "user": "cedws",
+       "stance": "战争风险",
+       "zh": "为什么核电辩论里从来不考虑战争？核电很好，直到导弹落到你的领土上。问问乌克兰就知道。扎波罗热从战争初期就被扣为人质。",
+       "en": "Why is war never a factor in the nuclear power debate?",
+       "hn": "https://news.ycombinator.com/item?id=50318901",
+       "id": 50318901,
+       "replies": 9
+      }
+     ],
+     "kicker": "社会 · 能源",
+     "tag": "评论/点赞比最高"
+    },
+    {
+     "id": 50261253,
+     "title": "四个神经元，就能造出「会爱会怕」的小生物",
+     "title_en": "Simple circuits can create complex behaviors",
+     "url": "https://aatishb.com/myriad/lets-build-a-brain/",
+     "hn": "https://news.ycombinator.com/item?id=50261253",
+     "points": 207,
+     "comments": 66,
+     "summary": [
+      "Aatish Bhatia 和 Arkarup Banerjee 在 Myriad 上的互动文章《一起造个大脑》里，造了一种以光为食、叫 spark 的小生物：一只眼（感光神经元）连一个鳍（运动神经元），它只会随亮度加速，常常错过光；加上第二只眼和鳍后，它反而转身远离光，像是「怕光」；把左右连接交叉后，它能冲向光却停不下来，像在「攻击」；再把兴奋性连接换成抑制性连接，它就会转向光并慢慢停下，像是「爱」光。",
+      "作者说，这些看起来像初级智能的行为只用了四个神经元、两条连接，「没有魔法」，行为从神经回路中自下而上地涌现；再让连接强度因个体而异，不同的 spark 就有了对光的不同「偏好」，下一篇将讲大脑如何通过改变连线来学习。读者可以在页面上拖动光源观察它们的反应。评论区点赞最高的一条指出思路的源头不是 Braitenberg，而是 1948 年 Grey Walter 的「乌龟」机器人；也有人推荐 Braitenberg 的《车辆》一书，或回忆小时候玩 BEAM 机器人。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Animats",
+       "stance": "源头",
+       "zh": "源头不是 Braitenberg，而是 Grey Walter 的乌龟。1948 年，W. Grey Walter 造了两个能感知光和触碰的简单机器人，涌现出很多复杂行为，这个想法就是从那里开始的。看看那段视频，对 1948 年的电子管技术来说非常惊人。",
+       "en": "The ancestor is not Braitenberg. It's Grey Walter's turtles.",
+       "hn": "https://news.ycombinator.com/item?id=50318463",
+       "id": 50318463,
+       "replies": 12
+      },
+      {
+       "user": "georgestrakhov",
+       "stance": "推荐一本书",
+       "zh": "去看看 Valentino Braitenberg 的《车辆》。这是我最喜欢的书之一。",
+       "en": "Check out Valentino Braitenberg's vehicles.",
+       "hn": "https://news.ycombinator.com/item?id=50316613",
+       "id": 50316613,
+       "replies": 4
+      },
+      {
+       "user": "TehCorwiz",
+       "stance": "BEAM",
+       "zh": "我小时候摆弄过 BEAM 机器人。这种设计理念就是从这类非常简单的反应式电路出发，通常用拆下来的旧零件。很高兴看到有人拆解不同变量对设计的影响。",
+       "en": "Growing up I tinkered with BEAM robotics.",
+       "hn": "https://news.ycombinator.com/item?id=50317136",
+       "id": 50317136,
+       "replies": 1
+      }
+     ],
+     "kicker": "科学 · 神经科学"
+    },
+    {
+     "id": 50317429,
+     "title": "旅行者 1 号即将飞到一光日之外",
+     "title_en": "What is a light-day? The milestone Voyager 1 is closing in on",
+     "url": "https://science.nasa.gov/mission/voyager/voyager-1/voyager-1-what-is-a-light-day/",
+     "hn": "https://news.ycombinator.com/item?id=50317429",
+     "points": 84,
+     "comments": 41,
+     "summary": [
+      "NASA 的科普文章说，1977 年发射的旅行者 1 号将在 11 月 18 日到达距地球一光日的位置，届时它已飞行 49 年 2 个月零 11 天。一光日是光在 24 小时内走过的距离，约 160.9 亿英里（259 亿公里）；作为对比，光从月球到地球只要 1.3 秒，从太阳到地球约 8 分钟 20 秒，地火之间要 3 到 22 分钟，到海王星约 4 小时 10 分钟，而旅行者 2 号以每小时约 3.5 万英里的速度飞到海王星用了 12 年。",
+      "旅行者 1 号正朝 17 光年外小熊座的恒星 AC +79 3888（Gliese 445）方向飞去，预计 4 万年后从距它约 1.7 光年处经过；它的速度接近每小时 3.8 万英里（6.1 万公里），但和光速相比仍是龟速。评论区有人说也许费米悖论的答案就是宇宙太大、哪里都去不了；有人感叹射频信号的自由空间损耗与距离平方成反比，还能从旅行者那里收到任何东西简直离谱；也有人问文中的速度是相对什么参照系。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "MisterMunchkin",
+       "stance": "费米悖论",
+       "zh": "也许费米悖论的答案是宇宙太大了，你根本到不了任何地方。你发出的信息永远传不到有人能看到的地方，你发出的飞船永远到不了另一个星系。就是一片巨大的空无。",
+       "en": "Maybe the answer to the Fermi paradox is that the universe is so big that you simply never get anywhere.",
+       "hn": "https://news.ycombinator.com/item?id=50319550",
+       "id": 50319550,
+       "replies": 5
+      },
+      {
+       "user": "polalavik",
+       "stance": "信号离谱",
+       "zh": "射频信号的自由空间路径损耗与 1/r² 成正比，我们居然还能从旅行者收到任何东西，简直离谱。",
+       "en": "absolutely bonkers we can get anything from voyager",
+       "hn": "https://news.ycombinator.com/item?id=50317822",
+       "id": 50317822,
+       "replies": 11
+      },
+      {
+       "user": "robotresearcher",
+       "stance": "参照系",
+       "zh": "（引用：这艘自 1977 年起飞行的探测器正以接近每小时 3.8 万英里的速度穿越太空）这个页面花了很大力气解释，却漏了这个速度的参照系。我猜是相对太阳，但也可能是相对地球出发点。有人知道吗？",
+       "en": "omits a frame of reference for this speed",
+       "hn": "https://news.ycombinator.com/item?id=50318075",
+       "id": 50318075,
+       "replies": 4
+      }
+     ],
+     "kicker": "科学 · 太空"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50303172,
+     "title": "63 亿美元的币安被盗案只用了 20 分钟",
+     "title_en": "The $6.3B Binance hack was pulled off in just 20 minutes",
+     "url": "https://www.wired.com/story/the-dollar63-billion-binance-hack-was-pulled-off-in-just-20-minutes/",
+     "hn": "https://news.ycombinator.com/item?id=50303172",
+     "points": 569,
+     "comments": 413
+    },
+    {
+     "id": 50315047,
+     "title": "法国议员通过每 GB 互联网流量征税 0.055 欧元",
+     "title_en": "French lawmakers approved a tax of €0.055 for every gigabyte of internet traffic",
+     "url": "https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2026-2027/premiere-seance-du-vendredi-30-octobre-2026",
+     "hn": "https://news.ycombinator.com/item?id=50315047",
+     "points": 96,
+     "comments": 136
+    },
+    {
+     "id": 50274885,
+     "title": "可穿戴设备记录的心源性猝死前生理变化",
+     "title_en": "Longitudinal Changes InWearable-Captured PhysiologyBefore Sudden Cardiac Death",
+     "url": "https://www.jacc.org/doi/epdf/10.1016/j.jaccas.2026.110397",
+     "hn": "https://news.ycombinator.com/item?id=50274885",
+     "points": 63,
+     "comments": 26
+    },
+    {
+     "id": 50320963,
+     "title": "意大利农民在阁楼找到不明种子，种下去之后",
+     "title_en": "An Italian farmer found some unknown seeds in his attic and planted them",
+     "url": "https://www.smithsonianmag.com/science-nature/italian-farmer-found-unknown-seeds-attic-with-nothing-lose-planted-them-result-biblical-180989644/",
+     "hn": "https://news.ycombinator.com/item?id=50320963",
+     "points": 60,
+     "comments": 22
+    },
+    {
+     "id": 50318376,
+     "title": "诺贝尔经济学奖得主威廉·诺德豪斯去世",
+     "title_en": "William Nordhaus has died",
+     "url": "https://news.yale.edu/2026/10/31/william-nordhaus-nobel-laureate-who-integrated-economics-and-climate-change-devoted-yale",
+     "hn": "https://news.ycombinator.com/item?id=50318376",
+     "points": 46,
+     "comments": 18
+    },
+    {
+     "id": 50312739,
+     "title": "调度员的不当行为曝光后，Flock 摄像头搜索量骤降 95%",
+     "title_en": "Flock camera searches fell 95% after a dispatcher's misconduct was caught",
+     "url": "https://www.wkyc.com/article/news/investigations/flock-camera-searches-fall-95-percent-highland-heights-dispatcher-misconduct-caught/95-94b18f33-60e2-4bc7-a00f-d71d1e1fdd5e",
+     "hn": "https://news.ycombinator.com/item?id=50312739",
+     "points": 86,
+     "comments": 14
+    },
+    {
+     "id": 50318407,
+     "title": "城市取消了 Flock 合同，Flock 置之不理，警察局长拔了它的电源",
+     "title_en": "A City Canceled Flock's Contract. Flock Ignored It. Police Chief Unplugged Them",
+     "url": "https://www.thedrive.com/news/my-city-canceled-flocks-contract-flock-ignored-it-so-the-police-chief-unplugged-the-cameras",
+     "hn": "https://news.ycombinator.com/item?id=50318407",
+     "points": 37,
+     "comments": 9
+    },
+    {
+     "id": 50315776,
+     "title": "Meta 为何在集会中途封停一位美国参议员候选人的 Instagram？",
+     "title_en": "Why Did Meta Suspend a US Senate Candidate's Instagram in the Middle of a Rally?",
+     "url": "https://newrepublic.com/post/217281/meta-suspend-democratic-candidate-angie-nixon-instagram-account",
+     "hn": "https://news.ycombinator.com/item?id=50315776",
+     "points": 77,
+     "comments": 103
+    },
+    {
+     "id": 50318182,
+     "title": "黑客劫持埃及高速公路广告牌和马来西亚屏幕播放色情内容",
+     "title_en": "Hackers hijack Egypt highway billboard and Malaysian screens to show porn",
+     "url": "https://www.cairoreport.org/p/egypt-brazil-iraq-billboard-hack",
+     "hn": "https://news.ycombinator.com/item?id=50318182",
+     "points": 56,
+     "comments": 64
+    },
+    {
+     "id": 50313257,
+     "title": "英国在 2026 年 6 月险些全国大停电",
+     "title_en": "Britain Narrowly Escaped a Grid Blackout in June 2026",
+     "url": "https://hackaday.com/2026/10/30/how-britain-narrowly-escaped-a-grid-blackout-in-june-2026/",
+     "hn": "https://news.ycombinator.com/item?id=50313257",
+     "points": 18,
+     "comments": 6
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1598,
+    "comments": 1146,
+    "top_points": {
+     "id": 50303172,
+     "title": "63 亿美元的币安被盗案只用了 20 分钟",
+     "value": 569,
+     "comments": 413
+    },
+    "top_comments": {
+     "id": 50303172,
+     "title": "63 亿美元的币安被盗案只用了 20 分钟",
+     "value": 413
+    },
+    "top_brief": {
+     "id": 50303172,
+     "title": "63 亿美元的币安被盗案只用了 20 分钟",
+     "value": 569,
+     "comments": 413
+    }
+   }
+  },
+  {
+   "name": "生活与文化",
+   "en": "Life & Culture",
+   "page": 5,
+   "stories": [
+    {
+     "id": 50311686,
+     "title": "Show HN：纪念帕特里克·斯图尔特的 TNG 猜集数游戏",
+     "title_en": "Show HN: To Honor Sir Patrick Stewart, Enjoy the TNG Episode Guessing Game",
+     "url": "https://tng.episodle.com/",
+     "hn": "https://news.ycombinator.com/item?id=50311686",
+     "points": 234,
+     "comments": 73,
+     "summary": [
+      "为纪念帕特里克·斯图尔特，有人做了一个《星际迷航：下一代》（TNG）的猜集数小游戏 Episodle：每天给出该剧某一集的截图作为提示，玩家最多猜六次，每张提示图都比上一张更容易；猜对季数即使集数不对也会得到反馈。除了当天的题，还可以玩以前某天或随机一天的题。网站说猜测记录存在浏览器本地，页面使用谷歌分析，也可能带广告。",
+      "评论区点赞最高的一条说全文搜索很关键：他把整部剧看过不止一遍，却怎么也记不起「装傻的外星人绑架杰迪」那集叫什么，好在搜索够好用又不至于太直白；另一位说自己从小追首播，此后大约每隔一年重看一遍，身边没人比他更爱 TNG，却一题都没猜对；也有人建议改成选择题，还有人说自己熟悉剧情却从没留意过集名。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Arainach",
+       "stance": "全文搜索",
+       "zh": "我很欣赏这个。全文搜索相当关键，因为虽然整部剧我看过不止一遍，但我怎么也想不起「装傻的外星人绑架杰迪那集」叫什么，而搜索好用到能找到它，又不至于太明显。",
+       "en": "The full text search is fairly crucial",
+       "hn": "https://news.ycombinator.com/item?id=50312432",
+       "id": 50312432,
+       "replies": 19
+      },
+      {
+       "user": "joeguilmette",
+       "stance": "全军覆没",
+       "zh": "TNG 首播时我还是个孩子，之后大概每隔一年就重看一遍。我身边没有谁比我看得更多、更爱 TNG。结果我一题都没猜对，哈哈。",
+       "en": "i couldnt get a single one right lol",
+       "hn": "https://news.ycombinator.com/item?id=50312480",
+       "id": 50312480,
+       "replies": 11
+      },
+      {
+       "user": "mijowi",
+       "stance": "选择题",
+       "zh": "也许是我还不够星际迷，但我觉得这里用选择题会更好。",
+       "en": "I feel multiple choice would be good here.",
+       "hn": "https://news.ycombinator.com/item?id=50312211",
+       "id": 50312211,
+       "replies": 6
+      }
+     ],
+     "kicker": "文化 · 游戏"
+    },
+    {
+     "id": 50316103,
+     "title": "退休教授拦送餐机器人被捕：还会再拦",
+     "title_en": "Retired professor arrested for blocking delivery robot. Will do it again",
+     "url": "https://www.cnn.com/2026/10/31/us/philadelphia-woman-delivery-robots-cec",
+     "hn": "https://news.ycombinator.com/item?id=50316103",
+     "points": 82,
+     "comments": 120,
+     "summary": [
+      "CNN 报道，78 岁的宾夕法尼亚大学传播学退休教授 Carolyn Marvin 一直有个习惯：在费城人行道上遇到 Uber Eats 的自动送餐机器人（3 月起在当地运营）时，方便的话就挡在它前面 10 到 15 分钟、跟着它移动。她说这是象征性抗议，针对机器人挤掉低收入送餐员、在人行道上造成危险、搭载的摄像头侵犯隐私，并认为第一修正案保障她在公共空间抗议的权利。10 月 14 日她打完流感疫苗回家路上又这样做，围观人群变多，警察赶到后给她戴上手铐，开出扰乱秩序的传票。",
+      "警方说接到「涉及送餐机器人的刑事破坏」报警，到场后多次命令她让开，她拒绝服从。她事后得知，宾夕法尼亚 2020 年立法把自动送餐机器人归为行人而非车辆，不过法律也要求它们在人行区域给行人和骑车人让行。她说「我们早就把街道让给了汽车，不该再把人行道让给机器」。评论区点赞最高的一条说，如果她改善世界的方案首先是耽误别人的午饭，那该想个更好的办法；有人认为她被捕是因为不听警察命令；也有人讲了「jaywalker」一词如何被汽车业推广进法律。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "roenxi",
+       "stance": "换个办法",
+       "zh": "这位女士被允许做什么是个复杂的话题，各方都有道理。但如果她改善世界的方案首先是耽误一些人的午饭，那她应该花点时间想个更好的计划。靠异常的小气来博关注，不会通向世界和平与繁荣。",
+       "en": "she should put some time into coming up with a better plan",
+       "hn": "https://news.ycombinator.com/item?id=50316902",
+       "id": 50316902,
+       "replies": 24
+      },
+      {
+       "user": "eutropia",
+       "stance": "因为抗命",
+       "zh": "听起来她被捕更像是因为没有服从警察让她给机器人让路的命令。",
+       "en": "It sounds more like she was arrested for not following an order given by the police officer",
+       "hn": "https://news.ycombinator.com/item?id=50316917",
+       "id": 50316917,
+       "replies": 15
+      },
+      {
+       "user": "tashian",
+       "stance": "jaywalker",
+       "zh": "1920 年代，「jay」是类似「乡巴佬」的蔑称，指不懂城市的土包子。随着汽车普及，「jaywalker」（乱穿马路的人）一词出现，汽车业的公关部门抓住它，最终推动它写进法律。在有「乱穿马路」之前，报纸会把事故归咎于司机。",
+       "en": "As cars became more common, the term \"jaywalker\" emerged",
+       "hn": "https://news.ycombinator.com/item?id=50317152",
+       "id": 50317152,
+       "replies": 9
+      }
+     ],
+     "kicker": "社会 · 机器人"
+    },
+    {
+     "id": 50260753,
+     "title": "Show HN：我用 ESP32 给孩子做的故事盒 Marelleo",
+     "title_en": "Show HN: Marelleo, an open-source story box I built for my kids using ESP32",
+     "url": "https://zebra.rodeo/en/blog/marelleo/",
+     "hn": "https://news.ycombinator.com/item?id=50260753",
+     "points": 180,
+     "comments": 48,
+     "summary": [
+      "作者去年夏天度假时见到 Toniebox：孩子把小人偶放上盒子，故事就开始，拿下来就停，两岁孩子一秒就会用。但他不喜欢这类产品的商业模式：Lunii、Yoto、Toniebox 都靠卖内容赚钱，每个新故事都得从别人选定的目录里购买。于是他决定为三个孩子自己做一个，用 ESP32 开发板和免焊面包板，加上 NFC 读卡器，放上标签就播放对应音频；他说自己对电子一窍不通，边读文档边和 Claude 讨论，几个小时就让它讲出了第一个故事。",
+      "之后没那么顺利：音量电位器接错变成短路，冒烟并发出滑雪蜡的焦味；锂电池需要专门的充电控制芯片；他又借助 Claude 把散乱的电路整理成原理图，设计了集成电源、充电、功放和 SD 卡读卡器的印刷电路板，在 JLCPCB 花 160 欧元做了五块组装好的板子，打算留一块、其余送给亲友，收到后却一开始没有反应。评论区有人推荐类似的德国项目 Tonuino；不少人嫌文章 LLM 腔太重，也有人说对忙碌的家长来说借助 Claude 写成很正常；还有人指出 Yoto 其实有开放 API。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "sandreas",
+       "stance": "同类项目",
+       "zh": "做得好。不过我大概会用 Seeed Studio 带集成电池焊盘的新款 ESP32……另外有一个很相似的德国项目叫 Tonuino，有大量示例和文档。",
+       "en": "There also is a german project called Tonuino",
+       "hn": "https://news.ycombinator.com/item?id=50314682",
+       "id": 50314682,
+       "replies": 2
+      },
+      {
+       "user": "wrxd",
+       "stance": "LLM 腔",
+       "zh": "项目不错，但文字的 LLM 味太重，我没能读完这篇文章。",
+       "en": "the writing smells so much of LLM that I didn't manage to finish the article",
+       "hn": "https://news.ycombinator.com/item?id=50314711",
+       "id": 50314711,
+       "replies": 3
+      },
+      {
+       "user": "tanhle",
+       "stance": "家长不易",
+       "zh": "这太棒了，我也想等孩子大一点给他做一个，先收藏了。我读完了全文，觉得很有信息量，不管是不是 LLM 写的。对那些嫌 AI 偷懒的人，我想说：对一个上班的家长来说，没有 Claude 帮忙，大概不可能在合理时间里写出来。",
+       "en": "for a working parent this maybe would not have been possible to write in reasonable time without the aid of Claude",
+       "hn": "https://news.ycombinator.com/item?id=50314551",
+       "id": 50314551,
+       "replies": 6
+      }
+     ],
+     "kicker": "生活 · 创客"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50317363,
+     "title": "卡西欧 1980 年代的手表",
+     "title_en": "Casio Watches of the 1980s",
+     "url": "https://www.casio.com/us/watches/50th/Heritage/1980s/",
+     "hn": "https://news.ycombinator.com/item?id=50317363",
+     "points": 207,
+     "comments": 106
+    },
+    {
+     "id": 50276355,
+     "title": "困在技术专家工厂里",
+     "title_en": "Trapped in the Technologist Factory",
+     "url": "https://ideolalia.com/essays/trapped-in-the-technologist-factory.html",
+     "hn": "https://news.ycombinator.com/item?id=50276355",
+     "points": 71,
+     "comments": 27
+    },
+    {
+     "id": 50319061,
+     "title": "学者的责任",
+     "title_en": "The Duty of a Scholar",
+     "url": "https://www.daemonology.net/blog/2026-10-31-The-Duty-of-a-Scholar.html",
+     "hn": "https://news.ycombinator.com/item?id=50319061",
+     "points": 79,
+     "comments": 28
+    },
+    {
+     "id": 50314872,
+     "title": "闪亮物体综合征",
+     "title_en": "Shiny Object Syndrome",
+     "url": "https://en.wikipedia.org/wiki/Shiny_object_syndrome",
+     "hn": "https://news.ycombinator.com/item?id=50314872",
+     "points": 64,
+     "comments": 23
+    },
+    {
+     "id": 50314243,
+     "title": "要按住电源键多久才能关掉一台电脑？",
+     "title_en": "How long do you need to hold down the power button to turn off a PC?",
+     "url": "https://www.osnews.com/story/146273/how-long-do-you-need-to-hold-down-the-power-button-to-turn-off-a-pc/",
+     "hn": "https://news.ycombinator.com/item?id=50314243",
+     "points": 58,
+     "comments": 20
+    },
+    {
+     "id": 50289081,
+     "title": "PDP 计算机简史",
+     "title_en": "Brief History of PDP Computers",
+     "url": "https://entropicthoughts.com/history-of-pdp-computers",
+     "hn": "https://news.ycombinator.com/item?id=50289081",
+     "points": 44,
+     "comments": 25
+    },
+    {
+     "id": 50320028,
+     "title": "认识 86% 的词，你可能只听懂动画里 38% 的台词",
+     "title_en": "With 86% of the words, you might understand only 38% of an anime's lines",
+     "url": "https://learnfromx.com/research/anime-word-coverage-vs-lines-understood",
+     "hn": "https://news.ycombinator.com/item?id=50320028",
+     "points": 55,
+     "comments": 33
+    },
+    {
+     "id": 50319563,
+     "title": "熬过《毕业生》",
+     "title_en": "Surviving \"The Graduate\"",
+     "url": "https://www.newyorker.com/culture/the-weekend-essay/dustin-hoffman-on-surviving-the-graduate",
+     "hn": "https://news.ycombinator.com/item?id=50319563",
+     "points": 47,
+     "comments": 11
+    },
+    {
+     "id": 50321130,
+     "title": "电动汽车曾经是女人的车",
+     "title_en": "When Electric Cars Were for Women",
+     "url": "https://spectrum.ieee.org/early-electric-vehicles",
+     "hn": "https://news.ycombinator.com/item?id=50321130",
+     "points": 16,
+     "comments": 3
+    },
+    {
+     "id": 50318018,
+     "title": "美国版权局在恢复一种你得努力才能拿到的版权",
+     "title_en": "Copyright Office is restoring copyright to something you have to work to get",
+     "url": "https://pluralistic.net/2026/10/31/burn-berne/#unvictored",
+     "hn": "https://news.ycombinator.com/item?id=50318018",
+     "points": 52,
+     "comments": 33
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1189,
+    "comments": 550,
+    "top_points": {
+     "id": 50311686,
+     "title": "Show HN：纪念帕特里克·斯图尔特的 TNG 猜集数游戏",
+     "value": 234,
+     "comments": 73
+    },
+    "top_comments": {
+     "id": 50316103,
+     "title": "退休教授拦送餐机器人被捕：还会再拦",
+     "value": 120
+    },
+    "top_brief": {
+     "id": 50317363,
+     "title": "卡西欧 1980 年代的手表",
+     "value": 207,
+     "comments": 106
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "nomilk",
+  "id": 50313471,
+  "hn": "https://news.ycombinator.com/item?id=50313471",
+  "story_id": 50277379,
+  "story": "不用无头浏览器的 Cloudflare Turnstile 破解库",
+  "zh": "我的 Cloudflare 破解器是 Command + W。在有界面的浏览器里百分之百可靠，偶尔还能让我找到一个不把自己的优先级（拦机器人）凌驾于用户的优先级（明智地花时间）之上的替代网站。",
+  "en": "My Cloudflare solver is command + w. It's 100% reliable in a headful browser and occasionally results in finding an alternative site that doesn't place its priorities (denying bots) over the user's (judicious use of time)."
+ },
+ "stats": {
+  "snapshot": "2026-11-01T08:16:06+08:00",
+  "front_page_count": 90,
+  "with_numbers": 89,
+  "flagged_or_dupe": 1,
+  "top_points": {
+   "id": 50314654,
+   "title": "塞尔维亚选出了世界上「最有学问」的议会",
+   "value": 799,
+   "comments": 460
+  },
+  "top_comments": {
+   "id": 50314654,
+   "title": "塞尔维亚选出了世界上「最有学问」的议会",
+   "value": 460
+  },
+  "second_comments": {
+   "id": 50303172,
+   "title": "63 亿美元的币安被盗案只用了 20 分钟",
+   "value": 413
+  },
+  "over_500": 3,
+  "over_300": 6,
+  "over_100": 23,
+  "show_hn": 9,
+  "total_points": 9286,
+  "total_comments": 5047,
+  "hottest_ratio": {
+   "id": 50318189,
+   "title": "英国绿党放弃长期以来的反核立场",
+   "value": 1.15,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
