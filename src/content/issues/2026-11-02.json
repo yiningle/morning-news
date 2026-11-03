@@ -1,0 +1,1296 @@
+{
+ "date": "2026-11-02",
+ "published_at": "2026-11-03T08:20:23+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-11-02",
+ "schema_version": 2,
+ "lead": {
+  "id": 50341174,
+  "title": "MIT 团队：GPT-6 Astra 能直接读写神经网络权重，把 Qwen 的数学成绩拉高六倍",
+  "title_en": "Astra can read and write weights to improve Qwen",
+  "url": "https://rikiyat.github.io/blog/weight-space-programming/",
+  "hn": "https://news.ycombinator.com/item?id=50341174",
+  "points": 1749,
+  "comments": 558,
+  "summary": [
+   "MIT CSAIL 的 Rikiya Takehi、Jayden Teoh、Alex Zhang 和 Omar Khattab 发文，称前沿大模型已能「原生」读写神经网络权重，他们称之为「权重空间编程」。实验里，GPT-6 Astra 只看 17,253 个原始权重，就认出四个形状完全相同的小网络各自是为哪款游戏训练的；只看扩散模型权重就说出它画圆、方还是三角；只给中间四层，也能判断一个小语言模型学的是 Python、罗马字日语还是英语，并准确找出所有「复制头」。它还一次性改动 3.5% 的权重，让一个卡在坡道上的 PPO 小车策略从 0% 变成 1,024 局全胜；从零手写的 MinAtar 游戏网络，三款都胜过训练 1 亿步的 PPO。",
+   "最受关注的是对 Qwen3.5-0.8B 的改造：不做训练、不用梯度，Astra 在 50 次前向调用的预算内发现模型常陷入重复循环（模型卡本身也有提醒），把第 15、19 层 MLP 写出的一个方向从 131,072 个权重（占 0.016%）里减掉，MATH-500 从 7.9% 升到 48.1%，GSM8K 从 13.8% 到 67.1%，IFEval 从 21.0% 到 62.3%。作者也写明了失败：只看权重分不出哪个 Gemma 是「谄媚」模型（允许看注意力后才分出），对本来不循环的 Gemma 3 270M 也没能提高数学。这是当天点赞第一的帖子。评论区有人直呼「被震到了」；有人怀疑这不是涌现能力，而是 OpenAI 专门喂了权重数据；也有人指出文章把「读小模型」和「靠工具改大模型」两类结果混在一起讲，有点误导。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "vessenes",
+    "stance": "震惊",
+    "zh": "这太疯狂了。Astra 不借助工具就能判断小网络是为哪款游戏训练的，能直接改权重提升效果，还能手改一个小 Qwen 模型，让数学能力提升约 5 倍。我被震到了。",
+    "en": "I'm shook.",
+    "hn": "https://news.ycombinator.com/item?id=50341841",
+    "id": 50341841,
+    "replies": 198
+   },
+   {
+    "user": "vanyle",
+    "stance": "怀疑训练过",
+    "zh": "我不觉得这是涌现能力。我认为 Astra 是用神经网络权重数据训练过的，这是 OpenAI 冲击「递归自我改进」的一次尝试。早期 GPT 模型也是这样：训练数据里有大量标准记谱的棋局，所以只要提示格式对，它下棋就很强。",
+    "en": "I think Astra was trained on neural weights data as an attempt by OpenAI to get to recursive self improvement.",
+    "hn": "https://news.ycombinator.com/item?id=50342657",
+    "id": 50342657,
+    "replies": 13
+   },
+   {
+    "user": "jsenn",
+    "stance": "混为一谈",
+    "zh": "我觉得这篇文章把两个不同的结果放在一起，有点误导。「前沿大模型出奇地擅长原生读写权重」这一说法，靠的是 Astra 读懂只有约两万权重的小型专用模型；而改 Qwen 用的是另一套带工具的方法。",
+    "en": "I feel like this is conflating 2 separate results in a slightly misleading way.",
+    "hn": "https://news.ycombinator.com/item?id=50344881",
+    "id": 50344881,
+    "replies": 1
+   }
+  ],
+  "kicker": "要闻 · AI 研究",
+  "tag": "当日点赞第一"
+ },
+ "side": [
+  {
+   "id": 50337608,
+   "title": "「Ubuntu 你搞什么？」CVSS 9.8 内核漏洞两周多没补丁",
+   "title_en": "WTF Ubuntu?",
+   "url": "https://chalmovsky.com/posts/wtf-ubuntu",
+   "hn": "https://news.ycombinator.com/item?id=50337608",
+   "points": 1269,
+   "comments": 575,
+   "summary": [
+    "博主 chalmovsky 的檄文：CVE-2026-98432 是 Linux 内核 TCP 代码里的严重漏洞（CVSS 9.8），从 2016 年就存在，可远程触发，Anthropic 称已做出能拿到 root 的利用。Debian 10 月 16 日就打了补丁，可两周多后 Ubuntu 所有受支持版本（包括 LTS）仍标着「Vulnerable」。他拿 Ubuntu 官网「及时修补严重漏洞」「企业级」的宣传语反讽，说自己来不及迁移，只好把所有 Ubuntu 服务器下线，今后要全部搬走；还指出 Debian、Arch、Alpine 这些志愿者发行版都修了，卖安全订阅的公司反而没修。",
+    "同日首页另有一篇 freenode 文章确认 22.04、24.04、26.04 LTS 都还没有官方修复内核，Ubuntu 也没给出时间表。评论区点赞最高的一条指出，Ubuntu 只把它定为「High」而非会触发计划外更新的「Critical」，「为什么是这个优先级」的解释只有半句话；有人补充修复内核其实已在各 LTS 的 proposed 仓库，26.04 已于 10 月 28 日进入正式更新；也有人提醒它的 EPSS（被实际利用的概率）不到 1%，多数通报说最坏是宕机。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "BoppreH",
+     "stance": "定级可疑",
+     "zh": "更糟的是，Ubuntu 的安全页面把它列为「Ubuntu 优先级：High」，而不是会触发计划外补丁的 Critical。点「为什么是这个优先级」，只写着「见 ubuntu cvss 分数」，连句号都没有。",
+     "en": "(as opposed to Critical, which would trigger an out-of-schedule patch)",
+     "hn": "https://news.ycombinator.com/item?id=50338289",
+     "id": 50338289,
+     "replies": 82
+    },
+    {
+     "user": "throw0101c",
+     "stance": "其实有包",
+     "zh": "说明一下：带修复的内核已经在每个 LTS 版本的 proposed 仓库里，apt-get 加 -t 参数就能装（默认不会出现）。26 LTS 的新内核 10 月 28 日已进入 updates/security 仓库。",
+     "en": "the kernels with the fixes are in the \"proposed\" repos for each LTS release",
+     "hn": "https://news.ycombinator.com/item?id=50338468",
+     "id": 50338468,
+     "replies": 9
+    },
+    {
+     "user": "alentred",
+     "stance": "别太慌",
+     "zh": "公平地说：虽然评分 9.8，它的 EPSS（被实际利用的概率）不到 1%。按各方通报，最坏结果是内核崩溃或拒绝服务。我也读了 Anthropic 的文章，但大家都说是 DoS、只有 Anthropic 说能 RCE，这有点对不上。",
+     "en": "it has an EPSS score of <1%",
+     "hn": "https://news.ycombinator.com/item?id=50343162",
+     "id": 50343162,
+     "replies": 3
+    }
+   ],
+   "kicker": "要闻 · 安全",
+   "tag": "当日评论第二"
+  },
+  {
+   "id": 50312408,
+   "title": "Postgres 19 推迟发布：AI 找出的 bug 太多了",
+   "title_en": "Postgres 19 is late because so many more bugs are being found now",
+   "url": "http://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html",
+   "hn": "https://news.ycombinator.com/item?id=50312408",
+   "points": 805,
+   "comments": 478,
+   "summary": [
+    "PostgreSQL 核心开发者 Robert Haas 写道，过去十年大版本都在 9 月中到 10 月中发布，今年 19 版大概要到 11 月，甚至可能再推迟；UPDATE/DELETE FOR PORTION OF、SQL/PGQ 图查询、分区合并拆分三个大功能也在 8 月底到 9 月中被撤回。原因一句话：大模型来了。同样是 4 月 8 日功能冻结到 9 月 25 日，2025 年主分支有 1037 次提交、18 版稳定分支 724 次；2026 年分别是 1443 和 1169 次。只算进主分支的提交其实略降，回移到稳定分支的提交却多了 60% 以上；连回移到上一个版本的提交也从 248 次涨到 433 次，增幅超过 74%，因为大量网友用大模型挖出 bug 来报。",
+    "他说大模型能起草修复，但不一定对、不一定合规范，仍要人来审，「而人在 2025 到 2026 年之间并没有变聪明」；审核新版本的时间也被拿去修旧分支的安全问题。他认为延期本身不必担心，更麻烦的是：四十年积累下的 bug 人找不到而 AI 找得到，该怎么追上、还怎么创新。评论区普遍认为这是好事；有人说自己今夏用 AI 在 Postgres 里挖到的问题多到只报了一二十个；也有人说 AI 擅长「只读」的找 bug，写新功能就难验证得多。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "BatteryMountain",
+     "stance": "是好事",
+     "zh": "这是好事，偿还技术债永远是好事。我们自己 150 万行的系统，过去一年找出并修掉了上千个 bug、安全漏洞和循环依赖，代码质量和测试覆盖率都提高了。",
+     "en": "This is a good thing. Repaying technical debt is always a great thing.",
+     "hn": "https://news.ycombinator.com/item?id=50334135",
+     "id": 50334135,
+     "replies": 141
+    },
+    {
+     "user": "tibbar",
+     "stance": "亲测",
+     "zh": "今夏换工作的空档，我用 AI 辅助在 Postgres 里挖了一点 bug，收获惊人：多个序列化异常、外键完整性问题、查询规划器正确性 bug、好几个够格拿 CVE 的漏洞，还有一个修不了的时区 bug。清单长到我只能挑一二十个去报。",
+     "en": "I did a little AI-assisted bug-hunting in Postgres this summer in between jobs, and the haul was staggering.",
+     "hn": "https://news.ycombinator.com/item?id=50331824",
+     "id": 50331824,
+     "replies": 21
+    },
+    {
+     "user": "hopa",
+     "stance": "读易写难",
+     "zh": "我感觉 AI 做「只读」的搜索类任务（查询、找 bug、找漏洞）很厉害，做「写」的任务（加个功能）就没那么好。搜索类结果容易验证，代码改动难验证得多。",
+     "en": "Search tasks are easily verified, code changes are much harder to verify",
+     "hn": "https://news.ycombinator.com/item?id=50331711",
+     "id": 50331711,
+     "replies": 29
+    }
+   ],
+   "kicker": "要闻 · 数据库"
+  },
+  {
+   "id": 50340088,
+   "title": "Subvocal：不出声也能对电脑说话的射频眼镜",
+   "title_en": "Show HN: Subvocal – Talk to your computer without making noise",
+   "url": null,
+   "hn": "https://news.ycombinator.com/item?id=50340088",
+   "points": 504,
+   "comments": 271,
+   "summary": [
+    "YC F26 公司 The Subvocal Company 的 Aarush 和 Arnav 发帖介绍：他们在做一副智能眼镜，你只要无声地动嘴，眼镜就能以说话的速度解码成文字；后来补充说，连嘴都不用张，练习后闭着嘴「默念式」动舌头也行。两人年初还在佐治亚理工读计算机，在斯坦福 TreeHacks 上把肌电电极贴在脸上做出粗糙原型；后来放弃肌电（怕汗、干扰、位置难固定，也没人想往脸上贴电极），改用镜框里的天线发射穿过面部的射频信号，舌头、嘴唇和软腭的动作会调制它，再用在办公室请人戴着眼镜朗读收集的数据训练模型。",
+    "他们计划 2027 年第一季度发货，首批 500 副开放预订，便宜 200 美元。创始人在评论里说解码在云端、端到端延迟通常低于 500 毫秒，目前只支持英语；他们也试过读唇，结论是摄像头只能分出 12 到 15 种口型、远少于 40 个音素，错误率降不下去。评论区有人立刻下单，也有人担心要联网上云、要换掉自己的近视眼镜、射频离眼睛太近，还有人认定渲染图是 AI 生成的，被 dang 反驳。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "growt",
+     "stance": "想要外挂",
+     "zh": "如果技术主要在镜腿里，我更想要一个能夹到我现有眼镜上的东西。我戴近视镜，头也大，试过 Even G2 智能眼镜，现有镜框都太小了。",
+     "en": "I would prefer to have something that attaches to my existing glasses.",
+     "hn": "https://news.ycombinator.com/item?id=50341600",
+     "id": 50341600,
+     "replies": 5
+    },
+    {
+     "user": "randomImmigrant",
+     "stance": "担心健康",
+     "zh": "很酷。我尤其心动，因为对我来说从想到动嘴默念，比说出声快多了。但我会担心续航，以及把射频芯片长期放在眼睛和大脑旁边的健康影响。你们研究过这些吗？",
+     "en": "the long term health consequences of having an RF chip so close to my eyes/brain",
+     "hn": "https://news.ycombinator.com/item?id=50345498",
+     "id": 50345498,
+     "replies": 1
+    },
+    {
+     "user": "sourpanda",
+     "stance": "像科幻",
+     "zh": "我觉得这酷极了，简直是从科幻小说里走出来的！对无障碍和解放双手的计算都意义重大。也同意其他人说的，网站应该像帖子正文这样多讲讲原理。",
+     "en": "straight out of a sci-fi novel",
+     "hn": "https://news.ycombinator.com/item?id=50340809",
+     "id": 50340809,
+     "replies": 9
+    }
+   ],
+   "kicker": "要闻 · Show HN"
+  },
+  {
+   "id": 50331402,
+   "title": "OccupySaaS：被裁的工程师用 AI 重写 SaaS",
+   "title_en": "OccupySaaS",
+   "url": "https://occupysaas.com/",
+   "hn": "https://news.ycombinator.com/item?id=50331402",
+   "points": 489,
+   "comments": 306,
+   "summary": [
+    "OccupySaaS 自称「用代码写成的抗议运动」，口号是「他们裁了我们，我们重建他们的 SaaS」，借用 2011 年「占领华尔街」的 1% 与 99% 叙事。做法是「净室」重建：只依据公开 API 文档和 OAuth、OIDC 等开放标准写规格，写规格的人和实现的人分开，由 AI 代理按规格先写接口契约再写代码和测试，每次合并都经人工审核，最后用厂商自己的公开 SDK 验证能无改动替换。项目用 Go 编写、Apache-2.0 许可、可自托管。",
+    "目前有两个早期项目：10 月 14 日开源的 ZeroAuthy（兼容 Auth0 的登录、令牌和租户）和 10 月 15 日加入的 SalesCompel（兼容 Salesforce 的记录和 REST API），知识库、工单、功能开关、可观测性、客服等方向还在征集。评论区有人讽刺这些人在职时正是锁定客户的实现者，被裁后才来反对；点赞最高的一句说，客户付钱买的不是第一个 S（软件），而是第二个 S（服务）；还有人说这不过是在重新发明自由软件。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "MonkeyClub",
+     "stance": "迟来的反对",
+     "zh": "让我有点不舒服的是，他们是在被裁之后才抗议锁定之类的做法，而之前正是他们在实现这些。我倒喜欢这个悖论：被 AI 裁掉，就用 AI 让前东家变得多余。但最终它推动的还是更多 AI 软件，我不确定谁是赢家。",
+     "en": "they’re protesting things like lock-in only after being laid off",
+     "hn": "https://news.ycombinator.com/item?id=50335535",
+     "id": 50335535,
+     "replies": 28
+    },
+    {
+     "user": "temp123477",
+     "stance": "服务才值钱",
+     "zh": "错就错在以为人们付钱买的是第一个 S（软件），其实是第二个 S（服务）。",
+     "en": "The mistake is thinking the first S is what people pay for when it is the second S.",
+     "hn": "https://news.ycombinator.com/item?id=50332774",
+     "id": 50332774,
+     "replies": 38
+    },
+    {
+     "user": "baubino",
+     "stance": "重造 FOSS",
+     "zh": "这像是在重新发明自由开源软件。大型 SaaS 已经有大量开源替代品，也有很多技术合作社和技术行动渠道，为什么不去支持它们？而且一边主张掌控技术，一边把整个项目交给 AI，也很奇怪。",
+     "en": "This seems like it’s trying to reinvent the idea of FOSS.",
+     "hn": "https://news.ycombinator.com/item?id=50332355",
+     "id": 50332355,
+     "replies": 33
+    }
+   ],
+   "kicker": "要闻 · 开源"
+  },
+  {
+   "id": 50335615,
+   "title": "欧洲七国超市冰柜一夜升到 50°C，疑再遭网络攻击",
+   "title_en": "Supermarket freezers across Europe hit by second suspected cyber-attack",
+   "url": "https://www.theguardian.com/world/2026/nov/02/supermarket-freezers-across-europe-hit-by-second-suspected-cyber-attack",
+   "hn": "https://news.ycombinator.com/item?id=50335615",
+   "points": 357,
+   "comments": 406,
+   "summary": [
+    "《卫报》报道，比利时、爱沙尼亚、爱尔兰、芬兰、卢森堡、荷兰和瑞典至少七国的超市连锁称，周一夜里部分门店冷柜和冰柜温度飙升至 50°C，多家公司确认被黑。上个月法国已有多达 700 家超市的制冷设备被黑客控制、升温到 50°C，造成火灾和数千万欧元的食品损失。欧盟食品与农业专员 Christophe Hansen 称这是「蓄意破坏食品供应链」。瑞典 Coop 有 6 家店中招，ICA 一家店说凌晨 2 点遭攻击后「全毁了」；Ahold Delhaize 说比利时和卢森堡数十家门店受影响。",
+    "瑞典国家网络安全中心负责人说，该国有「相当多暴露在外的运营技术设备」需要更新或打补丁。报道提到，自俄罗斯 2022 年入侵乌克兰后，当局尤其担心国家支持的混合攻击。评论区一位 2008 年做过相关行业的人解释超市冷柜远比家用冰箱复杂，没法「拧个旋钮就走」；有人转述瑞典媒体说目前只有走 4G 上网的门店中招；还有人引荷兰报道称，设备供应商 Danfoss 早在 10 月 13 日就建议客户断开互联网。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "chromaton",
+     "stance": "没那么简单",
+     "zh": "我在上一次的讨论里也说过，我 2008 到 2009 年在相关领域工作过。这里反复有人问：「为什么不能用旋钮设好温度就走？」问题是超市冷柜可不像你家冰箱那么简单。",
+     "en": "these refrigerator cases are not as simple as your refrigerator at home",
+     "hn": "https://news.ycombinator.com/item?id=50340496",
+     "id": 50340496,
+     "replies": 41
+    },
+    {
+     "user": "bedstefar",
+     "stance": "4G 门店",
+     "zh": "我根据 Reddit 上的传言推测一下：这可能和乡村门店基本用消费级路由器连移动宽带有关。瑞典媒体大多强调目前只有用 4G 上行的门店被攻击。",
+     "en": "only 4G-uplinked stores have been hit so far",
+     "hn": "https://news.ycombinator.com/item?id=50336553",
+     "id": 50336553,
+     "replies": 33
+    },
+    {
+     "user": "rocqua",
+     "stance": "早有提醒",
+     "zh": "荷兰也有一些小商家中招。系统供应商的一句话很有意思：那次攻击后，Danfoss 在 10 月 13 日建议荷兰客户把系统从互联网断开，只通过安全网络重连。",
+     "en": "Danfoss advised its Dutch clients on October 13 to disconnect their systems from the internet",
+     "hn": "https://news.ycombinator.com/item?id=50337619",
+     "id": 50337619,
+     "replies": 0
+    }
+   ],
+   "kicker": "要闻 · 网络安全"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 2,
+   "stats": {
+    "items": 13,
+    "points": 1771,
+    "comments": 1508,
+    "top_points": {
+     "id": 50339494,
+     "title": "按零售价算，Anthropic 内部用的 AI 已超过员工工资",
+     "value": 281,
+     "comments": 232
+    },
+    "top_comments": {
+     "id": 50337439,
+     "title": "Anthropic 第三季度收入 170 亿美元，承诺支出近 9,000 亿",
+     "value": 261
+    },
+    "top_brief": {
+     "id": 50334038,
+     "title": "中国首个前沿 AI 出口管制：商务部 2026 年第 48 号公告",
+     "value": 148,
+     "comments": 84
+    }
+   },
+   "stories": [
+    {
+     "id": 50339494,
+     "title": "按零售价算，Anthropic 内部用的 AI 已超过员工工资",
+     "title_en": "Anthropic's internal AI use, at retail prices, now exceeds its employee pay",
+     "url": "https://www.businessinsider.com/anthropic-claude-internal-ai-use-exceeds-employee-pay-tokens-2026-11",
+     "hn": "https://news.ycombinator.com/item?id=50339494",
+     "points": 281,
+     "comments": 232,
+     "summary": [
+      "《商业内幕》AI Insider 专栏援引 Anthropic 的 IPO 招股书：今年 4 月，公司内部使用 Claude 的价值（按对客户的标价计算）首次超过每月员工薪酬（不含股票奖励）；到 9 月，内部用量比 1 月增长了 250 多倍。文章强调，这不是说 Anthropic 真在 AI 上花了比工资更多的现金，只是按零售价折算。作者还提到，9 月加进 Anthropic 软件的代码 90% 以上由 Claude 编写，收入增速也远快于员工人数。",
+      "评论区点赞最高的一条认为这个比较没意义：任何公司给员工用自己的服务器，都按成本而非零售价记账。有人指出招股书原文在第 187、188 页；有人说员工被要求「吃自己的狗粮」、又不限额，用量超过工资理所当然；还有人反问：既然 Claude 写了 90% 的代码，Anthropic 的员工人数为什么一年内几乎翻倍。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "hungryhobbit",
+       "stance": "按成本算",
+       "zh": "几乎任何别的公司说「我们有内部 AI 服务器，让员工随便用」……都会像对待其他内部开支那样计量：按它花了多少钱。",
+       "en": "the company would measure that as they would any other internal expenditure: by how much it costs them.",
+       "hn": "https://news.ycombinator.com/item?id=50340052",
+       "id": 50340052,
+       "replies": 118
+      },
+      {
+       "user": "JohnMakin",
+       "stance": "人数翻倍",
+       "zh": "我不太明白大家兴奋什么。言下之意是零售价超过员工工资，就等于用 AI 支出替代了员工？可是 Anthropic 的员工人数比去年几乎翻了一倍。",
+       "en": "anthropic's head count has nearly doubled since last year",
+       "hn": "https://news.ycombinator.com/item?id=50341038",
+       "id": 50341038,
+       "replies": 14
+      },
+      {
+       "user": "simonw",
+       "stance": "看原文",
+       "zh": "想看原始出处的话，在 S-1 的第 187 和 188 页，标题是「Claude 正在加速我们闭环的能力」。",
+       "en": "it's page 187 and 188 of the S-1",
+       "hn": "https://news.ycombinator.com/item?id=50343672",
+       "id": 50343672,
+       "replies": 0
+      }
+     ],
+     "kicker": "AI · 公司"
+    },
+    {
+     "id": 50330456,
+     "title": "阿波罗首席经济学家：AI 对科技业以外的公司「零回报」",
+     "title_en": "AI delivers 'zero financial payoff' to most companies, Apollo economist says",
+     "url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
+     "hn": "https://news.ycombinator.com/item?id=50330456",
+     "points": 241,
+     "comments": 250,
+     "summary": [
+      "TechCrunch 报道，私募巨头阿波罗全球管理的首席经济学家 Torsten Slok 在一份报告里研究「标普 493」（标普 500 去掉 Alphabet、亚马逊、苹果、Meta、微软、英伟达和特斯拉），发现利润率和人均收入都持平，看不到 AI 提高生产率的证据。他说：「尽管投入巨大、炒作铺天盖地，AI 对科技业以外的美国企业带来的财务回报是零。」",
+      "他也不认为这只是非科技公司起步慢，因为「AI 也许是个很棒的计算器，但在商业里，智能主要是判断」，AI 不懂问责、信任、文化、潜规则和公平，而这些决定声誉风险乃至收入和利润。评论区有人说在自家化工配方研究里，从想法到原型从一两周缩短到一天；有人批评报告只看了公司总收入，根本衡量不了 AI 投资的「回报」；Simon Willison 提醒，这位经济学家去年那篇「大公司 AI 采用率下降」后来并不站得住。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "ManBeardPc",
+       "stance": "我们有用",
+       "zh": "对我们是有回报的（数据科学、特种化学、寻找和优化配方）。从想法到原型现在只要一天，过去要一到两周。现在我们能真正把所有想法都试一遍，而不是只猜最有希望的那个。",
+       "en": "We can get from idea to prototype in a day compared to 1-2 weeks.",
+       "hn": "https://news.ycombinator.com/item?id=50331030",
+       "id": 50331030,
+       "replies": 92
+      },
+      {
+       "user": "hyperpape",
+       "stance": "方法有问题",
+       "zh": "这完全歪曲了阿波罗那篇文章能说明的东西，因为它测的不是 AI 投资的「回报」，只是这些公司的总收入。",
+       "en": "it's not measuring the \"payoff\" of AI investments, but only the top level revenue of those companies",
+       "hn": "https://news.ycombinator.com/item?id=50331271",
+       "id": 50331271,
+       "replies": 9
+      },
+      {
+       "user": "kozikow",
+       "stance": "零和博弈",
+       "zh": "我注意到一个有趣的现象：你的公司用了 AI，进步快了很多，但竞争对手也在用。经济里很多领域是零和游戏，所以你的收入还是那么多，只是多交了一笔给 AI 模型提供商的「税」，才能保持竞争力。",
+       "en": "Many areas of economy are zero sum game",
+       "hn": "https://news.ycombinator.com/item?id=50331246",
+       "id": 50331246,
+       "replies": 10
+      }
+     ],
+     "kicker": "AI · 经济"
+    },
+    {
+     "id": 50337439,
+     "title": "Anthropic 第三季度收入 170 亿美元，承诺支出近 9,000 亿",
+     "title_en": "Anthropic reports $17B in Q3 revenue, commitments of $895B in revised S-1",
+     "url": "https://www.cnbc.com/2026/11/02/anthropic-ant-s-1-quarter-financials.html",
+     "hn": "https://news.ycombinator.com/item?id=50337439",
+     "points": 226,
+     "comments": 261,
+     "summary": [
+      "CNBC 报道，Anthropic 周一提交了修订版 S-1 招股书，补上第三季度数据：截至 9 月 30 日的九个月收入 332.4 亿美元，同比增长约 1,200%；同期净亏损 1,040 亿美元，但大部分来自可转债和衍生负债的公允价值变动。第三季度收入约 170 亿美元，同比增长约 1,127%，但环比只增长约 47%，远低于第二季度的 144% 和第一季度的 132%；当季净亏损 232.9 亿美元。",
+      "招股书还披露，公司签下的采购承诺和租约总额约 8,954 亿美元，「几乎全部与算力和基础设施相关」；前九个月算力和基础设施费用增加了 144 亿美元，增幅 329%。评论区点赞最高的一条说，这样的三季度数据不是上市前想看到的，Anthropic 可能是一家 2,000 亿到 3,000 亿美元的公司在装 2 万亿；有人算出算力成本环比涨了 77%，快过收入；也有人按 2 万亿估值倒推，到 2030 年要年赚约 1,200 亿美元才算正常回报。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "cmiles8",
+       "stance": "不利上市",
+       "zh": "三季度的数字不是你上市前想看到的。问题不在于 Anthropic 是不是惊人的增长故事，没人会否认这点。问题在于这可能是一家 2,000 亿到 3,000 亿美元的公司在假装值 2 万亿。",
+       "en": "Q3 numbers are not what you want to see heading into an IPO.",
+       "hn": "https://news.ycombinator.com/item?id=50338668",
+       "id": 50338668,
+       "replies": 74
+      },
+      {
+       "user": "wongarsu",
+       "stance": "成本更快",
+       "zh": "有意思。他们的收入三季度「只」涨了 47%，而之前多数季度都是翻倍。与此同时，「算力和基础设施」成本比二季度涨了 77%。",
+       "en": "Meanwhile their \"compute and infrastructure\" cost has increased by 77% compared to Q2",
+       "hn": "https://news.ycombinator.com/item?id=50338096",
+       "id": 50338096,
+       "replies": 22
+      },
+      {
+       "user": "nonethewiser",
+       "stance": "算估值",
+       "zh": "我们急需让讨论落到实际数字上。如果你按 2 万亿买入，Anthropic 到 2030 年要值约 3 万亿才算正常市场回报，相当于约 25 倍市盈率、每年约 1,200 亿美元利润。",
+       "en": "If you buy at $2T Anthropic needs to be worth about $3T by 2030 for a normal market return.",
+       "hn": "https://news.ycombinator.com/item?id=50339706",
+       "id": 50339706,
+       "replies": 4
+      }
+     ],
+     "kicker": "AI · 财报"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50344958,
+     "title": "Anthropic 的增长曲线变平了",
+     "title_en": "Anthropic's growth just flattened",
+     "url": "https://www.regenerator1.com/p/anthropics-growth-just-flattened",
+     "hn": "https://news.ycombinator.com/item?id=50344958",
+     "points": 122,
+     "comments": 143
+    },
+    {
+     "id": 50336138,
+     "title": "昨晚一个 AI 代理给小鼠做了脑手术",
+     "title_en": "Last night an AI agent performed brain surgery on a mouse",
+     "url": "https://twitter.com/OcanaSantero/status/2115442964574908902",
+     "hn": "https://news.ycombinator.com/item?id=50336138",
+     "points": 118,
+     "comments": 98
+    },
+    {
+     "id": 50334038,
+     "title": "中国首个前沿 AI 出口管制：商务部 2026 年第 48 号公告",
+     "title_en": "China's First Frontier AI Export Controls: Mofcom Announcement No. 48",
+     "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-china-ai-export-controls-announcement-48-2/",
+     "hn": "https://news.ycombinator.com/item?id=50334038",
+     "points": 148,
+     "comments": 84
+    },
+    {
+     "id": 50342284,
+     "title": "甲骨文申请发行 200 亿美元股票和债券，为 AI 扩建融资",
+     "title_en": "Oracle files to sell $20B in new stock, bonds to finance AI buildout",
+     "url": "https://www.cnbc.com/2026/11/02/oracle-files-to-sell-20-billion-in-new-stock-bonds-to-finance-ai-buildout.html",
+     "hn": "https://news.ycombinator.com/item?id=50342284",
+     "points": 141,
+     "comments": 101
+    },
+    {
+     "id": 50344919,
+     "title": "SEC 应为保护公众阻止 Anthropic 上市",
+     "title_en": "The SEC Should Block Anthropic's IPO to Protect the Public",
+     "url": "https://www.techpolicy.press/the-sec-should-block-anthropics-ipo-to-protect-the-public/",
+     "hn": "https://news.ycombinator.com/item?id=50344919",
+     "points": 113,
+     "comments": 61
+    },
+    {
+     "id": 50341334,
+     "title": "通过预训练投毒给 AI 代理植入后门",
+     "title_en": "Agentic backdoors via pretraining poisoning",
+     "url": "https://arxiv.org/abs/2610.37741",
+     "hn": "https://news.ycombinator.com/item?id=50341334",
+     "points": 84,
+     "comments": 28
+    },
+    {
+     "id": 50327416,
+     "title": "我就是 OpenAI 取消无限聊天的原因",
+     "title_en": "I Am the Reason OpenAI Is Killing Unlimited Chats",
+     "url": "https://chaosmanage.github.io/i-killed-unlimited-chatgpt/",
+     "hn": "https://news.ycombinator.com/item?id=50327416",
+     "points": 90,
+     "comments": 53
+    },
+    {
+     "id": 50331404,
+     "title": "美国人怎么看数据中心：听一万多条市议会公众发言",
+     "title_en": "America on Data Centers: listen to 10,000+ city council comments",
+     "url": "https://www.americansentiment.com/datacenters",
+     "hn": "https://news.ycombinator.com/item?id=50331404",
+     "points": 36,
+     "comments": 126
+    },
+    {
+     "id": 50336840,
+     "title": "美国人口普查局与「超级智能」",
+     "title_en": "The U.S. Census Bureau and \"Super Intelligence\"",
+     "url": "https://simonwillison.net/2026/Nov/2/census-bureau-super-intelligence/",
+     "hn": "https://news.ycombinator.com/item?id=50336840",
+     "points": 95,
+     "comments": 44
+    },
+    {
+     "id": 50339224,
+     "title": "Claude Opus 5.5 能画出可报建的建筑图纸",
+     "title_en": "Claude Opus 5.5 Can Draw Permit-Level Architectural Drawings",
+     "url": "https://stephenjgallagher.substack.com/p/ai-can-draw-blueprints-now",
+     "hn": "https://news.ycombinator.com/item?id=50339224",
+     "points": 76,
+     "comments": 27
+    }
+   ]
+  },
+  {
+   "name": "开发与安全",
+   "en": "Software & Security",
+   "page": 3,
+   "stats": {
+    "items": 13,
+    "points": 1590,
+    "comments": 720,
+    "top_points": {
+     "id": 50341462,
+     "title": "Ubuntu 近三周仍未发布 Linux 远程代码执行 0day 补丁",
+     "value": 279,
+     "comments": 54
+    },
+    "top_comments": {
+     "id": 50339815,
+     "title": "我最喜欢的笔记本电脑",
+     "value": 125
+    },
+    "top_brief": {
+     "id": 50341462,
+     "title": "Ubuntu 近三周仍未发布 Linux 远程代码执行 0day 补丁",
+     "value": 279,
+     "comments": 54
+    }
+   },
+   "stories": [
+    {
+     "id": 50338747,
+     "title": "PostHog 五个月后又把数据仓库搬离 DuckDB",
+     "title_en": "Moving our warehouse off DuckDB",
+     "url": "https://posthog.com/blog/moving-off-duckdb",
+     "hn": "https://news.ycombinator.com/item?id=50338747",
+     "points": 153,
+     "comments": 106,
+     "summary": [
+      "PostHog 写道，五个月前他们因为共享 ClickHouse 集群扛不住长时间建模查询、又缺基于成本的优化器，把数据仓库改建在 DuckDB 上，给每个客户一个独立实例，并让 dbt 等工具经 Postgres 协议连接；如今又花三个月重构，不再用 DuckDB。他们仍称 DuckDB 是最好的单机分析工具，但在云上，单机引擎必须在查询到来前就定好机器大小，客户的查询比预想复杂，只能上超大实例，也没法告诉客户需要多少资源。",
+      "DuckLake 湖仓格式为了兼容多种数据库，限制了针对性优化：单表写入可能超过三分钟，因为每次提交都要重读整个目录的统计信息，其中 99% 以上属于已删除的表。迁走时 PostHog 自己的 DuckLake 约有 2PB、一万亿行、1,530 万个快照；直接开放 Postgres 连接也远比 HTTP 难扩展，各种客户端都有怪癖。他们现在改用 Trino 和自研的 HogLake。评论区有人吐槽文章停在新方案是否解决问题之前；有人说通篇只是「一万亿行很多」，折腾多、测量少；也有人建议干脆回到已经支持 Iceberg 的 ClickHouse。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Aurornis",
+       "stance": "没讲结果",
+       "zh": "他们五个月前从 ClickHouse 换到 DuckDB，现在又从 DuckDB 换到自己的 Trino 衍生方案？文章在说新方案是否解决了问题之前就结束了。",
+       "en": "The article then ends before saying if the new setup solved their problems.",
+       "hn": "https://news.ycombinator.com/item?id=50339465",
+       "id": 50339465,
+       "replies": 27
+      },
+      {
+       "user": "0c3ca83",
+       "stance": "折腾太多",
+       "zh": "是我漏看了什么，还是这篇文章唯一的技术细节就是「一万亿行数据很多，也许这次试试 Trino 能行」？感觉折腾很多，测量和工程却很少。",
+       "en": "It feels like a lot of churn and not a lot of measurements or engineering.",
+       "hn": "https://news.ycombinator.com/item?id=50339238",
+       "id": 50339238,
+       "replies": 24
+      },
+      {
+       "user": "hasyimibhar",
+       "stance": "回 ClickHouse",
+       "zh": "不知道他们有没有考虑回到 ClickHouse。过去几个月 ClickHouse 对 Iceberg 的支持进步很大，可以在 Iceberg 上跑无状态的 ClickHouse，既解决多租户问题，也能轻松处理 PB 级数据。",
+       "en": "I wonder if they have considered moving back to ClickHouse.",
+       "hn": "https://news.ycombinator.com/item?id=50339977",
+       "id": 50339977,
+       "replies": 3
+      }
+     ],
+     "kicker": "开发 · 数据库"
+    },
+    {
+     "id": 50337558,
+     "title": "Cloudflare：DNS 构建延迟减半，内存占用降 85%",
+     "title_en": "We halved DNS build delay and cut memory use by 85%",
+     "url": "https://blog.cloudflare.com/dns-targeted-zone-builds/",
+     "hn": "https://news.ycombinator.com/item?id=50337558",
+     "points": 132,
+     "comments": 44,
+     "summary": [
+      "Cloudflare 介绍 DNS 变更传播管线的新改进。2022 年其 Zone Builder 每秒约收到 250 条记录变更，如今约 700 条，另有约 100 个区域设置之类的事件；有些区域已超过 2,000 万条记录，还会向数亿增长。当年他们已把单条记录变更改为只构建该记录，比全量构建平均快 150 倍；但区域设置的改动来源多、往往不说明原因，还可能影响多个同名区域，一直只能整区重建。",
+      "这次他们做了一个「定向构建规划器」，只选能证明安全的最小构建范围，再加一个合并同一区域工作的新调度器。区域设置改动不再触发千万级记录的整区重建，峰值内存下降 85%；省下的余量让他们缩短了管线为稳妥而设的等待，把从 DNS 改动到写入 Quicksilver 的时间缩短一半。评论区有人好奇内存涨价会不会促使业界更重视软件效率；有人觉得以 Cloudflare 的体量，每秒 700 条变更其实很低；也有人称赞其技术博客一贯出色。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "thephyber",
+       "stance": "内存涨价",
+       "zh": "我一直在想，内存短缺会不会让人更想把软件优化得更高效。很好奇降低内存占用的研发投入回报率有多少，既要看现在，也要看近期，因为内存价格可能还会高一到两年。",
+       "en": "I have been wondering if the memory scarcity would lead to a desire to optimize software to be more efficient.",
+       "hn": "https://news.ycombinator.com/item?id=50339322",
+       "id": 50339322,
+       "replies": 28
+      },
+      {
+       "user": "InsidiousWombat",
+       "stance": "不算多",
+       "zh": "以他们的规模和管理的域名数量，每秒 700 条变更难道不是……很低吗？",
+       "en": "Isn't 700 changes a second like... really low",
+       "hn": "https://news.ycombinator.com/item?id=50339285",
+       "id": 50339285,
+       "replies": 8
+      },
+      {
+       "user": "mhovd",
+       "stance": "博客出色",
+       "zh": "Cloudflare 那一系列整体出色的技术博客，得到的赞誉还不够。",
+       "en": "Cloudflare doesn't get enough credit for their series of overall great technical blog posts.",
+       "hn": "https://news.ycombinator.com/item?id=50340012",
+       "id": 50340012,
+       "replies": 3
+      }
+     ],
+     "kicker": "开发 · 基础设施"
+    },
+    {
+     "id": 50334704,
+     "title": "syscall.sh：27 种架构的 Linux 系统调用表一站查",
+     "title_en": "Show HN: I've updated my Linux System Call website and API",
+     "url": "https://syscall.sh/",
+     "hn": "https://news.ycombinator.com/item?id=50334704",
+     "points": 201,
+     "comments": 48,
+     "summary": [
+      "作者 guitmz 更新了他的 Linux 系统调用网站和 API。网站按架构列出 27 种 CPU 架构的系统调用表，涵盖 Linux 3.3 到 7.3，给出每个调用的编号、参数和所用寄存器，并记录它在哪个版本出现。例如 x86_64 有 369 个系统调用，32 位 x86 有 441 个，arm64 有 326 个，此外还有 RISC-V、LoongArch、PowerPC、IBM Z、MIPS 各 ABI，以及 Alpha、PA-RISC、SPARC、SuperH 等老架构。",
+      "作者在评论里说，最初发布网站时他还写过一个内置数据集、不用每次查 API 的命令行工具，打算整理后开源。评论区有人纠正 x86_64 上系统调用号放在 eax 而非 rax；有人建议用 gcc 预处理头文件的命令在本机核对真实数值，因为大模型给过他错误的编号；也有人问 Linux 接口明明一样，为什么各架构的系统调用不同。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "bkallus",
+       "stance": "纠个错",
+       "zh": "在 x86_64 和 x32 上，系统调用号放在 eax，而不是 rax。rax 的高 32 位会被忽略，可以是任意值。",
+       "en": "On x86_64 and x32, the syscall number goes in eax, not rax.",
+       "hn": "https://news.ycombinator.com/item?id=50335608",
+       "id": 50335608,
+       "replies": 2
+      },
+      {
+       "user": "ozgrakkurt",
+       "stance": "本机核对",
+       "zh": "我还建议用这样的命令（echo '#include <sys/syscall.h>' | gcc -E -dM -xc - | grep -i \"read\"）拿到你电脑上的真实值。大模型好几次给我错的编号或常量定义，但让它生成这样一条命令、我自己看结果，每次都靠得住。",
+       "en": "I had LLMs give wrong numbers or constant definitions several times",
+       "hn": "https://news.ycombinator.com/item?id=50337485",
+       "id": 50337485,
+       "replies": 1
+      },
+      {
+       "user": "wg0",
+       "stance": "为何不同",
+       "zh": "很棒的资源，以前不知道。不过有个无关的问题：既然 Linux API 是一样的，为什么系统调用会因架构而异？还是我把它和 C 标准库/POSIX 搞混了？",
+       "en": "why the syscalls vary per architecture if the linux API is the same?",
+       "hn": "https://news.ycombinator.com/item?id=50335902",
+       "id": 50335902,
+       "replies": 4
+      }
+     ],
+     "kicker": "开发 · Show HN"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50341462,
+     "title": "Ubuntu 近三周仍未发布 Linux 远程代码执行 0day 补丁",
+     "title_en": "Ubuntu still has not released patch for Linux 0day RCE in almost 3 weeks",
+     "url": "https://freenode.net/article/ubuntu-lts-kernels-still-unfixed-for-critical-cve-2026-98432",
+     "hn": "https://news.ycombinator.com/item?id=50341462",
+     "points": 279,
+     "comments": 54
+    },
+    {
+     "id": 50331784,
+     "title": "Trigger.dev 安全事件：部分客户的环境变量遭泄露",
+     "title_en": "Trigger.dev customer environment variables exposed",
+     "url": "https://trigger.dev/blog/security-incident-nov-2026",
+     "hn": "https://news.ycombinator.com/item?id=50331784",
+     "points": 162,
+     "comments": 85
+    },
+    {
+     "id": 50339913,
+     "title": "Launch HN：Momentic（YC W24），用你的应用来找 bug 的代理",
+     "title_en": "Launch HN: Momentic (YC W24) – Agents that catch bugs by using your app",
+     "url": "https://momentic.ai/",
+     "hn": "https://news.ycombinator.com/item?id=50339913",
+     "points": 114,
+     "comments": 73
+    },
+    {
+     "id": 50341502,
+     "title": "SOML：一种给人用的配置格式",
+     "title_en": "SOML – A Config Format for Humans",
+     "url": "https://github.com/soml-lang/soml",
+     "hn": "https://news.ycombinator.com/item?id=50341502",
+     "points": 56,
+     "comments": 62
+    },
+    {
+     "id": 50340369,
+     "title": "「让我查……」",
+     "title_en": "Let Me Ch...",
+     "url": "https://blog.alxgsv.com/let-me-check/",
+     "hn": "https://news.ycombinator.com/item?id=50340369",
+     "points": 179,
+     "comments": 69
+    },
+    {
+     "id": 50339815,
+     "title": "我最喜欢的笔记本电脑",
+     "title_en": "My Favourite Laptop",
+     "url": "https://blog.jsbarretto.com/post/laptop",
+     "hn": "https://news.ycombinator.com/item?id=50339815",
+     "points": 158,
+     "comments": 125
+    },
+    {
+     "id": 50340159,
+     "title": "Polyend 公开 Tracker 合成器固件源码",
+     "title_en": "Polyend releases the Tracker firmware source code",
+     "url": "https://polyend.com/whats-up/tracker-the-biggest-update-yet/",
+     "hn": "https://news.ycombinator.com/item?id=50340159",
+     "points": 69,
+     "comments": 15
+    },
+    {
+     "id": 50329425,
+     "title": "Linux 7.4 合并窗口轻松成为内核史上最大",
+     "title_en": "The Linux 7.4 Merge Window Is Easily the Largest in Kernel History",
+     "url": "https://www.phoronix.com/news/Linux-7.4-Massive-Window",
+     "hn": "https://news.ycombinator.com/item?id=50329425",
+     "points": 28,
+     "comments": 0
+    },
+    {
+     "id": 50331998,
+     "title": "AI 能写更多代码，但系统还得我们来设计",
+     "title_en": "AI Can Write More of the Code. We Still Have to Engineer the System",
+     "url": "https://picon.dev/en/publications/ai-assisted-engineering/",
+     "hn": "https://news.ycombinator.com/item?id=50331998",
+     "points": 46,
+     "comments": 29
+    },
+    {
+     "id": 50330033,
+     "title": "当现代化弄坏能用的代码：大模型改造遗留 PHP 的研究",
+     "title_en": "When Modernization Breaks Working Code: A Study of LLMs on Legacy PHP",
+     "url": "https://arxiv.org/abs/2610.40269",
+     "hn": "https://news.ycombinator.com/item?id=50330033",
+     "points": 13,
+     "comments": 10
+    }
+   ]
+  },
+  {
+   "name": "科学与能源",
+   "en": "Science & Energy",
+   "page": 4,
+   "stats": {
+    "items": 11,
+    "points": 1281,
+    "comments": 831,
+    "top_points": {
+     "id": 50331957,
+     "title": "小鼠实验：骨骼受力会分泌抗衰老蛋白，寿命延长近三个月",
+     "value": 314,
+     "comments": 126
+    },
+    "top_comments": {
+     "id": 50344181,
+     "title": "比亚迪 10 月卖出 30 万辆纯电车，超过美国一整个季度",
+     "value": 224
+    },
+    "top_brief": {
+     "id": 50315217,
+     "title": "电网中 60 秒波动之谜被破解",
+     "value": 255,
+     "comments": 109
+    }
+   },
+   "stories": [
+    {
+     "id": 50331957,
+     "title": "小鼠实验：骨骼受力会分泌抗衰老蛋白，寿命延长近三个月",
+     "title_en": "Bones may release proteins that slow aging and extend life span",
+     "url": "https://www.science.org/content/article/bones-may-release-proteins-slow-aging-and-extend-life-span",
+     "hn": "https://news.ycombinator.com/item?id=50331957",
+     "points": 314,
+     "comments": 126,
+     "summary": [
+      "《科学》报道，南方医科大学骨生物学家白晓春团队在《细胞·代谢》发表小鼠研究：运动时骨骼受到的挤压、牵拉和扭转，会让骨细胞中能感知力的「骨细胞」分泌抗衰老物质。他们在 10 个月大的小鼠骨细胞里敲除感力蛋白 PIEZO1，五个月后这些小鼠显老、记忆和反射变差、多个器官炎症增加，平均早死 105.5 天；反过来，给 20 到 24 个月大的老鼠每周两次、持续四个月用机器轻压腿骨两端（DTAL），它们骨更强、反应更快、器官更年轻，寿命延长近三个月，约相当于人类九年。",
+      "用 DTAL 处理过的老鼠的血还能逆转老血带来的加速衰老；团队找到的骨细胞分泌因子之一 PEDF，单独注射就能模拟这种效果，它在老年人和骨质疏松患者体内水平也更低。梅奥诊所的 Sundeep Khosla 说这是「有趣的小鼠概念验证」，不是人类的抗衰老疗法；约翰斯·霍普金斯的 Mei Wan 认为举重等高负荷训练可能额外有益。评论区有人说不管怎样先去举铁；有人联想到猫打呼噜据说能强健骨骼，建议研究振动的作用。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Qem",
+       "stance": "猫的呼噜",
+       "zh": "据说猫打呼噜是为了强健骨骼，也许机制相关。除了运动，看看振动能不能在人身上触发这种效果会很有意思，比如调查用风镐的人或其他长期接触振动的工种。",
+       "en": "It's said cats purr to strenghten their bones.",
+       "hn": "https://news.ycombinator.com/item?id=50338366",
+       "id": 50338366,
+       "replies": 19
+      },
+      {
+       "user": "armcat",
+       "stance": "先去练",
+       "zh": "「这些发现并不是对人类新抗衰老疗法的证明」——不管怎样，所有其他研究都只显示举铁和规律运动的好处，所以去练就对了！",
+       "en": "so just do it!",
+       "hn": "https://news.ycombinator.com/item?id=50337580",
+       "id": 50337580,
+       "replies": 2
+      },
+      {
+       "user": "le-mark",
+       "stance": "太老了",
+       "zh": "我大概太老了，等不到即将到来的抗衰老疗法和社会动荡带来的好处。我也接受。不过变老确实很糟。文中涉及的蛋白是 PIEZO1 和色素上皮衍生因子（PEDF）。",
+       "en": "The proteins in question  are piezo1 and pigment epithelium-derived factor (PEDF).",
+       "hn": "https://news.ycombinator.com/item?id=50336154",
+       "id": 50336154,
+       "replies": 4
+      }
+     ],
+     "kicker": "科学 · 衰老"
+    },
+    {
+     "id": 50344181,
+     "title": "比亚迪 10 月卖出 30 万辆纯电车，超过美国一整个季度",
+     "title_en": "BYD sold more EVs last month than the US did all quarter",
+     "url": "https://electrek.co/2026/11/02/byd-sold-more-evs-last-month-than-the-us-did-all-quarter/",
+     "hn": "https://news.ycombinator.com/item?id=50344181",
+     "points": 224,
+     "comments": 224,
+     "summary": [
+      "Electrek 报道，比亚迪 10 月销售新能源车 490,168 辆，同比增长 11%，是今年单月最高；其中纯电车创纪录卖出 305,743 辆，同比增 37%，首次突破 30 万。按凯利蓝皮书的估计，美国第三季度全部电动车销量只有约 26.25 万辆。纯电占比亚迪当月销量约 63%，插电混动则下降 17% 至 177,382 辆；今年前十个月纯电累计 1,953,700 辆，同比增长 6%。",
+      "比亚迪 10 月出口 170,194 辆，前十个月出口超过 150 万辆，几乎是去年的两倍，预计全年海外销量约 200 万辆、2027 年超过 250 万辆。评论区点赞最多的一条说自己坐过几次比亚迪，内饰廉价得让人难以理解有人花钱买；有人说拿美国比较没意义，美国电动车市场在补贴取消、排放法规废除后已「靠呼吸机维持」；也有人担心电池与底盘一体化，小事故就可能报废。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "diath",
+       "stance": "内饰差",
+       "zh": "我坐过几次比亚迪，实在想不通为什么有人会花钱买，内饰质量又低又廉价。那种又薄又劣质的人造革座椅最多一年就得换。",
+       "en": "I actually cannot fathom people spending money on them considering how low/cheap quality the interiors are.",
+       "hn": "https://news.ycombinator.com/item?id=50344442",
+       "id": 50344442,
+       "replies": 45
+      },
+      {
+       "user": "paxy",
+       "stance": "美国不行",
+       "zh": "拿美国比没什么意义，这里的电动车市场正靠呼吸机维持：联邦补贴取消，充电设施和电池制造的资金被收回，燃油车排放法规被废除，各州也被禁止执行自己的标准。电动车只占新车销量的 6%。",
+       "en": "Comparing it to the US isn’t really meaningful considering the EV market here is on life support.",
+       "hn": "https://news.ycombinator.com/item?id=50344790",
+       "id": 50344790,
+       "replies": 27
+      },
+      {
+       "user": "ryan_glass",
+       "stance": "维修成本",
+       "zh": "它们多年后表现如何会很有意思。比亚迪的一大省钱手段是把部件整合在一起，传动系统一个部件出问题，可能整套都要换。电池包是底盘的一部分，意味着小事故也可能直接报废。",
+       "en": "The battery pack being part of the chassis means a small accident could become a write-off.",
+       "hn": "https://news.ycombinator.com/item?id=50345361",
+       "id": 50345361,
+       "replies": 11
+      }
+     ],
+     "kicker": "能源 · 电动车"
+    },
+    {
+     "id": 50341736,
+     "title": "「无我的数学」：AI 时代数学家该如何看待自己的工作",
+     "title_en": "Egoless Mathematics in the AI Era",
+     "url": "https://terrytao.wordpress.com/2026/11/02/egoless-mathematics-in-the-ai-era/",
+     "hn": "https://news.ycombinator.com/item?id=50341736",
+     "points": 96,
+     "comments": 76,
+     "summary": [
+      "这是陶哲轩博客上的一篇客座文章，作者是 Karthik C. S.、Amit Sahai 和 Jie Xue。他们说 AI 的发展迫使数学家重新思考：数学工作的价值究竟是什么。文章区分「数学是发明」和「数学是发现」两种看法，用古生物学家挖化石作比：发现可能需要发明整套语言和框架，极富创造力，但被发现的真理并不因此属于个人。他们批评学界越来越用论文、引用和奖项衡量智识生活，当这些指标定义了工作本身的价值，就成了问题。",
+      "文章认为，从这个角度看，AI 做出数学发现不必让人为自己的意义而悲伤：一条真理变得可以理解了，它的价值不会因为作者不是我们而减少；乐于用 AI 和拒绝用 AI 的人，也都可以出于对数学真理的同一份承诺。作者承认自己远未做到「无我」，文末注明起草时得到了 GPT Astra 6.0 和 GPT 6.1 Sol 的帮助。评论区有人认为这像是给准备「喝下旧金山迷魂汤」的人唱摇篮曲；有人担心「人不重要、只有真理重要」会成为主流；也有人说这看起来像陶哲轩在努力接受一种失去（其实文章不是他写的）。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "klhs",
+       "stance": "像摇篮曲",
+       "zh": "我知道当个老顽固违反规矩，但这读起来就像给准备喝下旧金山迷魂汤的人唱的摇篮曲。成为专家的机会成本还在，但推动前沿的回报基本没了。",
+       "en": "the reward of pushing the frontier is mostly gone",
+       "hn": "https://news.ycombinator.com/item?id=50346183",
+       "id": 50346183,
+       "replies": 0
+      },
+      {
+       "user": "j2kun",
+       "stance": "令人担忧",
+       "zh": "这篇文章似乎在说：「人不重要，重要的只有真理。」而且所有决策都要从这个假定的价值出发。天哪。如果这成了多数人的观点，我很担心数学会变成什么样。",
+       "en": "This essay seems to say, \"people don't matter; all that matters is truth.\"",
+       "hn": "https://news.ycombinator.com/item?id=50342532",
+       "id": 50342532,
+       "replies": 6
+      },
+      {
+       "user": "bhouston",
+       "stance": "自我疗愈",
+       "zh": "一直关注陶哲轩的博客，他似乎在给自己做一种强制的认知行为疗法：在努力接受失去，同时为自己和他人建立一个新的框架，看清价值在哪里。",
+       "en": "he is trying to come to terms with loss",
+       "hn": "https://news.ycombinator.com/item?id=50342752",
+       "id": 50342752,
+       "replies": 16
+      }
+     ],
+     "kicker": "科学 · 数学"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50315217,
+     "title": "电网中 60 秒波动之谜被破解",
+     "title_en": "Mystery of 60-Second Fluctuations in Power Grids Solved",
+     "url": "https://www.fz-juelich.de/en/news/archive/press-release/2026/mystery-of-60-second-fluctuations-in-power-grids-solved",
+     "hn": "https://news.ycombinator.com/item?id=50315217",
+     "points": 255,
+     "comments": 109
+    },
+    {
+     "id": 50337703,
+     "title": "北欧国家出现 40°C 极端高温已不再难以想象",
+     "title_en": "40 °C heat extremes are no longer implausible in the Nordic countries",
+     "url": "https://www.nature.com/articles/s44304-026-00290-9",
+     "hn": "https://news.ycombinator.com/item?id=50337703",
+     "points": 53,
+     "comments": 7
+    },
+    {
+     "id": 50340612,
+     "title": "中国电动重卡销量占比达 50%，柴油需求下降",
+     "title_en": "Electric trucks hit 50% of China's heavy truck sales, diesel demand falls",
+     "url": "https://electrek.co/2026/11/02/electric-trucks-50-percent-china-heavy-truck-sales-diesel-demand/",
+     "hn": "https://news.ycombinator.com/item?id=50340612",
+     "points": 34,
+     "comments": 3
+    },
+    {
+     "id": 50337635,
+     "title": "午睡特征与痴呆发病",
+     "title_en": "Napping characteristics and incident dementia",
+     "url": "https://academic.oup.com/biomedgerontology/article/81/10/glag208/8769491?login=false",
+     "hn": "https://news.ycombinator.com/item?id=50337635",
+     "points": 36,
+     "comments": 26
+    },
+    {
+     "id": 50340629,
+     "title": "与射影平面和解",
+     "title_en": "Making Peace with the Projective Plane",
+     "url": "https://www.johndcook.com/blog/2026/11/02/projective-plane/",
+     "hn": "https://news.ycombinator.com/item?id=50340629",
+     "points": 23,
+     "comments": 13
+    },
+    {
+     "id": 50334240,
+     "title": "「我们必须知道，我们终将知道」：希尔伯特的名言",
+     "title_en": "Wir müssen wissen – wir werden wissen",
+     "url": "https://remy.wang/blog/hilbert.html",
+     "hn": "https://news.ycombinator.com/item?id=50334240",
+     "points": 54,
+     "comments": 17
+    },
+    {
+     "id": 50337725,
+     "title": "为什么苏联数学教材比美国的硬核得多？（2017）",
+     "title_en": "Why are Soviet math textbooks so hardcore in comparison to US textbooks? (2017)",
+     "url": "https://www.quora.com/Why-are-Soviet-mathematics-physics-textbooks-so-insanely-hardcore-in-comparison-to-US-textbooks/answer/Scott-Miller-307?share=1",
+     "hn": "https://news.ycombinator.com/item?id=50337725",
+     "points": 163,
+     "comments": 224
+    },
+    {
+     "id": 50319876,
+     "title": "化学饥饿：肥胖之谜（2021）",
+     "title_en": "A Chemical Hunger (2021)",
+     "url": "https://slimemoldtimemold.com/2021/07/07/a-chemical-hunger-part-i-mysteries/",
+     "hn": "https://news.ycombinator.com/item?id=50319876",
+     "points": 29,
+     "comments": 6
+    }
+   ]
+  },
+  {
+   "name": "文化与社会",
+   "en": "Culture & Society",
+   "page": 5,
+   "stats": {
+    "items": 13,
+    "points": 2346,
+    "comments": 1317,
+    "top_points": {
+     "id": 50336518,
+     "title": "喜欢一个网站，就把它备份下来",
+     "value": 368,
+     "comments": 92
+    },
+    "top_comments": {
+     "id": 50339397,
+     "title": "美国那些从男孩名变成女孩名（以及反过来）的名字",
+     "value": 294
+    },
+    "top_brief": {
+     "id": 50333339,
+     "title": "Show HN：Wikihack，HN 上被提到的维基百科条目合集",
+     "value": 331,
+     "comments": 102
+    }
+   },
+   "stories": [
+    {
+     "id": 50336518,
+     "title": "喜欢一个网站，就把它备份下来",
+     "title_en": "If you love a website, back it up",
+     "url": "https://blog.mistys-internet.website/post/2026/10/29/if-you-love-a-website-back-it-up/",
+     "hn": "https://news.ycombinator.com/item?id=50336518",
+     "points": 368,
+     "comments": 92,
+     "summary": [
+      "一位从事网页存档工作的博主讲了个小悲剧：她常回去看一些多年不变的老网页，其中一个是 2004 年上线、2005 年后几乎没改过的动画《Ochaken》（茶叶耳朵小狗）粉丝站 teapuppies.com。几周前再去，网站没了，域名被拿来放网络赌博广告。她说自己有工具、也该想到它迟早会下线，却没存档，所以写这篇文章求大家别重蹈覆辙。",
+      "她强调网页存档不是只有互联网档案馆这样的大机构能做，普通人完全可以自己动手：「有喜欢的网站？备份它！」文中介绍的工具都使用标准的 WARC 格式，能完整记录请求和响应，连依赖大量前端脚本的网站也能存，第一个推荐的是 ArchiveWeb.page 浏览器扩展；她也披露这些工具出自她所在的公司，但多数免费。评论区有人感叹书签里的链接一年年失效，档案馆里也找不到；有人担心几年后云端大模型会取代开放互联网、还能改写过去，呼吁多买书、多存档；还有人讲自己在 Angelfire 上放了 20 年的老网站和手扫的照片，突然就没了。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "drpfenderson",
+       "stance": "书签腐烂",
+       "zh": "完全同意。眼看自己书签里的链接慢慢腐烂真让人难过：想打开几年前的重要资料，只得到 404 或域名停放页，而且很多时候 Archive.org 之类的地方也没有。",
+       "en": "It's sad to slowly see the bitrot in my own bookmarks",
+       "hn": "https://news.ycombinator.com/item?id=50338928",
+       "id": 50338928,
+       "replies": 15
+      },
+      {
+       "user": "geye1234",
+       "stance": "多存档",
+       "zh": "五年后，云端大模型可能已经在很大程度上取代开放互联网，成为信息来源，并且集中控制、还能改写过去。请务必买书并保存好，也请把有重要信息的网站存档。",
+       "en": "In 5 years, cloud LLMs may have largely replaced the open Internet as a source of information",
+       "hn": "https://news.ycombinator.com/item?id=50339351",
+       "id": 50339351,
+       "replies": 15
+      },
+      {
+       "user": "ceroxylon",
+       "stance": "血的教训",
+       "zh": "我是吃了亏才明白的：我在 Angelfire 上放了一个老网站，停更后还让它挂了 20 年，太大意了。里面有很多我当年从胶片手工扫描的照片……直到某天它没了，我也找不到备份。",
+       "en": "I learned this the hard way by getting too casual with Angelfire",
+       "hn": "https://news.ycombinator.com/item?id=50339917",
+       "id": 50339917,
+       "replies": 0
+      }
+     ],
+     "kicker": "文化 · 网络存档"
+    },
+    {
+     "id": 50332086,
+     "title": "错误百出的 AI「粉丝维基」正在污染游戏圈",
+     "title_en": "AI fan wikis riddled with errors are muddying the waters of games culture",
+     "url": "https://www.eurogamer.net/ai-fan-wikis-errors-complicating-games-culture",
+     "hn": "https://news.ycombinator.com/item?id=50332086",
+     "points": 100,
+     "comments": 110,
+     "summary": [
+      "Eurogamer 作者想查《Nighthawks》同伴角色的资料，点开搜索第一条「Nighthawks Wiki」，发现它根本不是维基（只接受邮件「纠错」），还列出了不存在的同伴和技能，乱掺同名的 1981 年电影和爱德华·霍珀名画的内容。她把域名追到一家提供「AI 建站」的服务商 Spaceship，又搜到许多类似网站，专挑玩家社区不大的独立游戏下手。",
+      "发行商 Hooded Horse 的 CEO Tim Bender 说，他们自己和玩家一起维护官方维基，却不得不跟 AI 网站「打地鼠」：他们的《Corsair Cove》就被一个承认用生成式 AI、覆盖 20 多款游戏的 GameDB 抢了搜索结果，玩家常被误导后来问怎么回事。独立游戏维基网络的 FlamingMojo 说，100 人射击游戏《Wardogs》发售后几天就冒出至少五个这样的站，连累正规维基的名声。评论区有人呼吁建立 100% 人写内容的网站；有人说自己建棚子时发现，除非找到 2023 年前的论坛帖，网上几乎查不到靠谱建议；也有人说 AI 正在腐蚀过去几十年精心整理的一切。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "jonathanberger",
+       "stance": "要纯人写",
+       "zh": "那解决办法是什么？我想正确的办法不只针对粉丝维基。我们需要所有内容 100% 由人撰写的网站。谁在做这个？它要怎么运作？",
+       "en": "We're going to need sites where 100% of contributed content is human-written.",
+       "hn": "https://news.ycombinator.com/item?id=50332828",
+       "id": 50332828,
+       "replies": 64
+      },
+      {
+       "user": "jrmg",
+       "stance": "搜不到了",
+       "zh": "我正在建一个棚子，结果发现通过网络搜索几乎不可能找到关于工具或做法的可靠建议了。全是垃圾内容在互相喂养，除非你运气好，翻到大约 2023 年以前的论坛帖子。",
+       "en": "it’s become basically impossible to find reliable advice on tools or techniques by searching the web",
+       "hn": "https://news.ycombinator.com/item?id=50333403",
+       "id": 50333403,
+       "replies": 4
+      },
+      {
+       "user": "jacquesm",
+       "stance": "全面腐蚀",
+       "zh": "等你要审计 AI 时代之后的普通代码库就知道了。AI 正在腐蚀过去几十年精心整理的几乎一切。只要能用比特表示，就会被降级。",
+       "en": "AI is rotting pretty much everything that was carefully curated over the last couple of decades.",
+       "hn": "https://news.ycombinator.com/item?id=50332591",
+       "id": 50332591,
+       "replies": 12
+      }
+     ],
+     "kicker": "文化 · 游戏"
+    },
+    {
+     "id": 50334372,
+     "title": "BioWare 联合创始人：游戏公司高管「从没做过一款游戏」",
+     "title_en": "BioWare co-founder: game execs \"have never made a game\" and don't get it",
+     "url": "https://www.pcgamer.com/gaming-industry/none-of-these-people-have-ever-made-a-game-bioware-co-founder-greg-zeschuk-says-of-game-industry-executives-they-just-dont-know-how-it-works/",
+     "hn": "https://news.ycombinator.com/item?id=50334372",
+     "points": 127,
+     "comments": 139,
+     "summary": [
+      "PC Gamer 报道，上周 EA 关闭 BioWare 后，已退出游戏业近 15 年、如今在阿尔伯塔经营啤酒厂的联合创始人 Greg Zeschuk 罕见发声。他说消息传来时他正在钓鱼，难过之外，最心疼的是失业的员工，也为家乡埃德蒙顿感到遗憾，因为 BioWare 曾证明在那样的地方也能做出特别的东西。他不后悔当年卖给 EA，那带来了稳定；但 EA 被沙特公共投资基金收购时，他就觉得 BioWare 恐怕不妙，因为它做的复杂长周期游戏不符合「年年出体育游戏」的模式。",
+      "他批评近来的工作室合并和借 AI 裁员背后的想法——「随便找些人加上 AI 就能再造伟大的游戏」——「行不通」，并说几乎所有这些公司里走商业路线的人都没做过开发，「从没真正坐下来从头到尾做过一款游戏，哪怕很小的，所以他们根本不懂」。他表示不打算回归。评论区有人说 BioWare 是糟糕高层毁掉传奇工作室的例子，列举《圣歌》《龙腾世纪：影障守护者》；也有人反驳说当年卖给 EA 是因为 BioWare 自己不行了，近年的失败作也怪不到高管头上；还有人说真正有创意的游戏只会来自独立开发者。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "seanhunter",
+       "stance": "高层之过",
+       "zh": "BioWare 就是糟糕的高层能把一个传奇工作室毁成什么样的例子。看看它过去十年的作品，很难拍着胸脯说哪个点子听起来好玩。",
+       "en": "BioWare is an example of what poor senior leadership can do even to a legendary studio.",
+       "hn": "https://news.ycombinator.com/item?id=50337409",
+       "id": 50337409,
+       "replies": 22
+      },
+      {
+       "user": "eska",
+       "stance": "不全怪高管",
+       "zh": "我对这个人的观点要打个大大的折扣。他们卖给 EA 不是为了成长，而是因为 BioWare 撑不下去了。AI 再造游戏跟 BioWare 被关没关系，是个转移视线的话题。",
+       "en": "They didn't sell to EA to grow, but because BioWare was failing.",
+       "hn": "https://news.ycombinator.com/item?id=50337591",
+       "id": 50337591,
+       "replies": 1
+      },
+      {
+       "user": "Sydrik",
+       "stance": "看独立",
+       "zh": "如果你想要真正有创意的游戏，那不会来自 3A 工作室，而是独立开发者。3A 工作室玩的是另一场游戏（一语双关），服务它的受众，更服务股东。世界够大，容得下他们和真正有创意的独立工作室。",
+       "en": "If you want truly creative games, it won't be AAA game studios but indie game devs.",
+       "hn": "https://news.ycombinator.com/item?id=50336136",
+       "id": 50336136,
+       "replies": 31
+      }
+     ],
+     "kicker": "文化 · 游戏业"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50339397,
+     "title": "美国那些从男孩名变成女孩名（以及反过来）的名字",
+     "title_en": "US boy names that became girl names and vice versa",
+     "url": "https://namedaisy.com/blog/boy-names-that-became-girl-names",
+     "hn": "https://news.ycombinator.com/item?id=50339397",
+     "points": 261,
+     "comments": 294
+    },
+    {
+     "id": 50337454,
+     "title": "失业的科技工人被旧金山的 AI 热潮甩在身后",
+     "title_en": "Jobless tech workers are being left out of San Francisco's AI boom",
+     "url": "https://www.bloomberg.com/news/features/2026-09-17/san-francisco-s-ai-wealth-boom-skirts-engineers-as-openai-anthropic-ipos-near",
+     "hn": "https://news.ycombinator.com/item?id=50337454",
+     "points": 154,
+     "comments": 223
+    },
+    {
+     "id": 50333339,
+     "title": "Show HN：Wikihack，HN 上被提到的维基百科条目合集",
+     "title_en": "Show HN: Wikihack – HackerTube, but for Wikipedia articles mentioned on HN",
+     "url": "https://wikihack.netlify.app",
+     "hn": "https://news.ycombinator.com/item?id=50333339",
+     "points": 331,
+     "comments": 102
+    },
+    {
+     "id": 50333877,
+     "title": "Show HN：HackerHack，HN 上被提到的 HN 帖子合集",
+     "title_en": "Show HN: HackerHack – HackerBooks but for Posts Posted on HN",
+     "url": "https://news.ycombinator.com/",
+     "hn": "https://news.ycombinator.com/item?id=50333877",
+     "points": 180,
+     "comments": 25
+    },
+    {
+     "id": 50339221,
+     "title": "Show HN：体素版华沙，可交互的市中心 3D 地图",
+     "title_en": "Show HN: Warsaw in voxels – An interactive 3D map of the city centre",
+     "url": "https://p.migdal.pl/warsaw-vibe-voxel/",
+     "hn": "https://news.ycombinator.com/item?id=50339221",
+     "points": 197,
+     "comments": 35
+    },
+    {
+     "id": 50335659,
+     "title": "「从不抱怨，从不解释」",
+     "title_en": "Never Complain, Never Explain",
+     "url": "https://en.wikipedia.org/wiki/Never_complain,_never_explain",
+     "hn": "https://news.ycombinator.com/item?id=50335659",
+     "points": 153,
+     "comments": 62
+    },
+    {
+     "id": 50331158,
+     "title": "向中期选举砸下 12 亿美元的超级捐款人",
+     "title_en": "The Megadonors Who Have Poured $1.2B into the Midterms",
+     "url": "https://www.nytimes.com/interactive/2026/08/28/us/politics/billionaire-midterms-donors.html",
+     "hn": "https://news.ycombinator.com/item?id=50331158",
+     "points": 137,
+     "comments": 112
+    },
+    {
+     "id": 50341028,
+     "title": "溜进礼堂偷看 Windows 2000 发布会彩排",
+     "title_en": "Sneaking into the auditorium for the Windows 2000 launch rehearsal",
+     "url": "https://devblogs.microsoft.com/oldnewthing/20261102-00/?p=112818/",
+     "hn": "https://news.ycombinator.com/item?id=50341028",
+     "points": 90,
+     "comments": 30
+    },
+    {
+     "id": 50343418,
+     "title": "Valve「把资本主义玩得太好，玩坏了」，Steam 已无可替代",
+     "title_en": "Valve \"played capitalism so well they broke it\" and now Steam can't be replaced",
+     "url": "https://www.gamesradar.com/games/valve-played-capitalism-so-well-they-broke-it-and-now-steam-can-never-be-replaced-former-epic-dev-says-i-dont-think-this-is-fixable/",
+     "hn": "https://news.ycombinator.com/item?id=50343418",
+     "points": 42,
+     "comments": 65
+    },
+    {
+     "id": 50332163,
+     "title": "自由软件漫画第 13 期：BSD Unix 第三部分，BSD 的开端",
+     "title_en": "F/OSS Comics #13: BSD Unix, Part 3 – The Beginning of BSD Unix",
+     "url": "https://fosscomics.com/posts/13.%20BSD%20Unix%20Part%203%20-%20The%20Beginning%20of%20BSD%20Unix/",
+     "hn": "https://news.ycombinator.com/item?id=50332163",
+     "points": 206,
+     "comments": 28
+    }
+   ]
+  }
+ ],
+ "quote_of_day": {
+  "user": "temp123477",
+  "id": 50332774,
+  "hn": "https://news.ycombinator.com/item?id=50332774",
+  "story_id": 50331402,
+  "story": "OccupySaaS：被裁的工程师用 AI 重写 SaaS",
+  "zh": "错就错在以为人们付钱买的是第一个 S（软件），其实是第二个 S（服务）。",
+  "en": "The mistake is thinking the first S is what people pay for when it is the second S."
+ },
+ "stats": {
+  "snapshot": "2026-11-03T08:14:06+08:00",
+  "front_page_count": 90,
+  "with_numbers": 84,
+  "flagged_or_dupe": 6,
+  "top_points": {
+   "id": 50341174,
+   "title": "MIT 团队：GPT-6 Astra 能直接读写神经网络权重，把 Qwen 的数学成绩拉高六倍",
+   "value": 1749,
+   "comments": 558
+  },
+  "top_comments": {
+   "id": 50328896,
+   "title": "Ask HN：为了隐私，推荐买哪款电视？",
+   "value": 820
+  },
+  "second_comments": {
+   "id": 50337608,
+   "title": "「Ubuntu 你搞什么？」CVSS 9.8 内核漏洞两周多没补丁",
+   "value": 575
+  },
+  "over_500": 5,
+  "over_300": 10,
+  "over_100": 40,
+  "show_hn": 6,
+  "total_points": 14228,
+  "total_comments": 8585,
+  "hottest_ratio": {
+   "id": 50337454,
+   "title": "失业的科技工人被旧金山的 AI 热潮甩在身后",
+   "value": 1.45,
+   "comments": 223,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
