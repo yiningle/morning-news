@@ -1,0 +1,1308 @@
+{
+ "date": "2026-11-03",
+ "published_at": "2026-11-04T08:17:47+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-11-03",
+ "schema_version": 2,
+ "lead": {
+  "id": 50354960,
+  "title": "Postman 被曝悄悄给 Codex、Claude Code 装插件，还替自己的启动钩子「签字放行」",
+  "title_en": "Postman silently auto-installs AI plugins and attempts to share all API data",
+  "url": "https://github.com/postmanlabs/postman-app-support/issues/14370",
+  "hn": "https://news.ycombinator.com/item?id=50354960",
+  "points": 969,
+  "comments": 319,
+  "summary": [
+   "这是 GitHub 用户 indicava 10 月 25 日在 Postman 官方问题跟踪库提交的报告，被标为「严重」。他说在 Mac 上打开许久没用的 Postman 桌面版（12.33.4）后，自己的编程代理开始反复弹出 MCP 认证警告，Codex 也总把 API 相关的活儿转给 Postman 技能。他翻出 Postman 自己的日志：10 月 24 日一条「auto-existing-upgrade」记录显示，它自动为 Claude Code 和 Codex 装好了插件；Codex 的全局配置被加了 Postman 插件市场、插件和一个会话启动钩子，钩子会告诉代理「在回答任何不简单的 API 工程任务前」先加载 Postman 的 api-engineer 技能。Claude Code 的配置也被启用了 Postman 插件，~/.local/bin 里还多了一个 Postman 命令行工具。",
+   "更扎眼的是，他在插件安装器源码里找到一个 approvePostmanHook 函数，会在装完后把这个钩子的哈希写进 Codex 的「已信任」记录，源码注释写着「只批准 Postman 当前的钩子」；一个需要登录的远程 MCP 服务器也被直接启用了。作者要求 Postman 停止对老用户的自动安装、去掉自我批准、提供完整卸载办法，并写明这份报告不能证明数据外泄（HN 标题里的「分享所有 API 数据」并非报告原话）。这是当天点赞第一的帖子，报告本身也收到 149 个赞。评论区点赞最多的一条感叹 Postman 本该是 curl 那样的小工具，却融了 4 亿多美元、要撑 50 亿估值；有人说 Postman 会把请求细节连同模板里填入的密钥值发回服务器；在医疗行业工作的人说他们的安全团队已因此把 Postman 除名，全员一夜换成 Bruno。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "pants2",
+    "stance": "变味了",
+    "zh": "Postman 的遭遇真可惜。它起初是个出色的小型 API 测试工具，后来不知为何融了 4 亿多美元、招了 1,500 多人，可它本该像 curl 或 Little Snitch 那样是个小小的开源或兴趣项目。如今为了撑起估值，只能强制登录、收集数据、按月订阅、加 AI 功能。",
+    "en": "It started as an excellent little developer tool for testing APIs.",
+    "hn": "https://news.ycombinator.com/item?id=50355299",
+    "id": 50355299,
+    "replies": 166
+   },
+   {
+    "user": "primitivesuave",
+    "stance": "密钥外传",
+    "zh": "Postman 会记录你通过它发出的每个 API 请求的详细信息，包括查询参数。如果你用 {{some_secret}} 模板语法填参数，它会把 some_secret 的真实内容发到 Postman 的服务器；屏蔽这个日志端点，整个应用就没法正常用。我是在调查它是否符合 HIPAA 时发现的（并不符合）。",
+    "en": "it sends the actual secret content of `some_secret` to Postman's servers",
+    "hn": "https://news.ycombinator.com/item?id=50358055",
+    "id": 50358055,
+    "replies": 2
+   },
+   {
+    "user": "bottombutton",
+    "stance": "已被除名",
+    "zh": "我在医疗行业，Postman 已经因为这件事被我们的网络安全团队取消认证，我们一夜之间全换成了 Bruno。他们的销售倒是拼命给我们打电话。",
+    "en": "Postman got decertified by our Cyber team for this.",
+    "hn": "https://news.ycombinator.com/item?id=50356050",
+    "id": 50356050,
+    "replies": 5
+   }
+  ],
+  "kicker": "要闻 · 开发工具",
+  "tag": "当日点赞第一"
+ },
+ "side": [
+  {
+   "id": 50351111,
+   "title": "spaCy 作者：「Astra 读写权重改进 Qwen」那篇文章有误导",
+   "title_en": "The 'Astra can read and write weights to improve Qwen' post is misleading",
+   "url": "https://honnibal.dev/blog/astra-read-write-misleading",
+   "hn": "https://news.ycombinator.com/item?id=50351111",
+   "points": 872,
+   "comments": 189,
+   "summary": [
+    "前一天 HN 点赞第一的 MIT 文章称 GPT-6 Astra「只看原始权重」就能理解并改写神经网络，还把 Qwen3.5-0.8B 的 MATH-500 从 7.9% 提到 48.1%。spaCy 作者 Matthew Honnibal 用魔术师「同一个戏法用几种手法变」作比，逐项列表拆解：真正只把原始浮点数放进上下文、不用工具也不运行网络的，只有三个实验，网络规模在 1.7 万到 17.2 万个权重之间；凡是涉及真正语言模型的实验都写了 Python，作为头条的 Qwen 结果还能在多达 50 批练习题上运行模型。",
+    "他认为 Qwen 结果说明的是 Astra 能被引导去设计并完成一名人类机器学习工程师也能做的工作，这并非小事，一两年前的模型做不到；但它和「直接读权重」的实验不该放在同一篇文章里讲，因为那不是同一种技术，合在一起会让人误以为存在某种深层能力。评论区一位做机制可解释性研究的人同意原文「肯定有误导」，说关键结果不是让 Qwen 数学变好，只是减少推理死循环，用的是人类研究者的标准做法；也有人说原文后半段其实写清楚了；还有人仍对「权重空间编程」这个想法印象深刻。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "x313",
+     "stance": "业内同意",
+     "zh": "我就在这个领域（机制可解释性研究），我同意，原文肯定有误导。研究里有点夸大很正常，但这有点过了。首先，关键结果和让 Qwen 数学变好毫无关系，它只是减少了推理循环。",
+     "en": "the key result has nothing to do with making Qwen better at math, it just reduces reasoning loops.",
+     "hn": "https://news.ycombinator.com/item?id=50353792",
+     "id": 50353792,
+     "replies": 5
+    },
+    {
+     "user": "phoghed",
+     "stance": "原文写了",
+     "zh": "对读过原文的人来说，读到明确解释这一点的那一节时，不就很清楚了吗？当然，如果只看标题和开头摘要，你确实得不到全貌。",
+     "en": "Sure if you only read the title and brief at the top you’d walk away without the full picture though.",
+     "hn": "https://news.ycombinator.com/item?id=50351571",
+     "id": 50351571,
+     "replies": 31
+    },
+    {
+     "user": "GavinAnderegg",
+     "stance": "仍很惊艳",
+     "zh": "我还是对「权重空间编程」这个想法印象深刻，也许因为读它之前我根本不知道大模型能理解或成功修改权重。是的，人类可以造工具改权重，但本文作者也承认这很难。Astra 直接和权重打交道的那些例子仍然新颖，而且它处理得出奇轻松。",
+     "en": "I'm still impressed by the \"Weight-Space Programming\" idea.",
+     "hn": "https://news.ycombinator.com/item?id=50351619",
+     "id": 50351619,
+     "replies": 1
+    }
+   ],
+   "kicker": "要闻 · AI 研究",
+   "tag": "昨日头条续篇"
+  },
+  {
+   "id": 50353192,
+   "title": "Google 中小学新规：AI 和搜索默认关闭，要学校自己打开",
+   "title_en": "Google will turn off search for schools that reject AI",
+   "url": "https://www.nytimes.com/2026/11/03/us/google-search-schools-restrict-ai.html",
+   "hn": "https://news.ycombinator.com/item?id=50353192",
+   "points": 542,
+   "comments": 392,
+   "summary": [
+    "HN 标题来自《纽约时报》报道（付费墙，未能读到原文），帖子同时附上了 Google 官方博客。Google 教育业务副总裁 Chris Phillips 在博客里宣布：把「引导式学习」功能加进 Google 搜索和 Google Classroom，学生粘贴一道物理题或要写读书报告时，搜索会一步步引导思考而不是直接给答案，本月晚些时候先在部分美国学校试点；Classroom 版即日起全球上线。",
+    "引起争议的是「学校控制」的调整：博文写明，Gemini、Gemini Notebook、Classroom 里的 Gemini 以及 Google 搜索，对 K-12 学生账号将「完全关闭，直到学校管理员明确打开」，细节会在未来几个月告知学校。这是当天评论最多的帖子。评论区有人读成 Google 拿搜索当人质逼学校接受 AI，也有人指出原文也可能是指每个工具可以单独开关；有人借机吐槽 Gmail 关掉生成式 AI 就得连智能收件箱等老功能一起关；也有人认为如今读 AI 摘要可能比读前十条搜索结果更靠谱。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "karmickoala",
+     "stance": "捆绑开关",
+     "zh": "有点相关：你知道吗，关掉 Gmail 的生成式 AI 功能，就得连智能收件箱这些早于大模型的传统机器学习功能一起关掉。Google 把生成式 AI 和传统机器学习混为一谈，你没法只退出生成式 AI。",
+     "en": "you cannot disable GMail's GenAI features without disabling the traditional ML powered features",
+     "hn": "https://news.ycombinator.com/item?id=50356026",
+     "id": 50356026,
+     "replies": 39
+    },
+    {
+     "user": "extralongdivisi",
+     "stance": "可能单独开关",
+     "zh": "「这些产品（AI 和搜索）对 K-12 学生账号将完全关闭，直到学校管理员明确打开。」我不排除 Google 会拿搜索当人质逼学校用 AI。但这句话也可以理解为「每个工具单独开关」，而不是一起开关。",
+     "en": "the above quote could be interpreted as \"turn on/off each tool individually\" instead of collectively.",
+     "hn": "https://news.ycombinator.com/item?id=50359763",
+     "id": 50359763,
+     "replies": 0
+    },
+    {
+     "user": "lukeschlather",
+     "stance": "摘要更靠谱",
+     "zh": "我觉得到了这个地步，读 AI 摘要（我猜是 Gemini Flash Lite）大概比真去读前十条搜索结果更可靠。即使在 AI 之前，前十条也经常是垃圾博客。",
+     "en": "reading the AI summary (which I think is Gemini Flash Lite) is probably going to be more reliable than actually reading the top 10 search results.",
+     "hn": "https://news.ycombinator.com/item?id=50354928",
+     "id": 50354928,
+     "replies": 45
+    }
+   ],
+   "kicker": "要闻 · 教育",
+   "tag": "当日评论第一"
+  },
+  {
+   "id": 50353229,
+   "title": "犹他州对 Kalshi 及两位创始人提起重罪指控，联邦政府反告犹他",
+   "title_en": "Kalshi and its co-founders face felony charges for violating Utah gambling laws",
+   "url": "https://arstechnica.com/tech-policy/2026/10/trump-admin-sues-utah-to-save-kalshi-from-the-states-total-ban-on-gambling/",
+   "hn": "https://news.ycombinator.com/item?id=50353229",
+   "points": 434,
+   "comments": 377,
+   "summary": [
+    "Ars Technica 报道，犹他州总检察长 Derek Brown 在州法院对预测市场 Kalshi 及其联合创始人、CEO Tarek Mansour 和联合创始人、COO Luana Lopes Lara 提起刑事指控：公司和两人各面临 13 项重罪和 1 项轻罪，依据是 9 月 13 日至 24 日间 Kalshi 提供的体育投注。州政府没有签发逮捕令，而是发出传票。Kalshi 称这是「疯狂的越权」，说会像 5 月在亚利桑那那样在法庭上胜诉。犹他是美国仅有的两个在州宪法里禁止赌博的州之一，上周还提起了民事诉讼。",
+    "与此同时，监管预测市场的联邦机构商品期货交易委员会（CFTC）起诉犹他州，称州政府阻碍国会赋予联邦的专属管辖权，犹他已是第 10 个被它起诉的州。核心法律问题是预测市场的事件合约算不算掉期、联邦管辖是否压过州赌博法；8 月联邦法官 Robert Shelby 曾裁定联邦法律不妨碍犹他执法。这是当天评论第二多的帖子。评论区点赞最多的一条赞赏犹他愿意动用刑事指控维护州主权；有人直言这两家就是赌博网站；也有人问同样的逻辑为什么不适用于股市。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "jsw97",
+     "stance": "支持州权",
+     "zh": "我对针对 Kalshi 和 Polymarket 的道德讨伐本身说不好，但很高兴看到至少有一个州认真对待自己的主权，愿意动用刑事指控硬碰硬。犹他百分之百有权执法，我希望它成功。连联邦也一起对抗，很有胆量。",
+     "en": "I am glad to see that at least one state is serious about its sovereignty and is willing to go to the mat with criminal charges.",
+     "hn": "https://news.ycombinator.com/item?id=50355579",
+     "id": 50355579,
+     "replies": 89
+    },
+    {
+     "user": "superxpro12",
+     "stance": "就是赌博",
+     "zh": "Kalshi 和 Polymarket 显然就是赌博网站。任何反驳都只是为了在监管追上来之前抬高利润的金融说辞。",
+     "en": "kalshi and polymarket are quite obvious gambling sites.",
+     "hn": "https://news.ycombinator.com/item?id=50353795",
+     "id": 50353795,
+     "replies": 65
+    },
+    {
+     "user": "riantogo",
+     "stance": "股市呢",
+     "zh": "我不是在帮 Kalshi 说话，但为什么这套理由不适用于股市？也许适用，只是法律把股市排除了？",
+     "en": "why doesn't the reasoning apply to stock market?",
+     "hn": "https://news.ycombinator.com/item?id=50359697",
+     "id": 50359697,
+     "replies": 3
+    }
+   ],
+   "kicker": "要闻 · 监管",
+   "tag": "当日评论第二"
+  },
+  {
+   "id": 50339288,
+   "title": "只为调个时钟，他越狱了自己车上的导航",
+   "title_en": "Jailbreaking my car's navigation system just so I can change the time",
+   "url": "https://blog.nns.ee/2026/11/02/renault-hack/",
+   "hn": "https://news.ycombinator.com/item?id=50339288",
+   "points": 575,
+   "comments": 229,
+   "summary": [
+    "爱沙尼亚博主开一辆 2014 年的雷诺 Latitude。买车时前车主说「改时间要用导航地图 SD 卡」，他没信，卡就扔了。夏令时结束后，他发现菜单里确实没有设时间的选项，另一个设置键只会弹出「未检测到地图」。他下载固件逆向（车机是 TomTom Carminat LIVE，三星 S5P6440 芯片，基于 Linux 2.6.28.10 的定制系统），结论是前车主完全正确：进入设置界面的菜单定义竟然存在 SD 卡里，而且卡要通过 CID 和签名的 DRM 校验，复制到空白卡也不行；第三方卖的卡加运费约 60 欧元。",
+    "他在 QEMU 里搭了模拟环境，试过改升级镜像、模糊测试图片解码器都没成功，最后拼出一条路：车机的 master.script 能以 root 往任意路径写一行可打印字符（有路径穿越漏洞），也能执行系统里已有的程序。他借用内核漏洞利用常用的技巧，把 /proc/sys/kernel/core_pattern 改成用 sh 运行 SD 卡上的脚本，再运行一个连不上系统总线就会崩溃的 dbus-monitor 触发转储，拿到 root。最后发现车机根本没有时区概念，只在 settings.dat 里存了一个以分钟计的偏移量：他把 180 改成了 120。评论区有人说某些斯巴鲁驾驶员视野里有三个互不同步的时钟；有人调侃「时间不插 SD 卡也能改」该加进「程序员对时间的误解」清单。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "numpad0",
+     "stance": "三个时钟",
+     "zh": "听说有些斯巴鲁车型驾驶员视野里有 3 个时钟，都在 CAN 总线上，一个是导航、一个是导航的远程显示、一个就是单纯的钟，而且互不同步。我不懂斯巴鲁怎么还能做下去。就是个 4 位数的时间，在 CAN 上广播一下就好，为什么不呢？",
+     "en": "some Subaru models have 3 clocks in the view of the driver",
+     "hn": "https://news.ycombinator.com/item?id=50355141",
+     "id": 50355141,
+     "replies": 70
+    },
+    {
+     "user": "tom1337890",
+     "stance": "信前车主",
+     "zh": "写得太棒了，很喜欢。还好你记下来了，半年后你还得再来一次。我的收获是：你当初就该留着 SD 卡、相信前车主。有时候「普通用户」确实懂。",
+     "en": "You should have just gotten the SD card and trusted the previous owner.",
+     "hn": "https://news.ycombinator.com/item?id=50353939",
+     "id": 50353939,
+     "replies": 15
+    },
+    {
+     "user": "RajT88",
+     "stance": "时间谬误",
+     "zh": "给「程序员对时间的误解」再加一条：不插车机里的 SD 卡也能改时间。",
+     "en": "Add to falsehoods programmers believe about time",
+     "hn": "https://news.ycombinator.com/item?id=50354274",
+     "id": 50354274,
+     "replies": 5
+    }
+   ],
+   "kicker": "要闻 · 逆向工程"
+  },
+  {
+   "id": 50349276,
+   "title": "把现代 Stockfish 移植到 1996 年的奔腾 Pro 上，能赢卡斯帕罗夫吗？",
+   "title_en": "Could a modern chess engine on a Pentium have defeated Kasparov in 1996?",
+   "url": "https://nicholas.carlini.com/writing/2026/algorithmic-improvements-chess.html",
+   "hn": "https://news.ycombinator.com/item?id=50349276",
+   "points": 435,
+   "comments": 204,
+   "summary": [
+    "Nicholas Carlini 写道，1996 年深蓝靠 30 个处理器和 480 块定制国际象棋芯片、每秒分析 2 亿个局面才赢下卡斯帕罗夫一局；而他身边这台 200MHz 的奔腾 Pro（1995 年 11 月 1 日发布，64MB 内存，从软盘启动）跑着他移植的 Stockfish，估计经典时限 Elo 达 3300 ± 87，远超卡斯帕罗夫不到 2800 的等级分，而且已接上网，读者可以直接在网页上和它下。",
+    "他的结论是，现代引擎相对 1996 年的约 1335 点 Elo 提升里，720 点来自更好的算法而非硬件：1996 年的 Crafty 引擎在奔腾 Pro 上每步 1 秒约 Elo 1999，加入现代搜索技巧和神经网络评估（NNUE）后升到 2718；Stockfish 改用 32 位运算、压到 64MB 内存后约 Elo 2496，再针对奔腾调优可到 2846（每步 30 秒 3180）。100 局对抗中，奔腾上的现代引擎对跑在现代电脑上的 1996 年 Crafty 赢 78 局、和 17 局、输 5 局。评论区一位业余高手说自己很容易找到击败它的路线，认为卡斯帕罗夫团队也会利用算力不足时的弱点；有人指出 NNUE 是蒸馏自现代 Stockfish 的，当年的人就算拿到图纸也没有「老师模型」；还有人反对文中「特级大师和业余者分析的走法差不多多」的说法。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "k2052",
+     "stance": "未必稳赢",
+     "zh": "文章的主旨是对的：现代引擎更强主要靠更好的评估和搜索，而不是硬件。但卡斯帕罗夫会输给跑在 90 年代硬件上的它，这并不像看上去那么确定。算力不够时它有明显弱点，卡斯帕罗夫和他的团队很可能会利用。",
+     "en": "the idea that Kasparov would lose to one on 90s hardware is not as clearly true as one might think.",
+     "hn": "https://news.ycombinator.com/item?id=50358059",
+     "id": 50358059,
+     "replies": 10
+    },
+    {
+     "user": "rockmeamedee",
+     "stance": "缺老师模型",
+     "zh": "是的，但大部分功劳来自 NNUE，一个用海量数据训练来模仿现代 Stockfish 的定制神经网络。所以当年的电脑确实能跑出 3000 多分，但当时的程序员就算拿着时光机和技术蓝图回去，也实现不了，因为他们没有可以蒸馏的老师模型。",
+     "en": "They wouldn't have the teacher model to distill from.",
+     "hn": "https://news.ycombinator.com/item?id=50352360",
+     "id": 50352360,
+     "replies": 7
+    },
+    {
+     "user": "FartyMcFarter",
+     "stance": "大师算得多",
+     "zh": "好文章。挑个刺：我不同意「特级大师在慢棋里分析的走法和业余棋手差不多多」。我看过特级大师边直播下棋边说思路，他们考虑的分支比我多得多，有些分支也算得比我深得多。",
+     "en": "they consider way more branches than I do",
+     "hn": "https://news.ycombinator.com/item?id=50351105",
+     "id": 50351105,
+     "replies": 49
+    }
+   ],
+   "kicker": "要闻 · 计算史"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 2,
+   "stats": {
+    "items": 13,
+    "points": 2349,
+    "comments": 1157,
+    "top_points": {
+     "id": 50355251,
+     "title": "Simon Willison：笔记本上的 Qwen 3.8 27B 也能看权重认游戏",
+     "value": 462,
+     "comments": 147
+    },
+    "top_comments": {
+     "id": 50350004,
+     "title": "Revolut 改用自托管的 GLM 模型",
+     "value": 155
+    },
+    "top_brief": {
+     "id": 50350004,
+     "title": "Revolut 改用自托管的 GLM 模型",
+     "value": 184,
+     "comments": 155
+    }
+   },
+   "stories": [
+    {
+     "id": 50355251,
+     "title": "Simon Willison：笔记本上的 Qwen 3.8 27B 也能看权重认游戏",
+     "title_en": "Qwen 3.8 27B on my laptop can interpret model weights, too",
+     "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
+     "hn": "https://news.ycombinator.com/item?id=50355251",
+     "points": 462,
+     "comments": 147,
+     "summary": [
+      "Simon Willison 只复现了「权重空间编程」论文里不用工具的那一类实验：作者把为 Breakout、Pong、Pac-Man、Freeway 四款简化网格游戏训练的小策略网络权重，以浮点数原样放进提示词，问模型它是为哪款游戏训练的，并要求不准用代码或计算器。他先用 Kimi K3.1 Pro 跑 Breakout，9:41（分:秒）、19,493 个推理令牌后答对；再在笔记本上用 LM Studio 跑 17GB 的 Qwen 3.8 27B（默认 8192 上下文会报错）。",
+      "Qwen 用 46 分钟、43,506 个推理令牌认出 Pac-Man（自报置信度 72%），Pong 用了 1 小时 5 分钟（75%），Breakout 52 分钟（88%），只有冷门的 Freeway 认错成 Pac-Man。他说推理过程几乎看不懂，并认为一个有经验的人拿纸笔费些力气也能做到；他也引用了 Honnibal 和 Sean Goedecke 的批评，说自己还没准备好宣布「源代码时代结束」。评论区有人引用莎士比亚：「我能召唤深渊里的精灵」「谁不能？问题是它们来不来」；有人盛赞 Qwen 3.8 27B 只要你肯当技术负责人就能办成前沿模型的事；也有人担心模型联网偷看了前一天的 HN。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "variaga",
+       "stance": "对不对呢",
+       "zh": "我不评价具体模型的能力，但这些「能解读模型权重」的帖子让我想起莎士比亚《亨利四世》里的台词。格兰道厄：我能召唤深渊里的精灵。霍茨波：我也能，谁都能，可你召唤时它们来不来？我也能解读权重，但解读得对不对？",
+       "en": "I can interpret weights too, but will that interpretation be correct?",
+       "hn": "https://news.ycombinator.com/item?id=50355911",
+       "id": 50355911,
+       "replies": 17
+      },
+      {
+       "user": "zkmon",
+       "stance": "最佳模型",
+       "zh": "Qwen-3.8-27B 是 AI 迄今最好的东西。只要你愿意当更高层的架构师或决策者，像技术负责人那样时不时指点一下，它能做到前沿模型做到的事。你给前沿模型付的钱，正是为了把这部分高层指挥外包给代理。",
+       "en": "The money you pay for frontier models is exactly for outsourcing that high level direction work to agents.",
+       "hn": "https://news.ycombinator.com/item?id=50357231",
+       "id": 50357231,
+       "replies": 38
+      },
+      {
+       "user": "qwe-askl",
+       "stance": "别作弊",
+       "zh": "在这么一个充满信息和引导性问题的构造提示里，它为什么不能解读权重？希望你至少关掉了所有网络访问，免得模型作弊去读昨天的 HN。",
+       "en": "in case the model cheats and reads HN from yesterday.",
+       "hn": "https://news.ycombinator.com/item?id=50357604",
+       "id": 50357604,
+       "replies": 0
+      }
+     ],
+     "kicker": "AI · 本地模型"
+    },
+    {
+     "id": 50352757,
+     "title": "用户发现 Codex 的「用数据改进模型」开关被悄悄重新打开",
+     "title_en": "OpenAI seems to be silently re-enabling model training on Codex chats",
+     "url": null,
+     "hn": "https://news.ycombinator.com/item?id=50352757",
+     "points": 421,
+     "comments": 133,
+     "summary": [
+      "这是一篇 Ask 式的自述帖：发帖人说公司很担心通过提示词把知识产权泄露给前沿实验室，所以大家都认真关掉了 Codex、Claude Code 等工具的数据共享；可前一天他和同事发现，Codex 里的设置被悄悄重新启用了，没有人有意重新同意。他让大家去 ChatGPT 设置的「数据控制」里检查「为所有人改进模型」一项，后来补充说此前 HN 也有人报告过，并给出 OpenAI 隐私门户这个另一种关闭途径。帖子没有 OpenAI 的回应。",
+      "评论区有人说自己的设置也被重新打开了，而历史记录里明明有两次关闭训练的请求获批；有人反映 Claude 上周在会话里似乎自动触发了 /feedback，而他们组织设置里已关掉，条款允许用反馈内容训练，联系 Anthropic 后客服不再回复；点赞较多的一条则说，真在乎的公司应该自己跑推理，而不是把命运交给几个复选框。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "chriskanan",
+       "stance": "我也是",
+       "zh": "嗯，我的也被重新打开了，而过去的请求历史里有两次关闭训练的请求都获批了，结果它又是开着的。太让人费解了。",
+       "en": "mine was re-enabled, and in the history of past requests I have two past requests to disable training that were granted.",
+       "hn": "https://news.ycombinator.com/item?id=50356642",
+       "id": 50356642,
+       "replies": 3
+      },
+      {
+       "user": "kevcampb",
+       "stance": "Claude 也有",
+       "zh": "上周 Claude 似乎在一次会话里自动触发了 /feedback，可我们的组织设置里已经关掉了。他们的条款写明可以保留 /feedback 提交的内容并用来训练模型，这可不好。",
+       "en": "Last week Claude seemed to trigger /feedback automagically in a session, even though we've got that turned off in our org settings.",
+       "hn": "https://news.ycombinator.com/item?id=50354980",
+       "id": 50354980,
+       "replies": 2
+      },
+      {
+       "user": "monster_truck",
+       "stance": "自建推理",
+       "zh": "如果你们公司真的在乎这个，就会自己跑推理，而不是把命运交给几个复选框。",
+       "en": "If your company actually cared about this they would be running their own inference",
+       "hn": "https://news.ycombinator.com/item?id=50353398",
+       "id": 50353398,
+       "replies": 22
+      }
+     ],
+     "kicker": "AI · 隐私"
+    },
+    {
+     "id": 50348962,
+     "title": "英伟达开源 Auto Ontology：给数据分析代理建「语义层」",
+     "title_en": "Nvidia – open-source auto-ontology",
+     "url": "https://github.com/NVIDIA/auto-ontology",
+     "hn": "https://news.ycombinator.com/item?id=50348962",
+     "points": 259,
+     "comments": 121,
+     "summary": [
+      "英伟达在 GitHub 开源了 Auto Ontology（Apache 2.0 许可，暂不接受外部贡献）。README 说，代理能检索文档、查询数据库，但数字错了再快也没用，代理需要一个上下文层告诉它数据在哪、含义是什么、该不该用、从哪来。这个库从企业元数据自动生成本体和知识图谱，对齐不同系统里不一致的指标定义，用经认证的定义和血缘关系校验代理生成的查询，并通过 MCP、命令行和 API 提供给任何代理框架，还能把人工纠正回写进本体。",
+      "它包含 Next.js 前端、FastAPI 后端、Postgres 加 pgvector，可用 Helm 或 Docker Compose 部署，推理默认调用英伟达 NIM 端点（默认模型为 Nemotron 3 Nano 30B 等），需要 API 密钥。评论区点赞最多的一条吐槽 README 开头读着像 Claude 写的，读不下去；有人替它解释：就是把公司各数据库的结构集中到元数据目录，让人用自然语言问数据；也有人质疑为何不用已有的 OWL/RDF 和 SPARQL；还有人对需要英伟达 API 密钥感到失望。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "dstu",
+       "stance": "像 AI 写的",
+       "zh": "它也许很有用，但 Claude 把我毁了：第一句里的「gates」让我生理性反感，读不下去。一个工具如果值得做出来分享，难道不值得用自己的话写一段简短说明吗？",
+       "en": "surely it’s also worth writing a brief summary of what it’s supposed to achieve in your own words?",
+       "hn": "https://news.ycombinator.com/item?id=50350102",
+       "id": 50350102,
+       "replies": 52
+      },
+      {
+       "user": "gavinray",
+       "stance": "替它解释",
+       "zh": "我来试着解释一下，因为看起来很多人没看懂这份写得很糟的 README。问题是：你公司的数据散落在多种数据库里，做决策的人想问关于这些数据的问题。",
+       "en": "it seems a lot of folks here didn't grok the very terribly written README",
+       "hn": "https://news.ycombinator.com/item?id=50354084",
+       "id": 50354084,
+       "replies": 8
+      },
+      {
+       "user": "fnordpiglet",
+       "stance": "语义网呢",
+       "zh": "我不明白它为什么比 OWL/RDF 和 SPARQL 更好。语料里有那么多语义网知识，模型在发现成熟本体、为给定数据建新本体、用 SPARQL 查询方面做得出奇好。讽刺的是，语义网这么多年后可能终于找到真正用途，而且正是它最初的用途。",
+       "en": "I’m struggling to see why this is better than OWL/RDF and SparQL.",
+       "hn": "https://news.ycombinator.com/item?id=50353264",
+       "id": 50353264,
+       "replies": 3
+      }
+     ],
+     "kicker": "AI · 开源"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50344861,
+     "title": "大模型读写神经网络权重并非「超人」水平",
+     "title_en": "LLMs are not superhuman at reading and writing neural network weights",
+     "url": "https://www.seangoedecke.com/llms-are-not-superhuman-at-reading-and-writing-neural-network-weights/",
+     "hn": "https://news.ycombinator.com/item?id=50344861",
+     "points": 140,
+     "comments": 22
+    },
+    {
+     "id": 50350004,
+     "title": "Revolut 改用自托管的 GLM 模型",
+     "title_en": "Revolut moves to self-hosted GLM",
+     "url": "https://twitter.com/guilleflorvs/status/2117379073785696395",
+     "hn": "https://news.ycombinator.com/item?id=50350004",
+     "points": 184,
+     "comments": 155
+    },
+    {
+     "id": 50358422,
+     "title": "美国科技巨头的隐性 AI 负债半年涨九成，达 3.2 万亿美元",
+     "title_en": "US tech giants' hidden AI debt swells 90% to $3.2T in 6 months",
+     "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/us-tech-giants-hidden-ai-debt-swells-90-to-3.2tn-in-6-months",
+     "hn": "https://news.ycombinator.com/item?id=50358422",
+     "points": 142,
+     "comments": 50
+    },
+    {
+     "id": 50350560,
+     "title": "Anthropic 招股书：季度薪酬 17 亿美元，人均每月约 10.7 万",
+     "title_en": "Anthropic IPO filing: $1.7B quarterly payroll, about $107K per employee monthly",
+     "url": "https://www.techspot.com/news/114428-anthropic-ipo-filing-reveals-17-billion-quarterly-personnel.html",
+     "hn": "https://news.ycombinator.com/item?id=50350560",
+     "points": 78,
+     "comments": 99
+    },
+    {
+     "id": 50355504,
+     "title": "Google 研究员要求公开谈论他们对 AI 的了解",
+     "title_en": "Google researchers demand freedom to tell the world what they know about AI",
+     "url": "https://www.washingtonpost.com/technology/2026/11/03/google-deepmind-staff-protest-lifetime-ban-criticizing-company/",
+     "hn": "https://news.ycombinator.com/item?id=50355504",
+     "points": 81,
+     "comments": 99
+    },
+    {
+     "id": 50352257,
+     "title": "一点小小的 AI 抵抗，权当犒劳",
+     "title_en": "Just a little AI resistance, as a treat",
+     "url": "https://shkspr.mobi/blog/2026/11/just-a-little-ai-resistance-as-a-treat/",
+     "hn": "https://news.ycombinator.com/item?id=50352257",
+     "points": 170,
+     "comments": 105
+    },
+    {
+     "id": 50353300,
+     "title": "AI 正在毁掉我的计算机学位",
+     "title_en": "AI is destroying my CS degree",
+     "url": "https://lordtoots.bearblog.dev/ai-is-destroying-my-cs-degree/",
+     "hn": "https://news.ycombinator.com/item?id=50353300",
+     "points": 117,
+     "comments": 108
+    },
+    {
+     "id": 50358582,
+     "title": "《生成式 AI 基础小书》：直观的数学入门",
+     "title_en": "The Little Book of Generative AI Foundations: An Intuitive Mathematical Primer",
+     "url": "https://arxiv.org/abs/2605.29713",
+     "hn": "https://news.ycombinator.com/item?id=50358582",
+     "points": 169,
+     "comments": 22
+    },
+    {
+     "id": 50322603,
+     "title": "Figma 在训练一个精通 Figma 的编辑模型",
+     "title_en": "We're Training a Figma-Fluent Editing Model",
+     "url": "https://www.figma.com/blog/training-a-figma-fluent-editing-model/",
+     "hn": "https://news.ycombinator.com/item?id=50322603",
+     "points": 58,
+     "comments": 31
+    },
+    {
+     "id": 50355767,
+     "title": "我如何使用 AI（2026 年 10 月）",
+     "title_en": "How I use AI (Oct 2026)",
+     "url": "https://ben.stolovitz.com/posts/how-use-ai-oct-2026/",
+     "hn": "https://news.ycombinator.com/item?id=50355767",
+     "points": 68,
+     "comments": 65
+    }
+   ]
+  },
+  {
+   "name": "开发与安全",
+   "en": "Software & Security",
+   "page": 3,
+   "stats": {
+    "items": 13,
+    "points": 1825,
+    "comments": 752,
+    "top_points": {
+     "id": 50352758,
+     "title": "Mac 的规模化之道",
+     "value": 302,
+     "comments": 171
+    },
+    "top_comments": {
+     "id": 50345924,
+     "title": "OpenAI 自建 Git 后端 Pando：中位推送延迟降近八成",
+     "value": 179
+    },
+    "top_brief": {
+     "id": 50352758,
+     "title": "Mac 的规模化之道",
+     "value": 302,
+     "comments": 171
+    }
+   },
+   "stories": [
+    {
+     "id": 50345924,
+     "title": "OpenAI 自建 Git 后端 Pando：中位推送延迟降近八成",
+     "title_en": "Scaling Git at OpenAI",
+     "url": "https://openai.com/index/scaling-git-at-openai/",
+     "hn": "https://news.ycombinator.com/item?id=50345924",
+     "points": 264,
+     "comments": 179,
+     "summary": [
+      "OpenAI 的 Aaron Friel、Taylor Blau 和 Ted Nyman 写道，Codex 让工程师能并行做更多事，分支、推送、合并和 CI 拉取都在暴增；从去年底开始，单体仓库的拉取、推送变慢、合并失败，可靠性一度低于 90%。他们建了一个兼容 Git 协议和客户端的新后端 Pando，取舍是放弃「整个仓库所有分支的一致快照」，改为因果一致性：每个分支独立更新，只有同时推送同一分支才冲突；推送时只向客户端公布主干分支，把收到的 packfile 原样存进对象存储，之后的拉取直接复用这些包，通过 Git 协议的 packfile-uri 让客户端从区域缓存下载。",
+      "后台再像 LSM 树那样把小包逐级合并（目前到 L4），让拉取规划只需对数时间。文章称 Pando 由一名工程师设计、多组代理实现，用 Codex 从立项到上线只花 10 周，用 Rust 编写，还让 GPT-6 Astra 写 Lean 和 TLA+ 来形式化验证；4 月起承接生产流量，中位推送延迟降低近 80%，每天传送近 1PB 数据，单小时最高送出 57TB 以上，缓存命中超 99%，部分改进已合入上游 Git。评论区有人数出这已是 Cursor、GitHub、Anthropic 之后第五篇「给代理扩展 Git」的大文章；点赞最多的一条问这么多代码到底在干什么；也有人称赞文章没有 AI 腔、全是数字和图表。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "usrme",
+       "stance": "第五篇了",
+       "zh": "据我统计，这篇 OpenAI 的文章已是这个话题上第五篇重要文章，前四篇分别来自 Cursor、GitHub、Anthropic 和 GitHub。",
+       "en": "this OpenAI post is the fifth major article on the topic of scaling",
+       "hn": "https://news.ycombinator.com/item?id=50348485",
+       "id": 50348485,
+       "replies": 30
+      },
+      {
+       "user": "bigmadshoe",
+       "stance": "代码干嘛的",
+       "zh": "谁能给我解释一下，这么海量的代码到底在干什么？他们显然有各种模型架构、训练和推理基础设施，还有应用的源码。可为什么这些代码量会指数增长？而且除了模型质量，他们的产品看起来也没怎么变，工程师们都在做什么？",
+       "en": "Can anyone explain to me what this massive volume of code could actually be doing?",
+       "hn": "https://news.ycombinator.com/item?id=50347625",
+       "id": 50347625,
+       "replies": 68
+      },
+      {
+       "user": "paxy",
+       "stance": "好文章",
+       "zh": "虽然我对这个话题没特别兴趣，但这是一篇很棒的博文。没有隔一行就提 AI，没有无谓的营销和炒作，就是一群工程师用自己的语言，带着数字、图表和可视化细致地讲一个话题。",
+       "en": "No AI in every second line, no needless marketing or hype.",
+       "hn": "https://news.ycombinator.com/item?id=50347475",
+       "id": 50347475,
+       "replies": 2
+      }
+     ],
+     "kicker": "开发 · 基础设施"
+    },
+    {
+     "id": 50358562,
+     "title": "Safari 27.3 测试版推出「自适应深色模式」：替网站自动变暗",
+     "title_en": "Safari introduces Adaptive Dark Mode in 27.3",
+     "url": "https://webkit.org/blog/18541/introducing-adaptive-dark-mode/",
+     "hn": "https://news.ycombinator.com/item?id=50358562",
+     "points": 218,
+     "comments": 141,
+     "summary": [
+      "WebKit 团队宣布 Safari 27.3 测试版加入「自适应深色模式」：系统设为深色时，遇到浅色网站，Safari 会提供预览，用户点「试用」后把页面改成深色。他们说近 40% 的网页加载来自深色模式用户，但只有 10% 的页面支持深色。已用 color-scheme 声明支持深浅两种模式的网站不受影响；其余网站会先被分析整体是浅还是深，浅色页面才会转换。",
+      "核心是一个反转亮度、保留色相的颜色矩阵，文字按 WCAG 4.5:1 对比度调整，浅色渐变也会变暗；多数图片保持原样，但会检查 SVG 并在需要时改色，对位图分析像素直方图后只反转简单的黑白标志；canvas 内容不动，某些遮罩和混合模式会被关闭。团队建议开发者用 SVG 替代位图图标、避免把背景色烤进图片，或干脆自己实现完整深色模式，不想被转换可用 color-scheme: light only。评论区点赞最多的一条说 HN 自己就是不支持深色模式、却很容易加上的典型；有人推荐多年来一直在做这件事的 Dark Reader 扩展；也有散光用户说自己想要反过来的功能。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Reason077",
+       "stance": "说的就是 HN",
+       "zh": "Hacker News 本身就是一个不支持深色模式、但本可以轻松支持的典型网站（而且依我看，支持了会好看得多）。",
+       "en": "Hacker News itself is a prime example of a website that doesn’t support dark mode",
+       "hn": "https://news.ycombinator.com/item?id=50359083",
+       "id": 50359083,
+       "replies": 16
+      },
+      {
+       "user": "greazy",
+       "stance": "Dark Reader",
+       "zh": "大家都该试试 Dark Reader 扩展，它多年来一直在做自适应深色模式，而且可以自定义，甚至还能做浅色模式。我现在就在 Firefox 上用它看 HN！",
+       "en": "Everyone should checkout Dark Reader extension",
+       "hn": "https://news.ycombinator.com/item?id=50359073",
+       "id": 50359073,
+       "replies": 7
+      },
+      {
+       "user": "nsoam",
+       "stance": "想要反向",
+       "zh": "我想要的正相反。我有散光，黑底白字很难读。真希望 Safari 能把深色模式网站变成浅色。",
+       "en": "I wish Safari could turn dark mode websites into light mode websites.",
+       "hn": "https://news.ycombinator.com/item?id=50358886",
+       "id": 50358886,
+       "replies": 2
+      }
+     ],
+     "kicker": "开发 · 浏览器"
+    },
+    {
+     "id": 50354336,
+     "title": "GitBook 遭「利用 AI 代理」的定向攻击，令牌全部作废",
+     "title_en": "Gitbook Breached",
+     "url": null,
+     "hn": "https://news.ycombinator.com/item?id=50354336",
+     "points": 140,
+     "comments": 32,
+     "summary": [
+      "发帖人说他们因 GitBook 无法访问开工单，收到一封客服转来的事故通报，当时还没见到正式的客户通知。通报称，GitBook 遭到「利用 AI 代理的复杂、高度定向攻击」：攻击者于欧洲中部时间 11 月 2 日 19:00 获取了部分基础设施凭据，GitBook 随即下线应用和需要登录的文档站，公开文档靠缓存尽量保持在线；之后封堵漏洞、更换全部凭据和密钥，并作废了所有客户的 API 令牌。",
+      "通报说攻击者可能接触了 Git Sync 密钥、GitBook API 令牌、用于连接外部工具的第三方令牌，以及访客向 GitBook Assistant 提的问题，暂未发现内容被篡改；用户需要轮换相关令牌和集成密钥、重新认证 MCP 服务器，完整事后报告将另行发布。GitBook 的 CTO 在评论里现身，说团队从前一天起全员应对，大部分服务已恢复。有人称赞他们主动替用户轮换令牌；也有人问为什么最近几乎隔天就有大服务被攻破，是不是都是 AI 代理在狂扫目标；另有人指出状态页摘要当时并未提到未授权访问。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "SamyPesse",
+       "stance": "CTO 回应",
+       "zh": "我是 GitBook 的 CTO。从昨天起我们一直在应对一次安全攻击，团队全员上阵，为了用户安全，我们把很大一部分服务下线了。服务正在逐步恢复（大部分已经恢复），我们也在密切监控。",
+       "en": "GitBook’s CTO here",
+       "hn": "https://news.ycombinator.com/item?id=50355659",
+       "id": 50355659,
+       "replies": 9
+      },
+      {
+       "user": "FastDeep",
+       "stance": "处理得当",
+       "zh": "好在他们自己轮换了所有令牌，而不是只叫用户去轮换。见过太多事故都跳过了这一步。",
+       "en": "Good that they rotated all the tokens themselves instead of just telling users to do it",
+       "hn": "https://news.ycombinator.com/item?id=50356637",
+       "id": 50356637,
+       "replies": 0
+      },
+      {
+       "user": "tom1337",
+       "stance": "接二连三",
+       "zh": "最近到底怎么了，几乎隔一天就有大服务被攻破？真的只是 AI 代理在对这些目标狂轰滥炸吗？",
+       "en": "What's happening currently that every other a day a major service is breached?",
+       "hn": "https://news.ycombinator.com/item?id=50359395",
+       "id": 50359395,
+       "replies": 1
+      }
+     ],
+     "kicker": "开发 · 安全事件"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50352758,
+     "title": "Mac 的规模化之道",
+     "title_en": "Mac at Any Scale",
+     "url": "https://namespace.so/blog/mac-at-any-scale",
+     "hn": "https://news.ycombinator.com/item?id=50352758",
+     "points": 302,
+     "comments": 171
+    },
+    {
+     "id": 50345712,
+     "title": "WorkOS 通报安全事件",
+     "title_en": "WorkOS reports security breach",
+     "url": null,
+     "hn": "https://news.ycombinator.com/item?id=50345712",
+     "points": 77,
+     "comments": 11
+    },
+    {
+     "id": 50353818,
+     "title": "币安称黑客用假面试攻破电脑，后发动 63 亿美元攻击",
+     "title_en": "Binance hackers used fake job interview to breach PC before $6.3B attack",
+     "url": "https://www.reuters.com/world/binance-says-hackers-used-fake-job-interview-compromise-computer-before-63-2026-11-03/",
+     "hn": "https://news.ycombinator.com/item?id=50353818",
+     "points": 76,
+     "comments": 17
+    },
+    {
+     "id": 50348260,
+     "title": "Cloudflare 同时出现多起故障",
+     "title_en": "Cloudflare experiencing multiple active incidents",
+     "url": "https://www.cloudflarestatus.com/",
+     "hn": "https://news.ycombinator.com/item?id=50348260",
+     "points": 74,
+     "comments": 6
+    },
+    {
+     "id": 50321605,
+     "title": "Toit 2.0.0 发布",
+     "title_en": "Toit v2.0.0",
+     "url": "https://toit.io/blog/toit-v2-0-0/",
+     "hn": "https://news.ycombinator.com/item?id=50321605",
+     "points": 219,
+     "comments": 68
+    },
+    {
+     "id": 50326246,
+     "title": "把 NixOS 的内存占用和资源需求压到最低",
+     "title_en": "Shrinking NixOS RAM footprint and resource requirements to the bare minimum",
+     "url": "https://lowendspirit.com/discussion/11543/shrinking-nixos-ram-footprint-and-resource-requirements-to-the-bare-minimum",
+     "hn": "https://news.ycombinator.com/item?id=50326246",
+     "points": 119,
+     "comments": 15
+    },
+    {
+     "id": 50349155,
+     "title": "用 uBlock Origin 规则屏蔽 TechCrunch 的自动播放视频",
+     "title_en": "uBlock Origin filter to block autoplay videos in TechCrunch",
+     "url": "https://cornfieldlabs.github.io/posts/ublock-stop-techcrunch-autoplay-video/post.html",
+     "hn": "https://news.ycombinator.com/item?id=50349155",
+     "points": 131,
+     "comments": 40
+    },
+    {
+     "id": 50352767,
+     "title": "句柄是更好的指针（2018）",
+     "title_en": "Handles are the better pointers (2018)",
+     "url": "https://floooh.github.io/2018/06/17/handles-vs-pointers.html",
+     "hn": "https://news.ycombinator.com/item?id=50352767",
+     "points": 53,
+     "comments": 24
+    },
+    {
+     "id": 50358702,
+     "title": "《PostgreSQL 内幕》",
+     "title_en": "The Internals of PostgreSQL",
+     "url": "https://www.interdb.jp/pg/index.html",
+     "hn": "https://news.ycombinator.com/item?id=50358702",
+     "points": 64,
+     "comments": 2
+    },
+    {
+     "id": 50356944,
+     "title": "macOS 27 不再支持 CoreStorage 卷",
+     "title_en": "macOS 27 does not support CoreStorage volumes",
+     "url": "https://wadetregaskis.com/macos-27-golden-gate-does-not-actually-support-corestorage-or-hfs-volumes/",
+     "hn": "https://news.ycombinator.com/item?id=50356944",
+     "points": 88,
+     "comments": 46
+    }
+   ]
+  },
+  {
+   "name": "科学与产业",
+   "en": "Science & Industry",
+   "page": 4,
+   "stats": {
+    "items": 12,
+    "points": 1600,
+    "comments": 924,
+    "top_points": {
+     "id": 50336918,
+     "title": "AI 带火归档需求，富士胶片要把磁带产能扩大五倍",
+     "value": 356,
+     "comments": 143
+    },
+    "top_comments": {
+     "id": 50346153,
+     "title": "英特尔股价一个月腰斩，芯片股市值蒸发 3.7 万亿美元",
+     "value": 221
+    },
+    "top_brief": {
+     "id": 50334523,
+     "title": "欧洲 RISC-V 工业计算倡议",
+     "value": 193,
+     "comments": 125
+    }
+   },
+   "stories": [
+    {
+     "id": 50336918,
+     "title": "AI 带火归档需求，富士胶片要把磁带产能扩大五倍",
+     "title_en": "Fujifilm to boost tape production 5x as AI fuels archiving demand",
+     "url": "https://arstechnica.com/gadgets/2026/10/fujifilm-to-boost-tape-production-5x-as-ai-fuels-archiving-demand/",
+     "hn": "https://news.ycombinator.com/item?id=50336918",
+     "points": 356,
+     "comments": 143,
+     "summary": [
+      "Ars Technica 报道，富士胶片宣布投资约 100 亿日元（约 6,300 万美元），把磁带产能提高到 2025 财年的五倍，理由是生成式 AI 让全球数据需求「指数级增长」。投资位于神奈川工厂小田原厂区，从 2026 到 2028 财年，主要生产最新一代 LTO Ultrium10 磁带，富士胶片称这是它在 LTO 磁带专用设施上最大的一笔投资。",
+      "文章说消费者早已抛弃磁带，企业界却从没离开，云巨头靠它备份海量数据；富士胶片还强调磁带能拔下来锁进抽屉或异地保存，物理隔离可作为防勒索软件的最后防线。评论区点赞最多的一条是老手经验：归档后一定要真正读回恢复一遍，驱动器连自己写的磁带都可能读不出，所以他从不只写一盘；有人贴出价格，LTO-10 30TB 磁带约 259 到 300 美元一盘，单机驱动器却要约 2.5 万美元；也有人问为什么没有价格亲民的准专业级磁带机。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "dylan604",
+       "stance": "一定要读回",
+       "zh": "没跟磁带打过交道的人，在归档完就忘之前要知道几个坑。做完归档，千万别跳过读回这一步。我说的不只是让系统确认可读，而是真把数据从磁带恢复出来。我遇到过写入程序确认可读、实际却读不出数据的磁带。",
+       "en": "When you create an archive, do not skip the step of reading it back.",
+       "hn": "https://news.ycombinator.com/item?id=50353433",
+       "id": 50353433,
+       "replies": 31
+      },
+      {
+       "user": "doughnutstracks",
+       "stance": "驱动器贵",
+       "zh": "我找到一个提供 LTO 磁带价格参考的网站（与我无关）：LTO-10 30TB 每盘 259 到 300 美元。值得注意的是，磁带本身不一定是最大开销，单机 LTO-10 驱动器目前标价约 2.5 万美元。",
+       "en": "Standalone LTO-10 drives are currently listed at around $25,000.",
+       "hn": "https://news.ycombinator.com/item?id=50352954",
+       "id": 50352954,
+       "replies": 12
+      },
+      {
+       "user": "amelius",
+       "stance": "要准专业版",
+       "zh": "为什么他们就不能做一个价格有吸引力的准专业级磁带机方案？",
+       "en": "Why can't they make an attractively priced pro-sumer tape drive solution?",
+       "hn": "https://news.ycombinator.com/item?id=50354106",
+       "id": 50354106,
+       "replies": 21
+      }
+     ],
+     "kicker": "产业 · 存储"
+    },
+    {
+     "id": 50346153,
+     "title": "英特尔股价一个月腰斩，芯片股市值蒸发 3.7 万亿美元",
+     "title_en": "Intel stock collapse worsens as $3.5T chip rout spreads",
+     "url": "https://finance.yahoo.com/markets/article/the-intel-stock-collapse-is-getting-worse--and-the-37-trillion-chip-rout-is-spreading-212154947.html",
+     "hn": "https://news.ycombinator.com/item?id=50346153",
+     "points": 226,
+     "comments": 221,
+     "summary": [
+      "雅虎财经报道，周一标普 500 约七成股票上涨，芯片股却几乎全线下跌，单日市值蒸发超过 4,000 亿美元。英特尔再跌约 9%：10 月 30 日它因预期令人失望暴跌近 29%，是 1974 年以来最差的一天，周一收盘市值已不到 9 月底的一半。美光、闪迪、希捷、西部数据这些今年领涨的存储股跌了 6% 到 8%，宣布以 1,150 亿美元收购 Lumentum 的 Marvell 跌得更多，英伟达较 10 月 6 日也跌了约 16%。按雅虎计算，芯片和存储股自 10 月 6 日以来共蒸发约 3.7 万亿美元（HN 标题写的是 3.5 万亿）。",
+      "文中基金经理 Adam Johnson 认为上周的抛售已把最坏情况都计入价格，Cisco 前 CEO John Chambers 说赢家和输家的差距会继续拉大、「不会赌英伟达输」；文章还提到，自 1994 年以来八次中期选举周期里，芯片股从 10 月底到次年 6 月都上涨过。这是当天评论与点赞比最高的帖子。评论区点赞最多的一条提醒：英特尔一个月跌了一半，但过去一年也涨了一半；有人说英特尔像波音一样不能倒；也有人认为它已失去工程文化，迟早要付出代价。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "anonymous908213",
+       "stance": "像炒币",
+       "zh": "我习惯了「股价崩盘」的标题指的是单日 2% 的波动，这次是真的一个月跌了 50%。不过话说回来，它过去一年也涨了 50%。对世界经济至关重要的公司，股票却像网红股一样被炒，真好啊。",
+       "en": "Actually down 50% over the past month. But then again, up 50% over the past year.",
+       "hn": "https://news.ycombinator.com/item?id=50346556",
+       "id": 50346556,
+       "replies": 124
+      },
+      {
+       "user": "whatever1",
+       "stance": "不能倒",
+       "zh": "英特尔和波音一样不能倒。如果你认为它们会倒，最好开始找地堡了。先进芯片制造难得不可思议，金融界那帮人又一次搞不清状况。",
+       "en": "Intel, like Boeing cannot fail.",
+       "hn": "https://news.ycombinator.com/item?id=50346984",
+       "id": 50346984,
+       "replies": 26
+      },
+      {
+       "user": "lnkdinsuxs",
+       "stance": "文化没了",
+       "zh": "英特尔丢掉了自己的工程文化，总有一天要为此付出终极代价。我不觉得那一天在 2026 年，但不会太远。",
+       "en": "Intel has lost its engineering culture and one day it will have to pay the ultimate price for letting it happen.",
+       "hn": "https://news.ycombinator.com/item?id=50348974",
+       "id": 50348974,
+       "replies": 3
+      }
+     ],
+     "kicker": "产业 · 半导体",
+     "tag": "当日最热比"
+    },
+    {
+     "id": 50353335,
+     "title": "研究估计：15 年间去世的 NFL 球员约 75% 有 CTE",
+     "title_en": "Study estimates 75% of NFL players who died over 15-year span had CTE",
+     "url": "https://www.nbcnews.com/health/health-news/study-estimates-75-nfl-players-died-15-year-span-may-cte-rcna605975",
+     "hn": "https://news.ycombinator.com/item?id=50353335",
+     "points": 246,
+     "comments": 211,
+     "summary": [
+      "NBC 新闻报道，波士顿大学阿尔茨海默病与 CTE 中心的统计负责人 Yorghos Tripodis 团队在《JAMA Network Open》发表研究，估计 2008 至 2023 年间去世的约 2,360 名前 NFL 球员中，约 1,760 人（近 75%）有慢性创伤性脑病（CTE）迹象，是迄今最高估计；同一团队 8 月的研究估计五年间这一比例约四分之一。作为对比，美国、奥地利和巴西脑库捐赠的大脑中只有约 1% 有这种病变。研究同时估计约 27% 的球员有痴呆。",
+      "CTE 只能在死后解剖诊断，而有认知衰退的家庭更愿意捐脑（以往研究里 99% 捐赠脑有 CTE）。团队结合 396 个捐赠大脑和另外 1,966 名去世球员的记录，算出有症状球员的家属捐脑意愿约高五倍，再做统计校正。Tripodis 说自己「得反复核对数字」，强调这仍是估计；科罗拉多大学的 Jim Kelly 指出没做解剖的球员是做了的五倍，有些病例只有一两处病变。评论区点赞最多的一条说绝不会让孩子打橄榄球；有人解释研究如何校正捐赠偏差，并说样本还不足以比较不同位置；也有人提醒英式足球也被发现与痴呆风险相关。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "cmiles8",
+       "stance": "不让孩子打",
+       "zh": "我绝不会让我的孩子打有身体对抗的橄榄球。数据再清楚不过，这项运动会对大脑造成不可逆、改变人生的损伤。",
+       "en": "I would never let my child play contact football.",
+       "hn": "https://news.ycombinator.com/item?id=50354310",
+       "id": 50354310,
+       "replies": 123
+      },
+      {
+       "user": "ggreer",
+       "stance": "样本偏差",
+       "zh": "CTE 只能把大脑切片才能诊断，而前 NFL 球员往往只有出现认知问题才会捐脑，所以样本显然有偏差。他们试图通过比较捐脑和未捐脑球员的认知障碍比例来校正，这个比例随死亡年龄在 1.8 倍到 4 倍之间。",
+       "en": "there's obviously a bias in the sample",
+       "hn": "https://news.ycombinator.com/item?id=50355758",
+       "id": 50355758,
+       "replies": 2
+      },
+      {
+       "user": "at1as",
+       "stance": "足球也有",
+       "zh": "甚至有研究把英式足球和更高的痴呆风险联系起来。一项大型研究发现，风险在最常头球的后卫中最高，在很少头球的守门员中最低。",
+       "en": "There are even studies linking soccer (\"football\") to an increased risk of dementia.",
+       "hn": "https://news.ycombinator.com/item?id=50355980",
+       "id": 50355980,
+       "replies": 1
+      }
+     ],
+     "kicker": "科学 · 医学"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50344224,
+     "title": "SLAC 研究人员找到交错磁性这一新磁相的证据",
+     "title_en": "SLAC researchers find proof of altermagnetism, a new magnetic phase",
+     "url": "https://www6.slac.stanford.edu/news/2026-10-29-slac-researchers-find-proof-altermagnetism-new-magnetic-phase",
+     "hn": "https://news.ycombinator.com/item?id=50344224",
+     "points": 105,
+     "comments": 13
+    },
+    {
+     "id": 50342119,
+     "title": "赫库兰尼姆古卷 PHerc. 306B 上的文字 2000 年来首次被看见",
+     "title_en": "Writing seen in PHerc. 306B, for the first time in 2000 years",
+     "url": "https://scrollprize.substack.com/p/writing-seen-in-pherc-306b-for-the",
+     "hn": "https://news.ycombinator.com/item?id=50342119",
+     "points": 113,
+     "comments": 15
+    },
+    {
+     "id": 50334523,
+     "title": "欧洲 RISC-V 工业计算倡议",
+     "title_en": "European RISC-V Industrial Computing Initiative",
+     "url": "https://erici.eu",
+     "hn": "https://news.ycombinator.com/item?id=50334523",
+     "points": 193,
+     "comments": 125
+    },
+    {
+     "id": 50331988,
+     "title": "PsiQuantum 推出基于低损耗硅光平台的光路交换技术",
+     "title_en": "Optical Circuit Switch Technology Built on Low-Loss Silicon Photonics Platform",
+     "url": "https://www.psiquantum.com/news-import/psiquantum-unveils-optical-circuit-switch-technology-built-on-advanced-low-loss-silicon-photonics-platform",
+     "hn": "https://news.ycombinator.com/item?id=50331988",
+     "points": 37,
+     "comments": 1
+    },
+    {
+     "id": 50320904,
+     "title": "高效算法、指数时间假设与迷失方向",
+     "title_en": "Efficient algorithms, the Exponential Time Hypothesis, and losing the plot",
+     "url": "https://www.argmin.net/p/galactus-the-devourer",
+     "hn": "https://news.ycombinator.com/item?id=50320904",
+     "points": 102,
+     "comments": 85
+    },
+    {
+     "id": 50347464,
+     "title": "开源 5G 无线接入网平台：性能与能力的双重视角",
+     "title_en": "Open-Source 5G Ran Platforms: A Dual Perspective on Performance and Capabilities",
+     "url": "https://arxiv.org/abs/2608.25820",
+     "hn": "https://news.ycombinator.com/item?id=50347464",
+     "points": 50,
+     "comments": 5
+    },
+    {
+     "id": 50344912,
+     "title": "V100 SXM2 引脚定义与 NVLink 参考",
+     "title_en": "V100 SXM2 pinout and NVLink reference",
+     "url": "https://github.com/pigeon-labs-stack/v100-sxm2-reference",
+     "hn": "https://news.ycombinator.com/item?id=50344912",
+     "points": 48,
+     "comments": 17
+    },
+    {
+     "id": 50358414,
+     "title": "AI 热潮或在埋下又一场金融危机的种子",
+     "title_en": "The AI Boom May Be Sowing Seeds of Another Financial Crisis",
+     "url": "https://www.bloomberg.com/opinion/articles/2026-11-03/ai-investment-boom-demands-stronger-financial-oversight",
+     "hn": "https://news.ycombinator.com/item?id=50358414",
+     "points": 63,
+     "comments": 53
+    },
+    {
+     "id": 50352727,
+     "title": "AI 泡沫监测器",
+     "title_en": "The AI Bubble Monitor",
+     "url": "https://cepr.net/publications/ai-bubble-monitor/",
+     "hn": "https://news.ycombinator.com/item?id=50352727",
+     "points": 61,
+     "comments": 35
+    }
+   ]
+  },
+  {
+   "name": "文化与生活",
+   "en": "Culture & Life",
+   "page": 5,
+   "stats": {
+    "items": 13,
+    "points": 2659,
+    "comments": 1212,
+    "top_points": {
+     "id": 50346981,
+     "title": "Show HN：Hacker Times，纽约时报风格的 HN 报纸",
+     "value": 450,
+     "comments": 143
+    },
+    "top_comments": {
+     "id": 50323123,
+     "title": "抵抗「认知投降」：和编程代理共事时如何不交出脑子",
+     "value": 155
+    },
+    "top_brief": {
+     "id": 50346849,
+     "title": "DiscImageStudio：在 CD、DVD 和蓝光盘上烧出可见的图案",
+     "value": 342,
+     "comments": 77
+    }
+   },
+   "stories": [
+    {
+     "id": 50346981,
+     "title": "Show HN：Hacker Times，纽约时报风格的 HN 报纸",
+     "title_en": "Show HN: Hacker Times, a New York Times-inspired version of Hacker News",
+     "url": "https://hackertimes.ca/",
+     "hn": "https://news.ycombinator.com/item?id=50346981",
+     "points": 450,
+     "comments": 143,
+     "summary": [
+      "作者的帖子只有一句：觉得把 HN 当报纸来浏览会很好玩，网站每小时更新一次。网站把 HN 首页排成《纽约时报》式的版面，并给每条帖子配上改写的标题和一段摘要，比如当天头条就是 Postman 那份报告，摘要里还特意写明「报告并未证明数据外泄」。报头字体用的是 Manufacturing Consent。",
+      "评论区点赞最多的一条列出了好几个类似项目，最早的一个 6 年前就上过 HN；有人觉得人们给《纽约时报》付钱是为了新闻和编辑，不是界面，这样的换皮做成浏览器扩展更合适；有人不喜欢 AI 改写的标题，觉得太有编辑倾向、彼此雷同，希望能保留原标题；还有人想要可以放在墨水屏上的 PDF 版。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "emaro",
+       "stance": "早有同类",
+       "zh": "我记得以前有过类似的项目，原来有好几个。下面只列几个还在线的。",
+       "en": "Turns out there are multiple.",
+       "hn": "https://news.ycombinator.com/item?id=50347818",
+       "id": 50347818,
+       "replies": 27
+      },
+      {
+       "user": "danpalmer",
+       "stance": "付钱为内容",
+       "zh": "人们给《纽约时报》这类刊物付钱，买的不就是新闻和编辑吗？界面可不是付钱的理由。既然这只是换了层皮，为什么要做成每小时更新的完整网站，而不是一个实时就地改写内容的浏览器扩展？",
+       "en": "Like, the UI isn't why people pay for it.",
+       "hn": "https://news.ycombinator.com/item?id=50348904",
+       "id": 50348904,
+       "replies": 4
+      },
+      {
+       "user": "smileybarry",
+       "stance": "标题别改",
+       "zh": "我个人不喜欢 AI 改写的标题，感觉太有编辑倾向，而且彼此很像。我明白摘要需要 AI 改写，但标题应该（也许可选地）保持原样。",
+       "en": "I personally don't like the AI-rephrased titles, they feel too editorialized and similar to each other.",
+       "hn": "https://news.ycombinator.com/item?id=50351406",
+       "id": 50351406,
+       "replies": 0
+      }
+     ],
+     "kicker": "文化 · Show HN"
+    },
+    {
+     "id": 50333332,
+     "title": "为什么我们没活在新艺术运动的世界里？",
+     "title_en": "Why Don't We Live in an Art Nouveau World?",
+     "url": "https://asteriskmag.com/issues/16/why-don-t-we-life-in-an-art-nouveau-world",
+     "hn": "https://news.ycombinator.com/item?id=50333332",
+     "points": 119,
+     "comments": 113,
+     "summary": [
+      "《Asterisk》杂志这篇长文从今年 2 月封顶、成为世界最高教堂的圣家堂说起：社交媒体上流行一种「传统派批评」，认为人类几千年给建筑加装饰，到 20 世纪中叶却突然转向光秃秃的现代建筑。作者认为这种说法过于简单，但确实有个谜：既然很多人更喜欢有装饰的老式建筑，富裕国家为什么主要盖后者？他以巴塞罗那的圣保罗医院为例：它美得惊人，但装饰最华丽的楼是行政楼而非病房，建设时医院方想尽快建好实用设施，遗嘱执行人和建筑师则坚持先建「门面」。",
+      "他梳理了加泰罗尼亚现代主义很快被更古典、简朴的「九百年代主义」取代的经过，南锡等地的新艺术运动也在 1910 年前后退潮。他的解释之一是：古典建筑有一套能从书上学、可以套用的「语言」，做得差也只是无聊但还行；新艺术运动依赖天才和定制的铁艺、石雕、碎瓷马赛克，难以规模化复制，「甚至说不清一栋做得差的新艺术建筑是什么样」，所以几乎没渗入普通民居。评论区有人说身边的建筑师朋友不会画画、不懂艺术史；有人提醒巴塞罗那的新艺术建筑当年是给巨富住的；也有人认为作者反驳传统派的那部分站不住。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "virtualritz",
+       "stance": "建筑师变了",
+       "zh": "我有一些建筑师朋友，他们不会画画、不会雕塑，对艺术史一无所知，色彩理论就更别提了，其中一位还是建筑学教授。",
+       "en": "They can't draw, they can't sculpt, they have no clue about art history.",
+       "hn": "https://news.ycombinator.com/item?id=50352521",
+       "id": 50352521,
+       "replies": 35
+      },
+      {
+       "user": "robochat",
+       "stance": "富人专属",
+       "zh": "要记住，巴塞罗那的新艺术运动街区是巨富们住的地方，那些是给非常有钱的人住的公寓楼。我们度假参观的漂亮房子，原本大多也是富人的宅子。就像回顾过去几十年的音乐，只看到好的那些，忘了还有更多平庸之作已被集体遗忘。",
+       "en": "the Art Nouveau part of Barcelona was where the very rich people lived.",
+       "hn": "https://news.ycombinator.com/item?id=50357800",
+       "id": 50357800,
+       "replies": 0
+      },
+      {
+       "user": "Nevermark",
+       "stance": "难以复制",
+       "zh": "「这让这种风格难以规模化复制。」我觉得就是这个原因。它没有收敛出一套稳定的基本元素，让其他元素（无论独特与否）都继承共同的约束。",
+       "en": "There was no convergence on a set of stable basic elements",
+       "hn": "https://news.ycombinator.com/item?id=50358004",
+       "id": 50358004,
+       "replies": 0
+      }
+     ],
+     "kicker": "文化 · 建筑"
+    },
+    {
+     "id": 50323123,
+     "title": "抵抗「认知投降」：和编程代理共事时如何不交出脑子",
+     "title_en": "Resisting Cognitive Surrender",
+     "url": "https://knlb.dev/essays/surrender",
+     "hn": "https://news.ycombinator.com/item?id=50323123",
+     "points": 303,
+     "comments": 155,
+     "summary": [
+      "工程师 Kunal 在个人笔记站写道，「认知投降」指不加思考、不考虑替代方案就照单全收代理的输出。这样干又快又不累，非常诱人：程序员本就以「懒」为美德，同事们似乎都投降了，代理又总是自信满满，开源项目的复杂度涨到不靠代理就没法上手。可他发现自己因此常做出次优决定、积累技术债，对系统越来越不熟悉。他说就 2026 年 10 月的水平而言，最大化使用代理往往导致复杂度爆炸，做出一个「大体能用、却有极其意外的边界情况和 bug」的东西。",
+      "他认为模型品味会进步，但更持久的问题是自己对系统的理解会迅速流失，以前一看就知道哪里出错，现在只能「再开一个会话碰运气」。他提出几条做法：给自己定一个「氛围编程上限」，即凭代理能有足够把握完成的改动复杂度，按风险分级；警惕自动化偏见；强迫自己留在回路里、强制代码可理解；以及好的设计能放大效果。评论区有人说不懂代码的人本来就不读代码，用大模型反而更容易理解系统；有人说代码生成变得「免费」后，「你不会需要它」和「保持简单」只能靠意志力维持；还有人一句话总结：先让人变笨，大模型就更容易超越人类。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "xyzzy123",
+       "stance": "谁在投降",
+       "zh": "我觉得这里有个悖论：是不是只有本来就会写代码的人才谈得上「认知投降」？不了解所有细节似乎才是人类的常态，就像多数人并不确切知道水从哪里来、废水去了哪里。",
+       "en": "Is it only \"cognitive surrender\" if you already know how to code?",
+       "hn": "https://news.ycombinator.com/item?id=50351171",
+       "id": 50351171,
+       "replies": 13
+      },
+      {
+       "user": "zmmmmm",
+       "stance": "过度工程",
+       "zh": "过度设计、过度构建的倾向是我看到的主要挑战之一。既然代码是免费的，为什么不建一个 8 个类的继承体系，每个配 200 行单元测试？以前我会绞尽脑汁压到 30 行的东西，现在膨胀成几百甚至几千行。",
+       "en": "The tendency to over-engineer and over-build is one of the main challenges I'm seeing.",
+       "hn": "https://news.ycombinator.com/item?id=50349414",
+       "id": 50349414,
+       "replies": 12
+      },
+      {
+       "user": "osmukka",
+       "stance": "先变笨",
+       "zh": "如果先让人类变笨，大模型要达到超人智能就容易多了。",
+       "en": "Superhuman intelligence is much easier for an LLM to achieve if humans are made dumber first.",
+       "hn": "https://news.ycombinator.com/item?id=50349925",
+       "id": 50349925,
+       "replies": 3
+      }
+     ],
+     "kicker": "文化 · 工作方式"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50346849,
+     "title": "DiscImageStudio：在 CD、DVD 和蓝光盘上烧出可见的图案",
+     "title_en": "DiscImageStudio: burn visible artwork onto CDs, DVDs and Blu-ray discs",
+     "url": "https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio",
+     "hn": "https://news.ycombinator.com/item?id=50346849",
+     "points": 342,
+     "comments": 77
+    },
+    {
+     "id": 50354358,
+     "title": "Stringman：800 美元的开源房间级抓取机器人",
+     "title_en": "Stringman, an $800 open-source room scale gripper robot",
+     "url": "https://neufangled.com/",
+     "hn": "https://news.ycombinator.com/item?id=50354358",
+     "points": 330,
+     "comments": 128
+    },
+    {
+     "id": 50356994,
+     "title": "Flipper One 准备上线 Kickstarter，开放预订",
+     "title_en": "Preparing for the Flipper One Kickstarter and opening pre-orders",
+     "url": "https://flipper.net/pages/flipper-one",
+     "hn": "https://news.ycombinator.com/item?id=50356994",
+     "points": 163,
+     "comments": 75
+    },
+    {
+     "id": 50332342,
+     "title": "用大都会艺术博物馆藏品玩《块魂》",
+     "title_en": "Katamari Damacy but it's The Met collection",
+     "url": "https://katamari.vaguespac.es/",
+     "hn": "https://news.ycombinator.com/item?id=50332342",
+     "points": 146,
+     "comments": 47
+    },
+    {
+     "id": 50346755,
+     "title": "Show HN：HackerTV，把 HN 最常推荐的 YouTube 视频做成全天候电视频道",
+     "title_en": "Show HN: HackerTV – HN's most-recommended Youtube videos as 24/7 TV channels",
+     "url": "https://hackertv.org",
+     "hn": "https://news.ycombinator.com/item?id=50346755",
+     "points": 135,
+     "comments": 32
+    },
+    {
+     "id": 50351319,
+     "title": "Charles Tandy：Radio Shack 背后的推手",
+     "title_en": "Charles Tandy, the mastermind behind Radio Shack",
+     "url": "https://dfarq.homeip.net/charles-tandy-the-mastermind-behind-radio-shack/",
+     "hn": "https://news.ycombinator.com/item?id=50351319",
+     "points": 103,
+     "comments": 83
+    },
+    {
+     "id": 50327088,
+     "title": "与唐氏综合征一起生活",
+     "title_en": "Life with Down Syndrome",
+     "url": "https://www.esquire.com/news-politics/a74031571/life-with-down-syndrome/",
+     "hn": "https://news.ycombinator.com/item?id=50327088",
+     "points": 144,
+     "comments": 104
+    },
+    {
+     "id": 50347683,
+     "title": "美国 30 到 33 岁人群的净资产",
+     "title_en": "Net worth for people aged 30–33 in the U.S.",
+     "url": "https://www.keepingup.com/benchmarks/net-worth/age-30-33",
+     "hn": "https://news.ycombinator.com/item?id=50347683",
+     "points": 197,
+     "comments": 115
+    },
+    {
+     "id": 50353383,
+     "title": "Bear 笔记十岁了，感觉仍像第一天",
+     "title_en": "Bear turns 10, and it still feels like day one",
+     "url": "https://blog.bear.app/2026/11/bear-turns-10-and-it-still-feels-like-day-one/",
+     "hn": "https://news.ycombinator.com/item?id=50353383",
+     "points": 95,
+     "comments": 68
+    },
+    {
+     "id": 50357782,
+     "title": "我导出了苹果的词表",
+     "title_en": "I dumped Apple’s word list",
+     "url": "https://helgesver.re/articles/macos-vulgar-word-flags",
+     "hn": "https://news.ycombinator.com/item?id=50357782",
+     "points": 132,
+     "comments": 72
+    }
+   ]
+  }
+ ],
+ "quote_of_day": {
+  "user": "osmukka",
+  "id": 50349925,
+  "hn": "https://news.ycombinator.com/item?id=50349925",
+  "story_id": 50323123,
+  "story": "抵抗「认知投降」：和编程代理共事时如何不交出脑子",
+  "zh": "如果先让人类变笨，大模型要达到超人智能就容易多了。",
+  "en": "Superhuman intelligence is much easier for an LLM to achieve if humans are made dumber first."
+ },
+ "stats": {
+  "snapshot": "2026-11-04T08:11:57+08:00",
+  "front_page_count": 90,
+  "with_numbers": 90,
+  "flagged_or_dupe": 0,
+  "top_points": {
+   "id": 50354960,
+   "title": "Postman 被曝悄悄给 Codex、Claude Code 装插件，还替自己的启动钩子「签字放行」",
+   "value": 969,
+   "comments": 319
+  },
+  "top_comments": {
+   "id": 50353192,
+   "title": "Google 中小学新规：AI 和搜索默认关闭，要学校自己打开",
+   "value": 392
+  },
+  "second_comments": {
+   "id": 50353229,
+   "title": "犹他州对 Kalshi 及两位创始人提起重罪指控，联邦政府反告犹他",
+   "value": 377
+  },
+  "over_500": 4,
+  "over_300": 15,
+  "over_100": 44,
+  "show_hn": 10,
+  "total_points": 14044,
+  "total_comments": 6554,
+  "hottest_ratio": {
+   "id": 50346153,
+   "title": "英特尔股价一个月腰斩，芯片股市值蒸发 3.7 万亿美元",
+   "value": 0.98,
+   "comments": 221,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
