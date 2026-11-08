@@ -1,0 +1,1307 @@
+{
+ "date": "2026-11-07",
+ "published_at": "2026-11-08T08:22:48+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-11-07",
+ "schema_version": 2,
+ "lead": {
+  "id": 50399933,
+  "title": "libghostty 1.0 发布：Ghostty 的终端内核成了稳定的 C 库",
+  "title_en": "Libghostty 1.0",
+  "url": "https://mitchellh.com/writing/libghostty-1-0",
+  "hn": "https://news.ycombinator.com/item?id=50399933",
+  "points": 1020,
+  "comments": 176,
+  "summary": [
+   "Mitchell Hashimoto 宣布 libghostty-vt 1.0：这是从 Ghostty 核心抽出来的可移植、高性能终端模拟 C 库，1.0 意味着库本身和 C ABI 都进入稳定期，遵循语义化版本。他列出的用户已经不少：JetBrains 全家 IDE 的内置终端改用它（JetBrains 报告约 1250 万活跃用户），Neovim 已有获批的 PR 用它替换 libvterm，KDE 在试验基于它的 Konsole 替代品，Turborepo、OrbStack、Emacs 的 Ghostel 和 WASM 版 ghostty-web 也在用。他说如今用 libghostty 驱动终端的人数远超 Ghostty 应用本身。",
+   "ABI 设计上，所有对象都是不透明句柄，数百个属性通过少量按枚举取值的 getter/setter 读写，新头文件配旧库只会返回 GHOSTTY_UNSUPPORTED 而不是崩溃；CI 用 libabigail 对照基线检查。库为 MIT 许可、依赖树里没有 copyleft，运行时只需 libc，测试覆盖 Linux、macOS、iOS、FreeBSD、Windows、Android 和 WebAssembly。作者称他曾在 4 核 8GB 的服务器上同时跑 1 万个活跃终端，而大约 1500 行 C 就能做出一个功能和性能超过多数现有终端的程序。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "smj-edison",
+    "stance": "想学好 C 接口",
+    "zh": "我正在给自己的 Zig 解释器设计 C 接口。看到不透明句柄、按枚举取值的 getter/setter 这些做法，才意识到自己的 API 有多笨拙，给调用方暴露了太多细节。最吸引我的是他说「参考自己喜欢用的 C 库」，那到底有哪些好例子？",
+    "en": "made me think about how clunky my current API is, since I leak too many details to callers",
+    "hn": "https://news.ycombinator.com/item?id=50401618",
+    "id": 50401618,
+    "replies": 4
+   },
+   {
+    "user": "spudlyo",
+    "stance": "TUI 体验好",
+    "zh": "Ghostty 真正出彩的地方是 pi 这类花哨的 TUI 程序。pi 最近的全屏 tuiMode 表现极好；用 Kitty 图形协议内联显示图片也是巨大改进。",
+    "en": "One area where Ghostty really shines is with fancy TUI programs like the pi agent.",
+    "hn": "https://news.ycombinator.com/item?id=50401356",
+    "id": 50401356,
+    "replies": 1
+   },
+   {
+    "user": "nigehban",
+    "stance": "更喜欢 kitty",
+    "zh": "我从一开始就用 Ghostty，后来 Mitchell 展示了 kitty 的渲染能力，我就装了 kitty、别的都扔了。也许统计上不对，但我觉得 kitty 的过渡、动画和渲染比 Ghostty 更好，只是怀念一些花哨的窗口/分屏布局。",
+    "en": "I feel the transitions, animations, rendering of the kitty terminal is superior than ghostty",
+    "hn": "https://news.ycombinator.com/item?id=50402685",
+    "id": 50402685,
+    "replies": 2
+   }
+  ],
+  "kicker": "要闻 · 开源",
+  "tag": "当日点赞第一"
+ },
+ "side": [
+  {
+   "id": 50403052,
+   "title": "《极品飞车：地下狂飙 2》被重编译进浏览器，还能联机",
+   "title_en": "Need for Speed Underground 2 online in the browser",
+   "url": "https://nfsu2.xyz/",
+   "hn": "https://news.ycombinator.com/item?id=50403052",
+   "points": 779,
+   "comments": 222,
+   "summary": [
+    "nfsu2.xyz 把这款 PC 老游戏自己的代码静态重编译后跑在 Chrome 和 Firefox 里：最高 120 fps、宽屏、自由漫游，支持和朋友在线比赛，也支持手柄、方向盘和触屏。作者说，二十年前他和弟弟一起玩这款游戏，为了能再一起玩才尝试移植，结果「有点失控」。",
+    "项目基于 Talha Müderrisoğlu 的 NFSU2Recomp（x86 到 C 的静态重编译器），从其 2026 年 10 月 16 日的 MIT 版本分叉，并集成了多语言配音和多国汉化等社区 mod。网站接受「请我喝咖啡」捐助，称所有人玩的是同一个游戏、没有内购，并留了给版权方的联系邮箱。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "macNchz",
+     "stance": "童年回来了",
+     "zh": "这游戏刚出时我就玩过，在朋友的游戏电脑前轮流抢键盘。今天在手机上重温居然完美运行，有点不可思议。真希望弃坑游戏的处境没那么脆弱，用 AI 做逆向能打开很多可能。",
+     "en": "Kind of wild to revisit on my phone today and have it work perfectly.",
+     "hn": "https://news.ycombinator.com/item?id=50404449",
+     "id": 50404449,
+     "replies": 24
+    },
+    {
+     "user": "popcar2",
+     "stance": "怕被下架",
+     "zh": "这几天一直在玩，也和朋友跑了几场，这事居然能做成真离谱。唯一的问题是这个网站并不合法，现在火了恐怕很快会收到下架通知。不过 NFSU2 是买不到的弃坑游戏，希望他们别管。",
+     "en": "The only downside is that this website isn't legal",
+     "hn": "https://news.ycombinator.com/item?id=50404555",
+     "id": 50404555,
+     "replies": 16
+    },
+    {
+     "user": "rustyhancock",
+     "stance": "收捐款不妥",
+     "zh": "我很支持把老游戏带回来并加以更新。但我觉得为受版权保护的内容接受、更别说主动募集捐款，非常可疑。",
+     "en": "it's highly dubious to accept let alone solicit donations for copyrighted content",
+     "hn": "https://news.ycombinator.com/item?id=50404031",
+     "id": 50404031,
+     "replies": 30
+    }
+   ],
+   "kicker": "要闻 · 游戏"
+  },
+  {
+   "id": 50403097,
+   "title": "每台 Mac 都自带一个没写进文档的「家庭成员分类器」",
+   "title_en": "Every Mac comes with an (undocumented) family member classifier",
+   "url": "https://8rank.ai/game/apple-intelligence-personal-knowledge-graph",
+   "hn": "https://news.ycombinator.com/item?id=50403097",
+   "points": 577,
+   "comments": 330,
+   "summary": [
+    "安全研究者 Dario Pasquini 和 Michał Bazyli 发文称，macOS 13（2022）以来每台 Mac 都运行一对守护进程（knowledgeconstructiond 与 intelligenceplatformd），在本机交叉分析通讯录、日历、照片、信息、邮件、位置、屏幕使用时间等数据，构建一张关于你和身边人的「个人知识图谱」：你认识谁、他们和你及彼此是什么关系、你们怎么联系、你去哪、和谁、做什么。官方文档几乎只有一页 man 手册。",
+    "文中列出图谱里的推断字段，其中亲属关系由一个 XGBoost「亲属分类器」得出，生日、常去地点的用途（家、健身房）等也可以是推断而非用户填写的；作者还放出工具让人查看自己的图谱。作者在评论区现身答疑，并附上后续研究：这张图谱落入他人之手会怎样。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "Ungh",
+     "stance": "关了也在跑",
+     "zh": "刚花 30 分钟翻了翻，太可怕了。我 Mac 上的 Apple Intelligence 和 Siri 全都关掉、屏蔽了，它照样在做这件事。这可能终于要把我推向 Debian 了。",
+     "en": "All the intelligence and Siri stuff is turned off and blocked on my Mac yet it's still doing this.",
+     "hn": "https://news.ycombinator.com/item?id=50403610",
+     "id": 50403610,
+     "replies": 39
+    },
+    {
+     "user": "aetherspawn",
+     "stance": "本地无妨",
+     "zh": "这是给 Siri 这类本地模型用的上下文，你说「给 James 发消息」时它才知道是哪个 James，说「告诉老板我明天不来」时它得知道谁是你老板。既然完全在本地、不出设备，似乎没什么大不了，和车子记住你给谁打电话、几点去哪导航有多大区别？",
+     "en": "seeing as it’s fully local and doesn’t leave the device, it really doesn’t seem like a big deal",
+     "hn": "https://news.ycombinator.com/item?id=50403752",
+     "id": 50403752,
+     "replies": 25
+    },
+    {
+     "user": "thomascountz",
+     "stance": "社交层面的担忧",
+     "zh": "曾经我会觉得这些数据很有趣（如果是主动选择加入的话），现在只觉得疲惫。和人聊天时，彼此默认不是每句话都会被逐字记住，这构成了一种氛围；当倾听被平铺直叙、无休止的转录取代，很多社交和语境线索就丢了。",
+     "en": "At one point in my life, I would've found this data fascinating (if it were opt-in, perhaps)! Now, I find it exhausting.",
+     "hn": "https://news.ycombinator.com/item?id=50403714",
+     "id": 50403714,
+     "replies": 55
+    }
+   ],
+   "kicker": "要闻 · 隐私",
+   "tag": "当日评论第一"
+  },
+  {
+   "id": 50401867,
+   "title": "Asahi Linux 进展：M3 正式支持，全部代码改用 GPL",
+   "title_en": "Asahi Linux Progress Linux 7.3",
+   "url": "https://asahilinux.org/2026/11/progress-report-7-3/",
+   "hn": "https://news.ycombinator.com/item?id=50401867",
+   "points": 304,
+   "comments": 252,
+   "summary": [
+    "Asahi Linux 随 Linux 7.3 发布进度报告：音频驱动 macaudio（约 3100 行）和视频解码驱动 AVD（约 1.3 万行）提交上游审核，AVD 在下游树里只待了约 3 个月，是他们最快的一次；M4 Pro/Max 和 M5 的初始设备树也上了邮件列表（目前只够启动到 TTY）。M3 支持因早期用户几乎没报问题而去掉 EXPERT 标志转为正式可用，并启用 DCP，带来睡眠和刘海区域可用。Fedora Asahi Remix 首次和上游 Fedora 45 同日发布。",
+    "报告最后宣布许可证变更：团队称有人多次利用宽松的 MIT 许可「劫持」他们的工作，意图取代项目并激进地把 Apple Silicon 上的 Linux 商业化，有的直接从个人分支搬走开发中的代码、不署名或用 LLM 改写掩盖来源；他们以当年 WINE 从 MIT 改 LGPL 为例，宣布所有仓库转向 GPLv2 或更高版本，今后只用强 copyleft 许可。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "aroman",
+     "stance": "早该 GPL",
+     "zh": "报告说有人试图利用宽松许可劫持他们的工作、取代项目并激进变现——这是在说 Omarchy 吗？有人知道背景吗？说实话，我很意外他们的代码以前居然是 MIT 而不是 GPL。",
+     "en": "I'm surprised their work was ever MIT-licensed instead of GPL.",
+     "hn": "https://news.ycombinator.com/item?id=50402224",
+     "id": 50402224,
+     "replies": 58
+    },
+    {
+     "user": "alentred",
+     "stance": "卡在外接屏",
+     "zh": "我用 Asahi 唯一的障碍是 USB-C 外接显示器。我反复考虑过很多次要不要装，但就是放不下给 MacBook Air 插外接屏的能力。",
+     "en": "The only blocking point for me before I would use Asahi Linux is the support of the USB-C displays.",
+     "hn": "https://news.ycombinator.com/item?id=50402697",
+     "id": 50402697,
+     "replies": 9
+    },
+    {
+     "user": "alsetmusic",
+     "stance": "同日发布值得夸",
+     "zh": "读到 Fedora Asahi Remix 第一次和上游同日发布，真是太好了。从他们第一次宣布起我就自豪地资助他们。",
+     "en": "This is a wonderful thing to read.",
+     "hn": "https://news.ycombinator.com/item?id=50408528",
+     "id": 50408528,
+     "replies": 3
+    }
+   ],
+   "kicker": "要闻 · Linux"
+  },
+  {
+   "id": 50406111,
+   "title": "苹果「灰名单」：10 万多个词组 iPhone 不帮你补全",
+   "title_en": "Apple’s grey list: Words and phrases your iPhone won’t help you spell",
+   "url": "https://www.theguardian.com/technology/2026/nov/06/struggling-to-spell-male-chauvinist-pig-apple-grey-list-means-your-iphone-wont-help-you",
+   "hn": "https://news.ycombinator.com/item?id=50406111",
+   "points": 319,
+   "comments": 222,
+   "summary": [
+    "《卫报》报道，独立研究者 Derik Kauffman 发现 iOS 系统中编码了一张「灰名单」，含 10 万多个被限制预测输入补全的词和短语。除了毒品、性行为和「iMessage isn't working」之类，也有可能带政治色彩的词，如「Trayvon Martin」「Kashmir dispute」「Muslim extremist」「male chauvinist pig」；希伯来语的「被占领土」、阿拉伯语的「哈马斯运动」也不会被补全。",
+    "这些词仍可以逐字母打出来，但预测栏不会推荐，滑行输入时常被改歪，比如「United Ireland」变成「United Iceland」。Kauffman 对路透社称这是一种「轻度审查」。报道还回顾了自动纠错从查词表、n-gram 到苹果去年推出的 Transformer 模型的演变。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "tavavex",
+     "stance": "软性也是强制",
+     "zh": "对那些为此辩护、说它只影响滑行输入的人：软性强制仍然是强制。如果我造一个键盘，在你快打完我不想让你打的东西时让按键失灵、但你还能绕过去，那我造的依然是审查键盘。",
+     "en": "soft coercion is still coercion",
+     "hn": "https://news.ycombinator.com/item?id=50406975",
+     "id": 50406975,
+     "replies": 90
+    },
+    {
+     "user": "scosman",
+     "stance": "不算审查",
+     "zh": "预测输入不往争议内容上猜不算审查，你仍然可以打出这些字。我手指乱划时它是在尽力猜，不跳到一个让我难堪、在某些国家甚至会被抓的短语，并不是糟糕的设计。",
+     "en": "Not predicting to something controversial when doing predictive text isn't censorship.",
+     "hn": "https://news.ycombinator.com/item?id=50406663",
+     "id": 50406663,
+     "replies": 25
+    },
+    {
+     "user": "exmadscientist",
+     "stance": "安卓也一样",
+     "zh": "惊讶于有人觉得这是苹果独有。我 99% 确定安卓的 Gboard 也这样做，实现方式不同、更会学习我的习惯，但我怀疑它多年来一直有。",
+     "en": "I'm 99% sure Gboard on Android does the same thing.",
+     "hn": "https://news.ycombinator.com/item?id=50407203",
+     "id": 50407203,
+     "replies": 5
+    }
+   ],
+   "kicker": "要闻 · 苹果"
+  },
+  {
+   "id": 50406670,
+   "title": "10 美元的 OpenStick 随身棒上，我跑了哪些自托管服务",
+   "title_en": "What I run on my $10 USD OpenStick homelab",
+   "url": "https://blog.bosscher.ch/posts/openstick/",
+   "hn": "https://news.ycombinator.com/item?id=50406670",
+   "points": 290,
+   "comments": 75,
+   "summary": [
+    "作者花 10 美元（含运费）买了一根 OpenStick：512MB 内存（约 450MB 可用）、4 核 1GHz Cortex-A53、4GB eMMC、Wi-Fi 和 4G 模块，被动散热完全静音。刷机过程有点折腾，但装好后就是 Debian，可以用 systemd 和 Podman。",
+    "他在上面跑了跳过 Chromecast 赞助片段的 CastSponsorSkip、自己分叉的 AdGuard Home（加了几个拦截列表后约 60% 的 DNS 查询被拦），以及空闲时约 3MB 常驻内存的 AI 智能体框架 Zeroclaw，通过 Telegram 问它日志和磁盘情况。他承认给 Zeroclaw 的「实际上是一个 root shell」，但认为影响范围只限这根棒子。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "LaurensBER",
+     "stance": "作者现身",
+     "zh": "作者：这个小玩意让我玩得很开心，选对软件就能在这么便宜的设备上托管这么多东西。考虑到现在内存这么贵，我觉得这也是入门自托管的好选择。欢迎提问和建议。",
+     "en": "Given how expensive RAM is these days",
+     "hn": "https://news.ycombinator.com/item?id=50406671",
+     "id": 50406671,
+     "replies": 8
+    },
+    {
+     "user": "mk_stjames",
+     "stance": "一次注入就漏",
+     "zh": "我没太懂：这些「claw」框架不就是把 shell 交给 LLM 吗？它一直开着、读你所有日志，这台设备还能看到你的 DNS 流量（因为拿它做广告拦截）……这不是离一次恶意提示注入就会泄露吗？",
+     "en": "isn't this thing one bad prompt injection away from exposing y",
+     "hn": "https://news.ycombinator.com/item?id=50408551",
+     "id": 50408551,
+     "replies": 4
+    },
+    {
+     "user": "throwaway81523",
+     "stance": "已经买不到",
+     "zh": "这种 OpenStick 已经买不到了，它们是 2022 年的东西。",
+     "en": "Can't buy those opensticks any more.",
+     "hn": "https://news.ycombinator.com/item?id=50409291",
+     "id": 50409291,
+     "replies": 0
+    }
+   ],
+   "kicker": "要闻 · 自托管"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 2,
+   "stats": {
+    "items": 13,
+    "points": 1073,
+    "comments": 595,
+    "top_points": {
+     "id": 50406563,
+     "title": "微软研究院 AI Frontiers 小组的终结",
+     "value": 336,
+     "comments": 194
+    },
+    "top_comments": {
+     "id": 50406563,
+     "title": "微软研究院 AI Frontiers 小组的终结",
+     "value": 194
+    },
+    "top_brief": {
+     "id": 50407882,
+     "title": "Claude Code 的「不再询问」让密码出现在 1122 个公开 GitHub 文件里",
+     "value": 117,
+     "comments": 86
+    }
+   },
+   "stories": [
+    {
+     "id": 50406563,
+     "title": "微软研究院 AI Frontiers 小组的终结",
+     "title_en": "The end of Microsoft Research's AI Frontiers group",
+     "url": "https://hunch.net/?p=13764006",
+     "hn": "https://news.ycombinator.com/item?id=50406563",
+     "points": 336,
+     "comments": 194,
+     "summary": [
+      "微软研究院的 John Langford 在博客写道：2023 年 ChatGPT 之后，他和同事认为研究需要更有组织才行，于是成立了约 50 人的 AI Frontiers 子组织，做过 Autogen 编排框架、Fara 电脑操作智能体，纽约团队还在研究 Next Latent 目标、改进 Muon 的 Dion3 和通过递归增强模型的 Full Bandwidth Transformer，并把代码库默认共享给整个 MSR。",
+      "9 月初 AIF 被并入 Microsoft AI。他说前 Inflection 出身的 MAI 领导层理念是「只做规模、刻意不做研究」，重心在数据，和 AIF 的方向不兼容，而且「有大量迹象表明他们并不想要我们」。他认为只押规模既方向错误又不好玩，研究的回报是真实的：字节的实验显示 Full Bandwidth Transformer 的一个变体可能抵得上两倍大小的模型。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "AnotherGoodName",
+       "stance": "大公司都这样",
+       "zh": "现在每家大公司都是如此。Transformer 路线被当成一条高速公路，大家踩足油门训练更好的模型，几乎不容组织上的分心；探索其他 AI 方法的研究眼下被强烈劝退。",
+       "en": "This is true in every large company right now.",
+       "hn": "https://news.ycombinator.com/item?id=50406862",
+       "id": 50406862,
+       "replies": 114
+      },
+      {
+       "user": "s_u_d_o",
+       "stance": "看不懂",
+       "zh": "手握数十亿美元的公司，在最具革命性的技术上停掉研发，我无法理解。我懂这是一场要用 Transformer 和现有 LLM 架构赢的竞赛，但如果研究能找到更好、更高效的方法，就能重塑这场竞赛。",
+       "en": "stopping R&D on the most revolutionizing technology/ breakthrough is something I can’t understand",
+       "hn": "https://news.ycombinator.com/item?id=50407569",
+       "id": 50407569,
+       "replies": 5
+      },
+      {
+       "user": "rhyperior",
+       "stance": "契约被打破",
+       "zh": "文中说 MSR 的基本约定是「做好工作就会有好事发生」，这句真戳中我。这个约定在微软维持了很久，却被现任领导层一再打破，这在摧毁文化。",
+       "en": "This is the contract that held for a *long* time at Microsoft",
+       "hn": "https://news.ycombinator.com/item?id=50408559",
+       "id": 50408559,
+       "replies": 0
+      }
+     ],
+     "kicker": "AI · 研究"
+    },
+    {
+     "id": 50406222,
+     "title": "MaxxBench：把编码基准题稍作改动，模型分数大幅分化",
+     "title_en": "MaxxBench – \"Nice DeepSWE score. But is it true?\"",
+     "url": "https://maxxbench.unlap.ai/research/why-maxxbench/",
+     "hn": "https://news.ycombinator.com/item?id=50406222",
+     "points": 178,
+     "comments": 55,
+     "summary": [
+      "MaxxBench 对 89 道 DeepSWE 任务做了小改动（参考补丁中位数只多 17 行、约 3.5%），比如要求浏览器报告文件名改成小写、时间戳统一成带 Z 的 UTC。作者发现模型有时明明理解新要求，却自我说服「隐藏测试大概想要别的」；有一次模型改对了，问了另一个模型原题答案后又删掉了自己正确的代码。",
+      "在已发布的 DeepSWE 上，Claude Opus 5.5 和 Gemini 3.8 Flash 都约 74%，在 MaxxBench 上分别是 76.4% 和 53.4%；GPT-6 Astra 为 71.9%，Claude Opus 5 从 73.6% 降到 63.5%，DeepSeek V4 Flash 从 53.3% 降到 28.1%。作者把针对特定基准题和惯例的提升称为「benchmaxxing」。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "peri-cl",
+       "stance": "小模型崩得最狠",
+       "zh": "图里最大的趋势是小模型跌得最多：名字带 -flash 的，再加上 OpenAI 的 Luna。看看 GPT 5.6-Sol 和 GPT 5.6-Luna 的对比。如果这是主因，我预测 Kimi K3.1 和 Gemini Carbon 也会考得不错，而 Haiku 6 会崩——这是个可证伪的预测。",
+       "en": "The big trend in that graph is that smaller models collapse the most.",
+       "hn": "https://news.ycombinator.com/item?id=50406956",
+       "id": 50406956,
+       "replies": 3
+      },
+      {
+       "user": "YetAnotherNick",
+       "stance": "不是刷榜",
+       "zh": "DeepSWE 是 5 月发布的，DeepSeek V4 Flash 是 4 月发布的，按定义它不可能针对这个基准刷榜。我猜是这些改动不像真实场景，绊倒了小模型，而不是刷榜的模型。",
+       "en": "By definition it couldn't be benchmaxxed on this particular benchmark.",
+       "hn": "https://news.ycombinator.com/item?id=50406948",
+       "id": 50406948,
+       "replies": 4
+      },
+      {
+       "user": "antirez",
+       "stance": "先验与模糊规格",
+       "zh": "我打赌最后会发现主要是小模型难以对抗两件事：一是这些改动正好反转了它们的强先验；二是规格没写清，隐藏测试考的东西没明说，而很大的模型知道自己在被测，能猜出来。",
+       "en": "smaller models have issues to go against",
+       "hn": "https://news.ycombinator.com/item?id=50408786",
+       "id": 50408786,
+       "replies": 0
+      }
+     ],
+     "kicker": "AI · 评测"
+    },
+    {
+     "id": 50402212,
+     "title": "Anthropic：智能体记忆由哪些部分组成",
+     "title_en": "The Components of Agent Memory",
+     "url": "https://www.anthropic.com/research/components-of-agent-memory",
+     "hn": "https://news.ycombinator.com/item?id=50402212",
+     "points": 148,
+     "comments": 73,
+     "summary": [
+      "Anthropic 发文讨论 Claude 的跨会话记忆：他们把记忆定义为从经验中获得、以可读上下文形式保存下来的知识，不包括权重更新、单次对话内学习和上下文压缩。借鉴人脑在睡眠中回放、巩固记忆的说法，他们让 Claude 在空闲时「做梦」：回看日志、纠错、写笔记、构建新的记忆表示，并决定未来会话预先加载什么。文中还说，写下一条规则本质上是对未来需要什么的预测。",
+      "实验里，把「做梦」从 2 个会话扩展到 128 个，25 个问题上的评分标准达成率从 13% 升到 48%；同时给 wiki 和搜索工具时，总分随 wiki 增长从 54% 升到 61%，只用搜索为 53%，且每题省约 2 万 token。他们发现最好告诉 Claude 记忆是做什么用的，而不是规定怎么用。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "yfontana",
+       "stance": "我都删了",
+       "zh": "到目前为止，我在用过的每个框架里都关掉了自动创建记忆。Claude Code 有时照样会建，我大概删掉 95%。它建的记忆几乎都只和当前这个任务有关。所以我最想要的改进是：更好地判断该建哪些。",
+       "en": "I probably delete 95% of them",
+       "hn": "https://news.ycombinator.com/item?id=50402919",
+       "id": 50402919,
+       "replies": 17
+      },
+      {
+       "user": "aszen",
+       "stance": "回避了真问题",
+       "zh": "文章有意思，但把记忆定义为对未来需要的预测，回避了真正的问题：这些模型无法持续学习、更新权重。Opus 5.5 真正的记忆、经验和知识是固定的，再多 Markdown 技巧也改变不了。",
+       "en": "these models cannot learn continuously i.e. update their weights",
+       "hn": "https://news.ycombinator.com/item?id=50404875",
+       "id": 50404875,
+       "replies": 5
+      },
+      {
+       "user": "andai",
+       "stance": "搜索更划算",
+       "zh": "文中没细说，但从图 10 看，wiki 加搜索胜过做梦，做梦在 wiki+搜索之上只带来边际收益。我猜搜索比做梦便宜得多，这点挺重要。",
+       "en": "it looks like wiki + search beats dreaming",
+       "hn": "https://news.ycombinator.com/item?id=50404081",
+       "id": 50404081,
+       "replies": 0
+      }
+     ],
+     "kicker": "AI · 智能体"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50407882,
+     "title": "Claude Code 的「不再询问」让密码出现在 1122 个公开 GitHub 文件里",
+     "title_en": "Claude Code's \"Don't Ask Again\" exposes passwords in 1,122 public GitHub files",
+     "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
+     "hn": "https://news.ycombinator.com/item?id=50407882",
+     "points": 117,
+     "comments": 86
+    },
+    {
+     "id": 50401029,
+     "title": "这轮 AI 抛售与历史著名股灾对比",
+     "title_en": "The AI sell-off compared to well-known stock market crashes",
+     "url": "https://www.kadoa.com/companies/insights/ai-selloff-perspective",
+     "hn": "https://news.ycombinator.com/item?id=50401029",
+     "points": 84,
+     "comments": 69
+    },
+    {
+     "id": 50399695,
+     "title": "OpenAI：外呼 SIP 通话向所有组织开放",
+     "title_en": "Outbound SIP calling is now available to all organizations",
+     "url": "https://developers.openai.com/api/docs/guides/voice-sip",
+     "hn": "https://news.ycombinator.com/item?id=50399695",
+     "points": 72,
+     "comments": 59
+    },
+    {
+     "id": 50405263,
+     "title": "Show HN：把 31B 视频+音频扩散模型压到 14B、6 步、INT8",
+     "title_en": "Show HN: We compressed a 31B video+audio diffusion model to 14B, 6 steps, INT8",
+     "url": "https://github.com/Video-Rebirth/hyperflow-h3-flash",
+     "hn": "https://news.ycombinator.com/item?id=50405263",
+     "points": 56,
+     "comments": 12
+    },
+    {
+     "id": 50402369,
+     "title": "Arete-27B：在 Qwen3.8-27B 上后训练以强化「西方价值观」",
+     "title_en": "Arete-27B: Qwen3.8-27B, post-trained to reinforce Western values",
+     "url": "https://nousresearch.com/arete",
+     "hn": "https://news.ycombinator.com/item?id=50402369",
+     "points": 9,
+     "comments": 16
+    },
+    {
+     "id": 50401213,
+     "title": "Brave 把搜索索引卖给 AI，你的网站可能就在里面",
+     "title_en": "Brave Sells Its Search Index to AI, and Your Website Is Probably in It",
+     "url": "https://www.searchenginejournal.com/brave-sells-its-search-index-to-ai-and-your-website-is-probably-in-it/595829/",
+     "hn": "https://news.ycombinator.com/item?id=50401213",
+     "points": 15,
+     "comments": 4
+    },
+    {
+     "id": 50399909,
+     "title": "12 月 7 日后购买的 Claude 用量额度将在 12 个月后过期",
+     "title_en": "Claude usage credits purchased after Dec 7 will expire 12 months after purchase",
+     "url": null,
+     "hn": "https://news.ycombinator.com/item?id=50399909",
+     "points": 15,
+     "comments": 8
+    },
+    {
+     "id": 50404622,
+     "title": "我不在乎网页内容是不是 AI 生成的",
+     "title_en": "I don't care if web content is AI-generated",
+     "url": "https://kevinboone.me/ai.html",
+     "hn": "https://news.ycombinator.com/item?id=50404622",
+     "points": 14,
+     "comments": 12
+    },
+    {
+     "id": 50405649,
+     "title": "谷歌介绍了它的智能体沙箱，我用 Firecracker 搭了一个并实测",
+     "title_en": "Google Described Its Agent Sandbox. I Built One with Firecracker and Measured It",
+     "url": "https://antonau.tech/posts/2026/11/agents-microvm-firecracker/",
+     "hn": "https://news.ycombinator.com/item?id=50405649",
+     "points": 10,
+     "comments": 4
+    },
+    {
+     "id": 50400576,
+     "title": "用 CSS 实现 GPT-2",
+     "title_en": "Implementing GPT-2 in CSS",
+     "url": "https://shubhampatil.dev/blog/gpt2-css",
+     "hn": "https://news.ycombinator.com/item?id=50400576",
+     "points": 19,
+     "comments": 3
+    }
+   ]
+  },
+  {
+   "name": "开发",
+   "en": "Software",
+   "page": 3,
+   "stats": {
+    "items": 13,
+    "points": 1762,
+    "comments": 805,
+    "top_points": {
+     "id": 50403066,
+     "title": "用自由软件经营一家律所（2026 版）",
+     "value": 228,
+     "comments": 103
+    },
+    "top_comments": {
+     "id": 50403507,
+     "title": "Discord 新 Rust 客户端：冷启动更快，内存少约七成",
+     "value": 194
+    },
+    "top_brief": {
+     "id": 50404599,
+     "title": "8 美元的 Linux 电脑（2022）",
+     "value": 192,
+     "comments": 84
+    }
+   },
+   "stories": [
+    {
+     "id": 50397099,
+     "title": "GitHub 新 Git 存储架构：为同一仓库上千个智能体而设计",
+     "title_en": "GitHub's new Git storage architecture",
+     "url": "https://github.blog/engineering/architecture-optimization/inside-githubs-new-git-storage-architecture/",
+     "hn": "https://news.ycombinator.com/item?id=50397099",
+     "points": 220,
+     "comments": 62,
+     "summary": [
+      "GitHub 工程博客介绍了在 Universe 上宣布的新 Git 存储架构：内部测试中支持 5000 个并发智能体在同一仓库工作、每秒 7200 次推送，同时读取延迟保持稳定。核心观察是 Git 对象不可变、按内容命名，多个写入者可以同时存而无需协调，真正需要达成一致的只有很小的引用更新。",
+      "因此存储数据、处理请求和维护仓库这几部分可以各自独立扩展。文章说此前已把 99.99999% 的仓库迁到 Azure，并用 Azure Blob 存储支撑「虚拟副本」作为接入新架构的途径。他们指出，目前 GitHub 最繁忙的仓库每秒最多也就几十次写入，新设计主要针对的是单仓库「纵向」规模。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "yakkomajuri",
+       "stance": "救不了眼下宕机",
+       "zh": "如果我没读错，这是（很扎实的）未来规划，但帮不了当前的宕机？他们说横向扩展技术基本沿用现有架构（问题似乎就出在那），新设计主要解决单仓库内的「纵向」扩展，还承认最活跃的仓库如今也就每秒几十次写入。",
+       "en": "this is (really solid) future planning but won't help with the current outages?",
+       "hn": "https://news.ycombinator.com/item?id=50400381",
+       "id": 50400381,
+       "replies": 3
+      },
+      {
+       "user": "rochacon",
+       "stance": "难怪推送报 500",
+       "zh": "难怪这周我推送时收到一堆 500 :) 希望它能改善可靠性，最近宕机这么多，替 GitHub 辩护越来越难了。",
+       "en": "So that is why I got a bunch of 500's during push this week :)",
+       "hn": "https://news.ycombinator.com/item?id=50400136",
+       "id": 50400136,
+       "replies": 0
+      },
+      {
+       "user": "mitxela",
+       "stance": "封了就行",
+       "zh": "你们也可以直接封掉那些狂刷、消耗巨量服务器时间的人，或者让他们为服务器时间付费。",
+       "en": "You could also just ban people who spam you and consume immense amounts of server time.",
+       "hn": "https://news.ycombinator.com/item?id=50401432",
+       "id": 50401432,
+       "replies": 0
+      }
+     ],
+     "kicker": "开发 · 基础设施"
+    },
+    {
+     "id": 50403507,
+     "title": "Discord 新 Rust 客户端：冷启动更快，内存少约七成",
+     "title_en": "Every Windows 11 app should kill Electron, and Discord just showed why",
+     "url": "https://www.windowslatest.com/2026/11/06/every-windows-11-app-should-kill-electron-and-discord-just-showed-why-no-starting-screen-and-70-less-ram-even-with-two-accounts-signed-in/",
+     "hn": "https://news.ycombinator.com/item?id=50403507",
+     "points": 194,
+     "comments": 194,
+     "summary": [
+      "Windows Latest 报道，Discord 联合创始人兼 CTO Stanislav Vishnevskiy 在 X 上发了一段 15 秒视频：两台 Windows 11 ThinkPad 冷启动对比，新的 Rust 客户端（任务管理器里显示为 Discord Phoenix）在旧 Electron 客户端还没过加载画面时就已显示好友列表。他说新客户端 290.2MB 的内存占用是同时登录两个账号的情况，「点哪都感觉是即时的，我回不去了」。",
+      "报道逐帧看了视频：先打开的 Electron 客户端黑屏约 3 秒，再显示加载提示。文章借此主张每个 Windows 11 应用都该抛弃 Electron，标题称内存少了 70%。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "cheschire",
+       "stance": "早就知道",
+       "zh": "Electron 这个问题从早期就人尽皆知，VS Code 刚发布时这也是主要抱怨之一。Electron 的价值一直是一个团队做一个应用、以最小额外成本支持多个平台，这篇文章对此只字未提。",
+       "en": "Electron's value prop has always been about having one team producing one app",
+       "hn": "https://news.ycombinator.com/item?id=50403866",
+       "id": 50403866,
+       "replies": 57
+      },
+      {
+       "user": "LaurensBER",
+       "stance": "是时候换了",
+       "zh": "Electron 很棒，让小团队用现有 Web 技能做出像样的 GUI 应用，但感觉是时候有更好的东西了。内存这么贵，为了收发消息这种基本任务（Discord 的 90% 用途）跑好几个吃 GB 级内存的应用，真让人沮丧。",
+       "en": "it also feels like it's time for something better at this point",
+       "hn": "https://news.ycombinator.com/item?id=50404049",
+       "id": 50404049,
+       "replies": 16
+      },
+      {
+       "user": "mococa",
+       "stance": "Qt 不难",
+       "zh": "我不理解这种蠢事：用 Qt 写一套代码跑遍所有系统甚至 BSD 非常容易，我一个人就做过很多次。我觉得大家变懒了，「占几百兆内存而已，发布吧」。",
+       "en": "it's super easy (I did myself alone many times) to have a single codebase in Qt for all OSes",
+       "hn": "https://news.ycombinator.com/item?id=50404805",
+       "id": 50404805,
+       "replies": 8
+      }
+     ],
+     "kicker": "开发 · 桌面应用"
+    },
+    {
+     "id": 50403066,
+     "title": "用自由软件经营一家律所（2026 版）",
+     "title_en": "Running a law firm on Free software",
+     "url": "https://decoded.legal/blog/2026/11/running-a-law-firm-on-free-software-2026-edition/",
+     "hn": "https://news.ycombinator.com/item?id=50403066",
+     "points": 228,
+     "comments": 103,
+     "summary": [
+      "英国小型科技法律师事务所 decoded.legal 的 Neil Brown 写下他用自由软件运营律所约五年后的更新：客户端仍是 Debian + GNOME，跑在 ThinkPad X1 Yoga 上（可翻折手写批注，但雷电/USB-C 接口数据传输很不稳定，可能要换机）。邮件用 Thunderbird 和 mutt，和其他律师往来的 Word 文档用 LibreOffice Writer，其余用 vim 写 Markdown 再经 pandoc 和 typst 转换。",
+      "他特别喜欢用 reveal.js 以 Markdown 写演示文稿，文本扩展用 espanso，笔记用 vimwiki，密码管理用自托管的 vaultwarden 配 YubiKey，扫描归档用 paperless-ngx，文件同步前用 Cryptomator 加密。他也提到 Thunderbird 处理部分周期性日历邀请有问题，对 Mozilla 的方向不太满意。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Tomte",
+       "stance": "不用 Word 算失职",
+       "zh": "今年早些时候我在一个法律研讨会上听到：律所不用 Microsoft Word 等于失职。这话出自一位知名、受尊敬、长期从事开源的美国律师。",
+       "en": "not using Microsoft Word in your law firm amounts to malpractice",
+       "hn": "https://news.ycombinator.com/item?id=50404694",
+       "id": 50404694,
+       "replies": 28
+      },
+      {
+       "user": "skeeter2020",
+       "stance": "律师该专心法律",
+       "zh": "只有我这么想吗：我希望我的律师专心搞法律，而不是搞独特的 IT。万一你出了什么事，换个律师或助理来接手怎么办？",
+       "en": "I want my lawyer to focus on law-ing, not pretty unique IT",
+       "hn": "https://news.ycombinator.com/item?id=50405010",
+       "id": 50405010,
+       "replies": 12
+      },
+      {
+       "user": "NoboruWataya",
+       "stance": "羡慕",
+       "zh": "好羡慕，我也想这样。我只是大型法律机器里的小齿轮，只能用律所强制的技术栈：Outlook + Word，外加一堆极不直观、又慢又多 bug、肯定还很贵的计费、版本控制、联系人管理软件。",
+       "en": "I'm jealous, I'd love to be able to do this.",
+       "hn": "https://news.ycombinator.com/item?id=50406305",
+       "id": 50406305,
+       "replies": 2
+      }
+     ],
+     "kicker": "开发 · 自由软件"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50354097,
+     "title": "这么多年了，GROUP BY 还能再优化吗？",
+     "title_en": "Can GROUP BY still be optimized after all these years?",
+     "url": "https://pivotlake.io/blog/know-your-limit-faster-top-k-aggregation/",
+     "hn": "https://news.ycombinator.com/item?id=50354097",
+     "points": 117,
+     "comments": 24
+    },
+    {
+     "id": 50352701,
+     "title": "Flash C 编译器",
+     "title_en": "The Flash C Compiler",
+     "url": "https://blog.adafruit.com/2026/10/31/flash-c-compiler/",
+     "hn": "https://news.ycombinator.com/item?id=50352701",
+     "points": 100,
+     "comments": 53
+    },
+    {
+     "id": 50405678,
+     "title": "今非昔比：Borland Turbo Pascal 7",
+     "title_en": "They don't make 'em like that any more: Borland Turbo Pascal 7",
+     "url": "https://kevinboone.me/tpwin.html",
+     "hn": "https://news.ycombinator.com/item?id=50405678",
+     "points": 184,
+     "comments": 101
+    },
+    {
+     "id": 50361657,
+     "title": "Text.js：在 console.log 里渲染的全栈 React 应用",
+     "title_en": "Text.js: Build full-stack React apps that render inside console.log",
+     "url": "https://textjs.org/",
+     "hn": "https://news.ycombinator.com/item?id=50361657",
+     "points": 79,
+     "comments": 47
+    },
+    {
+     "id": 50355009,
+     "title": "Show HN：tmux-restore 重启后恢复 tmux 窗口和智能体会话",
+     "title_en": "Show HN: Tmux-restore saves tmux windows and agent sessions across reboots",
+     "url": "https://github.com/andrewboldi/tmux-restore",
+     "hn": "https://news.ycombinator.com/item?id=50355009",
+     "points": 52,
+     "comments": 36
+    },
+    {
+     "id": 50377613,
+     "title": "Show HN：Spindle，OCaml 5 的全功能类型安全 Web 框架",
+     "title_en": "Show HN: Spindle – a full-featured, type-safe web framework for OCaml 5",
+     "url": "https://github.com/hyphatech/spindle",
+     "hn": "https://news.ycombinator.com/item?id=50377613",
+     "points": 54,
+     "comments": 8
+    },
+    {
+     "id": 50361765,
+     "title": "PostgreSQL 内部原理（PDF，2023）",
+     "title_en": "PostgreSQL Internals [pdf] (2023)",
+     "url": "https://edu.postgrespro.com/postgresql_internals-14_en.pdf",
+     "hn": "https://news.ycombinator.com/item?id=50361765",
+     "points": 84,
+     "comments": 7
+    },
+    {
+     "id": 50406319,
+     "title": "五本难忘的编程书（2008）",
+     "title_en": "Five memorable books about programming (2008)",
+     "url": "https://prog21.dadgum.com/19.html",
+     "hn": "https://news.ycombinator.com/item?id=50406319",
+     "points": 77,
+     "comments": 47
+    },
+    {
+     "id": 50404599,
+     "title": "8 美元的 Linux 电脑（2022）",
+     "title_en": "The $8 Linux Computer (2022)",
+     "url": "http://thelittleengineerthatcould.blogspot.com/2022/12/the-8-linux-computer.html",
+     "hn": "https://news.ycombinator.com/item?id=50404599",
+     "points": 192,
+     "comments": 84
+    },
+    {
+     "id": 50406292,
+     "title": "Show HN：Coldframe，伪装成超市冷柜控制器的蜜罐",
+     "title_en": "Show HN: Coldframe, a honeypot that poses as a supermarket fridge controller",
+     "url": "https://github.com/hedgerow-dev/coldframe",
+     "hn": "https://news.ycombinator.com/item?id=50406292",
+     "points": 181,
+     "comments": 39
+    }
+   ]
+  },
+  {
+   "name": "科学",
+   "en": "Science",
+   "page": 4,
+   "stats": {
+    "items": 12,
+    "points": 913,
+    "comments": 460,
+    "top_points": {
+     "id": 50401740,
+     "title": "古 DNA 证实：哥特人确实从斯堪的纳维亚南下",
+     "value": 202,
+     "comments": 182
+    },
+    "top_comments": {
+     "id": 50401740,
+     "title": "古 DNA 证实：哥特人确实从斯堪的纳维亚南下",
+     "value": 182
+    },
+    "top_brief": {
+     "id": 50405789,
+     "title": "生命能等多久？",
+     "value": 119,
+     "comments": 69
+    }
+   },
+   "stories": [
+    {
+     "id": 50401740,
+     "title": "古 DNA 证实：哥特人确实从斯堪的纳维亚南下",
+     "title_en": "A barbarian tribe's mythic origin story is true, ancient DNA reveals",
+     "url": "https://www.science.org/content/article/barbarian-tribe-s-mythic-origin-story-true-ancient-dna-reveals",
+     "hn": "https://news.ycombinator.com/item?id=50401740",
+     "points": 202,
+     "comments": 182,
+     "summary": [
+      "《科学》报道，公元 551 年哥特史家约达尼斯写道，哥特人从名为 Scandza 的寒冷岛屿乘三艘船出发，在波罗的海南岸登陆后一路南下到黑海。二十世纪中叶以来多数历史学家把它当作传说。如今《自然》上一项覆盖欧洲骨骼 DNA 的研究发现，约公元 50 年哥特风格器物出现在波兰北部时，当地血统几乎完全更替，偏向铁器时代瑞典谱系，说明是大规模移民而非少数精英。",
+      "《基因组生物学》的研究显示，175 到 350 年间波兰东南部的哥特式墓葬中约一半人有类斯堪的纳维亚血统；《细胞》的论文则在西班牙的哥特与日耳曼式墓葬中发现约三分之一骨骼带北欧血统。学者认为这是「两章的故事」：先是大迁徙，后来更多靠通婚与文化传播；但约达尼斯书中哥特人征服特洛伊等奇谈仍不可信。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "joegibbs",
+       "stance": "名字都摆着呢",
+       "zh": "为什么大家会怀疑？说讲日耳曼语的民族来自斯堪的纳维亚并不离谱——那里有个岛叫哥得兰，有东、西约特兰省，有座城叫哥德堡，还有叫耶阿特人的民族（可能和哥特人有关）。",
+       "en": "Why did people doubt this?",
+       "hn": "https://news.ycombinator.com/item?id=50402059",
+       "id": 50402059,
+       "replies": 127
+      },
+      {
+       "user": "alexpotato",
+       "stance": "希罗多德也是",
+       "zh": "这让我想起希罗多德：他提出过很多「离谱说法」，比如有个部落用人皮做衣服，史学家以为是神话或夸张，而近年的研究显示他很多离谱说法是真的（包括这条）。",
+       "en": "recent research has shown that many of his wild claims were true",
+       "hn": "https://news.ycombinator.com/item?id=50404343",
+       "id": 50404343,
+       "replies": 6
+      },
+      {
+       "user": "LarsDu88",
+       "stance": "瑞典人早就在讲",
+       "zh": "瑞典哥得兰人几百年来一直在讲这个神话起源。我记得古斯塔夫·阿道夫在 17 世纪还引用过这段历史，为瑞典赤裸裸的军国主义辩护。",
+       "en": "Swedish Gotlander's have been referring to this mythic origin story for centuries.",
+       "hn": "https://news.ycombinator.com/item?id=50405370",
+       "id": 50405370,
+       "replies": 1
+      }
+     ],
+     "kicker": "科学 · 考古"
+    },
+    {
+     "id": 50360810,
+     "title": "希腊也有自己的庞贝：锡拉火山掩埋的阿克罗蒂里",
+     "title_en": "Greece has its own Pompeii: Thera buried Akrotiri in ash 17th-16th century BCE",
+     "url": "https://www.smithsonianmag.com/history/greece-has-its-own-pompeii-and-the-ruins-tell-a-captivating-story-of-a-sophisticated-seafaring-bronze-age-society-180989747/",
+     "hn": "https://news.ycombinator.com/item?id=50360810",
+     "points": 197,
+     "comments": 26,
+     "summary": [
+      "《史密森尼》杂志介绍了圣托里尼岛上的青铜时代航海聚落阿克罗蒂里：大地震动多日后，居民收好贵重物品乘船逃离，一度返回修复，最终再次撤离。随后锡拉火山再度喷发，把聚落埋在约 200 英尺厚的火山灰和浮石下。年代仍有争议，学界一般定在公元前 1620 到 1530 年之间。",
+      "这次喷发是有记录以来最大的火山喷发之一，喷出物约为 1883 年喀拉喀托火山的四倍，火山灰远落到今埃及和以色列，还引发多次海啸；几天后部分火山口坍入海中，改变了圣托里尼的地形。有人说阿克罗蒂里就是亚特兰蒂斯，但多数现代学者认为柏拉图的沉岛故事是寓言。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "ughitsaaron",
+       "stance": "他们提前跑了",
+       "zh": "巧了，我几周前刚去过阿克罗蒂里遗址，非常震撼。和庞贝不同，古锡拉人似乎很熟悉火山，懂得提前撤离，遗址里没发现贵重物品、宠物或人的遗骸。线形文字 A 泥板和壁画把它和米诺斯文明紧密联系起来（不过导游很小心，不简单地称他们为「米诺斯人」）。",
+       "en": "No remains of valuables, pets, or humans have been discovered at the site.",
+       "hn": "https://news.ycombinator.com/item?id=50404893",
+       "id": 50404893,
+       "replies": 0
+      },
+      {
+       "user": "Luc",
+       "stance": "规模小得多",
+       "zh": "如果打算去，注意阿克罗蒂里的发掘面积大约只有庞贝可见范围的四十分之一。",
+       "en": "the excavated surface of Akrotiri is about 40 times smaller than what's visible at Pompeii",
+       "hn": "https://news.ycombinator.com/item?id=50404281",
+       "id": 50404281,
+       "replies": 0
+      },
+      {
+       "user": "zetazzed",
+       "stance": "博物馆值得去",
+       "zh": "去的话也值得看看史前锡拉博物馆。馆不大，但有一些保存极好的文物，壁画惊艳。附近的费拉镇我觉得挤得要命，但看锡拉遗址很酷。",
+       "en": "The museum of prehistoric Thera is also worth a visit",
+       "hn": "https://news.ycombinator.com/item?id=50401229",
+       "id": 50401229,
+       "replies": 0
+      }
+     ],
+     "kicker": "科学 · 历史"
+    },
+    {
+     "id": 50393458,
+     "title": "司美格鲁肽类药物正走向心衰、成瘾乃至衰老试验",
+     "title_en": "Ozempic-style drugs now in trials for heart failure, addiction and even aging",
+     "url": "https://maccus.fr/en/ozempic-drugs-trials-beyond-diabetes/",
+     "hn": "https://news.ycombinator.com/item?id=50393458",
+     "points": 99,
+     "comments": 97,
+     "summary": [
+      "MACCUS 的 Marc Winer 从美国 ClinicalTrials.gov 拉取了至少 1800 项 GLP-1/肠促胰素类药物（Ozempic、Wegovy、Mounjaro 所属类别）的人体试验，按目标疾病和开始年份统计。约六分之五仍是糖尿病和体重研究，但十五年前新试验里只有约 1/14 瞄准糖尿病、体重或血脂之外，如今约为 1/4，占比大约翻了三倍。",
+      "2024 年以来完全脱离糖尿病和体重的试验分布在 15 个疾病领域，成瘾居首，其后是心脏、肾脏、肝脏和癌症；例子包括美国退伍军人事务部测试司美格鲁肽治酒精使用障碍、伦敦帝国理工试用于阿尔茨海默病、纽约一家机构针对生物学衰老的试验。作者提醒，登记试验只代表研究意图，多数药物试验会失败，且只统计了美国登记库。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "potamic",
+       "stance": "无聊型进食呢",
+       "zh": "GLP-1 对因为无聊而吃东西的人有用吗？我的 ADHD 大脑不断寻求刺激，没事做时就转向食物，哪怕并不饿也没有渴望。忙起来时我能轻松跳过饭点甚至长时间禁食。但不可能一直忙着，GLP-1 在这种情况下有帮助吗？",
+       "en": "Does GLP-1 help someone who eats because of boredom?",
+       "hn": "https://news.ycombinator.com/item?id=50402255",
+       "id": 50402255,
+       "replies": 19
+      },
+      {
+       "user": "AnthonBerg",
+       "stance": "都在抗炎",
+       "zh": "有意思的是 GLP-1 激动剂都能抑制炎症和氧化还原应激，而心衰、成瘾和衰老的底层都有炎症和氧化还原应激。",
+       "en": "they all curb inflammation and redox stress",
+       "hn": "https://news.ycombinator.com/item?id=50401968",
+       "id": 50401968,
+       "replies": 13
+      },
+      {
+       "user": "PeterStuer",
+       "stance": "有人会绕过去",
+       "zh": "据我所见：至少对一些人来说，GLP-1 起初靠抑制食欲起效，但很多人会想办法绕过去——在饱腹反馈起作用前吃热量最高的食物，或者靠习惯硬吃下去。",
+       "en": "many seem to find their was around it",
+       "hn": "https://news.ycombinator.com/item?id=50407185",
+       "id": 50407185,
+       "replies": 0
+      }
+     ],
+     "kicker": "科学 · 医学"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50405789,
+     "title": "生命能等多久？",
+     "title_en": "How Long Can Life Wait?",
+     "url": "https://mceglowski.substack.com/p/how-long-can-life-wait",
+     "hn": "https://news.ycombinator.com/item?id=50405789",
+     "points": 119,
+     "comments": 69
+    },
+    {
+     "id": 50377661,
+     "title": "铀立方块揭示德国核计划为何失败",
+     "title_en": "Uranium cubes reveal why the German nuclear project failed",
+     "url": "https://arstechnica.com/science/2026/11/uranium-cubes-reveal-why-the-german-nuclear-project-failed/",
+     "hn": "https://news.ycombinator.com/item?id=50377661",
+     "points": 46,
+     "comments": 10
+    },
+    {
+     "id": 50405811,
+     "title": "每天 3 克肌酸改善了认知功能指标",
+     "title_en": "Just 3 grams of creatine a day improved measures of cognitive function",
+     "url": "https://twitter.com/foundmyfitness/status/2119101382594609303",
+     "hn": "https://news.ycombinator.com/item?id=50405811",
+     "points": 13,
+     "comments": 2
+    },
+    {
+     "id": 50400820,
+     "title": "瑞士有机农场在 5220 块太阳能板下种蓝莓",
+     "title_en": "Organic farm in Switzerland is growing blueberries beneath 5,220 solar panels",
+     "url": "https://www.autonocion.com/us/5220-solar-panels-10-5-feet-organic-blueberries-switzerland-four-weeks-longer/",
+     "hn": "https://news.ycombinator.com/item?id=50400820",
+     "points": 15,
+     "comments": 0
+    },
+    {
+     "id": 50374287,
+     "title": "54 块叠叠乐积木最高能搭多高？",
+     "title_en": "How tall can you build with 54 Jenga blocks?",
+     "url": "https://johnjwang.com/post/2026/10/25/tallest-jenga-tower",
+     "hn": "https://news.ycombinator.com/item?id=50374287",
+     "points": 14,
+     "comments": 7
+    },
+    {
+     "id": 50358337,
+     "title": "把每台无线电变成雷达",
+     "title_en": "Turning Every Radio into a Radar",
+     "url": "https://tiaminetworks.com/turning-every-radio-into-a-radar/",
+     "hn": "https://news.ycombinator.com/item?id=50358337",
+     "points": 15,
+     "comments": 4
+    },
+    {
+     "id": 50380246,
+     "title": "没错，在怀俄明州 80 号州际公路上你可能会超过一枚核导弹",
+     "title_en": "Yes, You Can Pass a Nuclear Missile Driving on Interstate 80 Through Wyoming",
+     "url": "https://cowboystatedaily.com/2026/11/04/yes-you-can-pass-a-nuclear-missile-driving-on-interstate-80-through-wyoming/",
+     "hn": "https://news.ycombinator.com/item?id=50380246",
+     "points": 43,
+     "comments": 25
+    },
+    {
+     "id": 50405782,
+     "title": "所有被拍下并公开分享的处理器裸片",
+     "title_en": "Every processor die anyone has photographed and given away",
+     "url": "https://sheets.works/data-viz/cpu-dies",
+     "hn": "https://news.ycombinator.com/item?id=50405782",
+     "points": 68,
+     "comments": 16
+    },
+    {
+     "id": 50373513,
+     "title": "1991 年的黄油奶酪大火",
+     "title_en": "The great butter and cheese fire of 1991",
+     "url": "https://www.wisfarmer.com/story/opinion/columnists/2022/05/11/over-20-m-lbs-commodities-lost-great-butter-fire-1991/9650051002/",
+     "hn": "https://news.ycombinator.com/item?id=50373513",
+     "points": 82,
+     "comments": 22
+    }
+   ]
+  },
+  {
+   "name": "文化与社会",
+   "en": "Culture & Society",
+   "page": 5,
+   "stats": {
+    "items": 13,
+    "points": 1200,
+    "comments": 916,
+    "top_points": {
+     "id": 50403214,
+     "title": "「上传你的内存」：一个讽刺网站",
+     "value": 265,
+     "comments": 247
+    },
+    "top_comments": {
+     "id": 50403214,
+     "title": "「上传你的内存」：一个讽刺网站",
+     "value": 247
+    },
+    "top_brief": {
+     "id": 50395183,
+     "title": "圣马力诺札记",
+     "value": 144,
+     "comments": 50
+    }
+   },
+   "stories": [
+    {
+     "id": 50399991,
+     "title": "RealPage 算法定租案收尾：租客共获近 3.6 亿美元和解",
+     "title_en": "RealPage rent-pricing case wraps with nearly $360M to renters",
+     "url": "https://www.multifamilydive.com/news/realpage-rent-pricing-case-360m-renters/873553/",
+     "hn": "https://news.ycombinator.com/item?id=50399991",
+     "points": 177,
+     "comments": 166,
+     "summary": [
+      "Multifamily Dive 报道，田纳西中区联邦法院 10 月 15 日批准了 RealPage 租金软件反垄断集体诉讼的和解。2022 年底起，租客起诉 RealPage 和约 50 家最大的公寓业主与运营商，指其借软件合谋把租金抬到自由市场水平之上。和解分批达成：11 家房东的 14 项和解共 2.18 亿美元，27 家房东的 26 项和解超过 1.418 亿美元。和解覆盖 2018 年 10 月 18 日至 2025 年 11 月 21 日间租住使用 RealPage 相关定价系统物业的美国租客。",
+      "被告都不承认过错，但同意不再向 RealPage 提供非公开数据作为定价推荐输入。威斯康星大学的反垄断学者 Peter Carstensen 说，他从判决里看不出这是否真能限制企业互相协调；多个州的总检察长曾反对这些和解，法官驳回了他们的请求。司法部去年 11 月也已在相关诉讼中与 RealPage 和解，另有多起州和地方诉讼仍在进行。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "rabidheuristics",
+       "stance": "数据早就有了",
+       "zh": "可 RealPage 手上已有十年的真实定价数据，可以继续给这些租赁公司做参考；除非他们的服务设下极其严格的边界，否则这事还会再发生。这对实际问题没多大作用。",
+       "en": "Realpage has a decade of real pricing data",
+       "hn": "https://news.ycombinator.com/item?id=50400887",
+       "id": 50400887,
+       "replies": 68
+      },
+      {
+       "user": "epistasis",
+       "stance": "要公开租金登记",
+       "zh": "我们需要一个人人都能浏览、分析的公开租金登记库，信息不对称才是问题。不过这并不是系统性压低价格的方法，只能防止个别的漫天要价。",
+       "en": "We need a public rental registry of rental prices",
+       "hn": "https://news.ycombinator.com/item?id=50401093",
+       "id": 50401093,
+       "replies": 50
+      },
+      {
+       "user": "throwitaway222",
+       "stance": "各行各业都有",
+       "zh": "我一直在说，几乎每个行业都有 RealPage 这样的家庭作坊式产业，这些公司应该因反竞争定价和合谋被彻底打垮。腐败太多了，我受够了欺诈和腐败。",
+       "en": "there is a cottage industry like RealPage in pretty much every industry",
+       "hn": "https://news.ycombinator.com/item?id=50400998",
+       "id": 50400998,
+       "replies": 11
+      }
+     ],
+     "kicker": "社会 · 反垄断"
+    },
+    {
+     "id": 50400597,
+     "title": "参观宇树工厂后，我更看好西方",
+     "title_en": "I toured Unitree's factory. I'm more bullish on the West",
+     "url": "https://josef.cn/blog/unitree",
+     "hn": "https://news.ycombinator.com/item?id=50400597",
+     "points": 140,
+     "comments": 118,
+     "summary": [
+      "Josef Chen 写他参观杭州宇树工厂：生产关节电机的车间只有一两条新自动化线，其余是工人操作老式绕线机。宇树招股书称装配「目前主要为手工」，2025 年底全部机器设备账面价值约 170 万美元，而当年造了近 3.2 万台机器人；人工只占制造成本约 8%，所以自动化能省的有限，宇树先自动化各机型共用的电机。他还提到宇树约四分之三的人形机器人收入来自科研和教育。",
+      "他的论点是：美国工厂工时成本约为中国的 7.5 倍，按美国工资人工会占约 40%，同样一条电机线在美国能省约 9% 而非 1.7%；加上 FCC 7 月起要求新的人形机器人和机器狗须在美国制造，西方更有动力造「造机器人的机器」，而 AI 正在降低机器人编程成本。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "tristanj",
+       "stance": "推论不成立",
+       "zh": "我认为结论有缺陷。前四点（宇树基本手工、人工约占 8%、美国人工更贵、所以美国更有动力自动化）都合理，但第五点「所以西方将拿下大部分机器人机会」是不合逻辑的推论：更有动力自动化，不等于更有能力自动化并扩大生产。",
+       "en": "Higher incentive to automate does not imply a better ability to automate & scale manufacturing.",
+       "hn": "https://news.ycombinator.com/item?id=50400972",
+       "id": 50400972,
+       "replies": 25
+      },
+      {
+       "user": "lifeisstillgood",
+       "stance": "移民政策当推手",
+       "zh": "文中说 1964 年约 50 万墨西哥农工被拒之门外，1965 年加州 20% 的番茄由机器采摘，到 1970 年是 99.9%。我真没想过关闭（合法）移民会成为一种倒逼手段。",
+       "en": "I honestly had not considered closing down (legal) immigration as a forcing func",
+       "hn": "https://news.ycombinator.com/item?id=50401169",
+       "id": 50401169,
+       "replies": 7
+      },
+      {
+       "user": "pocksuppet",
+       "stance": "关键是租金",
+       "zh": "中西方的差距似乎不在于中国有更好的制造技术——他们有，但那不是真问题。真正的原因是金融失衡：工资更低、租金更低。西方有个巨大的食利部门。",
+       "en": "Really it's all about financial imbalances",
+       "hn": "https://news.ycombinator.com/item?id=50402329",
+       "id": 50402329,
+       "replies": 2
+      }
+     ],
+     "kicker": "社会 · 制造业"
+    },
+    {
+     "id": 50403214,
+     "title": "「上传你的内存」：一个讽刺网站",
+     "title_en": "Upload Your RAM",
+     "url": "https://uploadyourram.org",
+     "hn": "https://news.ycombinator.com/item?id=50403214",
+     "points": 265,
+     "comments": 247,
+     "summary": [
+      "UploadYourRam.org 是个恶搞页面：它说「Sam Altman 讲我们电脑里装内存很低效时可真有说服力」，可买了的内存退不掉，消费者只能为闲置内存内疚。于是它推出「革命性的内存上传技术」，让你把闲置内存捐给「更好的事业」，档位从 2GB「积少成多」到 16GB「英雄档，Sam Altman 会亲自感谢你」。",
+      "页面本身只有这些内容，没有更多说明。评论区一部分人去找 Altman 原话的上下文，一部分人借题讨论 AI 的集中化。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "thih9",
+       "stance": "回到大型机时代",
+       "zh": "说真的，集中化是我对 AI 最大的意见，感觉像退回大型机时代。我们还会回到个人电脑吗？也就是说，将来会有便宜、本地、可折腾的前沿 AI 吗？希望会。",
+       "en": "Centralization is nonironically my biggest problem with AI.",
+       "hn": "https://news.ycombinator.com/item?id=50403599",
+       "id": 50403599,
+       "replies": 103
+      },
+      {
+       "user": "petervandijck",
+       "stance": "原话没那么怪",
+       "zh": "那句话放回上下文其实没那么奇怪。",
+       "en": "The quote in context really wasn’t that weird",
+       "hn": "https://news.ycombinator.com/item?id=50404191",
+       "id": 50404191,
+       "replies": 9
+      },
+      {
+       "user": "geekgod382",
+       "stance": "何必买域名",
+       "zh": "为什么有人愿意花 15 美元就为这种梗网站买个域名？",
+       "en": "Why do people pay $15 just to buy domains for these meme websites?",
+       "hn": "https://news.ycombinator.com/item?id=50404300",
+       "id": 50404300,
+       "replies": 14
+      }
+     ],
+     "kicker": "文化 · 讽刺"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50395183,
+     "title": "圣马力诺札记",
+     "title_en": "Notes on San Marino",
+     "url": "https://mattlakeman.org/2026/11/05/notes-on-san-marino/",
+     "hn": "https://news.ycombinator.com/item?id=50395183",
+     "points": 144,
+     "comments": 50
+    },
+    {
+     "id": 50384263,
+     "title": "接下来的 4000 个 emoji 会是什么样？",
+     "title_en": "What do the next 4000 emoji look like?",
+     "url": "https://jenniferdaniel.substack.com/p/what-do-the-next-4000-emoji-look",
+     "hn": "https://news.ycombinator.com/item?id=50384263",
+     "points": 81,
+     "comments": 87
+    },
+    {
+     "id": 50405674,
+     "title": "特里·普拉切特的书房",
+     "title_en": "Terry Pratchett's Study",
+     "url": "https://www.sussi.dk/terry-pratchetts-study",
+     "hn": "https://news.ycombinator.com/item?id=50405674",
+     "points": 87,
+     "comments": 23
+    },
+    {
+     "id": 50370787,
+     "title": "「错字一代」正在伤害文学",
+     "title_en": "The typo generation is damaging literature",
+     "url": "https://www.metropolitanreview.org/p/the-typo-generation-is-damaging-literature",
+     "hn": "https://news.ycombinator.com/item?id=50370787",
+     "points": 57,
+     "comments": 76
+    },
+    {
+     "id": 50404747,
+     "title": "戈登·盖柯效应：文化在金融业中的作用（PDF）",
+     "title_en": "The Gordon Gekko Effect: The Role of Culture in the Financial Industry [pdf] (2016)",
+     "url": "https://www.newyorkfed.org/medialibrary/media/research/epr/2016/epr_2016_gordon-gekko-effect_lo.pdf",
+     "hn": "https://news.ycombinator.com/item?id=50404747",
+     "points": 51,
+     "comments": 36
+    },
+    {
+     "id": 50352791,
+     "title": "大英图书馆：法定缴存与网页存档",
+     "title_en": "British Library Legal deposit and web archiving",
+     "url": "https://www.bl.uk/services/legal-deposit/web-archiving",
+     "hn": "https://news.ycombinator.com/item?id=50352791",
+     "points": 58,
+     "comments": 25
+    },
+    {
+     "id": 50405250,
+     "title": "Ask HN：你是怎么说服亲友加入你的 XMPP/Matrix 服务器的？",
+     "title_en": "Ask HN: How did you convince family and friends to join your XMPP/Matrix server?",
+     "url": null,
+     "hn": "https://news.ycombinator.com/item?id=50405250",
+     "points": 72,
+     "comments": 68
+    },
+    {
+     "id": 50406079,
+     "title": "福克斯买下了 Roku",
+     "title_en": "Fox Bought Roku",
+     "url": "https://www.theverge.com/streaming/1028629/fox-roku-acquisition-close",
+     "hn": "https://news.ycombinator.com/item?id=50406079",
+     "points": 21,
+     "comments": 9
+    },
+    {
+     "id": 50408383,
+     "title": "前 PlayStation 掌门：真正的创新是再做一台 300 美元的主机",
+     "title_en": "Ex-PlayStation boss says \"true innovation\" would be making a $300 console again",
+     "url": "https://www.gamesradar.com/platforms/playstation/ps6-doesnt-need-more-power-ex-playstation-boss-says-because-true-innovation-would-be-making-a-usd300-console-again/",
+     "hn": "https://news.ycombinator.com/item?id=50408383",
+     "points": 19,
+     "comments": 1
+    },
+    {
+     "id": 50404060,
+     "title": "欧盟和英国不顾风险花数百万买以色列手机破解技术",
+     "title_en": "EU and UK spent millions on Israeli phone cracking tech despite risks",
+     "url": "https://statewatch.org/news/2026/november/eu-and-uk-spent-millions-on-israeli-phone-cracking-tech-surveillance-despite-risks/",
+     "hn": "https://news.ycombinator.com/item?id=50404060",
+     "points": 28,
+     "comments": 10
+    }
+   ]
+  }
+ ],
+ "quote_of_day": {
+  "user": "jdorfman",
+  "id": 50401480,
+  "hn": "https://news.ycombinator.com/item?id=50401480",
+  "story_id": 50399933,
+  "story": "libghostty 1.0 发布：Ghostty 的终端内核成了稳定的 C 库",
+  "zh": "Mitchell 本可以顺手把自家竞品 Rex 塞进那串名单里，但他忍住了。致敬。",
+  "en": "Mitchell could have easily snuck his competing product Rex in there but resisted. Respect."
+ },
+ "stats": {
+  "snapshot": "2026-11-08T08:17:23+08:00",
+  "front_page_count": 90,
+  "with_numbers": 89,
+  "flagged_or_dupe": 1,
+  "top_points": {
+   "id": 50399933,
+   "title": "libghostty 1.0 发布：Ghostty 的终端内核成了稳定的 C 库",
+   "value": 1020,
+   "comments": 176
+  },
+  "top_comments": {
+   "id": 50403097,
+   "title": "每台 Mac 都自带一个没写进文档的「家庭成员分类器」",
+   "value": 330,
+   "comments": 330
+  },
+  "second_comments": {
+   "id": 50401867,
+   "title": "Asahi Linux 进展：M3 正式支持，全部代码改用 GPL",
+   "value": 252,
+   "comments": 252
+  },
+  "over_500": 3,
+  "over_300": 6,
+  "over_100": 25,
+  "show_hn": 9,
+  "total_points": 9204,
+  "total_comments": 4315,
+  "hottest_ratio": {
+   "id": 50403507,
+   "title": "Discord 新 Rust 客户端：冷启动更快，内存少约七成",
+   "value": 1.0,
+   "comments": 194,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
