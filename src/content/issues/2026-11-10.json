@@ -1,0 +1,1308 @@
+{
+ "date": "2026-11-10",
+ "published_at": "2026-11-11T08:19:20+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-11-10",
+ "schema_version": 2,
+ "lead": {
+  "id": 50436640,
+  "title": "亚马逊用决策模型 Strands Decider 换掉 Sonnet 4.6 给工单打标签，成本降 98%，一年省下数百万美元",
+  "title_en": "Amazon saves millions by replacing Sonnet 4.6 with Strands Decider",
+  "url": "https://strandsagents.com/blog/amazon-saves-millions-replacing-sonnet-with-strands-decider/",
+  "hn": "https://news.ycombinator.com/item?id=50436640",
+  "points": 684,
+  "comments": 241,
+  "summary": [
+   "Strands Agents 官方博客介绍，亚马逊和 AWS 内部一个规模极大的工单系统，原本用 Claude Sonnet 4.6 给每张工单（客户升级、扩容申请、自动告警、安全发现等）从 20 个类别里选标签，每次都带一长段系统提示并输出 JSON。两位工程师 Carr 和 Mehul 把它换成了一个月前发布的「决策模型」Strands Decider：这类模型不生成文字，只对给定选项输出概率和置信度。他们先试了原版 Strands Decider 2B，后来发现基于 Gemma 4 的 E4B 版本效果明显更好，便改用它并调好置信度阈值，结果在另一批工单上胜过线上的 Sonnet。",
+   "实测每次调用从 4215 毫秒降到 897 毫秒，每张工单的 token 从 6724 个降到 2010 个（输出只有 1 个）；按 us-east-1 公开价，每百万张工单从约 22200 美元降到约 500 美元，便宜约 44 倍，团队称一年可省数百万美元。迁移时他们用 AppConfig 开关让两个模型并行跑同一批工单对比，还意外发现 JSON 键的顺序会让输出概率变动最多 0.19，所以现在一律排序后再发。文章也提醒：标签需要解释文字、类别每周都变、或上下文塞不进几千 token 时，这种模型就替代不了大模型。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "armcat",
+    "stance": "绕了一圈又回来",
+    "zh": "大约六年前我们做过一个工单分类和路由的模型与流水线，最初用 SVM 训练，几分钟就训完，分类一张工单只要几毫秒。看着这个领域先一窝蜂转向大模型、又回到更快更便宜的分类器，真是有意思。",
+    "en": "It's so fascinating to watch how the field moved over to LLMs, and then back to faster/cheaper classifiers again.",
+    "hn": "https://news.ycombinator.com/item?id=50436847",
+    "id": 50436847,
+    "replies": 79
+   },
+   {
+    "user": "Kaedon",
+    "stance": "算算量级",
+    "zh": "按每百万张工单省约 21700 美元算，一年省下几百万，意味着每年至少要有 9200 万张工单才能省到 200 万美元，大概是这样吗？我原以为工单只是客服或内部 JIRA，但文中提到告警、安全发现和扩容申请，这个规模就说得通了。",
+    "en": "At ~$21,700 saved per million tickets, saving millions annually would suggest at least 92 million tickets a year to reach $2 million saved.",
+    "hn": "https://news.ycombinator.com/item?id=50436881",
+    "id": 50436881,
+    "replies": 33
+   },
+   {
+    "user": "Gasp0de",
+    "stance": "文章写得绕",
+    "zh": "这篇文章太让人困惑了。比如他们说试了 Strands Decider 模型、又因为 Gemma 放弃了它，接着却继续把用上的模型叫 Strands Decider？是我漏看了什么吗？",
+    "en": "This article is so confusing.",
+    "hn": "https://news.ycombinator.com/item?id=50437514",
+    "id": 50437514,
+    "replies": 4
+   }
+  ],
+  "kicker": "要闻 · AI 落地",
+  "tag": "当日要闻"
+ },
+ "side": [
+  {
+   "id": 50441707,
+   "title": "智能家居设备应该断网也能用",
+   "title_en": "Smart home devices should work without the internet",
+   "url": "https://docodethatmatters.com/home-automation-overnight-success/",
+   "hn": "https://news.ycombinator.com/item?id=50441707",
+   "points": 658,
+   "comments": 232,
+   "summary": [
+    "Spencer Kittleson 分享了他坚持约十年的家居自动化原则：家里核心的东西不依赖任何厂商服务器，断网时房子照常运转。起因是他的 Nest 集成在谷歌改掉 API 后失效；他还举了三星冰箱屏幕上弹出 TLS 证书错误、Camp Chef 烤炉控制器要联网才能显示温度的例子。他的系统跑在自有硬件上：ESP 板刷 Tasmota、MQTT 消息代理、树莓派上的 Node-RED；Alexa 只是又一种开关方式，挂了墙上开关和面板照样能用。",
+    "他的规则还包括：加新方式时不拆旧方式（有人用胶带把墙上开关粘死好让智能灯泡通电，就是违反了这条）、要便宜好改、定期检查自动化（他曾有四个定时触发器同时控制一台花园水泵）；家里人多了以后又加了几条：云设备必须有带日志的 API、配置集中在一处、设备之间走 MQTT 发布订阅、电池至少能撑一年。作者注明初稿是自己写的，AI 帮忙编辑改写，最后由他定稿。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "scosman",
+     "stance": "看集成等级",
+     "zh": "Home Assistant 给所有集成都标了「IoT 等级」，从「本地推送」到「云端轮询」。我只用「本地轮询」或更好的，并且非常偏爱「本地推送」。",
+     "en": "I only use \"Local Polling\" or better, and highly prefer \"Local Push\".",
+     "hn": "https://news.ycombinator.com/item?id=50443914",
+     "id": 50443914,
+     "replies": 12
+    },
+    {
+     "user": "reasonabl_human",
+     "stance": "让 AI 帮忙刷机",
+     "zh": "我现在的规矩是：买能用的最便宜硬件；无视那些跟软件有关的差评；设备到手就让 Claude 找本地优先的自定义固件；自己当几个小时「人肉代理」；一套便宜的纯本地智能家居就成了。开关、恒温器、空气质量监测器都这么搞定的。",
+     "en": "upon receipt of devices, ask claude for local-first cfw",
+     "hn": "https://news.ycombinator.com/item?id=50442644",
+     "id": 50442644,
+     "replies": 42
+    },
+    {
+     "user": "augment_me",
+     "stance": "文风像 AI",
+     "zh": "拜托拜托，用你的初稿，或者自己改，别用大模型。如果你是写给机器读的，无所谓；但写给人看的话，至少对我来说，这说明你并不在乎想传达的内容，满足于被稀释的大模型平均水平。",
+     "en": "Please please please use your first draft or refine it yourself without LLMs.",
+     "hn": "https://news.ycombinator.com/item?id=50442516",
+     "id": 50442516,
+     "replies": 14
+    }
+   ],
+   "kicker": "要闻 · 智能家居",
+   "tag": "当日点赞第二"
+  },
+  {
+   "id": 50442736,
+   "title": ".name 保住了：威瑞信撤回终止 2.2 万个域名的计划",
+   "title_en": ".name Grandfathered",
+   "url": "https://neil.fraser.name/news/2026/11/10/",
+   "hn": "https://news.ycombinator.com/item?id=50442736",
+   "points": 644,
+   "comments": 146,
+   "summary": [
+    "Blockly 作者 Neil Fraser 在个人网站上宣布「我们赢了」：经过一场漫长而昂贵的抗争，威瑞信（Verisign）撤回了终止约 22000 个 .name 三级域名和邮件转发的计划。今后虽然不再接受新的三级 .name 注册，但现有域名（包括他自己的网站）和邮件转发都将无限期保留。",
+    "他把这归功于团队合作：有人发起行动，有人飞到巴厘岛当面向 ICANN 陈情，多人提交正式复议请求，他的律师团队向 ICANN 据理力争，还有二十多人写了支持信；他也感谢了 ICANN 内部敢于对抗官僚体系的个别人。评论区有人贴出 69 天前那篇宣布终止计划的旧帖，当时有 547 条评论。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "giancarlostoro",
+     "stance": "本该如此",
+     "zh": "当初他们这么做时，我就觉得「应该」这样处理：让现有用户继续续费，但不再接受新用户；随着时间推移有域名空出来，再完整收回去卖掉。他们原来的方案真该是违法的。",
+     "en": "This was what I figured SHOULD happen when they did this.",
+     "hn": "https://news.ycombinator.com/item?id=50443236",
+     "id": 50443236,
+     "replies": 26
+    },
+    {
+     "user": "nticompass",
+     "stance": "早放弃的人哭了",
+     "zh": "什么？！我因为即将关停，已经让自己的 first.last.name 过期了！我注意到过了所谓的关停日期域名还能用，但还是没续。现在气死了，我猜邮件转发是找不回来了。（补充：其实没真生气，只是把账号从那个邮箱迁走挺烦的。）",
+     "en": "I let my \"first.last.name\" registration expire because of the impending shutdown!",
+     "hn": "https://news.ycombinator.com/item?id=50443986",
+     "id": 50443986,
+     "replies": 26
+    },
+    {
+     "user": "kwanbix",
+     "stance": "为什么要关",
+     "zh": "他们当初到底为什么想关掉它？维持成本对他们来说大概接近零吧，还是我想错了？",
+     "en": "Why would they even want to close it?",
+     "hn": "https://news.ycombinator.com/item?id=50443287",
+     "id": 50443287,
+     "replies": 21
+    }
+   ],
+   "kicker": "要闻 · 域名"
+  },
+  {
+   "id": 50439193,
+   "title": "DeepMind 发布 AlphaProof Code：AI 智能体把 Signal 加密协议的代码形式化验证了",
+   "title_en": "AlphaProof Code",
+   "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
+   "hn": "https://news.ycombinator.com/item?id=50439193",
+   "points": 562,
+   "comments": 174,
+   "summary": [
+    "谷歌 DeepMind 宣布，研究人员借助新的多模型智能体框架 AlphaProof Code，用数学方法证明了 Signal 协议实际代码的关键安全性质，比如设备被临时攻破前后的消息仍受保护。分工是人类专家与 AI 一起把 Signal 的安全目标写成形式化规约、每条都由专家审核，再由 Gemini Carbon 驱动的智能体写证明，共生成 600 多万行 Lean；智能体还会审计证明，只把约 1% 的代码标给人工复查。",
+    "DeepMind 称这是首次用 AI 在这种深度上验证一个广泛部署的加密协议，也是此类协议的实现首次被任何方法形式化验证；验证一直做到设备上实际运行的编译代码，而不只停在设计层面，全程只用了四周。为证明系统能区分好坏代码，他们在隔离版本里重新引入两个已修复的真实漏洞，系统都给出了「有漏洞版本不安全」的机器检查证明。相关验证成果将开源。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "hedora",
+     "stance": "零漏洞可疑",
+     "zh": "这里感觉不对劲。他们拿一份过去出过漏洞、非同小可的人写代码，形式化验证了整个库，结果一个漏洞都没找到？我信 AI 能写证明，但不信系统里零漏洞。我怀疑定理写错了，或者只证明了很窄的性质。",
+     "en": "They took a non-trivial piece of human-written code that has had bugs in the past, formally verified the whole library, and found zero bugs?",
+     "hn": "https://news.ycombinator.com/item?id=50442002",
+     "id": 50442002,
+     "replies": 19
+    },
+    {
+     "user": "Mizza",
+     "stance": "未验证软件将成历史",
+     "zh": "我预计很快，也许两三年内，人们会觉得我们当年居然在系统上跑「任何」未经验证的软件简直疯了，就像现在看当年用 Telnet 或明文 HTTP 一样。",
+     "en": "it will seem mad that we ever ran _any_ unverified software on our systems",
+     "hn": "https://news.ycombinator.com/item?id=50439773",
+     "id": 50439773,
+     "replies": 21
+    },
+    {
+     "user": "r0ze-at-hn",
+     "stance": "AI 会作弊",
+     "zh": "我一直在试用 AI 写 Lean，几点教训：AI 写的 Lean 并不完美，而且既然 Lean 是它自己写的，它很容易作弊，至少要再用一个对抗性的提示去审查。论文里他们重新引入了漏洞来验证能否抓到，但看起来并没发现新漏洞。",
+     "en": "AI Lean is not perfect and AI can easily cheat given it is writing the lean.",
+     "hn": "https://news.ycombinator.com/item?id=50440961",
+     "id": 50440961,
+     "replies": 3
+    }
+   ],
+   "kicker": "要闻 · 安全"
+  },
+  {
+   "id": 50433659,
+   "title": "Fable 5.2 一次成型，做出了外甥梦想中的游戏",
+   "title_en": "Fable 5.2 one-shotted my nephew's dream game",
+   "url": "https://notesbylex.com/fable-5-2-one-shotted-my-nephews-dream-game",
+   "hn": "https://news.ycombinator.com/item?id=50433659",
+   "points": 477,
+   "comments": 430,
+   "summary": [
+    "Lex Toumbourou 的外甥 Aiden 画好了设计稿：5 个以家人（包括狗狗）为原型的英雄、12 个 Boss 和一个救小狗的故事，想要一款自己的清版动作游戏。他 6 月用 Claude Code 加 Opus 4.8 和 Fable 5 做出的第一版「玩不了几分钟」。提前拿到 Claude Fable 5.2 后，他睡前给了一段提示让它「把游戏做完」，醒来发现游戏不但好玩，还多了没要求的过场动画、可砸的箱子和结局；它几乎重写了全部代码，生成约 175 张图和 140 段音频，还写了个机器人在无头浏览器里跑完 12 关、检查截图。",
+    "之后按孩子们的要求继续加了爷爷奶奶、叔叔阿姨、宠物乌龟等角色，英雄从 5 个变成 18 个，最后一个被营救的是年初去世的曾祖母，按 Aiden 的提议做成了天使。最终用量：Claude 约 600 次请求、两天里读缓存约 3.2 亿 token、写缓存 1900 万、输出 100 万；OpenAI 约 500 张图；ElevenLabs 11 首音乐、约 100 个音效和 90 句播报。作者承认没用 Opus 5.5 测过，不确定此前的模型能否做到。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "siliconc0w",
+     "stance": "稀缺才有价值",
+     "zh": "小时候游戏是稀缺品，你会把它榨干：花几个小时刷最佳时间、找彩蛋、折腾自制地图和模组。前几天晚上我边看电视边随手做了个无尽跑酷游戏，那种极度富足的感觉很快就褪成了一点抑郁。没有稀缺，就没有什么真正有价值。",
+     "en": "Without scarcity, nothing is really valuable.",
+     "hn": "https://news.ycombinator.com/item?id=50436575",
+     "id": 50436575,
+     "replies": 62
+    },
+    {
+     "user": "teruakohatu",
+     "stance": "孩子们的成就感",
+     "zh": "我替在这种大模型环境里长大的孩子难过。他们再也不能靠一个简单的「hello world」文字游戏打动父母、老师或同伴，因为同伴几句提示就能生成完整的多人游戏。世界变了，回不去了。",
+     "en": "The world has changed and we can never go back.",
+     "hn": "https://news.ycombinator.com/item?id=50435903",
+     "id": 50435903,
+     "replies": 57
+    },
+    {
+     "user": "andai",
+     "stance": "算一下花费",
+     "zh": "3.4 亿 token 大概要 5000 美元？更正：应该是 300 美元左右，因为大部分是缓存读取。",
+     "en": "Edit: more like $300, because it was mostly cache reads",
+     "hn": "https://news.ycombinator.com/item?id=50438215",
+     "id": 50438215,
+     "replies": 1
+    }
+   ],
+   "kicker": "要闻 · AI 实测",
+   "tag": "当日评论第二"
+  },
+  {
+   "id": 50438318,
+   "title": "用 AI 写代码，会养出脆弱的代码库",
+   "title_en": "AI usage generates a fragile codebase",
+   "url": "https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase/",
+   "hn": "https://news.ycombinator.com/item?id=50438318",
+   "points": 351,
+   "comments": 386,
+   "summary": [
+    "Evan X. Merz 说，他怀疑自己 5 月被 Meta 裁员，部分原因是比同事更抗拒用 AI 写代码，尽管最后几个月他 90% 以上的代码都是 AI 生成的，那是拿到像样绩效的最低要求；如今他在另一家大公司已 100% 用 AI 写代码。他举例说，团队里最好的程序员之一曾想合入用 JavaScript 事件实现鼠标悬停样式、而不用 CSS :hover 的代码。他声明全文每个字都是人写的。",
+    "他列出 AI 让代码库变脆弱的四种方式：测试浅（大量测 getter/setter，端到端测试只覆盖已有路径）、代码过度复杂、人对代码库的理解下降、改动来得太快导致评审只能略读；以及四个征兆：事故变多、恢复变慢、出现只有真实用户才看得到的错误、用户体验变差。他的结论是，面向人的高质量产品仍需要人的参与。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "yodsanklai",
+     "stance": "已经无所谓了",
+     "zh": "我觉得这已经不重要了。软件正在变成黑箱，只要你能给出合理的需求说明、加一点监督和引导，智能体就能让它跑起来。它们现在确实不太遵守好的工程原则：代码啰嗦、大量重复、抽象泄漏、单元测试没用，但大多数软件没那么大，智能体也一天比一天强。",
+     "en": "Software is becoming a black box and agents make it works",
+     "hn": "https://news.ycombinator.com/item?id=50439197",
+     "id": 50439197,
+     "replies": 43
+    },
+    {
+     "user": "iagooar",
+     "stance": "观点过时了",
+     "zh": "这读起来像一年前写的东西，情况已经彻底变了。「AI 写的测试很浅」以前是真的，自 Astra 和 Fable 5.1、Opus 5.5 以来就不是了；「AI 写的代码过度复杂」那是你放任它。",
+     "en": "This reads like a piece of content written a year ago.",
+     "hn": "https://news.ycombinator.com/item?id=50446216",
+     "id": 50446216,
+     "replies": 13
+    },
+    {
+     "user": "jasode",
+     "stance": "人写的也脆弱",
+     "zh": "我不反对这篇文章，但它可能让人以为 AI 之前手写的代码就不脆弱。想想那篇关于 Oracle 数据库 2500 万行代码的著名评论：每个有几百万行代码的大公司代码库都会退化成类似的样子。",
+     "en": "it may give some readers the impression that pre-AI hand-written code wasn't fragile.",
+     "hn": "https://news.ycombinator.com/item?id=50439165",
+     "id": 50439165,
+     "replies": 7
+    }
+   ],
+   "kicker": "要闻 · 工程"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 2,
+   "stats": {
+    "items": 13,
+    "points": 1917,
+    "comments": 1642,
+    "top_points": {
+     "id": 50429068,
+     "title": "Claude Fable 5.2 与 Mythos 5.2：近千条评论的主讨论帖",
+     "value": 871,
+     "comments": 995
+    },
+    "top_comments": {
+     "id": 50429068,
+     "title": "Claude Fable 5.2 与 Mythos 5.2：近千条评论的主讨论帖",
+     "value": 995
+    },
+    "top_brief": {
+     "id": 50429068,
+     "title": "Claude Fable 5.2 与 Mythos 5.2：近千条评论的主讨论帖",
+     "value": 871,
+     "comments": 995
+    }
+   },
+   "stories": [
+    {
+     "id": 50442303,
+     "title": "谷歌开放 Gemini 4 Carbon：迄今最强模型，价格与 Argon 相同",
+     "title_en": "Gemini 4 Carbon is now available",
+     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+     "hn": "https://news.ycombinator.com/item?id=50442303",
+     "points": 270,
+     "comments": 146,
+     "summary": [
+      "谷歌宣布向开发者、企业、科研人员和消费者开放 Gemini 4 Carbon，称它是网络安全能力和长时程智能体任务上的最强模型；两周前它已先通过 Fairwind 计划提供给一批网络安全防守方。官方定位是：Argon 仍适合大多数编程和知识工作，Carbon 用于最考验智力的任务，比如复杂的多步编码调试和开放式科研，会花更多 token 去探索、推理和反复验证。谷歌称它在 CursorBench 4.0、Perplexity 的 WANDR 和 Zapier 的 AutomationBench 上排名第一，每个任务成本比第二名的外部模型低一半以上。",
+      "API 通过 Google AI Studio 和企业版向所有付费开发者开放，介绍期价格与 Gemini 4 Argon 相同，每百万输入 token 2 美元、输出 10 美元；消费端则逐步向 Google AI Ultra 订阅用户开放（Antigravity、Gemini 应用和搜索的 AI 模式）。同时预览 Antigravity 的 /swarm 功能，把一个提示变成一组可实时追踪的协作智能体。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "byefruit",
+       "stance": "只给 Ultra",
+       "zh": "刚看了我的 Gemini 应用，Pro 计划里还是只有 3.1 Pro、3.6 Flash 和 3.6 Thinking，看来只给 Ultra。他们更新和推出顶级模型太慢了，我虽然订了 Pro 却很少用，这是最后一个月了。",
+       "en": "Looks like it's Ultra only.",
+       "hn": "https://news.ycombinator.com/item?id=50442424",
+       "id": 50442424,
+       "replies": 41
+      },
+      {
+       "user": "dom96",
+       "stance": "追平但更慢更贵",
+       "zh": "谷歌这么久才发布这个模型，真是大失误。我用自己的基准跑了一下，它和 Fable 5.2 打平。他们本可以抢先的，为什么没有？话说回来，它还是比 Fable 5.2 更慢更贵，所以在我看来 Anthropic 赢了。",
+       "en": "I just ran it on my benchmark[1] and it matches Fable 5.2.",
+       "hn": "https://news.ycombinator.com/item?id=50443704",
+       "id": 50443704,
+       "replies": 7
+      },
+      {
+       "user": "5555watch",
+       "stance": "意外地好",
+       "zh": "API 上已经能用了，而且出奇地好。我有份没写完的论文草稿，一直拿去喂各家顶级 AI，看它们能挑出什么。Astra、Fable、Opus、Argon 的表现都一般，Carbon 的回答却提出了一些别人都没发现的有意思的点。",
+       "en": "Carbon's answer surprised me with some interesting points all the other AI's missed.",
+       "hn": "https://news.ycombinator.com/item?id=50442457",
+       "id": 50442457,
+       "replies": 3
+      }
+     ],
+     "kicker": "AI · 模型"
+    },
+    {
+     "id": 50447074,
+     "title": "Glasswing 七个月：发现近 3.8 万个问题，只修了 217 个",
+     "title_en": "After 7 Months, Glasswing Overwelms Maintainers with Underwhelming Findings",
+     "url": "https://www.vulncheck.com/blog/anthropic-glasswing-november-update",
+     "hn": "https://news.ycombinator.com/item?id=50447074",
+     "points": 115,
+     "comments": 29,
+     "summary": [
+      "漏洞情报公司 VulnCheck 跟踪 Anthropic 的 Glasswing 项目七个月后发文：它统计到 442 个可归于 Anthropic 的 CVE，平均每月 63 个，约占今年 93450 个 CVE 的 0.5%，其中只有 2 个被发现遭在野利用。Anthropic 自己的台账截至 11 月 2 日列出 37966 个发现，只有 7349 个（19.4%）公开，217 个标为已修复；另有 1654 个被标为重复，约是修复数的 7.5 倍，419 个被撤回。",
+      "作者指出，自 9 月以来新增近 1.2 万个发现，修复只多了 15 个；台账宣称的真阳性率却从 90.8% 升到 94.2%，他质疑如何计算重复和撤回。curl 项目在 34 份已公开报告中否定了 19 份不算漏洞、确认 6 份为低危、9 份待评估，作者认为验证负担被转嫁给了开源维护者。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "dfee",
+       "stance": "只看了幸存者",
+       "zh": "里面有 curl 的例子，但我不确定够不够下结论。只有 20% 的漏洞已公开，其中很多是撤回或重复，可剩下 80% 未公开，是因为没修还是不是真的，并不清楚。换句话说，这是对公开部分的幸存者分析，对仍在禁运期的那些说不了什么。",
+       "en": "this is analysis of survivors (public); not much can be said about those still under embargo.",
+       "hn": "https://news.ycombinator.com/item?id=50447443",
+       "id": 50447443,
+       "replies": 5
+      },
+      {
+       "user": "delichon",
+       "stance": "找比修容易",
+       "zh": "如果这说明 AI 普遍更擅长找漏洞而不是修漏洞，那就糟了，比值越大，越难保护好所有东西。目前这个实验的数字是 37966 比 217。误报很多，但不足以改变大局。",
+       "en": "The current stat from this experiment is 37,966 to 217.",
+       "hn": "https://news.ycombinator.com/item?id=50447517",
+       "id": 50447517,
+       "replies": 5
+      },
+      {
+       "user": "jrflo",
+       "stance": "像是软文",
+       "zh": "文章的结论和 VulnCheck 的商业模式贴合得这么紧，真有意思！简直就像一篇稍加掩饰的广告。",
+       "en": "It's almost as if this is just a thinly veiled advertisement...",
+       "hn": "https://news.ycombinator.com/item?id=50447507",
+       "id": 50447507,
+       "replies": 0
+      }
+     ],
+     "kicker": "AI · 安全"
+    },
+    {
+     "id": 50443716,
+     "title": "Anthropic 推出 Claude 白板、表格和数据",
+     "title_en": "Claude Whiteboards, Claude Sheets, and Claude Data",
+     "url": "https://claude.com/resources/articles/sheets-whiteboards-data",
+     "hn": "https://news.ycombinator.com/item?id=50443716",
+     "points": 150,
+     "comments": 119,
+     "summary": [
+      "Anthropic 发布 Claude Whiteboards 和 Claude Sheets 测试版，此前的 Claude Dashboards 改名 Claude Data 并正式上线，所有付费计划可用。白板是团队和 Claude 一起头脑风暴的共享画板，可以把口头计划整理成带负责人和日期的时间线，或在复盘会上按主题归类大家的便签并起草行动项，完成后可转成文档、幻灯片，或导入 Lucid、Miro 等工具。Sheets 能从一句提示生成带分页、公式、格式和下拉框的表格，逐格编辑并标出改动，目前功能还比较简单，需要完整功能时可导出 .xlsx 或 CSV。",
+      "Claude Data 可对接 Redshift、BigQuery、ClickHouse 等数据源，新增「认证查询」（数据团队认定口径，图表带认证标记）、用指标生成数据故事或旁白视频、实时分享（看的人没有连接器权限也能看到最新数字，但只能看已批准的查询）、设计系统、缓存和版本回滚。另外，交互式连接器现在可以在对话旁或全屏以完整应用的形式打开，比如 Adobe、Atlassian、Box 和 Notion。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "gosen",
+       "stance": "终究是备用工具",
+       "zh": "Anthropic 发布 Claude Design 时，大家说 Figma 要完了，结果 Claude Design 并没有往前走，成了临时查看或改点东西的「备用工具」，正经活还是去 Figma。我感觉白板、表格、文档也会一样：适合展示和讨论成果，但真要好的编辑体验，你还是会去用专门为此设计的工具。",
+       "en": "for the proper editor experience you'll go to the tools which were designed for these things",
+       "hn": "https://news.ycombinator.com/item?id=50445484",
+       "id": 50445484,
+       "replies": 24
+      },
+      {
+       "user": "bertt",
+       "stance": "什么都往里塞",
+       "zh": "我读到的意思是：我们最终会把一切都做进 Claude。长期会怎样？以后选一家 AI 供应商就包下你所有的 SaaS 工具，就像选云厂商一样吗？希望竞争能活下去。",
+       "en": "I read this as: We'll build anything and everything into Claude eventually.",
+       "hn": "https://news.ycombinator.com/item?id=50445883",
+       "id": 50445883,
+       "replies": 11
+      },
+      {
+       "user": "option_greek",
+       "stance": "吃掉下游客户",
+       "zh": "模型公司开始蚕食自家 API 客户的业务了，说明常规的收入增长渠道正在放缓。",
+       "en": "Model companies are starting to cannibalize their api customers's business cases.",
+       "hn": "https://news.ycombinator.com/item?id=50445108",
+       "id": 50445108,
+       "replies": 5
+      }
+     ],
+     "kicker": "AI · 产品"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50429068,
+     "title": "Claude Fable 5.2 与 Mythos 5.2：近千条评论的主讨论帖",
+     "title_en": "Claude Fable 5.2 and Mythos 5.2",
+     "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+     "hn": "https://news.ycombinator.com/item?id=50429068",
+     "points": 871,
+     "comments": 995
+    },
+    {
+     "id": 50446520,
+     "title": "苹果将推出让 Mac 轻松运行本地 AI 模型的新应用",
+     "title_en": "Apple has new Mac app coming to make running local AI models easy",
+     "url": "https://9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy/",
+     "hn": "https://news.ycombinator.com/item?id=50446520",
+     "points": 89,
+     "comments": 47
+    },
+    {
+     "id": 50439616,
+     "title": "Anthropic 拟以 1.3 万亿美元估值上市",
+     "title_en": "Anthropic to Seek $1.3T Valuation in IPO",
+     "url": "https://www.wsj.com/finance/stocks/anthropic-to-seek-1-3-trillion-valuation-in-ipo-8337b669",
+     "hn": "https://news.ycombinator.com/item?id=50439616",
+     "points": 59,
+     "comments": 82
+    },
+    {
+     "id": 50438891,
+     "title": "Anthropic 启动拟议首次公开募股的路演",
+     "title_en": "Anthropic launches roadshow for proposed initial public offering",
+     "url": "https://www.anthropic.com/news/roadshow-launch",
+     "hn": "https://news.ycombinator.com/item?id=50438891",
+     "points": 31,
+     "comments": 51
+    },
+    {
+     "id": 50444850,
+     "title": "Saltline：Fable 5.2 做的第一人称射击游戏",
+     "title_en": "Saltline: First-person shooter built by Fable 5.2",
+     "url": "https://claude.ai/artifact/BGY1SztrAYcJQHSsnHHGmp",
+     "hn": "https://news.ycombinator.com/item?id=50444850",
+     "points": 54,
+     "comments": 62
+    },
+    {
+     "id": 50443714,
+     "title": "推理工程开放实战指南",
+     "title_en": "An Open Field Guide to Inference Engineering",
+     "url": "https://docs.modelplane.ai/guides/inference-guide",
+     "hn": "https://news.ycombinator.com/item?id=50443714",
+     "points": 66,
+     "comments": 8
+    },
+    {
+     "id": 50445013,
+     "title": "推理到底在优化什么目标？",
+     "title_en": "What objective is reasoning solving?",
+     "url": "https://alexwang.ai/posts/reasoning-as-pathfinding/",
+     "hn": "https://news.ycombinator.com/item?id=50445013",
+     "points": 86,
+     "comments": 41
+    },
+    {
+     "id": 50444684,
+     "title": "一项全面研究：用户到底有多容易被浏览器指纹识别",
+     "title_en": "A comprehensive study of how fingerprintable users are",
+     "url": "https://fingerprinting.study/",
+     "hn": "https://news.ycombinator.com/item?id=50444684",
+     "points": 58,
+     "comments": 27
+    },
+    {
+     "id": 50439686,
+     "title": "调查称 AI 用户的工作日比不用的人最多长 90 分钟",
+     "title_en": "AI Users have workdays up to 90 min longer than non-users",
+     "url": "https://www.activtrak.com/news/productivity-lab-ai-users-longer-workdays/",
+     "hn": "https://news.ycombinator.com/item?id=50439686",
+     "points": 35,
+     "comments": 16
+    },
+    {
+     "id": 50443838,
+     "title": "OpenAI：AI 对自由职业工作的影响",
+     "title_en": "Work at the Frontier: AI's effect on freelance work",
+     "url": "https://openai.com/index/ai-effect-on-freelance-work",
+     "hn": "https://news.ycombinator.com/item?id=50443838",
+     "points": 33,
+     "comments": 19
+    }
+   ]
+  },
+  {
+   "name": "开发",
+   "en": "Software",
+   "page": 3,
+   "stats": {
+    "items": 13,
+    "points": 2361,
+    "comments": 969,
+    "top_points": {
+     "id": 50443427,
+     "title": "Val Town 宣布关停",
+     "value": 286,
+     "comments": 75
+    },
+    "top_comments": {
+     "id": 50439284,
+     "title": ".NET 11 运行时有哪些新东西",
+     "value": 164
+    },
+    "top_brief": {
+     "id": 50439284,
+     "title": ".NET 11 运行时有哪些新东西",
+     "value": 235,
+     "comments": 164
+    }
+   },
+   "stories": [
+    {
+     "id": 50434264,
+     "title": "把一句话藏进 TLS 证书公钥里",
+     "title_en": "Horible public key tricks",
+     "url": "https://maurycyz.com/projects/badcert/",
+     "hn": "https://news.ycombinator.com/item?id=50434264",
+     "points": 239,
+     "comments": 85,
+     "summary": [
+      "Maurycy 对 SSL/TLS 证书体系一向不满：人人都得走复杂的 ACME 流程，证书几个月就过期，而证书本身又是通过明文连接签发的。他认为防被动窃听很有必要，但不需要整套证书体系，于是做了一张「抗议证书」：证书里他唯一能直接控制的是公钥，于是他让 RSA 模数的一部分在 base64 下直接显示成一段话，用 openssl 查看他网站的证书，就能读到「你其实不用随机挑私钥，没人检查这些东西」之类的句子。",
+      "做法是固定模数的一部分再去找合适的素数，生成证书请求后交给 Let's Encrypt 签发，得到一张有效、受信任的证书，续期时重复提交同一请求即可。RSA-2048 大约能放 150 个字符，RSA-4096 约 320 个。他承认这会降低私钥熵，脚本也没检查不安全的取值，但认为对公开网站够用，因为现代 TLS 有前向保密。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "tptacek",
+       "stance": "未认证就不叫安全",
+       "zh": "所有正经的攻击者都是中间人攻击者（通常是骗受害者自己改道流量，而不是真插进网络路径）。纯被动的攻击者早就跟着那些接在骨干网上的 Sun 服务器一起灭绝了。其余分析我不太在乎，但你不能把未经认证的 TLS 会话叫作「安全」。",
+       "en": "you can't call an unauthenticated TLS session \"secure\".",
+       "hn": "https://news.ycombinator.com/item?id=50434692",
+       "id": 50434692,
+       "replies": 9
+      },
+      {
+       "user": "ryan-c",
+       "stance": "早有前例",
+       "zh": "之前有过 2014 年的《愚蠢的证书把戏》。这几乎肯定是对同一想法的独立发现和实现，合理的做法其实就只有一种。",
+       "en": "This is almost certainly an independent discovery/implementation of the same idea",
+       "hn": "https://news.ycombinator.com/item?id=50437336",
+       "id": 50437336,
+       "replies": 0
+      },
+      {
+       "user": "knotimpressed",
+       "stance": "推荐延伸阅读",
+       "zh": "文中链接的那份 PDF（tom7 的「世界上最差的 TLS 服务器」）超级长，但如果你喜欢这篇文章，它非常值得一读。",
+       "en": "extremely long but a great read if you enjoyed the article.",
+       "hn": "https://news.ycombinator.com/item?id=50435546",
+       "id": 50435546,
+       "replies": 28
+      }
+     ],
+     "kicker": "开发 · 加密"
+    },
+    {
+     "id": 50443427,
+     "title": "Val Town 宣布关停",
+     "title_en": "Val Town is winding down",
+     "url": "https://blog.val.town/winding-down",
+     "hn": "https://news.ycombinator.com/item?id=50443427",
+     "points": 286,
+     "comments": 75,
+     "summary": [
+      "在线写代码、即时部署的平台 Val Town 创始人 Steve Krouse 发信宣布逐步关停，坦言公司「没能在云计算领域竞争下去」。好消息是现在有很多托管商可迁，如今的大模型也很擅长这类迁移，官方提供了迁到 Cloudflare、Vercel、Netlify 和 Render 的指南。即日起暂停收费，现有订阅免费继续服务，预付年费的会部分退款。",
+      "时间表：11 月 10 日起停止新注册和升级；12 月 10 日进入只读模式（不含 SQLite 和 blob 存储）；2027 年 1 月 10 日停止其余服务；2 月 1 日开源 Val Town。信末感谢了团队成员、投资人和用户。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "cmontella",
+       "stance": "这个赛道太难",
+       "zh": "我在做 Eve 时就认识 Steve，他一直大力倡导终端用户编程。和 Val Town 的质量无关，在这个领域做生意真的、真的很难：不融几百万启动不了（Eve 融了 200 万美元，Darklang 350 万，Val Town 700 万），可种子期大概只给你两三年，这种项目现实中至少要孵五年。",
+       "en": "making a business in this space is really, really hard.",
+       "hn": "https://news.ycombinator.com/item?id=50444343",
+       "id": 50444343,
+       "replies": 10
+      },
+      {
+       "user": "jrmann100",
+       "stance": "Deno 的影响",
+       "zh": "博客没直接提，但 Val Town 从根本上是围绕 Deno 运行时组织的，而据我所知，Deno 团队加入 Cloudflare 后明年将停止维护它。",
+       "en": "Val Town was fundamentally organized around the Deno runtime",
+       "hn": "https://news.ycombinator.com/item?id=50443879",
+       "id": 50443879,
+       "replies": 1
+      },
+      {
+       "user": "samwho",
+       "stance": "一张手写卡片",
+       "zh": "从一开始就喜欢 Steve 和团队做的东西，听到这个消息很难过。我记得自己在 Val Town 上做的一个小服务被 DDoS，把 Val Town 拖垮了一小会儿，结果 Steve 给我寄来一张手写卡片和一顶 Val Town 棒球帽，感谢我帮他们加强防御。真有风度。",
+       "en": "Steve sent me a handwritten note and a Val Town baseball cap",
+       "hn": "https://news.ycombinator.com/item?id=50444412",
+       "id": 50444412,
+       "replies": 0
+      }
+     ],
+     "kicker": "开发 · 平台"
+    },
+    {
+     "id": 50443824,
+     "title": "Synaptics 发专利威胁，叫停开源 DisplayLink 驱动",
+     "title_en": "Synaptics patent claims stop work on DisplayLink drivers",
+     "url": "https://lwn.net/SubscriberLink/1102549/acbc92e00cee3a3f/",
+     "hn": "https://news.ycombinator.com/item?id=50443824",
+     "points": 267,
+     "comments": 126,
+     "summary": [
+      "LWN 报道，苏格兰开发者 Mike Lothian 嫌戴尔 DisplayLink 扩展坞的厂商 Linux 驱动总崩溃，用 Claude 辅助写了一个 Rust 写的 DRM/KMS 驱动 Vino，6 月起提交到内核邮件列表并向 Synaptics（2022 年收购 DisplayLink）求助。对方回复说 DisplayLink 协议是专有的、受专利保护，净室实现也不一定能避开专利；8 月发出律师函，附 125 项专利清单，要求停止开发并撤回所有提交。",
+      "Lothian 要求对方说明具体侵犯哪些权利要求，并指出 Synaptics 是开放发明网络（OIN）成员。对方 10 月寄来两项 2010 年申请的英国专利的权利要求对照，要求不照办就先赔 2.5 万美元，此后每周再加 2.5 万。OIN 的结论是编解码器不在其保护范围内。Lothian 已下架 GitHub 仓库，Vino 不会提交进内核：「我实在负担不起和 Synaptics 打官司」。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "xxpor",
+       "stance": "逆向不等于侵权",
+       "zh": "我不认为逆向工程本身会侵犯专利吧？专利的本意就是公开发明的机制，换取独家销售权，所以说逆向工程侵犯专利从定义上就不对。他们该主张的是商业秘密，可那也会输，因为对商业秘密做净室逆向是合法的。",
+       "en": "I didn't think reverse engineering itself was a violation of a patent?",
+       "hn": "https://news.ycombinator.com/item?id=50444813",
+       "id": 50444813,
+       "replies": 16
+      },
+      {
+       "user": "hnlmorg",
+       "stance": "要求离谱",
+       "zh": "（对方说要索赔「制作侵权证明文件的成本」）没有任何一个宇宙会认为这是合理的回应。",
+       "en": "There is no universe in which this is a reasonable response.",
+       "hn": "https://news.ycombinator.com/item?id=50444793",
+       "id": 50444793,
+       "replies": 12
+      },
+      {
+       "user": "kieranl",
+       "stance": "反正要凉了",
+       "zh": "DisplayLink 本来就因为 DDR 内存太贵在走下坡路，扩展坞厂商正因为不划算纷纷砍掉 DisplayLink 产品线。如果 Synaptics 这样对待开源，走了也好。最近的雷电和 USB4 扩展坞显示支持都不错。",
+       "en": "DisplayLink is dying due to high DDR prices.",
+       "hn": "https://news.ycombinator.com/item?id=50444959",
+       "id": 50444959,
+       "replies": 6
+      }
+     ],
+     "kicker": "开发 · 开源"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50439284,
+     "title": ".NET 11 运行时有哪些新东西",
+     "title_en": "What's new in the .NET 11 runtime",
+     "url": "https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-11/runtime",
+     "hn": "https://news.ycombinator.com/item?id=50439284",
+     "points": 235,
+     "comments": 164
+    },
+    {
+     "id": 50433541,
+     "title": "Exact：一个新的跨平台 UI 框架",
+     "title_en": "Exact – a new cross platform UI framework",
+     "url": "https://github.com/expo/exact",
+     "hn": "https://news.ycombinator.com/item?id=50433541",
+     "points": 132,
+     "comments": 106
+    },
+    {
+     "id": 50443812,
+     "title": "Show HN：让编码智能体告别 2019 年式 JavaScript，改用现代 Web 原语",
+     "title_en": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
+     "url": "https://github.com/GoogleChrome/modern-web-guidance",
+     "hn": "https://news.ycombinator.com/item?id=50443812",
+     "points": 231,
+     "comments": 67
+    },
+    {
+     "id": 50382401,
+     "title": "我删掉了所有 SSH 密钥",
+     "title_en": "I deleted all my SSH keys",
+     "url": "https://blog.infected.systems/posts/2026-11-03-i-deleted-all-my-ssh-keys/",
+     "hn": "https://news.ycombinator.com/item?id=50382401",
+     "points": 223,
+     "comments": 125
+    },
+    {
+     "id": 50435105,
+     "title": "形式化 CPython",
+     "title_en": "Formalizing CPython",
+     "url": "https://broyojo.com/python-formalization/",
+     "hn": "https://news.ycombinator.com/item?id=50435105",
+     "points": 127,
+     "comments": 55
+    },
+    {
+     "id": 50441338,
+     "title": "最难解的 tarball？",
+     "title_en": "The Hardest Tarball?",
+     "url": "https://stoppels.ch/2026/11/07/the-hardest-tarball.html",
+     "hn": "https://news.ycombinator.com/item?id=50441338",
+     "points": 144,
+     "comments": 31
+    },
+    {
+     "id": 50433216,
+     "title": "微软推出 macOS 版 Process Explorer",
+     "title_en": "Process Explorer for macOS",
+     "url": "https://github.com/microsoft/Procexp-Mac",
+     "hn": "https://news.ycombinator.com/item?id=50433216",
+     "points": 119,
+     "comments": 45
+    },
+    {
+     "id": 50392733,
+     "title": "检查空白字符能有多难？",
+     "title_en": "How hard is it to check for whitespace?",
+     "url": "https://serce.me/posts/2026-10-30-how-hard-is-it-to-check-for-whitespace",
+     "hn": "https://news.ycombinator.com/item?id=50392733",
+     "points": 121,
+     "comments": 31
+    },
+    {
+     "id": 50435898,
+     "title": "Ultorg：关系数据库的用户界面",
+     "title_en": "Ultorg: The User Interface for Relational Databases",
+     "url": "https://www.ultorg.com/",
+     "hn": "https://news.ycombinator.com/item?id=50435898",
+     "points": 141,
+     "comments": 49
+    },
+    {
+     "id": 50436706,
+     "title": "ClickHouse 收购 Xata",
+     "title_en": "ClickHouse Acquires Xata",
+     "url": "https://xata.io/blog/xata-is-joining-clickhouse",
+     "hn": "https://news.ycombinator.com/item?id=50436706",
+     "points": 96,
+     "comments": 10
+    }
+   ]
+  },
+  {
+   "name": "科学与硬件",
+   "en": "Science & Hardware",
+   "page": 4,
+   "stats": {
+    "items": 12,
+    "points": 2176,
+    "comments": 1186,
+    "top_points": {
+     "id": 50442426,
+     "title": "Blender 5.3 发布，支持高斯泼溅",
+     "value": 415,
+     "comments": 58
+    },
+    "top_comments": {
+     "id": 50444129,
+     "title": "Starlink Mini 2",
+     "value": 220
+    },
+    "top_brief": {
+     "id": 50442426,
+     "title": "Blender 5.3 发布，支持高斯泼溅",
+     "value": 415,
+     "comments": 58
+    }
+   },
+   "stories": [
+    {
+     "id": 50434310,
+     "title": "用一屋子设备三角定位神秘的哔哔声",
+     "title_en": "Locating the source of a mysterious beep",
+     "url": "https://simonwillison.net/2026/Nov/9/mysterious-beeps/",
+     "hn": "https://news.ycombinator.com/item?id=50434310",
+     "points": 318,
+     "comments": 163,
+     "summary": [
+      "Simon Willison 家储物间里堆满没拆的箱子，几周前开始间歇性地哔哔响，间隔太长，站在屋里根本听不出方向。他让 Claude Code（Opus 5.5）做了个「Beep Locator」：电脑上跑一个 Python 网页服务，两台 iPad、一部手机、一台 MacBook Pro 和一台 Surface 扫码接入当监听器，各自录最近 60 秒音频，用快速傅里叶变换和高通滤波检测哔声；有哔声时让一台设备播一段啁啾声，用来把各设备的录音对齐，再计算声源位置。",
+      "设备互相发声测位置效果不太好，他加了手动拖动图标粗定位的模式，还加了拍手模式来测试。系统最终把哔声定位到约 40 厘米范围内，他在那堆箱子里翻出一个老旧的一氧化碳报警器，急需换电池。思路来自 Claude 找到的 2007 年论文 BeepBeep。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "tristanj",
+       "stance": "物理二分查找",
+       "zh": "这个也可以用 O(log n) 的物理二分查找解决：把一半箱子搬到另一个房间，听哔声从哪间传来，再把那间的箱子分成两半，重复直到只剩一个箱子。",
+       "en": "You can also solve this in O(logn) using a physical binary search",
+       "hn": "https://news.ycombinator.com/item?id=50435186",
+       "id": 50435186,
+       "replies": 35
+      },
+      {
+       "user": "chimpontherun",
+       "stance": "两副耳机就够",
+       "zh": "大约 05 年，我们住的房子也开始哔哔响，找了快一天。我只好临时想办法：一根约一米的棍子加两副耳机（耳机都能当麦克风用，哪怕效果很差），插进立体声麦克风口，用 Audacity 录音。左右声道的相位差直接指向了声源，四五声就抓到了。",
+       "en": "The phase shift between L and R pointed directly to the source.",
+       "hn": "https://news.ycombinator.com/item?id=50437990",
+       "id": 50437990,
+       "replies": 18
+      },
+      {
+       "user": "simonw",
+       "stance": "作者：想一劳永逸",
+       "zh": "文章里没提：这不是我们家第一次被一个难找的神秘哔声逼疯。烟雾报警器一发出「要换电池」的声音，我家狗就会跑到外面躲进薰衣草丛。所以我做这个项目的心态是，想彻底解决这一类问题。",
+       "en": "I would like to solve this class of problem forever.",
+       "hn": "https://news.ycombinator.com/item?id=50436044",
+       "id": 50436044,
+       "replies": 15
+      }
+     ],
+     "kicker": "科学 · 声学"
+    },
+    {
+     "id": 50436410,
+     "title": "你的电视信号能「看穿」墙壁",
+     "title_en": "Your TV can see through walls (2025)",
+     "url": "https://maurycyz.com/projects/fading/",
+     "hn": "https://news.ycombinator.com/item?id=50436410",
+     "points": 257,
+     "comments": 126,
+     "summary": [
+      "Maurycy 用一台简单的接收机看本地电视台信号的频谱瀑布图。在接收机和电视台之间走动，信号只是轻微扰动；但把天线挪几厘米，就会出现「选择性衰落」：直射信号被一路强反射抵消，此时信号对附近任何动作都极其敏感，他从椅子上站起来、在隔壁房间走动，瀑布图上都出现了明显的条纹。",
+      "条纹间隙出现在人体反射正好抵消残余信号时，路径长度每变化一个波长就出现一次。他据此估算：条纹间隔约 70 像素、瀑布图刷新率 150 Hz，对应 2.1 Hz，再乘以 490 MHz 信号的波长，得出自己的步速约每秒 1.3 米（每小时 4.6 公里）。他说 WiFi、LTE 等宽带信号同样能这么用，只是图更乱。文章发表于 2025 年。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "numlock86",
+       "stance": "光纤也能窃听",
+       "zh": "等大家知道光纤也能用来几乎随处窃听吧：声波会让光缆轻微「弯曲」，足以可测地改变光路，有专门设备把这些变化还原成音频。以前是 CRT 向整个街区辐射可测的电磁波，甚至有论文隔墙还原出屏幕画面。",
+       "en": "you can listen in virtually anywhere through fiber-optic cables",
+       "hn": "https://news.ycombinator.com/item?id=50437158",
+       "id": 50437158,
+       "replies": 41
+      },
+      {
+       "user": "armcat",
+       "stance": "拿来数车流",
+       "zh": "几年前我们就用过文中的原理来更系统地统计道路车流，用的是 LTE/4G 无线电，还能估计行驶方向和类型（行人、小车、大车），比谷歌地图更准，因为它不依赖移动的手机，而是「感知环境中的障碍物」。",
+       "en": "we used LTE/4G radio",
+       "hn": "https://news.ycombinator.com/item?id=50437776",
+       "id": 50437776,
+       "replies": 0
+      },
+      {
+       "user": "nubinetwork",
+       "stance": "早就如此",
+       "zh": "我知道这篇写得想让人害怕，但自从有了无线电和电报（19 世纪末？）就一直是这样。除非你住在地堡里，否则你几乎时刻都在被射频轰击。",
+       "en": "it's been like this since the invention of the radio/telegraph",
+       "hn": "https://news.ycombinator.com/item?id=50440027",
+       "id": 50440027,
+       "replies": 5
+      }
+     ],
+     "kicker": "科学 · 无线电"
+    },
+    {
+     "id": 50437752,
+     "title": "全球碳收支：2026 年化石燃料碳排放预计下降 0.4%",
+     "title_en": "Fossil CO2 emissions decrease in 2026",
+     "url": "https://news.exeter.ac.uk/faculty-of-environment-science-and-economy/fossil-co2-emissions-decrease-in-2026/",
+     "hn": "https://news.ycombinator.com/item?id=50437752",
+     "points": 164,
+     "comments": 200,
+     "summary": [
+      "全球碳计划（Global Carbon Project）的 2026 年全球碳收支报告预计，今年化石燃料二氧化碳排放为 382 亿吨，下降 0.4%，原因是太阳能和风电扩张，以及伊朗冲突。石油排放预计降 1.9%，可能是对冲突引发的能源冲击的短期反应；全球能源需求的增长有三分之二由太阳能、风电和电动车满足。但报告认为清洁能源增长还不足以带来持久下降。",
+      "由于毁林等土地利用排放预计小幅上升，今年总排放预计 433 亿吨，高于去年的 428 亿吨；控温 1.5°C 的剩余碳预算只剩 1500 亿吨，按现在速度不到四年。分国家看，中国预计降 0.9%，美国降 1.3%，欧盟降 1.5%，日本降 1%，印度升 4.4%。牵头的 Friedlingstein 教授说，部分由地缘冲击带来的下降不是可持续的气候方案。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "kpmcc",
+       "stance": "标题埋了重点",
+       "zh": "标题把重点埋了：由于毁林等土地利用变化排放预计小幅上升，今年二氧化碳总排放预计 433 亿吨，高于去年的 428 亿吨。也就是说，总排放每年还要多出约 5 亿吨。",
+       "en": "The headline buries the lede.",
+       "hn": "https://news.ycombinator.com/item?id=50440750",
+       "id": 50440750,
+       "replies": 0
+      },
+      {
+       "user": "passwordoops",
+       "stance": "看浓度曲线",
+       "zh": "排放预算是按会计惯例算的，并不为完全透明而设计。真正重要的是 NOAA 的大气浓度曲线：伊朗那次波动清晰可见，但也只是个小波动，浓度仍在稳步上升。",
+       "en": "Levels continue to steadily rise.",
+       "hn": "https://news.ycombinator.com/item?id=50439494",
+       "id": 50439494,
+       "replies": 16
+      },
+      {
+       "user": "steveBK123",
+       "stance": "美欧降幅相当",
+       "zh": "数字里有意思的是：尽管政治立场和声势各不相同，按百分比算，美国的减排幅度和欧盟差不多，两者都比中国降得多。",
+       "en": "the US reduced emissions about the same as the EU and both reduced them more than China.",
+       "hn": "https://news.ycombinator.com/item?id=50441502",
+       "id": 50441502,
+       "replies": 8
+      }
+     ],
+     "kicker": "科学 · 气候"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50442426,
+     "title": "Blender 5.3 发布，支持高斯泼溅",
+     "title_en": "Blender 5.3 released with Gaussian Splat support",
+     "url": "https://www.blender.org/download/releases/5-3/",
+     "hn": "https://news.ycombinator.com/item?id=50442426",
+     "points": 415,
+     "comments": 58
+    },
+    {
+     "id": 50443090,
+     "title": "AMD Zen 6 家族：喂饱这头猛兽",
+     "title_en": "AMD's Zen 6 Family: Feeding the Beast",
+     "url": "https://chipsandcheese.com/p/amds-zen-6-family-feeding-the-beast",
+     "hn": "https://news.ycombinator.com/item?id=50443090",
+     "points": 176,
+     "comments": 63
+    },
+    {
+     "id": 50444129,
+     "title": "Starlink Mini 2",
+     "title_en": "Starlink Mini 2",
+     "url": "https://starlink.com/mini-2",
+     "hn": "https://news.ycombinator.com/item?id=50444129",
+     "points": 201,
+     "comments": 220
+    },
+    {
+     "id": 50412554,
+     "title": "树莓派 4 上的 NetBSD 11 桌面",
+     "title_en": "NetBSD 11 desktop on a Raspberry Pi 4",
+     "url": "https://neongd.com/articles/netbsd11-rpi4.gmi",
+     "hn": "https://news.ycombinator.com/item?id=50412554",
+     "points": 123,
+     "comments": 75
+    },
+    {
+     "id": 50426294,
+     "title": "再战廉价网络摄像头（下）",
+     "title_en": "Taking another shot at the cheap IP camera, part 2",
+     "url": "https://ericswpark.com/blog/2026/2026-11-09-ip-camera-pt2/",
+     "hn": "https://news.ycombinator.com/item?id=50426294",
+     "points": 122,
+     "comments": 36
+    },
+    {
+     "id": 50442691,
+     "title": "Tailscale 的 DNS IPv6 地址拼出了「Tailscale」",
+     "title_en": "Tailscale's DNS IPv6 spells out \"Tailscale\"",
+     "url": "https://www.reddit.com/r/Tailscale/comments/1xsr24r/tailscales_dns_ipv6_spells_out_tailscale_easter/",
+     "hn": "https://news.ycombinator.com/item?id=50442691",
+     "points": 124,
+     "comments": 65
+    },
+    {
+     "id": 50446246,
+     "title": "陶哲轩：六个数学要点",
+     "title_en": "Six Math Essentials by Terence Tao",
+     "url": "https://teorth.github.io/tao-web/six-math-essentials.html",
+     "hn": "https://news.ycombinator.com/item?id=50446246",
+     "points": 96,
+     "comments": 17
+    },
+    {
+     "id": 50408336,
+     "title": "音箱里的十亿瓦（视频）",
+     "title_en": "Billion Watts in the Speaker [video]",
+     "url": "https://www.youtube.com/watch?v=PHOcTXYaMfg",
+     "hn": "https://news.ycombinator.com/item?id=50408336",
+     "points": 98,
+     "comments": 52
+    },
+    {
+     "id": 50440668,
+     "title": "美国正在赶走年轻科学家",
+     "title_en": "The U.S. Is Driving Away Young Scientists",
+     "url": "https://www.nytimes.com/interactive/2026/11/09/science/trump-funding-cuts-young-scientists-phd-research.html",
+     "hn": "https://news.ycombinator.com/item?id=50440668",
+     "points": 82,
+     "comments": 111
+    }
+   ]
+  },
+  {
+   "name": "文化与商业",
+   "en": "Culture & Business",
+   "page": 5,
+   "stats": {
+    "items": 13,
+    "points": 2192,
+    "comments": 1734,
+    "top_points": {
+     "id": 50445401,
+     "title": "丰田复活 Scion 品牌，要在美国卖日式微型卡车",
+     "value": 273,
+     "comments": 193
+    },
+    "top_comments": {
+     "id": 50439695,
+     "title": "Ableton Live 13 发布",
+     "value": 289
+    },
+    "top_brief": {
+     "id": 50438480,
+     "title": "《大西洋月刊》：无时不在的监控对孩子和父母做了什么",
+     "value": 204,
+     "comments": 219
+    }
+   },
+   "stories": [
+    {
+     "id": 50445401,
+     "title": "丰田复活 Scion 品牌，要在美国卖日式微型卡车",
+     "title_en": "Toyota brand Scion is back and it's going to sell a kei truck in America",
+     "url": "https://www.theautopian.com/scion-is-back-and-its-going-to-sell-a-freaking-kei-truck-in-america/",
+     "hn": "https://news.ycombinator.com/item?id=50445401",
+     "points": 273,
+     "comments": 193,
+     "summary": [
+      "丰田宣布复活 2016 年停用的 Scion 品牌，更名「Scion by Toyota」，定位为探索出行新思路的「自由实验室」。首款量产车 KEI-01 是一辆日式 kei 微型卡车，实际上是丰田 Pixis 的换标版，而 Pixis 又是大发 Hijet Jumbo Cab 的换标版；将借助丰田在印第安纳州的工厂面向美国市场，从官方图片看仍是右舵。",
+      "它搭载 660cc 发动机和 CVT，按美国低速车安全标准认证，最高时速不到 25 英里，只能在限速低于 35 英里的道路上行驶，载重 600 磅，三面可翻的货斗，四驱，空调标配，适合农场、仓库和城市配送。不过它最初只在 2027 年底以小批量、面向车队的试点计划推出，是否扩大供应要看反馈。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "6DM",
+       "stance": "25 迈太慢",
+       "zh": "内置 25 英里时速限制，连「城市」驾驶都用不了，可惜。我周围大多数路限速 35 英里。其实有不少人想要这种车，偶尔跑趟大卖场拉园艺和装修材料，其余时间停着。",
+       "en": "With a built in 25mph limiter, that eliminates \"city\" driving too unfortunately.",
+       "hn": "https://news.ycombinator.com/item?id=50446600",
+       "id": 50446600,
+       "replies": 52
+      },
+      {
+       "user": "freetime2",
+       "stance": "农用真香",
+       "zh": "我种地用的就是 kei 卡车。它们非常实用：四驱在土路砂石路上很能跑，便宜又结实，可以当工具随便造，零件到处有、还便宜，货斗侧板能放下也很有用。开起来一点都不舒服，不过大热天地里有空调就谢天谢地了。",
+       "en": "I use a kei truck for farming.",
+       "hn": "https://news.ycombinator.com/item?id=50447336",
+       "id": 50447336,
+       "replies": 6
+      },
+      {
+       "user": "Grombobulous",
+       "stance": "美国路况不同",
+       "zh": "想让 kei 卡车在美国合法上路的人，真该在街景里对比一下日本和美国。美国的路是为高得多的车速修的。kei 车是有意牺牲安全性的，前提是只在低速道路上用，而日本的道路设计就是要让这类车在那种环境下足够安全。",
+       "en": "US roads are built for much, much higher speeds.",
+       "hn": "https://news.ycombinator.com/item?id=50446847",
+       "id": 50446847,
+       "replies": 6
+      }
+     ],
+     "kicker": "文化 · 汽车"
+    },
+    {
+     "id": 50439695,
+     "title": "Ableton Live 13 发布",
+     "title_en": "Ableton Live 13",
+     "url": "https://www.ableton.com/en/live/",
+     "hn": "https://news.ycombinator.com/item?id=50439695",
+     "points": 265,
+     "comments": 289,
+     "summary": [
+      "音乐制作软件 Ableton Live 公布第 13 版，新增内置步进音序器、对兼容音频编辑插件的 ARA 2 支持、捕获自动化，以及在设备链里直接加设备、换预设的上下文浏览；还有 Drum Synth、多段和中侧 Rack、包络片段、调音台设备槽和新的核心库内容，Ableton Link 支持编曲同步。Suite 版附带 Melodyne essential、Looplet 和 Softube 的经典动态与 EQ 包。",
+      "Push 3 硬件同步获得自定义布局、步进音序器布局和演出调音台。Live 13 有 Intro、Standard、Suite 三个版本。已有 Live 12 的用户可八折预购；现在买或升级到 Live 12 也是八折，正式发布后可免费拿到对应版本的 Live 13。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "marceldegraaf",
+       "stance": "还是不能协作",
+       "zh": "看来还是没有内置的多人协作方式。我理解技术上的困难，但和其他音乐人远程合作一个 Ableton 工程真的很折磨：我不需要谷歌文档那样的实时编辑，但总该比「冻结工程、丢进 Dropbox、等对方改完前谁都别碰」好一些吧。",
+       "en": "Still no built-in way to collaborate with other musicians, it seems.",
+       "hn": "https://news.ycombinator.com/item?id=50440679",
+       "id": 50440679,
+       "replies": 41
+      },
+      {
+       "user": "cruano",
+       "stance": "以租代购",
+       "zh": "有意思的是他们采用了「以租代购」模式。它不完全是订阅，因为付完钱你能拿到某个版本的完整授权；但又有点像订阅，因为等你付完，新版本也出来了，还能「续」到新版本。所以就是多了几步的订阅。",
+       "en": "it's a subscription with extra steps.",
+       "hn": "https://news.ycombinator.com/item?id=50442343",
+       "id": 50442343,
+       "replies": 10
+      },
+      {
+       "user": "alfyboy",
+       "stance": "求 Linux 版",
+       "zh": "真希望他们支持 Linux。在 Linux 上最好的替代是什么？",
+       "en": "Wish they would add Linux support.",
+       "hn": "https://news.ycombinator.com/item?id=50440293",
+       "id": 50440293,
+       "replies": 35
+      }
+     ],
+     "kicker": "文化 · 音乐"
+    },
+    {
+     "id": 50435660,
+     "title": "CoreWeave 债券收益率突破 16%，AI 信贷压力上升",
+     "title_en": "CoreWeave bond yield tops 16% as AI credit stress rises",
+     "url": "https://www.cnbc.com/2026/11/06/coreweave-bond-yield-tops-16percent-as-ai-credit-stress-rises.html",
+     "hn": "https://news.ycombinator.com/item?id=50435660",
+     "points": 191,
+     "comments": 186,
+     "summary": [
+      "CNBC 报道，债市正在向 AI 数据中心建设者传递信号。新兴云算力商 CoreWeave 成了债务压力的代表：其 2032 年到期、票息 9.625% 的债券收益率升破 16%，五年期信用违约互换周四一度超过 1289 个基点，周五回落到约 1155。连英伟达、博通、亚马逊的违约互换一个月内也分别涨了 76%、49%、44%，不过绝对水平仍低，英伟达约 139 个基点，甲骨文约 298。",
+      "市场担心的是新政治格局：俄亥俄、得克萨斯、佐治亚三个规划容量最多的州换上了民主党州长，国会也由民主党控制；高盛估计，暂停令可能影响美国 45% 的规划容量。不过 AI 融资并未崩溃：高盛统计 10 月 29 日以来有五笔共 670 亿美元的 AI 债券发行，今年超大规模云厂商发债已达 2960 亿美元；高盛还称这些厂商第三季度整体自由现金流为负。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "danielodievich",
+       "stance": "买家已在观望",
+       "zh": "就在上周，我和一家顶级金融服务公司的技术架构师开会，他谈到获取 token 算力，说第三选项是「从 CoreWeave 或者到时候还活着的随便哪家拿」。连这种公司的软件人都是这种情绪，CoreWeave 恐怕要完了。",
+       "en": "Coreweave is cooked.",
+       "hn": "https://news.ycombinator.com/item?id=50436061",
+       "id": 50436061,
+       "replies": 113
+      },
+      {
+       "user": "cmiles8",
+       "stance": "回报没到",
+       "zh": "这预示着 AI 公司今后融资会面临什么。如果 AI 兑现巨额回报的承诺，16% 算便宜；问题是回报没有出现，而 16% 会压垮大多数公司。",
+       "en": "16% is cheap if AI lives to its promise of massive returns.",
+       "hn": "https://news.ycombinator.com/item?id=50437326",
+       "id": 50437326,
+       "replies": 2
+      },
+      {
+       "user": "Animats",
+       "stance": "本来就是垃圾债",
+       "zh": "它发行时票息就是 9.6%，所以发行时就是垃圾债，现在只是更垃圾了。这只债在破产清偿顺序里排在哪？有没有抵押，比如 GPU？这可能很关键。",
+       "en": "So it was a junk bond when it was issued. Now it's junkier.",
+       "hn": "https://news.ycombinator.com/item?id=50437355",
+       "id": 50437355,
+       "replies": 0
+      }
+     ],
+     "kicker": "商业 · 金融"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50438480,
+     "title": "《大西洋月刊》：无时不在的监控对孩子和父母做了什么",
+     "title_en": "What constant surveillance is doing to children and parents",
+     "url": "https://www.theatlantic.com/magazine/2026/12/location-tracking-apps-parental-surveillance/689031/",
+     "hn": "https://news.ycombinator.com/item?id=50438480",
+     "points": 204,
+     "comments": 219
+    },
+    {
+     "id": 50437790,
+     "title": "纽约皇后区公共图书馆遭勒索软件攻击",
+     "title_en": "Queens Public Library under ransomware attack",
+     "url": "https://connect.queenslibrary.org/",
+     "hn": "https://news.ycombinator.com/item?id=50437790",
+     "points": 191,
+     "comments": 106
+    },
+    {
+     "id": 50437242,
+     "title": "M·约翰·哈里森成为首位获布克奖的科幻作家",
+     "title_en": "M John Harrison becomes first science fiction author to win the Booker",
+     "url": "https://www.theguardian.com/books/2026/nov/09/m-john-harrison-the-end-of-everything-wins-2026-booker-prize",
+     "hn": "https://news.ycombinator.com/item?id=50437242",
+     "points": 127,
+     "comments": 102
+    },
+    {
+     "id": 50442202,
+     "title": "Palantir 聘请一位前民主党参议员，应对新国会的审视",
+     "title_en": "Palantir hires a former Democratic senator as it faces scrutiny in new Congress",
+     "url": "https://text.npr.org/nx-s1-6029641",
+     "hn": "https://news.ycombinator.com/item?id=50442202",
+     "points": 146,
+     "comments": 154
+    },
+    {
+     "id": 50439805,
+     "title": "别买 AR 眼镜",
+     "title_en": "Don't buy AR glasses",
+     "url": "https://blog.yaros.ae/dont-buy-ar-glasses/",
+     "hn": "https://news.ycombinator.com/item?id=50439805",
+     "points": 128,
+     "comments": 175
+    },
+    {
+     "id": 50437106,
+     "title": "Fireworks AI 安全事件波及 Notion 及其客户",
+     "title_en": "Fireworks AI security breach impacts Notion and their customers",
+     "url": "https://www.notion.com/help/security-incident-involving-a-third-party-ai-vendor",
+     "hn": "https://news.ycombinator.com/item?id=50437106",
+     "points": 159,
+     "comments": 60
+    },
+    {
+     "id": 50441518,
+     "title": "Show HN：模拟城市式等距视角的西班牙瓦伦西亚",
+     "title_en": "Show HN: Valencia, Spain in Sim City/Isometric View",
+     "url": "https://tinyvalencia.com/",
+     "hn": "https://news.ycombinator.com/item?id=50441518",
+     "points": 181,
+     "comments": 46
+    },
+    {
+     "id": 50414117,
+     "title": "Show HN：在浏览器里玩加纳街头游戏",
+     "title_en": "Show HN: Ghanaian street games you can play in the browser",
+     "url": "https://www.ghanastreetgames.com/",
+     "hn": "https://news.ycombinator.com/item?id=50414117",
+     "points": 102,
+     "comments": 19
+    },
+    {
+     "id": 50439000,
+     "title": "Show HN：15MB 的自托管版 Netflix 加 Spotify",
+     "title_en": "Show HN: A 15 MB self-hosted Netflix and Spotify for your media server",
+     "url": "https://github.com/HolyArrs/HolyArrs",
+     "hn": "https://news.ycombinator.com/item?id=50439000",
+     "points": 162,
+     "comments": 131
+    },
+    {
+     "id": 50438377,
+     "title": "「C:\\> FORMAT C:」：别慌，只是个屏保",
+     "title_en": "'C:\\> FORMAT C:' – relax, it's just a screen saver",
+     "url": "https://fakedos.com/",
+     "hn": "https://news.ycombinator.com/item?id=50438377",
+     "points": 63,
+     "comments": 54
+    }
+   ]
+  }
+ ],
+ "quote_of_day": {
+  "user": "siliconc0w",
+  "id": 50436575,
+  "hn": "https://news.ycombinator.com/item?id=50436575",
+  "story_id": 50433659,
+  "story": "Fable 5.2 一次成型，做出了外甥梦想中的游戏",
+  "zh": "没有稀缺，就没有什么真正有价值。",
+  "en": "Without scarcity, nothing is really valuable."
+ },
+ "stats": {
+  "snapshot": "2026-11-11T08:13:48+08:00",
+  "front_page_count": 90,
+  "with_numbers": 86,
+  "flagged_or_dupe": 4,
+  "top_points": {
+   "id": 50429906,
+   "title": "Claude Fable 5.2 与 Mythos 5.2",
+   "value": 987,
+   "comments": 7
+  },
+  "top_comments": {
+   "id": 50429068,
+   "title": "Claude Fable 5.2 与 Mythos 5.2：近千条评论的主讨论帖",
+   "value": 995,
+   "comments": 995
+  },
+  "second_comments": {
+   "id": 50433659,
+   "title": "Fable 5.2 一次成型，做出了外甥梦想中的游戏",
+   "value": 430,
+   "comments": 430
+  },
+  "over_500": 6,
+  "over_300": 10,
+  "over_100": 44,
+  "show_hn": 4,
+  "total_points": 14074,
+  "total_comments": 7714,
+  "hottest_ratio": {
+   "id": 50439805,
+   "title": "别买 AR 眼镜",
+   "value": 1.37,
+   "comments": 175,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
