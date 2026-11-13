@@ -1,0 +1,1307 @@
+{
+ "date": "2026-11-12",
+ "published_at": "2026-11-13T08:23:46+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-11-12",
+ "schema_version": 2,
+ "lead": {
+  "id": 50467087,
+  "title": "黄仁勋辞去英伟达 CEO，即刻生效；CFO 克雷斯暂代，董事会首设独立主席",
+  "title_en": "Jensen Huang resigns",
+  "url": "https://apnews.com/article/nvidia-megaspeed-china-singapore-huang-5403f152a601cf82ce939f1d24fffa0f",
+  "hn": "https://news.ycombinator.com/item?id=50467087",
+  "points": 2806,
+  "comments": 2663,
+  "summary": [
+   "英伟达董事会 11 月 12 日发布公告：黄仁勋辞去总裁、首席执行官和董事职务，即刻生效。现任执行副总裁兼首席财务官 Colette Kress 出任临时 CEO，同时继续担任 CFO，直到选出正式继任者；董事会将从内部和外部物色人选。前 Synopsys CEO Harvey C. Jones 被任命为英伟达有史以来第一位董事会主席。公告感谢黄仁勋 33 年来的「不可估量的贡献」，并称第三财季财报仍按原计划于 11 月 17 日发布。",
+   "公告本身没有给出辞职原因。当天 HN 首页上同时挂着多条相关报道：华尔街日报此前报道「英伟达准备撤换黄仁勋」，路透社随后称他与第二名员工有过恋情，纽约时报则报道新加坡称美方在一起涉嫌间谍公司的调查上「不配合」。本帖 2806 点赞、2663 条评论，是当天点赞和评论双料第一；评论区的主线争论是：真正的原因是婚外情，还是英伟达芯片绕过出口禁令流向中国。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "duplessitous",
+    "stance": "关键在出口禁令",
+    "zh": "希望大家明白，外遇不是他被赶走的原因——据说英伟达一直在绕过上届政府定下的出口禁令。这是出于国家安全设的。不管你赞不赞成这项禁令，它就摆在那里，一旦曝光，黄仁勋和英伟达都会麻烦大了。",
+    "en": "I hope people understand that the affairs are not the reason he is being fired",
+    "hn": "https://news.ycombinator.com/item?id=50467199",
+    "id": 50467199,
+    "replies": 814
+   },
+   {
+    "user": "irishloop",
+    "stance": "CEO 的工作是形象",
+    "zh": "我觉得这里很多人低估了 CEO 的工作有多少是关于外界观感。他是全球最受瞩目行业里最受瞩目的 CEO 之一，整个 AI 经济都依赖他们。外界认为他稳定，这一点极其重要。",
+    "en": "I think a lot of people here seem to underestimate how much of a CEO's job is perception.",
+    "hn": "https://news.ycombinator.com/item?id=50474166",
+    "id": 50474166,
+    "replies": 21
+   },
+   {
+    "user": "kphorn",
+    "stance": "功劳不可抹",
+    "zh": "黄仁勋创造的股东价值几乎超过地球上任何人，比马斯克多得多；关键区别在于，他通过员工期权和公开股票升值把更多价值分了出去。",
+    "en": "Jensen has created more shareholder value than nearly any human on earth.",
+    "hn": "https://news.ycombinator.com/item?id=50467672",
+    "id": 50467672,
+    "replies": 216
+   }
+  ],
+  "kicker": "要闻 · 芯片",
+  "tag": "当日点赞第一"
+ },
+ "side": [
+  {
+   "id": 50465829,
+   "title": "Anthropic 启动 IPO：路演开始，预计 11 月 19 日在纳斯达克以 ANT 挂牌",
+   "title_en": "Anthropic IPO",
+   "url": "https://ipo.anthropic.com/us/",
+   "hn": "https://news.ycombinator.com/item?id=50465829",
+   "points": 798,
+   "comments": 790,
+   "summary": [
+    "Anthropic 上线 IPO 专页，路演从美东时间 11 月 10 日开始，若监管放行，最终发行价预计 11 月 18 日确定，19 日开始交易，股票代码 ANT，散户可通过参与的券商平台申购。页面列出的第三季度数据：营收 170 亿美元，同比增长超过 12 倍；过去 12 个月贡献超 10 万美元营收的客户超过 11900 家；调整后营业利润率 15%，但净亏损 233 亿美元（含 219 亿美元因估值上升产生的非现金费用），营业利润率为 -3%。",
+    "页面还附上 Legora、礼来、乐天、Salesforce 等客户案例和创始人信。评论区有人从招股文件里摘出发行价区间 70–78 美元、隐含市值约 9680 亿美元、算力承诺 9009 亿美元等数字；更多人在争论模型能否被轻易替换、为什么偏偏现在要上市。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "freakynit",
+     "stance": "招股书要点",
+     "zh": "链接文件里的几个要点：1. 价格区间 70–78 美元，中值约 74 美元；2. 总募资规模 853 亿美元（IPO 加 260 亿美元私募）；3. 按 74 美元、130.9 亿股算，隐含市值约 9680 亿美元……",
+     "en": "Price range: $70–78 with midpoint at around $74.00",
+     "hn": "https://news.ycombinator.com/item?id=50466486",
+     "id": 50466486,
+     "replies": 27
+    },
+    {
+     "user": "maerF0x0",
+     "stance": "为何急着上市",
+     "zh": "我觉得，如果他们的模型真好到能递归自我改进，风投会推着推迟 IPO，等到拿下明确的市场统治地位再说。不知为何，他们宁可稀释股权也要今天就拿到这 1000 亿美元。",
+     "en": "For some reason they need the $100B today at the cost of dilution",
+     "hn": "https://news.ycombinator.com/item?id=50469962",
+     "id": 50469962,
+     "replies": 112
+    },
+    {
+     "user": "brainless",
+     "stance": "模型可替换",
+     "zh": "大模型很有价值，但我可以很容易地换掉它。是的，有些前沿模型好得多，但大部分工作用户仍可以选更便宜的模型。",
+     "en": "There is a lot of value from LLMs but it is something that I can switch easily.",
+     "hn": "https://news.ycombinator.com/item?id=50466035",
+     "id": 50466035,
+     "replies": 206
+    }
+   ],
+   "kicker": "要闻 · AI 公司",
+   "tag": "当日评论第三"
+  },
+  {
+   "id": 50471431,
+   "title": "谷歌发布 Gemini 4 Hydrogen：主打快和便宜，跑分略超自家 Argon",
+   "title_en": "Gemini 4 Hydrogen",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+   "hn": "https://news.ycombinator.com/item?id=50471431",
+   "points": 443,
+   "comments": 285,
+   "summary": [
+    "谷歌 DeepMind 发布 Gemini 4 Hydrogen，定位是日常编码和智能体工作流里负责快速执行的模型，与前沿模型 Carbon、Argon 搭配。官方称它在 Artificial Analysis 智能指数上默认档的得分为 51，超过 Argon 的 50，最高档可达 54；整个 100 万 token 上下文统一定价，每百万输入 1.5 美元、输出 7.5 美元。相比 3.8 Flash，它完成任务快 2.5 倍，Terminal-Bench 4.1 从 18.2% 提升到 57%，捏造内容减少 5 倍以上。",
+    "Hydrogen 当天面向 AI Studio、Gemini API、Gemini App、谷歌搜索等全面上线，Antigravity 还新增 Orchestrator，在同一会话里在 Carbon 和 Hydrogen 之间自动切换，官方称在 Terminal-Bench 4.0 上接近 Carbon 的成功率，同时少用 24% 配额、快 19%。评论区最多的吐槽是用化学元素命名，看不出哪个更强。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "wds",
+     "stance": "命名看不懂",
+     "zh": "这个命名方式用在彼此独立的产品上还行，但用元素、分子来给你本该互相比较的产品命名……没什么帮助。我的直觉反而会说氢比氩更强。",
+     "en": "using elements, molecules, etc. for products you're supposed to compare with each other... Not very helpful.",
+     "hn": "https://news.ycombinator.com/item?id=50472105",
+     "id": 50472105,
+     "replies": 74
+    },
+    {
+     "user": "ComputerGuru",
+     "stance": "便宜档没了？",
+     "zh": "它的定价和原价 3.8 Flash 一样，比现在大家实际为 3.8 Flash、3.5 Flash Lite 付的钱高不少。这算怎么回事？谷歌要放弃「又快又便宜」这一档吗？",
+     "en": "Is Google abandoning the “fast and cheap” tier?",
+     "hn": "https://news.ycombinator.com/item?id=50471754",
+     "id": 50471754,
+     "replies": 18
+    },
+    {
+     "user": "JV00",
+     "stance": "中档模型给谁用",
+     "zh": "我个人用大模型是两极分化的：要么只用最顶级的前沿模型做研发，要么用最便宜最快的跑生产里的简单流程。很好奇大家拿中档模型做什么。",
+     "en": "I am curious what people find the mid tier models useful for.",
+     "hn": "https://news.ycombinator.com/item?id=50471826",
+     "id": 50471826,
+     "replies": 12
+    }
+   ],
+   "kicker": "要闻 · 模型"
+  },
+  {
+   "id": 50462177,
+   "title": "Apache HTTP Server 曝严重远程代码执行漏洞，HTTP/2 模块的竞态可破坏堆内存",
+   "title_en": "Critical RCE Vulnerability in Apache HTTP Server",
+   "url": "https://www.wiz.io/blog/cve-2026-119618-rce-apache-http-server-vulnerability",
+   "hn": "https://news.ycombinator.com/item?id=50462177",
+   "points": 353,
+   "comments": 191,
+   "summary": [
+    "Wiz 博客介绍 CVE-2026-119618：漏洞位于 Apache HTTP Server 的 HTTP/2 模块 mod_http2，assign_headers() 函数在并发线程共享资源时同步不当，远程未认证的攻击者可借此破坏堆内存，进而以 Web 服务器进程的权限执行任意代码。漏洞由 Anthropic 和谷歌云漏洞研究团队分别独立发现；截至发文时尚无公开利用代码，也没有在野利用报告。",
+    "受影响版本为 2.4.55 至 2.4.70，修复版本 2.4.71。Wiz 称其数据显示 64% 的云环境有受影响资源，51% 有公开暴露的实例（未考虑配置）。暂时无法升级的，可在配置里把协议限制为 http/1.1 以关闭 HTTP/2。评论区有人指出，大多数 Apache/PHP 部署用的是 prefork 模式，可能不受影响。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "account42",
+     "stance": "HTTP/2 是个错误",
+     "zh": "事后看，我觉得 HTTP/2 是个错误。理论上的好处撑不起它增加的复杂度，当初绝不该那样快速推进。",
+     "en": "I feel like in hindsight, HTTP/2 was a mistake.",
+     "hn": "https://news.ycombinator.com/item?id=50465333",
+     "id": 50465333,
+     "replies": 11
+    },
+    {
+     "user": "neurostimulant",
+     "stance": "prefork 多半没事",
+     "zh": "大多数 Apache/PHP 安装很可能跑的是 mpm_prefork，不受这个漏洞影响。",
+     "en": "Chances are most Apache/PHP installations run mpm_prefork and aren’t affected by this.",
+     "hn": "https://news.ycombinator.com/item?id=50464770",
+     "id": 50464770,
+     "replies": 2
+    },
+    {
+     "user": "rurcliped",
+     "stance": "小心 certbot",
+     "zh": "临时关掉 Apache 的人要注意一个常被漏掉的步骤：certbot 的 cron 任务或 systemd 定时器。它可能把 httpd 重启起来并一直开着。",
+     "en": "there's one step that's sometimes missed: a cron job or systemd timer for certbot.",
+     "hn": "https://news.ycombinator.com/item?id=50465500",
+     "id": 50465500,
+     "replies": 4
+    }
+   ],
+   "kicker": "要闻 · 安全"
+  },
+  {
+   "id": 50469994,
+   "title": "任天堂向 GitHub 发出 DMCA 通知，下架 Switch 模拟器和 144 个改机芯片固件仓库",
+   "title_en": "Nintendo Takes Down Emulators and Firmware in Massive GitHub DMCA Sweep",
+   "url": "https://www.ign.com/articles/nintendo-takes-down-switch-emulators-and-mod-chip-firmware-in-massive-github-dmca-sweep",
+   "hn": "https://news.ycombinator.com/item?id=50469994",
+   "points": 263,
+   "comments": 207,
+   "summary": [
+    "IGN 报道，任天堂向 GitHub 发出四份 DMCA 下架通知，目标是 Switch 模拟器 Yuzu 和 Citron Neo，以及改机芯片固件。重点是固件：像 Picofly 这样的芯片焊到 Switch 主板上、刷入这些固件后可绕过复制保护，相关的 144 个仓库已全部被 GitHub 移除。GitHub 公开的 11 月 6 日通知称，Switch 的技术保护措施用于阻止在主机上运行盗版游戏。",
+    "不过据 TorrentFreak，这些固件仍能在 GitHub 别处找到。IGN 提到，几天前模拟器刚能在 PC 上运行重制版《塞尔达传说：时之笛》；文章还说，有了 AI，2026 年的模拟已和 2024 年大不相同，Rockstar 上月下架了浏览器版 GTA 5，Bethesda 也下架了 AI 生成的 Fallout New York。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "dormento",
+     "stance": "模拟本身合法",
+     "zh": "提醒一下：只要不涉及内部文档、内部软件或固件组件，以及不正当手段获得的信息，模拟器在全世界几乎所有地方都是百分之百合法的。",
+     "en": "emulation is 100% legal pretty much everywhere in the world.",
+     "hn": "https://news.ycombinator.com/item?id=50472709",
+     "id": 50472709,
+     "replies": 21
+    },
+    {
+     "user": "haunter",
+     "stance": "下了也还在",
+     "zh": "所有 Switch 2 模拟器都还在 GitHub 和 GitLab 上。大部分 Switch 1 模拟器也还在，因为它们本来就托管在自己域名的仓库上。反正下周它们都会回来。",
+     "en": "Every single Switch 2 emulator is still available on Github and Gitlab.",
+     "hn": "https://news.ycombinator.com/item?id=50470629",
+     "id": 50470629,
+     "replies": 17
+    },
+    {
+     "user": "glimshe",
+     "stance": "备份犯法吗",
+     "zh": "我以为我有权用破解手段备份自己的游戏。如果我拥有这款游戏，用从自己主机里提取的固件在模拟器上运行，我违反了哪条法律？",
+     "en": "If I own game and run it on an emulator with a firmware extracted from my device, what law am I breaking?",
+     "hn": "https://news.ycombinator.com/item?id=50470352",
+     "id": 50470352,
+     "replies": 27
+    }
+   ],
+   "kicker": "要闻 · 游戏"
+  },
+  {
+   "id": 50472038,
+   "title": "Rust 1.100 发布：never 类型历经 10 年终于稳定，Cargo 支持依赖「冷静期」",
+   "title_en": "Rust 1.100",
+   "url": "https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/",
+   "hn": "https://news.ycombinator.com/item?id=50472038",
+   "points": 349,
+   "comments": 145,
+   "summary": [
+    "Rust 官方博客宣布 1.100.0：在 10 年、5 次失败的稳定化尝试之后，never 类型 ! 终于可以在任何位置书写，Infallible 也改成它的别名；为此 2024 之前的版本把 never 类型回退从 () 改成了 !，属于少见的破坏性变更。自定义分配器的核心 Allocator 特征稳定，可用于 Vec 和 Box；新增 DropGuard，在函数每条退出路径上运行闭包，还可 dismiss 做成带回滚的事务式写法。",
+    "Cargo 方面：默认报告未使用的依赖；构建目录按构建步骤重组以减少缓存冲突；稳定 min-publish-age，可设定只采用发布满若干天的新版本，以躲开发布后几小时到几天内才被发现的恶意包，官方提醒这并非完整防御。评论区有人追问编译到底快了没有。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "nirinor",
+     "stance": "最爱的几项",
+     "zh": "好家伙，这才叫一次发布！我个人最喜欢：稳定 never 类型、稳定自定义分配器，还有最小发布年龄配置，也就是依赖冷静期。",
+     "en": "Woohoo, that's a release!",
+     "hn": "https://news.ycombinator.com/item?id=50471989",
+     "id": 50471989,
+     "replies": 2
+    },
+    {
+     "user": "n_u",
+     "stance": "未用依赖警告",
+     "zh": "Cargo 现在会向用户报告未使用的依赖……太好了。",
+     "en": "Heck yes",
+     "hn": "https://news.ycombinator.com/item?id=50472574",
+     "id": 50472574,
+     "replies": 3
+    },
+    {
+     "user": "jadbox",
+     "stance": "编译快了吗",
+     "zh": "编译器现在快点了吗？编译要花一辈子。我也受够了每天都得 cargo clean，清掉 90GB 临时文件。",
+     "en": "Is the compiler any faster now? Compiling takes forever.",
+     "hn": "https://news.ycombinator.com/item?id=50473144",
+     "id": 50473144,
+     "replies": 28
+    }
+   ],
+   "kicker": "要闻 · 编程语言"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 2,
+   "stats": {
+    "items": 12,
+    "points": 1884,
+    "comments": 626,
+    "top_points": {
+     "id": 50438261,
+     "title": "Jane Street 开源「苏格拉底导师」技能：只提问不给答案，按 0–5 级追踪掌握度",
+     "value": 649,
+     "comments": 153
+    },
+    "top_comments": {
+     "id": 50438261,
+     "title": "Jane Street 开源「苏格拉底导师」技能：只提问不给答案，按 0–5 级追踪掌握度",
+     "value": 153
+    },
+    "top_brief": {
+     "id": 50472260,
+     "title": "Antigravity 博客：Gemini 4 Hydrogen 与 Orchestrator",
+     "value": 264,
+     "comments": 61
+    }
+   },
+   "stories": [
+    {
+     "id": 50438261,
+     "title": "Jane Street 开源「苏格拉底导师」技能：只提问不给答案，按 0–5 级追踪掌握度",
+     "title_en": "Socratic Tutor",
+     "url": "https://github.com/janestreet/agent_skills/blob/master/socratic-tutor/SKILL.md",
+     "hn": "https://news.ycombinator.com/item?id=50438261",
+     "points": 649,
+     "comments": 153,
+     "summary": [
+      "Jane Street 的 agent_skills 仓库里有一份 socratic-tutor 技能说明，让 AI 智能体在用户明确要求「教我」「考我」时，用苏格拉底式追问把人从现有水平带到真正掌握。它先确认用户是要系统学习而不是随口一问，再把主题拆成 4–10 个子技能，用 3–5 道由易到难的诊断题定级，并用 ASCII 进度条画出 0（没听说过）到 5（能教别人）的技能图。",
+      "教学循环里每次只问一个问题，问完立刻停下；用户答错时不给答案，而是问一个更窄的问题暴露推理矛盾，两三次失败后才直接讲解并换角度复测；答对时偶尔唱反调。升级要求在 2 次以上独立检查中表现出来，且至少一次是不经提示的回忆。评论区一半人说早就这么用，一半人在分享自己的学习用法。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "lemax",
+       "stance": "终于不剧透",
+       "zh": "我一直很难让 AI 好好教我东西，它总是漏提示或直接给答案。假设这背后有扎实的评测，这可能很棒。",
+       "en": "I’ve struggled to get AI to teach me things well without spilling hints or giving answers away.",
+       "hn": "https://news.ycombinator.com/item?id=50465114",
+       "id": 50465114,
+       "replies": 1
+      },
+      {
+       "user": "pkoird",
+       "stance": "有啥特别的",
+       "zh": "只有我在想这有什么特别的吗？为什么大家都在惊叹？据我所知，我和身边的人从大模型能力够用起就一直这么做了。",
+       "en": "Is it only me who's thinking what's so special about this",
+       "hn": "https://news.ycombinator.com/item?id=50466754",
+       "id": 50466754,
+       "replies": 10
+      },
+      {
+       "user": "Tar90",
+       "stance": "还缺结构",
+       "zh": "这类技能用来获得简单答案、做练习卡住时解围都很好，但我仍觉得有效自学需要更多结构。有人试过拿一本难书当课程骨架，让大模型带你读下去吗？",
+       "en": "Has anyone tried using a hard book as a sort of course structure and asking the LLM to teach you through it?",
+       "hn": "https://news.ycombinator.com/item?id=50466452",
+       "id": 50466452,
+       "replies": 17
+      }
+     ],
+     "kicker": "AI · 学习"
+    },
+    {
+     "id": 50468888,
+     "title": "smolmaxxing：在 1GB 内存的电视盒和 2013 年 iPad Air 上跑 160 亿参数模型",
+     "title_en": "I'm making LLMs work on small and old devices",
+     "url": "https://github.com/hyperionaidev/smolmaxxing/",
+     "hn": "https://news.ycombinator.com/item?id=50468888",
+     "points": 271,
+     "comments": 89,
+     "summary": [
+      "smolmaxxing 项目的目标是在手头最小的硬件上跑尽可能大的语言模型，所有数字都在设备上实测。目前两台设备：小米电视盒 S 第三代（约 1GB 可用内存、Android 14 未 root），日常跑 Qwen3.5-2B 约每秒 7.7 个 token，最大跑 160 亿参数的 Ling-mini-2.0 约每秒 5.1 个；越狱的 2013 年 iPad Air（约 700MB 可用）跑 1-bit 的 Bonsai-1.7B 每秒 24–26 个，同样能跑 16B 模型。",
+      "全部工作是 llama.cpp 的补丁：为芯片定制 1-bit 查表、2-bit 和三值内核；砍掉词表里很少用到的输出行省内存；混合专家模型只把常用专家留在内存，其余按需从闪存读并预取下一层，这就是 8B、16B 模型能塞进 1GB 的原因。仓库附了 160 次实验的完整记录，包括失败的。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "mrashad74",
+       "stance": "作者现身",
+       "zh": "最近我在自己的 AI 公司开了这个开源项目，想让大模型跑起来。现在已经能在初代 iPad Air 和小米电视盒上跑 16B 模型，两者可用内存都不到 1GB。我想要更有挑战性的设备，大家觉得呢？",
+       "en": "I want a more challenging device, what do you think?",
+       "hn": "https://news.ycombinator.com/item?id=50468889",
+       "id": 50468889,
+       "replies": 20
+      },
+      {
+       "user": "yjftsjthsd-h",
+       "stance": "小模型有啥用",
+       "zh": "不管怎样技术上都很酷，别当成反驳。但我好奇这些小模型有什么用？它们够聪明到能做实际任务吗？",
+       "en": "I am curious what the utility of these small models is?",
+       "hn": "https://news.ycombinator.com/item?id=50470722",
+       "id": 50470722,
+       "replies": 11
+      },
+      {
+       "user": "Farmadupe2",
+       "stance": "智能体一句话的事",
+       "zh": "过去五个月左右，Opus 和 Fable 都能一条提示就完成这种任务。推理引擎几乎是纯计算……所以让任何模型在老硬件上跑起来，最难的部分现在是弄到硬件本身。",
+       "en": "the hardest part of the task is now sourcing the hardware itself",
+       "hn": "https://news.ycombinator.com/item?id=50470853",
+       "id": 50470853,
+       "replies": 13
+      }
+     ],
+     "kicker": "AI · 端侧"
+    },
+    {
+     "id": 50467439,
+     "title": "LibreAGI：用私有 BitTorrent 站保存「最可能消失」的开源模型",
+     "title_en": "Libreagi – Save OSS Models",
+     "url": "https://libreagi.com/",
+     "hn": "https://news.ycombinator.com/item?id=50467439",
+     "points": 122,
+     "comments": 25,
+     "summary": [
+      "LibreAGI 自称是一个私有 BitTorrent 种子站，宗旨是开源模型应该比托管它们的平台活得更久，由会员保存最可能消失的模型副本。做种积分随文件大小和时长增加，只剩一份副本的模型能拿到四倍基础积分。站点接受 safetensors、GGUF 到 ONNX 等格式，限 Apache-2.0、MIT 或通义千问社区许可证，每个文件都与来源提交核对，并由工作人员审核。",
+      "它还发布一份签名的公开目录，列出每个模型的哈希和来源，这样即使网站消失，任何人也能重建种子群；公开 IRC 频道无需账号即可加入。评论区的主要不满是要申请才能加入、要登录才能做种。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "InsideOutSanta",
+       "stance": "为何要申请",
+       "zh": "我不明白为什么要这样设计。为模型维护一个 BT tracker 看起来是个相当好的主意，但想贡献还得「申请加入」？图什么？",
+       "en": "you have to \"apply to join\" to be able to contribute?",
+       "hn": "https://news.ycombinator.com/item?id=50468253",
+       "id": 50468253,
+       "replies": 11
+      },
+      {
+       "user": "randomblock1",
+       "stance": "有何不同",
+       "zh": "这和 pirateface.co 有什么区别？是私有 tracker，并且专注老模型？",
+       "en": "What is the difference between this and",
+       "hn": "https://news.ycombinator.com/item?id=50472678",
+       "id": 50472678,
+       "replies": 1
+      },
+      {
+       "user": "cat_screamer",
+       "stance": "去掉登录就做种",
+       "zh": "我很喜欢这个，但为什么非得登录？如果去掉登录，我很乐意做种。",
+       "en": "Would love to seed if you remove login",
+       "hn": "https://news.ycombinator.com/item?id=50468943",
+       "id": 50468943,
+       "replies": 1
+      }
+     ],
+     "kicker": "AI · 开源"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50472260,
+     "title": "Antigravity 博客：Gemini 4 Hydrogen 与 Orchestrator",
+     "title_en": "Gemini 4 Hydrogen and Orchestrator",
+     "url": "https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/",
+     "hn": "https://news.ycombinator.com/item?id=50472260",
+     "points": 264,
+     "comments": 61
+    },
+    {
+     "id": 50474361,
+     "title": "苹果 Foundation Models 框架",
+     "title_en": "Foundation Models framework",
+     "url": "https://developer.apple.com/foundation-models-framework/",
+     "hn": "https://news.ycombinator.com/item?id=50474361",
+     "points": 97,
+     "comments": 12
+    },
+    {
+     "id": 50475735,
+     "title": "经济学人：为什么你应该预期一场 AI 崩盘",
+     "title_en": "Why You Should Expect an AI Crash",
+     "url": "https://www.economist.com/leaders/2026/11/12/why-you-should-expect-an-ai-crash",
+     "hn": "https://news.ycombinator.com/item?id=50475735",
+     "points": 78,
+     "comments": 57
+    },
+    {
+     "id": 50474311,
+     "title": "AI 让苹果 App 审核成了合成器开发者的噩梦",
+     "title_en": "AI is turning Apple's app review process into a nightmare for synth developers",
+     "url": "https://synthanatomy.com/2026/11/ai-is-turning-apples-app-review-process-into-a-nightmare-for-developers.html",
+     "hn": "https://news.ycombinator.com/item?id=50474311",
+     "points": 62,
+     "comments": 58
+    },
+    {
+     "id": 50415162,
+     "title": "我把一个湖仓和我的花园交给了智能体",
+     "title_en": "I gave an agent a lakehouse and control of my garden",
+     "url": "https://jatorre.github.io/garden/",
+     "hn": "https://news.ycombinator.com/item?id=50415162",
+     "points": 136,
+     "comments": 71
+    },
+    {
+     "id": 50471650,
+     "title": "Show HN：AgentRun，开源、可自我改进的托管智能体",
+     "title_en": "Show HN: AgentRun – open-source, Self-improving Managed Agents",
+     "url": "https://github.com/Parcha-ai/agentrun/blob/main/README.md",
+     "hn": "https://news.ycombinator.com/item?id=50471650",
+     "points": 73,
+     "comments": 12
+    },
+    {
+     "id": 50469007,
+     "title": "Show HN：Fable52.games，试玩并查看 Fable 5.2 生成的单文件 HTML 游戏",
+     "title_en": "Show HN: Fable52.games – Play and inspect Fable 5.2 single-file HTML games",
+     "url": "https://fable52.games",
+     "hn": "https://news.ycombinator.com/item?id=50469007",
+     "points": 61,
+     "comments": 54
+    },
+    {
+     "id": 50461919,
+     "title": "A2UI 1.0 发布",
+     "title_en": "A2UI 1.0",
+     "url": "https://developers.googleblog.com/a2ui-10-build-delightful-fast-reliable-agentic-experiences/",
+     "hn": "https://news.ycombinator.com/item?id=50461919",
+     "points": 40,
+     "comments": 6
+    },
+    {
+     "id": 50467880,
+     "title": "Show HN：AI 红线，写下什么情况会让你对 AI 采取行动",
+     "title_en": "Show HN: AI Red Lines – write down what would make you act on AI",
+     "url": "https://yourairedlines.com",
+     "hn": "https://news.ycombinator.com/item?id=50467880",
+     "points": 31,
+     "comments": 28
+    }
+   ]
+  },
+  {
+   "name": "开发",
+   "en": "Software",
+   "page": 3,
+   "stats": {
+    "items": 13,
+    "points": 1966,
+    "comments": 885,
+    "top_points": {
+     "id": 50463899,
+     "title": "Humble Bundle 新网站上线，网友称两步验证消失、改密码改邮箱都不用确认",
+     "value": 366,
+     "comments": 218
+    },
+    "top_comments": {
+     "id": 50463899,
+     "title": "Humble Bundle 新网站上线，网友称两步验证消失、改密码改邮箱都不用确认",
+     "value": 218
+    },
+    "top_brief": {
+     "id": 50465352,
+     "title": "为什么写出正确的软件很难，为什么光靠数学帮不了我们（2016）",
+     "value": 351,
+     "comments": 166
+    }
+   },
+   "stories": [
+    {
+     "id": 50459485,
+     "title": "GitHub Actions 支持工作流锁文件：不再需要手动钉死提交哈希",
+     "title_en": "Lock Your GitHub Actions",
+     "url": "https://hugovk.dev/blog/2026/lock-github-actions/",
+     "hn": "https://news.ycombinator.com/item?id=50459485",
+     "points": 326,
+     "comments": 64,
+     "summary": [
+      "Python 核心开发者 Hugo van Kemenade 介绍 GitHub Actions 新支持的工作流锁文件。过去的建议是把 action 钉在完整 SHA 上，因为标签可变，攻击者可以把原本安全的标签指向恶意代码。现在装上 gh 的 gh-actions-lock 扩展，运行 gh actions-lock，工作流里就能写回 vX.Y.Z 这样的标签，实际提交哈希则记录在 .github/workflows/actions.lock 里。",
+      "他建议在 CI 里加一个任务运行 gh actions-lock --verify，锁文件与工作流不同步或钉住的版本无法验证时就失败；Renovate 和 Dependabot 都已支持锁文件，安全检查工具 zizmor 从 v1.32.0 起也支持。zizmor 维护者在评论区补充了当前锁文件的几处局限。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "woodruffw",
+       "stance": "zizmor 作者提醒",
+       "zh": "建议很好，但作为 zizmor 的维护者，我想指出当前锁文件的几个注意点：它只锁普通的 action 调用；如果工作流调用了其他可复用工作流，目前仍需手动钉哈希。",
+       "en": "They only lock normal action calls.",
+       "hn": "https://news.ycombinator.com/item?id=50459919",
+       "id": 50459919,
+       "replies": 1
+      },
+      {
+       "user": "Already__Taken",
+       "stance": "信任只是转移了",
+       "zh": "你是把「相信仓库作者不会移动标签」换成「相信合并哈希的人核对过那是你想要的仓库的发布版，而不是某个 fork 的提交」。GitHub 上所有 fork 都是同一个仓库，任何提交都能被钉住。",
+       "en": "All forks on github are the same repo you can pin any commit",
+       "hn": "https://news.ycombinator.com/item?id=50459589",
+       "id": 50459589,
+       "replies": 6
+      },
+      {
+       "user": "klodolph",
+       "stance": "干脆别用",
+       "zh": "我的主要建议是能不用 GH Actions 就不用，除非不用会很痛苦。它的历史一直不太好。",
+       "en": "I think my main advice is to avoid GH actions at all",
+       "hn": "https://news.ycombinator.com/item?id=50460909",
+       "id": 50460909,
+       "replies": 15
+      }
+     ],
+     "kicker": "开发 · 供应链"
+    },
+    {
+     "id": 50467297,
+     "title": "Jane Street：软件工程面试要「稍微」变了，新增少写代码、多做设计和审查的环节",
+     "title_en": "Our software engineering interviews are changing a little",
+     "url": "https://blog.janestreet.com/software-engineering-interviews-are-changing-a-little/",
+     "hn": "https://news.ycombinator.com/item?id=50467297",
+     "points": 163,
+     "comments": 159,
+     "summary": [
+      "Jane Street 工程师 Matthew Saffer 撰文说，公司大多数工程师每天都在用大模型写、读、调试和审查代码，但面试一直没变。生成代码越来越便宜，判断该做什么、选择持久的抽象、确保做出来的东西真的正确变得更重要，所以今年夏天他们开始在校招现场面试中试行新环节：写代码更少，更偏软件设计、审查代码的质量结构与意图，以及用大模型产出代码。",
+      "大多数轮次仍是不借助大模型的传统编码面试；文章承认说得模糊是有意为之，因为形式还在变。公司强调不要求候选人有一套成熟的智能体工作流，看重的是对工具的清醒判断。评论区有人分享自己的面试法，也有人质疑这篇写得太空泛。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "fernandotakai",
+       "stance": "我的面试法",
+       "zh": "我在大模型时代试过好几轮面试方式，最后定下的流程是：先现场解一道不难的编程题，多数大模型都能一次搞定。但如果你不是资深开发者，就得不用大模型来做；如果你是资深并用了大模型，门槛大大提高，你得详细解释大模型写的每一行，就像是你自己写的。",
+       "en": "if you are a senior+ and do it via LLM, the bar is super raised",
+       "hn": "https://news.ycombinator.com/item?id=50468439",
+       "id": 50468439,
+       "replies": 73
+      },
+      {
+       "user": "parthdesai",
+       "stance": "太空泛",
+       "zh": "说实话这篇博文挺含糊的。除了「在变」这件事，基本没说什么。",
+       "en": "Pretty vague blogpost tbh.",
+       "hn": "https://news.ycombinator.com/item?id=50468157",
+       "id": 50468157,
+       "replies": 4
+      },
+      {
+       "user": "zerop",
+       "stance": "各家各样",
+       "zh": "朋友最近在面过 Meta 等好几家后进了谷歌。他说大多数公司的面试都在变，但没有统一模式。有公司会给一个故意写错代码的大模型，让候选人去改。",
+       "en": "One company give access to LLM (probably custom) that would provide wrong code intentionally",
+       "hn": "https://news.ycombinator.com/item?id=50472261",
+       "id": 50472261,
+       "replies": 3
+      }
+     ],
+     "kicker": "开发 · 招聘"
+    },
+    {
+     "id": 50463899,
+     "title": "Humble Bundle 新网站上线，网友称两步验证消失、改密码改邮箱都不用确认",
+     "title_en": "\"Humble Bundle just killed most of their security through vibecoding\"",
+     "url": "https://forums.spacebattles.com/threads/humble-bundle-just-completely-killed-most-of-their-security-through-vibecoding.1346295/",
+     "hn": "https://news.ycombinator.com/item?id=50463899",
+     "points": 366,
+     "comments": 218,
+     "summary": [
+      "SpaceBattles 论坛用户 Winchester 发帖说，Humble Bundle 当天上线全新网站，安全设置几乎全被拆掉：两步验证不复存在，登录只靠密码；修改密码既不用输入旧密码，也不用重复输入新密码；修改邮箱不需要密码确认，账号被盗后只会收到一封「邮箱已更改，如非本人请联系客服」的邮件。他说这些都是自己确认过的，Humble Bundle 官方尚未回应。",
+      "跟帖用户补充：邮件验证码登录其实一直存在，但可以代替密码，所以仍是单因素；资料库每页只显示 5 项、2018 年前的合集在合集页不显示、部分内容缺失。标题里的「vibecoding」是发帖人的判断，并无官方证实；HN 评论区不少人认为锅不该甩给 AI。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "oliwarner",
+       "stance": "怪 AI 很奇怪",
+       "zh": "把这一切都算到 vibecoding 头上挺奇怪的。我好几次让 AI 写认证系统，给出的功能都相当完整。也许是因为我知道自己要什么。",
+       "en": "Weird that they lay all this at the feet of vibecoding.",
+       "hn": "https://news.ycombinator.com/item?id=50464874",
+       "id": 50464874,
+       "replies": 25
+      },
+      {
+       "user": "trvz",
+       "stance": "不是 AI 的错",
+       "zh": "这不是 AI 的错。事实上，他们大概得跟大模型较劲才能把它弄得这么简陋。",
+       "en": "This is not AI's fault.",
+       "hn": "https://news.ycombinator.com/item?id=50464542",
+       "id": 50464542,
+       "replies": 18
+      },
+      {
+       "user": "1313ed01",
+       "stance": "快回滚吧",
+       "zh": "能不能有人直接点一下回滚按钮，大家就当没发生过。我觉得新网站救不回来了，旧网站好好的。",
+       "en": "Can someone there please just click the rollback button now",
+       "hn": "https://news.ycombinator.com/item?id=50464574",
+       "id": 50464574,
+       "replies": 4
+      }
+     ],
+     "kicker": "开发 · 安全事故"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50465352,
+     "title": "为什么写出正确的软件很难，为什么光靠数学帮不了我们（2016）",
+     "title_en": "Why writing correct software is hard and why math (alone) won’t help us (2016)",
+     "url": "https://pron.github.io/posts/correctness-and-complexity",
+     "hn": "https://news.ycombinator.com/item?id=50465352",
+     "points": 351,
+     "comments": 166
+    },
+    {
+     "id": 50471761,
+     "title": "把一个 22 年的 PostgreSQL 类型混淆缺陷变成远程代码执行",
+     "title_en": "22-Year-Old PostgreSQL Bug Turned into Remote Code Execution",
+     "url": "https://mehmetince.net/part-3-6-how-i-ended-up-turning-a-22-year-old-postgresql-type-confusion-primitive-into-rce-cve-2026-6460/",
+     "hn": "https://news.ycombinator.com/item?id=50471761",
+     "points": 134,
+     "comments": 16
+    },
+    {
+     "id": 50458849,
+     "title": "Relax：给 Rust 用的 JIT 编译器，缩短构建时间",
+     "title_en": "Relax: JIT compiler for Rust to reduce build times",
+     "url": "https://makepad.github.io/relax/",
+     "hn": "https://news.ycombinator.com/item?id=50458849",
+     "points": 103,
+     "comments": 44
+    },
+    {
+     "id": 50470445,
+     "title": "AWS Lambda Web Functions 在最后一次请求后仍按内存计费约 7 分钟",
+     "title_en": "AWS Lambda Web Functions keep billing memory ~7 minutes after the last request",
+     "url": "https://www.easel.sh/blog/lambda-web-functions-idle-memory",
+     "hn": "https://news.ycombinator.com/item?id=50470445",
+     "points": 65,
+     "comments": 28
+    },
+    {
+     "id": 50468944,
+     "title": "ExcalidrawZ：macOS/iOS 上的本地原生 Excalidraw",
+     "title_en": "ExcalidrawZ: Local Native Excalidraw on macOS/iOS",
+     "url": "https://github.com/chocoford/ExcalidrawZ",
+     "hn": "https://news.ycombinator.com/item?id=50468944",
+     "points": 103,
+     "comments": 24
+    },
+    {
+     "id": 50462613,
+     "title": "那些不再是坏主意的坏主意",
+     "title_en": "Bad ideas that aren't bad anymore",
+     "url": "https://devonestes.com/bad-ideas-that-arent-bad-anymore",
+     "hn": "https://news.ycombinator.com/item?id=50462613",
+     "points": 85,
+     "comments": 79
+    },
+    {
+     "id": 50467763,
+     "title": "PostgreSQL 18.7、17.12、16.16、15.20、14.25 与 19 RC 2 发布",
+     "title_en": "PostgreSQL 18.7, 17.12, 16.16, 15.20, 14.25, and 19 RC 2 Released",
+     "url": "https://www.postgresql.org/about/news/postgresql-187-1712-1616-1520-1425-and-19-rc-2-released-3442/",
+     "hn": "https://news.ycombinator.com/item?id=50467763",
+     "points": 100,
+     "comments": 13
+    },
+    {
+     "id": 50467869,
+     "title": "运营网站让我不想再运营网站",
+     "title_en": "Running web sites makes me not want to",
+     "url": "https://lowkey.party/running-web-sites-makes-me-not-want-to",
+     "hn": "https://news.ycombinator.com/item?id=50467869",
+     "points": 91,
+     "comments": 51
+    },
+    {
+     "id": 50472506,
+     "title": "氛围不会帮你维护代码",
+     "title_en": "Vibes Don't Maintain",
+     "url": "https://roll.bybacon.com/2026/10/14/vibes-dont-maintain.html",
+     "hn": "https://news.ycombinator.com/item?id=50472506",
+     "points": 37,
+     "comments": 19
+    },
+    {
+     "id": 50460887,
+     "title": "把 Electron 应用移植到 Rust：从 675MB 降到 91MB",
+     "title_en": "Porting my Electron app to Rust: 675 MB to 91 MB",
+     "url": "https://sayjot.xyz/blog/rust-port",
+     "hn": "https://news.ycombinator.com/item?id=50460887",
+     "points": 42,
+     "comments": 4
+    }
+   ]
+  },
+  {
+   "name": "硬件与科学",
+   "en": "Hardware & Science",
+   "page": 4,
+   "stats": {
+    "items": 13,
+    "points": 1558,
+    "comments": 760,
+    "top_points": {
+     "id": 50425017,
+     "title": "bootvine：把 Linux 开机时刷屏的日志换成一棵实时的 systemd 任务树",
+     "value": 358,
+     "comments": 143
+    },
+    "top_comments": {
+     "id": 50473231,
+     "title": "数据中心需要电力，低收入农村居民买单",
+     "value": 171
+    },
+    "top_brief": {
+     "id": 50467460,
+     "title": "Chips and Cheese 专访 AMD 的 Mike Clark，聊 Zen 6",
+     "value": 181,
+     "comments": 2
+    }
+   },
+   "stories": [
+    {
+     "id": 50425017,
+     "title": "bootvine：把 Linux 开机时刷屏的日志换成一棵实时的 systemd 任务树",
+     "title_en": "A live tree of systemd jobs on the boot console",
+     "url": "https://codeberg.org/wvhulle/bootvine",
+     "hn": "https://news.ycombinator.com/item?id=50425017",
+     "points": 358,
+     "comments": 143,
+     "summary": [
+      "Willem Vanhulle 在 Codeberg 发布 bootvine，灵感来自 nix-output-monitor：它在开机控制台上用仍在等待的 systemd 单元组成的树，取代滚动的内核和 systemd 日志，并在树留出的空间里显示最慢的已完成单元时间线。作者说，他做这个是因为受够了多数发行版开机时一堵墙似的日志，刷得太快看不清，也从来不知道系统在干什么。",
+      "它也能跟踪关机过程，原地回答 LUKS 解锁之类的密码提示，并在单元失败时显示原因和最后几行日志。要求 systemd 246 以上、libdbus、libsystemd 和一个虚拟终端，许可证 GPL-3.0；用 Nix 可以一条命令在 QEMU 里启动一台带慢服务和失败服务的示例机器试用。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "nubinetwork",
+       "stance": "我开机才两秒",
+       "zh": "看起来很酷。但如果我没看错截图，他们从 initrd 到完全加载用了 12 秒。我的笔记本开机快得多，这 12 秒在我这儿大概两秒，渲染这个界面可能比直接把文本喷到终端还慢。",
+       "en": "it took them 12 seconds from initrd to fully loaded.",
+       "hn": "https://news.ycombinator.com/item?id=50465495",
+       "id": 50465495,
+       "replies": 20
+      },
+      {
+       "user": "tkel",
+       "stance": "已有树状视图",
+       "zh": "systemctl status 已经能给你一棵树了，只是不是实时的。",
+       "en": "`systemctl status` gives you a tree already, just not live view",
+       "hn": "https://news.ycombinator.com/item?id=50466080",
+       "id": 50466080,
+       "replies": 7
+      },
+      {
+       "user": "baq",
+       "stance": "30 年来的改进",
+       "zh": "太喜欢了！30 年来终于有改进了。不过也没理由不用真正的图形来画这棵树。",
+       "en": "finally an improvement after 30 years.",
+       "hn": "https://news.ycombinator.com/item?id=50465614",
+       "id": 50465614,
+       "replies": 5
+      }
+     ],
+     "kicker": "硬件 · Linux"
+    },
+    {
+     "id": 50428619,
+     "title": "生命起源于 RNA 世界吗？一个 45 核苷酸的小分子带来新希望，但疑点仍多",
+     "title_en": "Did Life Begin in an RNA World?",
+     "url": "https://www.quantamagazine.org/did-life-begin-in-an-rna-world-20261109/",
+     "hn": "https://news.ycombinator.com/item?id=50428619",
+     "points": 81,
+     "comments": 75,
+     "summary": [
+      "Quanta 杂志 Philip Ball 梳理「RNA 世界」假说：现代细胞里复制 DNA、转录、合成蛋白质每一步都离不开蛋白质，形成先有鸡还是先有蛋的困境；80 年代末发现部分 RNA 能当催化剂（核酶），让 RNA 同时承担遗传和催化的设想变得可信。但 2019 年 Gerald Joyce 团队发现，人工进化中每轮突变大多会毁掉催化能力；而且他们的核酶有数百个核苷酸，实验中自发组装出的 RNA 只有 10–15 个。",
+      "转机来自 Philipp Holliger 团队：他们在 20–40 核苷酸的小 RNA 中找到能抓住另一条 RNA 并复制它的 45 核苷酸分子 QT45，还在约 10 万亿个分子里找到另外两个类似分子，说明这种能力可能并不罕见。但文章指出，早期地球是否有适合的环境尚不清楚，而且生命不只需要自我复制，还需要某种代谢。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "pfdietz",
+       "stance": "原料汤不可信",
+       "zh": "我对 RNA 世界设想及其实验的最大疑问是，它们跑在一锅看起来不太可信的汤里。RNA 是由纯净、高能且本身相当复杂的分子造出来的，这种纯单体的汤不会在没有生命的情况下自然出现。",
+       "en": "This soup of pure monomers isn't something that just arises naturally in the absence of life.",
+       "hn": "https://news.ycombinator.com/item?id=50466209",
+       "id": 50466209,
+       "replies": 29
+      },
+      {
+       "user": "Neb_OoL",
+       "stance": "难在复制化学",
+       "zh": "从益生元化学到 RNA 世界最难的一步，是用一种能支持 RNA 复制的方式来实现。这正是该领域目前的难点：找到既能准确复制 RNA、产率足够高，又能在原始细胞里进行的化学反应。",
+       "en": "This is where the hard part of the field is currently",
+       "hn": "https://news.ycombinator.com/item?id=50463393",
+       "id": 50463393,
+       "replies": 12
+      },
+      {
+       "user": "alphasm",
+       "stance": "自催化集合呢",
+       "zh": "为什么 Stuart Kauffman 的封闭自催化集合设想，远没有 RNA 起源假说那样受关注？",
+       "en": "Is there a reason why the alternative idea of closed autocatalytic sets from Stuart Kauffman doesn't get nearly as much attention",
+       "hn": "https://news.ycombinator.com/item?id=50463715",
+       "id": 50463715,
+       "replies": 8
+      }
+     ],
+     "kicker": "科学 · 生命起源"
+    },
+    {
+     "id": 50472490,
+     "title": "鲁宾天文台发现矮行星候选 2026 ED138：距太阳 46 个天文单位，绕一圈约 281 年",
+     "title_en": "Dwarf planet candidate appears which takes roughly 280 years to orbit our sun",
+     "url": "https://www.smithsonianmag.com/smart-news/astronomers-found-a-mysterious-object-orbiting-far-beyond-pluto-it-could-be-a-new-dwarf-planet-hidden-in-our-solar-system-180989857/",
+     "hn": "https://news.ycombinator.com/item?id=50472490",
+     "points": 181,
+     "comments": 88,
+     "summary": [
+      "史密森尼杂志报道，史密森尼天体物理台的 Matthew Holman 和 Kevin Napier 在用自编程序筛查 Vera C. Rubin 天文台数据时，已找到 2000 多个新的外太阳系小天体，其中一个显得特别大。他们与鲁宾太阳系负责人 Mario Jurić 在过去十年的旧图像里一再找到它，甚至在哈佛保存的 1937 年照相底片上也找到了。它距太阳约为日地距离的 46 倍，公转一周 281.1 年，轨道面倾斜近 25 度。",
+      "估计直径在约 370 到 930 英里之间，很可能大到足以成为圆形、即矮行星，但仅凭亮度无法确定，需要红外观测或掩星测量，ALMA 等望远镜正在尝试。目前公认的矮行星只有冥王星、阎神星、鸟神星、妊神星和谷神星五颗。Holman 说，火星或地球大小的天体藏在外面「也没被排除」。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "ecshafer",
+       "stance": "冥王星降级没错",
+       "zh": "当年把冥王星「降级」时有很多负面报道和议论。但显然这是对的，创立「矮行星」这一类也是对的。有谷神星在，冥王星当行星就很难说得通，而阎神星、妊神星、鸟神星和这些可能的矮行星更是彻底定了案。",
+       "en": "But its obviously true that it was the right move",
+       "hn": "https://news.ycombinator.com/item?id=50473142",
+       "id": 50473142,
+       "replies": 57
+      },
+      {
+       "user": "ddahlen",
+       "stance": "算轨道的老本行",
+       "zh": "感兴趣的话，这里是它的轨道，我以前的工作就是给小行星和彗星算轨道。这是个大家伙。",
+       "en": "my old day job was to compute orbits for asteroids and comets.",
+       "hn": "https://news.ycombinator.com/item?id=50474001",
+       "id": 50474001,
+       "replies": 7
+      },
+      {
+       "user": "lairv",
+       "stance": "谈费米悖论太早",
+       "zh": "这正是我认为现在谈费米悖论还太早的原因之一。我们对宇宙中身边有什么仍知之甚少。",
+       "en": "This is one of the reasons I think it's too early to talk about the Fermi paradox.",
+       "hn": "https://news.ycombinator.com/item?id=50475811",
+       "id": 50475811,
+       "replies": 0
+      }
+     ],
+     "kicker": "科学 · 天文"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50465453,
+     "title": "研究者发现每 8 分钟发出一次射电信号的罕见恒星系统",
+     "title_en": "Researchers discover rare star system that emits radio signals every 8 minutes",
+     "url": "https://www.curtin.edu.au/news/media-release/researchers-discover-rare-star-system-that-emits-radio-signals-every-eight-minutes/",
+     "hn": "https://news.ycombinator.com/item?id=50465453",
+     "points": 116,
+     "comments": 58
+    },
+    {
+     "id": 50467460,
+     "title": "Chips and Cheese 专访 AMD 的 Mike Clark，聊 Zen 6",
+     "title_en": "Talking Zen 6 with Mike Clark at AMD In-Depth",
+     "url": "https://chipsandcheese.com/p/talking-zen-6-with-mike-clark-at",
+     "hn": "https://news.ycombinator.com/item?id=50467460",
+     "points": 181,
+     "comments": 2
+    },
+    {
+     "id": 50431971,
+     "title": "让 40 欧元的 USB-C 扩展坞当 Switch 2 底座",
+     "title_en": "Making a €40 USB-C hub work as a Nintendo Switch 2 dock",
+     "url": "http://blog.nozomi.space/posts/sw2_dock/",
+     "hn": "https://news.ycombinator.com/item?id=50431971",
+     "points": 146,
+     "comments": 56
+    },
+    {
+     "id": 50468720,
+     "title": "在 Linux 上把四个 32GB 可调整 BAR 塞到 PCIe 交换芯片后面",
+     "title_en": "Fitting Four 32 GB Resizable Bars Behind a PCIe Switch on Linux",
+     "url": "https://doug.sh/posts/gpu-bars-behind-a-pcie-switch/",
+     "hn": "https://news.ycombinator.com/item?id=50468720",
+     "points": 77,
+     "comments": 24
+    },
+    {
+     "id": 50462375,
+     "title": "陶哲轩：Lean Grimoire",
+     "title_en": "Lean Grimoire",
+     "url": "https://terrytao.wordpress.com/2026/11/11/lean-grimoire/",
+     "hn": "https://news.ycombinator.com/item?id=50462375",
+     "points": 61,
+     "comments": 11
+    },
+    {
+     "id": 50467305,
+     "title": "电动船舶电池有望更紧凑、更凉快",
+     "title_en": "Electric ship batteries promise compact, cooler power",
+     "url": "https://spectrum.ieee.org/electric-ship-batteries",
+     "hn": "https://news.ycombinator.com/item?id=50467305",
+     "points": 59,
+     "comments": 77
+    },
+    {
+     "id": 50412715,
+     "title": "如何制作带高频起弧的 CNC 等离子切割机",
+     "title_en": "How to make a CNC plasma cutter with high-frequency start",
+     "url": "https://incoherency.co.uk/blog/stories/cnc-plasma-cutter.html",
+     "hn": "https://news.ycombinator.com/item?id=50412715",
+     "points": 47,
+     "comments": 13
+    },
+    {
+     "id": 50459508,
+     "title": "用放射性碳测定中世纪人骨年代的几点警告",
+     "title_en": "Words of warning about radiocarbon dating medieval human bones",
+     "url": "https://www.nature.com/articles/s40494-026-02958-x",
+     "hn": "https://news.ycombinator.com/item?id=50459508",
+     "points": 51,
+     "comments": 6
+    },
+    {
+     "id": 50473231,
+     "title": "数据中心需要电力，低收入农村居民买单",
+     "title_en": "Data centers need power – lower income, rural residents pay the price",
+     "url": "https://news.cornell.edu/stories/2026/11/data-centers-need-power-lower-income-rural-residents-pay-price",
+     "hn": "https://news.ycombinator.com/item?id=50473231",
+     "points": 167,
+     "comments": 171
+    },
+    {
+     "id": 50435712,
+     "title": "Stingray 的鱼类激光（灭海虱技术）",
+     "title_en": "Stingray Fish Laser",
+     "url": "https://www.stingray.no/en/technology/",
+     "hn": "https://news.ycombinator.com/item?id=50435712",
+     "points": 33,
+     "comments": 36
+    }
+   ]
+  },
+  {
+   "name": "文化与商业",
+   "en": "Culture & Business",
+   "page": 5,
+   "stats": {
+    "items": 13,
+    "points": 3312,
+    "comments": 2607,
+    "top_points": {
+     "id": 50459703,
+     "title": "华尔街日报：英伟达准备撤换黄仁勋",
+     "value": 1213,
+     "comments": 1629
+    },
+    "top_comments": {
+     "id": 50459703,
+     "title": "华尔街日报：英伟达准备撤换黄仁勋",
+     "value": 1629
+    },
+    "top_brief": {
+     "id": 50459703,
+     "title": "华尔街日报：英伟达准备撤换黄仁勋",
+     "value": 1213,
+     "comments": 1629
+    }
+   },
+   "stories": [
+    {
+     "id": 50459745,
+     "title": "93% 的油漆飞溅都是合法的 Perl 程序（2019 愚人节论文）",
+     "title_en": "93% of paint splatters are valid Perl programs (2019)",
+     "url": "https://www.mcmillen.dev/sigbovik/",
+     "hn": "https://news.ycombinator.com/item?id=50459745",
+     "points": 565,
+     "comments": 79,
+     "summary": [
+      "Colin McMillen 2019 年在愚人节学术会议 SIGBOVIK 发表的论文，自称要回答编程语言界的一个「长期悬而未决的问题」：能不能往墙上抹油漆而不写出合法的 Perl？答案是能：他用 OCR 识别油漆飞溅图片，发现「仅仅」93% 能被解析为合法 Perl，并展示了 7 个不是合法 Perl 的例子。",
+      "论文获得了 SIGBOVIK 的「无意参与奖」，颁给附带了真实实验产物的论文。页面附有 100 张图片数据集和每张图对应的 Perl 源码；勘误里还举例，一张飞溅被识别为 lerzfijglpFiji-j，在 Perl 里求值为数字 0。这篇此前已在 2021、2024 年两度上过 HN 首页，评论区有人做了个可交互的在线版。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "layer8",
+       "stance": "Java 也差不多",
+       "zh": "稍微相关：Java properties 文件唯一可能不合法的情况，是含有非法的 Unicode 转义序列。解析完 Unicode 转义之后，任何字符序列都是合法的 properties 文件。",
+       "en": "the only way for a Java properties file to be invalid is if it contains an invalid Unicode escape sequence",
+       "hn": "https://news.ycombinator.com/item?id=50460402",
+       "id": 50460402,
+       "replies": 9
+      },
+      {
+       "user": "jellevdv",
+       "stance": "在线试玩版",
+       "zh": "我做了个交互画布，用 Tesseract 和 WebPerl 来试。它居然真的能用，挺好笑的。",
+       "en": "pretty funny that it actually works",
+       "hn": "https://news.ycombinator.com/item?id=50468634",
+       "id": 50468634,
+       "replies": 0
+      },
+      {
+       "user": "snitty",
+       "stance": "SIGBOVIK 总是好玩",
+       "zh": "SIGBOVIK 的论文几乎总是让人开心。",
+       "en": "SIGBOVIK papers are almost always a delight",
+       "hn": "https://news.ycombinator.com/item?id=50460625",
+       "id": 50460625,
+       "replies": 0
+      }
+     ],
+     "kicker": "文化 · 程序员幽默"
+    },
+    {
+     "id": 50467618,
+     "title": "从未发行的《雷神之锤 4》资料片，被开源引擎 openQ4 做完并可游玩",
+     "title_en": "Abandoned Quake 4 expansion finished by modders and now playable",
+     "url": "https://www.moddb.com/mods/openq4/downloads/openq4-0141-windows-x64",
+     "hn": "https://news.ycombinator.com/item?id=50467618",
+     "points": 233,
+     "comments": 80,
+     "summary": [
+      "ModDB 上 openQ4 0.14.1「Awakening 版」的发布说明写道：Raven Software 和 Ritual Entertainment 曾为《雷神之锤 4》做过一部从未发行的资料片，Justin Marshall 找回并公开了它，openQ4 现在可以在原版战役旁边游玩，全部 13 张地图运行在 openQ4 自己的引擎和游戏代码上，不加载 alpha 版的 DLL；alpha 版里坏掉的部分，如 Valkaryne 结局、海滩死光炮塔、永远不会动的 Retch 怪，都被修好。",
+      "openQ4 不附带资料片内容，需要玩家自备；你还得有一份 Steam 或 GOG 上的原版。这一版还带来稳定的阴影贴图、Windows 上的 Vulkan、重做的界面、更聪明的机器人以及实验性的安卓版和 VR。说明也坦承资料片基于未完成的 alpha 内容，完整通关测试仍在进行。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "lavendermon",
+       "stance": "怀旧更便宜了",
+       "zh": "我不在乎是不是 AI 完成的，只是享受如今唤起怀旧比以往任何时候都更容易、更便宜。",
+       "en": "I have no qualms about whether AI finished this",
+       "hn": "https://news.ycombinator.com/item?id=50468560",
+       "id": 50468560,
+       "replies": 21
+      },
+      {
+       "user": "imbusy111",
+       "stance": "本来就不好玩",
+       "zh": "它本来就不是个好游戏。几年前我试过，感觉非常拖沓，绝对不是值得现在去玩的经典。",
+       "en": "It wasn't a good game though.",
+       "hn": "https://news.ycombinator.com/item?id=50468745",
+       "id": 50468745,
+       "replies": 8
+      },
+      {
+       "user": "johnnyApplePRNG",
+       "stance": "像遗作专辑",
+       "zh": "这感觉不太对……就像发行原作者从没完成、也不打算完成的遗作专辑。",
+       "en": "like releasing post-humous musical albums the original artist never finished or intended to finish.",
+       "hn": "https://news.ycombinator.com/item?id=50468848",
+       "id": 50468848,
+       "replies": 3
+      }
+     ],
+     "kicker": "文化 · 游戏"
+    },
+    {
+     "id": 50470488,
+     "title": "Show HN：300 美元的绣花机要订阅才能用，于是我自己写了个软件",
+     "title_en": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
+     "url": "https://github.com/simpsoka/zigzag",
+     "hn": "https://news.ycombinator.com/item?id=50470488",
+     "points": 284,
+     "comments": 122,
+     "summary": [
+      "Show HN 帖子标题说，作者 300 美元买的绣花机需要订阅，于是自己做了一个应用。项目 ZigZag 是用 Rust 写的可视化刺绣编辑器，内置 MCP 支持，让 AI 智能体可以和你一起创建、编辑图案：把 SVG 转成针迹，在编辑器里微调，导出 PES、DST、EXP、JEF、VP3 等格式，或者通过蓝牙直接发送到兄弟（Brother）Skitch PP1 绣花机。",
+      "它支持塌塌米填充、缎面柱、行走针等针法，提供 Mac 和 Windows 下载，也有命令行工具。评论区把它看作 AI 让普通人摆脱厂商锁定的例子，有人提到类似的浏览器应用和 Inkscape 插件 InkStitch。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "spdustin",
+       "stance": "我爱这样的未来",
+       "zh": "我猜重活是 Claude 干的……如果是这样，这是大模型让用户不仅能自己挠痒，还向路过的人展示这有多爽的最好例子之一。你的应用代表了一个我这个老人家真心喜欢的未来。",
+       "en": "Your app represents a future that I, an old, actually love.",
+       "hn": "https://news.ycombinator.com/item?id=50472665",
+       "id": 50472665,
+       "replies": 47
+      },
+      {
+       "user": "gregsadetsky",
+       "stance": "刺绣界的荒唐",
+       "zh": "PE-150 很能说明刺绣界的荒唐和悲哀：今天 eBay 上 100 美元就能买到完全能用的这种机器，却被卖掉或丢弃，因为它们用专有卡带存专有数据，没人想折腾。",
+       "en": "The PE-150 is a great example of the absurdity/sadness of the embroidery world",
+       "hn": "https://news.ycombinator.com/item?id=50476215",
+       "id": 50476215,
+       "replies": 0
+      },
+      {
+       "user": "rocmcd",
+       "stance": "也看看 InkStitch",
+       "zh": "对这个领域感兴趣的人，我还推荐 InkStitch，它是 Inkscape 的插件，能把 SVG 导出成绣花机能用的文件格式。",
+       "en": "I'd also recommend looking at InkStitch",
+       "hn": "https://news.ycombinator.com/item?id=50473413",
+       "id": 50473413,
+       "replies": 2
+      }
+     ],
+     "kicker": "文化 · 硬件自由"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50471731,
+     "title": "微软 365 服务降级",
+     "title_en": "Service degradation on Microsoft 365",
+     "url": "https://status.cloud.microsoft/",
+     "hn": "https://news.ycombinator.com/item?id=50471731",
+     "points": 441,
+     "comments": 421
+    },
+    {
+     "id": 50459703,
+     "title": "华尔街日报：英伟达准备撤换黄仁勋",
+     "title_en": "Nvidia is preparing to oust Jensen Huang",
+     "url": "https://www.wsj.com/business/nvidia-is-preparing-to-oust-nvidia-ceo-jensen-huang-30f421ad",
+     "hn": "https://news.ycombinator.com/item?id=50459703",
+     "points": 1213,
+     "comments": 1629
+    },
+    {
+     "id": 50473190,
+     "title": "路透社：消息人士称前英伟达 CEO 黄仁勋与第二名员工有过恋情",
+     "title_en": "Former Nvidia CEO Huang had a relationship with a second employee, sources say",
+     "url": "https://www.reuters.com/technology/former-nvidia-ceo-huang-had-relationship-with-second-employee-sources-say-2026-11-12/",
+     "hn": "https://news.ycombinator.com/item?id=50473190",
+     "points": 95,
+     "comments": 97
+    },
+    {
+     "id": 50471621,
+     "title": "纽约时报：新加坡称美国在涉嫌间谍公司调查上不配合",
+     "title_en": "Singapore Says U.S. Not Helpful on Investigation into Suspected Spy's Company",
+     "url": "https://www.nytimes.com/2026/11/12/business/nvidia-megaspeed-alice-huang.html",
+     "hn": "https://news.ycombinator.com/item?id=50471621",
+     "points": 148,
+     "comments": 53
+    },
+    {
+     "id": 50461786,
+     "title": "我发现微软 Defender 未经询问上传了我未发布的软件",
+     "title_en": "I caught Microsoft Defender uploading my unreleased software without asking",
+     "url": "https://garrettstimpson.ca/posts/2026/11/11/caught-microsoft-red-handed-with-hodometer/",
+     "hn": "https://news.ycombinator.com/item?id=50461786",
+     "points": 61,
+     "comments": 27
+    },
+    {
+     "id": 50463540,
+     "title": "我在做一个开源的 Linux 弹球模拟引擎",
+     "title_en": "I'm Working on a FOSS Linux Pinbal Simulation Engine",
+     "url": "https://www.getlazarus.org/forums/topic/17/",
+     "hn": "https://news.ycombinator.com/item?id=50463540",
+     "points": 118,
+     "comments": 39
+    },
+    {
+     "id": 50438958,
+     "title": "Legocam：我 2000 年的乐高摄像头，在新款 Mac 上跑起来了",
+     "title_en": "Legocam: My Lego webcam from 2000, working on a modern Mac",
+     "url": "https://blog.benjamin.ie/legocam",
+     "hn": "https://news.ycombinator.com/item?id=50438958",
+     "points": 49,
+     "comments": 38
+    },
+    {
+     "id": 50473760,
+     "title": "工厂关闭在即，梅赛德斯-奔驰暂停在德国投资",
+     "title_en": "Mercedes-Benz halts German investments as plant closures loom",
+     "url": "https://www.reuters.com/world/mercedes-benz-halts-german-investments-plant-closures-loom-2026-11-12/",
+     "hn": "https://news.ycombinator.com/item?id=50473760",
+     "points": 24,
+     "comments": 7
+    },
+    {
+     "id": 50468766,
+     "title": "Meta 和 TikTok 向成瘾青少年支付的保密和解金",
+     "title_en": "The Confidential Payments Meta and TikTok Made to Addicted Teens",
+     "url": "https://www.bloomberg.com/news/articles/2026-11-12/meta-tiktok-payouts-reveal-cost-to-settle-social-media-addiction-suits",
+     "hn": "https://news.ycombinator.com/item?id=50468766",
+     "points": 26,
+     "comments": 2
+    },
+    {
+     "id": 50420905,
+     "title": "斯拉夫世界出土：Marian Wawrzeniecki 的新异教绘画（1891–1923）",
+     "title_en": "Slavdom Unearthed: Marian Wawrzeniecki's Neopagan Paintings (1891–1923)",
+     "url": "https://publicdomainreview.org/collection/marian-wawrzeniecki/",
+     "hn": "https://news.ycombinator.com/item?id=50420905",
+     "points": 55,
+     "comments": 13
+    }
+   ]
+  }
+ ],
+ "quote_of_day": {
+  "user": "inanutshellus",
+  "id": 50473697,
+  "hn": "https://news.ycombinator.com/item?id=50473697",
+  "story_id": 50470488,
+  "story": "Show HN：300 美元的绣花机要订阅才能用，于是我自己写了个软件",
+  "zh": "下一步是什么？我的打印机允许我用自己的墨水？天哪？又回到狂野西部了，伙计。",
+  "en": "What's next? My printer allowing me to use my own ink? OMG? It's the Wild West again, man."
+ },
+ "stats": {
+  "snapshot": "2026-11-13T08:19:06+08:00",
+  "front_page_count": 90,
+  "with_numbers": 83,
+  "flagged_or_dupe": 7,
+  "top_points": {
+   "id": 50467087,
+   "title": "黄仁勋辞去英伟达 CEO，即刻生效；CFO 克雷斯暂代，董事会首设独立主席",
+   "value": 2806,
+   "comments": 2663
+  },
+  "top_comments": {
+   "id": 50467087,
+   "title": "黄仁勋辞去英伟达 CEO，即刻生效；CFO 克雷斯暂代，董事会首设独立主席",
+   "value": 2663,
+   "comments": 2663
+  },
+  "second_comments": {
+   "id": 50459703,
+   "title": "华尔街日报：英伟达准备撤换黄仁勋",
+   "value": 1629,
+   "comments": 1629
+  },
+  "over_500": 5,
+  "over_300": 14,
+  "over_100": 33,
+  "show_hn": 8,
+  "total_points": 14648,
+  "total_comments": 9347,
+  "hottest_ratio": {
+   "id": 50459703,
+   "title": "华尔街日报：英伟达准备撤换黄仁勋",
+   "value": 1.34,
+   "comments": 1629,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
