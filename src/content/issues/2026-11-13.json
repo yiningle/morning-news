@@ -1,0 +1,1308 @@
+{
+ "date": "2026-11-13",
+ "published_at": "2026-11-14T08:18:23+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-11-13",
+ "schema_version": 2,
+ "lead": {
+  "id": 50489641,
+  "title": "FAA 突发全国停飞令：所有离港航班原地待命，官方初步指向通信故障",
+  "title_en": "FAA issues national ground stop",
+  "url": "https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247",
+  "hn": "https://news.ycombinator.com/item?id=50489641",
+  "points": 1129,
+  "comments": 682,
+  "summary": [
+   "据 NBC 新闻报道，美国联邦航空管理局（FAA）在美东时间 11 月 13 日周五下午 3:54 发布全国地面停飞令，要求所有离港航班「原地待命，直至另行通知」，理由只有一句「出于非常情况和安全原因」；入境国际航班则「视情况逐一处理」。按 Flightradar24 的数据，发令时有 4042 架飞往美国的航班正在空中。国土安全部部长 Markwayne Mullin 表示「目前没有迹象」显示有恶意因素，「就目前而言」是一次电信故障；多个机构的官员称没看到通常与网络攻击相关的活动，也没有迹象表明此事与当天的微软大故障有关。",
+   "达特茅斯学院航空物流学者 Vikrant Vaze 估计约有 30 万到 40 万名旅客滞留；到傍晚 6 点，华盛顿里根国家机场已满，芝加哥奥黑尔也接近饱和，飞机没地方停。为 FAA 新空管系统 SMART 供货的 AI 初创公司 Air Space Intelligence 发声明称停飞与其软件无关。本帖 1129 点赞、682 条评论，是当天点赞和评论双料第一；评论区一边贴出 L3Harris 通信网络出故障的报道，一边追问是不是刚宣布全国推广的 AI 空管工具惹的祸。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "fooey",
+    "stance": "线索指向 L3Harris",
+    "zh": "开始看到一些解释了。华尔街日报：据知情人士透露，故障似乎影响了由 L3Harris Technologies 负责的一个电信网络，这个网络承载着管制员与飞行员通话所用的关键无线电频率。",
+    "en": "The outage appears to be affecting a telecommunications network overseen by L3Harris Technologies",
+    "hn": "https://news.ycombinator.com/item?id=50491855",
+    "id": 50491855,
+    "replies": 10
+   },
+   {
+    "user": "sixhobbits",
+    "stance": "怀疑 AI 空管",
+    "zh": "是昨天刚宣布在全国推广的空管 AI 搞砸了？",
+    "en": "Botched rollout of AI for ATC announced yesterday as rolling out nationwide?",
+    "hn": "https://news.ycombinator.com/item?id=50490935",
+    "id": 50490935,
+    "replies": 52
+   },
+   {
+    "user": "amluto",
+    "stance": "2004 年也发生过",
+    "zh": "我不知道这次是不是微软的锅，但 2004 年 9 月 14 日美国西南部大片空管瘫痪时，我正好在天上。",
+    "en": "I was in the air on September 14, 2004 when a substantial portion of the southwestern US's air traffic control went down",
+    "hn": "https://news.ycombinator.com/item?id=50490420",
+    "id": 50490420,
+    "replies": 11
+   }
+  ],
+  "kicker": "要闻 · 航空",
+  "tag": "当日点赞第一"
+ },
+ "side": [
+  {
+   "id": 50477231,
+   "title": "WIRED：英伟达员工内部请愿，要求让黄仁勋回来",
+   "title_en": "Nvidia employees petition to bring back Jensen Huang",
+   "url": "https://www.wired.com/story/nvidia-employees-petition-for-jensen-huangs-return/",
+   "hn": "https://news.ycombinator.com/item?id=50477231",
+   "points": 788,
+   "comments": 645,
+   "summary": [
+    "WIRED 看到的内部材料显示，在黄仁勋辞职前，一位资深工程师在公司内部「意见箱」发帖，请董事会行动前考虑员工感受，这帖已有 1600 多条评论，不少人要求董事会设法让他回来，比如「如果你相信使命，就把老板请回来」「人都会犯错，他需要第二次机会」。还有员工发全员邮件要求公开他离职的内情。",
+    "报道回顾：63 岁的黄仁勋周日在给员工的邮件中承认「对妻子不忠」，此前有报道称他与一名疑似中国情报人员有染；周四董事会宣布他辞职前，又有报道称他与一名直属下属有恋情，之后路透社再报一名员工。报道称这场风波已让英伟达市值蒸发 1 万亿美元，并引发国会议员和 FBI 调查。本帖 645 条评论，当日第二。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "soundworlds",
+     "stance": "这是模式不是失误",
+     "zh": "如果只是一次外遇，这话还说得过去。但据称已经三次而且还在增加，其中包括一名疑似来自对手国家的间谍，还可能知情向对手国家违法销售。",
+     "en": "It is allegedly 3 and counting",
+     "hn": "https://news.ycombinator.com/item?id=50477536",
+     "id": 50477536,
+     "replies": 303
+    },
+    {
+     "user": "dantillberg",
+     "stance": "回不来了",
+     "zh": "黄仁勋短期内回不来。你可以淡化外遇，也可以认为「间谍」说法夸大或错误；但他已承认与一家看似专为规避 ITAR 管制而存在的公司 CEO 长期有染。",
+     "en": "Jensen's not coming back anytime soon.",
+     "hn": "https://news.ycombinator.com/item?id=50478397",
+     "id": 50478397,
+     "replies": 20
+    },
+    {
+     "user": "joegibbs",
+     "stance": "能赚钱就行？",
+     "zh": "我理解他们的想法。CEO 的职责是做道德完人，还是做大业务、给股东回报？……另一方面，潜在的间谍和腐败问题确实让人担心。",
+     "en": "On the other hand the potential spy stuff and corruption is quite worrying.",
+     "hn": "https://news.ycombinator.com/item?id=50478004",
+     "id": 50478004,
+     "replies": 50
+    }
+   ],
+   "kicker": "要闻 · 芯片",
+   "tag": "当日评论第二"
+  },
+  {
+   "id": 50486482,
+   "title": "微软 365 宕机当天，LibreOffice 官号发推：「我们一年 365 天都能用」",
+   "title_en": "LibreOffice actually works 365 days a year",
+   "url": "https://twitter.com/LibreOffice/status/2121205272479998268",
+   "hn": "https://news.ycombinator.com/item?id=50486482",
+   "points": 801,
+   "comments": 250,
+   "summary": [
+    "LibreOffice 官方 X 账号 11 月 13 日只发了一句话：「LibreOffice actually works 365 days a year. Just saying.」（LibreOffice 实际上一年 365 天都能用，随口一说。）页面显示浏览量约 120 万。这条推文借的是当天微软 365 长时间宕机的势。",
+    "评论区并不全是叫好：有人讲起 OpenOffice 当年「周二不能打印」的古早 bug，有人提醒离线版微软 Office 一直好好的，更多人在讨论 LibreOffice 为什么始终没能流行，以及它启动慢、界面难看的老问题。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "jdlyga",
+     "stance": "该学 Blender",
+     "zh": "如果 LibreOffice 已经够好，它早就流行了，GIMP 也一样。这些项目得走 Blender 的路：它原本也是笨拙的开源替代品，后来彻底改造了界面，现在把竞争对手甩在身后。",
+     "en": "These projects need to take the same route as Blender did.",
+     "hn": "https://news.ycombinator.com/item?id=50486761",
+     "id": 50486761,
+     "replies": 44
+    },
+    {
+     "user": "kencausey",
+     "stance": "离线 Office 也没事",
+     "zh": "话是对的，我也支持，但值得一提的是，微软 Office 的离线版本一直都没问题，包括这周刚更新的 2024 版。",
+     "en": "offline versions of Microsoft Office are and have been just fine",
+     "hn": "https://news.ycombinator.com/item?id=50486698",
+     "id": 50486698,
+     "replies": 41
+    },
+    {
+     "user": "fweimer",
+     "stance": "周二不打印",
+     "zh": "嗯，OpenOffice 以前周二不能打印：「好神奇的 bug！我妻子一直抱怨 OpenOffice 周二永远打印不了，然后她演示给我看，真的不行。」",
+     "en": "OpenOffice wouldn't print on Tuesdays",
+     "hn": "https://news.ycombinator.com/item?id=50487193",
+     "id": 50487193,
+     "replies": 31
+    }
+   ],
+   "kicker": "要闻 · 软件"
+  },
+  {
+   "id": 50481187,
+   "title": "Claude 登录故障约两小时：claude.ai、Claude Code、控制台和 Cowork 一度受影响",
+   "title_en": "Elevated errors on claude.ai, Claude Code, and platform.claude.com",
+   "url": "https://status.claude.com/incidents/nn11wk485zfn",
+   "hn": "https://news.ycombinator.com/item?id=50481187",
+   "points": 482,
+   "comments": 382,
+   "summary": [
+    "Claude 状态页记录：UTC 11 月 13 日 09:58（台北时间 17:58）开始调查用户无法登录 claude.ai 和 Claude Code 的问题；11:05 部署修复并观察恢复；11:58（台北时间 19:58）宣布 claude.ai 和 Claude Cowork 的问题已解决。受影响的服务包括 claude.ai、Claude 控制台（platform.claude.com）、Claude Code 和 Claude Cowork。状态页没有写原因。",
+    "同一天首页另有一条「Claude Is Down」（194 点赞）。评论区不少人碰到 OAuth 登录失败，并猜测与同日的微软大故障有关，但这只是网友推测，状态页没有这样说。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "Topfi",
+     "stance": "大人的雪假",
+     "zh": "看你干什么工作，这要么是成年人版的雪天停课，要么是很久以来压力最大的一天。",
+     "en": "this is either the adult equivalent of a snow day",
+     "hn": "https://news.ycombinator.com/item?id=50481273",
+     "id": 50481273,
+     "replies": 200
+    },
+    {
+     "user": "xamde",
+     "stance": "OAuth 报错",
+     "zh": "很多 Claude 会话突然要求重新登录，一开始还行，现在提示「OAuth 请求失败，暂时无法认证，请重试」。这会不会是微软故障的连带影响？",
+     "en": "Can this be fall-out from the Microsoft outage?",
+     "hn": "https://news.ycombinator.com/item?id=50481255",
+     "id": 50481255,
+     "replies": 24
+    },
+    {
+     "user": "dmix",
+     "stance": "连接器也挂了",
+     "zh": "值得注意的是这次连 MCP 也挂了，状态页上叫「连接器」。这影响的是用 Claude 访问 SaaS 应用的企业客户，不只是程序员。",
+     "en": "Notably this brought MCPs down",
+     "hn": "https://news.ycombinator.com/item?id=50484262",
+     "id": 50484262,
+     "replies": 2
+    }
+   ],
+   "kicker": "要闻 · AI 服务"
+  },
+  {
+   "id": 50478609,
+   "title": "微软 Outlook / 365 宕机超 12 小时：服务器健康检查失败，修复「没有按预期生效」",
+   "title_en": "Microsoft Outlook/365 still down after 12 hours",
+   "url": "https://twitter.com/MSFT365Status/status/2121079061774491735",
+   "hn": "https://news.ycombinator.com/item?id=50478609",
+   "points": 458,
+   "comments": 304,
+   "summary": [
+    "微软 365 状态账号的一连串推文显示：起初是美洲用户无法通过多种方式访问 Exchange Online 邮箱，随后确认任何地区都可能受影响；微软说多个区域的部分基础设施负载过高，但原因不是流量增加，而是一批服务器意外下线，压垮了剩下的机器。微软暂停了所有部署、把流量移出受影响设施、重启服务器，并测试一项配置更改来解决服务器通不过自动健康检查的问题。",
+    "帖子标题引用的那条推文说，为改善服务所做的更改「没有按预期生效」，正在寻找其他办法提升容量；微软也表示没找到与故障开始相关的近期变更。评论区在算 SLA 赔偿，也在追问这么大的公司为何十几个小时还没搞清问题。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "nickdothutton",
+     "stance": "复杂度失控",
+     "zh": "微软在资源无限的情况下都跑不好一个托管邮件服务。人们没意识到，前者部分正是后者的结果：没有倒逼机制，复杂度成倍增长，隐性的脆弱不断积累，端到端的理解日渐消失。",
+     "en": "Microsoft is unable to run a reliable hosted email service",
+     "hn": "https://news.ycombinator.com/item?id=50480607",
+     "id": 50480607,
+     "replies": 56
+    },
+    {
+     "user": "magnio",
+     "stance": "只剩三个 9",
+     "zh": "据说光这一次故障，Office 365 今年的可用率就掉到三个 9（本月两个 9）。12 月 31 日前申请，可以拿到相当于 50% 服务费的 SLA 补偿。",
+     "en": "You can claim SLA credit worth 50% service fee",
+     "hn": "https://news.ycombinator.com/item?id=50479700",
+     "id": 50479700,
+     "replies": 14
+    },
+    {
+     "user": "BLKNSLVR",
+     "stance": "令人担忧",
+     "zh": "有多少微软员工在处理这事？全球最大最值钱的公司之一，核心服务挂了这么久，6 个小时前他们似乎还没完全搞懂问题是什么。",
+     "en": "How many Microsoft employees are working on this?",
+     "hn": "https://news.ycombinator.com/item?id=50479629",
+     "id": 50479629,
+     "replies": 67
+    }
+   ],
+   "kicker": "要闻 · 云服务"
+  },
+  {
+   "id": 50474959,
+   "title": "我逆向了家里的 Coway 空气净化器，彻底甩掉厂商云",
+   "title_en": "Reverse engineering my Coway air purifier to ditch the cloud",
+   "url": "https://scottjg.com/posts/2026-11-11-reverse-engineering-my-coway-air-purifier-to-ditch-the-cloud/",
+   "hn": "https://news.ycombinator.com/item?id=50474959",
+   "points": 655,
+   "comments": 193,
+   "summary": [
+    "作者的 Coway Airmega IconS 只能经由厂商云控制，Home Assistant 集成多次因 Coway 封禁、改版 App、改网页布局、服务器宕机而失效，他的账号甚至被封过几周。今年 10 月证书机构 eMudhra 被曝部分私钥参数过弱，加上大模型能几分钟内搭好中间人环境，他决定动手：用树莓派开热点、nftables 转发加 mitmproxy 拦截，发现风扇竟用明文 HTTP 下载亚马逊的根证书，控制走 8883 端口的 MQTT。（文中说 Claude 拒绝帮忙配置拦截，ChatGPT 则照做。）",
+    "最终他发现配网时下发的地址可以随意指定，于是不再需要中间人，直接让风扇连自己的服务器；他据此写了 Home Assistant 自定义集成，用 Web Bluetooth 配网，再桥接到 Apple Home，「晚安」按钮终于能顺带把风扇调到白噪音档。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "Aurornis",
+     "stance": "大模型逆向潮",
+     "zh": "这波大模型辅助逆向最有意思的地方，是看到有多少奇怪又糟糕的设计一直摆在明面上。",
+     "en": "how many weird and poor choices were lying in plain sight",
+     "hn": "https://news.ycombinator.com/item?id=50484284",
+     "id": 50484284,
+     "replies": 20
+    },
+    {
+     "user": "tda",
+     "stance": "我也解放了空调",
+     "zh": "我刚解放了家里的海尔空调。自带但从没用过的 WiFi 模块原来是 ESP32，还留着 rx/tx 焊盘。焊上线、接 USB 转串口，Claude 很快就让 ESPHome 跑起来了。",
+     "en": "I just liberated my Haier AC units.",
+     "hn": "https://news.ycombinator.com/item?id=50487944",
+     "id": 50487944,
+     "replies": 1
+    },
+    {
+     "user": "smusamashah",
+     "stance": "窗口期很短",
+     "zh": "这也意味着用户能夺回硬件的窗口期很短。过一阵，厂商也会用大模型把设备锁得严严实实。",
+     "en": "After a while, these makers will also start using LLMs to lock the devices properly.",
+     "hn": "https://news.ycombinator.com/item?id=50491108",
+     "id": 50491108,
+     "replies": 0
+    }
+   ],
+   "kicker": "要闻 · 硬件"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 2,
+   "stats": {
+    "items": 13,
+    "points": 2303,
+    "comments": 1503,
+    "top_points": {
+     "id": 50474883,
+     "title": "权重取证：DeepSeek、Kimi 等中国模型带着受管制 Blackwell GPU 的「指纹」",
+     "value": 355,
+     "comments": 149
+    },
+    "top_comments": {
+     "id": 50483480,
+     "title": "Gary Marcus：礼来 CEO 也站出来反驳阿莫代伊「十年治愈癌症」等医学说法",
+     "value": 364
+    },
+    "top_brief": {
+     "id": 50477649,
+     "title": "Brave 搜索 API 支持智能体通过 x402 协议付费",
+     "value": 256,
+     "comments": 146
+    }
+   },
+   "stories": [
+    {
+     "id": 50475713,
+     "title": "Edge0 开源 1450 亿参数端侧模型：笔记本上峰值内存 29GB、每秒 80+ token",
+     "title_en": "Edge0-145B: Frontier AI Capabilities on Your Own Computer",
+     "url": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer",
+     "hn": "https://news.ycombinator.com/item?id=50475713",
+     "points": 338,
+     "comments": 104,
+     "summary": [
+      "Edge0 宣布开源 Edge0-145B 和 Edge0-120B，以及统一推理框架和部署工具，称 145B 是全球首个 1450 亿参数的开源端侧模型。官方表格说，它能在兼容的笔记本上本地运行，报告的峰值内存 29GB、解码速度超过每秒 80 个 token；编码、推理和指令遵循成绩可与特定的前沿云端模型竞争，还能自己规划、写代码、调试，并为 3D 场景、游戏、PCB 设计等项目做视觉检查。",
+      "官方也提醒，本地推理省掉的是云端 token 费，硬件和电费仍要钱。评论区对「145B 只占 29GB」的做法最感兴趣：每组 64 个专家共享两个大矩阵，每个专家只保留少量差异参数；也有人怀疑它是某个现有模型的量化改版，或者只能跑在英伟达 Blackwell 上。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "mikeshi42",
+       "stance": "共享矩阵",
+       "zh": "「共享矩阵大幅减少了需要存储和搬运的权重，同时专家数量不变。」1450 亿参数，峰值内存只有 29GB，真是……",
+       "en": "145B parameters with only peak 29GB memory usage",
+       "hn": "https://news.ycombinator.com/item?id=50477029",
+       "id": 50477029,
+       "replies": 14
+      },
+      {
+       "user": "PaulKeeble",
+       "stance": "只认 Blackwell",
+       "zh": "他们发布的是 NVFP4 格式，所以只能用英伟达 Blackwell，推理引擎大概也只支持 CUDA。要看看之后会不会有其他量化版本和标准 GGUF 文件。",
+       "en": "Thy have shipped this as NVFP4 so its Nvidia blackwell only",
+       "hn": "https://news.ycombinator.com/item?id=50476876",
+       "id": 50476876,
+       "replies": 2
+      },
+      {
+       "user": "utopiah",
+       "stance": "普通人有这电脑吗",
+       "zh": "「可在兼容的个人笔记本上运行，例如 MacBook Pro」——我好奇，普通人（不是 HN 上的专业开发者或创业者）真的有这样的个人设备吗？",
+       "en": "do normal people (so not HN professional developers or entrepreneurs) have that",
+       "hn": "https://news.ycombinator.com/item?id=50479601",
+       "id": 50479601,
+       "replies": 8
+      }
+     ],
+     "kicker": "AI · 端侧"
+    },
+    {
+     "id": 50474883,
+     "title": "权重取证：DeepSeek、Kimi 等中国模型带着受管制 Blackwell GPU 的「指纹」",
+     "title_en": "Chinese frontier AI models carry the fingerprint of export-controlled GPUs",
+     "url": "https://unemploymentlabs.com/checkpoint-forensics",
+     "hn": "https://news.ycombinator.com/item?id=50474883",
+     "points": 355,
+     "comments": 149,
+     "summary": [
+      "一份取证分析称，DeepSeek、月之暗面、MiniMax 和蚂蚁集团自 2026 年 4 月以来发布的六个模型，权重里的数值模式与英伟达 Blackwell 硬件吻合，而这些公司更早的模型则符合上一代 Hopper。方法完全基于公开权重：还原模型初始化值的痕迹，再搜索能复现它们的硬件和初始化配置；DeepSeek-V4-Flash 和 Kimi K3 还在实体 Blackwell 芯片上确认了匹配。",
+      "作者强调，指纹说明权重如何生成，支持但不能证明训练也在 Blackwell 上完成；唯一的替代解释是特殊配置的 AMD 硬件（同样受出口管制）。报告也说明，它不能证明芯片在哪里、如何取得，或是否违反了出口管制。评论区指出在海外机房远程租用 GPU 本身合法，也有人质疑作者立场。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "flowerlad",
+       "stance": "远程租用合法",
+       "zh": "中国 AI 公司可以随便用任何英伟达 GPU，只要 GPU 不在中国境内。远程使用新加坡或马来西亚的 GPU，完全符合美国出口管制。",
+       "en": "It is entirely consistent with US export controls",
+       "hn": "https://news.ycombinator.com/item?id=50476283",
+       "id": 50476283,
+       "replies": 42
+      },
+      {
+       "user": "x313",
+       "stance": "注意作者背景",
+       "zh": "这篇的作者是从 OpenAI 出来、由工程师转型的「对华鹰派」网红，尽管排版像论文，但它并不是学术论文。",
+       "en": "this isn't an academic paper despite the theming",
+       "hn": "https://news.ycombinator.com/item?id=50475955",
+       "id": 50475955,
+       "replies": 23
+      },
+      {
+       "user": "GenerWork",
+       "stance": "像是协同攻势",
+       "zh": "过去 24 小时冒出这么多语气相似的文章，太离谱了。很难不把它看作有人想搞垮黄仁勋和英伟达的大范围协同行动。",
+       "en": "It's insane how many articles have dropped in the past 24 hours",
+       "hn": "https://news.ycombinator.com/item?id=50476342",
+       "id": 50476342,
+       "replies": 5
+      }
+     ],
+     "kicker": "AI · 芯片"
+    },
+    {
+     "id": 50483480,
+     "title": "Gary Marcus：礼来 CEO 也站出来反驳阿莫代伊「十年治愈癌症」等医学说法",
+     "title_en": "Eli Lilly CEO pushes back on Dario Amodei's medical claims",
+     "url": "https://garymarcus.substack.com/p/breaking-eli-lilly-ceo-becomes-latest",
+     "hn": "https://news.ycombinator.com/item?id=50483480",
+     "points": 263,
+     "comments": 364,
+     "summary": [
+      "Gary Marcus 在 Substack 上写道，Anthropic CEO 达里奥·阿莫代伊在一段与 IPO 配套的视频里对医学做了过度承诺；Marcus 认为癌症不止一种病，十年内根除不可能，「很快治愈精神疾病」更是幻想。文章汇集了 X 上研究者的批评，包括礼来董事长兼 CEO Dave Ricks 的回应（原文为嵌入推文，我们没能读到具体内容），并称这些说法离 IPO 太近，应当接受证券欺诈调查。",
+      "本帖评论/点赞比达 1.38，是当日点赞过百帖子里最高的。评论区多数认同药物研发受限于临床试验而非算力，也有人举阿莫代伊曾预测 AI 将写 90% 代码的例子替他辩护。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "antiloper",
+       "stance": "视频很离谱",
+       "zh": "阿莫代伊在那段视频里听起来完全失控了。",
+       "en": "Amodei sounds completely unhinged in that video.",
+       "hn": "https://news.ycombinator.com/item?id=50483739",
+       "id": 50483739,
+       "replies": 118
+      },
+      {
+       "user": "figassis",
+       "stance": "可疑的是时机",
+       "zh": "可疑之处不在于这能不能实现（多半不能），而在于他正拿这个说法借钱，而且一旦违约也追讨不回。今天过度承诺换来巨额退出，等证明你不是先知时，信了你的人连生气都晚了。",
+       "en": "it's that he is using it to borrow money now",
+       "hn": "https://news.ycombinator.com/item?id=50484535",
+       "id": 50484535,
+       "replies": 16
+      },
+      {
+       "user": "throwaw12",
+       "stance": "他也说对过",
+       "zh": "你可以不喜欢达里奥，可以说他的话荒唐，但别忘了他说「AI 将写 90% 的代码」是对的，只是差了 6–9 个百分点，现在 95–97% 的代码由 AI 写。",
+       "en": "he was right about coding",
+       "hn": "https://news.ycombinator.com/item?id=50484125",
+       "id": 50484125,
+       "replies": 21
+      }
+     ],
+     "kicker": "AI · 争议",
+     "tag": "评论/点赞比最高"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50477649,
+     "title": "Brave 搜索 API 支持智能体通过 x402 协议付费",
+     "title_en": "Brave Search API now accepts agentic payments via the x402 protocol",
+     "url": "https://brave.com/blog/search-api-agentic-payments/",
+     "hn": "https://news.ycombinator.com/item?id=50477649",
+     "points": 256,
+     "comments": 146
+    },
+    {
+     "id": 50487184,
+     "title": "OpenAI 解散机器人团队，通用模型开始直接驱动机器人",
+     "title_en": "OpenAI disbands its robotics team as its general models start running robots",
+     "url": "https://fortune.com/2026/11/13/openai-disbands-robotics-team-as-its-general-models-start-running-robots/",
+     "hn": "https://news.ycombinator.com/item?id=50487184",
+     "points": 138,
+     "comments": 61
+    },
+    {
+     "id": 50481220,
+     "title": "Claude 挂了（状态页历史）",
+     "title_en": "Claude Is Down",
+     "url": "https://status.claude.com/history",
+     "hn": "https://news.ycombinator.com/item?id=50481220",
+     "points": 194,
+     "comments": 170
+    },
+    {
+     "id": 50487185,
+     "title": "做了 600 次实验后，我对 JEPA 世界模型的发现",
+     "title_en": "After 600 experiments, here's what I discovered about JEPA world models",
+     "url": "https://haddyalchaer.com/jepa",
+     "hn": "https://news.ycombinator.com/item?id=50487185",
+     "points": 200,
+     "comments": 33
+    },
+    {
+     "id": 50488769,
+     "title": "拒绝 AI 糊弄：一份宣言",
+     "title_en": "No AI Slop: A Manifesto",
+     "url": "https://www.slopmanifesto.com/",
+     "hn": "https://news.ycombinator.com/item?id=50488769",
+     "points": 176,
+     "comments": 98
+    },
+    {
+     "id": 50484658,
+     "title": "Jonathan Blow：如果 AI 解决了编程，为什么我的软件还是老样子？（视频）",
+     "title_en": "Jonathan Blow – If AI Solved Coding, Why Is My Software Still the Same? [video]",
+     "url": "https://www.youtube.com/watch?v=IRK8h67ol7Q",
+     "hn": "https://news.ycombinator.com/item?id=50484658",
+     "points": 146,
+     "comments": 134
+    },
+    {
+     "id": 50488464,
+     "title": "Perplexity Decider v1.3：训练、评测与用例",
+     "title_en": "Perplexity Decider v1.3: Training, eval, and use cases",
+     "url": "https://www.perplexity.ai/hub/blog/perplexity-decider",
+     "hn": "https://news.ycombinator.com/item?id=50488464",
+     "points": 89,
+     "comments": 18
+    },
+    {
+     "id": 50491097,
+     "title": "Claude Meetings",
+     "title_en": "Claude Meetings",
+     "url": "https://claude.com/resources/articles/claude-meetings",
+     "hn": "https://news.ycombinator.com/item?id=50491097",
+     "points": 60,
+     "comments": 56
+    },
+    {
+     "id": 50487854,
+     "title": "冲击数学界的雪崩，正向 AI 开发袭来",
+     "title_en": "The avalanche that hit math is coming for AI development",
+     "url": "https://www.dwarkesh.com/p/rsi",
+     "hn": "https://news.ycombinator.com/item?id=50487854",
+     "points": 57,
+     "comments": 100
+    },
+    {
+     "id": 50484110,
+     "title": "阿莫代伊称 AI 十年内治愈癌症，医生们表示怀疑",
+     "title_en": "Amodei Says AI Will Cure Cancer in a Decade. Doctors Are Skeptical",
+     "url": "https://www.businessinsider.com/dario-amodei-anthropic-cancer-cure-ipo-roadshow-backlash-doctors-2026-11",
+     "hn": "https://news.ycombinator.com/item?id=50484110",
+     "points": 31,
+     "comments": 70
+    }
+   ]
+  },
+  {
+   "name": "开发",
+   "en": "Software",
+   "page": 3,
+   "stats": {
+    "items": 13,
+    "points": 1448,
+    "comments": 735,
+    "top_points": {
+     "id": 50478515,
+     "title": "IceWM：1997 年诞生的轻量窗口管理器，今年 8 月还在发新版",
+     "value": 356,
+     "comments": 216
+    },
+    "top_comments": {
+     "id": 50478515,
+     "title": "IceWM：1997 年诞生的轻量窗口管理器，今年 8 月还在发新版",
+     "value": 216
+    },
+    "top_brief": {
+     "id": 50477714,
+     "title": "Switcher（2004）：Folklore 讲述早期 Mac 的程序切换器",
+     "value": 145,
+     "comments": 44
+    }
+   },
+   "stories": [
+    {
+     "id": 50478515,
+     "title": "IceWM：1997 年诞生的轻量窗口管理器，今年 8 月还在发新版",
+     "title_en": "IceWM",
+     "url": "https://ice-wm.org/",
+     "hn": "https://news.ycombinator.com/item?id=50478515",
+     "points": 356,
+     "comments": 216,
+     "summary": [
+      "IceWM 是 X Window 系统下的窗口管理器，目标是快、简单、不碍事：自带带分页器的任务栏、全局和逐窗口快捷键、动态菜单，可全键盘操作，支持 Alt+Tab、多工作区、多显示器（RandR / Xinerama）、大量主题和多种焦点模式，还附带壁纸管理器、简单的会话管理器和系统托盘。",
+      "它由 Marko Maček 于 1997 年用 C++ 写成，现在在 GitHub 上维护，最新版本是 2026 年 8 月 6 日的 4.1.0，Debian、Ubuntu、Arch、NixOS 和多数 BSD 都有收录。评论区不少人说自己至今仍在用，尤其是在远程桌面机器上当低资源桌面。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "yjftsjthsd-h",
+       "stance": "至今在用",
+       "zh": "其他评论把它当成怀旧，我有点哭笑不得。我今天还在用 icewm，给一套无头远程桌面系统当超低资源的桌面环境，最大好处是一体化、无需配置。",
+       "en": "I use icewm today as a super low resource DE",
+       "hn": "https://news.ycombinator.com/item?id=50479019",
+       "id": 50479019,
+       "replies": 35
+      },
+      {
+       "user": "sscarduzio",
+       "stance": "极简何必难用",
+       "zh": "我*现在*就通过 RustDesk（又一个了不起的项目！）在远程机器上用 IceWM。我唯一不理解的是，为什么极简窗口管理器总要（故意？）拒绝基本的可用性和视觉设计原则。",
+       "en": "why minimal WMs need to (intentionally?) reject basic usability and visual design principles",
+       "hn": "https://news.ycombinator.com/item?id=50481489",
+       "id": 50481489,
+       "replies": 13
+      },
+      {
+       "user": "inatreecrown2",
+       "stance": "从平铺回到浮动",
+       "zh": "试了很多平铺窗口管理器后，我刚换到 IceWM。最好用的是 MangoWM，但它最终还是干扰多于帮助。像 IceWM 这样简单的浮动窗口管理器最适合我用的应用。",
+       "en": "I just switched to IceWM after trying so many different versions of tiling window managers.",
+       "hn": "https://news.ycombinator.com/item?id=50479141",
+       "id": 50479141,
+       "replies": 7
+      }
+     ],
+     "kicker": "开发 · Linux 桌面"
+    },
+    {
+     "id": 50483611,
+     "title": "为什么写系统程序选 Zig 而不是 C",
+     "title_en": "Why Zig over C for Systems Programming",
+     "url": "https://www.mtsoukalos.eu/2026/11/why-zig-over-c-for-systems-programming/",
+     "hn": "https://news.ycombinator.com/item?id=50483611",
+     "points": 212,
+     "comments": 189,
+     "summary": [
+      "《Systems Programming with Zig》的作者在写完「为什么选 Zig 不选 Rust」后，又比较了 Zig 和 C。他说 C 是自己最爱的语言，是 UNIX 的语言，几十年前的代码今天还能编译；但新代码他不想再用 C 写。文章逐条列出 Zig 的改进：不用 goto 也能做资源清理、切片自带长度、错误不能被忽略、用 comptime 取代预处理器、更少的未定义行为，而且 Zig 本身也是个 C 编译器。",
+      "作者也坦白代价：Zig 还不稳定，0.17 发布时他书里 152 个 Zig 文件改了 35 个；C 的工具、书和人才都更多，只有厂商 C 编译器的单片机更是别无选择。评论区有人反驳说这类文章总拿老式 C 当靶子。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "uecker",
+       "stance": "现代 C 也能做到",
+       "zh": "Zig 是门不错的语言，但这类文章总拿新语言和不用现代工具的老式 C 比。只要愿意采用现代工具和写法，列出的大部分优点在 C 里也能拿到。",
+       "en": "those articles always compare new languages against old-style C without use of modern tools",
+       "hn": "https://news.ycombinator.com/item?id=50485693",
+       "id": 50485693,
+       "replies": 32
+      },
+      {
+       "user": "pron",
+       "stance": "比 C++ 更好审",
+       "zh": "另外，Zig 至少和 C++ 一样有表达力，却没有那些隐式行为和语言复杂度，所以审查需要看清每一步操作的敏感代码时更容易；它对 arena 的支持也比 C/C++ 更好。",
+       "en": "Zig is as at least as expressive as C++",
+       "hn": "https://news.ycombinator.com/item?id=50485040",
+       "id": 50485040,
+       "replies": 41
+      },
+      {
+       "user": "kombine",
+       "stance": "早就有了",
+       "zh": "顺便说一句，D 和 Nim 好多年前就有这些特性了。",
+       "en": "D and Nim have had the same features for years btw.",
+       "hn": "https://news.ycombinator.com/item?id=50485511",
+       "id": 50485511,
+       "replies": 13
+      }
+     ],
+     "kicker": "开发 · 语言"
+    },
+    {
+     "id": 50484235,
+     "title": "Haskell 基金会技术委员会发布愿景：Go 的迭代速度、C# 的调试、Rust 的上手体验",
+     "title_en": "A technical vision for the Haskell ecosystem",
+     "url": "https://discourse.haskell.org/t/a-technical-vision-for-the-haskell-ecosystem/15078",
+     "hn": "https://news.ycombinator.com/item?id=50484235",
+     "points": 171,
+     "comments": 79,
+     "summary": [
+      "Haskell 基金会新组建的技术领导委员会（TLC）在论坛发布愿景，并邀请公司、承包商和志愿者参与提案和资助。他们认为 Haskell 既适合人手写，也适合「负责任的 AI 工作流」：审查是 AI 工作流的瓶颈，而 Haskell 的强项对审查者有利；「也许有更适合形式化验证或氛围编程的语言，但没有比它更适合人在回路中的语言」。",
+      "具体目标包括：让 Haskell 拥有 Go 的迭代速度、C# 的调试能力和 Rust 的上手体验，把 GHC 自身 6 小时的 CI 周转缩到 2 小时；提供单步调试和真正有用的栈追踪；做最快的安全事件响应、加固供应链；以及让 10 年前的代码不改源码就能用最新 GHC 编译。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "ecshafer",
+       "stance": "为何不受 AI 青睐",
+       "zh": "我最近在想，为什么 Haskell 在 AI 时代不更流行？它很简洁、省 token，安全特性也很有表现力。Rust 因为严格而被更多采用，那为什么不也用它？",
+       "en": "why isn't it more popular with AI?",
+       "hn": "https://news.ycombinator.com/item?id=50487028",
+       "id": 50487028,
+       "replies": 26
+      },
+      {
+       "user": "pmkary",
+       "stance": "希望更通用",
+       "zh": "有段 S. P. Jones 的视频很有名，说「Haskell 没用」。我爱 Haskell，但希望它能像 C、C++、JavaScript、Rust、C# 那样通用，能写桌面、移动和网页应用。",
+       "en": "I love Haskell, but I wished it was universal",
+       "hn": "https://news.ycombinator.com/item?id=50485715",
+       "id": 50485715,
+       "replies": 15
+      },
+      {
+       "user": "KolmogorovComp",
+       "stance": "先抓增量编译",
+       "zh": "我同意编译时间是大问题，但重点应该放在增量构建上：考虑到 Haskell 编译器要做的工作，完整构建慢在意料之中，但增量构建没理由慢。",
+       "en": "I think the focus should really be on incremental build",
+       "hn": "https://news.ycombinator.com/item?id=50486026",
+       "id": 50486026,
+       "replies": 0
+      }
+     ],
+     "kicker": "开发 · 语言"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50484007,
+     "title": "Lonewolf 0.3：用 Rust 写的独立 XMPP 服务器",
+     "title_en": "Lonewolf 0.3 – A standalone XMPP server written in Rust",
+     "url": "https://github.com/lonewolf-im/lonewolf/releases/tag/v0.3.0",
+     "hn": "https://news.ycombinator.com/item?id=50484007",
+     "points": 124,
+     "comments": 37
+    },
+    {
+     "id": 50460263,
+     "title": "Sift：给 Lisp、Scheme 和 Emacs Lisp 的 LSP、检查与格式化工具",
+     "title_en": "Sift: LSP, Lint, Format Lisp, Scheme and Emacs Lisp",
+     "url": "https://github.com/jjba23/sift",
+     "hn": "https://news.ycombinator.com/item?id=50460263",
+     "points": 82,
+     "comments": 14
+    },
+    {
+     "id": 50477714,
+     "title": "Switcher（2004）：Folklore 讲述早期 Mac 的程序切换器",
+     "title_en": "Switcher (2004)",
+     "url": "https://folklore.org/Switcher.html",
+     "hn": "https://news.ycombinator.com/item?id=50477714",
+     "points": 145,
+     "comments": 44
+    },
+    {
+     "id": 50480480,
+     "title": "数据智能工程师时代的到来",
+     "title_en": "The Dawn of the Data Intelligence Engineer",
+     "url": "https://motherduck.com/blog/the-data-intelligence-engineer/",
+     "hn": "https://news.ycombinator.com/item?id=50480480",
+     "points": 136,
+     "comments": 76
+    },
+    {
+     "id": 50487605,
+     "title": "Ctrl+C、Ctrl+V、Ctrl+CVE：绕过安卓剪贴板读取保护",
+     "title_en": "Ctrl+C, Ctrl+v, Ctrl+cve: Bypassing Android's Clipboard Read Security Measures",
+     "url": "https://toninoble.com/post/ctrlc-ctrlv-ctrlcve",
+     "hn": "https://news.ycombinator.com/item?id=50487605",
+     "points": 61,
+     "comments": 26
+    },
+    {
+     "id": 50488835,
+     "title": "FreeBSD 和 bhyve 即将支持热迁移",
+     "title_en": "Live-migration support in FreeBSD and bhyve coming",
+     "url": "https://gyptazy.com/blog/freebsd-bhyve-live-migration-support-rfc/",
+     "hn": "https://news.ycombinator.com/item?id=50488835",
+     "points": 57,
+     "comments": 14
+    },
+    {
+     "id": 50491423,
+     "title": "不占一个字符格的终端边框",
+     "title_en": "Terminal borders that don't cost a cell",
+     "url": "https://www.joshka.net/cell-borders/",
+     "hn": "https://news.ycombinator.com/item?id=50491423",
+     "points": 23,
+     "comments": 10
+    },
+    {
+     "id": 50486521,
+     "title": "并发的 shell 命令队列",
+     "title_en": "Concurrent Shell Command Queues",
+     "url": "https://emmer.dev/blog/concurrent-shell-command-queues/",
+     "hn": "https://news.ycombinator.com/item?id=50486521",
+     "points": 30,
+     "comments": 16
+    },
+    {
+     "id": 50486480,
+     "title": "Gnomon：为智能体打造的 Postgres 数据版 Git",
+     "title_en": "Gnomon. Git for Postgres data, built for agents",
+     "url": "https://github.com/bitsinfra/gnomon",
+     "hn": "https://news.ycombinator.com/item?id=50486480",
+     "points": 22,
+     "comments": 11
+    },
+    {
+     "id": 50482455,
+     "title": "Show HN：Reflota，开源的 NTFS/FAT 磁盘分阶段数据恢复工具",
+     "title_en": "Show HN: Reflota – Open-source data recovery for NTFS/FAT disks with phased copy",
+     "url": "https://github.com/Christ10-8/reflota",
+     "hn": "https://news.ycombinator.com/item?id=50482455",
+     "points": 29,
+     "comments": 3
+    }
+   ]
+  },
+  {
+   "name": "科学与硬件",
+   "en": "Science & Hardware",
+   "page": 4,
+   "stats": {
+    "items": 12,
+    "points": 1535,
+    "comments": 839,
+    "top_points": {
+     "id": 50482379,
+     "title": "1960 年《科学》论文预言的「末日」：2026 年 11 月 13 日，星期五",
+     "value": 436,
+     "comments": 301
+    },
+    "top_comments": {
+     "id": 50482379,
+     "title": "1960 年《科学》论文预言的「末日」：2026 年 11 月 13 日，星期五",
+     "value": 301
+    },
+    "top_brief": {
+     "id": 50477331,
+     "title": "经济学人：非洲的太阳能革命规模大、速度快",
+     "value": 136,
+     "comments": 72
+    }
+   },
+   "stories": [
+    {
+     "id": 50482379,
+     "title": "1960 年《科学》论文预言的「末日」：2026 年 11 月 13 日，星期五",
+     "title_en": "Doomsday: Friday, 13 November, A.D. 2026 (1960)",
+     "url": "https://www.science.org/doi/10.1126/science.132.3436.1291",
+     "hn": "https://news.ycombinator.com/item?id=50482379",
+     "points": 436,
+     "comments": 301,
+     "summary": [
+      "这篇 1960 年 11 月 4 日发表在《科学》上的论文出自伊利诺伊大学电气工程系的 Heinz von Foerster、Patricia M. Mora 和 Lawrence W. Amiot，副标题写道：如果人口按过去两千年的方式增长，到这一天人口将趋于无穷。昨天正是论文算出的那个周五。（我们只读到了论文页面的标题和参考文献，正文为 PDF。）",
+      "巧的是同一天美国发生全国停飞、微软 365 大面积宕机，评论区有人把 FAA 停飞公告直接贴了上来。讨论的主线是：外推历史数据的预测往往过于简单，如今多数工业化国家担心的是人口下降而不是过剩。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "dnlgrmm",
+       "stance": "外推太简单",
+       "zh": "这很好地说明了，大多数从历史数据外推的预测都过于简单。我们正接近全球人口峰值，几乎所有工业化国家现在更担心人口下降而不是过剩。",
+       "en": "most predictions that extrapolate from past data are too simplistic",
+       "hn": "https://news.ycombinator.com/item?id=50482601",
+       "id": 50482601,
+       "replies": 207
+      },
+      {
+       "user": "MeteorMarc",
+       "stance": "趋于无穷没意义",
+       "zh": "「趋于无穷」没什么意义：任何单调递增的数列都趋于无穷，你永远无法说自己差了 100 倍。",
+       "en": "Approaches infinity has little meaning.",
+       "hn": "https://news.ycombinator.com/item?id=50483417",
+       "id": 50483417,
+       "replies": 3
+      },
+      {
+       "user": "parsabg",
+       "stance": "说明的是我们",
+       "zh": "这篇现在冲上 HN 热门，说明的也许更多是我们当下的心态，而不是 60 年代的人。",
+       "en": "This trending on HN right now might tell us more about our current state of mind",
+       "hn": "https://news.ycombinator.com/item?id=50485706",
+       "id": 50485706,
+       "replies": 0
+      }
+     ],
+     "kicker": "科学 · 旧文"
+    },
+    {
+     "id": 50486748,
+     "title": "AI 帮忙读懂哥德尔的速记笔记本：据称藏着数百条无人知晓的定理",
+     "title_en": "AI unlocks Gödel's notebooks, said to contain hundreds of proved theorems",
+     "url": "https://www.theguardian.com/science/2026/nov/13/kurt-godel-notebooks-ai-helps-unlock-hidden-discoveries-man-who-transformed-maths",
+     "hn": "https://news.ycombinator.com/item?id=50486748",
+     "points": 306,
+     "comments": 90,
+     "summary": [
+      "《卫报》报道，芬兰逻辑学家 Jan von Plato 自 2017 年起在赫尔辛基大学主持项目，研究哥德尔 1940 年代初写下的 16 本笔记，共 1009 页，大部分用早已过时的 Gabelsberger 德文速记写成，进度慢到一周一页。今年 9 月他请 Claude 协助，给它看自己的转写稿、他写过的六本哥德尔相关著作和二手文献，几天后得到一份 650 页的解读，「需要逐页核对」。",
+      "von Plato 说笔记里有几十项 70、80 年代才为人所知的结果的先声，还有 14 个从未被人追踪的逻辑主题。哥德尔曾声称 40 年代就证明了选择公理的独立性却拿不出证明，Claude 的结论是「差一点」：有一个定义他弄错了。评论区有人质疑「速记已过时」的说法。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "hobo123",
+       "stance": "速记没那么冷门",
+       "zh": "关于 Gabelsberger 速记的说法在我看来很荒唐。我父亲直到 2020 年去世前，一直用它的一个自定义版本记笔记。",
+       "en": "The stuff about Gabelsberger shorthand sounds ludicrous to me.",
+       "hn": "https://news.ycombinator.com/item?id=50488053",
+       "id": 50488053,
+       "replies": 3
+      },
+      {
+       "user": "iltennico",
+       "stance": "他是完美主义者",
+       "zh": "据科学史学者说，哥德尔是个绝对的完美主义者，基本只发表无懈可击的成果。他庞大的笔记里肯定有非常敏锐的洞见，但不太可能……",
+       "en": "Gödel was in any case an absolute perfectionist",
+       "hn": "https://news.ycombinator.com/item?id=50488546",
+       "id": 50488546,
+       "replies": 6
+      },
+      {
+       "user": "ducttapecrown",
+       "stance": "想看那 14 个主题",
+       "zh": "很想听听哥德尔追踪过的这 14 个新逻辑主题！",
+       "en": "It'd be interesting to hear about these new 14 themes of logic",
+       "hn": "https://news.ycombinator.com/item?id=50487262",
+       "id": 50487262,
+       "replies": 8
+      }
+     ],
+     "kicker": "科学 · 数学"
+    },
+    {
+     "id": 50478635,
+     "title": "渥太华大学学者再推「宇宙 267 亿岁」模型，称无需暗物质和暗能量",
+     "title_en": "Scientists claim the universe is twice as old as believed",
+     "url": "https://geekspin.co/scientists-claim-the-universe-is-twice-as-old-as-believed/",
+     "hn": "https://news.ycombinator.com/item?id=50478635",
+     "points": 102,
+     "comments": 110,
+     "summary": [
+      "报道称，渥太华大学兼职物理教授 Rajendra Gupta 与博士后 Nikolaos Samaras 花了约两年，用主要天文观测检验他们的 CCC+TL 模型（共变耦合常数加「疲劳光」）：它假设物理常数随时间缓慢变化、光在穿越太空时损失能量，因此遥远的光走了更久，把宇宙年龄推到 267 亿年，不需要暗物质和暗能量。",
+      "Gupta 称模拟中该模型准确预测了大爆炸产生的氢氦丰度，也符合宇宙的膨胀历史。评论区提醒这个说法 2023 年就在 HN 上讨论过多次，还有人贴出今年一篇可能证伪它的论文。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "mr_mitm",
+       "stance": "旧闻",
+       "zh": "之前讨论过：",
+       "en": "Discussed before:",
+       "hn": "https://news.ycombinator.com/item?id=50480199",
+       "id": 50480199,
+       "replies": 1
+      },
+      {
+       "user": "jbotz",
+       "stance": "可能已被证伪",
+       "zh": "这个假说的一个可能证伪（今年早些时候）：",
+       "en": "One possible falsification of this hypothesis",
+       "hn": "https://news.ycombinator.com/item?id=50480325",
+       "id": 50480325,
+       "replies": 0
+      },
+      {
+       "user": "mcv",
+       "stance": "让人想起旧尝试",
+       "zh": "很有意思的想法。它让我想起几十年前的一次尝试：科学家用基本属性重新推算所有基本常数，而不是用我们习惯的那些相当任意的量。",
+       "en": "Fascinating idea.",
+       "hn": "https://news.ycombinator.com/item?id=50479394",
+       "id": 50479394,
+       "replies": 24
+      }
+     ],
+     "kicker": "科学 · 宇宙学"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50488470,
+     "title": "《自然》研究速递：发现一种推动衰老却不引发炎症的蛋白",
+     "title_en": "Found: A protein that drives ageing without unleashing inflammation",
+     "url": "https://www.nature.com/articles/d41586-026-03638-3",
+     "hn": "https://news.ycombinator.com/item?id=50488470",
+     "points": 102,
+     "comments": 18
+    },
+    {
+     "id": 50483959,
+     "title": "CERN 如何造出大型强子对撞机的下一代磁体",
+     "title_en": "CERN Built the Large Hadron Collider's Next-Gen Magnets",
+     "url": "https://spectrum.ieee.org/large-hadron-collider-superconducting-magnets",
+     "hn": "https://news.ycombinator.com/item?id=50483959",
+     "points": 70,
+     "comments": 7
+    },
+    {
+     "id": 50483533,
+     "title": "美国一座试验反应堆获准运行",
+     "title_en": "US test reactor cleared for operations",
+     "url": "https://www.world-nuclear-news.org/articles/us-test-reactor-cleared-for-operations",
+     "hn": "https://news.ycombinator.com/item?id=50483533",
+     "points": 77,
+     "comments": 30
+    },
+    {
+     "id": 50477331,
+     "title": "经济学人：非洲的太阳能革命规模大、速度快",
+     "title_en": "Africa's solar revolution is vast and speedy",
+     "url": "https://www.economist.com/middle-east-and-africa/2026/11/12/africas-solar-revolution-is-vast-and-speedy",
+     "hn": "https://news.ycombinator.com/item?id=50477331",
+     "points": 136,
+     "comments": 72
+    },
+    {
+     "id": 50482045,
+     "title": "全球电动车销量增长，欧洲电动车销量跳涨 49%",
+     "title_en": "Europe's electric car sales jump 49% as global EV sales grow",
+     "url": "https://electrek.co/2026/11/11/europes-electric-car-sales-jump-49-as-global-ev-sales-grow/",
+     "hn": "https://news.ycombinator.com/item?id=50482045",
+     "points": 94,
+     "comments": 96
+    },
+    {
+     "id": 50488490,
+     "title": "把技术进步看作一个搜索问题",
+     "title_en": "Technology as a Search Problem",
+     "url": "https://www.construction-physics.com/p/technology-as-a-search-problem",
+     "hn": "https://news.ycombinator.com/item?id=50488490",
+     "points": 19,
+     "comments": 3
+    },
+    {
+     "id": 50484650,
+     "title": "明尼苏达吉他手发明「palmfrets」",
+     "title_en": "Minnesota guitarist's \"palmfrets\" invention strikes a new chord",
+     "url": "https://www.echopress.com/business/minnesota-guitarists-invention-strikes-a-new-chord",
+     "hn": "https://news.ycombinator.com/item?id=50484650",
+     "points": 122,
+     "comments": 80
+    },
+    {
+     "id": 50474926,
+     "title": "Librem 5 v2：一部解放所有人的手机",
+     "title_en": "Librem 5 v2: A phone that frees us all",
+     "url": "https://puri.sm/librem-5-v2-crowdfunding-campaign/",
+     "hn": "https://news.ycombinator.com/item?id=50474926",
+     "points": 46,
+     "comments": 31
+    },
+    {
+     "id": 50454700,
+     "title": "像素之前：Speed-Minder 车速提醒器",
+     "title_en": "Before Pixels: Speed-Minder",
+     "url": "https://unsung.aresluna.org/before-pixels-speed-minder/",
+     "hn": "https://news.ycombinator.com/item?id=50454700",
+     "points": 25,
+     "comments": 1
+    }
+   ]
+  },
+  {
+   "name": "社会与商业",
+   "en": "Society & Business",
+   "page": 5,
+   "stats": {
+    "items": 13,
+    "points": 2691,
+    "comments": 1780,
+    "top_points": {
+     "id": 50473190,
+     "title": "路透社：消息人士称前英伟达 CEO 黄仁勋与第二名员工有过恋情",
+     "value": 447,
+     "comments": 477
+    },
+    "top_comments": {
+     "id": 50473190,
+     "title": "路透社：消息人士称前英伟达 CEO 黄仁勋与第二名员工有过恋情",
+     "value": 477
+    },
+    "top_brief": {
+     "id": 50473190,
+     "title": "路透社：消息人士称前英伟达 CEO 黄仁勋与第二名员工有过恋情",
+     "value": 447,
+     "comments": 477
+    }
+   },
+   "stories": [
+    {
+     "id": 50487864,
+     "title": "价值 1140 万美元的英伟达硬件在从加州运往得州途中消失",
+     "title_en": "$11.4M in Nvidia hardware vanishes during shipment from CA to TX",
+     "url": "https://www.freightwaves.com/news/11-4-million-in-nvidia-hardware-vanishes-during-shipment-from-california-to-texas",
+     "hn": "https://news.ycombinator.com/item?id=50487864",
+     "points": 272,
+     "comments": 146,
+     "summary": [
+      "FreightWaves 报道，六托盘英伟达电脑硬件（报道价值 1140 万美元）8 月 29 日在奥克兰装车，目的地是沃斯堡。据《水星报》报道，取货卡车上印着一家食品运输公司的标志，司机一路南下、多次停留数小时，调查人员最终在圣贝纳迪诺县跟丢了它。奥克兰警方确认正在调查这起 9 月 13 日报案的重大盗窃案。",
+      "报道还提到，另有约 1.11 亿美元的数据中心货物被盗报道，以及一起嫌犯冒用正规货运身份骗取货物的 1200 万美元盗窃案，警方尚未把两案联系起来。评论区在问这算不算多、为什么不用专业押运。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "jstummbillig",
+       "stance": "这算多吗",
+       "zh": "这……算多吗？我完全不知道平常有多少东西「消失」、值多少钱。",
+       "en": "Is that... a lot?",
+       "hn": "https://news.ycombinator.com/item?id=50489344",
+       "id": 50489344,
+       "replies": 59
+      },
+      {
+       "user": "tencentshill",
+       "stance": "为何不用专业押运",
+       "zh": "这些人钱多得花不完，为什么还用普通承运商运货？市面上有很多端到端安全物流公司能干这活。我想他们的保险公司也不会高兴。",
+       "en": "why are they still transporting with regular couriers?",
+       "hn": "https://news.ycombinator.com/item?id=50489043",
+       "id": 50489043,
+       "replies": 31
+      },
+      {
+       "user": "foxhill",
+       "stance": "一辆轿车装得下",
+       "zh": "大约 150 块 GPU（按每块 8 万美元算），一辆轿车就装得下。",
+       "en": "would fit in a sedan",
+       "hn": "https://news.ycombinator.com/item?id=50489312",
+       "id": 50489312,
+       "replies": 4
+      }
+     ],
+     "kicker": "商业 · 物流"
+    },
+    {
+     "id": 50481870,
+     "title": "《大西洋》：AI 正在摧毁作者与读者之间的信任",
+     "title_en": "AI is destroying the trust between writers and readers",
+     "url": "https://www.theatlantic.com/books/2026/11/ai-literary-scams-amazon/689391/",
+     "hn": "https://news.ycombinator.com/item?id=50481870",
+     "points": 306,
+     "comments": 193,
+     "summary": [
+      "小说家 Rachel Kadish 写道，一位帕金森病患者在签售会上质问她书中帕金森角色选择协助自杀的情节，可她从没写过；她怀疑来源是 ChatGPT，因为此前它就这样错误复述过她的小说。她 2017 年的《The Weight of Ink》原本是英语里唯一叫这个名字的书，2025 年秋以来亚马逊上至少出现五本同名小说，三本在三周内上架；亚马逊允许个人每周上传最多六本书。",
+      "她还收到大量伪装成读者来信的 AI 营销诈骗，甚至有人冒用她的名字联络其他作者；她质问对方，收到的 AI 回信落款竟是「Sincerely, Rachel」。作者认为，这种骗局不像过去的文学丑闻那样能让人有所反思。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "unknownian",
+       "stance": "反发明",
+       "zh": "模仿人类艺术的生成式 AI 就是「反发明」的定义：发明是让人类体验更好的创新，反发明则是让生活更糟的创新。",
+       "en": "GenAI that imitates human art is the definition of an anti-invention.",
+       "hn": "https://news.ycombinator.com/item?id=50485167",
+       "id": 50485167,
+       "replies": 72
+      },
+      {
+       "user": "sarreph",
+       "stance": "一天一本书",
+       "zh": "「亚马逊允许个人每周最多上传六本书」——差不多每个账号一天一本。没有人类作者能一天出一本书。",
+       "en": "No human author is publishing a book per day.",
+       "hn": "https://news.ycombinator.com/item?id=50484537",
+       "id": 50484537,
+       "replies": 12
+      },
+      {
+       "user": "internet_points",
+       "stance": "亚马逊真在管吗",
+       "zh": "「亚马逊花了很多精力阻止这些书上架」——真的吗？他们是抽成的，有动力放人上架。",
+       "en": "Do they really?",
+       "hn": "https://news.ycombinator.com/item?id=50484580",
+       "id": 50484580,
+       "replies": 22
+      }
+     ],
+     "kicker": "文化 · 出版"
+    },
+    {
+     "id": 50487522,
+     "title": "老师吐槽：学生要在 iPad 上点 16 下才能打开一份 PPT",
+     "title_en": "It Takes 16 Clicks for a Student to Open a PowerPoint on an iPad",
+     "url": "https://www.reddit.com/r/Teachers/comments/1xuup7a/technology_sucks_it_literally_takes_16_clicks_for/",
+     "hn": "https://news.ycombinator.com/item?id=50487522",
+     "points": 256,
+     "comments": 128,
+     "summary": [
+      "Reddit 教师版的一位老师列出学生打开课堂 PPT 的全部步骤：登录 Clever、选谷歌账号、输入又长又难记的学校邮箱和密码、点 Canvas、再用谷歌登录一次、选课程、点模块、在 40 来个相似链接里找文件、下载、用 Keynote 打开、把 iPad 竖过来才能看到「打开」按钮、关掉屏幕锁……清单实际写到了第 17 步。",
+      "她说自己每节课要帮孩子做几十遍，有任务启动困难的学生能把这拖上 20 分钟，「这不比纸好」。HN 评论区纷纷贴出自己停车缴费、登录开发环境要点多少下的清单。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "curriculum",
+       "stance": "停车也一样",
+       "zh": "我的雇主（一所大学）最近换了新的停车系统。每天早上缴停车费，我得打开浏览器、进一个网页（没有 App），点十一下。",
+       "en": "tap eleven times to pay for parking",
+       "hn": "https://news.ycombinator.com/item?id=50489994",
+       "id": 50489994,
+       "replies": 16
+      },
+      {
+       "user": "throwaway63467",
+       "stance": "处处繁琐",
+       "zh": "一切都这么繁琐。我在某个 App 里点个链接，跳到他们的登录页，再跳到微软登录，再跳到双重验证提供方要通行密钥，再跳回微软问要不要记住……",
+       "en": "Everything feels so cumbersome.",
+       "hn": "https://news.ycombinator.com/item?id=50488932",
+       "id": 50488932,
+       "replies": 18
+      },
+      {
+       "user": "phreack",
+       "stance": "问题在 Clever",
+       "zh": "我从没听说过 Clever，但看起来它才是真正的问题？还要和谷歌集成。他们让孩子用两个独立的在线服务，只为看一份演示文稿！",
+       "en": "So they're making kids use two separate online services just to see a presentation!",
+       "hn": "https://news.ycombinator.com/item?id=50488082",
+       "id": 50488082,
+       "replies": 7
+      }
+     ],
+     "kicker": "社会 · 教育"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50473190,
+     "title": "路透社：消息人士称前英伟达 CEO 黄仁勋与第二名员工有过恋情",
+     "title_en": "Former Nvidia CEO Huang had a relationship with a second employee, sources say",
+     "url": "https://www.reuters.com/technology/former-nvidia-ceo-huang-had-relationship-with-second-employee-sources-say-2026-11-12/",
+     "hn": "https://news.ycombinator.com/item?id=50473190",
+     "points": 447,
+     "comments": 477
+    },
+    {
+     "id": 50479098,
+     "title": "CNN 直播：微软全球故障",
+     "title_en": "Global Microsoft Outage",
+     "url": "https://www.cnn.com/2026/11/12/business/live-news/microsoft-global-outage-intl-hnk",
+     "hn": "https://news.ycombinator.com/item?id=50479098",
+     "points": 284,
+     "comments": 180
+    },
+    {
+     "id": 50487688,
+     "title": "微软故障给客户上了一堂「依赖雷德蒙德」的速成课",
+     "title_en": "Microsoft outage gives customers a crash course in dependence on Redmond",
+     "url": "https://www.theregister.com/saas/2026/11/13/microsoft-outage-gives-customers-a-crash-course-in-dependence-on-redmond/5309805",
+     "hn": "https://news.ycombinator.com/item?id=50487688",
+     "points": 114,
+     "comments": 38
+    },
+    {
+     "id": 50489652,
+     "title": "Flightradar24：全美机场目前都已停飞",
+     "title_en": "All US airports are currently ground stopped",
+     "url": "https://twitter.com/flightradar24/status/2121347654714077605",
+     "hn": "https://news.ycombinator.com/item?id=50489652",
+     "points": 141,
+     "comments": 29
+    },
+    {
+     "id": 50490593,
+     "title": "KORS 全频段航空无线电直播，加拿大维多利亚也已停飞",
+     "title_en": "Live airband on all frequencies from KORS. Victoria, CA also ground stopped",
+     "url": "https://orcasairband.com/",
+     "hn": "https://news.ycombinator.com/item?id=50490593",
+     "points": 129,
+     "comments": 33
+    },
+    {
+     "id": 50485295,
+     "title": "巴西 Caixa 保险泄露全部 760 万客户的姓名和税号",
+     "title_en": "Brazil's Caixa insurer breach exposes names and tax IDs of all 7.6M customers",
+     "url": "https://filemanager-cdn.mziq.com/published/3972906b-e50b-4f74-ab74-4d0d32125d11/9567a559-d20a-486e-a7ae-5c6bbc030c5e",
+     "hn": "https://news.ycombinator.com/item?id=50485295",
+     "points": 161,
+     "comments": 72
+    },
+    {
+     "id": 50489083,
+     "title": "大型科技公司注定让我们失望",
+     "title_en": "Big tech is here to let us down",
+     "url": "https://blog.jsweeting.me/big-tech-is-here-to-let-us-down",
+     "hn": "https://news.ycombinator.com/item?id=50489083",
+     "points": 198,
+     "comments": 174
+    },
+    {
+     "id": 50484960,
+     "title": "谷歌为何切断「无 AI 学校」的搜索？几种猜测",
+     "title_en": "Why is Google cutting off Search from AI-free schools? Here are some theories",
+     "url": "https://text.npr.org/nx-s1-6029408",
+     "hn": "https://news.ycombinator.com/item?id=50484960",
+     "points": 160,
+     "comments": 161
+    },
+    {
+     "id": 50484496,
+     "title": "欧盟数字身份钱包推进情况：各成员国一览",
+     "title_en": "EU Digital Identity Wallet rollout: every EU state on one board",
+     "url": "https://myid.ie/business/eu-digital-wallet-tracker/",
+     "hn": "https://news.ycombinator.com/item?id=50484496",
+     "points": 117,
+     "comments": 84
+    },
+    {
+     "id": 50483759,
+     "title": "美国大学生向 Flock 监控摄像头说不",
+     "title_en": "US university students tell surveillance cameras to Flock off",
+     "url": "https://www.theguardian.com/technology/ng-interactive/2026/nov/13/universities-drop-flock-camera-contracts",
+     "hn": "https://news.ycombinator.com/item?id=50483759",
+     "points": 106,
+     "comments": 65
+    }
+   ]
+  }
+ ],
+ "quote_of_day": {
+  "user": "nickdothutton",
+  "id": 50480607,
+  "hn": "https://news.ycombinator.com/item?id=50480607",
+  "story_id": 50478609,
+  "story": "微软 Outlook / 365 宕机超 12 小时：服务器健康检查失败，修复「没有按预期生效」",
+  "zh": "没有倒逼机制，复杂度成倍增长，隐性的脆弱不断积累，端到端的理解日渐消失。",
+  "en": "Without a forcing function, complexity multiplies, silent fragility accumulates, end-to-end understanding dwindles."
+ },
+ "stats": {
+  "snapshot": "2026-11-14T08:13:31+08:00",
+  "front_page_count": 89,
+  "with_numbers": 86,
+  "flagged_or_dupe": 3,
+  "top_points": {
+   "id": 50489641,
+   "title": "FAA 突发全国停飞令：所有离港航班原地待命，官方初步指向通信故障",
+   "value": 1129,
+   "comments": 682
+  },
+  "top_comments": {
+   "id": 50489641,
+   "title": "FAA 突发全国停飞令：所有离港航班原地待命，官方初步指向通信故障",
+   "value": 682,
+   "comments": 682
+  },
+  "second_comments": {
+   "id": 50477231,
+   "title": "WIRED：英伟达员工内部请愿，要求让黄仁勋回来",
+   "value": 645,
+   "comments": 645
+  },
+  "over_500": 4,
+  "over_300": 13,
+  "over_100": 45,
+  "show_hn": 4,
+  "total_points": 14282,
+  "total_comments": 8595,
+  "hottest_ratio": {
+   "id": 50483480,
+   "title": "Gary Marcus：礼来 CEO 也站出来反驳阿莫代伊「十年治愈癌症」等医学说法",
+   "value": 1.38,
+   "comments": 364,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
