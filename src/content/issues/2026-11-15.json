@@ -1,0 +1,1317 @@
+{
+ "date": "2026-11-15",
+ "published_at": "2026-11-16T08:25:37+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-11-15",
+ "schema_version": 2,
+ "lead": {
+  "id": 50507303,
+  "title": "「所有 AI 生成的代码都应该开源」：版权与开源之争刷屏",
+  "title_en": "All AI-generated code should be Open Source",
+  "url": "https://jakub.jankiewicz.org/blog/ai-code-open-source/",
+  "hn": "https://news.ycombinator.com/item?id=50507303",
+  "points": 1055,
+  "comments": 577,
+  "summary": [
+   "开发者 Jakub Jankiewicz（jcubic）发文主张 AI 生成的代码一律开源。理由有二：一是模型训练用的海量开源代码和 Stack Overflow 内容是未经许可、未署名抓取的，后者的 CC 协议依法要求署名，把这些集体知识变成闭源代码像是「许可证洗白」；二是纯 AI 生成的代码不是人写的，按「猴子自拍」案确立、后被美国版权局引用的原则，不应受版权保护，维基共享资源也要求把纯 AI 生成的图片标为公有领域。",
+   "他承认各国法律不同（如英国对计算机生成作品给予有限保护），因此主张开发者和公司主动用开源许可或 CC0 发布 AI 代码；至少那些人只写了提示词、几乎没审阅修改的代码「绝对应该开源」。本帖 1055 点赞、577 条评论，是当天点赞和评论双料第一。评论区争议很大：有人指出美国版权局认为 AI 辅助不影响版权，也有人指出文章自相矛盾。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "blagie",
+    "stance": "AGPL 作者亲历",
+    "zh": "我写过多个 AGPL 系统，很多被广泛使用。早期的大模型几乎逐字吐出我的代码。有家公司先是盗用我的 AGPL 代码，我发了侵权通知，拉锯好几个月后，他们干脆让大模型把整个系统克隆了一遍——又烂又多 bug，但仍然基本就是我的创作。",
+    "en": "After many months of fighting, they had an LLM clone the system.",
+    "hn": "https://news.ycombinator.com/item?id=50507729",
+    "id": 50507729,
+    "replies": 140
+   },
+   {
+    "user": "glitchc",
+    "stance": "文章自相矛盾",
+    "zh": "文章自相矛盾。许可证之所以存在，是因为代码首先受版权保护，许可证管的是这份版权怎么用。如果 AI 代码不受版权保护，那就没有任何许可证能管得了它。",
+    "en": "If AI code is not copyrightable, then no license can govern it.",
+    "hn": "https://news.ycombinator.com/item?id=50507718",
+    "id": 50507718,
+    "replies": 22
+   },
+   {
+    "user": "jrmg",
+    "stance": "版权局怎么说",
+    "zh": "美国版权局其实有相关指引，我觉得多数人不知道。摘录要点：用 AI 工具辅助而非取代人的创造力，并不影响产出能否获得版权保护。",
+    "en": "The use of AI tools to assist rather than stand in for human creativity does not affect",
+    "hn": "https://news.ycombinator.com/item?id=50507828",
+    "id": 50507828,
+    "replies": 48
+   }
+  ],
+  "kicker": "要闻 · 版权",
+  "tag": "点赞、评论双第一"
+ },
+ "side": [
+  {
+   "id": 50506719,
+   "title": "新 MacBook Pro 的 OLED 屏被指 240Hz 频闪，部分用户头晕想吐",
+   "title_en": "The MacBook Pro's OLED PWM problem",
+   "url": "https://macanorak.com/the-macbook-pros-oled-pwm-problem-when-a-better-display-becomes-worse-to-use/",
+   "hn": "https://news.ycombinator.com/item?id=50506719",
+   "points": 403,
+   "comments": 226,
+   "summary": [
+    "Mac 博客 macanorak 撰文：苹果给 MacBook Pro 加了串联 OLED 的「PROLED XDR」屏，画质惊艳，但 MacRumors 论坛和 Reddit 上不少用户反映用后头痛、眼疲劳、头晕甚至恶心，有人已经退货；AppleInsider 11 月 10 日也报道了此事。Notebookcheck 实测这块屏在亮度 99% 及以下时有 240Hz 的 PWM 调光频闪，而 M4 Pro 的 Mini-LED 款实测为 14,880Hz，相差约 62 倍。",
+    "作者说新屏混用了 DC 调光和 PWM，频闪并非唯一可能原因，敏感程度也因人而异，但很多人强调以前用 OLED 设备从没出过问题。他建议苹果像 iPhone 那样提供「显示屏脉冲平滑」辅助选项，并提醒敏感的人先试用再买，Mini-LED 款目前仍在售。本帖 226 条评论，当天评论数第二；有人去翻了原始测试数据，认为实际频率可能更高。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "legitronics",
+     "stance": "数据可能读错了",
+     "zh": "我去看了 240Hz 这个说法的出处，却得不出测试者的结论。也许他们只是让示波器自动报出了 240Hz，但最差也是 480Hz，我甚至会说是 960Hz。",
+     "en": "480hz worst case and I would actually say 960hz",
+     "hn": "https://news.ycombinator.com/item?id=50507268",
+     "id": 50507268,
+     "replies": 12
+    },
+    {
+     "user": "Zak",
+     "stance": "不像苹果",
+     "zh": "苹果推出低频 PWM 的笔记本屏幕让我很意外。这种别家不在意的细节，正是苹果以重视著称的地方。",
+     "en": "That's the kind of detail Apple has a reputation for paying attention to when other companies don't.",
+     "hn": "https://news.ycombinator.com/item?id=50508218",
+     "id": 50508218,
+     "replies": 12
+    },
+    {
+     "user": "Velocifyer",
+     "stance": "还有更多敏感源",
+     "zh": "很高兴这件事让更多人关注频闪敏感。人们还会对别的东西敏感，比如白光 LED（和荧光灯）的显色指数，以及 LCD 的动态模糊。",
+     "en": "I'm glad that this is bringing attention to flicker sensitivity.",
+     "hn": "https://news.ycombinator.com/item?id=50507567",
+     "id": 50507567,
+     "replies": 50
+    }
+   ],
+   "kicker": "要闻 · 硬件",
+   "tag": "评论第二"
+  },
+  {
+   "id": 50502988,
+   "title": "三星、SK 海力士、美光被诉合谋压缩 DRAM 供应，法院驳回撤案动议",
+   "title_en": "Court denies motion to dismiss DRAM price fixing case",
+   "url": "https://litnews.ai/articles/garciaguirre-samsung-sk-hynix-micron-dram-conspiracy-suit-survives-dismissal",
+   "hn": "https://news.ycombinator.com/item?id=50502988",
+   "points": 486,
+   "comments": 215,
+   "summary": [
+    "加州北区联邦法官 Noël Wise 11 月 14 日全盘驳回三家公司的联合撤案动议。这起拟议集体诉讼由五个州的 17 名消费者和小企业于 6 月 25 日提起，指控三家（2025 年三季度合计占全球 DRAM 收入 91% 以上）自 2022 年底起减产，并把产能转向每 GB 占用晶圆面积是 DDR5 三到四倍的 HBM；起诉书称到 2025 年三季度普通 DRAM 一年涨价 171.8%，却没有一家扩产。这些指控尚未被证实。",
+    "法官认为本案不是 2022 年被驳回的 DRAM II 案的翻版：长期锁定 HBM 合同、拒签普通 DRAM 长约、美光关闭 Crucial 品牌、推迟建厂、2026 年 1 月几乎一致的客户审查做法，以及 1998–2002 年的卡特尔前科，都支持「合谋」的合理推断。她写道，这不只是「老鹰互相盯着」，更像「老鹰列队飞行」。被告须在 12 月 7 日前答辩。评论区有人诉苦内存价格吃掉了科研经费。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "SubiculumCode",
+     "stance": "经费被吃掉",
+     "zh": "我终于拿到科研经费，预算里有一台新计算工作站，结果内存价格要了我的命：想要至少 256GB 内存，现在要四五千美元。",
+     "en": "the RAM prices are killing my budget",
+     "hn": "https://news.ycombinator.com/item?id=50504433",
+     "id": 50504433,
+     "replies": 73
+    },
+    {
+     "user": "PeterStuer",
+     "stance": "囚徒困境",
+     "zh": "这是一个三方囚徒困境市场，而这几个囚徒以前就被抓到过明目张胆地串通。现在他们不需要明着串通了，模式和结果早已确立，「监狱」对新进入者也几乎关上了门。",
+     "en": "It's a 3 way prisoners dilemma market where the prisoners have been caught explicitly colluding before.",
+     "hn": "https://news.ycombinator.com/item?id=50505269",
+     "id": 50505269,
+     "replies": 23
+    },
+    {
+     "user": "ketzu",
+     "stance": "等审判再说",
+     "zh": "我很想看审判会揭出什么。几乎所有事情都可能有非合谋的解释，取决于技术和市场；比如如果你相信 AI 是巨大泡沫，也会对建昂贵的新产能持怀疑态度。",
+     "en": "Nearly everything could have a non-colluding explanation depending on the tech and market.",
+     "hn": "https://news.ycombinator.com/item?id=50505326",
+     "id": 50505326,
+     "replies": 11
+    }
+   ],
+   "kicker": "要闻 · 芯片"
+  },
+  {
+   "id": 50509411,
+   "title": "微软 365 故障致报警邮件没送达，德国乐园酒店泳池氯超标 15 人受伤",
+   "title_en": "Microsoft 365 outage leads to chlorine gas poisoning of 15 hotel guests",
+   "url": "https://www1.wdr.de/nrw/rheinland/rhein-erft-kreis/technischer-defekt-chlor-phantasialand-100.html",
+   "hn": "https://news.ycombinator.com/item?id=50509411",
+   "points": 348,
+   "comments": 166,
+   "summary": [
+    "德国西部广播公司（WDR）报道：周五微软服务故障，Outlook 等邮件无法收发。布吕尔的欢乐园（Phantasialand）告诉 WDR，因为邮件收不到，没人发现桑拿区维护安全系统早已发邮件报警——泳池的自动加药系统往池里泵入了过量的氯。",
+    "旗下灵宝酒店有 13 名客人在用过泳池后出现呼吸道刺激，人数最终增至 15 人，4 人送医，其中 1 人因中度受伤留院观察。消防检测确认是自动加药系统故障，池水已更换，泳池重新开放。HN 标题写的是「氯气中毒」，但有评论指出报道只说氯含量过高；评论区几乎一致认为责任在酒店把安全报警只押在邮件上。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "N19PEDL2",
+     "stance": "怪酒店不怪微软",
+     "zh": "这百分之百是酒店的错，不是微软的。这么危险的事情，通知竟然完全依赖邮件，没有任何备份或复核，这不可接受。",
+     "en": "the communications regarding such a dangerous thing totally rely on email, without any backup or double check",
+     "hn": "https://news.ycombinator.com/item?id=50509854",
+     "id": 50509854,
+     "replies": 60
+    },
+    {
+     "user": "amluto",
+     "stance": "这类系统常这样坏",
+     "zh": "我自己就在运行一套相当先进的闭环加氯系统，这事错得离谱。这类系统很容易坏，而且往往坏成测得氯含量偏低甚至为零，于是过量加氯。所以必须有真人定期测量。",
+     "en": "they tend to fail in a way that causes them to measure low or zero chlorine and thus overdispense chlorine",
+     "hn": "https://news.ycombinator.com/item?id=50511665",
+     "id": 50511665,
+     "replies": 4
+    },
+    {
+     "user": "spaldingcactus",
+     "stance": "真是氯气吗",
+     "zh": "也许是翻译丢了信息，但我想弄清哪里提到了「氯气」。我找到的报道只说「氯太多」，这有害，但和氯气不是一回事。",
+     "en": "which is hazardous but not the same as chlorine gas",
+     "hn": "https://news.ycombinator.com/item?id=50511136",
+     "id": 50511136,
+     "replies": 2
+    }
+   ],
+   "kicker": "要闻 · 故障"
+  },
+  {
+   "id": 50503255,
+   "title": "EFF 与 ACLU 上诉：警方查车牌识别数据库应先拿搜查令",
+   "title_en": "We're Asking an Appeals Court to Require a Warrant for ALPR Searches",
+   "url": "https://www.eff.org/deeplinks/2026/11/were-asking-appeals-court-require-warrant-alpr-searches",
+   "hn": "https://news.ycombinator.com/item?id=50503255",
+   "points": 334,
+   "comments": 117,
+   "summary": [
+    "电子前哨基金会（EFF）和美国公民自由联盟向联邦第六巡回上诉法院提交法庭之友意见书。案件是 United States v. Sturdivant：克利夫兰一带发生连环抢劫，警方从监控中只知道车的品牌、型号和颜色，不知道车牌，于是在 Flock 和 ELSAG 两个自动车牌识别（ALPR）数据库里做开放式检索，查到被告的车曾出现在案发地附近并将其逮捕。",
+    "地方法院认为车牌人人可见，被告对其没有合理隐私期待，因此车辆在公共场所被追踪不涉及第四修正案。EFF 反驳说 ALPR 网络是可以一键回看任何人行踪的「时光机」，上个月另一联邦地区法院就认定 ALPR 是「无差别大规模监控」；它希望上诉法院改判，要求查询 ALPR 须有搜查令。评论区有人推荐新罕布什尔州的严格立法。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "petcat",
+     "stance": "照抄新罕布什尔",
+     "zh": "只要每个州都采用新罕布什尔州的法律，美国的 Flock 和 ALPR 问题就解决了：禁止收集所有车牌留待日后分析，只许拍车牌，未命中的图像 3 分钟内删除且不得上传。我还会加上查询须有搜查令。",
+     "en": "Illegal to collect every plate for later analysis",
+     "hn": "https://news.ycombinator.com/item?id=50503594",
+     "id": 50503594,
+     "replies": 46
+    },
+    {
+     "user": "largbae",
+     "stance": "还要更进一步",
+     "zh": "这是很好的一步，但还得走得更远：ALPR 工具应该只能存储那些有有效搜查令的车牌命中记录。",
+     "en": "The ALPR tools should only be able to store hits on license plates that are under an active warrant.",
+     "hn": "https://news.ycombinator.com/item?id=50503536",
+     "id": 50503536,
+     "replies": 12
+    },
+    {
+     "user": "fritzo",
+     "stance": "反方之问",
+     "zh": "谁能解释一下，为什么你们宁要「免于监控的自由」，也不要「给持枪劫匪定罪」？监控不就是让老实人保持老实吗？",
+     "en": "Can some explain why you prefer",
+     "hn": "https://news.ycombinator.com/item?id=50504128",
+     "id": 50504128,
+     "replies": 10
+    }
+   ],
+   "kicker": "要闻 · 隐私"
+  },
+  {
+   "id": 50511395,
+   "title": "Bitly 旧短链被抢注：汉堡王、麦当劳 2011 年的推文被导向纳粹集中营和 9·11 页面",
+   "title_en": "Old Bitly Links Are Being Hijacked",
+   "url": "https://ransomnews.com/burger-king-tweet-bitly-link-hijack-2026/",
+   "hn": "https://news.ycombinator.com/item?id=50511395",
+   "points": 123,
+   "comments": 59,
+   "summary": [
+    "Ransomnews 调查：汉堡王账号并没被盗，而是它 2011 年 7 月 24 日推文里的一个 Bitly 短链在 2026 年 11 月 15 日被别人重新注册，指向维基百科的纳粹集中营列表，引用该推文的帖子几小时内超过 200 万次浏览；18 分钟前，麦当劳 2011 年 6 月一条推文里的短链也以同样方式被改指向 9·11 袭击词条。Bitly 帮助页面本来写明短链后缀即使账号删除也不能重用。",
+    "记者又查了特朗普 2009–2013 年推文中的 97 个 Bitly 链接：40 个仍是原链，49 个后来被重建但目标看起来一致（其中 48 个在 2023 年 5 月 26 日的 17 分钟内建成），7 个指向别处，1 个被封。Bitly 随后在 X 上承认存在让不法者「重新利用某些旧的闲置链接」的问题，已封禁相关账号并停用受影响链接；CNN 报道比尔·盖茨、特鲁多、FBI 等的旧帖也受影响。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "xp84",
+     "stance": "外包短链更糟",
+     "zh": "我认为外包的短链服务对互联网的危害比自建的大一个数量级。它们年复一年积累网址，账号被停用、公司倒闭、数据丢失，什么都可能发生，这就是在制造永久失效、可能无法修复的链接。",
+     "en": "Link shorteners that are outsourced are in my humble opinion an order of magnitude worse for the internet than they would be if in-house.",
+     "hn": "https://news.ycombinator.com/item?id=50512151",
+     "id": 50512151,
+     "replies": 0
+    },
+    {
+     "user": "sparkling",
+     "stance": "为何不恢复",
+     "zh": "「并正在停用受影响的链接」——恢复原来的目标网址不是更合理吗？",
+     "en": "Wouldn't it make more sense to restore the original destination URL?",
+     "hn": "https://news.ycombinator.com/item?id=50511962",
+     "id": 50511962,
+     "replies": 1
+    },
+    {
+     "user": "silisili",
+     "stance": "还有信任安全团队",
+     "zh": "最让我意外的是，一个短链服务居然赚得够多，养得起信任与安全团队。我还以为它只是一两个人搞的副业。",
+     "en": "I think the biggest surprise to me is that a URL shortener makes enough money to have a Trust and Safety team.",
+     "hn": "https://news.ycombinator.com/item?id=50512250",
+     "id": 50512250,
+     "replies": 1
+    }
+   ],
+   "kicker": "要闻 · 安全"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 2,
+   "stats": {
+    "items": 13,
+    "points": 1094,
+    "comments": 525,
+    "top_points": {
+     "id": 50463399,
+     "title": "Claude Code 和 Codex 用一块 3 美元的 Arduino 逆向了 1994 年吉普的发动机电脑",
+     "value": 319,
+     "comments": 158
+    },
+    "top_comments": {
+     "id": 50463399,
+     "title": "Claude Code 和 Codex 用一块 3 美元的 Arduino 逆向了 1994 年吉普的发动机电脑",
+     "value": 158
+    },
+    "top_brief": {
+     "id": 50506376,
+     "title": "图解现代大模型里的位置编码",
+     "value": 192,
+     "comments": 26
+    }
+   },
+   "stories": [
+    {
+     "id": 50481321,
+     "title": "把几千段对话画进 Qwen 的内部空间：看到了什么，又漏掉了什么",
+     "title_en": "What thousands of conversations look like inside a language model",
+     "url": "https://operator0x.com/field-notes/qwen-conversation-state-space/",
+     "hn": "https://news.ycombinator.com/item?id=50481321",
+     "points": 111,
+     "comments": 29,
+     "summary": [
+      "作者为 Qwen3-1.7B 做了一个可交互的内部表示「地图」：用 100 个主题生成英、中、德、克罗地亚语问答和 90 个 Python 编程例子，记录残差流里每个词元的最终状态（每个 2048 维），再用 PCA 投到三维。英语状态看起来像一张薄片，三维投影里一个平面能装下约 99.3% 的变化；中文落在相邻但明显错开的区域，德语和克罗地亚语与英语大幅重叠，代码也在拉丁字母语言附近。",
+      "但作者随即自我检验：显示的三条轴只抓住全部变化的 17.6%，在 2048 维里拟合的最佳平面也只有 28.7%，要保留 90% 的变化需要 684 个方向，所以「薄片」主要是投影造成的观感。他提醒，语言、文字、分词和答案质量在实验里是混在一起变化的。评论区对方法论多有质疑。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Scene_Cast2",
+       "stance": "方法论没讲清",
+       "zh": "方法论要么严重欠火候到了误导的程度，要么严重缺乏解释。为什么是三维？降维是在哪一步做的？既然降了维，那个「平面」真的有意义吗？",
+       "en": "The methodology feels either heavily undercooked to the point of being misleading, or heavily under explained.",
+       "hn": "https://news.ycombinator.com/item?id=50506916",
+       "id": 50506916,
+       "replies": 4
+      },
+      {
+       "user": "supermatt",
+       "stance": "最后一层当然分开",
+       "zh": "只看最后一层，不就等于说一串中文词元后面跟中文词元、一串拉丁字母词元后面跟拉丁字母词元吗？按这个设置这是意料之中。我更想看翻译在中间层是什么样子。",
+       "en": "Would be interested in seeing what translations look like in the middle layers.",
+       "hn": "https://news.ycombinator.com/item?id=50508370",
+       "id": 50508370,
+       "replies": 0
+      },
+      {
+       "user": "netruk44",
+       "stance": "长度比内容重要",
+       "zh": "我每年都会用 Qwen 嵌入给 Steam 游戏和评测做地图。今年学到的一点是：朴素的文本映射主要比较的是文本长度，评测说了什么对位置的影响，不如评测有多长。",
+       "en": "What a review says affects the position less than how long the review is.",
+       "hn": "https://news.ycombinator.com/item?id=50507049",
+       "id": 50507049,
+       "replies": 10
+      }
+     ],
+     "kicker": "AI · 可解释性"
+    },
+    {
+     "id": 50510799,
+     "title": "「你的 AI 助手会挑能刷机的那个」：AI 让改写固件变便宜",
+     "title_en": "Your Agent Will Pick the Hackable One",
+     "url": "https://geoffstearns.com/blog/your-agent-will-pick-the-hackable-one/",
+     "hn": "https://news.ycombinator.com/item?id=50510799",
+     "points": 70,
+     "comments": 43,
+     "summary": [
+      "作者以约 70 美元的口袋 FM 合成器 M-VAVE FM-1 为例：车主从 9 月起自己写固件，到 10 月已多到写不完——虚拟模拟合成器、多轨律动机、氛围采样器，还有《毁灭战士》移植；据开发者在论坛上的说法，几乎都是用 AI 编程工具写的。10 月厂商以 GPLv3 开源自家固件，附开发包和浏览器模拟器，还加了约 10 秒恢复原厂固件的工具。",
+      "他认为写固件已经便宜到一个周末就能搞定，以后用户会让 AI 助手去改设备，买东西时助手也会偏向能改的那个，从而倒逼厂商开放；百灵达随后公开了 KICK 和 IGNITE 的固件源码，Akai 和 Erica Synths 也宣布类似计划。评论区普遍不买账标题：现在的大模型并不会自己偏好可刷机设备。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "raincole",
+       "stance": "这是科幻",
+       "zh": "「你的助手会挑能刷机的那个……买家根本不必考虑开放性」——这纯属科幻，跟现在的大模型怎么工作毫无关系。",
+       "en": "It's just sci-fi and has nothing to do how the current LLMs work.",
+       "hn": "https://news.ycombinator.com/item?id=50511484",
+       "id": 50511484,
+       "replies": 10
+      },
+      {
+       "user": "crazygringo",
+       "stance": "助手没有目标",
+       "zh": "需要出处。AI 助手没有自己的目标，什么都不在乎。你让大模型推荐产品，它只是把你提示里说重要的东西和专业评测、用户评价结合起来；你不提可改性，它就会完全忽略。",
+       "en": "AI agents don't have any goals of their own.",
+       "hn": "https://news.ycombinator.com/item?id=50511545",
+       "id": 50511545,
+       "replies": 1
+      },
+      {
+       "user": "palata",
+       "stance": "真正的看点",
+       "zh": "对我来说有意思的根本不是「助手会挑能改的」，而是大模型会让逆向工程容易得多，让我们真正拥有自己的设备。",
+       "en": "LLMs will make it a lot easier to reverse-engineer stuff and actually own our devices.",
+       "hn": "https://news.ycombinator.com/item?id=50511474",
+       "id": 50511474,
+       "replies": 1
+      }
+     ],
+     "kicker": "AI · 硬件"
+    },
+    {
+     "id": 50463399,
+     "title": "Claude Code 和 Codex 用一块 3 美元的 Arduino 逆向了 1994 年吉普的发动机电脑",
+     "title_en": "Claude Code and Codex reverse engineered my 1994 Jeep's ECU over a $3 Arduino [video]",
+     "url": "https://www.youtube.com/watch?v=WPj3aQ-xxpI",
+     "hn": "https://news.ycombinator.com/item?id=50463399",
+     "points": 319,
+     "comments": 158,
+     "summary": [
+      "据这段视频的简介：作者的 1994 年吉普切诺基没有 OBD2 接口，也没有能用的诊断仪，于是他把一块 3 美元的 Arduino Nano 接到发动机电脑上，让 Claude Code 和 Codex 去摸索。大约一周里，它们实时读取了电脑数据、记录行车日志、完整拷出了它的程序，还在里面跑起了自己的代码。",
+      "视频章节包括尾气检测不合格、Claude 驱动燃油泵、尝试重刷程序等；接线、代码和给 AI 的说明放在 GitHub 仓库 xj-scanner，参数表来自 ChryslerScanner。作者自称不是机修工，讲的发动机知识可能有误。评论区最津津乐道的是 Claude 主动开动燃油泵那一段，也有人憧憬用它给车配钥匙。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "libria",
+       "stance": "燃油泵那一刻",
+       "zh": "（视频原话）燃油泵开了大约 10 秒，我开始慌了，叫它停下，因为那是 Claude 第一次真正在电脑里做了会产生变化的事。",
+       "en": "The fuel pump was on for about 10 seconds and I started to freak out",
+       "hn": "https://news.ycombinator.com/item?id=50508610",
+       "id": 50508610,
+       "replies": 29
+      },
+      {
+       "user": "misterderpie",
+       "stance": "所有权回到用户",
+       "zh": "大模型改变消费市场的方式，并不是大公司希望的那样。看到我们能把所有权还给用户，或让别人做到这一点，很了不起。演示很棒。",
+       "en": "It is impressive to see that we'll be able to give ownership back to the customer",
+       "hn": "https://news.ycombinator.com/item?id=50507980",
+       "id": 50507980,
+       "replies": 42
+      },
+      {
+       "user": "aiiotnoodle",
+       "stance": "拿来配钥匙",
+       "zh": "很想看到用它来给车加钥匙。很多车现在都有平板和屏幕本可以做这件事，但因为某种原因（钱），我的大众还得去 4S 店。",
+       "en": "Would love to see this being used to add keys to cars.",
+       "hn": "https://news.ycombinator.com/item?id=50507911",
+       "id": 50507911,
+       "replies": 25
+      }
+     ],
+     "kicker": "AI · 动手"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50505376,
+     "title": "一份关于「英伟达银行」的全面指南",
+     "title_en": "A comprehensive guide to the bank of Nvidia",
+     "url": "https://hntrbrk.com/investigations/nvidia",
+     "hn": "https://news.ycombinator.com/item?id=50505376",
+     "points": 18,
+     "comments": 3
+    },
+    {
+     "id": 50506376,
+     "title": "图解现代大模型里的位置编码",
+     "title_en": "Understanding Positional Embeddings in Modern LLMs",
+     "url": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
+     "hn": "https://news.ycombinator.com/item?id=50506376",
+     "points": 192,
+     "comments": 26
+    },
+    {
+     "id": 50509883,
+     "title": "FT：黄仁勋与盟友商讨重返英伟达 CEO 之位",
+     "title_en": "Jensen Huang discusses comeback as Nvidia CEO with allies",
+     "url": "https://www.ft.com/content/45383d86-33c4-4d99-86e5-5e058d3567c1",
+     "hn": "https://news.ycombinator.com/item?id=50509883",
+     "points": 100,
+     "comments": 77
+    },
+    {
+     "id": 50505905,
+     "title": "Wccftech：黄仁勋被指人为制造 GPU 短缺",
+     "title_en": "Jensen Huang allegedly manufactured the GPU shortage",
+     "url": "https://wccftech.com/jensen-huang-financed-ai-startups-absorb-excess-silicon/",
+     "hn": "https://news.ycombinator.com/item?id=50505905",
+     "points": 60,
+     "comments": 58
+    },
+    {
+     "id": 50509953,
+     "title": "家长花 7.5 万美元上 Alpha 的 AI 学校，半数学生未达数学目标",
+     "title_en": "Parents pay $75k for Alpha's AI school. Half of its students missed math target",
+     "url": "https://fortune.com/2026/11/14/alpha-school-ai-students-tuition-learning-goals/",
+     "hn": "https://news.ycombinator.com/item?id=50509953",
+     "points": 59,
+     "comments": 61
+    },
+    {
+     "id": 50503241,
+     "title": "在 Opus 5.5 上完成一项任务要花多少钱",
+     "title_en": "What a task costs on Opus 5.5",
+     "url": "https://claude.dev/blog/what-a-task-costs-on-opus-5-5/",
+     "hn": "https://news.ycombinator.com/item?id=50503241",
+     "points": 23,
+     "comments": 21
+    },
+    {
+     "id": 50507517,
+     "title": "一个人类读完了 Anthropic 的 IPO 招股书",
+     "title_en": "A Human Reads the Anthropic IPO Filing",
+     "url": "https://www.nytimes.com/2026/11/15/business/anthropic-ipo-filing-prospectus.html",
+     "hn": "https://news.ycombinator.com/item?id=50507517",
+     "points": 21,
+     "comments": 10
+    },
+    {
+     "id": 50465676,
+     "title": "「评测意识」与「评测偏执」",
+     "title_en": "Eval Awareness vs. Eval Paranoia",
+     "url": "https://www.lesswrong.com/posts/mepsi7JNKYejq9wry/eval-awareness-vs-eval-paranoia",
+     "hn": "https://news.ycombinator.com/item?id=50465676",
+     "points": 45,
+     "comments": 21
+    },
+    {
+     "id": 50506940,
+     "title": "Show HN：db-branch，借 ZFS 几秒内为 AI 智能体和 CI 建数据库分支",
+     "title_en": "Show HN: db-branch – database branches in seconds for AI agents and CI, via ZFS",
+     "url": "https://github.com/db-branch/db-branch",
+     "hn": "https://news.ycombinator.com/item?id=50506940",
+     "points": 30,
+     "comments": 9
+    },
+    {
+     "id": 50503930,
+     "title": "Show HN：Turbo-Browser-MCP，为 MCP 提供批量表单、DOM 增量和提交保护",
+     "title_en": "Show HN: Turbo-Browser-MCP – Batch forms, DOM deltas and submit guards for MCP",
+     "url": "https://github.com/Tthanh2k6/turbo-browser-mcp",
+     "hn": "https://news.ycombinator.com/item?id=50503930",
+     "points": 46,
+     "comments": 9
+    }
+   ]
+  },
+  {
+   "name": "开发",
+   "en": "Software",
+   "page": 3,
+   "stats": {
+    "items": 13,
+    "points": 1384,
+    "comments": 666,
+    "top_points": {
+     "id": 50506894,
+     "title": "整个 Turbo Pascal 比 touch 命令还小（2011）",
+     "value": 190,
+     "comments": 94
+    },
+    "top_comments": {
+     "id": 50478701,
+     "title": "微软 FORGE 实验室在 Rust 标准库里找出多处内存安全漏洞",
+     "value": 191
+    },
+    "top_brief": {
+     "id": 50509837,
+     "title": "Protomaps：自托管地图瓦片变得又便宜又简单",
+     "value": 130,
+     "comments": 32
+    }
+   },
+   "stories": [
+    {
+     "id": 50478701,
+     "title": "微软 FORGE 实验室在 Rust 标准库里找出多处内存安全漏洞",
+     "title_en": "Memory Safety Bugs in Rust Standard Library",
+     "url": "https://forge-blog.github.io/posts/rust-std-memory-safety/",
+     "hn": "https://news.ycombinator.com/item?id=50478701",
+     "points": 189,
+     "comments": 191,
+     "summary": [
+      "微软 FORGE 实验室撰文介绍，他们在 Rust 标准库（std 和 core）中发现多处内存安全问题，其中一些用完全安全的 Rust 代码就能触发未定义行为；部分漏洞借助其 AI 漏洞扫描系统（代号 MDASH 的研究版 Hyenas）找到，再由研究员复现并与 Rust 维护者一起报告修复。",
+      "这些漏洞归为三类「错付的信任」：相信代码不会 panic（如 MapWindows::clone）、相信用户提供的实现是正确的（如带自定义 Pattern 的 str::replace）、相信底层系统（如 process::exit 与主线程信号栈、exec 与全局环境变量）。作者强调每个都需要不寻常的条件才能触发，标准库的健全性漏洞不等于程序漏洞，Rust 的安全模型依然值得。评论区则借机争论 panic 展开机制。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "simonask",
+       "stance": "没什么丑闻",
+       "zh": "鉴于一提 Rust 情绪就沸腾，我想给只是随便看看的人澄清：这些发现没有任何不寻常或丑闻之处。Rust 项目目前有 178 个打着 I-unsound 标签的未关闭问题。软件就是这样。",
+       "en": "there is nothing unusual or scandalous about these finds",
+       "hn": "https://news.ycombinator.com/item?id=50504923",
+       "id": 50504923,
+       "replies": 38
+      },
+      {
+       "user": "Panzerschrek",
+       "stance": "展开是个错误",
+       "zh": "所以我认为 Rust 支持栈展开是个错误。它给人虚假的安全感，而写出对展开正确的代码非常难。不如把 panic 当作立即终止进程来处理。",
+       "en": "it would be better to handle panics as immediate process termination instead",
+       "hn": "https://news.ycombinator.com/item?id=50504896",
+       "id": 50504896,
+       "replies": 17
+      },
+      {
+       "user": "hingler36",
+       "stance": "标准库不够 Rust",
+       "zh": "我一直觉得 Rust 标准库有些部分怪怪的、不够「Rust」。比如向量越界索引会 panic，而不是返回 Option。",
+       "en": "I've always felt that parts of the Rust standard library to be weirdly un-rusty.",
+       "hn": "https://news.ycombinator.com/item?id=50504566",
+       "id": 50504566,
+       "replies": 26
+      }
+     ],
+     "kicker": "开发 · Rust"
+    },
+    {
+     "id": 50507553,
+     "title": "「Emacs 就是我的浏览器」：用 EWW 上网，九成需求够用",
+     "title_en": "Emacs Is My Browser",
+     "url": "https://joshblais.com/blog/emacs-as-my-browser/",
+     "hn": "https://news.ycombinator.com/item?id=50507553",
+     "points": 170,
+     "comments": 88,
+     "summary": [
+      "作者 Josh Blais 想把 Emacs 当作唯一的计算环境，认真用了几天内置浏览器 EWW 后发现它能覆盖约 85–90% 的场景。他的动机是现代浏览器太容易让人分心，而 EWW 只有文字和图片；连手机上也在 termux 里用 Emacs 上网，只有 5–10% 的情况退回 Fennec 浏览器。",
+      "他分享了配置：R 进入类似阅读模式的视图，& 把当前页交给默认浏览器，PDF 在 Emacs 里打开，视频链接交给 mpv，Gopher/Gemini 链接交给 elpher，搜索走自建的 Searx。局限也写得很明白：看不了 YouTube、刷不了 X 和社交媒体，网银、政务表单都不行。评论区有人提到 RMS 也在 Emacs 里上网。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Arubis",
+       "stance": "商业网站不配合",
+       "zh": "最重要的部分在结尾，看你把它当缺点还是优点：现代商业网站跟这套玩不来。静态 HTML 和博客可以，Reddit 和大多数商业站点不行。",
+       "en": "the modern commercial web does not play nice with this",
+       "hn": "https://news.ycombinator.com/item?id=50507975",
+       "id": 50507975,
+       "replies": 10
+      },
+      {
+       "user": "jll29",
+       "stance": "RMS 也这么干",
+       "zh": "理查德·斯托曼（RMS）也在 Emacs 里上网。但我记得他是把网址贴给一个程序，再通过邮件收到网页（至少约 20 年前我见到他时是这样）。他的动机不是专注，而是理念。",
+       "en": "Richard Stallman (RMS) also uses the Web from Emacs.",
+       "hn": "https://news.ycombinator.com/item?id=50508588",
+       "id": 50508588,
+       "replies": 8
+      },
+      {
+       "user": "krylon",
+       "stance": "老电脑用 w3m",
+       "zh": "我浴室里放着一台很老的笔记本，用来随便读读维基百科，跑不动主流浏览器。后来突然想到，w3m-mode 有标签页和会话管理，显示图片甚至比 Dillo 还稳。",
+       "en": "w3m-mode has both tabs and session management.",
+       "hn": "https://news.ycombinator.com/item?id=50510298",
+       "id": 50510298,
+       "replies": 0
+      }
+     ],
+     "kicker": "开发 · 工具"
+    },
+    {
+     "id": 50506894,
+     "title": "整个 Turbo Pascal 比 touch 命令还小（2011）",
+     "title_en": "Things That Turbo Pascal Is Smaller Than (2011)",
+     "url": "https://prog21.dadgum.com/116.html",
+     "hn": "https://news.ycombinator.com/item?id=50506894",
+     "points": 190,
+     "comments": 94,
+     "summary": [
+      "游戏设计师 James Hague 2011 年的旧文：1986 年 9 月发布的 MS-DOS 版 Turbo Pascal 3 是完整的 Pascal 编译器加集成编辑器，编译速度比微软的编译器快几个数量级，而 3.02 版整个可执行文件只有 39,731 字节。",
+      "他列出当时比它大的东西：压缩版 jQuery 1.6（90,518 字节）、yahoo.com 首页（219,583）、苹果官网的白色 iPhone 4S 图片（190,157）、OS X Lion SDK 里的 zlib.h（80,504）、OS X Lion 的 touch 命令（44,016），以及维基百科 C++ 词条（214,251）。评论区一边惊叹 touch 都比它大，一边追问 Pascal 为何几乎消失。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "jll29",
+       "stance": "touch 太离谱",
+       "zh": "有些比较看起来可笑，但 touch 命令的二进制比 Turbo Pascal 还大实在离谱：它基本就是新建空文件或更新修改时间。除了懒，没有理由超过 2K。",
+       "en": "There's no reason (other than laziness) why that should take more than 2k.",
+       "hn": "https://news.ycombinator.com/item?id=50508542",
+       "id": 50508542,
+       "replies": 17
+      },
+      {
+       "user": "sroerick",
+       "stance": "Pascal 去哪了",
+       "zh": "Pascal 为什么几乎彻底死掉了？它影响巨大、深受喜爱，而很多别的语言至今还有大量遗留代码。Pascal 在哪儿？",
+       "en": "Why did Pascal basically die completely?",
+       "hn": "https://news.ycombinator.com/item?id=50507985",
+       "id": 50507985,
+       "replies": 32
+      },
+      {
+       "user": "jbellis",
+       "stance": "Hejlsberg 最强",
+       "zh": "Anders Hejlsberg 是史上最佳。Turbo Pascal、Delphi、C#、TypeScript，一段非凡的职业生涯，品味胜过我能想到的任何语言设计者。",
+       "en": "Turbo Pascal, Delphi, C#, TypeScript",
+       "hn": "https://news.ycombinator.com/item?id=50507510",
+       "id": 50507510,
+       "replies": 3
+      }
+     ],
+     "kicker": "开发 · 怀旧"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50509837,
+     "title": "Protomaps：自托管地图瓦片变得又便宜又简单",
+     "title_en": "Protomaps: Self-hosting map tiles has gotten cheap and easy",
+     "url": "https://bruceroettgers.eu/blog/protomaps/",
+     "hn": "https://news.ycombinator.com/item?id=50509837",
+     "points": 130,
+     "comments": 32
+    },
+    {
+     "id": 50508715,
+     "title": "Clice v1.0 发布：欢迎来到现代 C++",
+     "title_en": "Clice v1.0 Released: Welcome to Modern C++",
+     "url": "https://ykiko.me/en/articles/2105384023094834022/",
+     "hn": "https://news.ycombinator.com/item?id=50508715",
+     "points": 86,
+     "comments": 57
+    },
+    {
+     "id": 50504077,
+     "title": "Kiri：现代容器运行时",
+     "title_en": "Kiri – The Modern Container Runtime",
+     "url": "https://runkiri.com/",
+     "hn": "https://news.ycombinator.com/item?id=50504077",
+     "points": 91,
+     "comments": 34
+    },
+    {
+     "id": 50504072,
+     "title": "Show HN：Gawain，要求 Python 所有变量都写类型注解",
+     "title_en": "Show HN: Gawain – Require type hints on all Python variables",
+     "url": "https://github.com/matheuzgomes/gawain",
+     "hn": "https://news.ycombinator.com/item?id=50504072",
+     "points": 67,
+     "comments": 52
+    },
+    {
+     "id": 50483431,
+     "title": "《500 行以内》：一个 3D 建模器",
+     "title_en": "500 Lines or Less A 3D Modeller",
+     "url": "https://aosabook.org/en/500L/a-3d-modeller.html",
+     "hn": "https://news.ycombinator.com/item?id=50483431",
+     "points": 97,
+     "comments": 19
+    },
+    {
+     "id": 50506588,
+     "title": "用 Odin 写的 NES 模拟器",
+     "title_en": "A NES emulator written in Odin",
+     "url": "https://lucypero.com/lucynes.html",
+     "hn": "https://news.ycombinator.com/item?id=50506588",
+     "points": 105,
+     "comments": 40
+    },
+    {
+     "id": 50504277,
+     "title": "NetBSD 磁盘加密：如何做到保密",
+     "title_en": "Disk encryption on NetBSD – achieving secrecy",
+     "url": "https://netbsd.org/~nia/disk-encrypt/",
+     "hn": "https://news.ycombinator.com/item?id=50504277",
+     "points": 93,
+     "comments": 18
+    },
+    {
+     "id": 50467539,
+     "title": "Pyrolog 20 年",
+     "title_en": "20 Years of Pyrolog",
+     "url": "https://pypy.org/posts/2026/11/20-years-of-pyrolog.html",
+     "hn": "https://news.ycombinator.com/item?id=50467539",
+     "points": 71,
+     "comments": 4
+    },
+    {
+     "id": 50509416,
+     "title": "Eclipse Mosquitto：开源 MQTT 消息代理",
+     "title_en": "Eclipse Mosquitto – An open source MQTT broker",
+     "url": "https://github.com/eclipse-mosquitto/mosquitto",
+     "hn": "https://news.ycombinator.com/item?id=50509416",
+     "points": 57,
+     "comments": 21
+    },
+    {
+     "id": 50481056,
+     "title": "Rust 里的严格单调时间戳与无间隙序列",
+     "title_en": "Strictly monotonic timestamps and gapless sequences in Rust",
+     "url": "https://tsoracle.rs/",
+     "hn": "https://news.ycombinator.com/item?id=50481056",
+     "points": 38,
+     "comments": 16
+    }
+   ]
+  },
+  {
+   "name": "时事与市场",
+   "en": "World & Markets",
+   "page": 4,
+   "stats": {
+    "items": 13,
+    "points": 1201,
+    "comments": 590,
+    "top_points": {
+     "id": 50506180,
+     "title": "NYT：卢特尼克力推放宽与其家族生意有交集的芯片规则",
+     "value": 450,
+     "comments": 194
+    },
+    "top_comments": {
+     "id": 50506180,
+     "title": "NYT：卢特尼克力推放宽与其家族生意有交集的芯片规则",
+     "value": 194
+    },
+    "top_brief": {
+     "id": 50506180,
+     "title": "NYT：卢特尼克力推放宽与其家族生意有交集的芯片规则",
+     "value": 450,
+     "comments": 194
+    }
+   },
+   "stories": [
+    {
+     "id": 50510005,
+     "title": "测了 8900 笔美国众议员股票交易：跟着买跑不赢大盘",
+     "title_en": "Do House members' stock trades beat the market? A test of 8,900 trades",
+     "url": "https://arkanumdata.com/research/house-trades",
+     "hn": "https://news.ycombinator.com/item?id=50510005",
+     "points": 101,
+     "comments": 110,
+     "summary": [
+      "Arkanum Data 研究团队分析了 99 名众议员自 2024 年 11 月 14 日起披露的 8,941 笔股票交易（4,142 笔买入、4,799 笔卖出）。从交易公开之日算起，买入股票六个月的中位数表现比等权标普 500 低 2.4%（90% 区间 −3.9% 到 +0.1%），他们卖出的股票中位数为 −1.7%——买的并不比卖的好；即使从议员自己的交易日算，买入也是 −1.5%。",
+      "按党派、金额、账户或披露延迟分组，也没有哪组明显跑赢指数。报告还指出披露很慢：交易中位数在 27 天后才披露，12% 超过了 45 天的法定期限；参议院因网站屏蔽自动访问未纳入。本帖 101 点赞、110 条评论，是当天评论与点赞比最高的帖子；评论区质疑只看中位数会漏掉少数精准交易。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "thriving_earthw",
+       "stance": "跑没跑赢不重要",
+       "zh": "如果你想禁止国会议员（或更广泛的政府官员）炒股，我认为他们跑没跑赢大盘并不重要。最好的理由是，哪怕只是有不当行为的观感或可能，也会损害公众信任。",
+       "en": "I don't think it matters whether they actually beat the market.",
+       "hn": "https://news.ycombinator.com/item?id=50510770",
+       "id": 50510770,
+       "replies": 51
+      },
+      {
+       "user": "zug_zug",
+       "stance": "中位数不对",
+       "zh": "中位数表现？这算法不对。计算股票收益要用加权平均，因为往往是少数异常值贡献了绝大部分利润。从方法上看，这像是在掩盖数据。",
+       "en": "To calculate proper stock returns you need weighted mean.",
+       "hn": "https://news.ycombinator.com/item?id=50511059",
+       "id": 50511059,
+       "replies": 8
+      },
+      {
+       "user": "cm2187",
+       "stance": "真内鬼在高层",
+       "zh": "普通众议员未必是合适的基准，他们不是真正的内部人。真正的内部人在国会高层：委员会要职、安全简报、法案起草的前排座位。",
+       "en": "Not sure the average representative is the right benchmark",
+       "hn": "https://news.ycombinator.com/item?id=50511012",
+       "id": 50511012,
+       "replies": 1
+      }
+     ],
+     "kicker": "时事 · 市场",
+     "tag": "评论点赞比最高"
+    },
+    {
+     "id": 50507791,
+     "title": "全美航班停飞后运输部长称路由器过载，空管人员不买账",
+     "title_en": "'Duffy Lied': Controllers Refute Transportation Secretary's Ground Stop Story",
+     "url": "https://www.commondreams.org/news/duffy-ground-stop-explanation",
+     "hn": "https://news.ycombinator.com/item?id=50507791",
+     "points": 143,
+     "comments": 42,
+     "summary": [
+      "Common Dreams 报道：周五美国全国航班地面停飞（史上第三次）影响约 150 万旅客。运输部长达菲在白宫称原因是老旧系统的交换机和路由器「数据过载」，周六又补充说是承包商 L3Harris 把一段旧铜线换成光纤时发生过载，并称正在调查是承包商「无能」还是路由器故障。他否认与 FAA 刚在全国推开的 8.75 亿美元 AI 系统 SMART 有关，说它「根本没接上」。",
+      "《华盛顿审查者报》记者 Anna Giaritelli 说她问了 60 名空管人员，「没一个人信」：这类设备更换不会在周五下午这种繁忙时段做，而是在周中半夜。达菲则借机再次要求国会拨款 500 亿美元改造空管系统。评论区有人提醒，空管员未必了解网络设备更换，故障也可能在夜间施工后慢慢累积。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "jml7c5",
+       "stance": "问错了人",
+       "zh": "去问空管员对这件事的看法有点奇怪——他们会知道网络设备更换吗？我以为那是维护系统的工程师和技术员负责的，不是指挥飞机的人。",
+       "en": "Asking air traffic controllers for their opinion on this is a bit odd",
+       "hn": "https://news.ycombinator.com/item?id=50508407",
+       "id": 50508407,
+       "replies": 7
+      },
+      {
+       "user": "schiffern",
+       "stance": "可能是夜里装的",
+       "zh": "「驳斥」听起来像有内幕，其实只是怀疑 FAA 会不会在周五白天安排升级。这是一次级联的组播故障，可能要几小时才积累起来；最早的故障报告不晚于上午 10:30，所以升级很可能是在周四夜里做的。",
+       "en": "it's just skepticism that FAA scheduled upgrades on a Friday daytime",
+       "hn": "https://news.ycombinator.com/item?id=50508309",
+       "id": 50508309,
+       "replies": 0
+      },
+      {
+       "user": "sega_sai",
+       "stance": "先要钱是红旗",
+       "zh": "我不知道发生了什么，但对我来说，事件还在进行时就给出「路由器过载」这么具体的解释，紧接着又要钱，是个危险信号。",
+       "en": "for me a red flag was the specific explanation given while the event was still ongoing",
+       "hn": "https://news.ycombinator.com/item?id=50508940",
+       "id": 50508940,
+       "replies": 0
+      }
+     ],
+     "kicker": "时事 · 航空"
+    },
+    {
+     "id": 50510442,
+     "title": "火神火箭复飞失败，40 颗亚马逊卫星损失",
+     "title_en": "Vulcan rocket fails during return-to-flight launch, 40 Amazon satellites lost",
+     "url": "https://www.space.com/space-exploration/launches-spacecraft/ula-vulcan-centaur-return-to-flight-amazon-leo-internet-satellite-launch",
+     "hn": "https://news.ycombinator.com/item?id=50510442",
+     "points": 94,
+     "comments": 44,
+     "summary": [
+      "Space.com 报道：联合发射联盟（ULA）的火神-半人马座火箭 11 月 15 日美东 12:40 从卡纳维拉尔角起飞，搭载 40 颗亚马逊 Leo 宽带卫星，但 ULA 确认火箭在飞行约 10 分钟时发生异常，未能把卫星送入轨道，原因尚无数据。",
+      "这本是火神时隔九个月的复飞：它此前第二次（2024 年 10 月）和第四次（今年 2 月）飞行都出现固体助推器喷管烧穿脱落，美国太空军因此暂停了它的国家安全发射。这次助推器看起来正常，却出了更严重的问题。亚马逊 Leo 计划部署 3,200 多颗卫星，此前约 400 颗已经上天。评论区引述 Ars Technica 的 Eric Berger 称故障可能出在助推级。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "GMoromisato",
+       "stance": "可能是 BE-4",
+       "zh": "Eric Berger 报道说故障很可能出在助推级，而不是半人马座上面级或固体火箭发动机。这意味着要么是火神本身，要么（更令人担心）是蓝色起源的 BE-4 发动机；若是后者，可能还会推迟新格伦的下次发射。",
+       "en": "Eric Berger reports that the fault is likely in the booster stage",
+       "hn": "https://news.ycombinator.com/item?id=50511036",
+       "id": 50511036,
+       "replies": 2
+      },
+      {
+       "user": "allenrb",
+       "stance": "需要不止一家",
+       "zh": "我从猎鹰 1 号屡屡入轨失败时就是 SpaceX 的铁粉。但我们（美国、地球）需要不止一家可靠的发射商。",
+       "en": "we (the US, the planet) need more than one successful launch provider",
+       "hn": "https://news.ycombinator.com/item?id=50511641",
+       "id": 50511641,
+       "replies": 9
+      },
+      {
+       "user": "chopete3",
+       "stance": "工程师不好受",
+       "zh": "「这是 ULA 20 年历史上第一次彻底的任务失败。」工程师一定很难受，何况竞争对手刚传来发射成功的消息。火箭科学依然很难。",
+       "en": "That must be hard for their engineers.",
+       "hn": "https://news.ycombinator.com/item?id=50512257",
+       "id": 50512257,
+       "replies": 0
+      }
+     ],
+     "kicker": "时事 · 航天"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50506180,
+     "title": "NYT：卢特尼克力推放宽与其家族生意有交集的芯片规则",
+     "title_en": "Lutnick Pushed to Weaken Chip Rules That Overlap with His Family Business",
+     "url": "https://www.nytimes.com/2026/11/15/us/politics/lutnick-pushed-to-weaken-chip-rules-that-overlap-with-his-family-business.html",
+     "hn": "https://news.ycombinator.com/item?id=50506180",
+     "points": 450,
+     "comments": 194
+    },
+    {
+     "id": 50503588,
+     "title": "WSJ：让全美航空停摆的，是阿肯色州南部的一台路由器",
+     "title_en": "The Single Router in Southern Arkansas That Ground Air Travel to a Halt",
+     "url": "https://www.wsj.com/business/airlines/the-single-router-in-southern-arkansas-that-ground-air-travel-to-a-halt-eedc326c",
+     "hn": "https://news.ycombinator.com/item?id=50503588",
+     "points": 84,
+     "comments": 55
+    },
+    {
+     "id": 50502990,
+     "title": "路透：美国航空停摆归咎于 L3Harris 安装的路由器",
+     "title_en": "US aviation shutdown blamed on L3 Harris installed router",
+     "url": "https://www.reuters.com/business/aerospace-defense/us-aviation-shutdown-blamed-l3-harris-installed-router-2026-11-14/",
+     "hn": "https://news.ycombinator.com/item?id=50502990",
+     "points": 24,
+     "comments": 1
+    },
+    {
+     "id": 50511072,
+     "title": "路透：波音-洛马合资火箭飞行中失败，亚马逊卫星损毁",
+     "title_en": "Boeing-Lockheed rocket fails mid-flight, destroys payload of Amazon satellites",
+     "url": "https://www.reuters.com/business/aerospace-defense/us-rocket-fails-after-launch-payload-amazon-internet-satellites-destroyed-2026-11-15/",
+     "hn": "https://news.ycombinator.com/item?id=50511072",
+     "points": 49,
+     "comments": 28
+    },
+    {
+     "id": 50443331,
+     "title": "难得一窥高风险、高回报的霍尔木兹贸易",
+     "title_en": "A rare glimpse inside the high-risk, high-reward Hormuz trade",
+     "url": "https://www.lloydslist.com/LL1158922/A-rare-glimpse-inside-the-highrisk-highreward-Hormuz-trade",
+     "hn": "https://news.ycombinator.com/item?id=50443331",
+     "points": 104,
+     "comments": 98
+    },
+    {
+     "id": 50507716,
+     "title": "Uber 证实黑客窃取了司机驾照信息",
+     "title_en": "Uber confirms hackers stole drivers' license information in breach",
+     "url": "https://techcrunch.com/2026/11/13/uber-confirms-hackers-stole-thousands-of-drivers-license-information-in-data-breach/",
+     "hn": "https://news.ycombinator.com/item?id=50507716",
+     "points": 36,
+     "comments": 3
+    },
+    {
+     "id": 50504251,
+     "title": "卑诗省仲裁员为北美亚马逊工人强制订立首份工会合同",
+     "title_en": "B.C. arbitrator imposes first union contract for Amazon workers in North America",
+     "url": "https://www.cbc.ca/news/canada/british-columbia/amazon-union-contract-b-c-first-north-america-9.7421834",
+     "hn": "https://news.ycombinator.com/item?id=50504251",
+     "points": 37,
+     "comments": 4
+    },
+    {
+     "id": 50511459,
+     "title": "埃里克·特朗普支持的机器人士兵初创公司发不出工资，创始人挪用 460 万美元",
+     "title_en": "Eric Trump-backed robot soldier startup can't pay staff; founder embezzled $4.6M",
+     "url": "https://www.cnbc.com/2026/11/14/foundation-payroll-ceo-loan.html",
+     "hn": "https://news.ycombinator.com/item?id=50511459",
+     "points": 22,
+     "comments": 2
+    },
+    {
+     "id": 50511899,
+     "title": "SpaceXAI 南黑文工厂化学品泄漏流入排水沟",
+     "title_en": "Chemical spills into drainage ditch at SpaceXAI in Southaven",
+     "url": "https://wreg.com/news/chemical-spills-into-drainage-ditch-at-spacexai-in-southaven/",
+     "hn": "https://news.ycombinator.com/item?id=50511899",
+     "points": 30,
+     "comments": 9
+    },
+    {
+     "id": 50501809,
+     "title": "Brave 移除 Instagram 和 Facebook 图片中的追踪元数据",
+     "title_en": "Brave removes tracking metadata from Instagram and Facebook photos",
+     "url": "https://brave.com/privacy-updates/40-remove-tracking-metadata/",
+     "hn": "https://news.ycombinator.com/item?id=50501809",
+     "points": 27,
+     "comments": 0
+    }
+   ]
+  },
+  {
+   "name": "科学与文化",
+   "en": "Science & Culture",
+   "page": 5,
+   "stats": {
+    "items": 13,
+    "points": 1445,
+    "comments": 616,
+    "top_points": {
+     "id": 50505271,
+     "title": "阿波罗任务为什么带着榴弹发射器？（2019）",
+     "value": 224,
+     "comments": 145
+    },
+    "top_comments": {
+     "id": 50505271,
+     "title": "阿波罗任务为什么带着榴弹发射器？（2019）",
+     "value": 145
+    },
+    "top_brief": {
+     "id": 50509308,
+     "title": "厄尔尼诺原理简明讲解（视频）",
+     "value": 155,
+     "comments": 60
+    }
+   },
+   "stories": [
+    {
+     "id": 50505271,
+     "title": "阿波罗任务为什么带着榴弹发射器？（2019）",
+     "title_en": "Why did some Apollo missions carry a grenade launcher? (2019)",
+     "url": "https://space.stackexchange.com/questions/37775",
+     "hn": "https://news.ycombinator.com/item?id=50505271",
+     "points": 224,
+     "comments": 145,
+     "summary": [
+      "太空探索问答站 2019 年的一个问题：《ALSEP 飞行系统熟悉手册》第 2-166 页写着，部分阿波罗任务携带了一具榴弹发射器和 4 枚榴弹，用来做什么？得票最高的回答（110 票）解释，它们属于主动地震成像实验：架好地震仪，再引爆已知当量的地表爆炸，就能从冲击波在地下的传播推断月球内部结构。",
+      "评论区有人摘出手册原文：这套「迫击炮装置」由地面发出「榴弹解保」和「发射榴弹」指令来启动；也有人补充，苏联宇航员倒是真的常备枪支，因为返回舱落在有狼和熊的西伯利亚。还有人发现提问账号在 2018 年 11 月每天只问一个、能直接用原始资料回答的问题。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "fsloth",
+       "stance": "手册原文",
+       "zh": "「迫击炮装置由地面发出的『榴弹解保』和『发射榴弹』指令启动……」见参考资料第 2-170 页（PDF 第 179 页）。",
+       "en": "The mortar package is activated by the",
+       "hn": "https://news.ycombinator.com/item?id=50506120",
+       "id": 50506120,
+       "replies": 1
+      },
+      {
+       "user": "throwawayffffas",
+       "stance": "苏联真带枪",
+       "zh": "苏联人倒是经常带枪，为了求生，因为他们降落在有狼和大熊的西伯利亚。",
+       "en": "The soviets did regularly carry a gun.",
+       "hn": "https://news.ycombinator.com/item?id=50506000",
+       "id": 50506000,
+       "replies": 65
+      },
+      {
+       "user": "wongarsu",
+       "stance": "月球射程",
+       "zh": "现在我在想，一具普通军用榴弹发射器在月球上能把榴弹打多远。",
+       "en": "how far a regular military grenade launcher could lauch grenades on the moon",
+       "hn": "https://news.ycombinator.com/item?id=50505569",
+       "id": 50505569,
+       "replies": 13
+      }
+     ],
+     "kicker": "科学 · 航天"
+    },
+    {
+     "id": 50509023,
+     "title": "「鸟脑」是误称：乌鸦做决定的速度比人快一倍",
+     "title_en": "'Birdbrain' Is a Misnomer. Crows Make Decisions Faster Than We Can",
+     "url": "https://www.nytimes.com/2026/11/15/science/birdbrain-crows-birds-research-decision.html",
+     "hn": "https://news.ycombinator.com/item?id=50509023",
+     "points": 152,
+     "comments": 110,
+     "summary": [
+      "《纽约时报》报道（我们只读到付费墙前的部分）：两只小嘴乌鸦 Lemmy 和 Iggy 此前已帮科学家证明鸟会用工具觅食、学数字和计数。发表在《科学》上的新研究显示，乌鸦处理并响应视觉提示的速度是人类和猴子的两倍，这是首次量化鸟类决策的神经速度。",
+      "未参与研究的新西兰奥塔哥大学神经科学家 Mike Colombo 说：「我们不会想到鸟做决定比猴子快，比我们『厉害的』人类快，但它们就是快。」文章回顾，鸟脑小而看似简单，曾让学者长期低估其认知能力，近 20 年才认识到其结构之精妙。评论区讨论智能的多次独立演化。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Animats",
+       "stance": "智能不止一种做法",
+       "zh": "智能在地球上至少独立演化了三次：哺乳动物、鸦科和章鱼。鸦科不在同一演化分支上，神经元设计和脑结构都不同。所以实现智能的方式不止一种，这对 AI 也有参考价值。",
+       "en": "So there's more than one way to do intelligence.",
+       "hn": "https://news.ycombinator.com/item?id=50509768",
+       "id": 50509768,
+       "replies": 29
+      },
+      {
+       "user": "0xBA5ED",
+       "stance": "标题不通",
+       "zh": "这标题说不通，因为「鸟脑」本来就不是指决策慢。",
+       "en": "doesn't imply slow decision making",
+       "hn": "https://news.ycombinator.com/item?id=50509459",
+       "id": 50509459,
+       "replies": 25
+      },
+      {
+       "user": "WalterBright",
+       "stance": "脑小所以快",
+       "zh": "它们想得快，可能是因为脑子小，连接距离更短。",
+       "en": "They might think faster because the brain is smaller",
+       "hn": "https://news.ycombinator.com/item?id=50510221",
+       "id": 50510221,
+       "replies": 10
+      }
+     ],
+     "kicker": "科学 · 动物"
+    },
+    {
+     "id": 50503465,
+     "title": "红白机的「第二次文艺复兴」：25 款现代 NES 新游戏推荐",
+     "title_en": "My favourite modern NES games",
+     "url": "https://jordi.inversethought.com/blog/25-of-my-favourite-modern-nes-games/",
+     "hn": "https://news.ycombinator.com/item?id=50503465",
+     "points": 199,
+     "comments": 40,
+     "summary": [
+      "作者 Jordi 说，几十年来对 NES 硬件的研究和积累催生了大量新游戏，任天堂红白机至今仍有许多第三方新作。他按字母顺序（拒绝排名）推荐 25 款，大多能以不高的价格从开发者或发行商处买到数字版，很多也有实体卡带可以在原机上玩。",
+      "入选的有致敬八九十年代恐怖片、可以单挑杰森和弗莱迪的《All Hell Unleashed》，听起来像玩笑却做得相当用心的《简·奥斯汀的 8 位冒险》，以及需要两人玩、一人扮混进路人的卧底、另一人用光枪找出他的派对游戏《Undercover Shot》。评论区不少人惊讶于红白机新游戏的存在，并补充推荐。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "dylanz",
+       "stance": "竟然还有新游戏",
+       "zh": "哇……我都不知道有这些东西。看到任天堂游戏还在开发真酷！NES 出来时我 8 岁，妈妈攒下当服务员的钱，那年圣诞节给我买了一台。",
+       "en": "Whoa... I didn't even know these existed.",
+       "hn": "https://news.ycombinator.com/item?id=50504974",
+       "id": 50504974,
+       "replies": 6
+      },
+      {
+       "user": "kqr",
+       "stance": "工具链是关键",
+       "zh": "工具链往往被低估。更好的工具能以更少的力气做出更高质量的作品。如果你想做 NES 游戏，现在就是有史以来最好的时机——除非你算上明天。",
+       "en": "there's literally never been a better time to start than today",
+       "hn": "https://news.ycombinator.com/item?id=50505171",
+       "id": 50505171,
+       "replies": 0
+      },
+      {
+       "user": "soupfordummies",
+       "stance": "红白机版 FF7",
+       "zh": "这件事一直让我震惊：一个中国团队在 NES 上重制了《最终幻想 VII》，甚至还有英文翻译补丁。",
+       "en": "a Chinese group remade Final Fantasy VII for NES",
+       "hn": "https://news.ycombinator.com/item?id=50508386",
+       "id": 50508386,
+       "replies": 0
+      }
+     ],
+     "kicker": "文化 · 游戏"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50482222,
+     "title": "化学如何变成生物学：一个仍在改写的故事",
+     "title_en": "The Evolving Story of How Chemistry Became Biology",
+     "url": "https://www.quantamagazine.org/the-evolving-story-of-how-chemistry-became-biology-20261112/",
+     "hn": "https://news.ycombinator.com/item?id=50482222",
+     "points": 101,
+     "comments": 26
+    },
+    {
+     "id": 50474529,
+     "title": "屋瓦上发现 200 年前手写的解雇通知",
+     "title_en": "Handwritten 200-year-old dismissal notice found on roof tile",
+     "url": "https://www.bbc.co.uk/news/articles/c6jdmdzv25r9o",
+     "hn": "https://news.ycombinator.com/item?id=50474529",
+     "points": 76,
+     "comments": 48
+    },
+    {
+     "id": 50448895,
+     "title": "西西里柑橘家谱",
+     "title_en": "The Sicilian Citrus Family Tree",
+     "url": "https://www.notesfromtheroad.com/europa/citrus-family-tree.html",
+     "hn": "https://news.ycombinator.com/item?id=50448895",
+     "points": 114,
+     "comments": 39
+    },
+    {
+     "id": 50455732,
+     "title": "牛津分子马达",
+     "title_en": "Oxford Molecular Motors",
+     "url": "https://www.physics.ox.ac.uk/research/group/oxford-molecular-motors/research/bacterial-flagellar-motor",
+     "hn": "https://news.ycombinator.com/item?id=50455732",
+     "points": 73,
+     "comments": 18
+    },
+    {
+     "id": 50509308,
+     "title": "厄尔尼诺原理简明讲解（视频）",
+     "title_en": "A short explainer on how El Niño works [video]",
+     "url": "https://www.youtube.com/watch?v=7_JF3etiAv8",
+     "hn": "https://news.ycombinator.com/item?id=50509308",
+     "points": 155,
+     "comments": 60
+    },
+    {
+     "id": 50488916,
+     "title": "你的房间可以和户外一样亮（2019）",
+     "title_en": "Your room can be as bright as the outdoors (2019)",
+     "url": "https://www.benkuhn.net/lux/",
+     "hn": "https://news.ycombinator.com/item?id=50488916",
+     "points": 69,
+     "comments": 52
+    },
+    {
+     "id": 50482279,
+     "title": "Show HN：Carton Clock，用空饮料盒做成能走的摆钟",
+     "title_en": "Show HN: Carton Clock – A working pendulum clock made from empty drink cartons",
+     "url": "https://www.niklasroy.com/carton-clock/",
+     "hn": "https://news.ycombinator.com/item?id=50482279",
+     "points": 73,
+     "comments": 2
+    },
+    {
+     "id": 50509972,
+     "title": "把手写体做成字体",
+     "title_en": "Handwriting, as a Font",
+     "url": "https://ductus.sorenblank.com",
+     "hn": "https://news.ycombinator.com/item?id=50509972",
+     "points": 97,
+     "comments": 22
+    },
+    {
+     "id": 50507206,
+     "title": "HTTP 状态码 483「我不是冰柜」草案",
+     "title_en": "The Hypertext Transfer Protocol Status Code 483 (I'm Not a Freezer)",
+     "url": "https://datatracker.ietf.org/doc/draft-banffy-httpbis-not-a-freezer/",
+     "hn": "https://news.ycombinator.com/item?id=50507206",
+     "points": 73,
+     "comments": 46
+    },
+    {
+     "id": 50511806,
+     "title": "保存 Salon 30 年的新闻报道",
+     "title_en": "Preserving 30 Years of Salon Journalism",
+     "url": "https://blog.archive.org/2026/11/12/preserving-30-years-of-salon-journalism/",
+     "hn": "https://news.ycombinator.com/item?id=50511806",
+     "points": 39,
+     "comments": 8
+    }
+   ]
+  }
+ ],
+ "quote_of_day": {
+  "user": "blagie",
+  "id": 50507729,
+  "hn": "https://news.ycombinator.com/item?id=50507729",
+  "story_id": 50507303,
+  "story": "「所有 AI 生成的代码都应该开源」：版权与开源之争刷屏",
+  "zh": "这就像让大模型重写《哈利·波特》：情节一模一样，只是对白很烂。",
+  "en": "It's as if you asked an LLM to rewrite Harry Potter, with the same plot, but bad dialogue."
+ },
+ "stats": {
+  "snapshot": "2026-11-16T08:19:48+08:00",
+  "front_page_count": 90,
+  "with_numbers": 87,
+  "flagged_or_dupe": 3,
+  "top_points": {
+   "id": 50507303,
+   "title": "「所有 AI 生成的代码都应该开源」：版权与开源之争刷屏",
+   "value": 1055,
+   "comments": 577
+  },
+  "top_comments": {
+   "id": 50507303,
+   "title": "「所有 AI 生成的代码都应该开源」：版权与开源之争刷屏",
+   "value": 577,
+   "comments": 577
+  },
+  "second_comments": {
+   "id": 50506719,
+   "title": "新 MacBook Pro 的 OLED 屏被指 240Hz 频闪，部分用户头晕想吐",
+   "value": 226,
+   "comments": 226
+  },
+  "over_500": 1,
+  "over_300": 7,
+  "over_100": 26,
+  "show_hn": 8,
+  "total_points": 8952,
+  "total_comments": 4054,
+  "hottest_ratio": {
+   "id": 50510005,
+   "title": "测了 8900 笔美国众议员股票交易：跟着买跑不赢大盘",
+   "value": 1.09,
+   "comments": 110,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
