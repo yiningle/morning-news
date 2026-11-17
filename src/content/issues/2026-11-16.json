@@ -1,0 +1,1308 @@
+{
+ "date": "2026-11-16",
+ "published_at": "2026-11-17T08:20:58+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-11-16",
+ "schema_version": 2,
+ "lead": {
+  "id": 50513215,
+  "title": "阿里发布 Qwen4-Max：2.4 万亿参数，这次不开放权重",
+  "title_en": "Qwen4-Max",
+  "url": "https://qwen.ai/blog?id=qwen4-max",
+  "hn": "https://news.ycombinator.com/item?id=50513215",
+  "points": 850,
+  "comments": 470,
+  "summary": [
+   "阿里巴巴 11 月 16 日正式发布 Qwen 家族迄今最强的模型 Qwen4-Max（11 日起已有限预览）。据阿里新闻稿，它是总参数 2.4 万亿的稀疏混合专家（MoE）模型，每个 token 只激活 710 亿参数，比上一代 Qwen3.8-Max 少 25%；原生支持图像和视频理解，上下文窗口 100 万 token。阿里称它在真实编程排行榜 Code Arena 排第 6，在自家 Work360 基准（覆盖 721 个专业领域）上胜过上一代，高推理档位少用 35% 的 token，单任务平均成本降约 60%。",
+   "新闻稿还提到安全设计：网络安全方向的训练数据按意图过滤，保留漏洞检测与修复类内容、剔除攻击类内容，并专门加强化学、生物、放射和核（CBRN）风险防护。模型通过 QwenCloud API 和 QwenWork、QwenStudio 等平台提供，较小的 Qwen4 系列模型将「很快」开放权重。本帖 850 点赞、470 条评论，是当天点赞第一。评论区一边贴第三方评测说它又贵又不够强，一边担心开源模型和美国头部实验室的差距在拉大。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "maplet",
+    "stance": "第三方成绩",
+    "zh": "它在 Artificial Analysis 上的得分为 43，平均成本 3.27 美元。作为对比，GPT-6.1 Sol（中档）得分为 46，平均只要 0.36 美元。",
+    "en": "It scores a 43 on Artificial Analysis with an average cost of $3.27",
+    "hn": "https://news.ycombinator.com/item?id=50513658",
+    "id": 50513658,
+    "replies": 103
+   },
+   {
+    "user": "pu_pe",
+    "stance": "强在下一档",
+    "zh": "我觉得阿里在这个级别并不追求前沿。之前的 Qwen3-Max 9 月发布，正好赶上 Opus 5.5，也差得很远。但往下一两档（Flash、27B）它们真的很亮眼，是当前最强或接近最强。",
+    "en": "one or two tiers below (Flash, 27B) they really shine",
+    "hn": "https://news.ycombinator.com/item?id=50515340",
+    "id": 50515340,
+    "replies": 9
+   },
+   {
+    "user": "nelaggy",
+    "stance": "差距在拉大？",
+    "zh": "开放权重模型的落后差距是不是在拉大？这些开放模型的进步速度似乎赶不上 Anthropic 和 OpenAI。",
+    "en": "is the open weights lag widening?",
+    "hn": "https://news.ycombinator.com/item?id=50513737",
+    "id": 50513737,
+    "replies": 47
+   }
+  ],
+  "kicker": "要闻 · 大模型",
+  "tag": "当天点赞第一"
+ },
+ "side": [
+  {
+   "id": 50521045,
+   "title": "摩根大通「软件 bug」拖累美国多家银行网银和 Zelle",
+   "title_en": "Technical issue at JPMorgan Chase triggers online banking delays for US banks",
+   "url": "https://apnews.com/article/bank-outage-chase-wells-fargo-truist-50fee2693c22f597fa6ca51a97ef2cda",
+   "hn": "https://news.ycombinator.com/item?id=50521045",
+   "points": 690,
+   "comments": 561,
+   "summary": [
+    "据美联社、NBC 和 BBC 报道，美东时间周一，摩根大通（Chase）出现技术故障，数千名用户反映无法正常使用网银，富国、美国银行、US Bank 等多家银行客户和转账服务 Zelle 也受波及；Downdetector 上 Chase 的故障报告一度接近 5000 条。Chase 声明称这是「本地硬件系统中的一个软件 bug」导致的临时问题，没有证据表明与网络攻击有关，客户仍能访问账户和资金；凡与 Chase 有交易往来的其他银行可能受影响，但「不是系统性问题」。",
+    "NBC 报道称故障周一上午就已开始，影响线上和部分网点交易，Chase 发言人在晚上 6 点半左右表示交易已恢复正常入账。Zelle 则强调自身「没有宕机」。本帖 690 点赞、561 条评论，评论数当天第二。评论区把它和同周的微软 365 大故障、美国航空停飞联系在一起。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "bobson381",
+     "stance": "普通人的直觉",
+     "zh": "我那些不懂技术的同事把微软 365 宕机、FAA 全国停飞和这件事看成同一个相互关联的问题。他们也不算全错，但那种普遍的恐惧很难打消。",
+     "en": "see the Microsoft 365 outage, the FAA ground stop, and things like this as one interconnected problem",
+     "hn": "https://news.ycombinator.com/item?id=50521788",
+     "id": 50521788,
+     "replies": 176
+    },
+    {
+     "user": "A_D_E_P_T",
+     "stance": "先例",
+     "zh": "刷不了卡、网点关门或没反应、网银瘫痪。上个月底欧洲的 Revolut 也出过一模一样的事，大约 12 小时解决，那次是谷歌云故障。这次可能也是类似的问题（比如数据库故障）。",
+     "en": "This exact same thing happened in Europe with Revolut late last month.",
+     "hn": "https://news.ycombinator.com/item?id=50521658",
+     "id": 50521658,
+     "replies": 64
+    },
+    {
+     "user": "999900000999",
+     "stance": "质量保障先砍",
+     "zh": "整个科技行业，质量保障都是第一个被砍的。你把工作做好的时候，没人在乎。",
+     "en": "Across all of tech QA is the first thing you cut.",
+     "hn": "https://news.ycombinator.com/item?id=50522184",
+     "id": 50522184,
+     "replies": 10
+    }
+   ],
+   "kicker": "要闻 · 金融",
+   "tag": "评论第二"
+  },
+  {
+   "id": 50517488,
+   "title": "调查：亚马逊黑五「特价」近三分之一根本不便宜",
+   "title_en": "Many of Amazon’s Black Friday and Cyber Monday “deals” offered no savings",
+   "url": "http://groundworkcollaborative.org/news/amazons-decoy-deals-groundwork-investigation-reveals-nearly-1-in-3-black-friday-and-cyber-monday-deals-advertised-by-amazon-offered-no-savings-to-shoppers-nearly-1-in-10-w/",
+   "hn": "https://news.ycombinator.com/item?id=50517488",
+   "points": 809,
+   "comments": 489,
+   "summary": [
+    "智库 Groundwork Collaborative 发布报告《Deal or Decoy?》，分析了亚马逊 2024、2025 两年黑色星期五和网络星期一官方「精选特价」页上的 350 多件商品，发现近三分之一的「特价」并不比促销前一个月的价格低，近十分之一甚至更贵；在这些「更贵」的商品里，促销价中位数比此前几周高 19%。例子包括 2025 年黑五一双 Hunter 雨靴「特价」126.99 美元，而九天前只要 79.97 美元。",
+    "报告称亚马逊得知研究后已撤下这些特价页面，并呼吁监管要求零售商在标促销时同时标出过去 30 天最低价。本帖 809 点赞、489 条评论。评论区大多不意外，分享的是对策：退订 Prime、用价格追踪工具。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "ilamont",
+     "stance": "退订 Prime",
+     "zh": "我在亚马逊上做过最好的决定就是取消 Prime。它每年帮我省掉几百甚至几千美元的冲动消费。需要的东西我就攒到满免运费门槛再下单，而且常常去别的零售商或品牌官网买。",
+     "en": "The best thing I did wrt Amazon is kill off my Prime account.",
+     "hn": "https://news.ycombinator.com/item?id=50518852",
+     "id": 50518852,
+     "replies": 207
+    },
+    {
+     "user": "akudha",
+     "stance": "打折疲劳",
+     "zh": "我购物时已经在心里屏蔽了「促销、折扣、特价」这些词。好像大部分东西大部分时间都在打折——这怎么可能？整件事既荒唐又让人疲惫。",
+     "en": "It seems most things are on sale most of the time - how is that even possible?",
+     "hn": "https://news.ycombinator.com/item?id=50518547",
+     "id": 50518547,
+     "replies": 47
+    },
+    {
+     "user": "tehlike",
+     "stance": "价格追踪",
+     "zh": "我在运营一个价格追踪网站。如果你在亚马逊买东西不用 camelcamelcamel，就是在白白扔钱。等上几周，价格往往能便宜 30–40%。",
+     "en": "if you are not using camelcamelcamel.com for Amazon, you are leaving money on the table",
+     "hn": "https://news.ycombinator.com/item?id=50518665",
+     "id": 50518665,
+     "replies": 22
+    }
+   ],
+   "kicker": "要闻 · 消费"
+  },
+  {
+   "id": 50514470,
+   "title": "MIT「如何制造（几乎）任何东西」2026 年课表",
+   "title_en": "How to make almost anything",
+   "url": "https://pub.cba.mit.edu/863.26/site/",
+   "hn": "https://news.ycombinator.com/item?id=50514470",
+   "points": 830,
+   "comments": 141,
+   "summary": [
+    "这是 MIT 媒体实验室课程 MAS.863 / 4.140 / 6.9020「How To Make (almost) Anything」2026 年的课程页。课表从 9 月 9 日的计算机辅助设计开始，每周一个主题：计算机控制切割、嵌入式编程、3D 扫描与打印、电子设计与生产、数控加工、输入与输出设备、机械与机器设计、网络通信、界面编程，最后是系统集成和 12 月 15 日的期末项目展示；配套习课还涵盖版本控制、AI 智能体、边缘 AI、模具铸造等。",
+    "页面本身只有课表和链接，但它仍拿下 830 点赞，当天点赞第二。评论区有人嫌它每个主题都只是浅尝辄止，也有学过、当过助教的人现身说法。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "renehsz",
+     "stance": "广度本身有价值",
+     "zh": "有人不满这门课每个主题都只是蜻蜓点水。但别忘了，知道「什么是可能的」本身就极有价值。以后遇到问题 X，他们会记得有个叫 Y 的东西也许能帮上忙，至少知道从哪儿查起。",
+     "en": "an overview of what’s even possible is extremely valuable in its own right",
+     "hn": "https://news.ycombinator.com/item?id=50514910",
+     "id": 50514910,
+     "replies": 68
+    },
+    {
+     "user": "sk21044",
+     "stance": "改变人生",
+     "zh": "这是我在 HN 的第一条评论。我 2017 年上过这门课，它改变了我的人生——我甚至不是工科生，只是朋友说它很棒才去上。节奏很快，每个主题只是快速入门，真正的学习发生在每周泡实验室的投入里。",
+     "en": "I took this course in 2017 and it changed my life",
+     "hn": "https://news.ycombinator.com/item?id=50523259",
+     "id": 50523259,
+     "replies": 0
+    },
+    {
+     "user": "zakqwy",
+     "stance": "看学生作品",
+     "zh": "我上过这门课，后来还当过助教。每周的课程页只是一部分，想知道真正教了什么，最好去看学生记录自己项目的网站。",
+     "en": "the best way to see what is actually taught is to peruse the sites students make to document their projects",
+     "hn": "https://news.ycombinator.com/item?id=50515387",
+     "id": 50515387,
+     "replies": 6
+    }
+   ],
+   "kicker": "要闻 · 教育"
+  },
+  {
+   "id": 50513160,
+   "title": "uBlock Origin 曝「通用 XSS」：恶意网站可借元素拾取器注入脚本",
+   "title_en": "Universal XSS in uBlock Origin from website-driven element picker",
+   "url": "https://iter.ca/post/ubo-uxss/",
+   "hn": "https://news.ycombinator.com/item?id=50513160",
+   "points": 595,
+   "comments": 173,
+   "summary": [
+    "作者在本月早些时候发现，Firefox 上的 uBlock Origin（MV2 版本）存在一个「一键式」通用跨站脚本漏洞：恶意网站能诱使扩展添加任意「受信任过滤规则」，而受信任规则可以向页面注入 JavaScript，于是攻击者能在任何网站上运行任意代码；MV3 版 uBO Lite 也有类似但危害较小的问题。作者说漏洞主要是 GPT-5.6 Sol 找到的，他负责核实，文章文字由他本人撰写，演示代码大多由 Claude 编写。",
+    "攻击链是：先利用一条默认规则在钩住 fetch 时发出的请求，套出每次安装都随机的扩展内部 UUID；再自己嵌入一个透明的元素拾取器 iframe，用 postMessage 驱动它，并在字段里塞换行符绕过限制写入任意规则，最后骗用户点一下。修复之一是让真正的拾取器从内容脚本拿到一个暗号来校验消息。漏洞已修复。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "forgotmypw17",
+     "stance": "该升级到哪版",
+     "zh": "给要检查的人（我刚才还是有漏洞的版本）：你应该升级到这些版本或更高：uBlock Origin 1.75.4，uBO Lite 2026.1110.1816。",
+     "en": "uBlock Origin: 1.75.4",
+     "hn": "https://news.ycombinator.com/item?id=50513816",
+     "id": 50513816,
+     "replies": 8
+    },
+    {
+     "user": "ByteOfWood",
+     "stance": "界面放进网页 DOM",
+     "zh": "我一直不喜欢扩展想操作页面元素时，就得把自己的界面放进网站的 DOM 里，比如这个拾取器，或者密码管理器的登录建议。",
+     "en": "extensions have to put their interfaces in the website's DOM",
+     "hn": "https://news.ycombinator.com/item?id=50513505",
+     "id": 50513505,
+     "replies": 48
+    },
+    {
+     "user": "jonhohle",
+     "stance": "指纹隐患",
+     "zh": "uBlock（可能还有很多扩展）会泄露自己的 UUID？那装了广告拦截器，岂不是等于给网站一个能稳定追踪你的唯一指纹？",
+     "en": "you’ve just given websites a unique fingerprint to reliably track you?",
+     "hn": "https://news.ycombinator.com/item?id=50517453",
+     "id": 50517453,
+     "replies": 7
+    }
+   ],
+   "kicker": "要闻 · 安全"
+  },
+  {
+   "id": 50512235,
+   "title": "Steve Blank：黄仁勋走后，英伟达最怕变成鲍尔默的微软",
+   "title_en": "What's Next for Nvidia?",
+   "url": "https://steveblank.com/2026/11/15/whats-next-for-nvidia/",
+   "hn": "https://news.ycombinator.com/item?id=50512235",
+   "points": 458,
+   "comments": 566,
+   "summary": [
+    "精益创业倡导者 Steve Blank 撰文：英伟达董事会宣布联合创始人黄仁勋在创办公司 33 年后辞职。他认为黄仁勋三次重塑英伟达——2006 年推出 CUDA、2012 年押注深度学习、2020 年收购 Mellanox 转向整机柜系统——都是商业模式级的转型。而远见型 CEO 被执行型 CEO 接替时，公司往往靠惯性滑行，他以鲍尔默接替盖茨、库克接替乔布斯为例：营收大涨，却错过下一个市场。",
+    "他指出英伟达最大的客户正在变成对手，自研 AI 芯片；黄仁勋的应对是每年一代新芯片、CUDA 护城河和约 500 亿美元投资 AI 实验室，而「执行型 CEO 很可能先砍掉这些赌注」。黄仁勋没有指定接班人，决定权在一个处于危机中的董事会手里。结论是：「执行付你的薪水，创新付你的养老金。」本帖 566 条评论，当天评论最多。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "areoform",
+     "stance": "敢于自我蚕食",
+     "zh": "乔布斯伟大之处在于，他宁可让苹果蚕食自己成功的产品线，也不愿被对手打败。iPod 一次次颠覆自己：iPod Mini、Nano、Shuffle……然后 iPhone 干掉了 iPod。大多数公司根本不会做出这个产品，因为它会杀死自家的金鹅。",
+     "en": "he would rather have Apple cannibalize its successful product lines than fall prey to a competitor",
+     "hn": "https://news.ycombinator.com/item?id=50512999",
+     "id": 50512999,
+     "replies": 222
+    },
+    {
+     "user": "martin_drapeau",
+     "stance": "背后另有隐情？",
+     "zh": "黄仁勋是英伟达品牌的重要部分。董事会总不至于蠢到因为婚外情就冒失去品牌的风险吧？黄仁勋为什么不争取保住职位？一定有我们不知道的事。",
+     "en": "There has to be something we do not know...",
+     "hn": "https://news.ycombinator.com/item?id=50513344",
+     "id": 50513344,
+     "replies": 70
+    },
+    {
+     "user": "matthewfcarlson",
+     "stance": "CEO 被高估了？",
+     "zh": "也许是我身处组织架构底层的偏见，但我怀疑我们是否过分强调了 CEO 的作用。一个几万人组织的命运，真能系于一人吗？",
+     "en": "can the fortunes of an organization of tens of thousands of people rest on one person?",
+     "hn": "https://news.ycombinator.com/item?id=50516972",
+     "id": 50516972,
+     "replies": 9
+    }
+   ],
+   "kicker": "要闻 · 商业",
+   "tag": "评论最多"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 2,
+   "stats": {
+    "items": 13,
+    "points": 1202,
+    "comments": 1015,
+    "top_points": {
+     "id": 50518567,
+     "title": "《连线》：黄仁勋风波之前，英伟达就已经有麻烦",
+     "value": 247,
+     "comments": 225
+    },
+    "top_comments": {
+     "id": 50518567,
+     "title": "《连线》：黄仁勋风波之前，英伟达就已经有麻烦",
+     "value": 225
+    },
+    "top_brief": {
+     "id": 50511982,
+     "title": "路透：黄仁勋或重返英伟达 CEO 之位",
+     "value": 175,
+     "comments": 186
+    }
+   },
+   "stories": [
+    {
+     "id": 50518567,
+     "title": "《连线》：黄仁勋风波之前，英伟达就已经有麻烦",
+     "title_en": "Nvidia was in trouble before the Jensen Huang mess",
+     "url": "https://www.wired.com/story/nvidia-was-already-in-trouble-before-the-jensen-huang-mess/",
+     "hn": "https://news.ycombinator.com/item?id=50518567",
+     "points": 247,
+     "comments": 225,
+     "summary": [
+      "《连线》文章称，英伟达在刚被赶下台的 CEO 黄仁勋带领下成就了 AI 淘金热，但就在他离开之际，竞争对手正步步逼近；目前由 CFO Colette Kress 掌舵。一位匿名的大型 AI 公司 CEO 说：「今天卖的东西都是两三年前设计的」，接任者必须决定两年后的路线。据 Silicon Analysis，英伟达占 AI 加速器销售的 80%，但 AMD 份额已从 2022 年的 2% 升到 2026 年的 7–10%，谷歌、亚马逊、微软都在自研芯片，Cerebras 等初创公司也在抢市场。",
+      "分析师 Patrick Moorhead 认为，AI 智能体兴起让推理变得更重要，而英伟达在推理上的优势不如在训练上明显；智能体还推高了对通用 CPU 的需求，这是英伟达几乎不涉足的领域。文章也承认，英伟达营收从 2022 年 1 月的 269.1 亿美元涨到 2026 年 1 月的 2159.4 亿美元，领先依旧巨大。评论区不少人认为这是事后找理由。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "seizethecheese",
+       "stance": "事后合理化",
+       "zh": "事后合理化。文中没有一点是 10 月 29 日丑闻爆出时还不知道的，而股价在那之前很坚挺，之后才大跌。",
+       "en": "Post hoc rationalization.",
+       "hn": "https://news.ycombinator.com/item?id=50519284",
+       "id": 50519284,
+       "replies": 39
+      },
+      {
+       "user": "coreylane",
+       "stance": "会重演矿机史吗",
+       "zh": "还记得 GPU 曾是挖矿主力吗？后来 ASIC 等专用硬件出来，GPU 在挖矿上就没用了。AI 训练和推理不也会这样吗？就像 AWS 在做的 Trainium/Inferentia，现在还不行，但不会越来越好吗？",
+       "en": "wont that also happpen in regards to ai training/inference",
+       "hn": "https://news.ycombinator.com/item?id=50519680",
+       "id": 50519680,
+       "replies": 105
+      },
+      {
+       "user": "lizknope",
+       "stance": "芯片业常识",
+       "zh": "这一点对每家大芯片公司都成立。我设计大型复杂芯片 30 年了，从架构、设计、制造、测试到量产就是要这么久。光是台积电从交付 GDS 到出片就要 4 个月。",
+       "en": "I've been designing large complex chips for 30 years.",
+       "hn": "https://news.ycombinator.com/item?id=50524562",
+       "id": 50524562,
+       "replies": 1
+      }
+     ],
+     "kicker": "AI · 芯片"
+    },
+    {
+     "id": 50520804,
+     "title": "OpenAI 推出免费儿童性虐待内容识别器，可识别 AI 生成图像",
+     "title_en": "Strengthening the fight against online child sexual abuse",
+     "url": "https://openai.com/index/strengthening-online-child-safety/",
+     "hn": "https://news.ycombinator.com/item?id=50520804",
+     "points": 98,
+     "comments": 205,
+     "summary": [
+      "OpenAI 宣布推出一款能识别儿童性虐待材料（CSAM）的图像分类器，包括 AI 生成的内容，称这是首个广泛可用、且能专门提示图片是否为 AI 生成的 CSAM 分类器，在美国国家失踪与受虐儿童中心（NCMEC）协助下训练，通过 API 免费提供给经审核的机构。内部评估称，它能在找到大致同样多违规图片的情况下少标记 48% 的图片，被标记图片含违规内容的可能性约为原来的两倍。",
+      "此外，ChatGPT 将在用户试图获取此类内容时弹出警告、删除对话并暂停访问 24 小时，屡犯可能被封号或报告给执法部门；OpenAI 还发布了开发者指南，并为儿童保护执法部门提供工具和培训。评论区有人叫好，也有人现身说法，说自己的账号因此被封却得不到任何解释。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "maxgee",
+       "stance": "被封号的亲历",
+       "zh": "我们的账号最近因 CSAM 违规被 OpenAI 封了。我们有个自动化智能体本该用本地模型给用户上传的图片分类，却切到了 OpenAI，分类了十万多张图后账号被封。我们想要更多信息以便向 NCMEC 举报上传者，他们拒绝提供任何信息，也驳回了申诉。",
+       "en": "Our account was recently banned from OpenAI for a CSAM violation.",
+       "hn": "https://news.ycombinator.com/item?id=50521236",
+       "id": 50521236,
+       "replies": 65
+      },
+      {
+       "user": "eutropia",
+       "stance": "一线压力",
+       "zh": "这是积极进展。由于扩散模型让此类内容的供给成倍增长，NCMEC 的工作人员要应对疯狂增长的 CSAM（仅 2025 年就增长 1000% 以上）。",
+       "en": "This is a positive development.",
+       "hn": "https://news.ycombinator.com/item?id=50521521",
+       "id": 50521521,
+       "replies": 62
+      },
+      {
+       "user": "Donald",
+       "stance": "检测到抓捕",
+       "zh": "读那些涉及 NCMEC 对接的刑事宣誓书挺震撼的：罪犯把图片传到邮箱、相册或生成式 AI 服务，被识别为 CSAM，自动向 NCMEC 报警，NCMEC 再转给当地执法，一两周内人就被抓了。",
+       "en": "they're arrested within a short time period, like one or two weeks",
+       "hn": "https://news.ycombinator.com/item?id=50521206",
+       "id": 50521206,
+       "replies": 9
+      }
+     ],
+     "kicker": "AI · 安全"
+    },
+    {
+     "id": 50520270,
+     "title": "Harmonic 的 Aristotle 扩展到 Rust：用形式化证明代替测试",
+     "title_en": "Aristotle Expands into Rust",
+     "url": "https://www.harmonic.fun/news/aristotle-rust-verification/",
+     "hn": "https://news.ycombinator.com/item?id=50520270",
+     "points": 98,
+     "comments": 47,
+     "summary": [
+      "AI 公司 Harmonic 宣布其形式化验证系统 Aristotle 在 C 和 Verilog 之后支持 Rust：它能证明 Rust 代码没有未定义行为、完全符合规格，即使在 unsafe 块里也一样；如果你在把 C 改写成 Rust，它能证明新代码与原代码行为一致。CEO Tudor Achim 说，世界上大量关键的新代码正用 Rust 写成，而且越来越多是 AI 写的。",
+      "公告重点放在 Solana 智能合约上：在开源订单簿 Manifest 上，Aristotle 证明了 28 项结论，还找出一个已被修复的舍入 bug；Harmonic 也与 Solana 基金会合作推广。产品今天上线，按用量计费。评论区对「连 unsafe 也能证明」既惊讶又好奇规格从哪来。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "OreganoTrail",
+       "stance": "前所未见",
+       "zh": "「Aristotle 能证明你的代码没有未定义行为……即使在 unsafe 块里」——太疯狂了，我没见过其他系统真的去尝试做这件事。",
+       "en": "That's crazy, I haven't seen any other system that really tries to do that.",
+       "hn": "https://news.ycombinator.com/item?id=50520323",
+       "id": 50520323,
+       "replies": 4
+      },
+      {
+       "user": "expectfun",
+       "stance": "未来的语言",
+       "zh": "「感觉未来只剩下 Rust 和 Lean 两种语言了」",
+       "en": "Feels like in the future the only languages would be Rust and Lean",
+       "hn": "https://news.ycombinator.com/item?id=50520830",
+       "id": 50520830,
+       "replies": 27
+      },
+      {
+       "user": "conqrr",
+       "stance": "规格谁来写",
+       "zh": "懂验证系统的人能解释一下，这类场景下规格（意图）是怎么和大模型一起产生的吗？是人来写规格，还是系统根据人的自然语言意图生成？",
+       "en": "Does a human form the spec or the system generates one based on human's natural language intent?",
+       "hn": "https://news.ycombinator.com/item?id=50521652",
+       "id": 50521652,
+       "replies": 5
+      }
+     ],
+     "kicker": "AI · 验证"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50511982,
+     "title": "路透：黄仁勋或重返英伟达 CEO 之位",
+     "title_en": "Jensen Huang might return to Nvidia as CEO",
+     "url": "https://www.reuters.com/world/china/jensen-huang-discusses-comeback-nvidia-ceo-with-allies-ft-reports-2026-11-15/",
+     "hn": "https://news.ycombinator.com/item?id=50511982",
+     "points": 175,
+     "comments": 186
+    },
+    {
+     "id": 50512950,
+     "title": "HN「谁在招人」帖子数停在 12 年低位",
+     "title_en": "\"Who is Hiring?\" postings stuck near 12-year lows as AI reaches half of all jobs",
+     "url": "https://www.hntrends.com/2026/november.html",
+     "hn": "https://news.ycombinator.com/item?id=50512950",
+     "points": 94,
+     "comments": 83
+    },
+    {
+     "id": 50520697,
+     "title": "《连线》：美国 400 座数据中心用电超过整个密歇根州",
+     "title_en": "Just 400 US Data Centers Use More Electricity Than Michigan",
+     "url": "https://www.wired.com/story/data-centers-use-more-electricity-than-michigan/",
+     "hn": "https://news.ycombinator.com/item?id=50520697",
+     "points": 88,
+     "comments": 87
+    },
+    {
+     "id": 50485275,
+     "title": "给 Z80 写的人工智能",
+     "title_en": "Artificial Intelligence for the Z80",
+     "url": "https://www.dfsantos.com/en/libro-ia-z80",
+     "hn": "https://news.ycombinator.com/item?id=50485275",
+     "points": 78,
+     "comments": 8
+    },
+    {
+     "id": 50519153,
+     "title": "OpenAI 嵌入式评估第一阶段",
+     "title_en": "First phase of embedded assessments at OpenAI",
+     "url": "https://openai.com/index/our-first-phase-of-embedded-assessments/",
+     "hn": "https://news.ycombinator.com/item?id=50519153",
+     "points": 37,
+     "comments": 15
+    },
+    {
+     "id": 50520148,
+     "title": "数十亿美元保险资金正押注 AI 债务",
+     "title_en": "How Billions in Safe Insurance Money Is Being Bet on A.I. Debt",
+     "url": "https://www.nytimes.com/2026/11/16/business/insurance-ai-debt.html",
+     "hn": "https://news.ycombinator.com/item?id=50520148",
+     "points": 70,
+     "comments": 38
+    },
+    {
+     "id": 50523022,
+     "title": "加州理工教授不再给作业打分，因为人人都用 AI",
+     "title_en": "Caltech professor no longer grades homework's because everyone uses AI",
+     "url": "https://www.businessinsider.com/ai-math-class-university-homework-caltech-careers-2026-11",
+     "hn": "https://news.ycombinator.com/item?id=50523022",
+     "points": 43,
+     "comments": 51
+    },
+    {
+     "id": 50524736,
+     "title": "Windows 11 在收集你用哪些编程智能体和开发工具",
+     "title_en": "Windows 11 Is Collecting Data on Which Coding Agents and Developer Tools You Use",
+     "url": "https://xusheng.dev/posts/windows-coding-agent-telemetry/",
+     "hn": "https://news.ycombinator.com/item?id=50524736",
+     "points": 59,
+     "comments": 25
+    },
+    {
+     "id": 50520796,
+     "title": "FBI：开源 AI 黑客工具 Artex 被用于入侵网络",
+     "title_en": "FBI says Artex AI open-source hacking tool used to breach networks",
+     "url": "https://techcrunch.com/2026/11/16/fbi-says-artex-ai-open-source-hacking-tool-used-to-breach-networks-in-under-three-hours/",
+     "hn": "https://news.ycombinator.com/item?id=50520796",
+     "points": 40,
+     "comments": 9
+    },
+    {
+     "id": 50523459,
+     "title": "OpenCode Browse",
+     "title_en": "OpenCode Browse",
+     "url": "https://opencode.ai/product/browse",
+     "hn": "https://news.ycombinator.com/item?id=50523459",
+     "points": 75,
+     "comments": 36
+    }
+   ]
+  },
+  {
+   "name": "开发",
+   "en": "Software",
+   "page": 3,
+   "stats": {
+    "items": 13,
+    "points": 1874,
+    "comments": 870,
+    "top_points": {
+     "id": 50520866,
+     "title": "「软件正在系统性崩坏」",
+     "value": 331,
+     "comments": 211
+    },
+    "top_comments": {
+     "id": 50520866,
+     "title": "「软件正在系统性崩坏」",
+     "value": 211
+    },
+    "top_brief": {
+     "id": 50514180,
+     "title": "Debian 升级 6.1.0-55 内核后系统无响应",
+     "value": 168,
+     "comments": 79
+    }
+   },
+   "stories": [
+    {
+     "id": 50520866,
+     "title": "「软件正在系统性崩坏」",
+     "title_en": "Software is breaking down at a systemic level",
+     "url": "https://www.breck-mckye.com/blog/2026/11/software-is-breaking-down-at-a-systemic-level/",
+     "hn": "https://news.ycombinator.com/item?id=50520866",
+     "points": 331,
+     "comments": 211,
+     "summary": [
+      "作者从本周末的微软两天全球大故障和 FAA 全美停飞说起，罗列 2026 年的 PHP2Shell 漏洞、eMudhra 证书私钥过弱事件、5 月 NPM 生态的 Shai Hulud 供应链攻击，认为它们的直接原因各不相同，却惊人地相似：都是「由低质量部件组成的高度复杂系统，一个错误就能毁掉一切」。他说 AI 既是原因也是症状。",
+      "他把根源追溯到约十年前的云计算和开源包管理革命：程序员不再需要懂细节，岗位被压平成通才，削弱了一线员工相对管理层的话语权，也就少了能及时拉响警报的人；如今 AI 又带来「习得性无助」和虚假的自信，整条链条从需求、文档到代码都由 Claude 生成，公司正失去「组织认知」。他断言这不是一时波动，而是新常态。评论区不少人反驳说软件从来如此。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "LPisGood",
+       "stance": "一直如此",
+       "zh": "软件一直都在系统层面上是坏的。它是一张复杂且不断变化的抽象之网，加上各种打破抽象的 hack，努力在与现实的长期接触中活下来。",
+       "en": "Software has always been broken at a systemic level.",
+       "hn": "https://news.ycombinator.com/item?id=50520971",
+       "id": 50520971,
+       "replies": 16
+      },
+      {
+       "user": "CharlieDigital",
+       "stance": "缺的是技术写作",
+       "zh": "不一定非得这样。AI 擅长遵循模式、写测试、做人类觉得枯燥的活。问题是大多数软件团队和工程师非常不擅长 AI 成功所需的那件事：技术写作——把模式、规则、经验法则、标准流程和判断写下来。",
+       "en": "most software teams and most engineers are very, very bad at the thing that AI needs to succeed: technical writing",
+       "hn": "https://news.ycombinator.com/item?id=50521160",
+       "id": 50521160,
+       "replies": 56
+      },
+      {
+       "user": "doug_durham",
+       "stance": "与现实不符",
+       "zh": "这个叙事和现实不符。云计算远早于十年前，我们 16 年前就在做生产级云计算了，开源革命可以追溯到 90 年代末。作者似乎以为十年前软件工程处在黄金时代，抱歉，其实差不多。",
+       "en": "This narrative isn't consistent with reality.",
+       "hn": "https://news.ycombinator.com/item?id=50521157",
+       "id": 50521157,
+       "replies": 36
+      }
+     ],
+     "kicker": "开发 · 观点"
+    },
+    {
+     "id": 50519744,
+     "title": "Rust 日期时间库 Jiff 发布 1.0",
+     "title_en": "Jiff 1.0: A datetime library for Rust",
+     "url": "https://burntsushi.net/jiff/",
+     "hn": "https://news.ycombinator.com/item?id=50519744",
+     "points": 287,
+     "comments": 68,
+     "summary": [
+      "BurntSushi（ripgrep 作者）发布 Rust 日期时间库 Jiff 1.0。它把时区处理放在 API 的核心位置，自动处理许多夏令时相关的常见问题，目标是让用户「跳进成功之坑」，很难用错。Jiff 已在 uv、Cargo、Starship、fd、Nushell、mise、Jujutsu、uutils/coreutils 等项目中投入生产，AWS LLRT 还以它为基础实现了 Temporal。",
+      "作者承诺，除非发现重大 API 缺陷，将无限期维持 1.0 不做破坏性升级，因为 Jiff 的定位是会出现在其他库公共 API 中的生态基础件。他认为日期时间难，根源是领域建模不好，很多库把复杂性甩给了用户。评论区出现了 chrono 前维护者的感言。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "quodlibetor",
+       "stance": "chrono 前维护者",
+       "zh": "我维护了 chrono 大约五年，接手正是因为它的 API 很烂、我想改好它。结果大家用它恰恰是因为 API 稳定，每一点改进都遭到阻力，我最终因倦怠而放弃。非常感谢 burntsushi 写出了 Rust 应得的日期时间库。",
+       "en": "I'm extremely grateful to burntsushi for writing the datetime library rust deserves.",
+       "hn": "https://news.ycombinator.com/item?id=50521423",
+       "id": 50521423,
+       "replies": 12
+      },
+      {
+       "user": "Dagonfly",
+       "stance": "坦承局限",
+       "zh": "我很欣赏一个项目能平静地承认自己不适合所有场景。这才是专业的工程。尤其在 AI 时代，关键技能将是知道什么「不该」去实现。",
+       "en": "the crucial skill will be what NOT to implement",
+       "hn": "https://news.ycombinator.com/item?id=50521382",
+       "id": 50521382,
+       "replies": 1
+      },
+      {
+       "user": "the__alchemist",
+       "stance": "chrono 也不差",
+       "zh": "我会试试，不过……Rust 是我唯一一门想用现成库 chrono 的语言。在 JS 里我宁可自己写，Python 也只是勉强用标准库，但 chrono 相对来说真的挺好。",
+       "en": "Rust is the only language I've used where I want to use the established one, chrono.",
+       "hn": "https://news.ycombinator.com/item?id=50520713",
+       "id": 50520713,
+       "replies": 4
+      }
+     ],
+     "kicker": "开发 · Rust"
+    },
+    {
+     "id": 50517602,
+     "title": "一个从没解析过的域名，怎么排进全球第 8？",
+     "title_en": "What is w2rt6byl5nf1opmc-a.com?",
+     "url": "https://jack.cab/blog/siterate",
+     "hn": "https://news.ycombinator.com/item?id=50517602",
+     "points": 311,
+     "comments": 140,
+     "summary": [
+      "jack.cab 的作者在网站排名站 siterate.org 上发现，.com 排行里 google、facebook、youtube 之后，第 8 名竟是 w2rt6byl5nf1opmc-a.com——一个他访问时根本无法解析的域名。排名来自 Majestic Million 榜单：它按引用子网数排名，该域名有 27 万多个引用子网，Majestic 显示有 2.4 亿多条 nofollow 外链、来自 516 万多个域名，而 Ahrefs 只查到 53 条。",
+      "按证书透明度记录，域名直到 11 月 11 日才首次被注册，晚于大部分外链；它在使用 Majestic 数据的 Tranco 榜上也排第 38。作者列了版权陷阱、Majestic 被黑、刷榜漏洞等猜测。11 月 16 日更新：一位 Majestic 员工回应，这是内部实验选的冷门域名，忘了加过滤，「教训：别在生产环境里测试」。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "nonethewiser",
+       "stance": "更多线索",
+       "zh": "有意思的是这个域名被引用后很长时间都没人注册：从 10 月 5 日起就在 Majestic 前一万名，最近冲到第 8，而几乎整段时间都是未注册状态。11 月 11 日有人通过 Cloudflare 买下了它，至今不指向任何地方。",
+       "en": "the domain was unregisters for a very long time after it was referred to",
+       "hn": "https://news.ycombinator.com/item?id=50518959",
+       "id": 50518959,
+       "replies": 3
+      },
+      {
+       "user": "JSR_FDED",
+       "stance": "平行宇宙",
+       "zh": "这整件事对我来说像个奇怪的平行宇宙。Tranco、Majestic、Faviconese 是什么？",
+       "en": "This entire thing is a strange parallel universe for me.",
+       "hn": "https://news.ycombinator.com/item?id=50518045",
+       "id": 50518045,
+       "replies": 37
+      },
+      {
+       "user": "whh",
+       "stance": "Cloudflare 猜想",
+       "zh": "它是 11 月 11 日在 Cloudflare 注册的。考虑到外链数量巨大，我怀疑它和 Cloudflare 的 Bot Fight 模式或 Turnstile 有关。",
+       "en": "I'm wondering if it's part of Cloudflare's Bot Fight mode or Cloudflare Turnstile related feature",
+       "hn": "https://news.ycombinator.com/item?id=50518360",
+       "id": 50518360,
+       "replies": 1
+      }
+     ],
+     "kicker": "开发 · 网络"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50522563,
+     "title": "Rust 如何改变了我这个开发者",
+     "title_en": "Rust changed me as a developer",
+     "url": "https://blog.startifact.com/posts/how-rust-changed-me/",
+     "hn": "https://news.ycombinator.com/item?id=50522563",
+     "points": 160,
+     "comments": 99
+    },
+    {
+     "id": 50484998,
+     "title": "还得反范式化吗？ParadeDB 谈 join 与搜索兼得",
+     "title_en": "Do we still have to denormalize? Have your schema and search it too",
+     "url": "https://www.paradedb.com/blog/joins",
+     "hn": "https://news.ycombinator.com/item?id=50484998",
+     "points": 117,
+     "comments": 45
+    },
+    {
+     "id": 50512231,
+     "title": "Mini.nvim 迁到 Tangled",
+     "title_en": "Mini.nvim Is Now on Tangled",
+     "url": "https://tangled.org/nvim-mini.org/mini.nvim",
+     "hn": "https://news.ycombinator.com/item?id=50512231",
+     "points": 84,
+     "comments": 29
+    },
+    {
+     "id": 50519345,
+     "title": "Jolt：能直接对接 C 的 Clojure",
+     "title_en": "Jolt – Clojure that speaks C",
+     "url": "https://jolt-lang.net/",
+     "hn": "https://news.ycombinator.com/item?id=50519345",
+     "points": 90,
+     "comments": 27
+    },
+    {
+     "id": 50517815,
+     "title": "「Active Directory 时代终于结束」",
+     "title_en": "The Active Directory Era Is Finally Over",
+     "url": "https://infisical.com/blog/active-directory-machine-identity",
+     "hn": "https://news.ycombinator.com/item?id=50517815",
+     "points": 112,
+     "comments": 75
+    },
+    {
+     "id": 50514180,
+     "title": "Debian 升级 6.1.0-55 内核后系统无响应",
+     "title_en": "Debian Becomes Unresponsive after 6.1.0-55 Kernel Update",
+     "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1154101",
+     "hn": "https://news.ycombinator.com/item?id=50514180",
+     "points": 168,
+     "comments": 79
+    },
+    {
+     "id": 50456548,
+     "title": "用 packfile 让 Atuin 同步快 32 倍",
+     "title_en": "Making Atuin sync 32x faster with packfiles",
+     "url": "https://blog.atuin.sh/making-atuin-sync-32x-faster-with-packfiles/",
+     "hn": "https://news.ycombinator.com/item?id=50456548",
+     "points": 48,
+     "comments": 22
+    },
+    {
+     "id": 50515616,
+     "title": "都说「总是 DNS 的锅」，我们为什么还自建？",
+     "title_en": "It's always DNS, so why are we running our own?",
+     "url": "https://s2.dev/blog/dns-server",
+     "hn": "https://news.ycombinator.com/item?id=50515616",
+     "points": 62,
+     "comments": 48
+    },
+    {
+     "id": 50512218,
+     "title": "Parcel：用 Zig 写的 Linux 桌面邮件客户端",
+     "title_en": "Parcel: A desktop mail client for Linux, built with Zig",
+     "url": "https://tangled.org/rockorager.dev/parcel",
+     "hn": "https://news.ycombinator.com/item?id=50512218",
+     "points": 64,
+     "comments": 18
+    },
+    {
+     "id": 50518690,
+     "title": "Psychic：会从你的操作中学习的 fzf",
+     "title_en": "Psychic: Like fzf but learns from your actions",
+     "url": "https://klauria.tech/psychic/",
+     "hn": "https://news.ycombinator.com/item?id=50518690",
+     "points": 40,
+     "comments": 9
+    }
+   ]
+  },
+  {
+   "name": "安全与故障",
+   "en": "Security & Outages",
+   "page": 4,
+   "stats": {
+    "items": 12,
+    "points": 1546,
+    "comments": 689,
+    "top_points": {
+     "id": 50512441,
+     "title": "Tor 网络遭持续 DDoS，紧急发布防御修复",
+     "value": 239,
+     "comments": 66
+    },
+    "top_comments": {
+     "id": 50517321,
+     "title": "微软：上周邮件大瘫痪源于 7 月的一次修复",
+     "value": 135
+    },
+    "top_brief": {
+     "id": 50523601,
+     "title": "BugMeNot 关站",
+     "value": 237,
+     "comments": 117
+    }
+   },
+   "stories": [
+    {
+     "id": 50517321,
+     "title": "微软：上周邮件大瘫痪源于 7 月的一次修复",
+     "title_en": "Microsoft blames monster email outage on software defect introduced in July fix",
+     "url": "https://www.theregister.com/saas/2026/11/16/microsoft-blames-monster-email-outage-on-software-defect-introduced-in-july-fix/5310026",
+     "hn": "https://news.ycombinator.com/item?id=50517321",
+     "points": 197,
+     "comments": 135,
+     "summary": [
+      "据 The Register 报道，微软 11 月 15 日发布初步事故报告：上周让 Exchange Online 等服务全球瘫痪的缺陷，是 2026 年 7 月给 Microsoft 365 网络网关服务器打的一个更新引入的。它当时通过了负载测试，但测试「偏重核心更少的较弱硬件」，而该缺陷会在一个 Windows 内部进程中造成锁争用、耗尽 CPU 和内存，核心越多、硬件越新越严重。",
+      "11 月 12 日 Teams 故障转移到主网关造成负载激增，恰逢约 14% 网关容量不在线，两者叠加触发缺陷，引发级联故障，最严重时 80% 以上服务器无响应。缺陷已潜伏数月无法直接回滚，自动恢复也不适用，工程师只能做「补丁的补丁」分批恢复；最终报告定于 11 月 20 日发布。评论区把它比作电网「黑启动」。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "mike_hearn",
+       "stance": "像电网黑启动",
+       "zh": "没什么意外的，大公司的大故障似乎总是这样。电力行业有个概念叫「黑启动」，即从零把电网重新拉起来。很难，因为发电机不能直接接入离线电网，否则会被全部负荷冲垮。",
+       "en": "The electricity industry has this notion they call a black start",
+       "hn": "https://news.ycombinator.com/item?id=50518809",
+       "id": 50518809,
+       "replies": 22
+      },
+      {
+       "user": "ncr100",
+       "stance": "测试环境太弱",
+       "zh": "他们提到相对低端的测试环境让 7 月的代码通过了，而它与高端的生产机器不同，不幸掩盖了这个并发 bug。这种做法普遍可以接受吗？我想这是个代价高昂的取舍？",
+       "en": "sadly hiding the concurrency bug during the test phase",
+       "hn": "https://news.ycombinator.com/item?id=50517969",
+       "id": 50517969,
+       "replies": 10
+      },
+      {
+       "user": "mindwok",
+       "stance": "关键设施跑 Windows",
+       "zh": "最大的意外是他们在关键网络基础设施上用 Windows。我很惊讶除了 Exchange 服务器本身，Windows 进程还在这里扮演什么角色。",
+       "en": "The biggest surprise here is that they're using Windows for critical network infrastructure.",
+       "hn": "https://news.ycombinator.com/item?id=50523819",
+       "id": 50523819,
+       "replies": 11
+      }
+     ],
+     "kicker": "安全 · 故障"
+    },
+    {
+     "id": 50523300,
+     "title": "Optimizely 被投毒：Zoom、BBC 等 178 家机构网站被植入恶意脚本",
+     "title_en": "World's Largest Brands Infected With Malware Via Optimizely",
+     "url": "https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely/",
+     "hn": "https://news.ycombinator.com/item?id=50523300",
+     "points": 111,
+     "comments": 18,
+     "summary": [
+      "安全公司 Report URI 披露，11 月 16 日，178 家机构的访客通过 Optimizely Web 实验平台被投放了恶意 JavaScript，名单包括 Zoom、BBC、CNN、Salesforce、GitLab、宜家、汇丰、Equifax、法荷航和 Ledger 等。恶意代码会替换加密货币钱包地址、窃取银行卡和 Cookie、截屏，在 iPhone 和 iPad 上还投放 Coruna 和 DarkSword 两套 iOS 漏洞利用工具；已经有加密货币被盗。",
+      "攻击者把代码写进各客户项目的「Project JavaScript」字段，脚本仍从 cdn.optimizely.com 用官方证书发出，网站自身代码和基础设施都没被攻破。攻击者如何获得这么多客户项目的写权限尚不清楚。截至 21:52 UTC，188 个受感染脚本中只剩 1 个仍含恶意代码。评论区借机批评营销部门绕过工程团队加脚本。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "stickfigure",
+       "stance": "标签管理之祸",
+       "zh": "谷歌标签管理器的整个理念，就是让市场部不用经过工程团队就能往网站上加「标签」。这就是为什么每篇新闻文章都带着 10MB 的 JavaScript。希望大家现在重新审视这一点。",
+       "en": "That's how we got 10MB of javascript with every news article.",
+       "hn": "https://news.ycombinator.com/item?id=50525348",
+       "id": 50525348,
+       "replies": 1
+      },
+      {
+       "user": "duxup",
+       "stance": "怎么设限",
+       "zh": "假设我用 Optimizely（我不用），有没有好的最佳实践能做到：「行，加载这个 JS，但它不能随便加载引用可疑地址的其他 JS」？",
+       "en": "is there a good best practice to say?",
+       "hn": "https://news.ycombinator.com/item?id=50523727",
+       "id": 50523727,
+       "replies": 6
+      },
+      {
+       "user": "ea016",
+       "stance": "iOS 载荷",
+       "zh": "「仅在 iPhone/iPad/iPod 上：从两个 .icu 域名注入 boot.js，在 iOS 18.6 及以下还会注入隐藏 iframe。」有人知道这是什么吗？[补充] 从另一篇链接看，似乎是 Coruna 和 DarkSword 漏洞利用。",
+       "en": "it seems to be Coruna and DarkSword exploits",
+       "hn": "https://news.ycombinator.com/item?id=50524883",
+       "id": 50524883,
+       "replies": 0
+      }
+     ],
+     "kicker": "安全 · 供应链"
+    },
+    {
+     "id": 50512441,
+     "title": "Tor 网络遭持续 DDoS，紧急发布防御修复",
+     "title_en": "Tor Project Issues Rapid-Response DoS-Defense Fix Amid Sustained DDoS Attack",
+     "url": "https://forum.torproject.org/t/security-release-0-4-9-17/22454",
+     "hn": "https://news.ycombinator.com/item?id=50512441",
+     "points": 239,
+     "comments": 66,
+     "summary": [
+      "Tor 项目发布 0.4.9.17 版，包含一系列安全修复，其中最重要的一项涉及中继节点在 IPv6 处理上的 DoS 防御。这是针对当前网络遭受的 DDoS 攻击的快速响应，攻击已影响大多数中继运营者：全网中继正被海量客户端线路淹没。",
+      "Tor 项目说这个问题不容易解决，正在评估更多防御措施，预计近期还会发布新版本；呼吁中继运营者尽快升级（升级后无需额外操作），并感谢 tor-relays 邮件列表上的志愿者——「感谢所有人……除了我们的攻击者」。评论区有中继运营者讲述自己是怎么发现被攻击的。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Actor",
+       "stance": "亲历攻击",
+       "zh": "我几个月前开始运行一个非出口节点，后来它成了守卫节点。我是在我妈说 Wi-Fi 不好用时发现攻击的：下载速度比平时低了 99%。关掉跑中继的迷你主机后网速就恢复了，在中继查询页上一看，显示「过载」。",
+       "en": "the download speed was down 99% from normal",
+       "hn": "https://news.ycombinator.com/item?id=50513763",
+       "id": 50513763,
+       "replies": 28
+      },
+      {
+       "user": "noident",
+       "stance": "别有用心？",
+       "zh": "这会不会是想把流量引向对手控制的中继？",
+       "en": "Could this be an effort to direct traffic to adversarial relays?",
+       "hn": "https://news.ycombinator.com/item?id=50513599",
+       "id": 50513599,
+       "replies": 7
+      },
+      {
+       "user": "cowlevel",
+       "stance": "Tor 屏蔽 Tor",
+       "zh": "我想通过 Tor 在 Tor 官网上打开发布说明，结果收到 403 错误，因为 Tor 屏蔽了 Tor。不是好兆头。",
+       "en": "received a 403 error because Tor blocks Tor",
+       "hn": "https://news.ycombinator.com/item?id=50513070",
+       "id": 50513070,
+       "replies": 4
+      }
+     ],
+     "kicker": "安全 · 隐私"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50523601,
+     "title": "BugMeNot 关站",
+     "title_en": "BugMeNot has closed",
+     "url": "https://www.bugmenot.com/",
+     "hn": "https://news.ycombinator.com/item?id=50523601",
+     "points": 237,
+     "comments": 117
+    },
+    {
+     "id": 50512824,
+     "title": "澳大利亚超市巨头 Coles 遭遇网络安全事件",
+     "title_en": "Coles hit by a cybersecurity incident",
+     "url": "https://www.colesgroup.com.au/updates/",
+     "hn": "https://news.ycombinator.com/item?id=50512824",
+     "points": 117,
+     "comments": 88
+    },
+    {
+     "id": 50513451,
+     "title": "Tell HN：有人在爬 HN 上的邮箱用来行骗",
+     "title_en": "Tell HN: HN is being scraped for emails to scam",
+     "url": null,
+     "hn": "https://news.ycombinator.com/item?id=50513451",
+     "points": 120,
+     "comments": 41
+    },
+    {
+     "id": 50510042,
+     "title": "Ask HN：Stripe 因一张 1500 美元发票就封了我们，从没要过证据",
+     "title_en": "Ask HN: Stripe closed us after one $1,500 invoice and never asked for evidence",
+     "url": null,
+     "hn": "https://news.ycombinator.com/item?id=50510042",
+     "points": 178,
+     "comments": 91
+    },
+    {
+     "id": 50524165,
+     "title": "美联航遭遇大范围系统故障",
+     "title_en": "United Airlines experiencing a widespread system outage, airline says",
+     "url": "https://www.cnn.com/2026/11/16/us/united-airlines-outage",
+     "hn": "https://news.ycombinator.com/item?id=50524165",
+     "points": 136,
+     "comments": 63
+    },
+    {
+     "id": 50521870,
+     "title": "如何拦截 HTTP/3 流量：QUIC 与 QPACK",
+     "title_en": "How to Intercept HTTP/3 Traffic: QUIC and Qpack",
+     "url": "https://interceptsuite.com/blog/intercept-http3-traffic-quic-qpack-explained/",
+     "hn": "https://news.ycombinator.com/item?id=50521870",
+     "points": 52,
+     "comments": 4
+    },
+    {
+     "id": 50523784,
+     "title": "Spamhaus 11 月新的邮件发送方要求",
+     "title_en": "Spamhaus new email sender requirements in November",
+     "url": "https://www.spamhaus.org/sender-guidelines/",
+     "hn": "https://news.ycombinator.com/item?id=50523784",
+     "points": 58,
+     "comments": 47
+    },
+    {
+     "id": 50524225,
+     "title": "Ptacek 版「如何入行安全」（2012）",
+     "title_en": "How to Break into Security, Ptacek Edition (2012)",
+     "url": "https://krebsonsecurity.com/2012/06/how-to-break-into-security-ptacek-edition/",
+     "hn": "https://news.ycombinator.com/item?id=50524225",
+     "points": 57,
+     "comments": 14
+    },
+    {
+     "id": 50465522,
+     "title": "Aspidistra：二战英国用于中间人攻击的电台发射机",
+     "title_en": "Aspidistra: A British wartime radio transmitter used for MitM attacks",
+     "url": "https://en.wikipedia.org/wiki/Aspidistra_(transmitter)",
+     "hn": "https://news.ycombinator.com/item?id=50465522",
+     "points": 44,
+     "comments": 5
+    }
+   ]
+  },
+  {
+   "name": "科学与文化",
+   "en": "Science & Culture",
+   "page": 5,
+   "stats": {
+    "items": 13,
+    "points": 2444,
+    "comments": 1071,
+    "top_points": {
+     "id": 50522980,
+     "title": "卡内基梅隆把计算机课程免费放上 YouTube",
+     "value": 493,
+     "comments": 85
+    },
+    "top_comments": {
+     "id": 50520182,
+     "title": "康奈尔研究：太阳能板下放羊，蜜蜂多了，农民也能赚钱",
+     "value": 194
+    },
+    "top_brief": {
+     "id": 50516473,
+     "title": "让「死掉」的 ThinkPad 复活的电源键秘技（2007）",
+     "value": 289,
+     "comments": 114
+    }
+   },
+   "stories": [
+    {
+     "id": 50515058,
+     "title": "Kevin Buzzard：「已经用 Lean 检查过」该怎么理解",
+     "title_en": "Interpreting claims that a theorem is correct because it was checked in Lean",
+     "url": "https://xenaproject.wordpress.com/2026/11/12/and-the-proof-is-checked-in-lean/",
+     "hn": "https://news.ycombinator.com/item?id=50515058",
+     "points": 282,
+     "comments": 129,
+     "summary": [
+      "数学家 Kevin Buzzard 撰文解释如何对待「这个定理正确，因为已在 Lean 中检查过」的说法。他的结论是：Lean 代码确实提供重要信号，但若代码由 AI 生成，就得先做几项检查。背景是 OpenAI 上月公开 722 篇数学论文，约 45% 附有 Lean 代码，其中 3 篇（未附 Lean 的）已因符号错误撤回。",
+      "他列出四个问题：Lean 里的定理陈述与论文是否一致（他举例一个看似费马大定理、实则因自然数含 0 而为假的写法）；代码能否真正编译（Anthropic 用 Lean 形式化费马大定理生成了 1300 万行代码，他的机器编译时内存不够）；证明是否被海量导入代码偷换了含义；是否利用了 Lean 内核漏洞。他说这些检查 AI 都能做，但必须有人去做，而 OpenAI 那批论文很多还没做。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "wodenokoto",
+       "stance": "像「能编译就能用」",
+       "zh": "「证明已在 Lean 中检查」是不是有点像以为代码能编译就能用？代码是能跑，但它做的是你想要的事吗？证明是有效的，但它证明的是你想证明的东西吗？",
+       "en": "Isn’t “proof is checked in Lean” kinda similar to assuming your code works just because it compiles.",
+       "hn": "https://news.ycombinator.com/item?id=50516209",
+       "id": 50516209,
+       "replies": 42
+      },
+      {
+       "user": "Legend2440",
+       "stance": "倡导者的诚实",
+       "zh": "值得指出，这篇文章出自 Kevin Buzzard，他是 Lean 和自动定理证明最大的倡导者之一。看到一个仍在推广某工具的人坦诚谈它的局限，令人耳目一新。",
+       "en": "It's refreshing to see intellectual honesty about a tool's limitations",
+       "hn": "https://news.ycombinator.com/item?id=50517490",
+       "id": 50517490,
+       "replies": 9
+      },
+      {
+       "user": "trehans",
+       "stance": "代码证明还差一环",
+       "zh": "如果你想用 Lean 证明代码，并让证明内容与代码实际行为真正对应，就需要在 Lean 里嵌入编程语言的数学模型，以及一个把代码确定性转换成 Lean 的解析器。否则 AI 其实没有任何防幻觉的检查。",
+       "en": "you need a mathematical model of your programming language embedded in Lean",
+       "hn": "https://news.ycombinator.com/item?id=50520255",
+       "id": 50520255,
+       "replies": 12
+      }
+     ],
+     "kicker": "科学 · 数学"
+    },
+    {
+     "id": 50520182,
+     "title": "康奈尔研究：太阳能板下放羊，蜜蜂多了，农民也能赚钱",
+     "title_en": "Grazing sheep in fields with solar arrays",
+     "url": "https://news.cornell.edu/stories/2026/10/sheep-grazing-solar-fields-offers-farmers-economic-ecological-gains",
+     "hn": "https://news.ycombinator.com/item?id=50520182",
+     "points": 197,
+     "comments": 194,
+     "summary": [
+      "康奈尔大学两篇新论文研究在光伏阵列间放羊。一篇发表于《环境研究快报》：团队在纽约州一座社区太阳能农场连续三年测试不同放牧密度，发现每公顷 2 只羊时，野生蜜蜂、蜜蜂和瓢虫等益虫数量比割草的对照区多 38%，主要来自蜜蜂增加 83%；每公顷 4 只时益虫数量与割草区相当、除草效果更好；每公顷 8 只时除草效果最佳、羊群也健康，但蜜蜂数量下降 45%。",
+      "另一篇论文则提供决策工具，帮助农民盈利地扩大光伏放牧羊群。研究者说，放牧密度是羊农每天都在用的具体数字，希望结果真正有用。评论区的头号问题是：明明有大片荒漠，为什么要把太阳能板装在草地上？"
+     ],
+     "comment_quotes": [
+      {
+       "user": "mlmonkey",
+       "stance": "为何不用荒地",
+       "zh": "世界上有大量贫瘠的荒漠，我们真的需要把太阳能板装在草地上吗？我不反对，只是好奇为什么不用荒地，那样肯定比装在草地上便宜吧？",
+       "en": "why not just use barren land?",
+       "hn": "https://news.ycombinator.com/item?id=50520637",
+       "id": 50520637,
+       "replies": 69
+      },
+      {
+       "user": "flerchin",
+       "stance": "土地物尽其用",
+       "zh": "去年夏天我开车穿过西德州：白天羊群在巨大风车的阴影下吃草，晚上被天然气火炬照亮。不好看，但地主显然把土地用到了极致。",
+       "en": "the owners clearly put their land to work",
+       "hn": "https://news.ycombinator.com/item?id=50520870",
+       "id": 50520870,
+       "replies": 41
+      },
+      {
+       "user": "_heimdall",
+       "stance": "想给牛试试",
+       "zh": "我很想在我们的牛身上试试，我们有大约 20 头小型品种的牛，草场很缺遮阴。主要障碍是找不到便宜又经得起 1000 磅公牛蹭屁股的支架，还有本地电力公司对太阳能很不友好。",
+       "en": "I have very much wanted to try this with our cattle.",
+       "hn": "https://news.ycombinator.com/item?id=50521557",
+       "id": 50521557,
+       "replies": 7
+      }
+     ],
+     "kicker": "科学 · 农业"
+    },
+    {
+     "id": 50522980,
+     "title": "卡内基梅隆把计算机课程免费放上 YouTube",
+     "title_en": "Carnegie Mellon is putting computer science courses on YouTube for free",
+     "url": "https://www.cs.cmu.edu/learn/",
+     "hn": "https://news.ycombinator.com/item?id=50522980",
+     "points": 493,
+     "comments": 85,
+     "summary": [
+      "卡内基梅隆大学（CMU）计算机学院推出 CS Learn，把完整的课堂讲座免费放到 YouTube，涉及 AI、机器人、系统、生物等方向，来自七个系；首批课程包括陈天奇与贾志豪的 15-442 等，11 月陆续首播。网站说下一步会推出基于真实 CMU 课程、能即时反馈并获得徽章的课件，之后还会加入 AI 辅导。",
+      "负责该项目的 CMU 教师 Phillip Compeau 在评论区现身：本周每天首播一门课，1 月还有更多；「是的，MIT 25 年前就做了」，他们的不同在于学生开发了自动化制作工具，让小团队能快速上线课程、同时仍有人审核每一讲。本帖 493 点赞。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "pcompeau",
+       "stance": "项目负责人",
+       "zh": "我们正在发布 CMU 现有计算机课程的整学期讲座，本周每天首播一门，1 月还有更多。是的，MIT 25 年前就做了 :)。我兴奋的是我们的做法：几位学生做了工具把大量制作工作自动化。",
+       "en": "Yes, MIT got here 25 years ago :).",
+       "hn": "https://news.ycombinator.com/item?id=50523040",
+       "id": 50523040,
+       "replies": 62
+      },
+      {
+       "user": "ecshafer",
+       "stance": "要有作业和反馈",
+       "zh": "看到下一步是课件，这很重要。讲座不错，但没有项目和获得反馈的途径，光看讲座效果会打折扣。",
+       "en": "Lectures are nice, but without the projects and some kind of way to get feedback on it, lectures can fall flat a bit.",
+       "hn": "https://news.ycombinator.com/item?id=50525350",
+       "id": 50525350,
+       "replies": 0
+      },
+      {
+       "user": "JSR_FDED",
+       "stance": "AI 时代还学吗",
+       "zh": "有人问 AI 时代这还有什么价值？如果你把基础学扎实，AI 会成为你的电动工具；否则，它会取代你。",
+       "en": "If you learn the fundamentals properly, then AI will be a power tool for you.",
+       "hn": "https://news.ycombinator.com/item?id=50524935",
+       "id": 50524935,
+       "replies": 1
+      }
+     ],
+     "kicker": "文化 · 教育"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50516473,
+     "title": "让「死掉」的 ThinkPad 复活的电源键秘技（2007）",
+     "title_en": "The Secret ThinkPad Powerbutton Code to Bring Dead Laptops Back to Life (2007)",
+     "url": "https://masnick.com/posts/the-secret-thinkpad-powerbutton-code-to-bring-dead-laptops-back-to-life/",
+     "hn": "https://news.ycombinator.com/item?id=50516473",
+     "points": 289,
+     "comments": 114
+    },
+    {
+     "id": 50519354,
+     "title": "Frame：31.5 英寸彩色电子纸显示器",
+     "title_en": "Frame – 31.5\" color ePaper display",
+     "url": "https://trmnl.com/blog/introducing-frame",
+     "hn": "https://news.ycombinator.com/item?id=50519354",
+     "points": 272,
+     "comments": 192
+    },
+    {
+     "id": 50486745,
+     "title": "只用一块智能手表追踪全身动作",
+     "title_en": "Researchers track whole body movement with just a smartwatch",
+     "url": "https://news.cornell.edu/stories/2026/11/researchers-track-whole-body-movement-just-smartwatch",
+     "hn": "https://news.ycombinator.com/item?id=50486745",
+     "points": 198,
+     "comments": 71
+    },
+    {
+     "id": 50516245,
+     "title": "咖啡馆与科学的兴起（PDF）",
+     "title_en": "Coffeehouses and the Rise of Science [pdf]",
+     "url": "https://www.monirbounadi.com/Bounadi_JMP.pdf",
+     "hn": "https://news.ycombinator.com/item?id=50516245",
+     "points": 178,
+     "comments": 99
+    },
+    {
+     "id": 50515151,
+     "title": "超椭圆圆角（Squircle）",
+     "title_en": "Squircles",
+     "url": "https://linebender.org/wiki/curves/squircle/",
+     "hn": "https://news.ycombinator.com/item?id=50515151",
+     "points": 112,
+     "comments": 34
+    },
+    {
+     "id": 50520518,
+     "title": "迈克尔·曼《盗火线》版权之争：关键是他和自己签的约",
+     "title_en": "Michael Mann's 'Heat' Copyright Fight Turns on a Deal with Himself",
+     "url": "https://copyrightlately.com/michael-mann-heat-copyright-termination/",
+     "hn": "https://news.ycombinator.com/item?id=50520518",
+     "points": 82,
+     "comments": 35
+    },
+    {
+     "id": 50523025,
+     "title": "AT&T 告康卡斯特：所谓「光纤 Wi-Fi」其实是有线电缆",
+     "title_en": "Comcast's \"fiber-powered Wi-Fi\" is cable, AT&T says in false advertising case",
+     "url": "https://arstechnica.com/tech-policy/2026/11/comcast-falsely-advertises-cable-internet-as-fiber-powered-att-lawsuit-says/",
+     "hn": "https://news.ycombinator.com/item?id=50523025",
+     "points": 75,
+     "comments": 59
+    },
+    {
+     "id": 50511718,
+     "title": "Show HN：The Last Complication，Zachtronics 风格的制表解谜游戏",
+     "title_en": "Show HN: The Last Complication, a Zachtronics-style watchmaking puzzle game",
+     "url": "https://lastcomplication.com/",
+     "hn": "https://news.ycombinator.com/item?id=50511718",
+     "points": 83,
+     "comments": 17
+    },
+    {
+     "id": 50497746,
+     "title": "最小的 Nopert 多面体：Septopert",
+     "title_en": "Smallest possible nopert polyhedra: the Septopert",
+     "url": "https://github.com/tom7/noperts/blob/main/septopert.md",
+     "hn": "https://news.ycombinator.com/item?id=50497746",
+     "points": 54,
+     "comments": 6
+    },
+    {
+     "id": 50490159,
+     "title": "OOS：给 Rigol 示波器做的开源操作系统",
+     "title_en": "OOS – an open operating system for the Rigol Scopes",
+     "url": "https://www.eevblog.com/forum/testgear/oos-an-open-operating-system-for-the-rigol-scopes/",
+     "hn": "https://news.ycombinator.com/item?id=50490159",
+     "points": 129,
+     "comments": 36
+    }
+   ]
+  }
+ ],
+ "quote_of_day": {
+  "user": "999900000999",
+  "id": 50522184,
+  "hn": "https://news.ycombinator.com/item?id=50522184",
+  "story_id": 50521045,
+  "story": "摩根大通「软件 bug」拖累美国多家银行网银和 Zelle",
+  "zh": "整个科技行业，质量保障都是第一个被砍的。你把工作做好的时候，没人在乎。",
+  "en": "Across all of tech QA is the first thing you cut. When you’re doing your job right no one cares."
+ },
+ "stats": {
+  "snapshot": "2026-11-17T08:14:36+08:00",
+  "front_page_count": 90,
+  "with_numbers": 88,
+  "flagged_or_dupe": 2,
+  "top_points": {
+   "id": 50513215,
+   "title": "阿里发布 Qwen4-Max：2.4 万亿参数，这次不开放权重",
+   "value": 850,
+   "comments": 470
+  },
+  "top_comments": {
+   "id": 50512235,
+   "title": "Steve Blank：黄仁勋走后，英伟达最怕变成鲍尔默的微软",
+   "value": 566,
+   "comments": 566
+  },
+  "second_comments": {
+   "id": 50521045,
+   "title": "摩根大通「软件 bug」拖累美国多家银行网银和 Zelle",
+   "value": 561,
+   "comments": 561
+  },
+  "over_500": 5,
+  "over_300": 9,
+  "over_100": 33,
+  "show_hn": 3,
+  "total_points": 12717,
+  "total_comments": 6835,
+  "hottest_ratio": {
+   "id": 50512235,
+   "title": "Steve Blank：黄仁勋走后，英伟达最怕变成鲍尔默的微软",
+   "value": 1.24,
+   "comments": 566,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
