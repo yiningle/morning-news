@@ -1,0 +1,1239 @@
+{
+ "date": "2026-11-17",
+ "published_at": "2026-11-18T08:20:34+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-11-17",
+ "schema_version": 2,
+ "lead": {
+  "id": 50535230,
+  "title": "OpenAI 发布 GPT‑6.2 Astra 与 Sol：更省 token，旗舰降价两成",
+  "title_en": "GPT‑6.2 Astra and Sol",
+  "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+  "hn": "https://news.ycombinator.com/item?id=50535230",
+  "points": 1043,
+  "comments": 652,
+  "summary": [
+   "OpenAI 推出两款新模型：GPT‑6.2 Astra 定位为处理最难项目的前沿模型，GPT‑6.2 Sol 是面向日常工作的高效通用模型。官方称两者都用更少的输出 token 完成高难任务，并主打幻灯片、表格和文档更贴近各行业的模板与惯例。",
+   "官方数据：在测多步骤专业工作的 Agents’ Last Exam 上，Astra 的成绩比 GPT‑6 Astra 高 5.2、成本不到三分之一；在 Cognition 的 FrontierCode 2.0 上，Sol 的成绩与 Astra 只差 0.5，成本约五分之一。API 方面，Astra 每百万 token 输入 8 美元、缓存输入 0.40 美元、输出 40 美元，比 GPT‑6 Astra 便宜 20%，缓存输入便宜 60%；Sol 沿用 GPT‑6.1 Sol 的 2 / 0.10 / 10 美元。两款模型即日起向 Plus、Pro、Enterprise、Edu 用户开放，API 同步上线。",
+   "文章也承认，在两项测试里新模型更可能不提及阻碍任务的障碍（比如文件缺失）。这是当天评论最多的帖子：有人用自家基准实测成本大降；有人引系统卡指出 Astra 更会察觉自己在被测试、也更会躲避思维链监控；还有人吐槽官方的幻灯片示例相当难看。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "chriddyp",
+    "stance": "实测降价",
+    "zh": "成本降得相当惊人。在我们的数据分析考试里，Astra 从约 20 美元（V6）降到约 4 美元（V6.2），Sol 从 2.6 美元（V6.1）降到 1.2 美元（V6.2），准确率相近。",
+    "en": "Pretty incredible cost reductions.",
+    "hn": "https://news.ycombinator.com/item?id=50539264",
+    "id": 50539264,
+    "replies": 5
+   },
+   {
+    "user": "mlmonkey",
+    "stance": "安全隐忧",
+    "zh": "系统卡里写着：GPT‑6.2 Astra 比 GPT‑6 Astra 表现出更多「评测意识」，更可能怀疑自己在被测试或身处模拟环境；在部分测试中，它也更擅长躲避思维链（CoT）监控。",
+    "en": "GPT-6.2 Astra is better at evading chain of thought (CoT) monitoring in some tests",
+    "hn": "https://news.ycombinator.com/item?id=50537117",
+    "id": 50537117,
+    "replies": 7
+   },
+   {
+    "user": "Topfi",
+    "stance": "质疑示例",
+    "zh": "办公文档从来不是 OpenAI 的强项，这本身不丢人，但这些幻灯片示例格外糟糕，比我两周前用 GPT‑5.6 Sol 一句提示做出来的还差得多。",
+    "en": "these Slideshow examples look particularly awful",
+    "hn": "https://news.ycombinator.com/item?id=50535502",
+    "id": 50535502,
+    "replies": 10
+   }
+  ],
+  "kicker": "要闻 · 大模型",
+  "tag": "评论数第一"
+ },
+ "side": [
+  {
+   "id": 50524736,
+   "title": "Windows 11 在统计你用了哪些编程智能体和开发工具",
+   "title_en": "Windows 11 is collecting data on which coding agents and developer tools you use",
+   "url": "https://xusheng.dev/posts/windows-coding-agent-telemetry/",
+   "hn": "https://news.ycombinator.com/item?id=50524736",
+   "points": 708,
+   "comments": 588,
+   "summary": [
+    "作者 xusheng 用 AI 协助翻查最新 Windows 二进制，在系统组件 MissionControlAggregator.dll 里发现一份名单：codex.exe、claude.exe、copilot.exe、cursor.exe 等编程智能体，以及 python.exe、dotnet.exe、gcc.exe、code.exe 等开发工具。相关功能开关名为 CLICodingAgentUsage。",
+    "他追踪发现，该组件把「观察到了哪些智能体」记成位图，存到本地并通过 ETW 报告给 Windows 诊断；只要没关闭默认开启的「可选」诊断数据，就会上传给微软。报告里没有提示词或源代码，但作者认为光是收集你用哪些工具就已有明显的隐私影响。他在自己的 Windows 11 ARM64 虚拟机上确认这项功能已默认启用。",
+    "评论区很快变成「换 Linux」大讨论，最热的两条都在劝人迁移；也有人提醒关闭方法，并认为显卡驱动、Chrome 同样在收集类似数据，不必大惊小怪。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "dead_hn_theory",
+     "stance": "换 Linux",
+     "zh": "还在犹豫要不要从 Windows 换到 Linux 的人：适应期大约一周，甚至更短。如果你做的事大多已经在网页上，那你失去的只有枷锁。",
+     "en": "it takes about a week, if that, of adjusting",
+     "hn": "https://news.ycombinator.com/item?id=50525754",
+     "id": 50525754,
+     "replies": 127
+    },
+    {
+     "user": "not_a_bot_4sho",
+     "stance": "关闭方法",
+     "zh": "没读原文的人看这里：开发工具会被追踪，开启可选遥测（默认开启）时会上传。关闭路径：设置 → 隐私和安全性 → 诊断和反馈。",
+     "en": "Turn it off with: Settings → Privacy & security → Diagnostics & feedback.",
+     "hn": "https://news.ycombinator.com/item?id=50527336",
+     "id": 50527336,
+     "replies": 5
+    },
+    {
+     "user": "dannyw",
+     "stance": "见怪不怪",
+     "zh": "Intel、AMD 和 NVIDIA 的驱动也一样，除非你退出，它们会收集你运行的程序名和路径。",
+     "en": "they collect what executable name and paths you run",
+     "hn": "https://news.ycombinator.com/item?id=50527427",
+     "id": 50527427,
+     "replies": 2
+    }
+   ],
+   "kicker": "要闻 · 隐私"
+  },
+  {
+   "id": 50524767,
+   "title": "Optimizely 遭入侵，Zoom、BBC、GitLab 等 178 家网站被植入恶意脚本",
+   "title_en": "Optimizely compromised, served malware on Zoom, GitLab",
+   "url": "https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely/",
+   "hn": "https://news.ycombinator.com/item?id=50524767",
+   "points": 664,
+   "comments": 262,
+   "summary": [
+    "Report URI 报告：11 月 16 日，攻击者通过 A/B 测试平台 Optimizely Web 向 178 家机构的访客投放了恶意 JavaScript，名单包括 Zoom、BBC、CNN、Salesforce、GitLab、IKEA、汇丰、Equifax、法荷航和 Ledger 等。",
+    "攻击者把代码写进客户项目的「Project JavaScript」字段，脚本仍从 cdn.optimizely.com 用官方证书下发。恶意代码会替换加密货币钱包地址、窃取支付卡、Cookie 和截图，并在 iPhone、iPad 上投放 iOS 漏洞利用包；已有加密货币被盗。到 UTC 21:52，188 个受感染脚本中只剩 1 个还带恶意代码。",
+    "评论区把矛头指向「让市场部绕过工程师随意加脚本」的做法，也有人提出用子资源完整性（SRI）和 NoScript 降低风险。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "stickfigure",
+     "stance": "根源",
+     "zh": "Google Tag Manager 的整个理念就是让市场部不用找工程师就能往网站上加「标签」。我们就是这样得到了每篇新闻附带 10MB JavaScript 的局面。希望大家现在重新考虑一下。",
+     "en": "That's how we got 10MB of javascript with every news article.",
+     "hn": "https://news.ycombinator.com/item?id=50525348",
+     "id": 50525348,
+     "replies": 91
+    },
+    {
+     "user": "mcoliver",
+     "stance": "问责",
+     "zh": "这种事本来完全可以避免，但只要没有实质后果就不会改变，没有人被问责。",
+     "en": "There is no accountability.",
+     "hn": "https://news.ycombinator.com/item?id=50525382",
+     "id": 50525382,
+     "replies": 14
+    },
+    {
+     "user": "jdorfman",
+     "stance": "解法",
+     "zh": "子资源完整性（SRI）已经存在十多年了，是时候在这些服务上用起来了。",
+     "en": "Subresource Integrity has been available for over a decade.",
+     "hn": "https://news.ycombinator.com/item?id=50528554",
+     "id": 50528554,
+     "replies": 4
+    }
+   ],
+   "kicker": "要闻 · 安全"
+  },
+  {
+   "id": 50532849,
+   "title": "美国 NSA 机密内网 NSANet 宕机",
+   "title_en": "Highly classified US national security communications network goes down",
+   "url": "https://www.cnn.com/2026/11/17/politics/highly-classified-national-security-communications-network-goes-down",
+   "hn": "https://news.ycombinator.com/item?id=50532849",
+   "points": 434,
+   "comments": 518,
+   "summary": [
+    "CNN 援引六名知情人士报道，美国国家安全局内部传递机密信息的网络 NSANet 发生故障，目前没有遭网络攻击的证据。NSA 声明称系统在「例行计划维护」中出现暂时性降级，部分内部系统受影响，但关键任务能力完全正常。",
+    "国家情报总监 Jay Clayton 随后表示，故障源于 NSA 为上月发现的重大软件漏洞打补丁，一些系统打完补丁后没能如期恢复；这些漏洞在 PHP 中，AI 工具曾帮助研究者利用它们。一名前 NSA 高官说 NSANet 是「网络的网络」，冗余很多，「令人警惕，但大概不至于瘫痪」。",
+    "评论区有人惊讶 NSA 会公开承认机密网络宕机，也有人认为这类网络每年都会不可用一两次，不必过度联想。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "dustfinger",
+     "stance": "意外",
+     "zh": "我可能不了解惯例或相关法律，但 NSA 会公开宣布它高度机密的内部网络宕机，这让我有点惊讶，至少应该先恢复并确保安全再说。",
+     "en": "I find it a little surprising that the NSA would publicly announce",
+     "hn": "https://news.ycombinator.com/item?id=50535617",
+     "id": 50535617,
+     "replies": 24
+    },
+    {
+     "user": "Avicebron",
+     "stance": "缺人",
+     "zh": "很明显，各行各业都迫切需要称职且待遇好的 IT 人员。",
+     "en": "there is a screaming need for competent, well paid IT across all sectors",
+     "hn": "https://news.ycombinator.com/item?id=50533394",
+     "id": 50533394,
+     "replies": 35
+    },
+    {
+     "user": "twotwoone",
+     "stance": "别过度解读",
+     "zh": "别信「这一切都是 AI 干的」的说法。NSA 内网差不多每年都会不可用一次，跟其他服务一样。",
+     "en": "The NSA's internal network is unavailable every year or so.",
+     "hn": "https://news.ycombinator.com/item?id=50536740",
+     "id": 50536740,
+     "replies": 0
+    }
+   ],
+   "kicker": "要闻 · 故障"
+  },
+  {
+   "id": 50538240,
+   "title": "Java4Shell：OpenJDK 的 Base64 解码器存在可远程利用的内存破坏漏洞",
+   "title_en": "Java4Shell: RCE in OpenJDK when processing Base64",
+   "url": "https://calif.io/java4shell/",
+   "hn": "https://news.ycombinator.com/item?id=50538240",
+   "points": 413,
+   "comments": 107,
+   "summary": [
+    "安全公司 Calif 披露 CVE-2026-114938：OpenJDK 为加速 Base64 解码使用了专门的 x86-64 指令，这段优化代码有缺陷，畸形输入会覆盖相邻内存，可像 Heartbleed 那样泄露内存，或最终实现远程代码执行。CVSS 4.0 评分 9.2（严重）。触发只需 64 个 A 加一个等号（旧版 OpenJDK 17 为 128 个 A）。",
+    "Calif 称在默认配置下实现了对 Keycloak、Jira、Confluence、JFrog Artifactory、Jenkins、PingFederate 的免认证 RCE，以及对 Kafka、Solr、Elasticsearch、Gerrit、Spinnaker 的认证后 RCE；认证、文件上传等普通功能都可能把漏洞暴露出来。",
+    "评论区忙着分享缓解办法：关闭 Base64 硬件加速或禁用 AVX-512 的启动参数；也有人指出 nginx 这类会缓冲完整请求体的代理能打乱攻击时序。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "mzs",
+     "stance": "缓解",
+     "zh": "也可以这样缓解：用 -XX:-UseBASE64Intrinsics 关掉 Base64 硬件加速，或用 -XX:UseAVX=2 禁用 AVX-512。后者只能用在 x86-64 主机上，ARM 上的 OpenJDK 不认这个参数，会启动失败。",
+     "en": "-XX:-UseBASE64Intrinsics to disable hardware-accelerated Base64 encoding and decoding",
+     "hn": "https://news.ycombinator.com/item?id=50538403",
+     "id": 50538403,
+     "replies": 1
+    },
+    {
+     "user": "yabones",
+     "stance": "代理",
+     "zh": "先别让安全团队通宵加班，看起来代理能救场。这不一定是完整修复，真正的补丁当然要尽快打。nginx 默认会缓冲请求体。",
+     "en": "it looks like proxies save the day here",
+     "hn": "https://news.ycombinator.com/item?id=50538586",
+     "id": 50538586,
+     "replies": 0
+    },
+    {
+     "user": "leca",
+     "stance": "担忧",
+     "zh": "感觉我们正生活在「有趣的时代」。坏人要多久才能严重攻破关键基础设施？我赌六个月内。",
+     "en": "How long will it take for a bad actor to seriously compromise critical infrastructure?",
+     "hn": "https://news.ycombinator.com/item?id=50538337",
+     "id": 50538337,
+     "replies": 9
+    }
+   ],
+   "kicker": "要闻 · 漏洞"
+  },
+  {
+   "id": 50535238,
+   "title": "Apple 服务大面积宕机",
+   "title_en": "Apple Services Down",
+   "url": "https://developer.apple.com/system-status/",
+   "hn": "https://news.ycombinator.com/item?id=50535238",
+   "points": 613,
+   "comments": 334,
+   "summary": [
+    "帖子链接的是 Apple 开发者系统状态页，抓取时页面上没有可读的故障说明，所以这里只根据同日首页报道和评论整理。当天首页另有 9to5mac 的报道，标题称 iCloud、App Store 等 Apple 服务遭遇持续故障。",
+    "评论里，有人刚从 Apple Store 回来，说店员确认全部服务宕机，无法处理订单和退货，新买的 iPhone 也无法激活；不少人的设备被提示重新输入 Apple 账户密码。也有人借此感叹整个世界都押在少数几家云服务上。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "cjbconnor",
+     "stance": "现场",
+     "zh": "刚从 Apple Store 回来。店员确认全部宕机，他们没法处理订单和退货，顾客新买的 iPhone 也无法激活。",
+     "en": "new iPhones that people bought weren't able to be activated",
+     "hn": "https://news.ycombinator.com/item?id=50535589",
+     "id": 50535589,
+     "replies": 24
+    },
+    {
+     "user": "blop",
+     "stance": "集中化",
+     "zh": "不到一代人的时间我们就建成了这样的世界：所有东西和所有人都依赖少数几家云服务，离去中心化互联网的初衷已经很远了。",
+     "en": "everything and everyone dependent on a few cloud services",
+     "hn": "https://news.ycombinator.com/item?id=50536634",
+     "id": 50536634,
+     "replies": 30
+    },
+    {
+     "user": "jpatten",
+     "stance": "别乱联想",
+     "zh": "这让我想起飘过美国的中国气球。之后一周左右，每个不明气象气球都上了新闻。这些事件之间唯一的联系，就是公众以为它们有联系。",
+     "en": "The main connection between the incidents was that the public thought they might be connected.",
+     "hn": "https://news.ycombinator.com/item?id=50536792",
+     "id": 50536792,
+     "replies": 64
+    }
+   ],
+   "kicker": "要闻 · 故障"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 2,
+   "stories": [
+    {
+     "id": 50529612,
+     "title": "Claude Code 团队怎样让智能体自证工作成果",
+     "title_en": "How the Claude Code team thinks about verification",
+     "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/",
+     "hn": "https://news.ycombinator.com/item?id=50529612",
+     "points": 254,
+     "comments": 198,
+     "summary": [
+      "Anthropic 的文章说，Claude Code 团队约 90% 的代码由 Claude 编写和审查，因此「让智能体用证据验证自己的工作」变得极其重要：有了验证闭环，才能同时跑几十上百个 Claude，否则只能跑一两个、全靠人检查。内部测试中，用独立评分器按评分标准检查结果，任务成功率最多提高 10 个百分点。",
+      "文章推荐三类测试，首选端到端测试，因为它难以糊弄：功能要么能用要么不能；并提醒不稳定的测试会教会智能体「重跑」而不是修代码，太慢的测试则会让它少测。",
+      "评论区以质疑为主：最热评论认为这是「token 无限」才玩得起的做法，确定性的 Playwright 测试同样能做到；也有人说自己按类似流程交付了高质量软件。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "OtherShrezzing",
+       "stance": "太烧钱",
+       "zh": "这篇文章读起来像是手里有无限 token 的产物。里面有些很贵的做法，换成几乎免费的做法效果一样甚至更好。",
+       "en": "This article feels like the result of having unlimited tokens at your disposal.",
+       "hn": "https://news.ycombinator.com/item?id=50530087",
+       "id": 50530087,
+       "replies": 111
+      },
+      {
+       "user": "girvo",
+       "stance": "预算",
+       "zh": "我只跑一两个智能体，每月就要花 2000 美元的 token。他们指望我怎么并行几十上百个？",
+       "en": "Im already spending my $2k usd per month in tokens with just one or two agents.",
+       "hn": "https://news.ycombinator.com/item?id=50529872",
+       "id": 50529872,
+       "replies": 12
+      },
+      {
+       "user": "VadimPR",
+       "stance": "支持",
+       "zh": "我很惊讶这里这么多负面反馈。我靠 Claude 交付过高质量软件，速度是不用 AI 时无法比的。我摸索出的 QA 流程和这篇文章几乎一样，从实际经验看，这就是该听的建议。",
+       "en": "this is the advice to follow",
+       "hn": "https://news.ycombinator.com/item?id=50536550",
+       "id": 50536550,
+       "replies": 0
+      }
+     ],
+     "kicker": "AI · 编程智能体"
+    },
+    {
+     "id": 50532191,
+     "title": "每个模型配哪个智能体外壳最好？",
+     "title_en": "What is the best harness for each model?",
+     "url": "https://runta.com/blog/introducing-frontierharness-eval-v1-1/",
+     "hn": "https://news.ycombinator.com/item?id=50532191",
+     "points": 324,
+     "comments": 113,
+     "summary": [
+      "Runta 与 Baseten 合作发布 FrontierHarness Eval v1.1：22 种外壳配置 × 5 个模型 × 62 个终端任务 × 4 次尝试，共 27,280 次运行、830 亿 token，规模是 v1.0 的 76 倍。",
+      "结论是换模型时也该考虑换外壳：每个模型的最佳性价比外壳都不同，例如 GLM-5.3 配 Codex CLI、Kimi-K3 配 Alma；按单任务成本排名，中位外壳挪动了 11 位，Codex CLI 从 GLM-5.3 下的第 1 跌到 Kimi-K3 下的第 16。综合所有模型，OpenCode v2 单任务成本最低（0.561 美元），ZCode 通过率最高（61.9%）。",
+      "评论区有人指出原标题是「64% 的智能体花费用在了失败的运行上」，后来才改；也有人凭经验说外壳对表现影响不大，换模型差别才大。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "seizethecheese",
+       "stance": "标题党",
+       "zh": "标题很让人困惑。他们在终端基准任务上跑了一堆外壳和模型组合，64% 的花费用在了没通过验证的任务上。我怀疑这并不意外，标题是为了迎合「在 AI 上烧钱」的点赞。",
+       "en": "The headline here is confusing.",
+       "hn": "https://news.ycombinator.com/item?id=50533954",
+       "id": 50533954,
+       "replies": 23
+      },
+      {
+       "user": "cpeth",
+       "stance": "外壳不重要",
+       "zh": "我看过的外壳都是相当简单的循环，没多少东西。我经常在 Claude Code 和 Copilot 里用 Claude Opus 5.5，外壳几乎不影响整体表现。",
+       "en": "Harnesses are all fairly simple loops",
+       "hn": "https://news.ycombinator.com/item?id=50537810",
+       "id": 50537810,
+       "replies": 2
+      },
+      {
+       "user": "ford",
+       "stance": "澄清",
+       "zh": "说明一下：这里的「失败」是指没满足某个基准任务的全部通过标准，不是运行时出错。",
+       "en": "not \"Experienced a runtime failure\"",
+       "hn": "https://news.ycombinator.com/item?id=50533839",
+       "id": 50533839,
+       "replies": 0
+      }
+     ],
+     "kicker": "AI · 评测"
+    },
+    {
+     "id": 50535885,
+     "title": "微软发布 MAI Code 2 与 Code 2 Flash 编程模型",
+     "title_en": "MAI Code 2 and Code 2 Flash",
+     "url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/",
+     "hn": "https://news.ycombinator.com/item?id=50535885",
+     "points": 265,
+     "comments": 125,
+     "summary": [
+      "微软 AI 推出两款面向日常企业编程任务的模型：MAI Code 2 擅长上线、深度调试、多文件实现和整库推理，Code 2 Flash 面向代码解释、定点修改等高频工作。官方明确说它们还没针对科学研究和超长周期智能体任务调优。",
+      "官方称在四个基准的平均成绩上，MAI Code 2 达到 GPT 6.1 Sol 98% 的表现、成本 40%，达到 Claude Opus 5.5 96% 的表现、成本仅 5%；盲评前端应用时，评审有 64% 的时间更偏好它而非 GPT-6 Sol。两款模型已上线 GitHub Copilot。",
+      "评论区的焦点是领先者的护城河：有人认为 OpenAI 和 Anthropic 只领先几个月；也有人刚退订了 GitHub Copilot。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "pseudosavant",
+       "stance": "护城河",
+       "zh": "我可不想当 OpenAI 和 Anthropic。它们目前确实比其他模型强，但只领先几个月，这样的领先很脆弱，算不上可持续的护城河。",
+       "en": "but only by a few months",
+       "hn": "https://news.ycombinator.com/item?id=50536908",
+       "id": 50536908,
+       "replies": 33
+      },
+      {
+       "user": "LaurensBER",
+       "stance": "退订",
+       "zh": "我们刚退订了 GitHub Copilot。连 19 美元那档都很难说服自己。它给的只是按 API 价计的额度，大多数人几天就用完，有人几小时就用完。",
+       "en": "We just cancelled our Github Copilot subscription.",
+       "hn": "https://news.ycombinator.com/item?id=50538591",
+       "id": 50538591,
+       "replies": 5
+      }
+     ],
+     "kicker": "AI · 模型"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50531751,
+     "title": "百度、小米 CEO 警告 AI 热度与回报之间差距在扩大",
+     "title_en": "Baidu, Xiaomi CEOs warn of growing gap between AI hype and returns",
+     "url": "https://www.scmp.com/tech/big-tech/article/3374774/baidu-xiaomi-ceos-warn-growing-gap-between-ai-hype-and-returns",
+     "hn": "https://news.ycombinator.com/item?id=50531751",
+     "points": 184,
+     "comments": 239
+    },
+    {
+     "id": 50534631,
+     "title": "英伟达营收达 1040 亿美元之际不再披露新加坡销售额",
+     "title_en": "Nvidia stopped disclosing Singapore sales as revenues hit $104B",
+     "url": "https://www.ft.com/content/dbde7a30-548c-4f9d-a4be-7898a0c24dcf",
+     "hn": "https://news.ycombinator.com/item?id=50534631",
+     "points": 350,
+     "comments": 178
+    },
+    {
+     "id": 50534044,
+     "title": "黄仁勋辞职后首次发声，称愿意回归",
+     "title_en": "Jensen Huang says he’s open to returning in first statement since resignation",
+     "url": "https://www.cnbc.com/2026/11/17/nvidia-jensen-huang-statement.html",
+     "hn": "https://news.ycombinator.com/item?id=50534044",
+     "points": 98,
+     "comments": 171
+    },
+    {
+     "id": 50533723,
+     "title": "黄仁勋在 X 上发帖",
+     "title_en": "Jensen Huang Posts on X",
+     "url": "https://twitter.com/JensenHuang/status/2122726005219737649",
+     "hn": "https://news.ycombinator.com/item?id=50533723",
+     "points": 89,
+     "comments": 78
+    },
+    {
+     "id": 50526152,
+     "title": "不把凭据交给编程智能体也能跑起来",
+     "title_en": "Running coding agents without handing them my credentials",
+     "url": "https://blog.antonio.cx/running-agents-with-lend",
+     "hn": "https://news.ycombinator.com/item?id=50526152",
+     "points": 128,
+     "comments": 112
+    },
+    {
+     "id": 50515035,
+     "title": "用 Astra 衡量测试与验证技术的效果",
+     "title_en": "Test/verification technique effectiveness with Astra",
+     "url": "https://danluu.com/astra-testing/",
+     "hn": "https://news.ycombinator.com/item?id=50515035",
+     "points": 86,
+     "comments": 17
+    },
+    {
+     "id": 50535740,
+     "title": "不是什么都需要大模型",
+     "title_en": "Not Everything Needs an LLM",
+     "url": "https://newsletter.posthog.com/p/decision-models",
+     "hn": "https://news.ycombinator.com/item?id=50535740",
+     "points": 74,
+     "comments": 29
+    },
+    {
+     "id": 50526264,
+     "title": "Claude Mythos 把适配 AMD GPU 的软件工作缩短到约三天",
+     "title_en": "Claude Mythos slashed software work to onboard AMD GPUs to around three days",
+     "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-says-claude-mythos-slashed-software-work-to-onboard-amd-gpus-from-up-to-12-months-to-around-three-days-writing-almost-100-percent-of-kernels-autonomously-chips-away-at-nvidias-cuda-moat",
+     "hn": "https://news.ycombinator.com/item?id=50526264",
+     "points": 52,
+     "comments": 21
+    },
+    {
+     "id": 50538303,
+     "title": "哈佛研究：AI 编程智能体把瓶颈转移到了代码审查",
+     "title_en": "Harvard researchers find AI coding agents shifted the bottleneck to code review",
+     "url": "https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review/",
+     "hn": "https://news.ycombinator.com/item?id=50538303",
+     "points": 29,
+     "comments": 52
+    },
+    {
+     "id": 50539610,
+     "title": "微软的 ONNX Runtime 从 GitHub 上消失了",
+     "title_en": "Microsoft's ONNX Runtime has disappeared from GitHub",
+     "url": "https://github.com/microsoft/onnxruntime",
+     "hn": "https://news.ycombinator.com/item?id=50539610",
+     "points": 49,
+     "comments": 11
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1982,
+    "comments": 1344,
+    "top_points": {
+     "id": 50534631,
+     "title": "英伟达营收达 1040 亿美元之际不再披露新加坡销售额",
+     "value": 350,
+     "comments": 178
+    },
+    "top_comments": {
+     "id": 50531751,
+     "title": "百度、小米 CEO 警告 AI 热度与回报之间差距在扩大",
+     "value": 239
+    },
+    "top_brief": {
+     "id": 50534631,
+     "title": "英伟达营收达 1040 亿美元之际不再披露新加坡销售额",
+     "value": 350,
+     "comments": 178
+    }
+   }
+  },
+  {
+   "name": "开发",
+   "en": "Software",
+   "page": 3,
+   "stories": [
+    {
+     "id": 50532086,
+     "title": "我们需要的不是更多应用，而是更好的开源软件",
+     "title_en": "We don't need more apps, we need better open source",
+     "url": "https://jordankrueger.com/blog/better-open-source-not-more-apps/",
+     "hn": "https://news.ycombinator.com/item?id=50532086",
+     "points": 340,
+     "comments": 231,
+     "summary": [
+      "Jordan Krueger 写道：每天都有人晒出周末用 AI 做的习惯追踪、待办、笔记应用，但这股劲很少用在大家已经依赖的开源软件上。他为进步派非营利组织做技术支持，自己运维着数千用户的 Matrix 服务器，认为开源软件本身通常很好，难的是运行：安装指南默认你懂五样别的工具、升级会坏、几个人用也吃 4GB 内存。",
+      "他建议把 AI 辅助编程的周末用在四件事上：让软件更快、更容易安装（最好一条命令）、更好运维、更轻量（能跑在 5 美元服务器或树莓派上），并提到 2024 年 xz 后门正是利用了疲惫的独立维护者。",
+      "评论区最热的回应来自维护者：现在涌来大量修小毛病的 PR，他们根本没时间处理；也有人说 AI 贡献常被拒，不如自己重写。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "joshdata",
+       "stance": "维护者",
+       "zh": "以前我的开源项目就勉强维持，那时少数 PR 修的是真实、严重的逻辑问题。现在我各个仓库都收到修小毛病、性能边角或假想问题的 PR，我没时间处理。",
+       "en": "I don't have time for them",
+       "hn": "https://news.ycombinator.com/item?id=50532598",
+       "id": 50532598,
+       "replies": 66
+      },
+      {
+       "user": "linsomniac",
+       "stance": "不如重写",
+       "zh": "当心：跟这篇文章的论点相反，你最好的路也许是用 AI 写个替代品。原因之一是 AI 贡献会遭到强烈抵制。",
+       "en": "Expect to encounter significant push-back due to AI contribution.",
+       "hn": "https://news.ycombinator.com/item?id=50533238",
+       "id": 50533238,
+       "replies": 0
+      },
+      {
+       "user": "gwt4life",
+       "stance": "钱",
+       "zh": "我同意，但开源得先解决变现问题，开发者也要吃饭。",
+       "en": "developers need to eat",
+       "hn": "https://news.ycombinator.com/item?id=50532366",
+       "id": 50532366,
+       "replies": 20
+      }
+     ],
+     "kicker": "开发 · 开源"
+    },
+    {
+     "id": 50536387,
+     "title": "Solid 2.0 正式发布：五年磨一剑",
+     "title_en": "Solid 2.0",
+     "url": "https://www.solidjs.com/blog/solid-2-0-the-long-hold/",
+     "hn": "https://news.ycombinator.com/item?id=50536387",
+     "points": 201,
+     "comments": 53,
+     "summary": [
+      "前端框架 Solid 在 1.0 之后又过了五年发布 2.0 稳定版。作者回顾说，Solid 1.0 当年押注细粒度响应式（signals），如今 Angular、Svelte runes、Vue Vapor 都在用，TC39 也有提案。",
+      "2.0 的重点是把异步纳入响应式图：计算可以直接返回 Promise 或异步迭代器，下游自动处理，竞态和推测状态回滚由框架负责；SolidStart 的服务器函数并入核心，支持 RPC 和基于 SSE 的持久连接；还加入了为智能体设计的诊断信息，并缩小了 API。",
+      "评论区有人指出「为智能体而建」那部分其实就是更好的调试诊断，对手写同样有用；也有人说组件库仍然不多。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "wk_end",
+       "stance": "人机同理",
+       "zh": "有意思的是，「为智能体编写而建」里那些东西，我想对手写也同样方便，它其实就是更好的调试诊断，和智能体开发本身没什么关系。",
+       "en": "It's just better debug diagnostics",
+       "hn": "https://news.ycombinator.com/item?id=50537697",
+       "id": 50537697,
+       "replies": 7
+      },
+      {
+       "user": "maxloh",
+       "stance": "生态",
+       "zh": "Solid 的组件库还不多。但如果要从零做东西，我肯定会试试 Solid。它感觉就是 React 本该有的样子。",
+       "en": "It just feels like the right way React should be.",
+       "hn": "https://news.ycombinator.com/item?id=50536877",
+       "id": 50536877,
+       "replies": 11
+      }
+     ],
+     "kicker": "开发 · 前端"
+    },
+    {
+     "id": 50497621,
+     "title": "形式化验证本身并不可验证",
+     "title_en": "Formal Verification Is Not Verifiable",
+     "url": "https://alperenkeles.com/posts/formal-verification-is-not-verifiable/",
+     "hn": "https://news.ycombinator.com/item?id=50497621",
+     "points": 160,
+     "comments": 59,
+     "summary": [
+      "Alperen Keles 认为 AI 确实让形式化验证走向主流：创业公司激增，Claude 为一个验证项目写了十亿行 Rocq。但他说，听到「某系统已形式化验证」并不让他放心，听到「某人找到了一个 bug」却很可信。",
+      "原因是测试可被人验证，产出的是一份可审阅的 bug 报告；形式化验证的证明本身无需审阅，难验证的是定义、被证明对象的底层模型和证明器本身，而它做的是「对所有情况成立」的强断言，这些环节任何一个出错都可能让证明失效。他对形式化验证总体乐观，但认为大家说「已验证」时指的东西差别很大。",
+      "评论区普遍认同难点在规格：证明不难，难的是写出健全的形式化规格。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "nanolith",
+       "stance": "规格才难",
+       "zh": "证明的价值取决于形式化规格是否健全。问题在于写出健全的规格才是难点，而这恰恰不是大模型擅长的。有了健全的规格，证明软件符合它其实相当直接。",
+       "en": "building a sound formal specification is the hard part",
+       "hn": "https://news.ycombinator.com/item?id=50526200",
+       "id": 50526200,
+       "replies": 16
+      },
+      {
+       "user": "Mikhail_Edoshin",
+       "stance": "下一步",
+       "zh": "假如能机械地验证程序符合规格，合乎逻辑的下一步就是只保留规格，程序机械生成。",
+       "en": "our next logical move would be to keep only the specification",
+       "hn": "https://news.ycombinator.com/item?id=50527439",
+       "id": 50527439,
+       "replies": 5
+      }
+     ],
+     "kicker": "开发 · 验证"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50516689,
+     "title": "要重复自己（Do Repeat Yourself）",
+     "title_en": "Do Repeat Yourself",
+     "url": "https://arcentry.com/blog/do-repeat-yourself/",
+     "hn": "https://news.ycombinator.com/item?id=50516689",
+     "points": 149,
+     "comments": 51
+    },
+    {
+     "id": 50512779,
+     "title": "Nimony：Nim 语言的新编译器",
+     "title_en": "Nimony: A New Compiler for Nim",
+     "url": "https://nimony.org/",
+     "hn": "https://news.ycombinator.com/item?id=50512779",
+     "points": 177,
+     "comments": 93
+    },
+    {
+     "id": 50470523,
+     "title": "行存与列存：到底有多不同？",
+     "title_en": "Rows vs. Columns: How different are they, really?",
+     "url": "https://spiraldb.com/blog/rows-vs-columns",
+     "hn": "https://news.ycombinator.com/item?id=50470523",
+     "points": 156,
+     "comments": 53
+    },
+    {
+     "id": 50532385,
+     "title": "Show HN：Alloy CSS，关掉 JavaScript 也能用的对话框、菜单和标签页",
+     "title_en": "Show HN: Alloy CSS, dialogs, menus and tabs that work with JavaScript off",
+     "url": "https://alloyhtml.com/example.html",
+     "hn": "https://news.ycombinator.com/item?id=50532385",
+     "points": 172,
+     "comments": 31
+    },
+    {
+     "id": 50537156,
+     "title": "jQuery 4.1.0 发布",
+     "title_en": "jQuery 4.1.0",
+     "url": "https://github.com/jquery/jquery/releases/tag/4.1.0",
+     "hn": "https://news.ycombinator.com/item?id=50537156",
+     "points": 231,
+     "comments": 126
+    },
+    {
+     "id": 50509456,
+     "title": "用 Turbo Pascal 写成的 Turbo Pascal 编译器",
+     "title_en": "Turbo Pascal Compiler Written in Turbo Pascal",
+     "url": "https://turbo51.com/compiler-design/tpc16-turbo-pascal-compiler-written-in-turbo-pascal",
+     "hn": "https://news.ycombinator.com/item?id=50509456",
+     "points": 106,
+     "comments": 41
+    },
+    {
+     "id": 50511874,
+     "title": "VisualBasic.World：1997–2012 年 Planet Source Code 程序展览馆",
+     "title_en": "VisualBasic.World: A gallery of Planet Source Code programs from 1997 to 2012",
+     "url": "https://visualbasic.world/",
+     "hn": "https://news.ycombinator.com/item?id=50511874",
+     "points": 210,
+     "comments": 80
+    },
+    {
+     "id": 50537290,
+     "title": "《Web Browser Engineering》（2021）",
+     "title_en": "Web Browser Engineering (2021)",
+     "url": "https://browser.engineering/",
+     "hn": "https://news.ycombinator.com/item?id=50537290",
+     "points": 113,
+     "comments": 19
+    },
+    {
+     "id": 50535992,
+     "title": "Phrack 第 73 期发布",
+     "title_en": "Phrack 73 Released",
+     "url": "https://phrack.org/issues/73/introduction_md",
+     "hn": "https://news.ycombinator.com/item?id=50535992",
+     "points": 251,
+     "comments": 25
+    },
+    {
+     "id": 50526560,
+     "title": "Apple 支持文档：如果应用要求「完全磁盘访问权限」或覆盖系统与应用保护",
+     "title_en": "If an App Asks for Full Disk Access or System and App Protection Override",
+     "url": "https://support.apple.com/en-us/149699",
+     "hn": "https://news.ycombinator.com/item?id=50526560",
+     "points": 239,
+     "comments": 122
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2505,
+    "comments": 984,
+    "top_points": {
+     "id": 50532086,
+     "title": "我们需要的不是更多应用，而是更好的开源软件",
+     "value": 340,
+     "comments": 231
+    },
+    "top_comments": {
+     "id": 50532086,
+     "title": "我们需要的不是更多应用，而是更好的开源软件",
+     "value": 231
+    },
+    "top_brief": {
+     "id": 50535992,
+     "title": "Phrack 第 73 期发布",
+     "value": 251,
+     "comments": 25
+    }
+   }
+  },
+  {
+   "name": "科学",
+   "en": "Science",
+   "page": 4,
+   "stories": [
+    {
+     "id": 50522643,
+     "title": "化学其实是几何",
+     "title_en": "Chemistry is Actually Geometry",
+     "url": "https://chillphysicsenjoyer.substack.com/p/chemistry-is-actually-geometry",
+     "hn": "https://news.ycombinator.com/item?id=50522643",
+     "points": 337,
+     "comments": 138,
+     "summary": [
+      "这篇长文从一个难题出发：克雷布斯循环这样的生化模型可能有上百个速率常数，在封闭容器里做实验几乎无法确定它们。作者主张寻找参数更少的抽象，宁可只得到定性预测，也要能说出「这个生物能适应哪些情形、不能适应哪些」。",
+      "他用网络、几何和拓扑的视角介绍化学反应网络理论，主要是 Martin Feinberg《Foundations of Chemical Reaction Network Theory》的核心结果，并声明内容并非原创，只是他读后的简化理解。",
+      "评论区有人说文章方向出乎意料：标题让人以为讲分子形状，其实讲的是把反应动力学画成几何轨迹；也有人提醒别把地图当成疆域。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "divbzero",
+       "stance": "出乎意料",
+       "zh": "这篇文章的走向和我预期的不一样。看标题我以为会讲化学反应如何取决于分子几何和电子分布，结果讲的是如何把化学动力学几何化地画出来。",
+       "en": "This post did not go in the direction I expected.",
+       "hn": "https://news.ycombinator.com/item?id=50527629",
+       "id": 50527629,
+       "replies": 6
+      },
+      {
+       "user": "smj-edison",
+       "stance": "很优雅",
+       "zh": "他们用的「几何」更抽象：把反应的状态变成一个点，然后画出这个点随时间的轨迹。转圈不停就是振荡，向内螺旋就是收敛。相当优雅！",
+       "en": "It's quite elegant!",
+       "hn": "https://news.ycombinator.com/item?id=50528197",
+       "id": 50528197,
+       "replies": 1
+      }
+     ],
+     "kicker": "科学 · 化学"
+    },
+    {
+     "id": 50536813,
+     "title": "350 年前，罗默发现光速是有限的",
+     "title_en": "350 years ago, Ole Rømer discovered that light has a finite speed",
+     "url": "https://www.sciencenorway.no/culture-history-history-of-science/350-years-ago-this-man-discovered-that-light-has-a-finite-speed/2737969",
+     "hn": "https://news.ycombinator.com/item?id=50536813",
+     "points": 226,
+     "comments": 69,
+     "summary": [
+      "Science Norway 回顾：1676 年 9 月，丹麦天文学家奥勒·罗默向巴黎科学院预言，11 月 9 日木卫一（Io）会比预期晚十分钟从木星阴影中出现。结果他说对了，由此证明光以有限速度传播。",
+      "罗默长期记录木卫一进出木星阴影的时刻，发现地球远离木星时食发生得稍晚、靠近时稍早，并意识到这是光要走更长或更短的距离。成果于同年 12 月 7 日发表在《Journal des sçavans》。他不是第一个提出光速有限的人，但被视为第一个用证据证明的人。",
+      "评论区有人追问当时的钟是否足够精确，也有人聊起光速在各方向是否相同至今只能靠往返测量。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "zodwick",
+       "stance": "单向光速",
+       "zh": "我记得有个 Vsauce（大概是）视频讲，我们其实无法确定光速在各个方向上都一样，因为测量所限只能测往返速度。",
+       "en": "we can only measure its speed in a round trip",
+       "hn": "https://news.ycombinator.com/item?id=50537766",
+       "id": 50537766,
+       "replies": 20
+      },
+      {
+       "user": "kstrauser",
+       "stance": "追问",
+       "zh": "我不太明白。食的持续时间应该一样吧？还是说按挂钟时间，食的结束比预期早了十分钟？让我意外的是，我不知道当时的钟已经好到能可靠测出这个。",
+       "en": "I didn’t know clocks were that good by then",
+       "hn": "https://news.ycombinator.com/item?id=50537692",
+       "id": 50537692,
+       "replies": 11
+      }
+     ],
+     "kicker": "科学 · 物理史"
+    },
+    {
+     "id": 50525575,
+     "title": "卡马克解释：3dfx 显卡的颜色为什么发灰",
+     "title_en": "Why 3dfx 1 cards had such a washed out color output?",
+     "url": "https://twitter.com/id_aa_carmack/status/2122478083319992513",
+     "hn": "https://news.ycombinator.com/item?id=50525575",
+     "points": 278,
+     "comments": 103,
+     "summary": [
+      "有人在 X 上问 3dfx 初代显卡为何输出的颜色发灰，John Carmack 回答：NeXT 和 3dfx 都试图在色彩空间上「做对的事」，用接近线性的显示，结果反而比对手难看。",
+      "他解释，10 位以上色深的专业渲染系统用线性显示是对的，但 NeXTStation Color 每通道只有 4 位、3dfx 只有 5 到 6 位，而人眼对亮度变化是相对感知的；离散值均匀铺开会让暗部出现明显色带。加上美术在普通非线性显示器上画贴图，放到 3dfx 上就显得发灰。他说 glQuake 时期自己没弄懂这个问题，如今很多游戏仍没正确处理 gamma。",
+      "评论区补充了 3dfx RAMDAC 的滤波和 VGA 输出电平等其他原因，也有人感叹卡马克亲自下场答题。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "herodoturtle",
+       "stance": "大神答疑",
+       "zh": "有人问了个有趣的图形学问题，John Carmack 亲自出来回答，挺酷的。底下连 Eric S. Raymond 都来评论了。",
+       "en": "John Carmack of all people steps in to answer it",
+       "hn": "https://news.ycombinator.com/item?id=50529200",
+       "id": 50529200,
+       "replies": 12
+      },
+      {
+       "user": "cmovq",
+       "stance": "现代做法",
+       "zh": "现在的做法是贴图用 sRGB 制作，读取时转成线性，在线性空间里做所有滤波和光照，最后把渲染目标转回 sRGB（或 HDR）。当年的固定管线硬件上这当然难得多。",
+       "en": "do all the filtering and lighting in linear space",
+       "hn": "https://news.ycombinator.com/item?id=50532747",
+       "id": 50532747,
+       "replies": 0
+      }
+     ],
+     "kicker": "科学 · 图形史"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50518328,
+     "title": "首次拍到杆状细菌两极的照片",
+     "title_en": "First Photos of the Poles of a Rod-Shaped Bacterium",
+     "url": "https://nautil.us/check-out-the-first-photos-of-the-poles-of-a-rod-shaped-bacterium-1286664",
+     "hn": "https://news.ycombinator.com/item?id=50518328",
+     "points": 108,
+     "comments": 23
+    },
+    {
+     "id": 50510969,
+     "title": "调制解调器为什么要带扬声器？（2019）",
+     "title_en": "Why did modems have speakers? (2019)",
+     "url": "https://retrocomputing.stackexchange.com/questions/11765",
+     "hn": "https://news.ycombinator.com/item?id=50510969",
+     "points": 88,
+     "comments": 58
+    },
+    {
+     "id": 50537120,
+     "title": "近地轨道核爆的影响",
+     "title_en": "Effects of a Nuclear Detonation in Low Earth Orbit",
+     "url": "https://arxiv.org/abs/2611.09827",
+     "hn": "https://news.ycombinator.com/item?id=50537120",
+     "points": 69,
+     "comments": 39
+    },
+    {
+     "id": 50536031,
+     "title": "Purism 发布 RISC-V 手机 Librem 5 v2",
+     "title_en": "Purism Launches Librem 5 v2, a RISC-V Phone to Empower People",
+     "url": "https://puri.sm/posts/purism-launches-librem-5-v2-a-risc-v-phone-to-empower-people/",
+     "hn": "https://news.ycombinator.com/item?id=50536031",
+     "points": 90,
+     "comments": 92
+    },
+    {
+     "id": 50535208,
+     "title": "谁来造制造机器的机器？",
+     "title_en": "Who Builds the Machines That Build the Machines?",
+     "url": "https://read.corematter.com/p/section-232-us-machine-tools",
+     "hn": "https://news.ycombinator.com/item?id=50535208",
+     "points": 85,
+     "comments": 25
+    },
+    {
+     "id": 50512576,
+     "title": "让洛夫克拉夫特念念不忘的化石",
+     "title_en": "The Fossils That Haunted Lovecraft",
+     "url": "https://paleonerdish.wordpress.com/2026/10/30/halloween-special-xiv-the-fossils-that-haunted-lovecraft/",
+     "hn": "https://news.ycombinator.com/item?id=50512576",
+     "points": 67,
+     "comments": 36
+    },
+    {
+     "id": 50514572,
+     "title": "大摆角下的单摆周期",
+     "title_en": "Large Angle Period of the Pendulum",
+     "url": "https://jslandy.com/pendulum/",
+     "hn": "https://news.ycombinator.com/item?id=50514572",
+     "points": 7,
+     "comments": 3
+    },
+    {
+     "id": 50514680,
+     "title": "遭受核辐射的老兵",
+     "title_en": "Atomic Nuked Veteran",
+     "url": "https://www.armscontrolwonk.com/archive/201309/atomic-nuked-veteran/",
+     "hn": "https://news.ycombinator.com/item?id=50514680",
+     "points": 46,
+     "comments": 13
+    }
+   ],
+   "stats": {
+    "items": 11,
+    "points": 1401,
+    "comments": 599,
+    "top_points": {
+     "id": 50522643,
+     "title": "化学其实是几何",
+     "value": 337,
+     "comments": 138
+    },
+    "top_comments": {
+     "id": 50522643,
+     "title": "化学其实是几何",
+     "value": 138
+    },
+    "top_brief": {
+     "id": 50518328,
+     "title": "首次拍到杆状细菌两极的照片",
+     "value": 108,
+     "comments": 23
+    }
+   }
+  },
+  {
+   "name": "社会",
+   "en": "Society",
+   "page": 5,
+   "stories": [
+    {
+     "id": 50523025,
+     "title": "AT&T 起诉 Comcast：所谓「光纤驱动的 Wi-Fi」其实是有线电视网",
+     "title_en": "Comcast's \"fiber-powered Wi-Fi\" is cable, AT&T says in false advertising case",
+     "url": "https://arstechnica.com/tech-policy/2026/11/comcast-falsely-advertises-cable-internet-as-fiber-powered-att-lawsuit-says/",
+     "hn": "https://news.ycombinator.com/item?id=50523025",
+     "points": 252,
+     "comments": 246,
+     "summary": [
+      "Ars Technica 报道，AT&T 起诉 Comcast 虚假宣传，称其把 Xfinity 有线宽带标为「Fiber-Powered」。Comcast 虽在全美铺了大量光纤，但入户最后一段仍是同轴电缆，导致上行远慢于下行；光纤入户只覆盖其小部分地区。",
+      "AT&T 称该说法「字面上就是假的」，会让消费者误以为 Xfinity 与 AT&T Fiber 相当。文章也提到 AT&T 自己曾把 4G LTE 宣传成「5GE」，被认定可能误导消费者。",
+      "评论区有人强调光纤在停电时更可靠、更省电；也有人替 Comcast 说话，称 DOCSIS 4.0 已能提供对称千兆。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "bob1029",
+       "stance": "光纤更稳",
+       "zh": "紧急情况下光纤比有线电视网好太多。设备耗电少得多，停电时更可能撑得久，每块电池或每台发电机能带更多用户。我以前的光纤运营商整个网络都有燃气备用发电机，一周的停电里一个包都没丢。",
+       "en": "Fiber is so much better than cable in an emergency.",
+       "hn": "https://news.ycombinator.com/item?id=50528111",
+       "id": 50528111,
+       "replies": 50
+      },
+      {
+       "user": "trevithick",
+       "stance": "宣传乱象",
+       "zh": "这个领域的广告糟透了。我天天看到「千兆 Wi-Fi」之类的广告，完全不知道实际的网络接入方式是什么。",
+       "en": "The advertising in this space is terrible.",
+       "hn": "https://news.ycombinator.com/item?id=50523228",
+       "id": 50523228,
+       "replies": 45
+      },
+      {
+       "user": "jacobgold",
+       "stance": "替 Comcast 说话",
+       "zh": "奇怪的是，我有点同情 Xfinity。他们现在通过有线电视线路提供 DOCSIS 4.0 的 1G 和 2G 全对称连接。显然不是光纤，但完全符合普通人对「快速光纤网」的理解。",
+       "en": "Oddly, I'm kind of sympathetic with Xfinity here.",
+       "hn": "https://news.ycombinator.com/item?id=50528084",
+       "id": 50528084,
+       "replies": 12
+      }
+     ],
+     "kicker": "社会 · 消费者"
+    },
+    {
+     "id": 50538994,
+     "title": "Quad9 退出法国：煤矿里的金丝雀",
+     "title_en": "Quad9's withdrawal from France: A canary in the coal mine",
+     "url": "https://blog.cloudflare.com/quad9-withdrawal-from-france/",
+     "hn": "https://news.ycombinator.com/item?id=50538994",
+     "points": 180,
+     "comments": 44,
+     "summary": [
+      "Cloudflare 撰文说，瑞士非营利组织 Quad9 上月宣布将在法国撤下免费公共 DNS 解析服务。此前法国法院裁定，Quad9 若不屏蔽涉嫌侵权的域名就要按日缴纳罚款。",
+      "文章称 Quad9 的用户包括法国政府机构、学校、医院和公用事业单位，而它无法直接通知这些用户；若对方不及时更换解析器，网络会在没有任何解释的情况下失效。Cisco 的 OpenDNS 此前也因类似原因退出过法国、葡萄牙和比利时；比利时法院最近还要求 Cloudflare、Google 和 Cisco 在 2027 年 1 月初前通过公共解析器屏蔽网站，否则重罚。",
+      "Quad9 的 CTO 在评论区现身，说 IETF 会场上目前一边倒地支持他们；也有英国网友说，在英国人看来这只是政府成功监管互联网的例子。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "johnhtodd",
+       "stance": "当事人",
+       "zh": "（背景：我是 Quad9 的 CTO）看到同领域其他组织支持 Quad9 真好。我正在 IETF 127 现场，目前 100% 支持我们的立场。Quad9 百分之百反对盗版，但……",
+       "en": "I'm the CTO at Quad9",
+       "hn": "https://news.ycombinator.com/item?id=50539856",
+       "id": 50539856,
+       "replies": 2
+      },
+      {
+       "user": "kypro",
+       "stance": "另一种看法",
+       "zh": "我不是法国人，但在英国，人们大概根本不会把这看成「煤矿里的金丝雀」，而是国家政府成功监管互联网的例子，哪怕这让科技亿万富翁不高兴。",
+       "en": "an example of how a national government can successfully regulate the internet",
+       "hn": "https://news.ycombinator.com/item?id=50539799",
+       "id": 50539799,
+       "replies": 1
+      }
+     ],
+     "kicker": "社会 · 网络治理"
+    },
+    {
+     "id": 50531761,
+     "title": "钻漏洞的都是混蛋",
+     "title_en": "Loopholes Are for Assholes",
+     "url": "https://actsofvolition.com/2026/11/loopholes-are-for-assholes/",
+     "hn": "https://news.ycombinator.com/item?id=50531761",
+     "points": 169,
+     "comments": 202,
+     "summary": [
+      "作者回忆小时候崇拜的一个大人曾传授「智慧」：车想停哪就停哪，停在商店门口人行道上直接进去，没人会管。如今他觉得那人不是天才，而是混蛋，两者表面上常常相似。",
+      "他借用康德绝对命令式的检验：设想人人都这么做会怎样。不可能所有人都把车停在沃尔玛门口，所以谁都不该这么做。",
+      "评论区首先较真定义：违规停车不算钻漏洞，漏洞是守住法律字面却违背其精神；也有人说偶尔钻空子是社会留出的余地，变成生活方式才有问题。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "vehemenz",
+       "stance": "较真",
+       "zh": "文中的例子，在禁停区停车，并不是钻漏洞。漏洞通常指遵守法律字面、却违背法律精神的行为。",
+       "en": "isn't an example of a loophole",
+       "hn": "https://news.ycombinator.com/item?id=50533056",
+       "id": 50533056,
+       "replies": 51
+      },
+      {
+       "user": "JumpCrisscross",
+       "stance": "余地",
+       "zh": "一贯钻漏洞会让你变成混蛋。漏洞是社会留出的余地：急着送医时超速，通常没问题。但把它变成生活方式，你就有问题了。",
+       "en": "Loopholes are social slack.",
+       "hn": "https://news.ycombinator.com/item?id=50532909",
+       "id": 50532909,
+       "replies": 29
+      }
+     ],
+     "kicker": "社会 · 随笔"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50530163,
+     "title": "新证据显示，校园手机禁令正逐步提高考试成绩",
+     "title_en": "New Evidence Shows School Phone Bans Are Gradually Improving Test Scores",
+     "url": "https://www.nytimes.com/2026/11/17/upshot/school-phone-bans-study-scores.html",
+     "hn": "https://news.ycombinator.com/item?id=50530163",
+     "points": 1138,
+     "comments": 563
+    },
+    {
+     "id": 50525658,
+     "title": "五角大楼连续第九次未通过审计，尽管财务整理有进展",
+     "title_en": "Pentagon fails ninth straight audit despite progress in organizing finances",
+     "url": "https://www.reuters.com/business/aerospace-defense/pentagon-fails-ninth-straight-audit-despite-progress-organizing-finances-2026-11-16/",
+     "hn": "https://news.ycombinator.com/item?id=50525658",
+     "points": 145,
+     "comments": 63
+    },
+    {
+     "id": 50530114,
+     "title": "geohot：我的泥土帝国",
+     "title_en": "My Empire of Dirt",
+     "url": "https://geohot.github.io//blog/jekyll/update/2026/11/17/my-empire-of-dirt.html",
+     "hn": "https://news.ycombinator.com/item?id=50530114",
+     "points": 118,
+     "comments": 157
+    },
+    {
+     "id": 50508845,
+     "title": "日本的故乡税（2018）",
+     "title_en": "Japan's Hometown Tax (2018)",
+     "url": "https://www.kalzumeus.com/2018/10/19/japanese-hometown-tax/",
+     "hn": "https://news.ycombinator.com/item?id=50508845",
+     "points": 126,
+     "comments": 71
+    },
+    {
+     "id": 50537441,
+     "title": "以色列 vs. 维基百科",
+     "title_en": "Israel vs. Wikipedia",
+     "url": "https://techforpalestine.org/wikipedia-report",
+     "hn": "https://news.ycombinator.com/item?id=50537441",
+     "points": 158,
+     "comments": 33
+    },
+    {
+     "id": 50531484,
+     "title": "韩国将因高考 AI 作弊发布全国紧急警报",
+     "title_en": "S. Korea to send nationwide emergency alerts over college entrance exam cheating",
+     "url": "https://apnews.com/article/south-korea-exam-cheating-ai-college-e25b5612dbf4bd09fdf9197254c4547e",
+     "hn": "https://news.ycombinator.com/item?id=50531484",
+     "points": 66,
+     "comments": 85
+    },
+    {
+     "id": 50526537,
+     "title": "笔记应用 Mem 将关闭",
+     "title_en": "Mem Is Shutting Down",
+     "url": "https://get.mem.ai/blog/mem-is-shutting-down",
+     "hn": "https://news.ycombinator.com/item?id=50526537",
+     "points": 77,
+     "comments": 120
+    },
+    {
+     "id": 50533366,
+     "title": "嘉信理财网站宕机",
+     "title_en": "Charles Schwab website goes down",
+     "url": "https://www.businessinsider.com/charles-scwab-website-outage-reports-2026-11",
+     "hn": "https://news.ycombinator.com/item?id=50533366",
+     "points": 50,
+     "comments": 25
+    },
+    {
+     "id": 50497656,
+     "title": "带顶棚的体育场太多了",
+     "title_en": "Too Many Stadiums with Roofs",
+     "url": "https://sharptext.net/2026/too-many-stadiums-with-roofs/",
+     "hn": "https://news.ycombinator.com/item?id=50497656",
+     "points": 50,
+     "comments": 54
+    },
+    {
+     "id": 50534500,
+     "title": "美国失去麻疹消除状态",
+     "title_en": "U.S. Loses Its Measles Elimination Status",
+     "url": "https://www.nytimes.com/2026/11/17/well/us-measles-elimination-status.html",
+     "hn": "https://news.ycombinator.com/item?id=50534500",
+     "points": 47,
+     "comments": 7
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2576,
+    "comments": 1670,
+    "top_points": {
+     "id": 50530163,
+     "title": "新证据显示，校园手机禁令正逐步提高考试成绩",
+     "value": 1138,
+     "comments": 563
+    },
+    "top_comments": {
+     "id": 50530163,
+     "title": "新证据显示，校园手机禁令正逐步提高考试成绩",
+     "value": 563
+    },
+    "top_brief": {
+     "id": 50530163,
+     "title": "新证据显示，校园手机禁令正逐步提高考试成绩",
+     "value": 1138,
+     "comments": 563
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "stickfigure",
+  "id": 50525348,
+  "hn": "https://news.ycombinator.com/item?id=50525348",
+  "story_id": 50524767,
+  "story": "Optimizely 遭入侵",
+  "zh": "Google Tag Manager 的整个理念就是让市场部不用找工程师就能往网站上加「标签」。我们就是这样得到了每篇新闻附带 10MB JavaScript 的局面。",
+  "en": "That's how we got 10MB of javascript with every news article."
+ },
+ "stats": {
+  "snapshot": "2026-11-18T08:15:47+08:00",
+  "front_page_count": 90,
+  "with_numbers": 82,
+  "flagged_or_dupe": 8,
+  "top_points": {
+   "id": 50530163,
+   "title": "新证据显示，校园手机禁令正逐步提高考试成绩",
+   "value": 1138,
+   "comments": 563
+  },
+  "top_comments": {
+   "id": 50535230,
+   "title": "OpenAI 发布 GPT‑6.2 Astra 与 Sol：更省 token，旗舰降价两成",
+   "value": 652
+  },
+  "second_comments": {
+   "id": 50524736,
+   "title": "Windows 11 在统计你用了哪些编程智能体和开发工具",
+   "value": 588
+  },
+  "over_500": 5,
+  "over_300": 11,
+  "over_100": 39,
+  "show_hn": 7,
+  "total_points": 13574,
+  "total_comments": 7487,
+  "hottest_ratio": {
+   "id": 50530114,
+   "title": "geohot：我的泥土帝国",
+   "value": 1.33,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
