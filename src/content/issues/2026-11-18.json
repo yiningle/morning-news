@@ -1,0 +1,1313 @@
+{
+ "date": "2026-11-18",
+ "published_at": "2026-11-19T08:22:21+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-11-18",
+ "schema_version": 2,
+ "lead": {
+  "id": 50547374,
+  "title": "Nginx 曝两个可远程免认证执行代码的高危漏洞，最老的藏了 11 年",
+  "title_en": "Unauthenticated remote code execution in Nginx",
+  "url": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
+  "hn": "https://news.ycombinator.com/item?id=50547374",
+  "points": 1082,
+  "comments": 487,
+  "summary": [
+   "Wiz Research 披露，Wiz、Ikotas Labs、Metnir、Rapid7 和 Xint 各自独立发现了 Nginx 的两个严重远程代码执行漏洞：CVE-2026-123633（HTTP/2 连接释放后仍被使用）和 CVE-2026-123007（HTTP/2 流控窗口 send_window 整数下溢），CVSS 4.0 评分均为 9.2。两者都要求服务器开启 HTTP/2；后者可追溯到 2015 年的 Nginx 1.9.5，Wiz 在只提供静态文件、没有后端和第三方模块的 Nginx 上就实现了代码执行。",
+   "F5 于 11 月 18 日发布安全更新，一并修复了 HTTP/3、DNS 解析器、邮件代理等另外多个漏洞；修复版本为开源版 1.30.7 稳定版和 1.31.9 主线版。暂时无法升级的，官方建议先关闭 HTTP/2。Wiz 说这两个漏洞是用自家 AI 代码扫描工具发现的，并用 Gemini 4 Carbon 和 ChatGPT 5.6 Sol 验证了影响；文章认为 AI 正在消解「代码复杂到难以发现漏洞」这道屏障。",
+   "这是当天点赞最多的帖子。高赞评论指出修复早在一周前就进了开源仓库，提交信息还写着报告方；有人发现漏洞宣传网站的证书 11 月 2 日就签发了；也有人惊呼「AI 在烧毁互联网」。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "black3r",
+    "stance": "补丁先行",
+    "zh": "这个漏洞显然一周前就在开源仓库里修了。任何够聪明、会盯着这类仓库找可利用修复的人，都能利用整整一周（提交信息里甚至写着「Reported by Xint.io」）。",
+    "en": "The bug was apparently fixed in open source repo a week earlier",
+    "hn": "https://news.ycombinator.com/item?id=50548510",
+    "id": 50548510,
+    "replies": 82
+   },
+   {
+    "user": "nikcub",
+    "stance": "提前泄底",
+    "zh": "现在每个重大漏洞都配一个营销网站，这次是 nginx2root dot com。它的证书 11 月 2 日就签发了，要是你在扫证书透明度日志，就有 16 天的先手。",
+    "en": "if you were scanning CT logs you would have had a 16 day head start",
+    "hn": "https://news.ycombinator.com/item?id=50550689",
+    "id": 50550689,
+    "replies": 6
+   },
+   {
+    "user": "fn-mote",
+    "stance": "惊呼",
+    "zh": "AI 在烧毁互联网，这太疯狂了。我们会不会一年后才发现，这个月在线的每台服务器都被装了 rootkit？",
+    "en": "AI is burning down the internet.",
+    "hn": "https://news.ycombinator.com/item?id=50548180",
+    "id": 50548180,
+    "replies": 99
+   }
+  ],
+  "kicker": "要闻 · 漏洞",
+  "tag": "点赞第一"
+ },
+ "side": [
+  {
+   "id": 50542705,
+   "title": "AI 正在杀死 All About Berlin",
+   "title_en": "AI is killing All About Berlin",
+   "url": "https://nicolasbouliane.com/blog/death-by-ai",
+   "hn": "https://news.ycombinator.com/item?id=50542705",
+   "points": 753,
+   "comments": 682,
+   "summary": [
+    "Nicolas Bouliane 从 2017 年起经营柏林移民与生活指南网站 All About Berlin，2020 年起以此为生。他写道，经过七年增长，网站已有 75% 的流量被谷歌 AI 摘要（AI Overviews）拿走：以前搜索会得到他网站的链接，现在先是一页广告，再是用他的内容训练出的 AI 回答，最后才是链接。",
+    "他说只靠四分之一的读者很难维持，已经在为另谋生计做准备；柏林移民局都在用他整理的数据。他还提到很多站长私下联系他，有的加了付费墙，有的干脆停更。",
+    "这是当天评论最多的帖子。作者本人在评论区现身，说文章写于几个月前，情况变得更糟，明年可能是他全职经营网站的最后一年；也有人直言，比起点进去看质量不明的链接，很多人宁可要一份 AI 汇总。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "nicbou",
+     "stance": "作者现身",
+     "zh": "我是 All About Berlin 的 Nicolas。这篇文章是几个月前写的，之后我经历了心理过山车。情况变得更糟，但目前我还能靠网站生活。明年可能是我全职经营它的最后一年。",
+     "en": "Next year might be my last year running it full time.",
+     "hn": "https://news.ycombinator.com/item?id=50543735",
+     "id": 50543735,
+     "replies": 33
+    },
+    {
+     "user": "adamddev1",
+     "stance": "源头枯竭",
+     "zh": "AI 只是从这些来源获取信息（还是不准确的影子），同时又在杀死这些来源。当没有来源了，大家又只指望 AI 回答一切，会发生什么？",
+     "en": "What happens when there are no more sources",
+     "hn": "https://news.ycombinator.com/item?id=50542956",
+     "id": 50542956,
+     "replies": 43
+    },
+    {
+     "user": "helsinkiandrew",
+     "stance": "用户视角",
+     "zh": "对「好」网站的作者来说很不幸，但很多人宁愿要一份汇总多方观点的 AI 摘要，也不愿点进质量不明、可能过时、或许只推荐返佣最高的银行的链接。",
+     "en": "many people would prefer an AI summary",
+     "hn": "https://news.ycombinator.com/item?id=50543027",
+     "id": 50543027,
+     "replies": 32
+    }
+   ],
+   "kicker": "要闻 · 互联网",
+   "tag": "评论数第一"
+  },
+  {
+   "id": 50540178,
+   "title": "随机实验：谷歌 AI 摘要让外部网站点击少了四成",
+   "title_en": "Google's AI answers reducing search traffic by 40%",
+   "url": "https://revscope.co/blog/search-seo-geo-2026/",
+   "hn": "https://news.ycombinator.com/item?id=50540178",
+   "points": 689,
+   "comments": 534,
+   "summary": [
+    "Revscope 汇总多方数据：在 DataForSEO 每月追踪的 2000 万个关键词里，出现 AI 摘要的搜索结果比例从 2024 年 9 月的 5.93% 升到 2026 年 8 月的 61.43%；同期精选摘要从 8.96% 跌到 0.44%。",
+    "最有力的证据是一项随机对照实验：研究者给美国桌面 Chrome 用户装扩展，一组正常看谷歌，一组隐藏 AI 摘要。在会出现摘要的搜索上，看得到摘要的组平均每次搜索只点 0.37 次外部网站，另一组 0.62 次，即减少 39.8%；零点击搜索从 54% 升到 73%，而广告点击没有变化。这是尚未同行评审的工作论文，只覆盖桌面端。文章还说，业界寄望的「生成式引擎优化」（GEO）尚未显示能弥补损失。",
+    "评论区不少人坦言：多数问题最好的产品就是直接给答案，自己用 AI 后搜索量少得远不止四成；也有人预言最终结局是在 AI 回答里塞广告。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "pcarolan",
+     "stance": "直接给答案",
+     "zh": "以前搜「今晚 SNL 嘉宾是谁」，你会得到十页让你无限下拉的标题党。对大多数问题，最好的产品就是直接给答案。不过「发现」的消亡值得哀悼。SEO 杀死了网页，AI 杀死了 SEO，如此循环。",
+     "en": "The best product for most questions is to just give you the answer.",
+     "hn": "https://news.ycombinator.com/item?id=50540597",
+     "id": 50540597,
+     "replies": 276
+    },
+    {
+     "user": "npteljes",
+     "stance": "亲身体会",
+     "zh": "我自己因为 AI 减少的搜索远不止 40%。我真正想要的是答案，而不是搜索互联网。",
+     "en": "what I actually want is answers, not searching the internet",
+     "hn": "https://news.ycombinator.com/item?id=50543502",
+     "id": 50543502,
+     "replies": 16
+    },
+    {
+     "user": "temp3452",
+     "stance": "广告将至",
+     "zh": "显而易见的结局是 AI 输出里出现广告。有意思的问题是：会是谷歌来做，还是新的 SEO 专门写页面来左右 AI 的回答？",
+     "en": "The obvious end to this is ads in ai output.",
+     "hn": "https://news.ycombinator.com/item?id=50542187",
+     "id": 50542187,
+     "replies": 11
+    }
+   ],
+   "kicker": "要闻 · 搜索"
+  },
+  {
+   "id": 50545958,
+   "title": "Quad9 撤出法国：DNS 解析器不该是打击盗版的地方",
+   "title_en": "DNS resolvers are the wrong place to fight piracy",
+   "url": "https://techstackups.com/articles/quad9-leaves-france-dns-blocking/",
+   "hn": "https://news.ycombinator.com/item?id=50545958",
+   "points": 574,
+   "comments": 214,
+   "summary": [
+    "瑞士非营利组织 Quad9 运营免费的 9.9.9.9 公共 DNS，主打拦截恶意和钓鱼域名。巴黎法院因它拒绝替 beIN Sports 屏蔽一批盗播体育的域名，10 月 21 日判它每天罚款 1000 欧元；Quad9 随即宣布 11 月 24 日起停止回应来自法国的查询。文章说法国还有约 20 起类似案件待审，撤出是它唯一负担得起的选择。",
+    "文章梳理了法律依据：2021 年《体育法典》L.333-10 条允许体育版权方取得「动态」屏蔽令，对象是「任何能帮助制止侵权的人」，DNS 解析器因此被纳入。Cisco 的 OpenDNS 已于 2024 年撤出法国。法官还拿 Quad9 自己的恶意软件过滤来反驳它「做不到按地区屏蔽」的辩解。法国政府部门、医院、SNCF 等都在用 Quad9，但它没法通知这些用户，服务一停，网络会毫无提示地失效。",
+    "评论区最热的观点认为，凡不是「起诉盗版者」的反盗版手段，都是压制言论的后门；也有人追问该骂法院还是立法者。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "trentnix",
+     "stance": "后门",
+     "zh": "任何不是「起诉盗版者」的「打击盗版」手段，都只是压制政府不喜欢的言论的后门。",
+     "en": "is just a backdoor to suppressing speech a government doesn’t like",
+     "hn": "https://news.ycombinator.com/item?id=50547167",
+     "id": 50547167,
+     "replies": 60
+    },
+    {
+     "user": "skrebbel",
+     "stance": "该怪谁",
+     "zh": "这是法官不懂行做出的荒唐判决，还是法官正确解释了一部荒唐的法律？我觉得这两种情况很不同。我们的怒火该指向法院还是立法者？",
+     "en": "should our ire be directed at the courts or the lawmakers here?",
+     "hn": "https://news.ycombinator.com/item?id=50548963",
+     "id": 50548963,
+     "replies": 6
+    },
+    {
+     "user": "rileymat2",
+     "stance": "疑问",
+     "zh": "有件事没讲清楚：如果它们没法可靠识别法国用户，又怎么能撤出法国？",
+     "en": "if they can’t reliably detect french users, how can they leave france?",
+     "hn": "https://news.ycombinator.com/item?id=50546766",
+     "id": 50546766,
+     "replies": 29
+    }
+   ],
+   "kicker": "要闻 · 网络治理"
+  },
+  {
+   "id": 50540437,
+   "title": "登录美国国税局要先接受 ID.me 的条款",
+   "title_en": "ID.me terms required for IRS sign-in",
+   "url": "https://consumerrights.wiki/w/ID.me_terms_required_for_IRS_sign-in",
+   "hn": "https://news.ycombinator.com/item?id=50540437",
+   "points": 491,
+   "comments": 257,
+   "summary": [
+    "Consumer Rights Wiki 整理：用 ID.me 登录美国国税局（IRS）在线服务的纳税人，适用的是这家私营公司自己的服务条款，其中规定除小额诉讼外的纠纷交由仲裁，除非用户在接受后 30 天内选择退出；其隐私政策还写明可能把信息用于营销，或在出售、并购中转移。",
+    "页面指出，政府自营的 Login.gov 同样可以登录 IRS，IRS 的 Direct Pay 缴税也无需登录。ID.me 已于 10 月 28 日取代储蓄债券网站 TreasuryDirect 的传统登录；10 月 29 日参议员 Ron Wyden 和 Elizabeth Warren 致信财政部和 IRS，质问为何不用 Login.gov。",
+    "评论区有人说不用智能手机就注册不了 ID.me，认识的人因此兑不了债券；有人提醒 IRS 现在已能用 Login.gov 登录；也有人说 ID.me 是自己母亲唯一能用的登录方式。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "bborrez",
+     "stance": "被挡在门外",
+     "zh": "不用智能手机就无法注册 ID.me。我认识一个这样的人，他在 TreasuryDirect 里的债券现在似乎没法兑现了。联邦机构跟这样运作的不靠谱第三方合作，简直疯了。",
+     "en": "It is impossible to sign up for ID.me if you do not use a smartphone.",
+     "hn": "https://news.ycombinator.com/item?id=50541075",
+     "id": 50541075,
+     "replies": 111
+    },
+    {
+     "user": "jasonriddle",
+     "stance": "提醒",
+     "zh": "提醒一下，不知道什么时候改的，现在好像可以用 login.gov 登录 irs.gov 了。",
+     "en": "it looks like you can login to irs.gov using login.gov",
+     "hn": "https://news.ycombinator.com/item?id=50540581",
+     "id": 50540581,
+     "replies": 36
+    },
+    {
+     "user": "skygazer",
+     "stance": "另一面",
+     "zh": "ID.me 是我母亲唯一真能用的统一登录服务，因为她用的是预付费手机和网络电话，而 login.gov 原则上都不接受。",
+     "en": "ID.me was the only SSO service my mother could actually use",
+     "hn": "https://news.ycombinator.com/item?id=50541299",
+     "id": 50541299,
+     "replies": 11
+    }
+   ],
+   "kicker": "要闻 · 隐私"
+  },
+  {
+   "id": 50547620,
+   "title": "「Inside Deutsche Bank」：1500 万份文件泄露揭开德意志银行内幕",
+   "title_en": "Inside Deutsche Bank",
+   "url": "https://www.inside-db.com/",
+   "hn": "https://news.ycombinator.com/item?id=50547620",
+   "points": 530,
+   "comments": 185,
+   "summary": [
+    "这是一个跨国调查项目的专题页。项目称，泄露的 1500 多万份文件涉及德意志银行反金融犯罪、制裁监控、内部审计及决定高风险客户去留的部门，揭示了该行有缺陷的文化、系统性盲区和重利润轻合规。",
+    "页面列出的报道包括：德银为 1MDB 案核心人物刘特佐（Jho Low）处理过至少 24 笔、合计 1.7298 亿欧元的交易；一家与欧尔班有关联的匈牙利银行涉嫌协助俄罗斯寡头洗钱，德银处理了其中大量付款；德银还违反内部政策，为向高风险或冲突国家供应武器提供融资。",
+    "参与项目的记者在评论区介绍了技术栈：文件多为 Outlook 邮箱导出，通过开源工具 OpenAleph 分享给合作媒体；也有人抱怨页面缺少概要，还有前大行员工说这种规模的银行根本管不过来。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "ltrg",
+     "stance": "幕后技术",
+     "zh": "我作为记者参与了这个项目。HN 读者可能想了解技术栈：这约 1500 万份文件大多是 Outlook 邮箱导出，通过 DARC 维护的 OpenAleph 提供给联盟伙伴，它基于 ElasticSearch 和专为调查报道设计的 FollowTheMoney 模式。",
+     "en": "HN readers may be interested to know a bit about the tech stack.",
+     "hn": "https://news.ycombinator.com/item?id=50551351",
+     "id": 50551351,
+     "replies": 12
+    },
+    {
+     "user": "gwbas1c",
+     "stance": "缺概要",
+     "zh": "页面需要不用点进链接就能概括要点。很多人打开一看要花时间读，就走了，根本不了解丑闻的要点。",
+     "en": "The page needs to summarize critical points without needing to hop into links.",
+     "hn": "https://news.ycombinator.com/item?id=50548217",
+     "id": 50548217,
+     "replies": 55
+    },
+    {
+     "user": "balderdash",
+     "stance": "管不过来",
+     "zh": "我在大型货币中心银行工作过，也认识一位前 CEO。实话是这些机构基本无法管理，左手不知道右手在干什么，有成百上千个山头都在找生意、替公司承担风险。",
+     "en": "these things are largely unmanageable",
+     "hn": "https://news.ycombinator.com/item?id=50550688",
+     "id": 50550688,
+     "replies": 2
+    }
+   ],
+   "kicker": "要闻 · 金融"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 2,
+   "stories": [
+    {
+     "id": 50548021,
+     "title": "微软 Ignite 一口气发布七款 MAI 模型，主打性价比",
+     "title_en": "Seven new models at scalable price-performance",
+     "url": "https://microsoft.ai/news/microsoft-ignite-2026/",
+     "hn": "https://news.ycombinator.com/item?id=50548021",
+     "points": 417,
+     "comments": 292,
+     "summary": [
+      "微软 AI 在 Ignite 大会上发布七款模型：网络安全模型 MAI Cyber 2 Flash（输出价格比上一代低 86%）、编程模型 MAI Code 2 和 Code 2 Flash、图像模型 MAI Image 2.7 及其 Flash 版、首个实时语音对话模型 MAI Realtime 1（每分钟音频 0.01 美元起），以及模型路由 Decision 1.1。",
+      "官方称在四个编程基准的平均成绩上，MAI Code 2 以 40% 的价格达到 GPT-6.1 Sol 98% 的表现，以 5% 的价格达到 Claude Opus 5.5 96% 的表现，但明确说还没针对科学研究和超长周期智能体任务调优；MAI Image 2.7 在 Artificial Analysis 图像编辑榜排第一。微软还推出「MAI Licensed Weights」，让企业拿前沿模型用自有数据定制后跑在自己的 Azure 环境里。",
+      "评论区有人建议微软开放部分权重，否则会重演 Windows Phone；有人实测 MAI Code 2 表现不错；也有人因模型竞争激烈决定不参与 Anthropic 的 IPO。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "ahmedfromtunis",
+       "stance": "开放权重",
+       "zh": "我觉得微软想拿到市场份额，就该开源或开放部分模型的权重。否则又是 Windows Phone 的老路。",
+       "en": "Otherwise, it's Windows Phone OS all over again.",
+       "hn": "https://news.ycombinator.com/item?id=50548446",
+       "id": 50548446,
+       "replies": 64
+      },
+      {
+       "user": "johnshahbazian",
+       "stance": "实测不错",
+       "zh": "我没看主题演讲，但一直在测 MAI Code 2，日常工作中表现相当好。他们把它和 Opus、Sol 相提并论，我不太会反驳。",
+       "en": "I've been testing MAI Code 2 and its been quite good for my usual work.",
+       "hn": "https://news.ycombinator.com/item?id=50549009",
+       "id": 50549009,
+       "replies": 24
+      },
+      {
+       "user": "athrowaway3z",
+       "stance": "IPO 犹豫",
+       "zh": "我本来在犹豫要不要参与 Anthropic 的 IPO，但我想还是算了，尽管我在付费用它的产品而且很满意。它实在太贵了。",
+       "en": "Its just too overpriced.",
+       "hn": "https://news.ycombinator.com/item?id=50550913",
+       "id": 50550913,
+       "replies": 42
+      }
+     ],
+     "kicker": "AI · 模型"
+    },
+    {
+     "id": 50552424,
+     "title": "谷歌发布 Gemini 4 Neon：更快更便宜的前沿模型",
+     "title_en": "Gemini 4 Neon",
+     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+     "hn": "https://news.ycombinator.com/item?id=50552424",
+     "points": 349,
+     "comments": 336,
+     "summary": [
+      "谷歌推出 Gemini 4 Neon，主打以较快速度完成软件工程、知识工作和科研任务。官方称它在 Artificial Analysis 智能指数（xhigh 档）得分 61、排总第三，在 Vals Index 排第二，并在 Artificial Analysis 编程智能体指数排第一（58.6）；Terminal-Bench 4.1 得分 65.2%。",
+      "定价为每百万 token 输入 3 美元、缓存输入 0.15 美元、输出 15 美元，上下文 100 万 token。官方称在默认 high 档下，单任务成本比 Carbon 低 32%。即日起在 Gemini API、Google AI Studio、Antigravity 及 Gemini 应用的付费档上线。",
+      "评论区吐槽各家模型命名越来越难懂；有人好奇 Anthropic 的「秘方」，说 Gemini 跑分不差但用起来不如 Opus 5.5；也有人发现 Neon 在 OpenRouter 上的速度是 Carbon 的近三倍。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "stillpointlab",
+       "stance": "命名疲劳",
+       "zh": "各家不停推出新名字，又很难把这些名字对应到用途，我已经疲了。Sol、Astra、Neon、Opus、Fable、Mythos、Carbon、Haiku……",
+       "en": "I'm getting fatigued with the constant introduction of names",
+       "hn": "https://news.ycombinator.com/item?id=50553269",
+       "id": 50553269,
+       "replies": 44
+      },
+      {
+       "user": "impulser_",
+       "stance": "秘方",
+       "zh": "有没有人知道 Anthropic 的秘方是什么？我一直在用最新的 Gemini，尽管跑分不错，但总觉得不如 Opus 5.5。",
+       "en": "Is there any theory on what is Anthropic's secret sauce?",
+       "hn": "https://news.ycombinator.com/item?id=50552711",
+       "id": 50552711,
+       "replies": 55
+      },
+      {
+       "user": "seizethecheese",
+       "stance": "速度",
+       "zh": "现在它在 OpenRouter 上跑得极快，每秒 127 个 token，比 Carbon 的每秒 46 个快得多。我有点困惑，因为 Neon 好像才是旗舰。也许他们一直在限 Carbon 的速？",
+       "en": "127 tokens per second",
+       "hn": "https://news.ycombinator.com/item?id=50552830",
+       "id": 50552830,
+       "replies": 13
+      }
+     ],
+     "kicker": "AI · 模型"
+    },
+    {
+     "id": 50547777,
+     "title": "毕马威审计试验：AI 智能体有时比人类审计员问得更深",
+     "title_en": "AI agents ask better questions than KPMG accountants in audit trial",
+     "url": "https://europeanbusinessmagazine.com/ai-agents-better-questions-kpmg/",
+     "hn": "https://news.ycombinator.com/item?id=50547777",
+     "points": 324,
+     "comments": 145,
+     "summary": [
+      "据《金融时报》报道，毕马威英国用 100 多个 AI 智能体，与常规审计团队一起审查一家未具名富时 250 公司的财报，项目代号 Project Exponential。审计主管 Cath Burnet 说，智能体在若干问题上挖得比人类团队深得多，提出了人类没提的问题。",
+      "智能体负责收集、分析和记录数据，起草结论并建议下一步，系统开发了约四个月。这不是正式法定审计，结果没用于批准财报；试验中还有一个智能体没能把监管要求和公司文件对上，需要审计员介入。毕马威计划扩展到最多 20 个大型审计，但承认技术还不够成熟，也没说省下的时间会不会换来更低的审计费。",
+      "评论区有人说四大的初级审计员本就经验少、过劳、激励差；也有人指出审计不在于找问题，而在于判断哪些问题重要；还有人提醒试验是毕马威自己做的。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "trentnix",
+       "stance": "对手太弱",
+       "zh": "毕马威的会计通常缺乏经验、过度劳累、激励也差。整个大所公共会计模式在多个层面都是剥削性的。",
+       "en": "KMPG accountants are generally inexperienced, overworked, and poorly incentivized.",
+       "hn": "https://news.ycombinator.com/item?id=50549887",
+       "id": 50549887,
+       "replies": 31
+      },
+      {
+       "user": "othorns",
+       "stance": "挖深不是本事",
+       "zh": "在这里「AI 挖得更深」是很奇怪的炫耀。审计员越有经验，越懂该往哪里深挖、什么相关什么无关。审计不是为了找问题，问题总是有的。",
+       "en": "An audit is not about finding issues, there are always issues.",
+       "hn": "https://news.ycombinator.com/item?id=50553415",
+       "id": 50553415,
+       "replies": 0
+      },
+      {
+       "user": "prometheus1992",
+       "stance": "读原文",
+       "zh": "读原文：实验是毕马威自己做的。这个结果就相当于「如今大厂大部分代码是 AI 写的」。",
+       "en": "The experiment is conducted by KPMG itself.",
+       "hn": "https://news.ycombinator.com/item?id=50550045",
+       "id": 50550045,
+       "replies": 14
+      }
+     ],
+     "kicker": "AI · 应用"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50541790,
+     "title": "Gemini 4 Carbon 为什么这么慢？",
+     "title_en": "Why is Gemini 4 Carbon taking so long?",
+     "url": "https://kernel.dev/blog/why-is-gemini-4-carbon-taking-so-long/",
+     "hn": "https://news.ycombinator.com/item?id=50541790",
+     "points": 263,
+     "comments": 138
+    },
+    {
+     "id": 50550415,
+     "title": "谷歌 Genie 4 世界模型开放使用",
+     "title_en": "Genie 4 is now available",
+     "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+     "hn": "https://news.ycombinator.com/item?id=50550415",
+     "points": 173,
+     "comments": 140
+    },
+    {
+     "id": 50549493,
+     "title": "OpenAI：用自家模型推进芯片设计",
+     "title_en": "Advancing chip design with OpenAI models",
+     "url": "https://openai.com/index/advancing-chip-design-with-our-models/",
+     "hn": "https://news.ycombinator.com/item?id=50549493",
+     "points": 150,
+     "comments": 89
+    },
+    {
+     "id": 50541619,
+     "title": "Claude 曾大规模训练过蛋白质序列",
+     "title_en": "Claude was trained on protein sequences at scale",
+     "url": "http://xinmingtu.cn/blog/2026/claude-opus-5-5-protein-sequences/",
+     "hn": "https://news.ycombinator.com/item?id=50541619",
+     "points": 160,
+     "comments": 68
+    },
+    {
+     "id": 50540472,
+     "title": "Cerebras 推出分离式推理",
+     "title_en": "Cerebras Disaggregated Inference",
+     "url": "https://www.cerebras.ai/blog/cerebras-launches-disaggregated-inference",
+     "hn": "https://news.ycombinator.com/item?id=50540472",
+     "points": 105,
+     "comments": 24
+    },
+    {
+     "id": 50551046,
+     "title": "DaisyRose-27B：1200 个任务的强化学习让 Qwen3.8 在 Terminal-Bench 4.1 上从 5.6% 升到 12%",
+     "title_en": "DaisyRose-27B: 1,200-task RL took Qwen3.8 from 5.6% to 12% on Terminal-Bench 4.1",
+     "url": "https://www.radixark.com/blog/daisyrose-27b",
+     "hn": "https://news.ycombinator.com/item?id=50551046",
+     "points": 117,
+     "comments": 32
+    },
+    {
+     "id": 50548485,
+     "title": "科学家与学者联盟发声：「Anthropic 不是一家安全的 AI 公司」",
+     "title_en": "\"Anthropic Is Not a Safe AI Company\" – Coalition Challenges Anthropic Safety",
+     "url": "https://www.businesswire.com/news/home/20261118974464/en/Anthropic-is-Not-a-Safe-AI-Company---Broad-Coalition-of-Scientists-Legal-Scholars-and-Tech-Leaders-Challenge-Anthropics-Safety-Branding-Ahead-of-IPO",
+     "hn": "https://news.ycombinator.com/item?id=50548485",
+     "points": 124,
+     "comments": 76
+    },
+    {
+     "id": 50540836,
+     "title": "银行 CEO 与 NSA 向国会表示，AI 驱动的补丁是近期宕机的原因",
+     "title_en": "Bank CEOs, NSA Tell Congress That AI-Driven Patches Are Behind Outages",
+     "url": "https://www.washingtonsun.com/technology/bank-ceos-nsa-tell-congress-ai-driven-patches-behind-outages",
+     "hn": "https://news.ycombinator.com/item?id=50540836",
+     "points": 95,
+     "comments": 57
+    },
+    {
+     "id": 50551601,
+     "title": "Gemini 的「Tasks」个人助理功能免费开放",
+     "title_en": "Google Gemini's \"Tasks\" Personal Assistant Is Now Free",
+     "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+     "hn": "https://news.ycombinator.com/item?id=50551601",
+     "points": 46,
+     "comments": 62
+    },
+    {
+     "id": 50547223,
+     "title": "黄仁勋下台冲击「开放」模型，Anthropic 与 OpenAI 受益",
+     "title_en": "Jensen Huang's fall hits 'open' models in boost to Anthropic and OpenAI",
+     "url": "https://www.ft.com/content/418ca885-fbcf-4b9f-a8b9-2bd60b543fc5",
+     "hn": "https://news.ycombinator.com/item?id=50547223",
+     "points": 43,
+     "comments": 18
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2366,
+    "comments": 1477,
+    "top_points": {
+     "id": 50548021,
+     "title": "微软 Ignite 一口气发布七款 MAI 模型，主打性价比",
+     "value": 417,
+     "comments": 292
+    },
+    "top_comments": {
+     "id": 50552424,
+     "title": "谷歌发布 Gemini 4 Neon：更快更便宜的前沿模型",
+     "value": 336
+    },
+    "top_brief": {
+     "id": 50541790,
+     "title": "Gemini 4 Carbon 为什么这么慢？",
+     "value": 263,
+     "comments": 138
+    }
+   }
+  },
+  {
+   "name": "开发",
+   "en": "Development",
+   "page": 3,
+   "stories": [
+    {
+     "id": 50544261,
+     "title": "Codeberg.org 域名突然消失，整站无法访问",
+     "title_en": "Codeberg.org Not Reachable",
+     "url": "https://social.anoxinon.de/@codebergstatus/117636437840688845",
+     "hn": "https://news.ycombinator.com/item?id=50544261",
+     "points": 296,
+     "comments": 296,
+     "summary": [
+      "开源代码托管平台 Codeberg 在 Mastodon 状态账号上说，codeberg.org 域名完全无法访问：域名注册在 NameSilo，却从他们的账户里整个消失了。他们强调没有忘记续费，登录记录里没有可疑登录，账户的域名历史里也没有相关记录。",
+      "后续更新称，NameSilo 确认域名被暂停，案件已转交滥用处理团队；欧洲中部时间 18 日 12:30，域名开始逐步恢复，部分用户需要等待 DNS 传播，但仍未收到 NameSilo 滥用部门的正式答复。Codeberg 还解释了为什么没有临时启用 codeberg.eu：多域名支持、两步验证等技术问题太多，收益不抵成本。",
+      "评论区有人意外这家德国协会会选美国注册商；也有人贴出 hosts 文件写法临时绕过。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "hans_castorp",
+       "stance": "官方说明",
+       "zh": "更新：我们已收到确认，域名被暂停，案件已转交滥用处理团队。我们仍在等最终决定。",
+       "en": "We have received the confirmation that our domain was suspended",
+       "hn": "https://news.ycombinator.com/item?id=50544262",
+       "id": 50544262,
+       "replies": 158
+      },
+      {
+       "user": "MrGilbert",
+       "stance": "注册商之问",
+       "zh": "作为德国机构，Codeberg e.V. 选了美国注册商，这让我意外。以我的经验，有些服务我更愿意有本地联系人，域名注册就是其中之一。",
+       "en": "I'm surprised that Codeberg e.V. decided to go with an American registrar.",
+       "hn": "https://news.ycombinator.com/item?id=50544385",
+       "id": 50544385,
+       "replies": 30
+      },
+      {
+       "user": "rarisma",
+       "stance": "不设临时域名",
+       "zh": "「我们决定不启用 codeberg.eu 作为快速变通：有几个技术难点（如多域名支持、SEO、两步验证）。」这太离谱了，看来我只能等 Codeberg 回来。",
+       "en": "We decided not to enable codeberg.eu as a quick workaround",
+       "hn": "https://news.ycombinator.com/item?id=50544533",
+       "id": 50544533,
+       "replies": 9
+      }
+     ],
+     "kicker": "开发 · 基础设施"
+    },
+    {
+     "id": 50539747,
+     "title": "Apple 支持社区即将关闭，Archive Team 抢救存档",
+     "title_en": "Archive Team is archiving the Apple Support Community",
+     "url": "https://wiki.archiveteam.org/index.php/Apple_Discussions",
+     "hn": "https://news.ycombinator.com/item?id=50539747",
+     "points": 262,
+     "comments": 104,
+     "summary": [
+      "Archive Team 维基显示，Apple 于 11 月 10 日宣布 Apple 支持社区（Apple Discussions）将在 11 月 20 日永久关闭，即日起只读、不再接受新帖，并引导用户改用官方 Apple 支持网站。",
+      "Archive Team 已启动分布式存档项目，状态为「进行中」。它提醒，这类分布式项目的基础设施很贵，靠志愿者维护。",
+      "评论区对这个论坛普遍没好感：有人说从没在上面找到真正的解决办法，只看到非官方的错误答案和成百上千条「我也是」；也有人认为该由 Apple 自己存档。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "digitaldragon",
+       "stance": "进度",
+       "zh": "实时进度可以在这里看：https://tracker.archiveteam.org/applediscussions/",
+       "en": "You can see the live progress here",
+       "hn": "https://news.ycombinator.com/item?id=50539748",
+       "id": 50539748,
+       "replies": 14
+      },
+      {
+       "user": "socalgal2",
+       "stance": "一向糟糕",
+       "zh": "Apple 支持社区一直很糟。这是 Apple 不提供真正支持、无视问题的方式。我从没在那里找到过真正的解决办法，只看到非官方、经常错误的回答，加上 25 到 700 条「我也是」。",
+       "en": "The Apple Support Community has always been horrible.",
+       "hn": "https://news.ycombinator.com/item?id=50543986",
+       "id": 50543986,
+       "replies": 9
+      },
+      {
+       "user": "wackget",
+       "stance": "该谁存档",
+       "zh": "一方面，我非常理解想要存档多年来人们提问答疑的心血。另一方面，Apple 本该主动存档。可想而知它没有，也不会。",
+       "en": "Apple should have voluntarily done the archiving.",
+       "hn": "https://news.ycombinator.com/item?id=50540635",
+       "id": 50540635,
+       "replies": 9
+      }
+     ],
+     "kicker": "开发 · 存档"
+    },
+    {
+     "id": 50546967,
+     "title": "x86 简史：从 4004 到 486",
+     "title_en": "The x86 CPU: From 4004 to 486",
+     "url": "https://pikuma.com/blog/history-of-x86-4004-to-486",
+     "hn": "https://news.ycombinator.com/item?id=50546967",
+     "points": 133,
+     "comments": 46,
+     "summary": [
+      "汇编课程网站 pikuma 的长文解释 x86 为何看起来处处「任意」：只认累加器的指令、唯一能指向内存的基址寄存器、没人用的奇偶标志、两个 16 位数相加的奇怪寻址。作者说这些都不是随意的，每一项都是为了让旧软件在新芯片上继续运行而做的取舍。",
+      "文章沿着 4004（1971 年 11 月 15 日发布，2300 个晶体管，约 740 kHz）、8008、8080、8085、8086/8088、286、386 到 486 逐一梳理：小端序和奇偶标志继承自 8008 所服务的 Datapoint 2200 终端，8086 引入分段，286 带来保护模式，386 带来 32 位寄存器和分页，486 把缓存和浮点单元放进芯片。",
+      "评论区挑了不少细节：有人说 4004 与 8008 并无血缘，只是同一批人做的；有人问 Intel 和 AMD 为何还让 CPU 以实模式启动；也有人刚知道 AX 里的 X 并非 eXtended 的意思。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "skissane",
+       "stance": "实模式",
+       "zh": "我不明白 Intel 和 AMD 为何还这么做。如果 CPU 改成直接以长模式（哪怕只是 32 位保护模式）启动，除了写 BIOS 的人，没人会注意到。",
+       "en": "I don't know why Intel and AMD are still doing this.",
+       "hn": "https://news.ycombinator.com/item?id=50553465",
+       "id": 50553465,
+       "replies": 3
+      },
+      {
+       "user": "kens",
+       "stance": "纠正",
+       "zh": "我想强调一点：4004 和 8008 完全没有关系，只是很多做这两颗芯片的人是同一批。",
+       "en": "the 4004 is not related to the 8008 at all",
+       "hn": "https://news.ycombinator.com/item?id=50548167",
+       "id": 50548167,
+       "replies": 2
+      },
+      {
+       "user": "gregschlom",
+       "stance": "冷知识",
+       "zh": "我一直以为 X 是 eXtended 的意思。不过把 X 当作 H 或 L 的占位符也说得通。",
+       "en": "Ah I always thought it was for eXtended.",
+       "hn": "https://news.ycombinator.com/item?id=50550399",
+       "id": 50550399,
+       "replies": 0
+      }
+     ],
+     "kicker": "开发 · 计算机史"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50539610,
+     "title": "微软 ONNX Runtime 仓库从 GitHub 上消失",
+     "title_en": "Microsoft's ONNX Runtime has disappeared from GitHub",
+     "url": "https://github.com/microsoft/onnxruntime",
+     "hn": "https://news.ycombinator.com/item?id=50539610",
+     "points": 450,
+     "comments": 98
+    },
+    {
+     "id": 50548004,
+     "title": "KVM x86 漏洞：模拟 INIT 时须无条件重置 MMU 上下文（CVE-2026-99312）",
+     "title_en": "KVM: x86: Unconditionally reset MMU context when emulating INIT (CVE-2026-99312)",
+     "url": "https://www.cve.org/CVERecord?id=CVE-2026-99312",
+     "hn": "https://news.ycombinator.com/item?id=50548004",
+     "points": 168,
+     "comments": 113
+    },
+    {
+     "id": 50509141,
+     "title": "IPv6 前缀委派：一种格外隐蔽的故障模式",
+     "title_en": "IPv6 delegation, an unusually subtle failure mode",
+     "url": "https://savyasacheejha.com/posts/why-odhcpd/",
+     "hn": "https://news.ycombinator.com/item?id=50509141",
+     "points": 62,
+     "comments": 45
+    },
+    {
+     "id": 50517929,
+     "title": "我给 Emacs 31 做的贡献",
+     "title_en": "My Emacs 31 contributions",
+     "url": "https://xenodium.com/my-emacs-31-contributions",
+     "hn": "https://news.ycombinator.com/item?id=50517929",
+     "points": 116,
+     "comments": 18
+    },
+    {
+     "id": 50543343,
+     "title": "Talos Linux",
+     "title_en": "Talos Linux",
+     "url": "https://www.siderolabs.com/talos-linux",
+     "hn": "https://news.ycombinator.com/item?id=50543343",
+     "points": 101,
+     "comments": 58
+    },
+    {
+     "id": 50550096,
+     "title": "部分求值的魔力",
+     "title_en": "The Magic of Partial Evaluation",
+     "url": "https://jimmyhmiller.com/magic-of-partial-evaluation",
+     "hn": "https://news.ycombinator.com/item?id=50550096",
+     "points": 88,
+     "comments": 23
+    },
+    {
+     "id": 50547980,
+     "title": "Show HN：ExitPath，帮你迁出 Slack、Notion 和 Microsoft 365 的开源方案",
+     "title_en": "Show HN: ExitPath – Open-source ways out of Slack, Notion and Microsoft 365",
+     "url": "https://exitpath-ruddy.vercel.app/",
+     "hn": "https://news.ycombinator.com/item?id=50547980",
+     "points": 148,
+     "comments": 44
+    },
+    {
+     "id": 50550062,
+     "title": "苏格兰方言版 HTTP 状态码",
+     "title_en": "Scottish HTTP Codes",
+     "url": "https://underwood.network/http/scots.html",
+     "hn": "https://news.ycombinator.com/item?id=50550062",
+     "points": 229,
+     "comments": 54
+    },
+    {
+     "id": 50548660,
+     "title": "Show HN：Mastra Factory，我们用来开发 Mastra 的开源软件工厂",
+     "title_en": "Show HN: Mastra Factory, the open-source software factory we use to build Mastra",
+     "url": null,
+     "hn": "https://news.ycombinator.com/item?id=50548660",
+     "points": 79,
+     "comments": 27
+    },
+    {
+     "id": 50503492,
+     "title": "约束编程的乐趣（2012）",
+     "title_en": "Fun with Constrained Programming (2012)",
+     "url": "https://blog.cmpxchg8b.com/2012/09/fun-with-constrained-programming.html",
+     "hn": "https://news.ycombinator.com/item?id=50503492",
+     "points": 101,
+     "comments": 4
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2233,
+    "comments": 930,
+    "top_points": {
+     "id": 50539610,
+     "title": "微软 ONNX Runtime 仓库从 GitHub 上消失",
+     "value": 450,
+     "comments": 98
+    },
+    "top_comments": {
+     "id": 50544261,
+     "title": "Codeberg.org 域名突然消失，整站无法访问",
+     "value": 296
+    },
+    "top_brief": {
+     "id": 50539610,
+     "title": "微软 ONNX Runtime 仓库从 GitHub 上消失",
+     "value": 450,
+     "comments": 98
+    }
+   }
+  },
+  {
+   "name": "科学",
+   "en": "Science",
+   "page": 4,
+   "stories": [
+    {
+     "id": 50546465,
+     "title": "能量饮料相关报告中提到心脏骤停的频率高出 11 倍",
+     "title_en": "Energy drinks linked to 11 times more reports of cardiac arrest",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261110042543.htm",
+     "hn": "https://news.ycombinator.com/item?id=50546465",
+     "points": 202,
+     "comments": 197,
+     "summary": [
+      "美国心脏协会 2026 年科学年会上的一项初步研究，分析了 FDA 食品和膳食补充剂不良事件数据库中 2017 至 2025 年、13 岁以上人群的报告，把含咖啡因等兴奋剂的产品与汽水、维生素、蛋白棒等不含兴奋剂的产品对比。",
+      "含兴奋剂产品的报告提到心脏骤停的频率约高 11 倍，心肌梗死约 4.5 倍，室性心律失常或心悸约 4 倍；约 45% 的相关心血管报告涉及 18 至 34 岁成年人。研究者强调，这只说明这些问题在报告中出现得更频繁，并不意味着喝能量饮料的人真实风险高 11 倍，也无法证明因果。美国心脏协会的声明认为多数成年人每天摄入不超过 400 毫克咖啡因一般没有显著风险。",
+      "评论区有人算了笔账：九年里相关报告只有 854 份，相对数千万饮用者不算大问题；也有人说大量喝能量饮料的人往往同时缺觉、过度训练，混杂因素太多。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "jimmar",
+       "stance": "算笔账",
+       "zh": "也就是说 FDA 每年只收到约 100 份涉及咖啡因或其他兴奋剂的不良事件报告。考虑到有数千万人在喝，这感觉不算大问题。",
+       "en": "This doesn't feel like a big problem",
+       "hn": "https://news.ycombinator.com/item?id=50546786",
+       "id": 50546786,
+       "replies": 23
+      },
+      {
+       "user": "DiskoHexyl",
+       "stance": "混杂因素",
+       "zh": "狂喝能量饮料的人，可能同时在缺觉、透支、过度训练的状态下做高强度的体力或脑力活动，有时还宿醉。我不喜欢能量饮料，但这需要更多数据。",
+       "en": "this needs more data",
+       "hn": "https://news.ycombinator.com/item?id=50547661",
+       "id": 50547661,
+       "replies": 48
+      },
+      {
+       "user": "vova_hn2",
+       "stance": "比较方式",
+       "zh": "「某些能量饮料每液量盎司的咖啡因是现煮咖啡的三倍」这种比较很奇怪。比较一份标准分量更合理，比如一杯浓缩咖啡对一罐能量饮料。",
+       "en": "That's a weird comparison.",
+       "hn": "https://news.ycombinator.com/item?id=50549238",
+       "id": 50549238,
+       "replies": 3
+      }
+     ],
+     "kicker": "科学 · 健康"
+    },
+    {
+     "id": 50542264,
+     "title": "为什么是斐波那契？LED 板上的向日葵螺旋",
+     "title_en": "Why Fibonacci?",
+     "url": "https://www.evilgeniuslabs.org/why-fibonacci",
+     "hn": "https://news.ycombinator.com/item?id=50542264",
+     "points": 79,
+     "comments": 16,
+     "summary": [
+      "Evil Genius Labs 的作者做了几十款「斐波那契」LED 板，这篇文章解释其中的原理：所有 LED 都排在费马螺旋上，和向日葵种子的排列一样，而不是用正方形画出来的那条「斐波那契螺旋」。规则很简单：从中心开始，每次半径稍增、放一颗 LED、转 137.508°。",
+      "137.508° 是黄金角（360° ÷ φ²），它无法写成分数，所以 LED 永远不会排成辐条。文章给出对比：600 颗 LED 时，90° 下最近两颗只有完美蜂窝间距的 4%，137.5° 为 82%，黄金角为 87%；而第 n 颗 LED 离中心约 √n。",
+      "评论区有人联想到斐波那契哈希，也有人补充黄金比例是「最无理」的数：它的连分数全是 1，最难用分数逼近。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "rmunn",
+       "stance": "最无理的数",
+       "zh": "我好像是从 Numberphile 讲黄金比例的视频里学到这个冷知识：黄金比例是最无理的数。",
+       "en": "the Golden Ratio is the most irrational number possible",
+       "hn": "https://news.ycombinator.com/item?id=50545138",
+       "id": 50545138,
+       "replies": 5
+      },
+      {
+       "user": "sph",
+       "stance": "斐波那契哈希",
+       "zh": "我刚知道斐波那契哈希：把哈希值乘以一个由黄金比例导出的系数，分布比直接对整数取模更好。",
+       "en": "I just learned about Fibonacci hashing",
+       "hn": "https://news.ycombinator.com/item?id=50543041",
+       "id": 50543041,
+       "replies": 2
+      }
+     ],
+     "kicker": "科学 · 数学"
+    },
+    {
+     "id": 50543989,
+     "title": "能量模型推理器：180 万参数解数独，推理算力省两个数量级",
+     "title_en": "Energy-Based Reasoners: 385x more efficient inference",
+     "url": "https://energy-based-reasoners.github.io/",
+     "hn": "https://news.ycombinator.com/item?id=50543989",
+     "points": 297,
+     "comments": 52,
+     "summary": [
+      "研究者提出 Energy-Based Reasoners（EBR）：让循环推理模型学习一个关于潜在推理状态的「能量函数」，把每轮循环更新当作在这个能量上做梯度下降。能量值给候选答案打分，不需要外部验证器；梯度指出改进方向，梯度足够小时就停止，所以简单题几步结束、难题多跑几步。",
+      "项目页称，EBR 只有 180 万参数，在 Sudoku-Extreme 上准确率 99.9%，推理算力比第二名少 345 倍（HN 标题写的是 385 倍）；在 N 皇后和图着色上达到最先进的解覆盖率，单次采样准确率接近 100%。",
+      "评论区提醒别以为它能取代大语言模型：这更像针对数独、迷宫、图着色等离散问题的能量搜索；有人说自己做了一年能量模型，验证能力很强但极难训练；也有人质疑论文没说清「能量」到底指什么。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "program_whiz",
+       "stance": "别过度期待",
+       "zh": "如果有人以为这能取代或大幅增强「推理」模型（LLM、RNN），有个大前提：它更像是针对离散问题（图着色、走迷宫、数独）的基于能量的搜索。",
+       "en": "its more like an energy-based search for a discrete problem",
+       "hn": "https://news.ycombinator.com/item?id=50545451",
+       "id": 50545451,
+       "replies": 2
+      },
+      {
+       "user": "mocmoc",
+       "stance": "过来人",
+       "zh": "我在这上面花了一年。能量模型是很厉害的验证器，但极其难训练，而且非常局限于特定领域。",
+       "en": "it's insanely hard to train them",
+       "hn": "https://news.ycombinator.com/item?id=50546168",
+       "id": 50546168,
+       "replies": 2
+      },
+      {
+       "user": "xgk",
+       "stance": "概念不清",
+       "zh": "论文似乎没定义「基于能量」是什么意思。这些学到的标量函数取值在哪？实数吧？那「能量」只是实数的同义词吗？",
+       "en": "The paper does not seem to define what Energy-Based means.",
+       "hn": "https://news.ycombinator.com/item?id=50545445",
+       "id": 50545445,
+       "replies": 13
+      }
+     ],
+     "kicker": "科学 · 机器学习"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50548161,
+     "title": "Show HN：把旅行者 1 号拆开看，直到一颗存储芯片",
+     "title_en": "Show HN: Take Voyager 1 apart, down to a single memory chip",
+     "url": "https://rshekhar.com/voyager/",
+     "hn": "https://news.ycombinator.com/item?id=50548161",
+     "points": 140,
+     "comments": 30
+    },
+    {
+     "id": 50544541,
+     "title": "旅行者 1 号距地球达一光日",
+     "title_en": "Voyager 1 hits one light day from Earth",
+     "url": "https://science.nasa.gov/mission/voyager/where-are-voyager-1-and-voyager-2-now/",
+     "hn": "https://news.ycombinator.com/item?id=50544541",
+     "points": 54,
+     "comments": 24
+    },
+    {
+     "id": 50546922,
+     "title": "傅里叶级数入门教材（2025）",
+     "title_en": "A Primer on Fourier Series (2025)",
+     "url": "https://arxiv.org/abs/2510.18203",
+     "hn": "https://news.ycombinator.com/item?id=50546922",
+     "points": 105,
+     "comments": 28
+    },
+    {
+     "id": 50546312,
+     "title": "同行评审能扛过 AI 生成的文本吗？[PDF]",
+     "title_en": "Can Peer Review Survive AI-Generated Text? [pdf]",
+     "url": "https://www.sas.upenn.edu/~jesusfv/Peer_Review.pdf",
+     "hn": "https://news.ycombinator.com/item?id=50546312",
+     "points": 66,
+     "comments": 78
+    },
+    {
+     "id": 50498623,
+     "title": "志愿者找到 4.3 万多个三体问题新周期解",
+     "title_en": "43k+ new periodic solutions to the three body problem found by volunteers",
+     "url": "https://www.threebodyorbits.com/hunt",
+     "hn": "https://news.ycombinator.com/item?id=50498623",
+     "points": 22,
+     "comments": 5
+    },
+    {
+     "id": 50524227,
+     "title": "好奇号火星车钻出的 49 个孔",
+     "title_en": "A Collage Showing 49 Drill Holes Made by NASA's Curiosity Mars Rover",
+     "url": "https://science.nasa.gov/photojournal/a-collage-showing-49-drill-holes-made-by-nasas-curiosity-mars-rover/",
+     "hn": "https://news.ycombinator.com/item?id=50524227",
+     "points": 22,
+     "comments": 2
+    },
+    {
+     "id": 50547395,
+     "title": "大多数城镇上空的卫星已比肉眼可见的星星还多",
+     "title_en": "Satellites now outnumber the visible stars above most towns",
+     "url": "https://www.space.com/space-exploration/satellites/satellites-now-outnumber-the-visible-stars-above-most-towns",
+     "hn": "https://news.ycombinator.com/item?id=50547395",
+     "points": 37,
+     "comments": 7
+    },
+    {
+     "id": 50542863,
+     "title": "澳大利亚全国地形图库全面开放",
+     "title_en": "Australia's full national topographic library at your fingertips",
+     "url": "https://www.ga.gov.au/news/australias-full-national-topographic-library-at-your-fingertips",
+     "hn": "https://news.ycombinator.com/item?id=50542863",
+     "points": 49,
+     "comments": 17
+    },
+    {
+     "id": 50504105,
+     "title": "慕尼黑激光器发出物质波束（1999）",
+     "title_en": "Munich Laser Emits a Beam of Matter Waves (1999)",
+     "url": "https://www.sciencedaily.com/releases/1999/03/990317060831.htm",
+     "hn": "https://news.ycombinator.com/item?id=50504105",
+     "points": 14,
+     "comments": 8
+    }
+   ],
+   "stats": {
+    "items": 12,
+    "points": 1087,
+    "comments": 464,
+    "top_points": {
+     "id": 50543989,
+     "title": "能量模型推理器：180 万参数解数独，推理算力省两个数量级",
+     "value": 297,
+     "comments": 52
+    },
+    "top_comments": {
+     "id": 50546465,
+     "title": "能量饮料相关报告中提到心脏骤停的频率高出 11 倍",
+     "value": 197
+    },
+    "top_brief": {
+     "id": 50548161,
+     "title": "Show HN：把旅行者 1 号拆开看，直到一颗存储芯片",
+     "value": 140,
+     "comments": 30
+    }
+   }
+  },
+  {
+   "name": "文化",
+   "en": "Culture",
+   "page": 5,
+   "stories": [
+    {
+     "id": 50542135,
+     "title": "面试 YC 创业公司 30 小时无偿干活，还被盗用 LinkedIn 账号",
+     "title_en": "Interviewed at a YC startup, found out they used my LinkedIn without permission",
+     "url": "https://reddit.com/r/recruitinghell/comments/1xyr6ml/interviewed_at_a_yc_startup_spent_30_hours/",
+     "hn": "https://news.ycombinator.com/item?id=50542135",
+     "points": 487,
+     "comments": 125,
+     "summary": [
+      "一位求职者在 Reddit 发帖：他参加一家做招聘的 YC 创业公司的面试，从首轮一路到最终试工，在旧金山做了两天、每天 10 小时的试工，此前还做了 10 小时的带回家作业，期间要联系真实候选人、打电话、向真实客户推荐，全部无偿。",
+      "试工时公司要求他把个人 LinkedIn 接入其平台。三周没消息后，他发现公司一直用他的账号发好友请求和消息，自称是该公司员工，把感兴趣的候选人引到真正员工那里，已发出 50 多条。他改了密码、发邮件质问，创始人在同一封邮件里回复不再推进他的申请，对此事不置一词；运营人员只说他的账号「本该移除却一直保持连接」。他后来点名公司是 Standout（YC P26）。",
+      "评论区有人说英国法律下这种 30 小时无偿劳动直接违法；也有人注意到帖子在 HN 上被降权得异常快。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "dofm",
+       "stance": "违法",
+       "zh": "招聘流程里 30 多个小时的免费劳动，单这一点 YC 就该出手制止。要是在英国（据我所知欧洲也是），这直接违反劳动法。",
+       "en": "“30+ hours” of free labour in the recruitment process",
+       "hn": "https://news.ycombinator.com/item?id=50543806",
+       "id": 50543806,
+       "replies": 7
+      },
+      {
+       "user": "ifh-hn",
+       "stance": "难以置信",
+       "zh": "如果面试公司要我个人账户的密码，我会拒绝。我还会为他们免费干活吗？大概也不会。",
+       "en": "I find it hard to believe this stuff is a thing...",
+       "hn": "https://news.ycombinator.com/item?id=50542779",
+       "id": 50542779,
+       "replies": 15
+      },
+      {
+       "user": "kaoD",
+       "stance": "被降权",
+       "zh": "这帖子被降权得出奇地快。9 小时、400 多点赞，却排在第 3 页，周围都是 24 小时以上、不到 100 点赞的帖子。",
+       "en": "This was deranked suspiciously fast.",
+       "hn": "https://news.ycombinator.com/item?id=50546721",
+       "id": 50546721,
+       "replies": 0
+      }
+     ],
+     "kicker": "文化 · 职场"
+    },
+    {
+     "id": 50546914,
+     "title": "剑桥词典 2026 年度词：human（人）",
+     "title_en": "The Cambridge Dictionary has named ‘human’ as the Word of the Year 2026",
+     "url": "https://www.cam.ac.uk/news/cambridge-dictionary-reveals-word-of-the-year-2026",
+     "hn": "https://news.ycombinator.com/item?id=50546914",
+     "points": 228,
+     "comments": 167,
+     "summary": [
+      "剑桥词典把「human」选为 2026 年度词，理由是这一年全球都在争论：当 AI 模糊了人与机器的界限，作为人意味着什么。词典对它的释义是「具有人所具有的品质、缺点和情感，与神、动物或机器相对」。",
+      "公告列举了一年来的相关事件：比尔·盖茨提出应留给人类的工作（如护理）；辛顿说「我们在创造外星生物，我宁愿自私地选择人类」；教宗良十四世谈到新的「非人化」；作家协会推出「Human Authored」标识；马修·麦康纳和泰勒·斯威夫特为自己的声音和形象注册商标。",
+      "评论区有人反驳盖茨，认为很难界定哪些工作「配」留给人类；有人不喜欢用「human」代替「person」；也有人发现「anthropic」还没被收进剑桥词典。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "thimabi",
+       "stance": "难以界定",
+       "zh": "要是能那么简单地界定什么是工作、哪些工作「配」留给人类就好了。我反对这类空想式的提议，它们只见树木不见森林。",
+       "en": "If only it were that simple to define what a job is",
+       "hn": "https://news.ycombinator.com/item?id=50547324",
+       "id": 50547324,
+       "replies": 58
+      },
+      {
+       "user": "trentnix",
+       "stance": "用词之争",
+       "zh": "用「human」代替 people 或 person 是我的一个心病。有人说「他是个很好的 human」时，我听着冷漠又贬低人。",
+       "en": "The use of \"human\" instead of people or person is a peeve of mine.",
+       "hn": "https://news.ycombinator.com/item?id=50550728",
+       "id": 50550728,
+       "replies": 7
+      },
+      {
+       "user": "enjoyyourlife",
+       "stance": "冷知识",
+       "zh": "刚发现「anthropic」还没收进剑桥词典，牛津英语词典倒是有。",
+       "en": "Just realized that \"anthropic\" isn’t in the Cambridge Dictionary yet.",
+       "hn": "https://news.ycombinator.com/item?id=50548581",
+       "id": 50548581,
+       "replies": 4
+      }
+     ],
+     "kicker": "文化 · 语言"
+    },
+    {
+     "id": 50504373,
+     "title": "完美的 SimCity：最高分城市几乎没有路",
+     "title_en": "A Perfect SimCity",
+     "url": "https://www.jeffquast.com/post/a-perfect-simcity/",
+     "hn": "https://news.ycombinator.com/item?id=50504373",
+     "points": 216,
+     "comments": 121,
+     "summary": [
+      "Jeff Quast 玩了 35 年 SimCity，评分始终没能突破 900，于是借助 Don Hopkins 维护的开源复刻版 Micropolis 和 gym-city 的 Python 接口，用算法设计城市，找出评分规则。",
+      "结论相当反直觉：满分城市人口只有 1.2 万到 1.6 万，犯罪、污染和地价恰好平衡到能维持 1% 税率；道路和铁路很少且互不相连，没有消防局，多数连警察局也没有。原因是道路会产生交通和污染，而警察和消防是巨额开支，资金不足会扣分，干脆不建反而成本最低。若追求人口，他用算法做到了约 70 万。",
+      "评论区有人感叹「最优」城市要靠只修铁路这类反直觉做法；也有人借题发挥，说自上而下地优化社会，就会让这种退化策略胜出。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "phaser",
+       "stance": "反直觉",
+       "zh": "我爱 SimCity，但玩了几百小时后，你没法无视一个事实：要建「最优」城市，就得做这里说的那些反直觉的事，比如只修铁路的城市。",
+       "en": "you can't ignore the fact that in order to build the \"optimal\" city",
+       "hn": "https://news.ycombinator.com/item?id=50546332",
+       "id": 50546332,
+       "replies": 25
+      },
+      {
+       "user": "PowerElectronix",
+       "stance": "借题发挥",
+       "zh": "用自上而下的方法解决自下而上的问题就会这样。人们生活在社会里是为了过得更好。管理并优化一个大社会，而不是优化人们的生活，就会让这种退化策略获胜。",
+       "en": "That's what happens when you take a top-down approach to a bottom-up problem.",
+       "hn": "https://news.ycombinator.com/item?id=50547291",
+       "id": 50547291,
+       "replies": 0
+      },
+      {
+       "user": "monster_truck",
+       "stance": "童年回忆",
+       "zh": "好文章。我小时候最美好的回忆之一，就是读《SimCity 2000：权力、政治与规划》修订版，弄懂每个细节。",
+       "en": "Great post.",
+       "hn": "https://news.ycombinator.com/item?id=50545228",
+       "id": 50545228,
+       "replies": 3
+      }
+     ],
+     "kicker": "文化 · 游戏"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50547344,
+     "title": "报道称俄罗斯曾计划在波兰制造大规模伤亡袭击并嫁祸乌克兰",
+     "title_en": "Russia reportedly planned mass-casualty attack in Poland to be blamed on Ukraine",
+     "url": "https://www.yahoo.com/news/world/articles/russia-reportedly-planned-mass-casualty-090500574.html",
+     "hn": "https://news.ycombinator.com/item?id=50547344",
+     "points": 341,
+     "comments": 155
+    },
+    {
+     "id": 50545232,
+     "title": "彭博评《GTA 6》：一部杰作",
+     "title_en": "GTA 6 Review: It Is a Masterpiece",
+     "url": "https://www.bloomberg.com/news/features/2026-11-18/gta-6-review-rockstar-games-latest-is-a-masterpiece",
+     "hn": "https://news.ycombinator.com/item?id=50545232",
+     "points": 63,
+     "comments": 113
+    },
+    {
+     "id": 50553192,
+     "title": "一个 942KB、可 UEFI 启动的「类 GTA6」镜像",
+     "title_en": "GTA6-like as a 942Kb UEFI bootable image",
+     "url": "https://github.com/eklavya-raj/gta6-uefi",
+     "hn": "https://news.ycombinator.com/item?id=50553192",
+     "points": 22,
+     "comments": 20
+    },
+    {
+     "id": 50547583,
+     "title": "F-22 新一代微型数据传输卡（mDTC）采购公告",
+     "title_en": "F-22 Next-Generation micro–Data Transfer Cartridge (mDTC)",
+     "url": "https://sam.gov/workspace/contract/opp/8948e8601e964c6aba9c801eee16b1be/view",
+     "hn": "https://news.ycombinator.com/item?id=50547583",
+     "points": 140,
+     "comments": 104
+    },
+    {
+     "id": 50544821,
+     "title": "Show HN：Type Fighter 2",
+     "title_en": "Show HN: Type Fighter 2",
+     "url": "https://typefighter2.com/",
+     "hn": "https://news.ycombinator.com/item?id=50544821",
+     "points": 125,
+     "comments": 56
+    },
+    {
+     "id": 50548991,
+     "title": "CrossPoint Reader",
+     "title_en": "CrossPoint Reader",
+     "url": "https://crosspointreader.com",
+     "hn": "https://news.ycombinator.com/item?id=50548991",
+     "points": 95,
+     "comments": 49
+    },
+    {
+     "id": 50541550,
+     "title": "2026 年 H-1B 相关行政措施 [PDF]",
+     "title_en": "H-1B Executive Actions in 2026 [pdf]",
+     "url": "https://www.everycrsreport.com/files/2026-10-14_IN12747_fcb1389788aa7b9102b795882af042e85d20532c.pdf",
+     "hn": "https://news.ycombinator.com/item?id=50541550",
+     "points": 41,
+     "comments": 64
+    },
+    {
+     "id": 50546253,
+     "title": "荷兰抵制美国收紧半导体出口管制的「不可接受」要求",
+     "title_en": "Dutch resist 'unacceptable' US bid to tighten semiconductor export controls",
+     "url": "https://www.politico.eu/article/dutch-resist-unacceptable-us-bid-to-tighten-semiconductor-export-controls-asml/",
+     "hn": "https://news.ycombinator.com/item?id=50546253",
+     "points": 33,
+     "comments": 32
+    },
+    {
+     "id": 50538942,
+     "title": "英伟达董事长称董事会无意让黄仁勋复任 CEO",
+     "title_en": "Nvidia Chair Harvey Jones says board doesn't intend to reinstate Huang as CEO",
+     "url": "https://www.cnbc.com/2026/11/17/nvidia-nvda-earnings-report-q3-2027.html",
+     "hn": "https://news.ycombinator.com/item?id=50538942",
+     "points": 55,
+     "comments": 45
+    },
+    {
+     "id": 50547901,
+     "title": "Anthropic 上市后亚马逊和谷歌将合计持有近 30% 股份",
+     "title_en": "Amazon and Google will together own nearly 30% of Anthropic after its IPO",
+     "url": "https://techcrunch.com/2026/11/17/amazon-and-google-will-together-own-nearly-30-of-anthropic-after-its-ipo/",
+     "hn": "https://news.ycombinator.com/item?id=50547901",
+     "points": 45,
+     "comments": 0
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1891,
+    "comments": 1051,
+    "top_points": {
+     "id": 50542135,
+     "title": "面试 YC 创业公司 30 小时无偿干活，还被盗用 LinkedIn 账号",
+     "value": 487,
+     "comments": 125
+    },
+    "top_comments": {
+     "id": 50546914,
+     "title": "剑桥词典 2026 年度词：human（人）",
+     "value": 167
+    },
+    "top_brief": {
+     "id": 50547344,
+     "title": "报道称俄罗斯曾计划在波兰制造大规模伤亡袭击并嫁祸乌克兰",
+     "value": 341,
+     "comments": 155
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "pcarolan",
+  "id": 50540597,
+  "hn": "https://news.ycombinator.com/item?id=50540597",
+  "story_id": 50540178,
+  "story": "谷歌 AI 摘要让网站点击少了四成",
+  "zh": "对大多数问题，最好的产品就是直接给你答案。不过，「发现」的消亡值得哀悼。SEO 杀死了网页，AI 杀死了 SEO，如此循环……",
+  "en": "SEO killed the web, AI killed SEO, and so it goes…"
+ },
+ "stats": {
+  "snapshot": "2026-11-19T08:36:49+08:00",
+  "front_page_count": 90,
+  "with_numbers": 86,
+  "flagged_or_dupe": 4,
+  "top_points": {
+   "id": 50547374,
+   "title": "Nginx 曝两个可远程免认证执行代码的高危漏洞，最老的藏了 11 年",
+   "value": 1082,
+   "comments": 487
+  },
+  "top_comments": {
+   "id": 50542705,
+   "title": "AI 正在杀死 All About Berlin",
+   "value": 682
+  },
+  "second_comments": {
+   "id": 50540178,
+   "title": "随机实验：谷歌 AI 摘要让外部网站点击少了四成",
+   "value": 534
+  },
+  "over_500": 5,
+  "over_300": 12,
+  "over_100": 36,
+  "show_hn": 6,
+  "total_points": 12563,
+  "total_comments": 6769,
+  "hottest_ratio": {
+   "id": 50544261,
+   "title": "Codeberg.org 域名突然消失，整站无法访问",
+   "value": 1.0,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
