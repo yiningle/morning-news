@@ -1,0 +1,1313 @@
+{
+ "date": "2026-11-19",
+ "published_at": "2026-11-20T08:18:02+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-11-19",
+ "schema_version": 2,
+ "lead": {
+  "id": 50553843,
+  "title": "Anthropic 以每股 83 美元定价 IPO，11 月 19 日登陆纳斯达克",
+  "title_en": "Anthropic prices initial public offering",
+  "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+  "hn": "https://news.ycombinator.com/item?id=50553843",
+  "points": 411,
+  "comments": 773,
+  "summary": [
+   "Anthropic 宣布，其 A 类普通股首次公开发行定价为每股 83.00 美元，共发行 9.8 亿股，其中 956,351,354 股由公司出售，23,648,646 股由部分现有股东出售（这部分收入不归公司）。股票预计 11 月 19 日在纳斯达克全球精选市场挂牌，代码「ANT」，发行预计 11 月 20 日完成交割；承销商另有 30 天内再认购最多 1.47 亿股的选择权。",
+   "美国证监会已于 11 月 18 日宣布注册声明生效，招股书可向高盛和摩根士丹利索取。同日另一帖「Anthropic 的纳斯达克首秀」拿下当天最高的 836 点赞和 1599 条评论，这篇定价公告则有 773 条评论，排在第二。",
+   "评论区两极分化：有人把 Anthropic 和 OpenAI 比作 AI 时代的 AltaVista，「先发但没有护城河」；有人惊叹一家 2021 年成立的公司上市即达 1.5 万亿美元市值；也有人认为它眼下确实把所有对手甩在了身后。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "throwa356262",
+    "stance": "泡沫论",
+    "zh": "还记得互联网泡沫吗？还记得 AltaVista、pets.com 这些公司吗？Anthropic 和 OpenAI 就是 AI 时代的 AltaVista：有先发优势，但没有真正的护城河，而且很会花钱。",
+    "en": "Anthropic and OpenAI are the AltaVista of the AI era.",
+    "hn": "https://news.ycombinator.com/item?id=50557483",
+    "id": 50557483,
+    "replies": 241
+   },
+   {
+    "user": "purple_ferret",
+    "stance": "估值震惊",
+    "zh": "一家 2021 年才成立的公司，在公开市场上就有 1.5 万亿美元市值，我完全惊呆了。作为对照，苹果直到 2020 年才达到这个估值。",
+    "en": "a valuation not achieved by Apple until 2020",
+    "hn": "https://news.ycombinator.com/item?id=50555009",
+    "id": 50555009,
+    "replies": 255
+   },
+   {
+    "user": "blfr",
+    "stance": "确实领先",
+    "zh": "大家说 Anthropic 没有护城河，听起来没错，但它同时又把所有人甩在了后面：谷歌最近在努力，但多年来显得很迷茫；OpenAI 目前比不上 Opus 5.5 和 Fable。",
+    "en": "OpenAI cannot match Opus 5.5 and Fable atm",
+    "hn": "https://news.ycombinator.com/item?id=50557528",
+    "id": 50557528,
+    "replies": 67
+   }
+  ],
+  "kicker": "要闻 · AI 资本",
+  "tag": "评论数第二"
+ },
+ "side": [
+  {
+   "id": 50554045,
+   "title": "我们需要聪明又上心的人",
+   "title_en": "We need smart people who give a shit",
+   "url": "https://violetpixel.com/blog/2026-11-17-we-need-smart-people-who-give-a-shit/",
+   "hn": "https://news.ycombinator.com/item?id=50554045",
+   "points": 773,
+   "comments": 389,
+   "summary": [
+    "作者曾在 Stripe 工作，以美国 ACH 转账系统为例：它古老、漏洞百出、背着历史包袱，却通常便宜可靠，原因是有一批「既懂系统又真心在乎」的人在修补、绕行和手工处理各种问题。",
+    "作者列举近一周微软 365、空管、美联航、NSA 网络、多家大银行和苹果的故障，认为共同点是这样的人不够了：管理层觉得生成式 AI 更便宜、不请假、不顶嘴，于是裁掉这些人，留下的人被要求去「照看 LLM」，离自己原本熟悉的系统越来越远。她把这比作资本主义「摸了热炉子」。",
+    "这是当天点赞第二多的帖子。评论区有人引用码头工人哲学家 Eric Hoffer 关于「维护能力」的名言；也有人认为一周内的故障扎堆不能证明是 AI 的锅，问题在于 AI 降低建造成本的速度远快于降低理解成本的速度。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "george_max",
+     "stance": "理解成本",
+     "zh": "几十年来一直有大型基础设施故障，一周内扎堆不能证明 AI 直接导致可靠性下降。我认为问题在于，AI 降低建造和修改系统成本的速度，远快于它降低理解这些系统成本的速度。",
+     "en": "AI is reducing the cost of building and modifying systems much faster than it's reducing the cost of understanding them",
+     "hn": "https://news.ycombinator.com/item?id=50554291",
+     "id": 50554291,
+     "replies": 8
+    },
+    {
+     "user": "Animats",
+     "stance": "维护之德",
+     "zh": "正如码头工人哲学家 Eric Hoffer 所说：「维护能力是检验一个社会活力与耐力的最佳标准。任何社会都能被一时鼓动去建造点什么，但日复一日把东西维护好的意愿和技能相当罕见。」",
+     "en": "It is the capacity for maintenance which is the best test for the vigor and stamina of a society.",
+     "hn": "https://news.ycombinator.com/item?id=50556965",
+     "id": 50556965,
+     "replies": 6
+    },
+    {
+     "user": "Marcuss2",
+     "stance": "职场现实",
+     "zh": "聪明又上心的人对大多数公司来说是负担。多数公司想要的是闭嘴听话的顺从员工。这就是今天的现实。",
+     "en": "Smart people who give a shit are a liability for most companies.",
+     "hn": "https://news.ycombinator.com/item?id=50557776",
+     "id": 50557776,
+     "replies": 23
+    }
+   ],
+   "kicker": "要闻 · 观点",
+   "tag": "点赞第二"
+  },
+  {
+   "id": 50519231,
+   "title": "车库门也开始给我推广告了",
+   "title_en": "Garage Door Spam",
+   "url": "https://blog.harrison.page/garage-door-spam/",
+   "hn": "https://news.ycombinator.com/item?id=50519231",
+   "points": 722,
+   "comments": 307,
+   "summary": [
+    "作者用 Chamberlain 的 myQ 车库门开关，原本只靠它的开关门通知来判断家里是否有异常；应用本身已经塞满广告，到 2026 年 10 月，连推送也变成了作者口中「完全不可接受」的东西。Chamberlain 早在 2023 年底就切断了第三方 API。",
+    "他买了两块约 62 美元、运行开源固件的 ratgdo32 控制板，接在开门器原有端子上，在本地说 LiftMaster 的 Security+ 2.0 协议，HomeKit 直接可用。他还借板子的 JSON 状态接口，用定时脚本在夜里检查车库门是否没关并发 Slack 提醒，复刻了父亲当年用水银开关做的提醒灯；如今一切本地运行、不经云端，通知还能显示是谁开的门。",
+    "评论区成了物联网吐槽大会：有人点名飞利浦 Hue 一打开就推销新灯，有人说 Chamberlain 在软件里限制每台开门器最多两个按钮，还有人提醒 RATGDO 是「Rage Against The Garage Door Opener」的缩写。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "wallst07",
+     "stance": "零容忍",
+     "zh": "我买的设备，配套应用居然放广告，这大概是我最讨厌的事。只要在生态里看到广告，我就卖掉、换掉或扔掉这台设备。",
+     "en": "Apps for devices that I purchased that show ads is probably one of my biggeset tech pet peeves.",
+     "hn": "https://news.ycombinator.com/item?id=50558842",
+     "id": 50558842,
+     "replies": 57
+    },
+    {
+     "user": "superultra",
+     "stance": "普通人做不到",
+     "zh": "这人能这么做很酷，但即使有 AI，这也是普通用户做不到的超能力。现在的营销推送真的很糟。",
+     "en": "even with AI, it’s a super power a normal user can’t pull off",
+     "hn": "https://news.ycombinator.com/item?id=50560311",
+     "id": 50560311,
+     "replies": 31
+    },
+    {
+     "user": "dietsche",
+     "stance": "软件限制",
+     "zh": "Chamberlain/myQ 的情况很糟，强烈建议完全避开。我最近装的开门器需要车库里有三个按钮，他们却在软件里限制每台开门器同时只能有两个！",
+     "en": "They limit the buttons in software",
+     "hn": "https://news.ycombinator.com/item?id=50560281",
+     "id": 50560281,
+     "replies": 52
+    }
+   ],
+   "kicker": "要闻 · 物联网"
+  },
+  {
+   "id": 50562113,
+   "title": "英国政府被迫承认曾向苹果发出秘密加密令",
+   "title_en": "UK government forced to admit it issued Apple a secret encryption order",
+   "url": "https://macanorak.com/uk-government-forced-to-admit-it-issued-apple-a-secret-encryption-order/",
+   "hn": "https://news.ycombinator.com/item?id=50562113",
+   "points": 466,
+   "comments": 201,
+   "summary": [
+    "据 Mac Anorak 报道，英国调查权力法庭（Investigatory Powers Tribunal）驳回了政府保密的请求，裁定政府必须承认曾依据《2016 年调查权力法》第 253 条向苹果发出「技术能力通知」（TCN）。此前政府一直对此「既不确认也不否认」。",
+    "事件可追溯到 2025 年 2 月《华盛顿邮报》披露英国要求苹果为加密 iCloud 数据提供「后门」，范围不限于英国用户。苹果没有削弱加密，而是停止向英国新用户提供「高级数据保护」（ADP），并表示不会在任何产品中加入后门或万能钥匙。文章说，这次裁决并不意味着公众知道了政府的全部要求，但连命令是否存在都要保密的做法遭到重大挫败。",
+    "评论区有人贴出判决原文；也有人认为苹果悄悄弱化了「连苹果也无法访问」的承诺；还有人质疑端到端加密本身是否可能被中间人攻击。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "natch",
+     "stance": "措辞变了",
+     "zh": "苹果已经以一种可以说具有误导性的方式大幅弱化了安全承诺。他们过去说谁都无法访问你的数据，连苹果也不能；现在说苹果无法访问你的数据。",
+     "en": "They used to say nobody can access your data, not even Apple.",
+     "hn": "https://news.ycombinator.com/item?id=50563168",
+     "id": 50563168,
+     "replies": 61
+    },
+    {
+     "user": "mahboi",
+     "stance": "公钥疑虑",
+     "zh": "我一直好奇他们能不能对自家的端到端加密做中间人攻击：一开始就给用户其他设备的假公钥。并没有公开的公钥账本让他们保持诚实。",
+     "en": "There's no public key ledger or anything to keep them honest.",
+     "hn": "https://news.ycombinator.com/item?id=50565512",
+     "id": 50565512,
+     "replies": 2
+    },
+    {
+     "user": "tavavex",
+     "stance": "监控之国",
+     "zh": "英国政府在大规模监控上相当疯狂。几乎每个国家都在扩张监控，但为什么按西方标准，英国的做法如此露骨、激进、毫不妥协？",
+     "en": "The UK's government is pretty insane when it comes to mass surveillance.",
+     "hn": "https://news.ycombinator.com/item?id=50565426",
+     "id": 50565426,
+     "replies": 2
+    }
+   ],
+   "kicker": "要闻 · 隐私"
+  },
+  {
+   "id": 50562262,
+   "title": "去你的 AI 安全护栏",
+   "title_en": "Fuck Your AI Safeguards",
+   "url": "https://ounapuu.ee/posts/2026/11/19/unsafeguards/",
+   "hn": "https://news.ycombinator.com/item?id=50562262",
+   "points": 457,
+   "comments": 186,
+   "summary": [
+    "作者是一名资深产品工程师，他让 Claude Code 检查自己项目里的低垂安全问题，找到一个一行就能修好的疏漏，随后却被「AI 安全护栏」拦下。官方的豁免申请要等好几个工作日、放弃数据保留豁免、提交身份证或护照，而且仍可能被拒。",
+    "他写道，罪犯不需要申请，直接用没有护栏的开源权重模型就行；最后他用欧盟托管的开源模型 GLM 5.3 复现并修复了漏洞。他讽刺 Anthropic「让世界变得更不安全」，并怀疑这是否是在 IPO 前推动监管、为自己筑护城河。",
+    "评论区多有共鸣：有人说 Claude 一个月前还愿意帮忙的事现在会拒绝；有人称 HuggingFace 遭攻击时闭源模型拒绝协助，靠的是 GLM-5；也有人直言这「跟保护费没什么两样」。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "SkyeCA",
+     "stance": "越收越紧",
+     "zh": "安全护栏就是闭源 AI 的未来，Claude 拒绝的任务越来越多，这给我敲响了警钟。闭源模型只会越来越受限。Claude 已经拒绝做一个月前还愿意帮我做的事。",
+     "en": "Claude already refuses to do things that it was fine assisting me with a month ago.",
+     "hn": "https://news.ycombinator.com/item?id=50565247",
+     "id": 50565247,
+     "replies": 34
+    },
+    {
+     "user": "nathanfig",
+     "stance": "真实后果",
+     "zh": "这在 HuggingFace 遭攻击时造成了真实后果：闭源模型拒绝帮忙，HuggingFace 是用 GLM-5 挫败那波蜂群攻击的。",
+     "en": "closed models refused to help, GLM-5 is what HuggingFace used to thwart the swarm",
+     "hn": "https://news.ycombinator.com/item?id=50562645",
+     "id": 50562645,
+     "replies": 12
+    },
+    {
+     "user": "CoolestBeans",
+     "stance": "保护费",
+     "zh": "这就是收保护费，或者说差不了多少。他们开创了超级黑客工具，证明了可行，现在有钱人都能自己造；而你想用他们的版本来自保，就得讨他们欢心还得付钱。",
+     "en": "It is a protection racket or as close as makes no difference.",
+     "hn": "https://news.ycombinator.com/item?id=50562568",
+     "id": 50562568,
+     "replies": 7
+    }
+   ],
+   "kicker": "要闻 · AI 安全"
+  },
+  {
+   "id": 50563066,
+   "title": "病毒注射让三名胰腺癌患者的肿瘤停止生长",
+   "title_en": "Pancreatic cancer halted by virus injection in three patients",
+   "url": "https://www.newscientist.com/article/2528235-pancreatic-cancer-halted-by-virus-injection-in-three-patients/",
+   "hn": "https://news.ycombinator.com/item?id=50563066",
+   "points": 482,
+   "comments": 70,
+   "summary": [
+    "《新科学家》报道（原文发表于 2026 年 5 月）：明尼苏达大学 Masato Yamamoto 团队开发的溶瘤腺病毒在美国一项早期安全性试验中，让三名胰腺癌患者的肿瘤停止生长和扩散。这种病毒经基因改造，只在 COX-2 酶水平高的肿瘤细胞内复制，使癌细胞破裂死亡；医生通过带超声探头、经喉咙送达胰腺的细管把它直接注入肿瘤。",
+    "Yamamoto 说，试验只用了目标剂量的十分之一，疗效好于预期；三人都还活着、病情稳定，接下来 15 名患者将接受更高剂量。悉尼一位胰腺外科医生提醒，试验没有对照组，肿瘤学史上满是在三期试验中消失的「早期信号」。",
+    "评论区充满亲人因胰腺癌离世的回忆，也有人试图找出具体是哪项临床试验。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "dopamean",
+     "stance": "亲历",
+     "zh": "我父亲 2016 年死于胰腺癌，那年 54 岁，我想我永远走不出来。一个原本健康的人开始不舒服，被误诊好几次，几个月后才被告知是胰腺癌，只剩 10 到 12 个月。看到这样的新闻让我对其他人充满希望。",
+     "en": "My father died from pancreatic cancer in 2016.",
+     "hn": "https://news.ycombinator.com/item?id=50566768",
+     "id": 50566768,
+     "replies": 17
+    },
+    {
+     "user": "tombert",
+     "stance": "过山车",
+     "zh": "我最喜欢的叔叔在我十几岁时死于胰腺癌。我记得当时查了胰腺癌的存活率，难过地发现几乎为零。",
+     "en": "My favorite uncle died from pancreatic cancer when I was a teenager.",
+     "hn": "https://news.ycombinator.com/item?id=50565680",
+     "id": 50565680,
+     "replies": 15
+    },
+    {
+     "user": "epistasis",
+     "stance": "找出处",
+     "zh": "我想弄清具体干预是什么、来自哪项临床试验，信息极其有限，还没找到。同时，这里有 25 项针对胰腺癌的溶瘤病毒疗法临床试验。",
+     "en": "I was trying to figure out what the actual intervention was",
+     "hn": "https://news.ycombinator.com/item?id=50565106",
+     "id": 50565106,
+     "replies": 2
+    }
+   ],
+   "kicker": "要闻 · 医学"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 2,
+   "stories": [
+    {
+     "id": 50563148,
+     "title": "Claude 解开黑洞物理的两个悬而未决问题",
+     "title_en": "Claude solves two open problems in the physics of black holes",
+     "url": "https://www.anthropic.com/research/claude-black-hole-physics",
+     "hn": "https://news.ycombinator.com/item?id=50563148",
+     "points": 347,
+     "comments": 155,
+     "summary": [
+      "Anthropic 宣布 Claude 解决了理论物理中两个与黑洞和量子引力有关的开放问题。其一：1983 年霍金和 Page 发现宇宙升温到一定程度会突变为黑洞（相变），但在时空失去确定形状的小尺度上，这一相变是突变还是平滑一直没人算出；2003 年有人列出了计算方法却从未完成，Claude 以一组自身副本组成的小型「研究组」完成计算，证明它是突变。",
+      "其二：在二维空间的简化宇宙里，物理学家自 2009 年起用「自举」方法给最轻黑洞的质量设上限；Claude Fable 5.2 从数值结果中发现了被忽视的规律，算出了最简单版本的精确上限并证明无法再降低。过程是研究员 Hongbin Chen 8 月的副业：Claude 先列出 22 个候选问题，各由一个智能体后台运行约六周；结果 9 月在 Lean 中形式化验证，论文由 Claude 写成、物理学家逐一核对主要结果。Anthropic 也说明，两项结果都不直接描述我们的宇宙，也没有实际应用。",
+      "评论区有人抱怨讨论几乎不涉及论文本身；有人批评「Claude 解决」是拟人化，追问提示词是什么；也有人粗读后认为第二个结果更酷。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "easterncalculus",
+       "stance": "跑题",
+       "zh": "目前 81 条评论（现在 82 条），我没找到一条真正在谈论文甚至原文的。我们这是在干什么？",
+       "en": "I haven't found one that is actually about the papers or even TFA.",
+       "hn": "https://news.ycombinator.com/item?id=50565922",
+       "id": 50565922,
+       "replies": 32
+      },
+      {
+       "user": "dap",
+       "stance": "拟人化",
+       "zh": "「Claude 解决」反映了对机器持续而有问题的拟人化。Claude 解决它是什么意思？提示词是什么？",
+       "en": "\"Claude solves\" feels reflective of the constant, problematic anthropomorphizing of the machine.",
+       "hn": "https://news.ycombinator.com/item?id=50565562",
+       "id": 50565562,
+       "replies": 8
+      },
+      {
+       "user": "chunky1994",
+       "stance": "第二个更酷",
+       "zh": "粗看一下，自举那篇论文很难读，但博文好读得多。第一个结果很酷（但基本是一项复杂易错的计算），第二个酷得多。",
+       "en": "the second is much much cooler",
+       "hn": "https://news.ycombinator.com/item?id=50563740",
+       "id": 50563740,
+       "replies": 8
+      }
+     ],
+     "kicker": "AI · 科研"
+    },
+    {
+     "id": 50553225,
+     "title": "用 LLM 辅助逆向工程：我的工作流",
+     "title_en": "LLM assisted reverse engineering",
+     "url": "https://www.slowchronicle.com/posts/llm-assisted-reverse-engineering",
+     "hn": "https://news.ycombinator.com/item?id=50553225",
+     "points": 296,
+     "comments": 76,
+     "summary": [
+      "作者自称软硬件破解二十年，2026 年用 AI 让流程大大加速。他主要用 DeepSeek v4.1 Flash（偶尔用 Codex），配合 Ghidra 加 MCP 桥接，以及 radare2 等命令行反汇编器。",
+      "他的流程是让智能体先判断二进制类型和平台、分析整体结构，并要求它把所有发现记录到 Markdown 文件里，既是自己的笔记，也能防止智能体在上下文压缩或交接后迷失。遇到反汇编解决不了的问题，就让智能体下断点调试、注入探针记日志、给它计算机操作或可编程的模拟器，并强迫它像做科学实验一样做「决定性实验」，避免原地打转。",
+      "评论区晒出各自用 AI 逆向的成果：两小时搞定监控摄像头的云插件，或零经验逆向一个废弃的音频插件；也有人抱怨模型的「猜测循环」，还有人说用 AI 就失去了逆向的乐趣。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Retr0id",
+       "stance": "猜测循环",
+       "zh": "这些「猜测循环」是我用 Claude 逆向时最烦的地方（主要用 Opus 4.8，因为新模型有限制）。",
+       "en": "These \"guessing loops\" are my main annoyance when REing with Claude",
+       "hn": "https://news.ycombinator.com/item?id=50554878",
+       "id": 50554878,
+       "replies": 7
+      },
+      {
+       "user": "saidinesh5",
+       "stance": "两小时",
+       "zh": "昨晚我用 Gemini 花了大约两小时，逆向了我家监控摄像头的云连接插件。",
+       "en": "i reverse engineered the cloud connection plugin to my cctv camera in about 2 hours with Gemini",
+       "hn": "https://news.ycombinator.com/item?id=50556237",
+       "id": 50556237,
+       "replies": 2
+      },
+      {
+       "user": "therepanic",
+       "stance": "过程才是乐趣",
+       "zh": "对我来说过程才重要，技能正是在过程中获得的，达成结果会带来巨大满足。用 AI 逆向，这两样我都得不到。",
+       "en": "When I use AI for reverse engineering, I get neither the former nor the latter.",
+       "hn": "https://news.ycombinator.com/item?id=50555496",
+       "id": 50555496,
+       "replies": 5
+      }
+     ],
+     "kicker": "AI · 工具"
+    },
+    {
+     "id": 50554374,
+     "title": "Gemini 4 Neon 看起来能和 Opus 5.5 一较高下",
+     "title_en": "Gemini 4 Neon looks like an Opus 5.5 competitor",
+     "url": "https://micjm.com/blog/gemini-4-neon-looks-like-a-top-model/",
+     "hn": "https://news.ycombinator.com/item?id=50554374",
+     "points": 250,
+     "comments": 78,
+     "summary": [
+      "作者所在的 Agent Duel 排行榜上，排除早期投票后 Gemini 4 Carbon 是最强模型，但它太慢。当天发布的 Gemini 4 Neon 基准成绩小幅提升，速度大幅提高：在 OpenRouter 上一度达到每秒 127 个 token，而 Carbon 只有 46。",
+      "作者对排行榜胜率建模，发现速度几乎和模型本身同样重要。假设 Neon 与 Carbon 能力相当、速度 127 tps，预测其 Elo 为 1066，略低于 Opus 5.5 的 1078；两者 Elo 差的 90% 区间为 -94 到 +68，预计 Neon 对 Opus 的胜率为 48.3%。",
+      "评论区有人吐槽「去预测一个已经发布的东西」，也有人说这是第一个让他觉得写代码好用的谷歌模型。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "wmf",
+       "stance": "方法论",
+       "zh": "对已经发布的东西做预测，是一种认识论上的罪行。",
+       "en": "Projecting something that is already out is an epistemic crime.",
+       "hn": "https://news.ycombinator.com/item?id=50554953",
+       "id": 50554953,
+       "replies": 7
+      },
+      {
+       "user": "bwat49",
+       "stance": "好评",
+       "zh": "目前印象很深，这是我用过的第一个写代码感觉不错的谷歌模型。",
+       "en": "this is the first google model I've used that feels good for coding",
+       "hn": "https://news.ycombinator.com/item?id=50554904",
+       "id": 50554904,
+       "replies": 6
+      },
+      {
+       "user": "theturtletalks",
+       "stance": "长任务存疑",
+       "zh": "我会在自己的「软件工厂」上试试。其他 Gemini 模型一开始和基准测试上看起来都不错，但在长时间会话和编排上表现不佳。",
+       "en": "on long-running sessions and orchestration, it’s fallen short",
+       "hn": "https://news.ycombinator.com/item?id=50555163",
+       "id": 50555163,
+       "replies": 18
+      }
+     ],
+     "kicker": "AI · 模型"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50562754,
+     "title": "Anthropic 纳斯达克首秀",
+     "title_en": "Anthropic’s Nasdaq debut",
+     "url": "https://www.reuters.com/business/finance/anthropics-historic-debut-put-ais-promise-peril-wall-st-test-2026-11-19/",
+     "hn": "https://news.ycombinator.com/item?id=50562754",
+     "points": 836,
+     "comments": 1599
+    },
+    {
+     "id": 50554009,
+     "title": "Palo Alto Networks 以 45 亿美元收购 Applied Compute",
+     "title_en": "Palo Alto Networks to Acquire Applied Compute for $4.5B",
+     "url": "https://investors.paloaltonetworks.com/news-releases/news-release-details/palo-alto-networks-acquire-applied-compute-bringing-secure-open",
+     "hn": "https://news.ycombinator.com/item?id=50554009",
+     "points": 80,
+     "comments": 26
+    },
+    {
+     "id": 50561508,
+     "title": "Pete Warden 谈本地 AI、开放模型、语音界面与硬件的未来",
+     "title_en": "Pete warden on local AI, open models, voice interfaces, the future of hardware",
+     "url": "https://thedataexchange.media/pete-warden-moonshine/",
+     "hn": "https://news.ycombinator.com/item?id=50561508",
+     "points": 207,
+     "comments": 189
+    },
+    {
+     "id": 50557885,
+     "title": "DeepMind 员工正在组建工会",
+     "title_en": "DeepMind Employees Are Unionising",
+     "url": "https://www.gdmunion.co.uk",
+     "hn": "https://news.ycombinator.com/item?id=50557885",
+     "points": 115,
+     "comments": 77
+    },
+    {
+     "id": 50554641,
+     "title": "AI 把多力多滋薯片袋认成枪，黑人高中生提起诉讼",
+     "title_en": "Black high school students sue after AI mistakes Doritos bag for gun",
+     "url": "https://www.lawyerscommittee.org/lawyers-committee-files-lawsuit-on-behalf-of-black-students-detained-and-searched-due-to-ai-alert-falsely-identifying-a-bag-of-chips-as-a-firearm/",
+     "hn": "https://news.ycombinator.com/item?id=50554641",
+     "points": 112,
+     "comments": 83
+    },
+    {
+     "id": 50562636,
+     "title": "Chrome 的 AI 功能浪费大量带宽",
+     "title_en": "Chrome AI features wasting much bandwidth",
+     "url": "https://perishablepress.com/chrome-ai-wasting-much-bandwidth/",
+     "hn": "https://news.ycombinator.com/item?id=50562636",
+     "points": 122,
+     "comments": 45
+    },
+    {
+     "id": 50558559,
+     "title": "两个匿名模型现身排行榜，都超过 Fable 5.2",
+     "title_en": "Two stealth models just appeared on the leaderboard, both ahead of Fable 5.2",
+     "url": "https://contralabs.com/frontierdesign",
+     "hn": "https://news.ycombinator.com/item?id=50558559",
+     "points": 119,
+     "comments": 42
+    },
+    {
+     "id": 50559140,
+     "title": "IEEE Spectrum：AI 超级智能之争存在严重缺陷",
+     "title_en": "The AI Superintelligence Debate Has Serious Flaws",
+     "url": "https://spectrum.ieee.org/ai-superintelligence-debate",
+     "hn": "https://news.ycombinator.com/item?id=50559140",
+     "points": 102,
+     "comments": 158
+    },
+    {
+     "id": 50555093,
+     "title": "AI 不会让你发财（2025）",
+     "title_en": "AI will not make you rich (2025)",
+     "url": "https://colossus.com/article/ai-will-not-make-you-rich/",
+     "hn": "https://news.ycombinator.com/item?id=50555093",
+     "points": 105,
+     "comments": 68
+    },
+    {
+     "id": 50562500,
+     "title": "AI 没有取代你的工作，而是把它变成低薪零工",
+     "title_en": "AI isn't replacing your job. It's turning it into low-paid gig work",
+     "url": "https://restofworld.org/2026/ai-jobs-skills-gig-work/",
+     "hn": "https://news.ycombinator.com/item?id=50562500",
+     "points": 103,
+     "comments": 52
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2794,
+    "comments": 2648,
+    "top_points": {
+     "id": 50562754,
+     "title": "Anthropic 纳斯达克首秀",
+     "value": 836,
+     "comments": 1599
+    },
+    "top_comments": {
+     "id": 50562754,
+     "title": "Anthropic 纳斯达克首秀",
+     "value": 1599
+    },
+    "top_brief": {
+     "id": 50562754,
+     "title": "Anthropic 纳斯达克首秀",
+     "value": 836,
+     "comments": 1599
+    }
+   }
+  },
+  {
+   "name": "开发",
+   "en": "Development",
+   "page": 3,
+   "stories": [
+    {
+     "id": 50556287,
+     "title": "Ruby2ßhell：一个「ß」字母引发的 Rails 免认证远程代码执行",
+     "title_en": "Ruby2ßhell: Pre-authentication RCE on stock Rails",
+     "url": "https://verialabs.com/ruby2shell/",
+     "hn": "https://news.ycombinator.com/item?id=50556287",
+     "points": 379,
+     "comments": 160,
+     "summary": [
+      "研究者披露 Ruby 字符串大小写转换中的一字节堆溢出：多数单字节编码没有大写的 ß，转大写时要写入两个字节「SS」，循环却只检查一个字节的边界；输出缓冲区按输入长度加 20 字节分配，输入 21 个 ß 就会溢出一个字节。这段代码存在于多种 ISO-8859 和 Windows-125x 编码中，自 Ruby 2.4.0 起就在，UTF-8 字符串不受影响。",
+      "Rails 和经典风格的 Sinatra 在默认配置下即可被无认证远程触发。修复版本为 Ruby 3.3.14、3.4.13、4.0.10；自带 Ruby 的产品中，GitLab、GitHub Enterprise Server 和 Chatwoot 当时仍无修复版，Mastodon、OpenProject、Discourse 已打补丁。作者表示一周后公开概念验证代码。",
+      "评论区认为最近这波 RCE 是 AI 包揽了把小溢出串成完整利用链的苦活；也有人提醒一周后才放 PoC 意义不大，AI 看了这篇文章几分钟就能写出来。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "cowlevel",
+       "stance": "内存安全",
+       "zh": "最近这波 RCE 似乎是有人找到更多单字节溢出之类的漏洞，却以 RCE 报告，因为 AI 能干完找出完整漏洞链的繁琐苦活。如果任何单字节溢出都能以极少人力变成 RCE，我们就别无选择，只能证明整个软件栈是内存安全的。",
+       "en": "we have no choice but to prove the whole software stack is memory safe",
+       "hn": "https://news.ycombinator.com/item?id=50558077",
+       "id": 50558077,
+       "replies": 64
+      },
+      {
+       "user": "Panzerschrek",
+       "stance": "成因猜测",
+       "zh": "我猜这个函数最初是在「大小写转换不影响长度」的假设下写的，后来加上 ß -> SS 转换时没有好好测试。",
+       "en": "later ß -> SS conversion has been added without proper testing",
+       "hn": "https://news.ycombinator.com/item?id=50557447",
+       "id": 50557447,
+       "replies": 11
+      },
+      {
+       "user": "GTP",
+       "stance": "PoC 之争",
+       "zh": "现在要么立刻公开 PoC，要么干脆不公开，因为把 AI 智能体指向这篇文章，几分钟内很可能就能写出一个。",
+       "en": "an AI agent pointed at this post would very likely be able to produce one in a few minutes",
+       "hn": "https://news.ycombinator.com/item?id=50559344",
+       "id": 50559344,
+       "replies": 0
+      }
+     ],
+     "kicker": "开发 · 安全"
+    },
+    {
+     "id": 50556533,
+     "title": "一台虚拟机跑 1500 万个 Web 服务器",
+     "title_en": "15M web servers on one VM – smoltcp, DPDK, AF_XDP",
+     "url": "https://kapteko.com/15-million-webservers/",
+     "hn": "https://news.ycombinator.com/item?id=50556533",
+     "points": 375,
+     "comments": 41,
+     "summary": [
+      "作者以「给地球上每人一台 Web 服务器，需求归零，网络安全问题就解决了」的玩笑开场，目标是在 10GB 内存、1 个 CPU 核的虚拟机上跑 1500 万个 Web 服务器。他从最简单的 C 语言 listen/accept/recv/send 服务器（约 6.5 万 RPS）讲起，一路撞上端口耗尽等内核限制。",
+      "最终方案是自制运行时：把 1500 万个服务器「访客」载入内存，拦截它们的系统调用，换成用户态的 smoltcp 网络栈，再接 DPDK 或 AF_XDP 收发包，由调度器逐个唤醒处理。内核网络栈在约 250 万个服务器时就耗尽内存；用 smoltcp 后每个空闲服务器约 620 字节、活跃的约 1KB，最终跑到 1600 万个，DPDK 性能最强，AF_XDP 紧随其后。",
+      "评论区几乎一边倒地称赞：技术硬核又幽默，「终于有一篇不是 AI 写的文章」。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "LetMeLogin",
+       "stance": "非 AI 文",
+       "zh": "读起来真舒服，终于有一篇好读、简单却超级技术、最重要的是不是 AI 写的文章。",
+       "en": "most importantly not written by AI",
+       "hn": "https://news.ycombinator.com/item?id=50556888",
+       "id": 50556888,
+       "replies": 1
+      },
+      {
+       "user": "101008",
+       "stance": "幽默感",
+       "zh": "技术层面很棒，但我也很喜欢它的幽默，让我想起 2005 年前后那些允许自己插科打诨的博客。",
+       "en": "I also enjoyed the humour a lot",
+       "hn": "https://news.ycombinator.com/item?id=50558646",
+       "id": 50558646,
+       "replies": 1
+      },
+      {
+       "user": "3abiton",
+       "stance": "配置之低",
+       "zh": "标题低估了这件事。我以为会是一台超强服务器，结果只有 10GB 内存，基本是 M4 Mac mini 的水平。",
+       "en": "The title is underselling the story.",
+       "hn": "https://news.ycombinator.com/item?id=50557301",
+       "id": 50557301,
+       "replies": 0
+      }
+     ],
+     "kicker": "开发 · 网络"
+    },
+    {
+     "id": 50558906,
+     "title": "「java4shell」漏洞早在 9 月就有人报告并附上修复",
+     "title_en": "Someone reported java4shell bug in September 2026",
+     "url": "https://github.com/openjdk/jdk/pull/32781",
+     "hn": "https://news.ycombinator.com/item?id=50558906",
+     "points": 347,
+     "comments": 90,
+     "summary": [
+      "这则帖子链接到 OpenJDK 在 GitHub 上的一个拉取请求：「8392044: AVX-512 Base64 解码器在短的带填充尾部时覆盖输出缓冲区」。页面显示它在 8 周无活动后被机器人标记，随后被关闭，有人留言追问为什么关了。",
+      "评论区挖出更多背景：PR 作者在 Adoptium 的 issue 里说，10 月 1 日收到 Oracle 邮件要求在获批前不要推进，10 月 28 日又说「已由 Oracle 接手」；有人发现 Oracle 最终合并的提交说明与这个 PR 一字不差；还有人指出该崩溃早在 6 月就有人报告，9 月被定位到 Base64。",
+      "讨论焦点转向：后来用 Codex 审计 JDK 的研究者，其模型是否读到了这份早先的报告；以及自动关闭机器人是否误事。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "black3r",
+       "stance": "来龙去脉",
+       "zh": "PR 讨论里引用的第一个 issue 说明了更多情况：PR 作者 10 月 1 日说「收到 Oracle 邮件，要求在获批前不要推进 PR」，10 月 28 日又说「已由 Oracle 接手，我们这边无需做什么」。",
+       "en": "Got an email from Oracle asking me to NOT proceed with a PR until receiving approval.",
+       "hn": "https://news.ycombinator.com/item?id=50562104",
+       "id": 50562104,
+       "replies": 17
+      },
+      {
+       "user": "InsidiousWombat",
+       "stance": "怪机器人",
+       "zh": "这很好地证明了自动关闭机器人是项目的毒瘤，只会让事情更糟。这就是一个附带修复的明确 bug，只需要有人认真看一眼。",
+       "en": "It was literal bug with provided fix.",
+       "hn": "https://news.ycombinator.com/item?id=50561212",
+       "id": 50561212,
+       "replies": 26
+      },
+      {
+       "user": "rzmmm",
+       "stance": "模型见过？",
+       "zh": "califio 说：「我把审计集中在 JIT 编译器、内建函数、广泛使用的 API 和密码学上。」也许只是巧合，但我赌第一个提 PR 的人也在用 Codex，模型接触过这个 bug 的细节。",
+       "en": "the model was exposed to the details of the bug",
+       "hn": "https://news.ycombinator.com/item?id=50561187",
+       "id": 50561187,
+       "replies": 10
+      }
+     ],
+     "kicker": "开发 · 安全"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50558533,
+     "title": "欧盟委员会如何为 4 万多名员工推行 Matrix",
+     "title_en": "How the European Commission rolled out Matrix to more than 40k staff",
+     "url": "https://element.io/blog/how-the-european-commission-rolled-out-matrix-to-more-than-40-000-staff/",
+     "hn": "https://news.ycombinator.com/item?id=50558533",
+     "points": 649,
+     "comments": 310
+    },
+    {
+     "id": 50554038,
+     "title": "Ruby 正则与字符串大小写转换的多个漏洞",
+     "title_en": "Multiple vulnerabilities in Regexp and String case conversion",
+     "url": "https://www.ruby-lang.org/en/news/2026/11/18/multiple-vulnerabilities-in-regexp-and-string/",
+     "hn": "https://news.ycombinator.com/item?id=50554038",
+     "points": 335,
+     "comments": 129
+    },
+    {
+     "id": 50557537,
+     "title": "Zerodha：基于 SQLite 的分布式高性能 Blob 存储",
+     "title_en": "Distributed, high-performance blob storage on SQLite",
+     "url": "https://zerodha.tech/blog/high-performance-distributed-blob-storage/",
+     "hn": "https://news.ycombinator.com/item?id=50557537",
+     "points": 251,
+     "comments": 68
+    },
+    {
+     "id": 50557870,
+     "title": "PHP 8.6 新特性",
+     "title_en": "What's New in PHP 8.6",
+     "url": "https://www.php.net/releases/8.6/en.php",
+     "hn": "https://news.ycombinator.com/item?id=50557870",
+     "points": 269,
+     "comments": 126
+    },
+    {
+     "id": 50557661,
+     "title": "别买内存，压缩就行",
+     "title_en": "Do not buy RAM, compress",
+     "url": "https://curiousbits.nl/blog/do-not-buy-ram-compress/",
+     "hn": "https://news.ycombinator.com/item?id=50557661",
+     "points": 240,
+     "comments": 201
+    },
+    {
+     "id": 50560357,
+     "title": "PostgreSQL 19 发布",
+     "title_en": "PostgreSQL 19 Released",
+     "url": "https://www.postgresql.org/about/news/postgresql-19-released-3449/",
+     "hn": "https://news.ycombinator.com/item?id=50560357",
+     "points": 84,
+     "comments": 7
+    },
+    {
+     "id": 50525260,
+     "title": "从 MyQ 车库门开关中提取 AES 密钥，让它离线时不再重启",
+     "title_en": "Dumping an AES key from a MyQ garage opener to stop rebooting when offline",
+     "url": "https://kusha.me/blog/stop_myq_homebridge_819lmb_rebooting/",
+     "hn": "https://news.ycombinator.com/item?id=50525260",
+     "points": 158,
+     "comments": 66
+    },
+    {
+     "id": 50560461,
+     "title": "OpenAI 仍有 WebRTC 问题",
+     "title_en": "OpenAI still has a WebRTC Problem",
+     "url": "https://moq.dev/blog/webrtc-is-still-the-problem/",
+     "hn": "https://news.ycombinator.com/item?id=50560461",
+     "points": 91,
+     "comments": 26
+    },
+    {
+     "id": 50562320,
+     "title": "Launch HN：Onlook（YC W25），面向设计师的开源开发工具",
+     "title_en": "Launch HN: Onlook (YC W25) – An open-source developer tool for designers",
+     "url": "https://github.com/onlook-dev/onlook/",
+     "hn": "https://news.ycombinator.com/item?id=50562320",
+     "points": 82,
+     "comments": 66
+    },
+    {
+     "id": 50544168,
+     "title": "C 语言的指定初始化器让我们有了具名参数",
+     "title_en": "C's designated initializers give us named arguments",
+     "url": "https://quuxplusone.github.io/blog/2026/11/16/named-arguments-in-c/",
+     "hn": "https://news.ycombinator.com/item?id=50544168",
+     "points": 65,
+     "comments": 45
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 3325,
+    "comments": 1335,
+    "top_points": {
+     "id": 50558533,
+     "title": "欧盟委员会如何为 4 万多名员工推行 Matrix",
+     "value": 649,
+     "comments": 310
+    },
+    "top_comments": {
+     "id": 50558533,
+     "title": "欧盟委员会如何为 4 万多名员工推行 Matrix",
+     "value": 310
+    },
+    "top_brief": {
+     "id": 50558533,
+     "title": "欧盟委员会如何为 4 万多名员工推行 Matrix",
+     "value": 649,
+     "comments": 310
+    }
+   }
+  },
+  {
+   "name": "科学",
+   "en": "Science & Tech",
+   "page": 4,
+   "stories": [
+    {
+     "id": 50560955,
+     "title": "IEA：建筑制冷的能源需求首次超过供暖",
+     "title_en": "Cooling buildings is overtaking heating them as an energy need, IEA says",
+     "url": "https://maccus.fr/en/cooling-overtaking-heating/",
+     "hn": "https://news.ycombinator.com/item?id=50560955",
+     "points": 148,
+     "comments": 103,
+     "summary": [
+      "国际能源署（IEA）11 月 19 日发布《2026 年世界能源展望》，执行摘要写道：「在能源史上第一次，建筑的制冷需求正在超过供暖需求。」推动因素是收入上升和气温上升：在中国以外的新兴和发展中经济体，85% 的家庭每年至少有一段时间暴露在高温下，而拥有空调的不到五分之一。",
+      "在 IEA 主要情景中，到 2035 年全球制冷用电将增加 1700 太瓦时，约相当于印度今天的总用电量；建筑制冷需求自 2015 年以来已增长 55%，在所有情景中都占能源服务增长的四成以上。欧洲热浪也让制冷成为新的需求来源；报告指出 2026 年 8 月是有记录以来全球最热的月份。",
+      "评论区有人认为这是好事，因为制冷需求与太阳能发电曲线更吻合；也有人从卡诺效率出发，认为空调能效还有巨大提升空间。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "nikodunk",
+       "stance": "对上光伏",
+       "zh": "我认为这还算不错：用热泵或空调制冷，需求曲线和太阳能发电曲线的重合度比供暖好。",
+       "en": "overlaps the demand curve with the solar production curve better than heating does",
+       "hn": "https://news.ycombinator.com/item?id=50562783",
+       "id": 50562783,
+       "replies": 8
+      },
+      {
+       "user": "torginus",
+       "stance": "晒太阳就有电",
+       "zh": "好消息是，通常只有出太阳时才热，空调基本可以靠太阳能板免费运行。",
+       "en": "AC units can be run from solar panels essentially for free",
+       "hn": "https://news.ycombinator.com/item?id=50562134",
+       "id": 50562134,
+       "replies": 30
+      },
+      {
+       "user": "londons_explore",
+       "stance": "卡诺差距",
+       "zh": "室内 20°C、室外 30°C 时，按卡诺定律制冷系数应能达到 30 倍左右，而真实空调只有 3 左右。这在我看来是巨大的工程机会。",
+       "en": "real airconditioners get a coefficient of more like 3",
+       "hn": "https://news.ycombinator.com/item?id=50563338",
+       "id": 50563338,
+       "replies": 3
+      }
+     ],
+     "kicker": "科学 · 能源"
+    },
+    {
+     "id": 50557716,
+     "title": "固态硬盘价格可能在 2027 年下半年开始回落",
+     "title_en": "SSD prices may begin to decline in the latter half of 2027",
+     "url": "https://www.drivevault.io/blog/when-will-hard-drive-prices-come-down.html",
+     "hn": "https://news.ycombinator.com/item?id=50557716",
+     "points": 295,
+     "comments": 225,
+     "summary": [
+      "存储软件商 DriveVault 的博客汇总分析机构与厂商说法：TrendForce 预计 NAND 短缺在 2027 年下半年结束，固态硬盘会先松动，但会是缓慢下滑而非暴跌；机械硬盘要更久，大概到 2028 年，因为希捷大部分数据中心产能已分配到 2028 年，希捷和西部数据都没有新建工厂。",
+      "文章引用德国 ComputerBase 的追踪：危机一年后，机械硬盘均价比 2025 年 9 月高 134%，固态硬盘高 129%，均创新高。建议工作需要就现在买，投机性购买则等待并优先考虑固态硬盘。（文章中夹带了自家产品推广。）",
+      "评论区不少人不买账：有人说这只是猜测、几乎没有硬事实，需求可能随投资退潮骤降；也有人从美光市盈率不到 10 推断市场已在预期利润崩塌。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "imeanwhatdoikno",
+       "stance": "市场信号",
+       "zh": "看看美光这类公司的估值就很清楚，市场预期它们的利润会崩塌。它们增长快得离谱，同比超过 300%，环比超过 40%，市盈率却不到 10。",
+       "en": "it's pretty clear that the market expects a collapse in their profits",
+       "hn": "https://news.ycombinator.com/item?id=50558818",
+       "id": 50558818,
+       "replies": 68
+      },
+      {
+       "user": "ROOFLES",
+       "stance": "全是猜测",
+       "zh": "全是猜测，几乎没有硬事实。如果投资者撤离、数据中心建不起来，需求可能骤降。这正是没人扩建产能的原因。",
+       "en": "All just speculation and almost no hard facts.",
+       "hn": "https://news.ycombinator.com/item?id=50558001",
+       "id": 50558001,
+       "replies": 42
+      },
+      {
+       "user": "jpgvm",
+       "stance": "一厢情愿",
+       "zh": "一厢情愿。反对数据中心的声音远没普遍到能压低需求，新增供应也远远不够。",
+       "en": "Wishful thinking.",
+       "hn": "https://news.ycombinator.com/item?id=50558036",
+       "id": 50558036,
+       "replies": 18
+      }
+     ],
+     "kicker": "科技 · 硬件"
+    },
+    {
+     "id": 50548808,
+     "title": "教机器人雕刻大理石",
+     "title_en": "Teaching robots to carve marble sculptures",
+     "url": "https://eleanorwiesler.com/blog/robotic-stone-carving/",
+     "hn": "https://news.ycombinator.com/item?id=50548808",
+     "points": 116,
+     "comments": 88,
+     "summary": [
+      "Monumental Labs 的作者介绍，他们让 KUKA KR240 工业机器人实现了首个端到端自主的数控石雕系统：给一个 3D 模型和一块大理石，无需人工介入就能雕出成品，之后再由手工团队精修表面。",
+      "过去他们每件作品都要数字制造团队花几周到几个月，在 PowerMill 等 CAM 软件里手工编程刀路；新系统能无人监督地把模型转成数百万个刀路点和刀具姿态，并完成运动学与仿真，「每天能编程多少件雕塑只取决于算力」。他们把目标称为让石雕「复活」而非取代工匠。",
+      "评论区质疑「教」在哪里，看起来就是标准 CAM 流程；一位雕塑老师则感叹北美日常生活中几乎没有好雕塑；也有人担心大理石雕塑泛滥后会被视为廉价品。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "voidUpdate",
+       "stance": "质疑",
+       "zh": "到底「教」了什么？在我看来就是相当标准的 CAM 流程……",
+       "en": "It looks like a fairly standard CAM pipeline to me...",
+       "hn": "https://news.ycombinator.com/item?id=50559305",
+       "id": 50559305,
+       "replies": 11
+      },
+      {
+       "user": "barbariangrunge",
+       "stance": "雕塑老师",
+       "zh": "我是雕塑老师，教陶土和油泥，大理石很吓人。一方面艺术家亲手做的雕塑有特别之处；另一方面，在北美我们日常身边几乎没有酷的雕塑。",
+       "en": "in north america we have almost no cool sculpture around us day to day",
+       "hn": "https://news.ycombinator.com/item?id=50561190",
+       "id": 50561190,
+       "replies": 6
+      },
+      {
+       "user": "pwmglenn",
+       "stance": "贬值",
+       "zh": "很酷，但这有点贬低了价值。我能想象将来大理石雕塑因为随处可见而被看作俗气。",
+       "en": "I could imagine a future where marble sculptures are seen as trashy",
+       "hn": "https://news.ycombinator.com/item?id=50559449",
+       "id": 50559449,
+       "replies": 13
+      }
+     ],
+     "kicker": "科技 · 机器人"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50559179,
+     "title": "用引力实现无法屏蔽的通信",
+     "title_en": "Unblockable communication with gravity",
+     "url": "https://www.science.org/doi/10.1126/sciadv.aee0802",
+     "hn": "https://news.ycombinator.com/item?id=50559179",
+     "points": 137,
+     "comments": 50
+    },
+    {
+     "id": 50542441,
+     "title": "蚊子成了拉达克的新「游客」",
+     "title_en": "Mosquitoes are Ladakh's latest tourists",
+     "url": "https://ruralindiaonline.org/article/mosquitoes-are-ladakh-s-latest-tourists",
+     "hn": "https://news.ycombinator.com/item?id=50542441",
+     "points": 64,
+     "comments": 30
+    },
+    {
+     "id": 50546221,
+     "title": "各火箭制造商每年送入轨道的质量",
+     "title_en": "Mass launched to orbit each year by rocket builder",
+     "url": "https://www.kadoa.com/companies/insights/spacex-europe-payload",
+     "hn": "https://news.ycombinator.com/item?id=50546221",
+     "points": 80,
+     "comments": 88
+    },
+    {
+     "id": 50518303,
+     "title": "Axelera Titania 为存内计算带来原生 FP8 与 FP4",
+     "title_en": "Axelera Titania Brings Native FP8 and FP4 to In-Memory Compute",
+     "url": "https://futurumgroup.com/insights/axelera-titania-brings-native-fp8-and-fp4-to-in-memory-compute/",
+     "hn": "https://news.ycombinator.com/item?id=50518303",
+     "points": 46,
+     "comments": 2
+    },
+    {
+     "id": 50512280,
+     "title": "来自汤加的第一个 ping（1997）",
+     "title_en": "The first ping from Tonga (1997)",
+     "url": "https://colo.to/firstping.html",
+     "hn": "https://news.ycombinator.com/item?id=50512280",
+     "points": 71,
+     "comments": 12
+    },
+    {
+     "id": 50553852,
+     "title": "遍历性是什么意思？",
+     "title_en": "Ergodicity: What Does It Mean?",
+     "url": "https://leonlins.com/writing/ergodicity",
+     "hn": "https://news.ycombinator.com/item?id=50553852",
+     "points": 36,
+     "comments": 1
+    },
+    {
+     "id": 50528119,
+     "title": "MIT 公开课：如何用 CAD 画几乎任何东西",
+     "title_en": "How to CAD Almost Anything",
+     "url": "https://ocw.mit.edu/courses/res-16-002-how-to-cad-almost-anything-january-iap-2024/",
+     "hn": "https://news.ycombinator.com/item?id=50528119",
+     "points": 76,
+     "comments": 13
+    },
+    {
+     "id": 50523168,
+     "title": "无线电波与电离层（1999）[PDF]",
+     "title_en": "Radio Waves and the Ionosphere (1999) [pdf]",
+     "url": "https://www.arrl.org/files/file/Technology/pdf/119962.pdf",
+     "hn": "https://news.ycombinator.com/item?id=50523168",
+     "points": 11,
+     "comments": 0
+    }
+   ],
+   "stats": {
+    "items": 11,
+    "points": 1080,
+    "comments": 612,
+    "top_points": {
+     "id": 50557716,
+     "title": "固态硬盘价格可能在 2027 年下半年开始回落",
+     "value": 295,
+     "comments": 225
+    },
+    "top_comments": {
+     "id": 50557716,
+     "title": "固态硬盘价格可能在 2027 年下半年开始回落",
+     "value": 225
+    },
+    "top_brief": {
+     "id": 50559179,
+     "title": "用引力实现无法屏蔽的通信",
+     "value": 137,
+     "comments": 50
+    }
+   }
+  },
+  {
+   "name": "文化",
+   "en": "Culture",
+   "page": 5,
+   "stories": [
+    {
+     "id": 50560822,
+     "title": "Lastbook：生存与重建社会所需的一切",
+     "title_en": "Everything you need to survive and rebuild society",
+     "url": "https://lastbook.org/",
+     "hn": "https://news.ycombinator.com/item?id=50560822",
+     "points": 351,
+     "comments": 186,
+     "summary": [
+      "Lastbook 是一款免费、开源、离线的桌面应用（Mac、Windows、Linux，不支持手机平板），内容涵盖急救与健康、水的寻找与净化、种植和保存食物、工具与修缮、发电与电工基础、灾害与撤离计划，来自 Hesperian、世界卫生组织和红十字会等出版的指南。",
+      "资料库分小（7.7GB）、中（67.5GB）和全量（约 388GB）三档，可选约 17GB 的本地 Gemma 模型，用来依据资料库回答问题并附上来源；装好后阅读、地图、视频和 AI 都能离线使用。官网说明它未经临床审核，不能替代专业救治，并带有装备的联盟推广链接。",
+      "评论区有人说关键是动手练习；有人希望能直接下载 PDF 放进电子墨水阅读器，批评不做手机版；也有人觉得末日里用耗电的 AI 不现实，宁可用 Kiwix。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "edent",
+       "stance": "要 PDF",
+       "zh": "似乎没办法直接下载 PDF，而那对电子墨水设备最有用（续航长、便宜，用太阳能或手摇就能充电）。不做手机版是个疏忽，紧急情况下给手机供电比给笔记本供电容易。",
+       "en": "No mobile version is an oversight.",
+       "hn": "https://news.ycombinator.com/item?id=50562587",
+       "id": 50562587,
+       "replies": 21
+      },
+      {
+       "user": "pickleglitch",
+       "stance": "AI 耗电",
+       "zh": "听起来就像 Project NOMAD。我个人不喜欢在末日场景里用耗电的 AI，那时电力很可能紧缺。我只搭了个简单的 Kiwix 服务器。",
+       "en": "I don't like the idea of using a power-hungry AI in a doomsday scenario",
+       "hn": "https://news.ycombinator.com/item?id=50561616",
+       "id": 50561616,
+       "replies": 13
+      },
+      {
+       "user": "ferguess_k",
+       "stance": "要动手",
+       "zh": "我觉得关键是每样都要实际练习。我很不擅长体力活，很多杂工觉得简单的事我都做不了。",
+       "en": "I think the key is actually to practice everything.",
+       "hn": "https://news.ycombinator.com/item?id=50561815",
+       "id": 50561815,
+       "replies": 26
+      }
+     ],
+     "kicker": "文化 · 工具"
+    },
+    {
+     "id": 50564159,
+     "title": "98% 的老虎机：付费广告如何变成一种抽成税",
+     "title_en": "The 98% Slot Machine: How Paid Advertising Became an Extraction Tax",
+     "url": "https://globalcommercegraph.com/writing/the-ninety-eight-percent-slot-machine",
+     "hn": "https://news.ycombinator.com/item?id=50564159",
+     "points": 176,
+     "comments": 90,
+     "summary": [
+      "文章把 Google Ads 和 Meta 的投放比作返还率 92% 到 98% 的老虎机：创始人花 420 美元、赚回约 410 美元，仪表盘却用一串绿色指标把亏损包装成「差一点就回本」，于是继续充值。",
+      "作者认为竞价机制天生要把广告主的利润压到零：任何带来额外利润的关键词或人群都会被竞争者抬价，半年内这部分利润就转进了平台财报。他主张跳出这个「赌场」，转向行业协会、供应链和推荐网络等长期商业关系（文末是作者公司的产品介绍）。",
+      "评论区多不认同这个类比：赌场直接与顾客对赌，而广告是双方都能获益的市场；也有人认为文章是 AI 写的。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "hatthew",
+       "stance": "类比不成立",
+       "zh": "这个类比根本不成立。赌场被设计成庄家赢、顾客输，因为赌场直接给顾客付钱。广告竞价完全不同，它只是一个市场。",
+       "en": "This analogy doesn't hold at all.",
+       "hn": "https://news.ycombinator.com/item?id=50565473",
+       "id": 50565473,
+       "replies": 38
+      },
+      {
+       "user": "PotenRoyal",
+       "stance": "非零和",
+       "zh": "赌博是零和游戏，广告不是。双方都有从交易中获益的空间。",
+       "en": "Advertising is not a zero sum game.",
+       "hn": "https://news.ycombinator.com/item?id=50565216",
+       "id": 50565216,
+       "replies": 12
+      },
+      {
+       "user": "bearjaws",
+       "stance": "确实更榨取",
+       "zh": "我不太认同，如果广告没用就没人投了。但它确实变得越来越榨取。以前你拍出一支好电视广告就能获得惊人回报，聪明会得到奖励。",
+       "en": "there is something to be said about how extractive it has become",
+       "hn": "https://news.ycombinator.com/item?id=50566036",
+       "id": 50566036,
+       "replies": 5
+      }
+     ],
+     "kicker": "文化 · 商业"
+    },
+    {
+     "id": 50554010,
+     "title": "软件公司正在试图杀死家用计算？",
+     "title_en": "Software companies are trying to kill home computing?",
+     "url": "https://lateblt.livejournal.com/526188.html",
+     "hn": "https://news.ycombinator.com/item?id=50554010",
+     "points": 175,
+     "comments": 142,
+     "summary": [
+      "作者认为硬件公司卖的是会磨损的实物，有动力做好产品赢得回头客；软件却不会磨损，好软件只会被买一次，而且常用软件早已有免费开源版本。因此软件公司没有新东西可卖，只能转向订阅、云端，甚至「让用户不满意到不得不再买别的」。",
+      "他还指责硬件厂商只为面向企业、再阉割给家庭用户的操作系统提供驱动，使用户难以改用「真正的操作系统」，等于和软件公司一起「对你使用计算机的能力发动战争」。",
+      "评论区有人认为发烧友 DIY 电脑正在消亡，游戏会转向云串流；也有人说普通人有手机就够了；还有人观察到美国出现了改用 Linux Mint 的草根潮。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "EvanAnderson",
+       "stance": "发烧友退场",
+       "zh": "我认为发烧友计算正在消亡。高价导致市场萎缩，需求萎缩又推高价格，形成恶性循环。游戏会转向实时串流。",
+       "en": "I think enthusiast computing is dying.",
+       "hn": "https://news.ycombinator.com/item?id=50554476",
+       "id": 50554476,
+       "replies": 52
+      },
+      {
+       "user": "ivanjermakov",
+       "stance": "手机够了",
+       "zh": "除了玩家、学生和程序员，谁还买家用电脑？对普通大众来说智能手机就够了。",
+       "en": "For general public smartphone does the job.",
+       "hn": "https://news.ycombinator.com/item?id=50554470",
+       "id": 50554470,
+       "replies": 40
+      },
+      {
+       "user": "hn_submit",
+       "stance": "转投 Linux",
+       "zh": "据我了解，美国出现了一股桌面 Linux 草根运动，因为消费者保护几乎不存在。很多人受够了，正离开 Windows 转向 Linux Mint。",
+       "en": "Vendor lock-in will fail.",
+       "hn": "https://news.ycombinator.com/item?id=50556075",
+       "id": 50556075,
+       "replies": 0
+      }
+     ],
+     "kicker": "文化 · 观点"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50547048,
+     "title": "任天堂把 Picofly 固件从 GitHub 下架 [视频]",
+     "title_en": "Nintendo takes Picofly firmware down from GitHub [video]",
+     "url": "https://www.youtube.com/watch?v=-TLCGUpoD6c",
+     "hn": "https://news.ycombinator.com/item?id=50547048",
+     "points": 249,
+     "comments": 95
+    },
+    {
+     "id": 50536950,
+     "title": "俄勒冈一家图书馆弃用杜威十进分类法，重新点燃读者对书的热情",
+     "title_en": "An Oregon library ditched Dewey Decimal and got people excited about books again",
+     "url": "https://www.fastcompany.com/91597520/oregon-library-ditched-dewey-decimal-wayfinding-system",
+     "hn": "https://news.ycombinator.com/item?id=50536950",
+     "points": 183,
+     "comments": 138
+    },
+    {
+     "id": 50559719,
+     "title": "在浏览器里用一张 A4 纸做 8 页折叠小志",
+     "title_en": "Making 8-page foldable zines from a single A4 sheet in the browser",
+     "url": "https://krthr.co/paper-folds-and-whats-new-in-fanzines-app/",
+     "hn": "https://news.ycombinator.com/item?id=50559719",
+     "points": 235,
+     "comments": 51
+    },
+    {
+     "id": 50554935,
+     "title": "浏览器里的《虚幻竞技场 2004》",
+     "title_en": "Unreal Tournament 2004 in the Browser",
+     "url": "https://ut2004.dev/",
+     "hn": "https://news.ycombinator.com/item?id=50554935",
+     "points": 184,
+     "comments": 90
+    },
+    {
+     "id": 50561515,
+     "title": "Show HN：Cornhole News，仿 Hacker News 的美国中西部新闻站",
+     "title_en": "Show HN: Cornhole News – A Hacker News inspired site for news across the Midwest",
+     "url": "https://cornholenews.news",
+     "hn": "https://news.ycombinator.com/item?id=50561515",
+     "points": 179,
+     "comments": 88
+    },
+    {
+     "id": 50560795,
+     "title": "德国和奥地利呼吁由欧洲掌控 TikTok",
+     "title_en": "Germany and Austria Call for European Control of TikTok",
+     "url": "https://www.techcentral.ie/germany-and-austria-call-for-european-control-of-tiktok/",
+     "hn": "https://news.ycombinator.com/item?id=50560795",
+     "points": 112,
+     "comments": 125
+    },
+    {
+     "id": 50561170,
+     "title": "如何调制书写《哈姆雷特》和《独立宣言》的墨水",
+     "title_en": "How to Make the Ink Used to Write Hamlet and the Declaration of Independence",
+     "url": "https://lithub.com/how-to-make-the-ink-used-to-write-hamlet-the-declaration-of-independence-and-beethovens-fifth/",
+     "hn": "https://news.ycombinator.com/item?id=50561170",
+     "points": 68,
+     "comments": 28
+    },
+    {
+     "id": 50546495,
+     "title": "《万智牌》中的指数行为",
+     "title_en": "Exponential Behavior in Magic: The Gathering",
+     "url": "https://levineuwirth.org/essays/exponential-magic/",
+     "hn": "https://news.ycombinator.com/item?id=50546495",
+     "points": 67,
+     "comments": 54
+    },
+    {
+     "id": 50562101,
+     "title": "Chrome 开发团队宣布 bug 报告「破产」（2012）",
+     "title_en": "Google Chrome dev team declares bug report bankruptcy (2012)",
+     "url": "https://blog.plover.com/tech/bug-reports.html",
+     "hn": "https://news.ycombinator.com/item?id=50562101",
+     "points": 88,
+     "comments": 41
+    },
+    {
+     "id": 50559749,
+     "title": "Show HN：Foolscap，一个读你的书但绝不替你写的写作应用",
+     "title_en": "Show HN: Foolscap – a writing app that reads your book and never writes for you",
+     "url": "https://foolscap.works/",
+     "hn": "https://news.ycombinator.com/item?id=50559749",
+     "points": 102,
+     "comments": 84
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2169,
+    "comments": 1212,
+    "top_points": {
+     "id": 50560822,
+     "title": "Lastbook：生存与重建社会所需的一切",
+     "value": 351,
+     "comments": 186
+    },
+    "top_comments": {
+     "id": 50560822,
+     "title": "Lastbook：生存与重建社会所需的一切",
+     "value": 186
+    },
+    "top_brief": {
+     "id": 50547048,
+     "title": "任天堂把 Picofly 固件从 GitHub 下架 [视频]",
+     "value": 249,
+     "comments": 95
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "cowlevel",
+  "id": 50558077,
+  "hn": "https://news.ycombinator.com/item?id=50558077",
+  "story_id": 50556287,
+  "story": "Ruby2ßhell：一个「ß」引发的 Rails 远程代码执行",
+  "zh": "如果任何单字节溢出都能以极少人力变成远程代码执行，我们就别无选择，只能证明整个软件栈是内存安全的。",
+  "en": "we have no choice but to prove the whole software stack is memory safe"
+ },
+ "stats": {
+  "snapshot": "2026-11-20T08:12:47+08:00",
+  "front_page_count": 90,
+  "with_numbers": 89,
+  "flagged_or_dupe": 1,
+  "top_points": {
+   "id": 50562754,
+   "title": "Anthropic 纳斯达克首秀",
+   "value": 836,
+   "comments": 1599
+  },
+  "top_comments": {
+   "id": 50562754,
+   "title": "Anthropic 纳斯达克首秀",
+   "value": 1599
+  },
+  "second_comments": {
+   "id": 50553843,
+   "title": "Anthropic 以每股 83 美元定价 IPO，11 月 19 日登陆纳斯达克",
+   "value": 773
+  },
+  "over_500": 4,
+  "over_300": 14,
+  "over_100": 42,
+  "show_hn": 7,
+  "total_points": 14049,
+  "total_comments": 8282,
+  "hottest_ratio": {
+   "id": 50562754,
+   "title": "Anthropic 纳斯达克首秀",
+   "value": 1.91,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
