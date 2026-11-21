@@ -1,0 +1,1234 @@
+{
+ "date": "2026-11-20",
+ "published_at": "2026-11-21T08:40:00+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-11-20",
+ "schema_version": 2,
+ "lead": {
+  "id": 50574968,
+  "title": "Levent Alpöge 宣布：与 Claude 合作证明了广义黎曼猜想",
+  "title_en": "Levent Alpöge claims proof of the Generalized Riemann Hypothesis [pdf]",
+  "url": "https://alpo.ge/remark.pdf",
+  "hn": "https://news.ycombinator.com/item?id=50574968",
+  "points": 2297,
+  "comments": 1556,
+  "summary": [
+   "数学家 Levent Alpöge 在个人网站发布一份说明 PDF，称他与 Claude 合作找到了黎曼猜想的证明，而且方法可以推广到广义黎曼猜想（GRH），他预计假以时日还能覆盖扩展黎曼猜想。他说证明已经「无假设地」在 Lean 中形式化，但目前只公开 Lean 代码（分 14 个压缩包），没有发布人类可读的论文，理由是不想放出「一份巨大而无法阅读的『垃圾』文档」——他说自己生成的版本超过 25 万页。",
+   "他写道，最后阶段「Claude 远远把我甩在了后面」，并列出一份由 Claude 整理的时间线：从 10 月 6 日的 Stepanov 行列式思路，到 11 月中旬的迭代 theta 提升，11 月 16 日完成 GRH。他坦言其中不少环节自己还不熟悉，承诺接下来要理解、简化并正式写出这个论证；他还提到发布时机与公司有关的「约束」，但否认时机上的阴谋论解读。",
+   "这是当天点赞和评论双料第一。评论区有人指出同日另有一份纯人类的 GRH 证明草稿发布；有人贴出 Lean 包约 1.3GB、约 1500 万行；也有人为「只说是 Anthropic 员工」的标题抱不平，强调 Alpöge 本身是知名数学家。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "gus_massa",
+    "stance": "背景",
+    "zh": "这不是随便哪个 Anthropic 员工，宣称者是 Levent Alpöge。这人今年状态火热，已经有三四个经过验证的很有意思的结果。我几个月来一直在给系里的同事看他的维基百科页面。",
+    "en": "It's not a random Anthropic employee. It's claimed by Levent Alpöge.",
+    "hn": "https://news.ycombinator.com/item?id=50575298",
+    "id": 50575298,
+    "replies": 63
+   },
+   {
+    "user": "ariwilson",
+    "stance": "复杂心情",
+    "zh": "由一位人类数学家谦逊地介绍结果，这种发布方式很好，不像 OpenAI 那篇带着营销味的帖子。但我还是有点难过：我本希望黎曼猜想主要由人类数学家攻克，而不是像我这个外行读那份说明理解的那样，AI 与数学家六四开。",
+    "en": "I am still a bit sad though.",
+    "hn": "https://news.ycombinator.com/item?id=50575564",
+    "id": 50575564,
+    "replies": 85
+   },
+   {
+    "user": "djoldman",
+    "stance": "体量",
+    "zh": "这些证明真的非常庞大。整个证明有 1.3GB，大约 1500 万行代码。",
+    "en": "The proof is 1.3GB, ~15M lines of code",
+    "hn": "https://news.ycombinator.com/item?id=50576609",
+    "id": 50576609,
+    "replies": 60
+   }
+  ],
+  "kicker": "要闻 · 数学",
+  "tag": "点赞评论双料第一"
+ },
+ "side": [
+  {
+   "id": 50579568,
+   "title": "同一天，另一份「纯人类」GRH 证明草稿仓促公开",
+   "title_en": "Hurried Announcement: Alessandro Masullo GRH",
+   "url": "https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/",
+   "hn": "https://news.ycombinator.com/item?id=50579568",
+   "points": 1418,
+   "comments": 650,
+   "summary": [
+    "数学博客 math216 的博主发出「仓促公告」：他说自己正在美国数学会的会议上、马上要主持一个长会，抽空发帖说 Alessandro Masullo 有一份广义黎曼猜想的证明草稿，Brian Conrad 已细看数月并给出大量反馈，「目前看起来不错」，并强调「完全是人类完成的，没有 AI」。",
+    "帖子说原计划是请 Masullo 到斯坦福待一年打磨写作、请足够多的人把关后再公布，现在看来最好先放出当前草稿，希望大家尽快检查、形式化、补上可能存在的小缺口。评论区有人说草稿约 940 页、开头一节是空的；也有人提出可能的泄露疑问，或建议数学家定期公开带时间戳的哈希来证明进度。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "Aurornis",
+     "stance": "同情",
+     "zh": "手稿说他在这个问题上已经干了 12 年。真难想象他看到 Anthropic 的公告时是什么心情。不过如果他相信自己已经解决了，也一定知道 AI 公司迟早会找到答案。几个小时内就仓促公开草稿，是他能争取「并列发现」的唯一办法。",
+     "en": "The manuscript claims he has been working on this problem for 12 years.",
+     "hn": "https://news.ycombinator.com/item?id=50581412",
+     "id": 50581412,
+     "replies": 75
+    },
+    {
+     "user": "rlt",
+     "stance": "建议",
+     "zh": "数学家应该开始定期公开在研工作的哈希值并附上可验证的时间戳，这样 AI 解决了他们正在研究的问题时，至少还能争取部分署名。",
+     "en": "Mathematicians should start regularly posting hashes of their in-progress work",
+     "hn": "https://news.ycombinator.com/item?id=50582221",
+     "id": 50582221,
+     "replies": 12
+    }
+   ],
+   "kicker": "要闻 · 数学"
+  },
+  {
+   "id": 50576855,
+   "title": "3000 欧元的 Framework 笔记本坏了三个月，客服最后说「没毛病」",
+   "title_en": "I'll never buy Framework hardware again",
+   "url": "https://poolp.org/posts/2026-11-20/ill-never-buy-framework-hardware-again/",
+   "hn": "https://news.ycombinator.com/item?id=50576855",
+   "points": 757,
+   "comments": 534,
+   "summary": [
+    "作者所在公司给新同事买了一台约 3000 欧元的 Framework Laptop 16，开箱就报「缺少输入模块」，问题出现在 BIOS 之前、还没装任何系统。同事用 Framework 自己的 framework_tool 查出键盘模块把自己报成了数字小键盘，但客服按脚本让他们一遍遍重拍照片、重置 BIOS，先换了不相干的中板，两个月后才换键盘；新键盘按 C 时又会额外发出一个 Delete 序列。",
+    "最终机器被寄到维修中心，11 月 20 日得到的结论是「未发现故障」，可能是系统里装错了键盘布局。作者列出约 30 封邮件、十几位客服、两次换件和一次返修，宣布公司今后不再采购 Framework。帖子走红后他在文首改为只保留一段 TL;DR。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "nrp",
+     "stance": "官方回应",
+     "zh": "我正和团队一起调查这件事，也会看这个帖子里的评论。产品寿命不仅要靠硬件可修，还要有顺畅有效的售后体验。",
+     "en": "Longevity has to include a streamlined and effective support experience",
+     "hn": "https://news.ycombinator.com/item?id=50577614",
+     "id": 50577614,
+     "replies": 130
+    },
+    {
+     "user": "rpdillon",
+     "stance": "老用户失望",
+     "zh": "我一直没怎么说，但作为 Framework 早期的热心支持者，我现在没法向任何人推荐他们。",
+     "en": "I cannot recommend them to anyone",
+     "hn": "https://news.ycombinator.com/item?id=50577422",
+     "id": 50577422,
+     "replies": 122
+    },
+    {
+     "user": "paxy",
+     "stance": "支招",
+     "zh": "何必在客服身上浪费这么多时间？一周后就该明白他们没兴趣帮你。消费者保护法就是为此而设的：整理好所有材料，直接申请拒付。",
+     "en": "Consumer protection laws exist for a reason.",
+     "hn": "https://news.ycombinator.com/item?id=50577416",
+     "id": 50577416,
+     "replies": 12
+    }
+   ],
+   "kicker": "科技 · 硬件售后",
+   "tag": "评论第三"
+  },
+  {
+   "id": 50572348,
+   "title": "Signal：将阻止系统级 AI 助手读取聊天屏幕",
+   "title_en": "Signal Is Serious About Protecting Your Privacy",
+   "url": "https://signal.org/blog/protecting-your-privacy/",
+   "hn": "https://news.ycombinator.com/item?id=50572348",
+   "points": 488,
+   "comments": 295,
+   "summary": [
+    "Signal 发文说，Google 和 Apple 正把 Gemini、Siri 等能「看屏幕」的智能体深度集成进操作系统，这会让 Signal 无法独立保证隐私。继去年在 Windows 上默认阻止微软 Recall 截屏之后，它将在 iOS 27 上阻止应用内截屏，在 Android 上检测到 AI 助手试图读取屏幕时进行阻止；想截屏的用户可以在设置里关掉这项保护。",
+    "Signal 承认这个办法并不完整，比如挡不住智能体通过文件系统读取数据，macOS 上目前也做不到。它呼吁 Apple、Google、微软给开发者提供简单、有文档的方式让应用退出 AI 数据访问，并公开这些智能体如何访问数据的技术说明。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "ada-h00k",
+     "stance": "要更进一步",
+     "zh": "我希望他们再进一步：提醒这类系统的每个用户，系统里带着间谍软件，并推荐 GrapheneOS 或桌面 Linux 这样的替代品。靠本该保密的应用去阻止截屏，长远看行不通，用户需要重新掌控自己的操作系统。",
+     "en": "Users need to regain control over their operating system.",
+     "hn": "https://news.ycombinator.com/item?id=50575469",
+     "id": 50575469,
+     "replies": 31
+    },
+    {
+     "user": "lukeschlather",
+     "stance": "副作用",
+     "zh": "让人沮丧的是，现在在 Windows 上没法截 Signal 聊天的图了。没错，截图可以用来绕过消息保留之类的设置，但这是个基本功能。",
+     "en": "now you can't take screenshots of a Signal chat on Windows",
+     "hn": "https://news.ycombinator.com/item?id=50578665",
+     "id": 50578665,
+     "replies": 10
+    }
+   ],
+   "kicker": "科技 · 隐私"
+  },
+  {
+   "id": 50569226,
+   "title": "OpenSSL 修复 EVP_EncodeBlock() 缓冲区溢出（CVSS 9.8）",
+   "title_en": "OpenSSL: Buffer overflow in EVP_EncodeBlock() (CVE-2026-121481, CVSS 9.8)",
+   "url": "https://github.com/openssl/openssl/pull/33652",
+   "hn": "https://news.ycombinator.com/item?id=50569226",
+   "points": 364,
+   "comments": 328,
+   "summary": [
+    "这是 OpenSSL 仓库里修复 CVE-2026-121481 的合并请求：Base64 编码函数 EVP_EncodeBlock() 在输入过大时会溢出。补丁最终的做法是对原本属于未定义行为的输入调用 OPENSSL_assert()，同样的防护也加到 EVP_DecodeBlock()，并修正了 http_client.c 里 base64encode() 的长度检查。",
+    "讨论中有维护者认为这个 API 本身就有问题，建议弃用并另加一个契约更合理的 EVP_EncodeBlock_ex()；提交者表示这次只专注修 CVE、保持现有行为。评论区普遍认为 CVSS 9.8 这个评级偏高：要触发需要接近 INT_MAX 的输入，而且得有不可信数据能走到这个函数。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "amluto",
+     "stance": "解读",
+     "zh": "粗略看了一下，问题是输入大于约 1.5GB 时 EVP_EncodeBlock 会出错。这是个做 Base64 编码的函数。作为老 C 程序员，我一眼就看出整个 API 设计得很糟。",
+     "en": "the bug is that EVP_EncodeBlock malfunctions if the input is larger than ~1.5GB",
+     "hn": "https://news.ycombinator.com/item?id=50569705",
+     "id": 50569705,
+     "replies": 166
+    },
+    {
+     "user": "userbinator",
+     "stance": "评分偏高",
+     "zh": "我觉得 CVSS 9.8 夸大了，这跟心脏出血根本不是一个级别。这是个内部函数，输入过长就会出错，能否利用取决于不可信输入能不能走到它。",
+     "en": "I think CVSS 9.8 is exaggerated.",
+     "hn": "https://news.ycombinator.com/item?id=50569917",
+     "id": 50569917,
+     "replies": 25
+    },
+    {
+     "user": "ansipunk",
+     "stance": "漏洞疲劳",
+     "zh": "我不是系统管理员，但已经患上严重的漏洞疲劳了：每天都至少有两个主流软件的新漏洞，看得听得都累了。系统管理员同行们肯定更惨。",
+     "en": "I am getting a serious vulnerability fatigue",
+     "hn": "https://news.ycombinator.com/item?id=50570653",
+     "id": 50570653,
+     "replies": 23
+    }
+   ],
+   "kicker": "安全 · 漏洞"
+  },
+  {
+   "id": 50570479,
+   "title": "GrapheneOS 指控 Google 施压厂商，反对其系统与解锁 Bootloader",
+   "title_en": "Google is pushing OEMs against GrapheneOS and bootloader unlocking",
+   "url": "https://grapheneos.social/@GrapheneOS/117645038299496084",
+   "hn": "https://news.ycombinator.com/item?id=50570479",
+   "points": 476,
+   "comments": 189,
+   "summary": [
+    "GrapheneOS 在 Mastodon 上发长串帖子称，Google 一边把越来越多功能和更新做成 Pixel 独占，一边劝说 OEM 合作伙伴不要支持 GrapheneOS，甚至不要支持解锁 Bootloader，还在直接打击 GrapheneOS 项目。",
+    "他们说问题出在 Google 的业务部门而非工程师，后者帮过他们不少；他们预计 Google 会开始锁定 Pixel 的 Bootloader，继续力推 Play Integrity API，并表示想与美国司法部等监管和检方接触。评论区有人建议写信给州总检察长，也有人希望他们先拿出证据。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "JumpCrisscross",
+     "stance": "行动",
+     "zh": "找到你所在州的总检察长，写封信给他们。冷静客观地请他们从反垄断角度调查此事，附上这串 GrapheneOS 帖子。",
+     "en": "Find your state attorney general",
+     "hn": "https://news.ycombinator.com/item?id=50570940",
+     "id": 50570940,
+     "replies": 21
+    },
+    {
+     "user": "paweladamczuk",
+     "stance": "要证据",
+     "zh": "我希望他们先拿出证据和来源来支撑这些说法。照现在这样，在我看来像是激怒式营销。我支持 GrapheneOS 的人做的事，但不喜欢他们最近的沟通风格。",
+     "en": "I wish they would lead with evidence and sources for the claims they're making.",
+     "hn": "https://news.ycombinator.com/item?id=50571291",
+     "id": 50571291,
+     "replies": 6
+    }
+   ],
+   "kicker": "科技 · 移动平台"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "page": 2,
+   "stories": [
+    {
+     "id": 50572503,
+     "title": "Frostbite：由 AI 发现、设计并验证的新 CPU 架构",
+     "title_en": "Frostbite: A new CPU architecture discovered, designed and verified by AI",
+     "url": "https://architectlabs.com/blog/frostbite",
+     "hn": "https://news.ycombinator.com/item?id=50572503",
+     "points": 614,
+     "comments": 320,
+     "summary": [
+      "芯片公司 Architect Labs 发布 Frostbite：一种从零设计新指令集的通用 CPU，基于「交互网」（interaction nets）的特性——每一步都是局部的、依赖都显式、每个值只有一个所有者——从而让程序自带并行、数据就近存放，省掉大缓存和一致性协议。他们说 AI 系统自主迭代了编译器、ISA、架构、微架构、RTL、验证直到最终版图（GDS）。",
+      "芯片按 7nm 工艺综合，最终版图跑到 500MHz。他们拿一个面积相近的 Frostbite 四核簇对比一颗现代双发射顺序执行核：25 个负载（其中 15 个直到最终评测才拿出）的每瓦性能几何平均为 4.59 倍，每面积性能平均 8.77 倍。评论区有人质疑对比基线是顺序核而非乱序核、测试程序太少，也有人说数据流架构二十年前就有人做过。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "pizza234",
+       "stance": "存疑",
+       "zh": "我挺怀疑的：他们的基线是顺序执行 CPU，而不是现代乱序设计，测试的程序也不多。我不是 CPU 专家，但底层思路似乎并不全新，WaveScalar 二十多年前就探索过基于数据流的架构。",
+       "en": "their baseline is a in-order CPU, instead of a modern out-of-order design",
+       "hn": "https://news.ycombinator.com/item?id=50572930",
+       "id": 50572930,
+       "replies": 26
+      },
+      {
+       "user": "shioyama",
+       "stance": "辩护",
+       "zh": "我发了这帖，几小时后回来一看，评论……说实话有点让人沮丧。这里的人知道交互网是什么吗？那是一种根本不同的编程范式。",
+       "en": "Do people here know what interaction nets are?",
+       "hn": "https://news.ycombinator.com/item?id=50574533",
+       "id": 50574533,
+       "replies": 55
+      },
+      {
+       "user": "jkhdigital",
+       "stance": "标题误导",
+       "zh": "标题有点误导：所有洞见和创新都来自人类。AI 做的是它特别擅长的事：把埋在研究文献里几十年的好点子综合成一个工程上连贯的产品。",
+       "en": "humans came up with all the insights and innovations here",
+       "hn": "https://news.ycombinator.com/item?id=50574628",
+       "id": 50574628,
+       "replies": 4
+      }
+     ],
+     "kicker": "AI · 芯片设计"
+    },
+    {
+     "id": 50581260,
+     "title": "Thinking Machines 发布开源权重模型 Inkling 2 Mini",
+     "title_en": "Inkling 2 Mini",
+     "url": "https://thinkingmachines.ai/news/inkling-2-mini/",
+     "hn": "https://news.ycombinator.com/item?id=50581260",
+     "points": 578,
+     "comments": 94,
+     "summary": [
+      "Thinking Machines 发布 Inkling 2 Mini：一个「循环 Transformer」，每个 token 把中间层运行三遍，以便用更少的 token 做更多推理。它是 MoE 模型，总参数 264 亿、激活 34 亿；大部分权重以 NVFP4 训练和部署，总内存占用约 20GB，可以在消费级笔记本上运行，权重开放。",
+      "官方称它在 DeepSWE v1.1（48.2%）和 Vals Index v2.2（46.5%）等基准上领先所有 1000 亿参数以下的开源权重模型。他们还研究了循环对思维链可监控性的影响：循环越多思维链越短但仍可读，在智能体破坏测试上没有变高；但官方也承认循环不能让模型记住更多事实。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "montroser",
+       "stance": "惊艳",
+       "zh": "如果这些基准在真实场景里站得住，那就太猛了。用循环 Transformer 做到 Qwen3.8-27B 的水平，相当秀。",
+       "en": "This is bonkers good if these benchmarks hold up in real-world scenarios.",
+       "hn": "https://news.ycombinator.com/item?id=50581726",
+       "id": 50581726,
+       "replies": 10
+      },
+      {
+       "user": "lilytweed",
+       "stance": "开源意义",
+       "zh": "哇，不只是一个公开承认并拥抱循环架构的模型，还是开源权重的？我敢打赌，此后大多数开源模型都会转向循环。",
+       "en": "most open models will go looped in the wake of this",
+       "hn": "https://news.ycombinator.com/item?id=50582638",
+       "id": 50582638,
+       "replies": 7
+      }
+     ],
+     "kicker": "AI · 模型发布"
+    },
+    {
+     "id": 50577265,
+     "title": "论文：语言模型可以改写自己的权重",
+     "title_en": "Language Models Can Rewrite Their Own Weights",
+     "url": "https://arxiv.org/abs/2611.21885",
+     "hn": "https://news.ycombinator.com/item?id=50577265",
+     "points": 324,
+     "comments": 106,
+     "summary": [
+      "这篇 arXiv 论文称，首次让语言模型凭自己的推理改写自身权重并变得更好，不用梯度、不经训练，作者称之为「自我改写」。一个开源 27B 模型拿到自己的权重、被打分的答案和运行自身的能力后，诊断失败原因并改写相关权重，在没见过的题目上准确率提高 6.6 个百分点，连续八轮只升不降；它还能把一个受损副本修复到原准确率的八成以上。",
+      "论文还说这种能力随规模出现：同一模型家族里较小的模型要么不改、要么把自己改坏。评论区高赞指出，模型做的唯一改进其实是缩短推理过程以免触及 token 上限；也有人质疑「先在练习题上测试、只提交有效的修改」听起来就是训练。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "aesthesia",
+       "stance": "拆穿",
+       "zh": "值得注意的是，模型为改进自己所做的唯一修改，是缩短推理过程以避免触及 token 上限。",
+       "en": "the only modification the model made to improve itself was to reduce the length of its reasoning traces",
+       "hn": "https://news.ycombinator.com/item?id=50578348",
+       "id": 50578348,
+       "replies": 19
+      },
+      {
+       "user": "Toutouxc",
+       "stance": "疑问",
+       "zh": "希望有人给我解释一下。他们说「没有训练」，可「在练习题上测试修改、只提交有效的」，这听起来很像训练。",
+       "en": "But this sounds a lot like training",
+       "hn": "https://news.ycombinator.com/item?id=50579143",
+       "id": 50579143,
+       "replies": 7
+      }
+     ],
+     "kicker": "AI · 研究"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50568130,
+     "title": "Gemini 4 Neon 登顶 Models Engineering Index",
+     "title_en": "Gemini 4 Neon is the new #1 on the Models Engineering Index",
+     "url": "https://git-aarvin.github.io/mei/",
+     "hn": "https://news.ycombinator.com/item?id=50568130",
+     "points": 365,
+     "comments": 241
+    },
+    {
+     "id": 50569519,
+     "title": "DeepMind 文章：AGI 之后是什么？",
+     "title_en": "What Comes After AGI?",
+     "url": "https://institute.deepmind.com/essays/what-comes-after-agi/",
+     "hn": "https://news.ycombinator.com/item?id=50569519",
+     "points": 162,
+     "comments": 315
+    },
+    {
+     "id": 50577901,
+     "title": "Google 员工要求公司不要惩罚不想用 AI 的学校",
+     "title_en": "Google Workers Tell Their Employer Not to Punish Schools That Don't Want AI",
+     "url": "https://www.motherjones.com/politics/2026/11/google-alphabet-union-school-ai-protest-gemini-workers-petition/",
+     "hn": "https://news.ycombinator.com/item?id=50577901",
+     "points": 249,
+     "comments": 189
+    },
+    {
+     "id": 50581242,
+     "title": "OpenAI：打击对抗性蒸馏",
+     "title_en": "Combatting Adversarial Distillation",
+     "url": "https://openai.com/index/combatting-adversarial-distillation/",
+     "hn": "https://news.ycombinator.com/item?id=50581242",
+     "points": 32,
+     "comments": 47
+    },
+    {
+     "id": 50579297,
+     "title": "用氛围编程做一颗推理芯片",
+     "title_en": "Vibecoding an inference chip",
+     "url": "https://ankitg.me/blog/vibecoding-inference-chip/",
+     "hn": "https://news.ycombinator.com/item?id=50579297",
+     "points": 103,
+     "comments": 36
+    },
+    {
+     "id": 50538977,
+     "title": "权重空间编程：像 1990 年代研究者那样搭神经网络",
+     "title_en": "Weight-Space Programming builds neural networks like a 1990s researcher",
+     "url": "https://notesbylex.com/weight-space-programming-1990s",
+     "hn": "https://news.ycombinator.com/item?id=50538977",
+     "points": 121,
+     "comments": 11
+    },
+    {
+     "id": 50568548,
+     "title": "SNES 上的 ChatGPT",
+     "title_en": "ChatGPT for SNES",
+     "url": "https://www.bxfoundry.com/chatgpt_snes/",
+     "hn": "https://news.ycombinator.com/item?id=50568548",
+     "points": 122,
+     "comments": 37
+    },
+    {
+     "id": 50573681,
+     "title": "Epic Games 转向用 AI 为虚幻引擎写代码",
+     "title_en": "Epic Games Turns to AI Coding for the Unreal Engine",
+     "url": "https://spectrum.ieee.org/epic-games-unreal-engine-ai",
+     "hn": "https://news.ycombinator.com/item?id=50573681",
+     "points": 58,
+     "comments": 60
+    },
+    {
+     "id": 50577872,
+     "title": "AI 正在给所有人同样的建议",
+     "title_en": "AI is giving everyone the same advice",
+     "url": "https://a90.com/experiments/same-advice/",
+     "hn": "https://news.ycombinator.com/item?id=50577872",
+     "points": 47,
+     "comments": 18
+    },
+    {
+     "id": 50582629,
+     "title": "Google DeepMind 几小时前建了一个「数学地平线」仓库",
+     "title_en": "A few hours ago Google DeepMind created a math horizon repo",
+     "url": "https://github.com/google-deepmind/math-horizon",
+     "hn": "https://news.ycombinator.com/item?id=50582629",
+     "points": 43,
+     "comments": 29
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2818,
+    "comments": 1503,
+    "top_points": {
+     "id": 50572503,
+     "title": "Frostbite：由 AI 发现、设计并验证的新 CPU 架构",
+     "value": 614,
+     "comments": 320
+    },
+    "top_comments": {
+     "id": 50572503,
+     "title": "Frostbite：由 AI 发现、设计并验证的新 CPU 架构",
+     "value": 320
+    },
+    "top_brief": {
+     "id": 50568130,
+     "title": "Gemini 4 Neon 登顶 Models Engineering Index",
+     "value": 365,
+     "comments": 241
+    }
+   }
+  },
+  {
+   "name": "开发",
+   "en": "Development",
+   "page": 3,
+   "stories": [
+    {
+     "id": 50569890,
+     "title": "PostgreSQL 19 发布",
+     "title_en": "PostgreSQL 19",
+     "url": "https://www.postgresql.org/docs/release/19.0/",
+     "hn": "https://news.ycombinator.com/item?id=50569890",
+     "points": 376,
+     "comments": 27,
+     "summary": [
+      "PostgreSQL 19 于 11 月 19 日发布。亮点包括新的 REPACK 命令回收磁盘空间、重组表内容，REPACK (CONCURRENTLY) 可以不阻塞读写；pg_plan_advice 扩展可以控制查询规划器的决策；I/O 工作进程数自动伸缩、外键检查更快；wal_level 为 replica 时无需重启即可启用逻辑复制，并支持复制序列值；备库通过新的 WAIT 命令实现「读己之写」一致性；自动清理支持并行处理索引并按评分排优先级。",
+      "不兼容变更包括：移除 RADIUS 支持（只支持 UDP，无法修补地不安全）、MD5 密码认证成功后发出警告、standard_conforming_strings 强制开启。评论区有人欢呼 JIT 改为默认关闭，也有人说很多公司连 17 都还没升。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "dbgobrrr",
+       "stance": "叫好",
+       "zh": "很棒的版本，功能令人兴奋：REPACK CONCURRENTLY 回收磁盘空间；逻辑复制序列值也是很棒的补充，这是大版本升级流程里缺的一块，以前需要额外写脚本。",
+       "en": "Logical replication of sequences - Fantastic addition.",
+       "hn": "https://news.ycombinator.com/item?id=50573468",
+       "id": 50573468,
+       "replies": 0
+      },
+      {
+       "user": "BitPirate",
+       "stance": "JIT",
+       "zh": "「JIT 改为默认关闭」早该如此。它对本来调优得好好的查询影响极其糟糕。",
+       "en": "That was long overdue.",
+       "hn": "https://news.ycombinator.com/item?id=50573762",
+       "id": 50573762,
+       "replies": 1
+      },
+      {
+       "user": "rdsubhas",
+       "stance": "升级跟不上",
+       "zh": "非常敬佩 Postgres 团队，功能也很棒。但说句抱歉的话：Postgres 18 是 2025 年 9 月发布的，现在才 2026 年 11 月，我认识的公司有一半连 pg17 都还没升。",
+       "en": "Half the companies I know haven't even updated to pg17 yet",
+       "hn": "https://news.ycombinator.com/item?id=50575062",
+       "id": 50575062,
+       "replies": 6
+      }
+     ],
+     "kicker": "开发 · 数据库",
+     "tag": "当天另有多篇 PG19 帖子"
+    },
+    {
+     "id": 50570628,
+     "title": "Jujutsu（jj）入门",
+     "title_en": "Jujutsu Primer",
+     "url": "https://ethanlowman.com/posts/jj-primer/",
+     "hn": "https://news.ycombinator.com/item?id=50570628",
+     "points": 197,
+     "comments": 179,
+     "summary": [
+      "这篇入门文章介绍版本控制工具 Jujutsu（jj）：它的基本操作简单好学，却能组合出强大的工作流，自动变基和原生撤销磨平了 Git 的棱角。jj 可以和 Git 在同一个仓库里并用，所以不必完全放弃 Git 就能试。",
+      "作者说 jj 让他不必在脑子里记版本管理的账，自动变基也让堆叠式提交（stacked diff）工作流变得容易。文章随后讲了安装、配置以及 jj 里「提交」与「变更」的概念。评论区一边有用了两年的老用户力挺，一边有人对取消暂存区、自动变基表示怀疑。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "danpalmer",
+       "stance": "老用户",
+       "zh": "我几乎只用 JJ 已经两年多了。它很棒，在我们公司相当大的单体仓库里表现出色。",
+       "en": "I've been using JJ almost exclusively for over 2 years now.",
+       "hn": "https://news.ycombinator.com/item?id=50570993",
+       "id": 50570993,
+       "replies": 23
+      },
+      {
+       "user": "nixpulvis",
+       "stance": "怀疑",
+       "zh": "我对没有暂存区有点怀疑，不过看起来就是用一个 HEAD 提交代替了它，这也许不错。我真的不喜欢自动命名书签这一点。",
+       "en": "I'm skeptical about the no staging area",
+       "hn": "https://news.ycombinator.com/item?id=50571315",
+       "id": 50571315,
+       "replies": 44
+      },
+      {
+       "user": "rootlocus",
+       "stance": "没讲清",
+       "zh": "这些页面没有一页向我解释 jujutsu 是什么、我为什么该选它而不是 git。",
+       "en": "None of the pages explain to me what jujutsu is",
+       "hn": "https://news.ycombinator.com/item?id=50571249",
+       "id": 50571249,
+       "replies": 14
+      }
+     ],
+     "kicker": "开发 · 工具"
+    },
+    {
+     "id": 50573886,
+     "title": "不再写代码，你审代码的水平也会下降",
+     "title_en": "If you stop writing code, you also get worse at reviewing it",
+     "url": "https://cekrem.github.io/posts/if-you-stop-writing-code-you-also-get-worse-at-reviewing-it/",
+     "hn": "https://news.ycombinator.com/item?id=50573886",
+     "points": 321,
+     "comments": 158,
+     "summary": [
+      "作者用练吉他、写作打比方：任何领域都承认技能要靠练习维持，唯独软件工程有人觉得只要指挥 AI、再审它的产出，水平就不会退步。他强调讨论的不是短期代码质量，而是不再亲手写代码的人，手艺会不会荒废。",
+      "评论区有人说五年前 HN 的共识还是「转管理岗会让编程能力退化」，如今这条常识似乎反过来了；也有人说多数人其实已经不审代码了，还有人反驳说 AI 让他学会了原本没时间学的运维知识。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "JamesLeonis",
+       "stance": "常识反转",
+       "zh": "我同意作者，我们正处在一个最佳实践似乎反转了的奇怪时刻。五年前 HN 的常识是：离代码远了（比如转管理岗）编程技能会退化，常见建议是重新动手。",
+       "en": "Five years ago it was common knowledge on HN",
+       "hn": "https://news.ycombinator.com/item?id=50576693",
+       "id": 50576693,
+       "replies": 30
+      },
+      {
+       "user": "bengold14",
+       "stance": "没人审了",
+       "zh": "我觉得现在大多数人根本不审代码了。这很可惜，因为审代码有利于协作。",
+       "en": "I think most people at this point just don't review code.",
+       "hn": "https://news.ycombinator.com/item?id=50575877",
+       "id": 50575877,
+       "replies": 11
+      },
+      {
+       "user": "snailcoder",
+       "stance": "另一面",
+       "zh": "那些你以前因为没时间而从没写过的代码呢？借助 Claude、Ansible playbook 和 Terraform，我学到了大量 DevOps 知识，没时间的话我根本不会知道这些可行。",
+       "en": "What about the code you were never able to write because you were time constrained?",
+       "hn": "https://news.ycombinator.com/item?id=50575185",
+       "id": 50575185,
+       "replies": 9
+      }
+     ],
+     "kicker": "开发 · 职业"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50579331,
+     "title": "我们没通知开发者，就把他们「提拔」成了架构师",
+     "title_en": "We promoted developers into architects without informing them",
+     "url": "https://manidoraisamy.com/developer-to-architect.html",
+     "hn": "https://news.ycombinator.com/item?id=50579331",
+     "points": 263,
+     "comments": 166
+    },
+    {
+     "id": 50569998,
+     "title": "FFmpeg 9.1「Gauss」发布",
+     "title_en": "FFmpeg 9.1 'Gauss'",
+     "url": "https://ffmpeg.org/download.html#release_9.1",
+     "hn": "https://news.ycombinator.com/item?id=50569998",
+     "points": 289,
+     "comments": 35
+    },
+    {
+     "id": 50569985,
+     "title": "GIMP 有了 UI 测试",
+     "title_en": "GIMP now has UI tests",
+     "url": "https://www.gimp.org/news/2026/11/16/gimp-ui-tests/",
+     "hn": "https://news.ycombinator.com/item?id=50569985",
+     "points": 157,
+     "comments": 135
+    },
+    {
+     "id": 50569516,
+     "title": "Postgres 19 的 REPACK：更快的内置表膨胀清理",
+     "title_en": "Postgres 19 Repack: Faster, Built-In Table Bloat Cleanup",
+     "url": "https://www.snowflake.com/en/blog/engineering/postgres-19-repack-table-bloat/",
+     "hn": "https://news.ycombinator.com/item?id=50569516",
+     "points": 177,
+     "comments": 29
+    },
+    {
+     "id": 50578117,
+     "title": "PostgreSQL 19 上手之旅：可在浏览器里运行的示例",
+     "title_en": "PostgreSQL 19: A hands-on tour with runnable browser examples",
+     "url": "https://certuvia.com/blog/postgres-19",
+     "hn": "https://news.ycombinator.com/item?id=50578117",
+     "points": 40,
+     "comments": 4
+    },
+    {
+     "id": 50527444,
+     "title": "G1 垃圾回收器概览",
+     "title_en": "The G1 Garbage Collector",
+     "url": "https://dev.java/learn/jvm/tool/garbage-collection/g1gc-overview/",
+     "hn": "https://news.ycombinator.com/item?id=50527444",
+     "points": 99,
+     "comments": 55
+    },
+    {
+     "id": 50537492,
+     "title": "用 E-Graph 自动检查编译器正确性",
+     "title_en": "Automatic Checking of Compiler Correctness with E-Graphs",
+     "url": "https://stng.substack.com/p/automatic-checking-of-compiler-correctness",
+     "hn": "https://news.ycombinator.com/item?id=50537492",
+     "points": 63,
+     "comments": 0
+    },
+    {
+     "id": 50581110,
+     "title": "DreamCoder：《Mastering Emacs》作者做的编程工具和 IDE",
+     "title_en": "DreamCoder: Coding harness and IDE from the author of Mastering Emacs",
+     "url": "https://www.masteringemacs.org/article/announcing-dreamcoder",
+     "hn": "https://news.ycombinator.com/item?id=50581110",
+     "points": 79,
+     "comments": 11
+    },
+    {
+     "id": 50523241,
+     "title": "最强的推箱子求解器",
+     "title_en": "The Strongest Sokoban Solver",
+     "url": "https://healeycodes.com/introducing-the-worlds-strongest-sokoban-solver",
+     "hn": "https://news.ycombinator.com/item?id=50523241",
+     "points": 137,
+     "comments": 28
+    },
+    {
+     "id": 50580536,
+     "title": "Winedroid：不用 Android 也能跑 Android 应用（WASM 演示）",
+     "title_en": "Winedroid – run Android apps without Android (WASM demo)",
+     "url": "https://winedroid.soham.sh/demo/",
+     "hn": "https://news.ycombinator.com/item?id=50580536",
+     "points": 88,
+     "comments": 25
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2286,
+    "comments": 852,
+    "top_points": {
+     "id": 50569890,
+     "title": "PostgreSQL 19 发布",
+     "value": 376,
+     "comments": 27
+    },
+    "top_comments": {
+     "id": 50570628,
+     "title": "Jujutsu（jj）入门",
+     "value": 179
+    },
+    "top_brief": {
+     "id": 50569998,
+     "title": "FFmpeg 9.1「Gauss」发布",
+     "value": 289,
+     "comments": 35
+    }
+   }
+  },
+  {
+   "name": "科学",
+   "en": "Science & Tech",
+   "page": 4,
+   "stories": [
+    {
+     "id": 50578358,
+     "title": "陶哲轩：无外力 Navier–Stokes 奇点与广义黎曼猜想",
+     "title_en": "Unforced Navier-Stokes Singularity and the Generalized Riemann Hypothesis",
+     "url": "https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/",
+     "hn": "https://news.ycombinator.com/item?id=50578358",
+     "points": 316,
+     "comments": 123,
+     "summary": [
+      "陶哲轩在博客里按「消化程度」从高到低列出同日的几项结果：Alpöge、Buckmaster 和 Coiculescu 在 AI 大量协助下，写出了三维无外力不可压 Euler 方程有限时间爆破的人类可读证明，并在 Lean 中形式化；Alpöge 和 Buckmaster 同样借助 AI，给出三维无外力不可压 Navier–Stokes 方程有限时间爆破的证明和 Lean 形式化，论文「技术上可读」，但还需要写成专业的证明。",
+      "第三项是 Alpöge 用内部 AI 模型生成的、体量巨大的纯 Lean 广义黎曼猜想证明。陶哲轩说据很初步的分析，它似乎动用了朗兰兹纲领和算术几何的全部现代进展，消化需要时间，好在有一位人类作者可以沟通。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "actusual",
+       "stance": "心情",
+       "zh": "还有人和我一样，既兴奋又害怕吗？自从十年前当 L1 机器学习工程师以来，我还没对自己的职业和生活这么不确定过。",
+       "en": "Is anyone else struggling with feelings of both excitement and terror?",
+       "hn": "https://news.ycombinator.com/item?id=50579777",
+       "id": 50579777,
+       "replies": 65
+      },
+      {
+       "user": "chunky1994",
+       "stance": "核验",
+       "zh": "看起来有两个独立的内核接受了这个结果，这意味着证明里很可能没有利用内核漏洞。",
+       "en": "It looks like two independent kernels accept the result",
+       "hn": "https://news.ycombinator.com/item?id=50581818",
+       "id": 50581818,
+       "replies": 0
+      }
+     ],
+     "kicker": "科学 · 数学"
+    },
+    {
+     "id": 50576232,
+     "title": "论文与 Lean 代码：Navier–Stokes 方程有限时间爆破",
+     "title_en": "Finite-time blow-up for the Navier–Stokes equations",
+     "url": "https://github.com/tristanbuckmaster/navier-stokes/",
+     "hn": "https://news.ycombinator.com/item?id=50576232",
+     "points": 252,
+     "comments": 78,
+     "summary": [
+      "这个 GitHub 仓库收录 L. Alpöge 和 T. Buckmaster 的论文《Navier–Stokes 方程的有限时间爆破》（79 页，11 月 20 日版）及配套的 Lean 4 形式化。Lean 库约 2270 个文件、60 万行，完整构建需要大量内存和时间；每个比对文件只允许 propext、Quot.sound 和 Classical.choice 三条公理。",
+      "README 也写明了缺口：论文所给哈希对应的「证书」尚未放出，验证证书满足附录 B 条件的严格计算（128 位精度区间算术）不在形式化里；仓库还套用了 11 月 20 日的一个补丁，打补丁后的包未重新构建。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "tancop",
+       "stance": "区别",
+       "zh": "这是无外力版本的问题。OpenAI 找到的例子是用精心设计的外力把方程弄崩，所以这个在某种意义上更「现实」。",
+       "en": "This is the unforced version of the problem.",
+       "hn": "https://news.ycombinator.com/item?id=50577963",
+       "id": 50577963,
+       "replies": 0
+      },
+      {
+       "user": "xianshou",
+       "stance": "历史性一天",
+       "zh": "这居然只是今天第二大的结果，是不是有点疯？广义黎曼猜想和无外力 Navier–Stokes 同一天出来，轻松创下数学史上最重要一天的新标准。",
+       "en": "comfortably sets a new standard for most significant day in the history of mathematics",
+       "hn": "https://news.ycombinator.com/item?id=50579251",
+       "id": 50579251,
+       "replies": 15
+      }
+     ],
+     "kicker": "科学 · 数学"
+    },
+    {
+     "id": 50581084,
+     "title": "Scott Aaronson：「随机鹦鹉」似乎证明了黎曼猜想",
+     "title_en": "The stochastic parrots have apparently proved the Riemann Hypothesis",
+     "url": "https://scottaaronson.blog/?p=10344",
+     "hn": "https://news.ycombinator.com/item?id=50581084",
+     "points": 194,
+     "comments": 157,
+     "summary": [
+      "理论计算机科学家 Scott Aaronson 以反讽的标题写道，Alpöge 说用 Anthropic 的模型证明了广义黎曼猜想，产出 1740 万行 Lean 代码。他解释了黎曼猜想的通俗含义，并提醒 Lean 本身仍有问题，比如过去曾出现能证明 0=1 的内核漏洞，应当尽快修复，否则足够有动机的 AI 几乎肯定能借此证明假命题。",
+      "但他说目前看不到这种迹象：带 Lean 证书的 AI 成果至今没有一项需要撤回，所以他押注这个证明能成立。他认为数学家不会满足于 1700 万行 Lean，只有能自己解释、提炼、重建其中思想才算数，而这可能要花好几年。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "iLoveOncall",
+       "stance": "不买账",
+       "zh": "没有人会去审阅和验证 1700 万行代码，永远不会。这只是在黎曼猜想之上又叠了一个假设。",
+       "en": "Nobody is ever reviewing and verifying 17M lines of code.",
+       "hn": "https://news.ycombinator.com/item?id=50582810",
+       "id": 50582810,
+       "replies": 1
+      },
+      {
+       "user": "elorant",
+       "stance": "设想",
+       "zh": "真想知道，如果有近乎无限的算力，有多少数学家能做出类似的突破。",
+       "en": "Wonder how many mathematicians could reach similar breakthroughs",
+       "hn": "https://news.ycombinator.com/item?id=50581779",
+       "id": 50581779,
+       "replies": 28
+      }
+     ],
+     "kicker": "科学 · 评论"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50525260,
+     "title": "从 MyQ 车库门控制器里提取 AES 密钥，让它离线时不再重启",
+     "title_en": "Dumping an AES key from a MyQ garage opener to stop rebooting when offline",
+     "url": "https://kusha.me/blog/stop_myq_homebridge_819lmb_rebooting/",
+     "hn": "https://news.ycombinator.com/item?id=50525260",
+     "points": 167,
+     "comments": 72
+    },
+    {
+     "id": 50545818,
+     "title": "µ-Wire：在 ATtiny 10 上实现 USB",
+     "title_en": "µ-Wire – USB on an ATtiny 10",
+     "url": "https://cpldcpu.com/2014/03/19/%c2%b5-wire-usb-on-an-attiny-10/",
+     "hn": "https://news.ycombinator.com/item?id=50545818",
+     "points": 121,
+     "comments": 19
+    },
+    {
+     "id": 50560595,
+     "title": "Floppy3.5：3.5 英寸软盘造型的便携 WiFi NAS",
+     "title_en": "Floppy3.5: A portable 3.5-inch floppy WiFi NAS",
+     "url": "https://github.com/bigcrimping/floppy3.5",
+     "hn": "https://news.ycombinator.com/item?id=50560595",
+     "points": 136,
+     "comments": 55
+    },
+    {
+     "id": 50568861,
+     "title": "Vint Cerf 谈 TCP/IP 为何从未申请专利",
+     "title_en": "Vint Cerf on why TCP/IP was never patented",
+     "url": "https://seremot.com/p/vint-cerf-on-why-tcpip-was-never",
+     "hn": "https://news.ycombinator.com/item?id=50568861",
+     "points": 158,
+     "comments": 92
+    },
+    {
+     "id": 50572430,
+     "title": "BBC：英国冰箱防黑客加固",
+     "title_en": "UK fridges secured from hackers",
+     "url": "https://www.bbc.co.uk/news/articles/c6eq49zyx7p4o",
+     "hn": "https://news.ycombinator.com/item?id=50572430",
+     "points": 142,
+     "comments": 136
+    },
+    {
+     "id": 50568082,
+     "title": "WSJ：Visa、万事达和摩根大通客户数据遭黑客泄露",
+     "title_en": "Visa, Mastercard and JPMorgan Customer Data Leaked by Hackers",
+     "url": "https://www.wsj.com/finance/banking/visa-mastercard-and-jpmorgan-customer-data-leaked-by-hackers-3b5a0f87",
+     "hn": "https://news.ycombinator.com/item?id=50568082",
+     "points": 194,
+     "comments": 50
+    },
+    {
+     "id": 50575644,
+     "title": "Mozilla：为什么 iOS 上至今没有非 WebKit 浏览器",
+     "title_en": "Why there are still no non-WebKit browsers on iOS",
+     "url": "https://blog.mozilla.org/en/mozilla/internet-policy/apple-ios-browser-engine-rules/",
+     "hn": "https://news.ycombinator.com/item?id=50575644",
+     "points": 323,
+     "comments": 190
+    },
+    {
+     "id": 50526023,
+     "title": "Show HN：我做了一个效率高 60 倍的音频转 MIDI 模型",
+     "title_en": "Show HN: I made an audio-to-MIDI model 60x more efficient",
+     "url": "https://kobi.music/research/dettato",
+     "hn": "https://news.ycombinator.com/item?id=50526023",
+     "points": 225,
+     "comments": 48
+    },
+    {
+     "id": 50495392,
+     "title": "为什么空客 A321XLR 起飞后常要「爬升」好几个小时",
+     "title_en": "Why the Airbus A321XLR often gets stuck climbing for first few hours of flight",
+     "url": "https://simpleflying.com/airbus-a321xlr-often-stuck-climbing-1st-few-hours-flight/",
+     "hn": "https://news.ycombinator.com/item?id=50495392",
+     "points": 84,
+     "comments": 57
+    },
+    {
+     "id": 50541568,
+     "title": "Show HN：耳鸣频率查找与音频陷波工具",
+     "title_en": "Show HN: Tinnitus frequency finder and audio notch tool",
+     "url": "https://trynotched.com/find",
+     "hn": "https://news.ycombinator.com/item?id=50541568",
+     "points": 139,
+     "comments": 103
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2451,
+    "comments": 1180,
+    "top_points": {
+     "id": 50575644,
+     "title": "Mozilla：为什么 iOS 上至今没有非 WebKit 浏览器",
+     "value": 323,
+     "comments": 190
+    },
+    "top_comments": {
+     "id": 50575644,
+     "title": "Mozilla：为什么 iOS 上至今没有非 WebKit 浏览器",
+     "value": 190
+    },
+    "top_brief": {
+     "id": 50575644,
+     "title": "Mozilla：为什么 iOS 上至今没有非 WebKit 浏览器",
+     "value": 323,
+     "comments": 190
+    }
+   }
+  },
+  {
+   "name": "文化",
+   "en": "Culture",
+   "page": 5,
+   "stories": [
+    {
+     "id": 50572355,
+     "title": "讲不简单，就是没真懂？（2017）",
+     "title_en": "If you can't explain something in simple terms, you don't understand it (2017)",
+     "url": "https://kottke.org/17/06/if-you-cant-explain-something-in-simple-terms-you-dont-understand-it",
+     "hn": "https://news.ycombinator.com/item?id=50572355",
+     "points": 610,
+     "comments": 288,
+     "summary": [
+      "Kottke 这篇 2017 年的短文收集了几段名言：David Goodstein 回忆，他请费曼解释为什么自旋 1/2 粒子服从费米–狄拉克统计，费曼说要准备一节新生课，几天后却回来说「我做不到，没法降到新生的水平，这说明我们其实并不真懂它」。John Gruber 则说苹果要求工程师能用简单的话讲清复杂技术，以证明自己完全理解。",
+      "文章还引用费曼「我想我可以放心地说，没有人懂量子力学」，以及他去世时黑板上写的「我不能创造的，我就不理解」。评论区不少人反对把这句话当口号：有人说它常被拿来为不愿下功夫找借口，也有人指出文章省掉了费曼原话里「新生水平」这个限定。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "seanhunter",
+       "stance": "被滥用",
+       "zh": "我觉得这个说法常被误解，被那些不愿下功夫理解复杂概念的人当成借口，把自己偷懒的后果怪到解释或解释者头上。",
+       "en": "used as an excuse by people who don’t want to make any effort",
+       "hn": "https://news.ycombinator.com/item?id=50574107",
+       "id": 50574107,
+       "replies": 85
+      },
+      {
+       "user": "mr_mitm",
+       "stance": "断章取义",
+       "zh": "这篇文章只是一堆费曼和 John Gruber 的引语，没什么洞见，我甚至觉得它歪曲了引语。费曼说的是「如果你没法在新生水平上解释它」，省掉这个限定就扭曲了原意。",
+       "en": "Leaving out that qualifier distorts the statement.",
+       "hn": "https://news.ycombinator.com/item?id=50573815",
+       "id": 50573815,
+       "replies": 7
+      },
+      {
+       "user": "tgv",
+       "stance": "讲到什么程度",
+       "zh": "讲到什么程度算数？拿这里常见的话题来说，你怎么用简单的话解释 NP？「难算的东西」？简单是简单，但算不上解释。",
+       "en": "How do you explain NP in simple terms?",
+       "hn": "https://news.ycombinator.com/item?id=50573325",
+       "id": 50573325,
+       "replies": 37
+      }
+     ],
+     "kicker": "文化 · 思考"
+    },
+    {
+     "id": 50571189,
+     "title": "「看得出来，这是你自己写的」",
+     "title_en": "\"I can tell you wrote this yourself\"",
+     "url": "https://em-online.bearblog.dev/i-can-tell-you-wrote-this-yourself/",
+     "hn": "https://news.ycombinator.com/item?id=50571189",
+     "points": 404,
+     "comments": 395,
+     "summary": [
+      "一位工科本科生在博客写道，作者熬了 48 小时写完一份约 10 页、关于扑翼微型飞行器控制的中期报告，导师见面第一句话是「看得出来这是你自己写的」，接着说「我收到过很多 AI 写的报告」。",
+      "作者回顾最后一年的课程：作业说明里「强烈鼓励使用 AI」实际意味着不用就吃亏，最难的一门课是在没窗户的机房里一天八小时给 AI 写提示词；理由是「行业就是这样发展的」。作者说这让人心灰意冷，自己不想把这么多思考外包给 AI。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "borzi",
+       "stance": "赞赏",
+       "zh": "好文章，作者前途光明。这些年我意识到，想「独立思考」的人以前是、大概也一直是少数。",
+       "en": "people that want to \"think for themselves\" were already, and probably always, in the minority",
+       "hn": "https://news.ycombinator.com/item?id=50571529",
+       "id": 50571529,
+       "replies": 103
+      },
+      {
+       "user": "FinnLobsien",
+       "stance": "工业化",
+       "zh": "在我看来，AI 和大模型实际上就是知识工作的工业化。不管喜不喜欢，工业化带来了许多好处，我们无法想象没有它的现代生活。",
+       "en": "AI and LLMs, in my opinion, are effectively the industrialization of knowledge work.",
+       "hn": "https://news.ycombinator.com/item?id=50572804",
+       "id": 50572804,
+       "replies": 50
+      },
+      {
+       "user": "danesparza",
+       "stance": "过来人",
+       "zh": "「这让人心灰意冷，我不想把这么多思考外包给它。」这句话很好地概括了我们这个行业眼下的焦虑。我在这行干了 30 多年，我们确实在经历哀伤的几个阶段。",
+       "en": "This is a good summary of the angst my industry is going through right now.",
+       "hn": "https://news.ycombinator.com/item?id=50576052",
+       "id": 50576052,
+       "replies": 0
+      }
+     ],
+     "kicker": "文化 · 教育"
+    },
+    {
+     "id": 50572822,
+     "title": "《氧气》是怎么做出来的",
+     "title_en": "The Making of Oxygene",
+     "url": "https://jeanmicheljarre.com/aaa/the-making-of-oxygene",
+     "hn": "https://news.ycombinator.com/item?id=50572822",
+     "points": 192,
+     "comments": 72,
+     "summary": [
+      "Jean-Michel Jarre 官网长文回顾 1976 年的专辑《Oxygène》：全辑只有六首编号曲目，纯器乐、没有任何原声乐器，在七个国家进入前十，在英国专辑榜停留 24 周，至今销量接近 2000 万张。专辑在一台八轨 Scully 录音机上录制，用的是自制调音台，乐器包括 VCS3、ARP 2600、RMI Harmonic Synthesizer 等。",
+      "文章同时介绍新版本：由 David Kosten、Steven Wilson 和 Jarre 从原始多轨制作的 Dolby Atmos 与 5.1 混音，以及 2026 年立体声重制；含 Atmos 混音的蓝光版将于 2026 年 12 月 4 日发行。评论区有人提到今天正是专辑在法国发行 50 周年。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "martyvis",
+       "stance": "50 周年",
+       "zh": "背景是今天正是这张专辑在法国发行 50 周年。我当然得把柜子里那张黑胶翻出来。",
+       "en": "today is the 50th anniversary of the album release in France",
+       "hn": "https://news.ycombinator.com/item?id=50573857",
+       "id": 50573857,
+       "replies": 6
+      },
+      {
+       "user": "blueblazin",
+       "stance": "知音",
+       "zh": "哇，真不敢相信在 HN 上看到我最喜欢的专辑和音乐人之一！我从没在现实中遇到过知道 JMJ 的人。",
+       "en": "I have never met anyone irl who knows JMJ.",
+       "hn": "https://news.ycombinator.com/item?id=50573704",
+       "id": 50573704,
+       "replies": 26
+      }
+     ],
+     "kicker": "文化 · 音乐"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50574383,
+     "title": "卫报：Anthropic 创纪录 IPO 未能止住 AI 抛售，全球股市下挫",
+     "title_en": "Global stock markets slump as Anthropic's record IPO fails to stem AI sell-off",
+     "url": "https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off",
+     "hn": "https://news.ycombinator.com/item?id=50574383",
+     "points": 191,
+     "comments": 225
+    },
+    {
+     "id": 50578794,
+     "title": "NBC：Anthropic 上市后股价大跌，纳指抹去 2026 年全部涨幅",
+     "title_en": "Anthropic shares tank after IPO as the Nasdaq erases 2026 gains",
+     "url": "https://www.nbcnews.com/business/markets/anthropic-shares-markets-selloff-nasdaq-rcna610394",
+     "hn": "https://news.ycombinator.com/item?id=50578794",
+     "points": 175,
+     "comments": 176
+    },
+    {
+     "id": 50583254,
+     "title": "CNBC：纳斯达克抹去 2026 年全部涨幅",
+     "title_en": "Nasdaq erases all 2026 gains",
+     "url": "https://www.cnbc.com/2026/11/19/stock-market-today-live-updates.html",
+     "hn": "https://news.ycombinator.com/item?id=50583254",
+     "points": 80,
+     "comments": 32
+    },
+    {
+     "id": 50581438,
+     "title": "消息称 Nvidia 会计问题遭 SEC 调查",
+     "title_en": "Nvidia accounting under SEC investigation, sources say",
+     "url": "https://finance.yahoo.com/markets/article/nvidia-stock-extends-25-trillion-rout-as-sec-probe-reportedly-investigates-its-accounting-194945274.html",
+     "hn": "https://news.ycombinator.com/item?id=50581438",
+     "points": 205,
+     "comments": 96
+    },
+    {
+     "id": 50572116,
+     "title": "嘉年华邮轮排放的硫氧化物是全欧洲汽车的十倍（2019）",
+     "title_en": "Carnival Cruises emits ten times more sulphur oxide than all of Europe's cars (2019)",
+     "url": "https://ecohustler.com/article/one-corporation-to-pollute-them-all/",
+     "hn": "https://news.ycombinator.com/item?id=50572116",
+     "points": 497,
+     "comments": 308
+    },
+    {
+     "id": 50573087,
+     "title": "大西洋月刊：科技领袖为何听起来既不合逻辑又令人反感",
+     "title_en": "Why do tech leaders sound so illogical and off-putting?",
+     "url": "https://www.theatlantic.com/technology/2026/11/silicon-valley-model-collapse/689505/",
+     "hn": "https://news.ycombinator.com/item?id=50573087",
+     "points": 91,
+     "comments": 114
+    },
+    {
+     "id": 50570984,
+     "title": "前 YC 总裁：「停下！」",
+     "title_en": "Former YC President: \"Stop!”",
+     "url": "https://geoffralston.substack.com/p/stop",
+     "hn": "https://news.ycombinator.com/item?id=50570984",
+     "points": 54,
+     "comments": 73
+    },
+    {
+     "id": 50583911,
+     "title": "求助：GitHub 刚把我删号了",
+     "title_en": "Help github just deleted me",
+     "url": "https://nate.mecca1.net/posts/2026-11-20_help/",
+     "hn": "https://news.ycombinator.com/item?id=50583911",
+     "points": 40,
+     "comments": 19
+    },
+    {
+     "id": 50583274,
+     "title": "NINLIVE：九寸钉现场演出档案",
+     "title_en": "NINLIVE: The Nine Inch Nails live archive",
+     "url": "https://ninlive.com/",
+     "hn": "https://news.ycombinator.com/item?id=50583274",
+     "points": 71,
+     "comments": 16
+    },
+    {
+     "id": 50544546,
+     "title": "Commodore 和 Atari 的工业设计师 Ira Velinsky",
+     "title_en": "IRA Velinsky, industrial designer for Commodore and Atari",
+     "url": "https://dfarq.homeip.net/ira-velinsky-industrial-designer-of-the-commodore-64/",
+     "hn": "https://news.ycombinator.com/item?id=50544546",
+     "points": 21,
+     "comments": 4
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2631,
+    "comments": 1818,
+    "top_points": {
+     "id": 50572355,
+     "title": "讲不简单，就是没真懂？（2017）",
+     "value": 610,
+     "comments": 288
+    },
+    "top_comments": {
+     "id": 50571189,
+     "title": "「看得出来，这是你自己写的」",
+     "value": 395
+    },
+    "top_brief": {
+     "id": 50572116,
+     "title": "嘉年华邮轮排放的硫氧化物是全欧洲汽车的十倍（2019）",
+     "value": 497,
+     "comments": 308
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "pbkompasz",
+  "id": 50580311,
+  "hn": "https://news.ycombinator.com/item?id=50580311",
+  "story_id": 50579568,
+  "story": "同一天，另一份「纯人类」GRH 证明草稿仓促公开",
+  "zh": "900 页对 25 万页。压缩即智能。",
+  "en": "900 pages vs 250,000 pages Compression is intelligence"
+ },
+ "stats": {
+  "snapshot": "2026-11-21T08:19:43+08:00",
+  "front_page_count": 90,
+  "with_numbers": 89,
+  "flagged_or_dupe": 1,
+  "top_points": {
+   "id": 50574968,
+   "title": "Levent Alpöge 宣布：与 Claude 合作证明了广义黎曼猜想",
+   "value": 2297,
+   "comments": 1556
+  },
+  "top_comments": {
+   "id": 50574968,
+   "title": "Levent Alpöge 宣布：与 Claude 合作证明了广义黎曼猜想",
+   "value": 1556
+  },
+  "second_comments": {
+   "id": 50579568,
+   "title": "同一天，另一份「纯人类」GRH 证明草稿仓促公开",
+   "value": 650
+  },
+  "over_500": 6,
+  "over_300": 17,
+  "over_100": 44,
+  "show_hn": 6,
+  "total_points": 17387,
+  "total_comments": 9609,
+  "hottest_ratio": {
+   "id": 50569519,
+   "title": "DeepMind 文章：AGI 之后是什么？",
+   "value": 1.94,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
