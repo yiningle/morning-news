@@ -1,0 +1,1264 @@
+{
+ "date": "2026-11-21",
+ "published_at": "2026-11-22T08:40:00+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-11-21",
+ "schema_version": 2,
+ "lead": {
+  "id": 50589618,
+  "title": "Lean 社区联合声明：Alpöge 的黎曼猜想证明「完全可信」",
+  "title_en": "Lean verification of the Riemann Hypothesis",
+  "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+  "hn": "https://news.ycombinator.com/item?id=50589618",
+  "points": 785,
+  "comments": 623,
+  "summary": [
+   "Lean 与 Mathlib 社区发表联合声明（获 Lean FRO 和 Mathlib Initiative 背书）：Levent Alpöge 于 11 月 20 日以 Lean 库形式发布的黎曼猜想证明约 1700 万行代码，社区在一天之内集体核验，「完全确信」证明正确，并向他表示祝贺。",
+   "声明逐条对照了此前提出的四项检验标准：定理陈述本身就是 Mathlib 中经专家审过的 RiemannHypothesis；数十人复现编译、得到同一份原始证明导出文件；社区另写了一个只依赖 Mathlib 的文件单独陈述猜想，再用 comparator 和 con-leche 两个独立工具确认 Alpöge 证明的正是这条陈述；导出的证明又经 Lean 官方内核、con-leche、con-ron 以及多种语言写的第三方检查器验证，其中 con-leche 和 con-ron 自带「相对集合论不会接受错误证明」的形式化证明。核查都在与源码隔离的惰性导出文件上进行。",
+   "这是当天点赞第一的帖子。评论区一边讨论多内核同时出错的可能性有多小，一边有人提醒「独立」检查器并没那么独立；也有人强调这一成果顺带把大量现代数学形式化了，并为 Alpöge 本人请功。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "rcr-anti",
+    "stance": "可信度",
+    "zh": "虽然仍有可能，但证明利用了漏洞的概率现在已经微乎其微。今年出过几次漏洞和错误证明之后，出现了多种实现，用不同语言写成，对自身一致性的证明程度也各不相同。要让黎曼猜想是假的，所有内核都得有同一个漏洞，而且同时影响一致性证明和黎曼猜想证明本身。",
+    "en": "the proof exploiting a bug is vanishingly small now",
+    "hn": "https://news.ycombinator.com/item?id=50590943",
+    "id": 50590943,
+    "replies": 40
+   },
+   {
+    "user": "thejokeisonme",
+    "stance": "存疑",
+    "zh": "过去就有一个伪造的考拉兹猜想反驳通过了其中一个独立检查器。这次有人类专家在环，模型偷偷「黑」过检查器而不被察觉的可能性小得多。但声明里的四点没有一条依赖人类参与，所以我不喜欢他们仅凭这四点就宣称完全有信心。",
+    "en": "A fake refutation of the Collatz conjecture already got through one of these independent checkers in the past.",
+    "hn": "https://news.ycombinator.com/item?id=50590575",
+    "id": 50590575,
+    "replies": 18
+   },
+   {
+    "user": "killerstorm",
+    "stance": "意义",
+    "zh": "如果我没理解错，为了这个证明，Claude 把现代数学的一大块都形式化了。所以这不仅是 GRH 的大成果，对数学基础和形式化也是。",
+    "en": "Claude formalized a huge chunk of all modern math",
+    "hn": "https://news.ycombinator.com/item?id=50591494",
+    "id": 50591494,
+    "replies": 39
+   }
+  ],
+  "kicker": "要闻 · 数学",
+  "tag": "点赞第一"
+ },
+ "side": [
+  {
+   "id": 50532613,
+   "title": "巴西税务局把税额计算器以 MIT 协议开源到 GitHub",
+   "title_en": "Brazil's tax authority open-sources its tax calculator on GitHub under MIT",
+   "url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/receita-federal-publica-primeiro-codigo-fonte-aberto-no-github-e-amplia-transparencia-da-reforma-tributaria",
+   "hn": "https://news.ycombinator.com/item?id=50532613",
+   "points": 713,
+   "comments": 228,
+   "summary": [
+    "巴西联邦税务局宣布，依据 11 月 12 日的第 342 号令，把税制改革配套的「税额计算器」源码发布到 GitHub 公开仓库，采用 MIT 协议——这是该局第一次以开源方式正式发布软件项目。计算器实现了新消费税 CBS 等税种的计算规则，附带计算过程和法律依据。",
+    "公告说，企业和软件商可以把与税务机关完全相同的计算逻辑嵌入开票、管理和合规系统，减少疑问、返工和合规成本；法令还登记了各仓库初始版本的哈希，便于核验真伪。代码此前已能从 CBS 平台下载，这次是搬上 GitHub，共三个仓库，由税务局与国有 IT 公司 Serpro 合作完成。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "usr1106",
+     "stance": "呼吁",
+     "zh": "每个自称民主自由的国家都应该把这类软件开源。也不必支持那些邪恶巨头，托管在别处就够了。",
+     "en": "Every country that calls itself democratic and free should open-source such software.",
+     "hn": "https://news.ycombinator.com/item?id=50588479",
+     "id": 50588479,
+     "replies": 98
+    },
+    {
+     "user": "dlisboa",
+     "stance": "背景",
+     "zh": "从住在其他国家的人那里听说，巴西的数字政务服务要先进得多。",
+     "en": "Brazil is much more advanced as far as digital government services go",
+     "hn": "https://news.ycombinator.com/item?id=50588553",
+     "id": 50588553,
+     "replies": 49
+    },
+    {
+     "user": "econ",
+     "stance": "为什么要官方出",
+     "zh": "商业公司其实没法为它签字担保，只能假装并祈祷它是对的。如果代码由政府提供，那它就是标准答案，哪怕有 bug 或笔误。",
+     "en": "If government delivers the code then that is the code",
+     "hn": "https://news.ycombinator.com/item?id=50591136",
+     "id": 50591136,
+     "replies": 0
+    }
+   ],
+   "kicker": "政务 · 开源",
+   "tag": "点赞第二"
+  },
+  {
+   "id": 50582069,
+   "title": "胰腺癌口服药 daraxonrasib 被誉为「几十年来最大突破」",
+   "title_en": "Pill to treat pancreatic cancer hailed as 'biggest breakthrough in decades'",
+   "url": "https://www.theguardian.com/society/2026/nov/20/pill-pancreatic-cancer-breakthrough-daraxonrasib",
+   "hn": "https://news.ycombinator.com/item?id=50582069",
+   "points": 505,
+   "comments": 125,
+   "summary": [
+    "《卫报》报道，在一项 61 名新确诊、已转移的晚期胰腺癌患者参与的试验中，KRAS 抑制剂 daraxonrasib 让约 90% 患者的肿瘤停止生长，六成多肿瘤缩小或消失，约 8%（每 12 人中 1 人）在 CT 上已检测不到肿瘤；一年后存活率 76.6%，而单用化疗通常只有 40–45%。",
+    "在巴塞罗那会议上报告结果的纪念斯隆-凯特琳癌症中心医生 Wungki Park 称这是「最接近治愈」的结果，但医生们也强调它还不能算治愈，也不知道能压制病情多久；中位随访 18 个月，后续还需更长的研究。英国癌症研究会负责人说这是胰腺癌几十年来最大的进步，并可能推广到其他带 KRAS 突变的癌症。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "mft_",
+     "stance": "肿瘤科视角",
+     "zh": "这次不是夸张。转移性胰腺癌几十年来真的没有像样的新疗法，要么是残酷的化疗，要么是稍微不那么残酷的化疗。新一代 KRAS 抑制剂是真正改变临床实践的突破。它治不好转移患者，但能让很多人活得更久更好。",
+     "en": "For once, this isn’t hyperbole.",
+     "hn": "https://news.ycombinator.com/item?id=50593199",
+     "id": 50593199,
+     "replies": 76
+    },
+    {
+     "user": "nik_s",
+     "stance": "别看轻",
+     "zh": "外行看到生存期从约 6 个月提到约 13 个月，可能觉得不够惊艳。但临床试验通常只招已经用尽其他办法的极晚期患者。对这样被认为「没希望」的病人能显示疗效极其罕见，这次的信号确实很强。",
+     "en": "the signal from this trial is indeed strong",
+     "hn": "https://news.ycombinator.com/item?id=50593925",
+     "id": 50593925,
+     "replies": 20
+    }
+   ],
+   "kicker": "医学 · 癌症"
+  },
+  {
+   "id": 50583761,
+   "title": "Ask HN：15 年经验的美国高级工程师失业两年，怎么办？",
+   "title_en": "Ask HN: I have been unemployed for 2y. 15 years of experience, US. What to do?",
+   "url": null,
+   "hn": "https://news.ycombinator.com/item?id=50583761",
+   "points": 595,
+   "comments": 655,
+   "summary": [
+    "发帖人自述是美国华盛顿特区周边的高级软件工程师，15 年经验，待过财富 50 强和多家中型公司。2025 年 1 月他听到风声、在一家千人规模的保险科技公司裁员前主动离职，此后两年在软件岗位上「零运气」，积蓄几乎花光，只够家里再撑四五个月；目前在教数学，可能马上去披萨店当经理。",
+    "他说简历上的空档没法向招聘方解释，自己仍会 C#/.NET/AWS，也学了 AI，但最后在职日期停在 2025 年 1 月就没人在意；他也想听听报酬不错的转行路线。这是当天评论最多的帖子：建议从「先别裸辞」「靠熟人内推」到「编一段创业经历」都有，争议不小。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "imeanwhatdoikno",
+     "stance": "争议建议",
+     "zh": "别处有条短评说「你得撒谎」，基本概括了。展开说：告诉面试方你这两年在做一个 AI 驱动的 SaaS 创业项目，靠 AI 智能体一个人做了多少事，只是销售和融资没起来，所以想找份正常工作。",
+     "en": "you need to lie",
+     "hn": "https://news.ycombinator.com/item?id=50587892",
+     "id": 50587892,
+     "replies": 121
+    },
+    {
+     "user": "taurath",
+     "stance": "过来人",
+     "zh": "我去年在因心理健康和照顾家人离开四年后重新入行，两年并不算长。但招聘的「正门」彻底坏了：投了几百份简历几乎没回音。我拿到的两个 offer，一个来自八年前的老上级，一个是招聘人员在领英上找到我。",
+     "en": "the front door in hiring is broken. Entirely.",
+     "hn": "https://news.ycombinator.com/item?id=50585622",
+     "id": 50585622,
+     "replies": 79
+    },
+    {
+     "user": "powvans",
+     "stance": "教训",
+     "zh": "如果你怀疑自己会被裁，千万别直接辞职。公司要和你分手几乎肯定会付钱让你走。有工作的时候找工作总是容易得多。",
+     "en": "DO NOT SIMPLY QUIT",
+     "hn": "https://news.ycombinator.com/item?id=50593314",
+     "id": 50593314,
+     "replies": 10
+    }
+   ],
+   "kicker": "职场 · 求职",
+   "tag": "评论第一"
+  },
+  {
+   "id": 50587875,
+   "title": "我的显示器把我的下载速度砍掉了 75%",
+   "title_en": "My monitor was cutting my download speed by 75%",
+   "url": "https://blog.tymscar.com/posts/studiodisplayethernet/",
+   "hn": "https://news.ycombinator.com/item?id=50587875",
+   "points": 455,
+   "comments": 223,
+   "summary": [
+    "作者家里是 2.5G 对称宽带，某天测速只有 600 Mbps 下行、上行却正常。他把 UGREEN 2.5G USB 网卡（Realtek RTL8156B）插在 Studio Display XDR 显示器上实现「一根线」，直插 Mac 则能跑满。换 Realtek 官方驱动升到 1.1 Gbps，开路由器的流控能到约 2 Gbps，但他不想常开流控。",
+    "用固定速率 UDP 测试后发现：经显示器转接时，网卡每秒最多只能把约 16.8 万帧交给 Mac，超出部分在网卡里被丢掉。原因是 USB 突发：这块网卡每次只发 4 个 1KB 包就要等主机「放行」，经过显示器 hub 的这段等待约 7.6 微秒，排空速度低于 2.5G 输入，缓冲区满就丢包。换成一次突发 8 包、链路翻倍的 RTL8157 5G 网卡后，零丢帧。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "fancyfredbot",
+     "stance": "一句话解释",
+     "zh": "很多评论误解了文章：经过显示器多出来的延迟，让笔记本没法足够快地确认数据包，于是网卡上的缓冲区被填满并开始丢包。换一个确认频率要求更低的网卡就解决了。",
+     "en": "the extra latency from going through the monitor meant his laptop couldn't acknowledge the packets quickly enough",
+     "hn": "https://news.ycombinator.com/item?id=50589442",
+     "id": 50589442,
+     "replies": 3
+    },
+    {
+     "user": "manarth",
+     "stance": "标题党？",
+     "zh": "更准确的描述是：「我的 USB 网卡把下载速度砍了」。是不是显示器其实无关紧要。",
+     "en": "My USB network switch was cutting my download speed",
+     "hn": "https://news.ycombinator.com/item?id=50590071",
+     "id": 50590071,
+     "replies": 13
+    },
+    {
+     "user": "nagisa",
+     "stance": "同款坑",
+     "zh": "我最近在一个多速率电口 SFP+ 模块上遇到同样的问题：它向网卡宣称 10Gbps，电口那边却协商到更低速度，网卡按高速发，模块就大量丢包，吞吐大幅下降。",
+     "en": "I recently had this same problem with a multigig copper SFP+ module.",
+     "hn": "https://news.ycombinator.com/item?id=50592887",
+     "id": 50592887,
+     "replies": 0
+    }
+   ],
+   "kicker": "硬件 · 网络排错"
+  },
+  {
+   "id": 50576012,
+   "title": "Slopstrap：让你的网站看起来像匆忙「氛围编码」出来的",
+   "title_en": "Slopstrap – Make your site look hastily vibecoded",
+   "url": "https://slopstrap.mikelacher.com/",
+   "hn": "https://news.ycombinator.com/item?id=50576012",
+   "points": 653,
+   "comments": 121,
+   "summary": [
+    "Mike Lacher 做了一个恶搞 CSS 框架 Slopstrap，口号是「不花 LLM 的 token 也能拥有 LLM 的样子」。组件包括闪烁的「All Systems Operational」状态点、粗彩色左边框、渐变闪光按钮、到处贴的胶囊徽章、渐变文字、一个随意的斜体衬线词、手写马克笔下划线、卡片套卡片和便当格布局。",
+    "它还能自动生成假装数字往上涨的统计卡、创业公司 logo 跑马灯、假推荐语和「几乎说得通」的行业废话正文，一行 Slopstrap.slopify() 就能把普通网页「slop 化」，甚至附了给 AI 智能体用的说明页。这是当天点赞第三的帖子。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "merelysounds",
+     "stance": "替设计说句话",
+     "zh": "就像破折号一样，有些元素我在 LLM 出现之前就用过，比如手写下划线、胶囊按钮、粗左边框。我仍觉得适度、用对地方没问题——还是像破折号一样。",
+     "en": "I used some of these before LLMs",
+     "hn": "https://news.ycombinator.com/item?id=50587698",
+     "id": 50587698,
+     "replies": 11
+    },
+    {
+     "user": "bob1029",
+     "stance": "叫好",
+     "zh": "做得太好了。展示页本身这么干净，又多了一层讽刺。",
+     "en": "there's an additional layer of irony with the presentation being this clean",
+     "hn": "https://news.ycombinator.com/item?id=50583921",
+     "id": 50583921,
+     "replies": 3
+    },
+    {
+     "user": "lxgr",
+     "stance": "笑点",
+     "zh": "页脚那句「Made with <闪烁的红色状态灯> by」把我笑死了。",
+     "en": "killed me",
+     "hn": "https://news.ycombinator.com/item?id=50588439",
+     "id": 50588439,
+     "replies": 4
+    }
+   ],
+   "kicker": "网页 · 恶搞",
+   "tag": "点赞第三"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "stories": [
+    {
+     "id": 50546587,
+     "title": "只给十六进制转储，LLM 也能逐字节读写可执行文件",
+     "title_en": "LLMs can read and write executables byte by byte from a hex dump",
+     "url": "https://sgiannopoulos.github.io/blog/machine-code-programming/",
+     "hn": "https://news.ycombinator.com/item?id=50546587",
+     "points": 179,
+     "comments": 119,
+     "summary": [
+      "两位作者测试「机器码编程」：不给反汇编器、编译器或任何工具，只把 xxd 十六进制转储贴进提示词，看 GPT-6.1 Sol 能否读懂、修改和从零写出 x86-64 可执行文件。他们用中继剥掉每个请求里的工具并审计事件流，每题只给一次回答机会，产物与 GCC 参考构建逐字节比对输出。",
+      "结果：模型认出了全部五个二进制在做什么，包括一个去符号的 FreeBSD 统计工具 ministat，还找到其上游代码的一个真实 bug；分析一个未知恶意样本时正确判断了行为并提取出正确的 IOC；直接改字节给三个程序加了功能，并从零写出三个能跑的程序。DeepSeek V4.1 Flash 对恶意样本也得出相同结论。作者据此推测 LLM 将来可能直接写机器码。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "rossy",
+       "stance": "别误读",
+       "zh": "这种表述有点误导：好像 LLM 天生把机器码当成另一种语言来读写。看看 DeepSeek 的推理过程就会破除这种错觉——它就是在手工反汇编，和一个被（残忍地）剥夺了反汇编器的人类逆向工程师一样。",
+       "en": "It's just disassembling by hand like what a human reverse engineer would do",
+       "hn": "https://news.ycombinator.com/item?id=50590724",
+       "id": 50590724,
+       "replies": 3
+      },
+      {
+       "user": "pier25",
+       "stance": "训练数据猜测",
+       "zh": "我多年来一直怀疑 AI 公司用商业软件训练模型，包括游戏、音频插件、DAW 等。如果最后发现它们像对书和音乐那样用了盗版软件，我一点都不会惊讶。",
+       "en": "AI companies have been using commercial software to train their models",
+       "hn": "https://news.ycombinator.com/item?id=50589397",
+       "id": 50589397,
+       "replies": 53
+      },
+      {
+       "user": "mfuzzey",
+       "stance": "不看好直写机器码",
+       "zh": "在逆向和恶意软件分析里，面对只有机器码没有源码的情况，这很有用；但我不认为让 AI 直接写机器码而不是高级语言有意义。LLM 生成代码是非确定性的，生成可编译的高级源码合理得多。",
+       "en": "I don't think that AI \"writing machine code directly rather than high level languages\" makes sense",
+       "hn": "https://news.ycombinator.com/item?id=50589775",
+       "id": 50589775,
+       "replies": 1
+      }
+     ],
+     "kicker": "AI · 逆向"
+    },
+    {
+     "id": 50586292,
+     "title": "ClawDOS：跑在 4.77MHz IBM PC XT 上的 AI 编程智能体",
+     "title_en": "ClawDOS – An AI coding agent for DOS",
+     "url": "http://ricapar.net/ClawDOS/",
+     "hn": "https://news.ycombinator.com/item?id=50586292",
+     "points": 156,
+     "comments": 50,
+     "summary": [
+      "作者把童年用过的 IBM PC 5160（8088 @ 4.77MHz、640K 内存、CGA）变成了 AI 编程智能体的宿主：在 C:\\> 下输入 CLAWDOS 就能和 Claude 对话，它能读写磁盘文件、写程序、用 Turbo C 编译运行、看屏幕截图，还会在 C:\\MEMORY 里记笔记。作者说仓库 100% 由 Claude 写成，只有说明框里的话是他本人写的。",
+      "176KB 的 HARNESS.EXE 在 PC 上自己拼 Claude Messages API 请求、解析流式回复、执行 18 个工具，只有 TLS 交给另一台机器上的隧道。编译时它会保存状态让出内存给 Turbo C；它在 XT 上写出了致敬电影《战争游戏》的 CGA 演示。默认开启安全模式，改文件、内存或端口前都要按 y 确认。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "linzhangrun",
+       "stance": "实际需求",
+       "zh": "说真的，市场上很缺能在大量还在跑 WinXP、Win7 的旧设备上用的智能体。不是为了在上面开发，而是各种调试工作会非常有用。",
+       "en": "the market is sorely lacking an Agent for the large number of existing devices running WinXP, Win7",
+       "hn": "https://news.ycombinator.com/item?id=50586979",
+       "id": 50586979,
+       "replies": 22
+      },
+      {
+       "user": "Tiberium",
+       "stance": "好玩",
+       "zh": "在奇怪的环境（DOS、跑在功能机上的 Linux、Windows 95 等）里启动智能体、看它们怎么反应，感觉又可爱又调皮 :)",
+       "en": "It feels very cute and mischievous",
+       "hn": "https://news.ycombinator.com/item?id=50586705",
+       "id": 50586705,
+       "replies": 4
+      },
+      {
+       "user": "Yashsarwaiya",
+       "stance": "安全问题",
+       "zh": "有什么能阻止它执行一个没法撤销的删除？",
+       "en": "What stops it from running a delete you can't undo?",
+       "hn": "https://news.ycombinator.com/item?id=50593769",
+       "id": 50593769,
+       "replies": 1
+      }
+     ],
+     "kicker": "AI · 复古计算"
+    },
+    {
+     "id": 50591853,
+     "title": "LookAtMyQuant：把 Inkling-2-Mini 压进 5.4GB",
+     "title_en": "Inkling-2-Mini in 5.4 GB Memory",
+     "url": "https://github.com/ShinMegamiBoson/lookatmyquant",
+     "hn": "https://news.ycombinator.com/item?id=50591853",
+     "points": 327,
+     "comments": 88,
+     "summary": [
+      "GitHub 项目 LookAtMyQuant 自称「量化编译器」：先测量模型每个部分被压缩后对输出的伤害，再为每部分挑选编码，在给定体积内把损失降到最低。README 称它在 Gemma 4 E2B 上的 GGUF 比同体积 Q4_K_M 的 KL 散度低 12 倍，还把 Qwen3.8-27B 从 53.7GB 压到 7.2GB。",
+      "这次上榜的是它对 thinkingmachines 的 Inkling-2-Mini（26.4B 参数、5.4B 激活、循环 3 次的 MoE）的压缩：把 18.89GB 文本权重做成 5.38GB、8.87GB、11.18GB、12.76GB 四个 Apple Silicon MLX 版本。评论区对这类「小仓库大宣称」相当警惕。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Aurornis",
+       "stance": "泼冷水",
+       "zh": "如果你刚接触量化模型：别对随便哪个 GitHub 仓库「把大模型塞进小内存」的宣称太兴奋。总有取舍，刷 KL 散度和单项基准太容易了。能在设备上跑起来不代表有用。这个仓库标题里的「好 12 倍」甚至不适用于 Inkling-2-Mini。",
+       "en": "Don't get too excited about claims of fitting large models into tiny RAM footprints from random GitHub repos.",
+       "hn": "https://news.ycombinator.com/item?id=50593478",
+       "id": 50593478,
+       "replies": 9
+      },
+      {
+       "user": "syntaxing",
+       "stance": "速度",
+       "zh": "我很想喜欢这个模型，但它实在太慢了。在我的 R9700 上只有 Qwen 27B 三分之一的速度，不知道是循环 transformer 的问题还是内核没优化。",
+       "en": "it is sooooo slow",
+       "hn": "https://news.ycombinator.com/item?id=50592987",
+       "id": 50592987,
+       "replies": 24
+      },
+      {
+       "user": "kroaton",
+       "stance": "质疑",
+       "zh": "50 条评论、234 点赞，却没有一个人真的试过这个模型。要么是水军，要么是 HN 的质量彻底完蛋了。",
+       "en": "literally nobody has tried this model",
+       "hn": "https://news.ycombinator.com/item?id=50593754",
+       "id": 50593754,
+       "replies": 0
+      }
+     ],
+     "kicker": "AI · 本地模型"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50591835,
+     "title": "《经济学人》：黄仁勋倒台对硅谷加速主义者是坏消息",
+     "title_en": "Jensen Huang's fall is bad news for Silicon Valley's accelerationists",
+     "url": "https://www.economist.com/business/2026/11/19/jensen-huangs-fall-is-bad-news-for-silicon-valleys-accelerationists",
+     "hn": "https://news.ycombinator.com/item?id=50591835",
+     "points": 148,
+     "comments": 322
+    },
+    {
+     "id": 50588916,
+     "title": "Astra 6.2 和 Sol 6.2 在 SimpleBench 上翻车",
+     "title_en": "Astra 6.2 and Sol 6.2 flop at Simple Bench",
+     "url": "https://simple-bench.com/",
+     "hn": "https://news.ycombinator.com/item?id=50588916",
+     "points": 158,
+     "comments": 155
+    },
+    {
+     "id": 50583117,
+     "title": "「饥饿管家效应」：LLM 中隐藏的商业激励",
+     "title_en": "The Hungry Butler Effect: Concealed Commercial Incentives in LLMs",
+     "url": "https://www.researchgate.net/publication/418143113_The_Hungry_Butler_Effect_Concealed_Commercial_Incentives_and_the_Erosion_of_Epistemic_Rigour_in_Large_Language_Models",
+     "hn": "https://news.ycombinator.com/item?id=50583117",
+     "points": 53,
+     "comments": 19
+    },
+    {
+     "id": 50585735,
+     "title": "Meta 发布 Muse Spark 1.3",
+     "title_en": "Muse Spark 1.3",
+     "url": "https://dev.meta.ai/models/muse-spark",
+     "hn": "https://news.ycombinator.com/item?id=50585735",
+     "points": 17,
+     "comments": 1
+    },
+    {
+     "id": 50588396,
+     "title": "人人都能轻松用上私密的开放权重模型",
+     "title_en": "Anyone can easily use private, open weight models",
+     "url": "https://micahflee.com/heres-how-anyone-can-easily-use-private-open-weight-models/",
+     "hn": "https://news.ycombinator.com/item?id=50588396",
+     "points": 27,
+     "comments": 8
+    },
+    {
+     "id": 50589235,
+     "title": "Show HN：agent-mcts，在 Claude Code 之上做蒙特卡洛树搜索",
+     "title_en": "Show HN: agent-mcts – Monte Carlo tree search on top of Claude Code",
+     "url": "https://github.com/natsu0529/agent-mcts",
+     "hn": "https://news.ycombinator.com/item?id=50589235",
+     "points": 11,
+     "comments": 0
+    },
+    {
+     "id": 50585962,
+     "title": "Tell HN：发往 Minimax 的 OpenRouter 提示词可能被人读过",
+     "title_en": "Tell HN: OpenRouter prompts to Minimax may have been read",
+     "url": null,
+     "hn": "https://news.ycombinator.com/item?id=50585962",
+     "points": 41,
+     "comments": 5
+    },
+    {
+     "id": 50582794,
+     "title": "漏洞百出的 AI 供应链正以惊人速度泄露用户机密数据",
+     "title_en": "Leaky AI supply chain is exposing secret user data at an alarming rate",
+     "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/",
+     "hn": "https://news.ycombinator.com/item?id=50582794",
+     "points": 49,
+     "comments": 6
+    },
+    {
+     "id": 50594564,
+     "title": "联合国自主武器管控谈判破裂",
+     "title_en": "International UN talks on controlling use of autonomous weapons collapse",
+     "url": "https://www.theguardian.com/technology/2026/nov/21/international-talks-control-ai-autonomous-weapons-collapse",
+     "hn": "https://news.ycombinator.com/item?id=50594564",
+     "points": 22,
+     "comments": 0
+    },
+    {
+     "id": 50588647,
+     "title": "Anthropic IPO 承销行平掉稳定股价的头寸",
+     "title_en": "Anthropic's IPO bank closed position meant to stabilize stock",
+     "url": "https://www.reuters.com/markets/us/anthropics-ipo-bank-closed-position-meant-stabilize-stock-removing-source-2026-11-20",
+     "hn": "https://news.ycombinator.com/item?id=50588647",
+     "points": 31,
+     "comments": 1
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1219,
+    "comments": 774,
+    "top_points": {
+     "id": 50591853,
+     "title": "LookAtMyQuant：把 Inkling-2-Mini 压进 5.4GB",
+     "value": 327,
+     "comments": 88
+    },
+    "top_comments": {
+     "id": 50591835,
+     "title": "《经济学人》：黄仁勋倒台对硅谷加速主义者是坏消息",
+     "value": 322
+    },
+    "top_brief": {
+     "id": 50588916,
+     "title": "Astra 6.2 和 Sol 6.2 在 SimpleBench 上翻车",
+     "value": 158,
+     "comments": 155
+    }
+   }
+  },
+  {
+   "name": "开发",
+   "stories": [
+    {
+     "id": 50534387,
+     "title": "Valkey 用 B+ 树换掉跳表，有序集合开销最多降 43%",
+     "title_en": "Valkey kills the skiplist, cuts sorted set overhead by up to 43%",
+     "url": "https://valkey.io/blog/from-skiplist-to-b+tree/",
+     "hn": "https://news.ycombinator.com/item?id=50534387",
+     "points": 194,
+     "comments": 69,
+     "summary": [
+      "Valkey 9.2 把大型有序集合（sorted set）背后的跳表换成了高扇出 B+ 树变体 fbtree。跳表每个节点只存一个元素、各自单独分配，每节点约 29 字节指针和跨度开销，遍历还要一连串相互依赖的内存访问；fbtree 每个 512 字节叶子能放 61 个成员，分数和成员打包存放，内节点用 4 字节「特征」配合 SIMD 并行比较，叶子之间双向链接，最左最右叶子缓存以保证 ZPOPMIN 等操作不退化。",
+      "500 万个 20 字节成员的测试中，每成员索引开销从 50.3 字节降到 28.5 字节（顺序插入，-43%）或 32.0 字节（随机插入，-36%），最多省约 109MB；ZADD、ZREM 吞吐分别提升 105% 和 76%。命令行为不变，唯一可见变化是 OBJECT ENCODING 返回 btree 而不是 skiplist。9.2 目前处于候选版测试阶段。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "antirez",
+       "stance": "Redis 作者",
+       "zh": "公平起见：我在 Redis 上也用不同技术做过类似优化（提交 PR 时同事告诉我 Valkey 和另一个 Redis 团队也在做，经过大量基准测试三个实现里选了我的），有时能比 Valkey 这次的优化再省下几十个百分点的内存。",
+       "en": "For par condicio",
+       "hn": "https://news.ycombinator.com/item?id=50586785",
+       "id": 50586785,
+       "replies": 6
+      },
+      {
+       "user": "hinkley",
+       "stance": "跳表早该退场",
+       "zh": "跳表出现的那个年代，我正意识到性能的理论设计和实际设计已经分道扬镳，而跳表是巨大的缓存未命中隐患。",
+       "en": "skip lists were a huge cache miss liability",
+       "hn": "https://news.ycombinator.com/item?id=50585065",
+       "id": 50585065,
+       "replies": 8
+      },
+      {
+       "user": "romange",
+       "stance": "抢先",
+       "zh": "Dragonfly 在 2024 年就率先用了这个思路。",
+       "en": "Dragonfly lead with this idea in 2024",
+       "hn": "https://news.ycombinator.com/item?id=50590665",
+       "id": 50590665,
+       "replies": 0
+      }
+     ],
+     "kicker": "开发 · 数据库"
+    },
+    {
+     "id": 50590279,
+     "title": "Show HN：Zero C#，没有运行时也没有 GC 的 C#",
+     "title_en": "Show HN: Zero C# – C# without a runtime or GC",
+     "url": "https://onurgumus.github.io/zero-csharp/index.html",
+     "hn": "https://news.ycombinator.com/item?id=50590279",
+     "points": 122,
+     "comments": 94,
+     "summary": [
+      "Zero C# 是 bflat 的一个分支，把 C# 直接编译成小巧的原生程序：没有 .NET 运行时、没有垃圾回收器，目标机器上什么都不用装。保留 C# 的语法、类型检查和泛型（按类型特化），支持 C# 15 的联合类型和新内存安全规则、接口与虚方法、record 和 lambda；内存来自可一次性整体释放的 arena，另有小型库提供字符串、集合和输入输出。",
+      "代价是：new 出来的东西永不释放，throw 会直接结束程序（建议用联合类型返回错误），没有反射和 async。同一份 hello world 在 Windows 上 11KB、Linux 上约 40KB，还能编译到 macOS、WebAssembly，以及经 HX DOS 扩展器跑在 386 的 DOS 上。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "raincole",
+       "stance": "已经够用",
+       "zh": "C# 本身已经为性能关键代码提供了很多工具：unsafe 里可以用指针，Marshal 分配非托管内存，Span 避免拷贝，甚至能手动向量化。不带 .NET 运行时分发也有 NativeAOT。",
+       "en": "C# already provides many tools for your performance-critical code though.",
+       "hn": "https://news.ycombinator.com/item?id=50591011",
+       "id": 50591011,
+       "replies": 14
+      },
+      {
+       "user": "bob1029",
+       "stance": "GC 是功能",
+       "zh": "GC 是功能，不是要消灭的 bug。GC 并不是交出控制权，而是让你专注于本来要解决的问题。",
+       "en": "The GC is a feature. Not a bug to be eliminated.",
+       "hn": "https://news.ycombinator.com/item?id=50590877",
+       "id": 50590877,
+       "replies": 22
+      },
+      {
+       "user": "real_faxenoff",
+       "stance": "实测",
+       "zh": "我在做一个 .NET 小工具 montab，一直想把体积和 CPU/GPU 占用压到最低，结果是 0.88MB 的二进制、几乎零负载。看起来 Zero C# 正适合我，但我实际发现：我得把所有东西彻底重写。",
+       "en": "I’d have to rewrite absolutely everything",
+       "hn": "https://news.ycombinator.com/item?id=50594139",
+       "id": 50594139,
+       "replies": 2
+      }
+     ],
+     "kicker": "开发 · .NET"
+    },
+    {
+     "id": 50585376,
+     "title": "Clojure 会改变你思考编程的方式（2017）",
+     "title_en": "Clojure will affect the way you think about programming (2017)",
+     "url": "https://eli.thegreenplace.net/2017/clojure-the-perfect-language-to-expand-your-brain/",
+     "hn": "https://news.ycombinator.com/item?id=50585376",
+     "points": 185,
+     "comments": 88,
+     "summary": [
+      "Eli Bendersky 2017 年的旧文：被问「下一门该学什么语言」时他推荐 Clojure。理由是它是 Lisp——动态类型、偏好组合内置数据结构而非对象、大量使用高阶函数、有完整的 Lisp 宏，鼓励 REPL 驱动开发；同时又很现代，有高效的持久化向量等数据结构，是他摸了 15 年 Lisp 后第一个愿意用于生产的。",
+      "文章还称赞它基于序列协议和惰性求值、读起来像 SQL 的数据处理，以协议（类似接口）和多重分派代替继承的面向对象，以及不可变数据、原子、STM 和 core.async 组成的并发工具箱，并建议即便不打算用于生产也值得学。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "tikotus",
+       "stance": "LLM 时代",
+       "zh": "在 LLM 时代我经常想起 Clojure。我认为它在普及不可变数据结构上起了重要作用。不可变性缩小了理解和解决问题所需的上下文，对人和 LLM 都有好处。",
+       "en": "Immutability simplifies the required context for understanding and solving problems.",
+       "hn": "https://news.ycombinator.com/item?id=50587593",
+       "id": 50587593,
+       "replies": 14
+      },
+      {
+       "user": "TN1ck",
+       "stance": "亲历",
+       "zh": "大学时有段时间我每天早上先做几道 4clojure 题，着了迷，几乎全做完了。那几周对我编程能力的影响大得惊人。它是一门设计优美的语言，让你用数据结构及其变换来思考。",
+       "en": "It's wild what an impact these few weeks had on my programming abilities.",
+       "hn": "https://news.ycombinator.com/item?id=50586120",
+       "id": 50586120,
+       "replies": 5
+      }
+     ],
+     "kicker": "开发 · 语言"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50591260,
+     "title": "用 Go 写 PostgreSQL 扩展",
+     "title_en": "PostgreSQL Extensions in Go",
+     "url": "https://jespino.github.io/gopgext/",
+     "hn": "https://news.ycombinator.com/item?id=50591260",
+     "points": 114,
+     "comments": 20
+    },
+    {
+     "id": 50574264,
+     "title": "确定性模拟测试人人可用",
+     "title_en": "Deterministic Simulation Testing Is for Everyone",
+     "url": "https://outdata.net/blog/261120",
+     "hn": "https://news.ycombinator.com/item?id=50574264",
+     "points": 72,
+     "comments": 10
+    },
+    {
+     "id": 50577991,
+     "title": "我对自己艺术网站的技术架构挺满意",
+     "title_en": "I'm quite pleased by the tech architecture of my art website",
+     "url": "https://klauria.tech/klauria-art/",
+     "hn": "https://news.ycombinator.com/item?id=50577991",
+     "points": 140,
+     "comments": 33
+    },
+    {
+     "id": 50551619,
+     "title": "如何绕过 Rust 的孤儿规则",
+     "title_en": "How to Bypass Rust's Orphan Rule",
+     "url": "https://edvong.com/bypass-orphan-rule/",
+     "hn": "https://news.ycombinator.com/item?id=50551619",
+     "points": 40,
+     "comments": 6
+    },
+    {
+     "id": 50593737,
+     "title": "给下一百个 Rust GUI 的建议",
+     "title_en": "Advice for the next 100 Rust GUIs",
+     "url": "https://linebender.org/blog/next-100-guis/",
+     "hn": "https://news.ycombinator.com/item?id=50593737",
+     "points": 49,
+     "comments": 4
+    },
+    {
+     "id": 50548136,
+     "title": "Context-Generic Programming v0.8.0：可插拔的 Rust trait 实现",
+     "title_en": "Context-Generic Programming v0.8.0 – Pluggable trait implementations for Rust",
+     "url": "https://contextgeneric.dev/blog/v0.8.0-release/",
+     "hn": "https://news.ycombinator.com/item?id=50548136",
+     "points": 16,
+     "comments": 0
+    },
+    {
+     "id": 50564684,
+     "title": "Show HN：LZ0，解码器零分配的非对称 LZ 压缩器",
+     "title_en": "Show HN: LZ0 -An asymmetric LZ compressor with ultra minimal, 0-alloc decoder",
+     "url": "https://github.com/seb3773/lz0",
+     "hn": "https://news.ycombinator.com/item?id=50564684",
+     "points": 22,
+     "comments": 6
+    },
+    {
+     "id": 50535187,
+     "title": "Substrate：面向 WebAssembly 的 Lisp",
+     "title_en": "Substrate: A Lisp for WebAssembly",
+     "url": "https://substrate-lang.com",
+     "hn": "https://news.ycombinator.com/item?id=50535187",
+     "points": 18,
+     "comments": 5
+    },
+    {
+     "id": 50535504,
+     "title": "TypeDB 用 None 类型取代隐式可选值",
+     "title_en": "Replacing implicit optionals with a None type in TypeDB",
+     "url": "https://typedb.com/blog/replacing-implicit-optionals-with-a-none-type-in-typedb",
+     "hn": "https://news.ycombinator.com/item?id=50535504",
+     "points": 12,
+     "comments": 2
+    },
+    {
+     "id": 50535228,
+     "title": "苏联 Elektronika BK-0010：基于 PDP-11 克隆 CPU 的家用电脑",
+     "title_en": "The Soviet Elektronika BK-0010 home computer built on a clone of the PDP-11 CPU",
+     "url": "https://8bitarchitect.net/machines/elektronika-bk-0010/",
+     "hn": "https://news.ycombinator.com/item?id=50535228",
+     "points": 49,
+     "comments": 15
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1033,
+    "comments": 352,
+    "top_points": {
+     "id": 50534387,
+     "title": "Valkey 用 B+ 树换掉跳表，有序集合开销最多降 43%",
+     "value": 194,
+     "comments": 69
+    },
+    "top_comments": {
+     "id": 50590279,
+     "title": "Show HN：Zero C#，没有运行时也没有 GC 的 C#",
+     "value": 94
+    },
+    "top_brief": {
+     "id": 50577991,
+     "title": "我对自己艺术网站的技术架构挺满意",
+     "value": 140,
+     "comments": 33
+    }
+   }
+  },
+  {
+   "name": "科学",
+   "stories": [
+    {
+     "id": 50588982,
+     "title": "美军要原地引爆近万磅变质叠氮化铅",
+     "title_en": "Detonating a pile of lead azide",
+     "url": "https://www.science.org/content/blog-post/detonating-huge-pile-lead-azide-really",
+     "hn": "https://news.ycombinator.com/item?id=50588982",
+     "points": 498,
+     "comments": 330,
+     "summary": [
+      "化学博主 Derek Lowe 用问答形式解释：美国陆军计划在爱荷华州伯灵顿附近的弹药厂原地引爆 68 桶、约 9500–10000 磅叠氮化铅，原定 11 月 20 日执行，因诉讼推迟到至少周一。叠氮化铅是起爆药，敏感到锤子一敲就可能炸，用作炮弹等的雷管。这批药在两处地下混凝土库里泡在乙醇水溶液中约 20 年，温度变化让它部分溶解后重新结晶，变得对冲击和摩擦更加敏感。",
+      "他说这种结晶本是可预见、不该发生的问题，「有人严重搞砸了」。现在搬运或开桶都可能引爆，化学销毁只适用于小量，继续掩埋只会让风险逐年增加，所以 3 月国防部认定其为危险废物，EPA 约一周前发了紧急许可。现场已准备石灰填层和 300 道沙障把冲击导向南和西南，并洒水抑尘；但铅尘可能随风飘 20–30 英里，各方已在爱荷华东部布设空气和土壤监测。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "cogman10",
+       "stance": "外包之过",
+       "zh": "真是一团糟。这正是美国军方的问题所在：这座工厂是二战时政府建的，政府运营到 60 年代关停，1998 年改为承包商运营。我们给了这些公司那么多钱，它们却认为偷工减料、不当处置也无所谓。",
+       "en": "this is exactly what's wrong with the US military",
+       "hn": "https://news.ycombinator.com/item?id=50589677",
+       "id": 50589677,
+       "replies": 88
+      },
+      {
+       "user": "compass_copium",
+       "stance": "机器人也不行",
+       "zh": "给建议「用机器人搬」的各位：如果你在处理有机过氧化物这类会爆的化学品的实验室里发现东西变成这种状态，正确做法就是叫拆弹队来，把你那一升之类的材料原地销毁。这些桶根本没法挪动而不引爆整批。",
+       "en": "They literally can not shift these barrels without the entire thing detonating.",
+       "hn": "https://news.ycombinator.com/item?id=50591155",
+       "id": 50591155,
+       "replies": 7
+      },
+      {
+       "user": "exabrial",
+       "stance": "两害相权",
+       "zh": "按我的理解，它迟早要炸。争论点在于，最好是由我们选择什么时候炸，而不是来一次贝鲁特港那样的事故。",
+       "en": "its going to detonate",
+       "hn": "https://news.ycombinator.com/item?id=50594790",
+       "id": 50594790,
+       "replies": 0
+      }
+     ],
+     "kicker": "科学 · 化学",
+     "tag": "评论第三"
+    },
+    {
+     "id": 50583982,
+     "title": "Re: Riemann：一篇为「人」辩护的檄文",
+     "title_en": "Re: Riemann",
+     "url": "https://borretti.me/article/re-riemann",
+     "hn": "https://news.ycombinator.com/item?id=50583982",
+     "points": 213,
+     "comments": 223,
+     "summary": [
+      "Fernando Borretti 回应 Alpöge 的黎曼猜想公告：他摘出公告里「Claude 在终点线前远远把我甩下」「Claude 飞翔、起舞、闪耀」等段落，与安·兰德描写阿波罗 11 号发射、歌颂人之伟大的文字对比，说这份公告读起来像遗书，像临终者在安乐死前的告别信。",
+      "他以迭戈·里维拉的壁画《人，宇宙的主宰》为喻：人类本应是握着控制杆的中心，而 AI 公司和 AI 安全、有效利他圈子的梦想却是让人躺进温水、看着召唤出的恶魔起舞然后悄然退场。他称之为「背叛与投降」。评论区争论激烈：有人深受触动，也有人认为这不是意志问题，或认为为保留「意义」而不造消除贫困的技术本身就不道德。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "lf88",
+       "stance": "共鸣",
+       "zh": "这篇文章让我很有共鸣。看到这么多人在为一个人类智能变得无关紧要的未来欢呼，令人沮丧。",
+       "en": "It's depressing to see so many people rooting for a future in which human intelligence becomes irrelevant.",
+       "hn": "https://news.ycombinator.com/item?id=50584463",
+       "id": 50584463,
+       "replies": 44
+      },
+      {
+       "user": "whimsicalism",
+       "stance": "反驳",
+       "zh": "我理解这种情绪，但我无法想象一个世界：我们有了消除贫困的技术，却为了保留意义而选择不去造它。那样的世界在道德上有些怪诞，为了一个抽象概念牺牲数十亿人的幸福。",
+       "en": "Such a world would be sort of morally grotesque",
+       "hn": "https://news.ycombinator.com/item?id=50584551",
+       "id": 50584551,
+       "replies": 18
+      },
+      {
+       "user": "cs_throwaway",
+       "stance": "不同读法",
+       "zh": "我读 alpo.ge/remark.pdf 时并不觉得那是背叛和投降。读起来他很高兴能深入理解并解释自己参与发现的东西。",
+       "en": "It reads like is is delighted to deeply understand and explain what he helped uncover.",
+       "hn": "https://news.ycombinator.com/item?id=50585078",
+       "id": 50585078,
+       "replies": 0
+      }
+     ],
+     "kicker": "科学 · 数学与人"
+    },
+    {
+     "id": 50583768,
+     "title": "皇后乐队吉他手 Brian May 给 Hera 拍的小行星做了立体图",
+     "title_en": "Sir Brian May adds new dimension to Hera asteroid",
+     "url": "https://www.esa.int/articles/about-us/directorates/operations/space-safety/hera/sir-brian-may-adds-new-dimension-to-hera-asteroid",
+     "hn": "https://news.ycombinator.com/item?id=50583768",
+     "points": 160,
+     "comments": 39,
+     "summary": [
+      "ESA 发布：Hera 任务科学团队成员、天体物理学家兼皇后乐队吉他手 Brian May 与同事 Claudia Manzoni，用 Hera 主相机 11 月 6 日在距 29.7 公里处、分辨率 2.8 米/像素拍下的两张相邻图像，合成了 Didymos 小行星的立体图。May 说，立体观看下赤道山脊的锐利与光滑，与其余布满碎石的表面形成鲜明对比。",
+      "图片提供红蓝 3D 眼镜、对眼和平行视三种版本，也可用 May 设计的 OWL 立体镜观看。Hera 是去调查 2022 年被 NASA DART 撞击的 Didymos 卫星 Dimorphos 的行星防御任务，ESA 将在 11 月 25 日直播公布首批近距离图像。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "oersted",
+       "stance": "致敬",
+       "zh": "「Hera 科学团队成员、天体物理学家兼皇后乐队吉他手 Sir Brian May」——活得真精彩。太酷了！",
+       "en": "A life well lived. Badass!",
+       "hn": "https://news.ycombinator.com/item?id=50586450",
+       "id": 50586450,
+       "replies": 1
+      },
+      {
+       "user": "alterom",
+       "stance": "立体摄影迷",
+       "zh": "我一辈子都是皇后乐队和立体摄影/3D 的粉丝，发现 Brian May 也是，真是太开心了。这项技术被严重低估，希望 XR 眼镜终于能把它带给大众。",
+       "en": "It's such an underrated technology.",
+       "hn": "https://news.ycombinator.com/item?id=50584390",
+       "id": 50584390,
+       "replies": 2
+      }
+     ],
+     "kicker": "科学 · 太空"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50590441,
+     "title": "Lean 版黎曼猜想证明的核验文件",
+     "title_en": "Verification files for the Lean proof of the Riemann Hypothesis",
+     "url": "https://math.mit.edu/~drew/grh/",
+     "hn": "https://news.ycombinator.com/item?id=50590441",
+     "points": 87,
+     "comments": 34
+    },
+    {
+     "id": 50588918,
+     "title": "Masullo 黎曼猜想证明无效",
+     "title_en": "Invalidity of Masullo's Proof of the Riemann Hypothesis",
+     "url": "https://philarchive.org/rec/NIEIOM",
+     "hn": "https://news.ycombinator.com/item?id=50588918",
+     "points": 11,
+     "comments": 14
+    },
+    {
+     "id": 50583445,
+     "title": "《经济学人》：AI 可能解决了数学中最重要的问题",
+     "title_en": "AI may have solved the most important problem in mathematics",
+     "url": "https://www.economist.com/science-and-technology/2026/11/20/ai-may-have-solved-the-most-important-problem-in-mathematics",
+     "hn": "https://news.ycombinator.com/item?id=50583445",
+     "points": 39,
+     "comments": 7
+    },
+    {
+     "id": 50586648,
+     "title": "萌得出人意料的昆虫肖像",
+     "title_en": "Surprisingly Adorable Insect Portraits",
+     "url": "https://amateurphotographer.com/latest/these-astonishing-insect-portraits-reveal-a-hidden-world-you-never-knew-existed/",
+     "hn": "https://news.ycombinator.com/item?id=50586648",
+     "points": 145,
+     "comments": 32
+    },
+    {
+     "id": 50583862,
+     "title": "人类肝脏在体外存活七周创纪录",
+     "title_en": "A human liver has been kept alive outside the body for a record seven weeks",
+     "url": "https://www.technologyreview.com/2026/11/19/1148934/a-human-liver-has-been-kept-alive-outside-the-body-for-seven-weeks-setting-a-record/",
+     "hn": "https://news.ycombinator.com/item?id=50583862",
+     "points": 19,
+     "comments": 4
+    },
+    {
+     "id": 50587439,
+     "title": "探测器抵达水星，人类第二次进入其轨道",
+     "title_en": "Spacecraft reaches Mercury on second-ever mission to enter its orbit",
+     "url": "https://www.theguardian.com/science/2026/nov/20/spacecraft-mercury-second-ever-mission-orbit-bepicolombo",
+     "hn": "https://news.ycombinator.com/item?id=50587439",
+     "points": 13,
+     "comments": 1
+    },
+    {
+     "id": 50532417,
+     "title": "热带雨林里的物种可能出奇地年轻",
+     "title_en": "Tropical Rainforests Species may be surprisingly young",
+     "url": "https://phys.org/news/2026-11-species-tropical-rainforests-young-emergence.html",
+     "hn": "https://news.ycombinator.com/item?id=50532417",
+     "points": 36,
+     "comments": 17
+    },
+    {
+     "id": 50559116,
+     "title": "北阿尔伯塔的世界最大河狸坝",
+     "title_en": "Worlds largest beaver dam in Northern Alberta",
+     "url": "https://substack.com/@canadianreturnee/note/c-319574497",
+     "hn": "https://news.ycombinator.com/item?id=50559116",
+     "points": 40,
+     "comments": 9
+    },
+    {
+     "id": 50593637,
+     "title": "捷克绳纹陶文化中不平等的出现",
+     "title_en": "The Emergence of Inequality in the Czech Corded Ware Culture",
+     "url": "https://www.jna.uni-kiel.de/index.php/jna/article/view/1560/1746",
+     "hn": "https://news.ycombinator.com/item?id=50593637",
+     "points": 17,
+     "comments": 10
+    },
+    {
+     "id": 50587205,
+     "title": "百亿亿次聚变模拟团队入围 2026 戈登·贝尔奖",
+     "title_en": "Exascale fusion simulation team named finalist for 2026 Gordon Bell Prize",
+     "url": "https://www.alcf.anl.gov/news/exascale-fusion-simulation-team-named-finalist-2026-gordon-bell-prize",
+     "hn": "https://news.ycombinator.com/item?id=50587205",
+     "points": 12,
+     "comments": 0
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1290,
+    "comments": 720,
+    "top_points": {
+     "id": 50588982,
+     "title": "美军要原地引爆近万磅变质叠氮化铅",
+     "value": 498,
+     "comments": 330
+    },
+    "top_comments": {
+     "id": 50588982,
+     "title": "美军要原地引爆近万磅变质叠氮化铅",
+     "value": 330
+    },
+    "top_brief": {
+     "id": 50586648,
+     "title": "萌得出人意料的昆虫肖像",
+     "value": 145,
+     "comments": 32
+    }
+   }
+  },
+  {
+   "name": "安全 · 隐私",
+   "stories": [
+    {
+     "id": 50587859,
+     "title": "FBI 据报正在调查犯罪信息数据库遭入侵",
+     "title_en": "FBI reportedly investigating apparent hack of its criminal database",
+     "url": "https://www.bbc.com/news/articles/cvze7de86pk3o",
+     "hn": "https://news.ycombinator.com/item?id=50587859",
+     "points": 167,
+     "comments": 82,
+     "summary": [
+      "BBC 援引美国媒体报道：FBI 正在调查国家犯罪信息中心（NCIC）数据库疑似被入侵，消息来自两名知情人士。这个数据库供联邦和地方执法部门共享通缉令和背景调查信息；FBI 未回应 BBC 置评请求。特朗普在福克斯采访中说自己「刚听说」，「这不好」，但「也许我们能借此知道一些原本永远不会知道的事」。",
+      "报道提到，上周美国银行、空管等领域接连出现技术故障（官方称并非网络攻击），白宫国家网络总监本周被解雇；9 月 FBI 还在调查黑客团伙 ShinyHunters 宣称窃取约 3.8 万名雇员信息一事。NBC 另报道美国农业部农场支付系统遭攻击。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "o_-_o",
+       "stance": "气隙",
+       "zh": "这些系统居然没有物理隔离（air-gapped），非常令人不安。",
+       "en": "these systems are not air-gapped",
+       "hn": "https://news.ycombinator.com/item?id=50588087",
+       "id": 50588087,
+       "replies": 40
+      },
+      {
+       "user": "zug_zug",
+       "stance": "写入更可怕",
+       "zh": "我觉得更明显的担忧是有没有发生写入，而不只是读取。我很想相信政府没那么无能，但我不信。",
+       "en": "whether any writes happened rather than just reads",
+       "hn": "https://news.ycombinator.com/item?id=50588226",
+       "id": 50588226,
+       "replies": 10
+      },
+      {
+       "user": "guillybarres",
+       "stance": "接连两次",
+       "zh": "几个月内 FBI 连遭两次大规模入侵，真让人担心。是 AI 带来的进步造成的，还是某种禁忌被打破了？",
+       "en": "Two huge hacks against FBI in the span of a few months is really worrying.",
+       "hn": "https://news.ycombinator.com/item?id=50588846",
+       "id": 50588846,
+       "replies": 4
+      }
+     ],
+     "kicker": "安全 · 政府"
+    },
+    {
+     "id": 50587208,
+     "title": "GPGME 爆出双重释放漏洞，「不能排除 RCE」",
+     "title_en": "RCE in Gnupg",
+     "url": "https://lists.gnupg.org/pipermail/gnupg-announce/2026q4/000517.html",
+     "hn": "https://news.ycombinator.com/item?id=50587208",
+     "points": 225,
+     "comments": 90,
+     "summary": [
+      "GnuPG 发布安全公告：GPGME 此前所有版本都有一个严重漏洞（CVE-2026-129975），用含超长用户 ID 的特制 OpenPGP 密钥即可触发双重释放，可用于从应用中窃取数据，进而实现远程代码执行也「不能排除」，建议立即升级到 2.3.1。根因是读取 gpg 状态行和密钥列表的两个内部函数：缓冲区扩容后新指针只在函数末尾写回，提前返回时上下文仍留着已释放的旧指针，最终被再次释放。",
+      "受影响的包括 Gpg4win、GnuPG Desktop、多数邮件客户端、许多 XMPP 客户端、Samba 和 Flatpak；漏洞由 Johan Carlsson 发现、GitLab 于 11 月 12 日通报，原定 25 日协调披露，因 GitLab 要处理新的 Ruby2Shell 漏洞而提前到 20 日。无法升级者可用公告附带的补丁。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "mik1998",
+       "stance": "标题夸大？",
+       "zh": "这是个双重释放 bug，不是 RCE 利用链。这些漏洞报告是故意夸大的吗？",
+       "en": "It's a double free bug, not an RCE chain.",
+       "hn": "https://news.ycombinator.com/item?id=50588549",
+       "id": 50588549,
+       "replies": 38
+      },
+      {
+       "user": "uptrails",
+       "stance": "早有人修",
+       "zh": "据称红帽五年前就根据常规工具的输出修过了，但上游没跟进。",
+       "en": "Reportedly fixed by Red Hat 5 years ago",
+       "hn": "https://news.ycombinator.com/item?id=50588137",
+       "id": 50588137,
+       "replies": 17
+      },
+      {
+       "user": "usr1106",
+       "stance": "原标题",
+       "zh": "投稿标题被改得更像钓鱼。正确标题是：GnuPG Security Advisory for GPGME。",
+       "en": "The correct title is: GnuPG Security Advisory for GPGME",
+       "hn": "https://news.ycombinator.com/item?id=50588920",
+       "id": 50588920,
+       "replies": 5
+      }
+     ],
+     "kicker": "安全 · 漏洞"
+    },
+    {
+     "id": 50585593,
+     "title": "Backblaze 新隐私政策：承认向广告网络「出售或共享」个人信息",
+     "title_en": "Backblaze Notice at Collection and Privacy Policy",
+     "url": "https://www.backblaze.com/company/policy/privacy",
+     "hn": "https://news.ycombinator.com/item?id=50585593",
+     "points": 230,
+     "comments": 85,
+     "summary": [
+      "备份服务商 Backblaze 发布新版《收集通知与隐私政策》，12 月 1 日生效。其中「我们向第三方出售或共享的内容」一节写明：过去 12 个月，公司为跨情境行为广告（即定向广告）向广告网络和分析服务商出售或共享过标识符、网络活动、商业信息和地理位置数据，但不出售敏感个人信息。",
+      "用户可通过「Your Privacy Choices」链接或 GPC 等全局退出信号行使退出权。评论区不少老用户失望，也有人指出 Backblaze 明确区分个人信息与用户上传的文件，后者不在出售之列。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "olalonde",
+       "stance": "澄清",
+       "zh": "我知道这很糟，但值得指出：Backblaze 明确把个人信息和客户上传的文件区分开。他们的 CCPA FAQ 说上传文件不属于个人信息的定义，他们不会出售或共享这些文件。",
+       "en": "Backblaze explicitly distinguishes personal information from the files customers upload",
+       "hn": "https://news.ycombinator.com/item?id=50586707",
+       "id": 50586707,
+       "replies": 3
+      },
+      {
+       "user": "cjboco",
+       "stance": "可以退出",
+       "zh": "这里的大部分都能选择退出，虽然看起来是暗黑模式的退出流程。用了他们好多年，不想看到他们走这条路。",
+       "en": "You can opt out of most of everything here.",
+       "hn": "https://news.ycombinator.com/item?id=50585949",
+       "id": 50585949,
+       "replies": 34
+      },
+      {
+       "user": "binsquare",
+       "stance": "为何要定位",
+       "zh": "他们怎么拿到要卖的这些数据？比如地理位置数据。访问个备份，为什么需要我设备的位置？",
+       "en": "And why would they need my device's location data",
+       "hn": "https://news.ycombinator.com/item?id=50585987",
+       "id": 50585987,
+       "replies": 6
+      }
+     ],
+     "kicker": "隐私 · 云备份"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50583856,
+     "title": "冰岛主机商 1984 遭严重网络攻击，被认为有雄厚资金支持",
+     "title_en": "Serious cyberattack thought backed by wealthy operators",
+     "url": "https://www.ruv.is/english/2026-11-20-serious-cyberattack-thought-backed-by-wealthy-operators-493411",
+     "hn": "https://news.ycombinator.com/item?id=50583856",
+     "points": 138,
+     "comments": 81
+    },
+    {
+     "id": 50592097,
+     "title": "Upload2Shell（CVE-2026-125396）",
+     "title_en": "Upload2Shell (CVE-2026-125396)",
+     "url": "https://pwn.ai/upload2shell",
+     "hn": "https://news.ycombinator.com/item?id=50592097",
+     "points": 68,
+     "comments": 26
+    },
+    {
+     "id": 50585366,
+     "title": "CNN：FBI 再次被黑",
+     "title_en": "The FBI was hacked again",
+     "url": "https://www.cnn.com/2026/11/20/politics/fbi-hacked-again-target-crime-database",
+     "hn": "https://news.ycombinator.com/item?id=50585366",
+     "points": 27,
+     "comments": 4
+    },
+    {
+     "id": 50591875,
+     "title": "France 24：FBI 犯罪数据库遭入侵",
+     "title_en": "FBI Criminal Database Hacked",
+     "url": "https://www.france24.com/en/fbi-criminal-database-hacked",
+     "hn": "https://news.ycombinator.com/item?id=50591875",
+     "points": 14,
+     "comments": 1
+    },
+    {
+     "id": 50591780,
+     "title": "GrapheneOS 做出不依赖 Google Messages 的 RCS 概念验证应用",
+     "title_en": "GrapheneOS made a proof of concept RCS messaging app without Google Messages",
+     "url": "https://twitter.com/GrapheneOS/status/2124158267123233056",
+     "hn": "https://news.ycombinator.com/item?id=50591780",
+     "points": 37,
+     "comments": 4
+    },
+    {
+     "id": 50583134,
+     "title": "Merkle 树证书（IETF 草案）",
+     "title_en": "Merkle Tree Certificates",
+     "url": "https://datatracker.ietf.org/doc/draft-ietf-plants-merkle-tree-certs/",
+     "hn": "https://news.ycombinator.com/item?id=50583134",
+     "points": 37,
+     "comments": 10
+    },
+    {
+     "id": 50594132,
+     "title": "PcapAnalyzer：自托管抓包分析器，内置 27 种问题检测",
+     "title_en": "PcapAnalyzer – self-hosted pcap analyzer with 27 problem detectors",
+     "url": "https://github.com/sebaandrada-cell/PcapAnalyzer",
+     "hn": "https://news.ycombinator.com/item?id=50594132",
+     "points": 31,
+     "comments": 3
+    },
+    {
+     "id": 50584429,
+     "title": "我不再相信视频录像了，但总有一天会重新相信",
+     "title_en": "I Don't Trust Visual Recordings Anymore. But One Day I Will Again",
+     "url": "https://spectrum.ieee.org/fighting-back-against-deep-fakes",
+     "hn": "https://news.ycombinator.com/item?id=50584429",
+     "points": 35,
+     "comments": 13
+    }
+   ],
+   "stats": {
+    "items": 11,
+    "points": 1009,
+    "comments": 399,
+    "top_points": {
+     "id": 50585593,
+     "title": "Backblaze 新隐私政策：承认向广告网络「出售或共享」个人信息",
+     "value": 230,
+     "comments": 85
+    },
+    "top_comments": {
+     "id": 50587208,
+     "title": "GPGME 爆出双重释放漏洞，「不能排除 RCE」",
+     "value": 90
+    },
+    "top_brief": {
+     "id": 50583856,
+     "title": "冰岛主机商 1984 遭严重网络攻击，被认为有雄厚资金支持",
+     "value": 138,
+     "comments": 81
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "usr1106",
+  "id": 50588479,
+  "hn": "https://news.ycombinator.com/item?id=50588479",
+  "story_id": 50532613,
+  "story": "巴西税务局把税额计算器以 MIT 协议开源到 GitHub",
+  "zh": "每个自称民主自由的国家都应该把这类软件开源。",
+  "en": "Every country that calls itself democratic and free should open-source such software."
+ },
+ "stats": {
+  "snapshot": "2026-11-22T08:18:28+08:00",
+  "front_page_count": 90,
+  "with_numbers": 90,
+  "flagged_or_dupe": 0,
+  "top_points": {
+   "id": 50589618,
+   "title": "Lean 社区联合声明：Alpöge 的黎曼猜想证明「完全可信」",
+   "value": 785,
+   "comments": 623
+  },
+  "top_comments": {
+   "id": 50583761,
+   "title": "Ask HN：15 年经验的美国高级工程师失业两年，怎么办？",
+   "value": 655
+  },
+  "second_comments": {
+   "id": 50589618,
+   "title": "Lean 社区联合声明：Alpöge 的黎曼猜想证明「完全可信」",
+   "value": 623
+  },
+  "over_500": 5,
+  "over_300": 8,
+  "over_100": 26,
+  "show_hn": 5,
+  "total_points": 9228,
+  "total_comments": 4655,
+  "hottest_ratio": {
+   "id": 50591835,
+   "title": "《经济学人》：黄仁勋倒台对硅谷加速主义者是坏消息",
+   "value": 2.18,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
