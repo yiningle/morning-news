@@ -1,0 +1,1298 @@
+{
+ "date": "2026-11-22",
+ "published_at": "2026-11-23T08:40:00+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-11-22",
+ "schema_version": 2,
+ "lead": {
+  "id": 50596133,
+  "title": "丰田、日产、本田联手统一零部件标准，以降低成本",
+  "title_en": "Toyota, Nissan, and Honda to standardize parts to lower costs",
+  "url": "https://www.caranddriver.com/news/a74490092/toyota-nissan-honda-standardize-parts-lower-costs/",
+  "hn": "https://news.ycombinator.com/item?id=50596133",
+  "points": 1172,
+  "comments": 670,
+  "summary": [
+   "据 Car and Driver 转述《汽车新闻》（Automotive News）报道，日本汽车工业协会会长、丰田副董事长佐藤恒治在东京记者会上宣布，日本三大车企将开始统一部分汽车零部件的标准，以压低生产成本。",
+   "第一步从三处做起：统一钢材的质量标准、统一塑料与树脂的规范，以及一套通用的线束颜色编码。选它们是因为消费者基本注意不到、不影响各品牌的个性，同时又占生产成本的大头。讨论先从日本本土供应商开始，海外供应商随后加入，首批标准计划明年落地；长期目标是扩展到覆盖整车的更多部件。",
+   "报道说，这一动作的背景是包括马自达、斯巴鲁、三菱、铃木在内的日本七家车企都在应对来势汹汹的中国车企，希望把省下的钱投入创新。佐藤说：「我们都有强烈的危机感，这形成了变革的动力。」这是当天点赞第一的帖子，评论区围绕比亚迪的垂直整合、美国车企的类似先例和日产的处境展开。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "wcfields",
+    "stance": "背景",
+    "zh": "日本车企正在被比亚迪这样的中国厂商「烤熟」——比亚迪 75%–85% 的零部件自己生产。据一些估计，视车型而定，只有车窗和轮胎来自外部供应商。",
+    "en": "only the windows and tires are the only pieces that come from outside suppliers",
+    "hn": "https://news.ycombinator.com/item?id=50596395",
+    "id": 50596395,
+    "replies": 338
+   },
+   {
+    "user": "johnohara",
+    "stance": "先例",
+    "zh": "福特和通用从 2002 年起就这么做了，GM–福特 6 速自动变速箱就是两家合作设计、再交给 Allison 变速箱公司制造的。两家实现的主要区别在换挡电磁阀和电子部分，但据我所知离合片和齿轮是一样的。",
+    "en": "Ford and GM have been doing this since 2002",
+    "hn": "https://news.ycombinator.com/item?id=50596443",
+    "id": 50596443,
+    "replies": 11
+   },
+   {
+    "user": "steveBK123",
+    "stance": "另一种解读",
+    "zh": "我怀疑这也是给日产这个小伙伴的一次低成本「影子纾困」。日产财务困难已久、最近还在加剧。本田差点被政府逼着收购它，后来脱身了。",
+    "en": "a low cost shadow bailout for Nissan",
+    "hn": "https://news.ycombinator.com/item?id=50599797",
+    "id": 50599797,
+    "replies": 0
+   }
+  ],
+  "kicker": "要闻 · 汽车",
+  "tag": "点赞第一"
+ },
+ "side": [
+  {
+   "id": 50597612,
+   "title": "报告：2028 年 Anthropic 用电 87% 来自天然气、11% 来自煤",
+   "title_en": "87% of the Anthropic power will come from gas and 11% from coal in 2028",
+   "url": "https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/",
+   "hn": "https://news.ycombinator.com/item?id=50597612",
+   "points": 861,
+   "comments": 868,
+   "summary": [
+    "Better Data Center Project 以 Anthropic 为个案，分析 AI 扩张如何同时推高数据中心自建燃气电站（BYOP）和电网上的化石能源。报告称，Anthropic 在美国没有公开的可再生能源直接承诺，已披露的可再生能源合同和投资只在挪威和加拿大；与此同时它买下了 1.7 GW 重型燃气发电机组的承诺，价值 34 亿美元。",
+    "按现场燃气和最可能为其新增负荷供电的电网边际电厂估算，2028 年 Anthropic 的电力约 87% 来自天然气、11% 来自煤。截至 2026 年 10 月它已签下 15 GW 算力，其中约 5.9–9.6 GW 落到具体园区；报告估计这些园区 2028 年的排放每年在 1700 万到 3800 万吨 CO2 当量之间，中位情形约 3200 万吨。这是当天评论最多的帖子。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "sollewitt",
+     "stance": "要监管",
+     "zh": "这就是为什么需要监管。没有规则，外部成本就会全部转嫁给离决策者和股东很远的社区。纯财务核算完全忽略了环境和社会成本。",
+     "en": "This is why we need regulation.",
+     "hn": "https://news.ycombinator.com/item?id=50599167",
+     "id": 50599167,
+     "replies": 186
+    },
+    {
+     "user": "lousken",
+     "stance": "不满",
+     "zh": "我能在自家屋顶装太阳能板、用可再生能源跑 qwen3.8，Anthropic 至少也能做点什么吧。",
+     "en": "If I can put solar panels on my roof",
+     "hn": "https://news.ycombinator.com/item?id=50598386",
+     "id": 50598386,
+     "replies": 121
+    },
+    {
+     "user": "gregwebs",
+     "stance": "另一面",
+     "zh": "美国页岩油开采后，天然气大多是采油的副产品，二叠纪盆地的气价有时甚至为负；不收集就得就地烧掉。只要还在抽致密油，用伴生气发电总比白白烧掉强。",
+     "en": "its going to make sense to generate power",
+     "hn": "https://news.ycombinator.com/item?id=50599751",
+     "id": 50599751,
+     "replies": 6
+    }
+   ],
+   "kicker": "AI · 能源",
+   "tag": "评论第一"
+  },
+  {
+   "id": 50601525,
+   "title": "OpenAI：用「困惑度」衡量智能，并据此设定行业共同红线",
+   "title_en": "Perplexity and Intelligence",
+   "url": "https://openai.com/index/perplexity-and-intelligence/",
+   "hn": "https://news.ycombinator.com/item?id=50601525",
+   "points": 454,
+   "comments": 308,
+   "summary": [
+    "OpenAI 官网发表一篇第一人称文章，主张把困惑度（即交叉熵损失）作为各家模型开发者之间可比的指标，并首次公开内部预训练进展：在其主要评测集上，GPT‑3.5 的对数困惑度约 0.99，GPT‑4 约 0.91，如今已低于 0.8；文章说模型达到约 0.76 后开始在数学开放问题上产出突破性结果。",
+    "作者认为，网络安全、数学等能力都是在越过特定困惑度阈值后「涌现」的，预计进入 0.68–0.7 区间还会出现新的变革性能力，同时对齐审计会更难。他提议前沿实验室共同约定基于困惑度等指标的开发上限，在理解和监控 AI 行为达到具体里程碑（如 CoT 监控的继任方案）之前不越线；文章也承认跨实验室比较、评测集不同等难点。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "hazrmard",
+     "stance": "名词解释",
+     "zh": "文章没定义困惑度。顺便说一下：它是模型在一串 token 上预测下一个 token 时的「意外程度」。最坏情况等于词表大小，最好情况是 1。",
+     "en": "Perplexity is not defined in the article.",
+     "hn": "https://news.ycombinator.com/item?id=50603826",
+     "id": 50603826,
+     "replies": 16
+    },
+    {
+     "user": "6gvONxR4sf7o",
+     "stance": "质疑",
+     "zh": "这个提议很怪。困惑度和准确率一样，下一个问题必须是「在什么上的困惑度？」他后来也承认了这个难题，却始终没说清文中报的困惑度是在什么数据上测的，只说是内部的。",
+     "en": "perplexity on what?",
+     "hn": "https://news.ycombinator.com/item?id=50604135",
+     "id": 50604135,
+     "replies": 6
+    },
+    {
+     "user": "jrflo",
+     "stance": "意外",
+     "zh": "这个趋势让我很震惊。我以为随着强化学习越来越多，交叉熵损失已经没那么重要了，没想到趋势这么清晰。",
+     "en": "This trend is pretty shocking to me.",
+     "hn": "https://news.ycombinator.com/item?id=50601984",
+     "id": 50601984,
+     "replies": 36
+    }
+   ],
+   "kicker": "AI · 研究"
+  },
+  {
+   "id": 50594911,
+   "title": "三明治模拟器：在浏览器里抹一片德式面包",
+   "title_en": "Sandwich Simulator",
+   "url": "https://stulle.app/",
+   "hn": "https://news.ycombinator.com/item?id=50594911",
+   "points": 565,
+   "comments": 198,
+   "summary": [
+    "stulle.app 是一个德语小网页「Stullensimulator」（Stulle 指德式开口面包片）：点一下酱罐让刀子蘸上酱，用手指或鼠标在面包上抹开，再从下方栏里把配料拖到面包上，可以旋转；放歪的配料松手会滑下去。",
+    "做好后按红色按钮拍照，选择「保留」就会得到一个编号和链接。评论区成了大型晒图现场，大家纷纷贴出自己做的面包链接，也有人提出想要盖上第二片面包再切开。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "finger",
+     "stance": "功能请求",
+     "zh": "我想把 Nutella 抹在奶酪上面，但它不让。没错，Nutella 在上面和在下面不是一回事。",
+     "en": "nutella on top is not the same as nutella underneath",
+     "hn": "https://news.ycombinator.com/item?id=50595352",
+     "id": 50595352,
+     "replies": 5
+    },
+    {
+     "user": "beej71",
+     "stance": "老前辈",
+     "zh": "我在 1994 年写过 Internet Pizza Server，三十年来网页模拟食物技术的进步真让我佩服。",
+     "en": "I wrote the Internet Pizza Server in 1994",
+     "hn": "https://news.ycombinator.com/item?id=50600811",
+     "id": 50600811,
+     "replies": 0
+    },
+    {
+     "user": "hleszek",
+     "stance": "愿望",
+     "zh": "希望能做一个完整的三明治，上面再盖一片面包，然后能切成两半。",
+     "en": "I wish you could make the complete sandwich with bread on top",
+     "hn": "https://news.ycombinator.com/item?id=50595485",
+     "id": 50595485,
+     "replies": 16
+    }
+   ],
+   "kicker": "网页 · 趣味"
+  },
+  {
+   "id": 50602947,
+   "title": "Tim O'Reilly：硅谷怎么了？",
+   "title_en": "What Happened to Silicon Valley?",
+   "url": "https://www.oreilly.com/radar/what-happened-to-silicon-valley/",
+   "hn": "https://news.ycombinator.com/item?id=50602947",
+   "points": 360,
+   "comments": 206,
+   "summary": [
+    "O'Reilly 发布他 10 月 16 日在约翰斯·霍普金斯大学「Margaret Levi 政治经济学年度讲座」的讲稿原文。他回顾自己 40 多年前用 500 美元起家、不拿风投、靠客户付费慢慢做成年收入数亿美元的公司，以及 1993 年推出第一个网页门户 GNN 的初衷：把你指向别人做的最好的东西，然后让开。",
+    "他追问一个曾因解决问题而被用户喜爱的行业，为何如今常引发恐惧和厌恶。讲稿末尾借「机制设计是反向博弈论」的说法提出：与其问我们现在玩的是什么游戏，不如问我们应该玩什么游戏——他的答案是「人类繁荣」。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "Animats",
+     "stance": "赞同",
+     "zh": "这篇文章有用的地方在于指出资本主义是一台为某个目标优化的引擎，主要是股东价值和 CEO 薪酬。",
+     "en": "capitalism is an optimization engine for something",
+     "hn": "https://news.ycombinator.com/item?id=50603433",
+     "id": 50603433,
+     "replies": 90
+    },
+    {
+     "user": "CoolestBeans",
+     "stance": "补充原因",
+     "zh": "我不反对 O'Reilly 说的任何一点，但也该点出直接原因：零利率时代让这些公司长到畸形的规模，并鼓励新公司去新领域赌大，而不是在已知市场竞争。",
+     "en": "ZIRP era allowed these companies to grow to grotesque proportions",
+     "hn": "https://news.ycombinator.com/item?id=50603709",
+     "id": 50603709,
+     "replies": 10
+    },
+    {
+     "user": "0xcafefood",
+     "stance": "质疑",
+     "zh": "Anthropic 的财务真的比 OpenAI 强那么多吗？它们也一直靠巨额注资活下去。",
+     "en": "Are Anthropic's financials actually that much stronger than OpenAI's?",
+     "hn": "https://news.ycombinator.com/item?id=50605007",
+     "id": 50605007,
+     "replies": 1
+    }
+   ],
+   "kicker": "科技 · 评论"
+  },
+  {
+   "id": 50602843,
+   "title": "《GTA 6》观鸟指南：罪恶都市的 60 种鸟",
+   "title_en": "The Birds of GTA 6: A Field Guide to Vice City and Leonida's Wildlife",
+   "url": "https://www.audubon.org/magazine/birds-of-gta-6-field-guide-vice-city-wildlife",
+   "hn": "https://news.ycombinator.com/item?id=50602843",
+   "points": 311,
+   "comments": 130,
+   "summary": [
+    "奥杜邦学会杂志的观鸟专栏作者在《GTA 6》首发当晚入坑，把找齐游戏里的鸟当成任务。文章说游戏首日收入超过 18 亿美元；游戏的进度菜单里列着 338 种载具、205 种武器和至少 60 种鸟（宣传时说 62 种），用望远镜对准鸟按住按键「研究」即可记录。",
+    "他在主角的第一个安全屋后门廊就看到了褐鹈鹕和笑鸥，玩了约 8 小时找到 50 种，第二天在动物园和农场补齐大半，最后在北部小镇的水塔上找到第 60 种仓鸮，Rockstar 一位设计师回复「历史性的」。他评价游戏里到处是垃圾和噪音，是对南佛州观鸟「写实的描绘」。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "semolino",
+     "stance": "真实细节",
+     "zh": "查了一下，游戏里有佛罗里达灌丛鸦——佛州唯一的特有鸟种。我有幸在佛罗里达步道的奥卡拉段亲眼见过，它们似乎有点鸦科的聪明劲。",
+     "en": "the only avian species endemic to the state",
+     "hn": "https://news.ycombinator.com/item?id=50603592",
+     "id": 50603592,
+     "replies": 0
+    },
+    {
+     "user": "aliasxneo",
+     "stance": "游戏评价",
+     "zh": "这款游戏看起来主要以剧情和角色为中心，而不是沙盒，尽管沙盒元素的细节做得疯狂（我已经通关主线）。很多方面像是两个互不相干的团队做的，最后剧情团队赢了。",
+     "en": "the story/character team won out",
+     "hn": "https://news.ycombinator.com/item?id=50603498",
+     "id": 50603498,
+     "replies": 82
+    },
+    {
+     "user": "drewg123",
+     "stance": "愿望",
+     "zh": "真希望这种游戏有合作模式，一人玩 Jason 一人玩 Lucia。我这个周末买了它，一直和成年的儿子来回传手柄。",
+     "en": "I really wish games like this had some kind of co-play available.",
+     "hn": "https://news.ycombinator.com/item?id=50605476",
+     "id": 50605476,
+     "replies": 1
+    }
+   ],
+   "kicker": "游戏 · 自然"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "stories": [
+    {
+     "id": 50595554,
+     "title": "OpenRouter 下架三家推理供应商，125 个端点失去「零数据保留」资格",
+     "title_en": "Data Processing Incidents on Inference Providers",
+     "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/",
+     "hn": "https://news.ycombinator.com/item?id=50595554",
+     "points": 279,
+     "comments": 96,
+     "summary": [
+      "OpenRouter 发文说，安全研究人员本周报告部分推理供应商的数据遭泄露，或有证据显示其数据政策没被遵守；OpenRouter 本身没有被入侵。它已根据调查下架三家供应商，把 125 个端点移出零数据保留（ZDR）名单（含预防性移除），并通知了可能受影响的客户。",
+      "后续它会把研究人员的测试方法改造成常态化检查，核查网络路径以发现请求被转发给第三方的情况，恢复 ZDR 前要求供应商提供保证和验证。文中列出 Atlas Cloud、Novita、Phala、Together 发布的安全公告，并感谢 Dragos 的报告。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "smuhakg",
+       "stance": "要点",
+       "zh": "我收到邮件了。简单说就是 MiniMax 在主动读你的提示词，研究人员在请求里放了诱饵 URL，被 MiniMax 访问了。更重要的是，很多供应商一直在后台把请求转给 MiniMax，而不是自己处理。",
+       "en": "MiniMax (the Chinese AI lab) is actively reading your prompts",
+       "hn": "https://news.ycombinator.com/item?id=50596135",
+       "id": 50596135,
+       "replies": 12
+      },
+      {
+       "user": "mbgerring",
+       "stance": "悲观",
+       "zh": "你应该假设没有哪家推理供应商遵守了自己关于数据保留的公开承诺，假设你发给 LLM 的一切都被记录、保存、用来训练。",
+       "en": "You should assume that no inference provider is honoring any public commitment",
+       "hn": "https://news.ycombinator.com/item?id=50596004",
+       "id": 50596004,
+       "replies": 17
+      },
+      {
+       "user": "redrix",
+       "stance": "建议",
+       "zh": "OR 这一步不错。不过最好的 ZDR 协议是你公司直接和推理供应商签的。可惜不是谁都够大够有钱，而且最终你还是只能「相信」他们在做 ZDR。",
+       "en": "the best ZDR agreement is the one that your company has directly",
+       "hn": "https://news.ycombinator.com/item?id=50595608",
+       "id": 50595608,
+       "replies": 19
+      }
+     ],
+     "kicker": "AI · 隐私"
+    },
+    {
+     "id": 50595537,
+     "title": "Anil Seth：「有意识的 AI」是一种神话",
+     "title_en": "The Mythology of Conscious AI",
+     "url": "https://www.noemamag.com/the-mythology-of-conscious-ai/",
+     "hn": "https://news.ycombinator.com/item?id=50595537",
+     "points": 165,
+     "comments": 466,
+     "summary": [
+      "Noema 刊登神经科学家 Anil Seth 获 2025 年 Berggruen 奖征文第一名的长文。Seth 是萨塞克斯大学意识科学中心主任、《Being You》作者。文章从魔像、弗兰肯斯坦、HAL 9000 讲到 2022 年谷歌工程师 Lemoine 声称 LaMDA 有意识，指出机器意识问题并没有消失。",
+      "文章的核心论点之一是：意识更可能是生命的属性，而不是计算的属性。在点赞过百的帖子里，它的评论与点赞之比当天最高（466 条评论），评论区大量争论「连意识是什么都不知道，能否下结论」。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "imeanwhatdoikno",
+       "stance": "存疑",
+       "zh": "话题很迷人，但如果有什么时候适合说「我们毫无头绪、应该保留判断」，那就是意识问题。你连从第三人称观察或验证这一现象都做不到，更别说形成可证伪的理论了，怎么排除任何可能？",
+       "en": "we have no clue and should reserve any judgement",
+       "hn": "https://news.ycombinator.com/item?id=50598978",
+       "id": 50598978,
+       "replies": 112
+      },
+      {
+       "user": "jibalt",
+       "stance": "反驳",
+       "zh": "「意识更可能是生命而非计算的属性」是个假二分，前一支显然不对：大多数生命（按质量、数量或物种算，细菌和昆虫）没有意识。",
+       "en": "This is a false dichotomy",
+       "hn": "https://news.ycombinator.com/item?id=50596024",
+       "id": 50596024,
+       "replies": 27
+      },
+      {
+       "user": "openasocket",
+       "stance": "伦理",
+       "zh": "如果你相信智能体集群有意识，那用它干活按定义不就是奴役吗？我自己不认为它们有意识，但让我担心的是那些认为有意识的人连这点都不讨论。",
+       "en": "doesn’t that mean using it to do something is, by definition, slavery?",
+       "hn": "https://news.ycombinator.com/item?id=50600306",
+       "id": 50600306,
+       "replies": 11
+      }
+     ],
+     "kicker": "AI · 哲学",
+     "tag": "评论比最高"
+    },
+    {
+     "id": 50599762,
+     "title": "Show HN：一款你扮演 LLM 子智能体的游戏",
+     "title_en": "Show HN: I built a game where you are an LLM's subagent",
+     "url": "https://github.com/gulivan/worker755",
+     "hn": "https://news.ycombinator.com/item?id=50599762",
+     "points": 264,
+     "comments": 59,
+     "summary": [
+      "Worker 755 是一款浏览器游戏：你的经理是真实的 LLM（可选 Claude、GPT、Gemini、DeepSeek、GLM、Kimi），它像普通编排器一样有任务队列和机器只读权限，它「派生子智能体」时派的就是你。指令出现在你的终端里，限时 90 秒，它收到你的报告和命令记录后会检查、纠错、写事故报告，最后给你写绩效评估。",
+      "与此同时雇用这个智能体的用户 Dan 在旁观聊天，他的全家福、唯一一份签好的保密协议和本周要讲的演讲稿就在一次 rm 之外。可以自带 OpenRouter 或 Vercel AI Gateway 的 key，作者说用 Claude Haiku 跑完整一班最多几美分；需要 Node 24。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "accrual",
+       "stance": "笑点",
+       "zh": "这个把我逗笑了：$ rm mr-whiskers-last-photo.jpg，然后「导演看到了」。",
+       "en": "The director saw that.",
+       "hn": "https://news.ycombinator.com/item?id=50604894",
+       "id": 50604894,
+       "replies": 0
+      },
+      {
+       "user": "Seb0927",
+       "stance": "反馈",
+       "zh": "挺好玩，但不知为何经理总是直接告诉我要执行的确切命令，而不是让我自己做。",
+       "en": "the manager always told me the exact commands",
+       "hn": "https://news.ycombinator.com/item?id=50601985",
+       "id": 50601985,
+       "replies": 1
+      },
+      {
+       "user": "boricj",
+       "stance": "遗憾",
+       "zh": "如果我没看错，它不支持本地 LLM。可惜，不然我就在家里的服务器上试试了。",
+       "en": "it doesn't appear to support local LLMs",
+       "hn": "https://news.ycombinator.com/item?id=50600692",
+       "id": 50600692,
+       "replies": 4
+      }
+     ],
+     "kicker": "AI · 游戏"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50593481,
+     "title": "Pandex：通过 MCP 给 AI 智能体提供官方欧洲法律",
+     "title_en": "Pandex – Official European Law for AI Agents, over MCP",
+     "url": "https://www.pandex.io",
+     "hn": "https://news.ycombinator.com/item?id=50593481",
+     "points": 139,
+     "comments": 33
+    },
+    {
+     "id": 50603845,
+     "title": "本地 AI 入门：Inkling、Qwen 与 Unsloth",
+     "title_en": "A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth",
+     "url": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
+     "hn": "https://news.ycombinator.com/item?id=50603845",
+     "points": 149,
+     "comments": 56
+    },
+    {
+     "id": 50604314,
+     "title": "一群智能体在尝试解决 P vs NP",
+     "title_en": "Agent swarm trying to solve P vs. NP",
+     "url": "https://pequalnp.com/",
+     "hn": "https://news.ycombinator.com/item?id=50604314",
+     "points": 74,
+     "comments": 68
+    },
+    {
+     "id": 50596511,
+     "title": "AI 供应链安全：金丝雀令牌发现了什么",
+     "title_en": "AI Supply Chain Security: What Canary Tokens Found",
+     "url": "https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens",
+     "hn": "https://news.ycombinator.com/item?id=50596511",
+     "points": 98,
+     "comments": 22
+    },
+    {
+     "id": 50595816,
+     "title": "Together.ai：请求中的提示词泄露",
+     "title_en": "Together.ai: Prompt Leakage for Requests",
+     "url": "https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026",
+     "hn": "https://news.ycombinator.com/item?id=50595816",
+     "points": 47,
+     "comments": 11
+    },
+    {
+     "id": 50605045,
+     "title": "Alessandro Masullo 手稿的 Lean 形式化进度图",
+     "title_en": "Progress map for the Lean formalization of Alessandro Masullo's manuscript",
+     "url": "https://claude.ai/artifact/CtQyX8qfYAF822bgHJHHE3",
+     "hn": "https://news.ycombinator.com/item?id=50605045",
+     "points": 89,
+     "comments": 38
+    },
+    {
+     "id": 50596664,
+     "title": "Show HN：黎曼证明手册",
+     "title_en": "Show HN: The Riemann Proof Handbook",
+     "url": "https://github.com/tamnd/riemann-handbook",
+     "hn": "https://news.ycombinator.com/item?id=50596664",
+     "points": 83,
+     "comments": 58
+    },
+    {
+     "id": 50602153,
+     "title": "哈佛 CS 2881R：AI 安全",
+     "title_en": "Harvard CS 2881R AI Safety",
+     "url": "https://boazbk.github.io/mltheoryseminar/",
+     "hn": "https://news.ycombinator.com/item?id=50602153",
+     "points": 29,
+     "comments": 3
+    },
+    {
+     "id": 50598277,
+     "title": "AI 圈的人都极其有钱",
+     "title_en": "AI People Are Extremely Rich",
+     "url": "https://www.noahpinion.blog/p/ai-people-are-very-very-very-very",
+     "hn": "https://news.ycombinator.com/item?id=50598277",
+     "points": 26,
+     "comments": 5
+    },
+    {
+     "id": 50595940,
+     "title": "现有努力不足以减缓「AI 网络病毒」",
+     "title_en": "Current Efforts Aren't Enough to Slow the AI Cyber Virus",
+     "url": "https://www.bridgewater.com/research-and-insights/current-efforts-arent-enough-to-slow-the-ai-cyber-virus",
+     "hn": "https://news.ycombinator.com/item?id=50595940",
+     "points": 29,
+     "comments": 8
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1471,
+    "comments": 923,
+    "top_points": {
+     "id": 50595554,
+     "title": "OpenRouter 下架三家推理供应商，125 个端点失去「零数据保留」资格",
+     "value": 279,
+     "comments": 96
+    },
+    "top_comments": {
+     "id": 50595537,
+     "title": "Anil Seth：「有意识的 AI」是一种神话",
+     "value": 466
+    },
+    "top_brief": {
+     "id": 50603845,
+     "title": "本地 AI 入门：Inkling、Qwen 与 Unsloth",
+     "value": 149,
+     "comments": 56
+    }
+   }
+  },
+  {
+   "name": "开发",
+   "stories": [
+    {
+     "id": 50596155,
+     "title": "Fast-Anything：别用 Rust 重写一切，只重写慢的那 5%",
+     "title_en": "Fast-Anything: Don't rewrite it in Rust. Rewrite the 5% that's slow",
+     "url": "https://github.com/EL4CTEO/fast-anything",
+     "hn": "https://news.ycombinator.com/item?id=50596155",
+     "points": 177,
+     "comments": 148,
+     "summary": [
+      "这个开源工具先对应用做性能分析，按耗时和可移植性给函数排序，再让你的编码智能体（claude、codex 或任何读 stdin 的命令）只把热点函数移植到 Rust；它记录最多 500 次真实调用，外加 NaN、正负无穷、-0.0、非 ASCII 文本、空输入和放大 16 倍等边界用例，全部结果一致（浮点误差 1e-9 内）才启用，单次调用反而更慢的移植也不启用，随时可一键还原。",
+      "README 给出在 i5-10500 上的实测：Python 模糊去重从 4.91 秒降到 42 毫秒（116 倍），TypeScript 20 倍，PHP 55 倍，Go 21 倍，Ruby 14 倍。它举例说一个看似正确的移植按字节而不是字符比较，500 次真实调用里有 148 次把它抓了出来。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "ThouYS",
+       "stance": "经验之谈",
+       "zh": "不错，但以我的经验，能这样解决的瓶颈都是低垂的果实，很快就被优化掉了。真正的性能杀手像沙子一样，散落在系统各处，每个地方一点点。",
+       "en": "the true performance hog is like sand",
+       "hn": "https://news.ycombinator.com/item?id=50598795",
+       "id": 50598795,
+       "replies": 9
+      },
+      {
+       "user": "zodwick",
+       "stance": "另一种看法",
+       "zh": "我想说，大多数代码库只要带着性能意识从头重写，哪怕用同一种语言，也能快 50%。改用 Rust 重写时往往也是这样：一开始就做了更好的决定，少搬了臃肿。",
+       "en": "one could make most codebases 50% faster if rewritten from scratch",
+       "hn": "https://news.ycombinator.com/item?id=50599553",
+       "id": 50599553,
+       "replies": 34
+      },
+      {
+       "user": "dejaydev",
+       "stance": "担忧",
+       "zh": "我担心这只会给大多数项目增加复杂度。README 的例子是把 Levenshtein 用 Rust 重写——我怎么知道这比直接换成 RapidFuzz 这类维护良好的库更快？维护者为什么会想在热路径里放一个自己看不懂的依赖？",
+       "en": "Why would a maintainer want a dependency they can't understand",
+       "hn": "https://news.ycombinator.com/item?id=50603331",
+       "id": 50603331,
+       "replies": 1
+      }
+     ],
+     "kicker": "开发 · 性能"
+    },
+    {
+     "id": 50533945,
+     "title": "unkernel：编译成 WebAssembly 的真 Linux 内核，一秒内进 shell",
+     "title_en": "A real Linux kernel, compiled to WebAssembly",
+     "url": "https://github.com/pithings/unkernel",
+     "hn": "https://news.ycombinator.com/item?id=50533945",
+     "points": 212,
+     "comments": 76,
+     "summary": [
+      "unkernel 把 Linux 7.x 编译成单个带真实 MMU 的 wasm 模块：系统调用、调度、内存管理、ext4、TCP/IP 都是编译后的代码而非模拟，只有用户程序被模拟——运行未修改的 aarch64 Linux 二进制，Alpine 和 Debian 的包可直接用。打开网页就有 shell、包管理器、持久磁盘、联网和带声音的屏幕，全部在本机运行。",
+      "项目给出的数据：内核约 70 毫秒到达 /init，Alpine 提示符在启动后 0.3 秒出现，页面约下载 10 MB；getppid 约 170 纳秒（原生 110），fork+exit+wait 约 60 微秒，与原生相当；带 JIT 后 OpenSSL AES-128-GCM 约 100 MB/s。CPU 密集程序仍远慢于原生，apk add python3 约 3.4 秒。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "solyin",
+       "stance": "前辈",
+       "zh": "Fabrice Bellard 在 2011 年就用 jslinux 做到了。",
+       "en": "Fabrice Bellard beat you to it",
+       "hn": "https://news.ycombinator.com/item?id=50599328",
+       "id": 50599328,
+       "replies": 12
+      },
+      {
+       "user": "kator",
+       "stance": "实测",
+       "zh": "周日早上的绝佳书呆子陷阱。我启动后装了 Claude CLI 让它到处看看，又装了 Docker，折腾了一下，hello-world 容器跑起来了！",
+       "en": "I got the hello-world container to work!",
+       "hn": "https://news.ycombinator.com/item?id=50599256",
+       "id": 50599256,
+       "replies": 0
+      },
+      {
+       "user": "jaen",
+       "stance": "技术建议",
+       "zh": "最慢的部分永远是模拟 MMU，每次内存访问都多 2–3 倍开销，从这个角度看选 Sv39 不太好。既然你控制内核，可以用类似老式 MIPS 的软件管理 TLB。",
+       "en": "The slowest part is always emulating the MMU",
+       "hn": "https://news.ycombinator.com/item?id=50599655",
+       "id": 50599655,
+       "replies": 4
+      }
+     ],
+     "kicker": "开发 · 系统"
+    },
+    {
+     "id": 50595168,
+     "title": "Leonida：把 Xbox 版《GTA 6》静态重编译到 PC",
+     "title_en": "Leonida – PC Recompilation of the Xbox Version of GTA 6",
+     "url": "https://github.com/ItsNotRexed/Leonida",
+     "hn": "https://news.ycombinator.com/item?id=50595168",
+     "points": 212,
+     "comments": 167,
+     "summary": [
+      "Leonida 是一个静态重编译项目：Xbox Series 的 CPU 同为 x86-64，游戏代码可直接原生运行，主机系统软件则被重新实现；预编译的 RDNA2 GPU 着色器被翻译成 Vulkan 用的 SPIR-V。仓库声明不含游戏、密钥或可执行文件，也不解释如何获取，用户需要自己的游戏副本。",
+      "项目自述还处于早期：游戏尚不能启动；识别 1.0.2.1 版本副本已可用，全部 26,503 个着色器已完成拆解和翻译，并通过 spirv-val 验证。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "staminade",
+       "stance": "协作方式",
+       "zh": "有意思的是他们的做法：基本上是通过 GitHub issue 协调的众包智能体集群，大家认领要做的功能。",
+       "en": "a crowdsourced agent swarm coordinated via GitHub issues",
+       "hn": "https://news.ycombinator.com/item?id=50595762",
+       "id": 50595762,
+       "replies": 25
+      },
+      {
+       "user": "birdman3131",
+       "stance": "安全担忧",
+       "zh": "它为什么要扫描你的电脑找游戏？每个盘往下两层？直接问我游戏在哪就行。这种行为很蠢，我觉得运行它就是自找麻烦。",
+       "en": "Just ask me where the game is.",
+       "hn": "https://news.ycombinator.com/item?id=50595905",
+       "id": 50595905,
+       "replies": 25
+      },
+      {
+       "user": "Garlef",
+       "stance": "影响",
+       "zh": "我觉得这会逼工作室首发就上所有平台，就像盗版逼电影公司全球同步上映大片一样。",
+       "en": "I think this will force studios to be on all platforms at launch.",
+       "hn": "https://news.ycombinator.com/item?id=50597614",
+       "id": 50597614,
+       "replies": 6
+      }
+     ],
+     "kicker": "开发 · 逆向"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50597959,
+     "title": "Muru：mod_wsgi 作者用 AI 辅助写的 Python 应用 Rust 服务器",
+     "title_en": "Muru – AI-assisted Rust server for Python apps by mod_WSGI's creator",
+     "url": "https://simonwillison.net/2026/Nov/21/muru/",
+     "hn": "https://news.ycombinator.com/item?id=50597959",
+     "points": 70,
+     "comments": 11
+    },
+    {
+     "id": 50594182,
+     "title": "一套更好的测试术语",
+     "title_en": "A Better Vocabulary for Testing",
+     "url": "https://alperenkeles.com/posts/vocab-for-testing/",
+     "hn": "https://news.ycombinator.com/item?id=50594182",
+     "points": 107,
+     "comments": 29
+    },
+    {
+     "id": 50600838,
+     "title": "C++26（再次）定稿：2026 年 11 月 ISO C++ 会议纪要",
+     "title_en": "C++26 is done (again): November 2026 ISO C++ meeting trip report",
+     "url": "https://herbsutter.com/2026/11/21/c26-is-done-again-trip-report-november-2026-iso-c-standards-meeting-buzios-brazil/",
+     "hn": "https://news.ycombinator.com/item?id=50600838",
+     "points": 62,
+     "comments": 37
+    },
+    {
+     "id": 50562207,
+     "title": "PyPy 内部：初识 RPython",
+     "title_en": "Inside PyPy: First Contact with RPython",
+     "url": "https://bernsteinbear.com/blog/inside-pypy-first-contact-with-rpython/",
+     "hn": "https://news.ycombinator.com/item?id=50562207",
+     "points": 59,
+     "comments": 8
+    },
+    {
+     "id": 50599309,
+     "title": "用 AWS 模拟器测试 Terraform",
+     "title_en": "Testing Terraform with AWS Emulator",
+     "url": "https://notes.hatedabamboo.me/terraform-tests-with-aws-emulator/",
+     "hn": "https://news.ycombinator.com/item?id=50599309",
+     "points": 66,
+     "comments": 10
+    },
+    {
+     "id": 50544428,
+     "title": "Reaktiv Workbook：每个单元格都是 Python 的电子表格",
+     "title_en": "Reaktiv Workbook – A spreadsheet where every cell is Python",
+     "url": "https://workbook.bui.app/",
+     "hn": "https://news.ycombinator.com/item?id=50544428",
+     "points": 43,
+     "comments": 12
+    },
+    {
+     "id": 50487155,
+     "title": "Show HN：同一份源码同时编译到 GPU 和 CPU",
+     "title_en": "Show HN: Compile the same source for GPUs and CPUs",
+     "url": "https://github.com/ThrudTheBarbarian/xc",
+     "hn": "https://news.ycombinator.com/item?id=50487155",
+     "points": 25,
+     "comments": 4
+    },
+    {
+     "id": 50554572,
+     "title": "逆向 Skylake-X 的下一页预取器",
+     "title_en": "Reversing the Next-Page Prefetcher in Skylake-X",
+     "url": "https://devsh0.github.io/microarchitecture,/intel,/computer-architecture/2026/11/17/reversing-the-next-page-prefetcher-in-skylake-x.html",
+     "hn": "https://news.ycombinator.com/item?id=50554572",
+     "points": 27,
+     "comments": 0
+    },
+    {
+     "id": 50559820,
+     "title": "「fork」是沙箱缺失的操作吗？",
+     "title_en": "Is 'fork' missing operation in sandboxes?",
+     "url": "https://avrea.com/blog/avrea-sandboxes-computers-should-be-forkable",
+     "hn": "https://news.ycombinator.com/item?id=50559820",
+     "points": 27,
+     "comments": 17
+    },
+    {
+     "id": 50553496,
+     "title": "Pion Interceptor：给黑客用的 WebRTC",
+     "title_en": "Pion Interceptor: WebRTC for Hackers",
+     "url": "https://pion.ly/blog/pion-interceptor-webrtc-for-hackers/",
+     "hn": "https://news.ycombinator.com/item?id=50553496",
+     "points": 22,
+     "comments": 7
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1109,
+    "comments": 526,
+    "top_points": {
+     "id": 50533945,
+     "title": "unkernel：编译成 WebAssembly 的真 Linux 内核，一秒内进 shell",
+     "value": 212,
+     "comments": 76
+    },
+    "top_comments": {
+     "id": 50595168,
+     "title": "Leonida：把 Xbox 版《GTA 6》静态重编译到 PC",
+     "value": 167
+    },
+    "top_brief": {
+     "id": 50594182,
+     "title": "一套更好的测试术语",
+     "value": 107,
+     "comments": 29
+    }
+   }
+  },
+  {
+   "name": "科学",
+   "stories": [
+    {
+     "id": 50569846,
+     "title": "如果原初黑洞存在，可能会从恒星内部把它炸开",
+     "title_en": "If tiny 'primordial' black holes exist",
+     "url": "https://phys.org/news/2026-11-tiny-primordial-black-holes.html",
+     "hn": "https://news.ycombinator.com/item?id=50569846",
+     "points": 56,
+     "comments": 52,
+     "summary": [
+      "据 MIT 新闻（经 phys.org 转载），MIT 助理教授 Ore Gottlieb 等人在《天体物理学杂志》发表理论计算和三维模拟：大爆炸后瞬间形成的原初黑洞若仍有残存，应约原子大小、质量与小行星相当（约地球的百万分之一），并可能构成暗物质的重要部分。",
+      "研究发现单颗恒星的引力不足以捕获它，但有伴星或行星的三体系统可以；黑洞在数千到数百万年内沉入恒星核心，吞掉约 1% 的恒星质量后，若恒星自转够快就会形成吸积盘，扭曲的磁场在几十秒内发射喷流把恒星炸开，产生现有望远镜可探测的蓝光和紫外闪光，以及伽马射线和 X 射线。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "klez",
+       "stance": "提问",
+       "zh": "我的物理知识很有限，但为什么一个原子大小的东西，哪怕密度极高、质量也只有小行星那么大，会对恒星有破坏性？不就像被一颗真小行星撞了一下吗？",
+       "en": "why would an atom-sized thing",
+       "hn": "https://news.ycombinator.com/item?id=50598294",
+       "id": 50598294,
+       "replies": 21
+      },
+      {
+       "user": "elvisgodevelop",
+       "stance": "解答",
+       "zh": "小行星会被加热、化为等离子体，而被捕获的原初黑洞能一直待在里面、不断吸积气体长大。另外「原子大小」只是指事件视界，它的引力作用范围远得多。",
+       "en": "An asteroid heats up and dissolves into plasma",
+       "hn": "https://news.ycombinator.com/item?id=50598913",
+       "id": 50598913,
+       "replies": 0
+      },
+      {
+       "user": "A_D_E_P_T",
+       "stance": "科幻彩蛋",
+       "zh": "我笑了，因为这基本就是 Stephen Baxter 1992 年小说《Timelike Infinity》的情节。",
+       "en": "Stephen Baxter's 1992 novel Timelike Infinity",
+       "hn": "https://news.ycombinator.com/item?id=50598200",
+       "id": 50598200,
+       "replies": 3
+      }
+     ],
+     "kicker": "天文 · 黑洞"
+    },
+    {
+     "id": 50597743,
+     "title": "论文：同样的过错，LLM 对男性更严厉",
+     "title_en": "Harsher on Male? Evaluating LLMs on Gender-Asymmetric Moral Framing in Conflicts",
+     "url": "https://arxiv.org/abs/2606.14068",
+     "hn": "https://news.ycombinator.com/item?id=50597743",
+     "points": 89,
+     "comments": 77,
+     "summary": [
+      "arXiv 论文提出 GAMA-Bench：1,298 个性别镜像场景，覆盖亲密关系和公共社交冲突，把同一种不当行为写成只换行为人性别的成对第一人称提示，测量模型在惩罚、共情、升级、指导和归责上的回应方式。",
+      "对 10 个代表性 LLM 的实验显示一致的不对称：男性行为人得到更多惩罚性、升级性和归责式的回应，女性行为人则得到更多疗愈和共情式回应；这一模式在不同模型家族、场景类型、模型规模以及显式「思考式」推理下都存在。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "notenchange",
+       "stance": "不意外",
+       "zh": "真心问一句，懂 LLM 怎么训练的人会有别的预期吗？LLM 反映的是训练数据，而训练数据大多反映当下的社会规范。",
+       "en": "did anyone that knows how LLMs are trained expected otherwise?",
+       "hn": "https://news.ycombinator.com/item?id=50598688",
+       "id": 50598688,
+       "replies": 41
+      },
+      {
+       "user": "macic",
+       "stance": "不止数据",
+       "zh": "我不意外，但不认为这只是训练数据的结果。我预计对齐阶段也有很大影响。",
+       "en": "I would expect the alignment phase to have a significant impact",
+       "hn": "https://news.ycombinator.com/item?id=50598840",
+       "id": 50598840,
+       "replies": 0
+      },
+      {
+       "user": "zdc1",
+       "stance": "追问",
+       "zh": "我好奇在正面情境下偏差如何。是 LLM 让男性对一切更直接负责，因此负面结果罚得更狠、正面结果夸得更多？还是只在负面情境出现？",
+       "en": "how the bias looks in the context of positive situations",
+       "hn": "https://news.ycombinator.com/item?id=50599118",
+       "id": 50599118,
+       "replies": 0
+      }
+     ],
+     "kicker": "AI · 偏见研究"
+    },
+    {
+     "id": 50596960,
+     "title": "离散傅里叶变换（DFT）笔记",
+     "title_en": "Notes on the discrete Fourier transform (DFT)",
+     "url": "https://eli.thegreenplace.net/2026/notes-on-the-discrete-fourier-transform-dft/",
+     "hn": "https://news.ycombinator.com/item?id=50596960",
+     "points": 93,
+     "comments": 13,
+     "summary": [
+      "Eli Bendersky 的信号处理系列续篇：上一篇讲了用离散时间傅里叶级数（DTFS）和变换（DTFT）分析无限长的离散信号，这一篇转向现实中有限长度的数字信号。",
+      "文章的思路是：手里只有一段采样，与其当作无限长信号补零再算连续的 DTFT，不如把这段样本看作周期信号的一个周期，直接用 DTFS 的系数——这就是 DFT 的核心洞见，样本因此可以被精确重建。评论称赞它没有把 DFT（被计算的量）和 FFT（计算它的一类算法）混为一谈。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "lefra",
+       "stance": "称赞",
+       "zh": "我喜欢这篇注意不把 DFT（计算出的值）和 FFT（计算它的一族算法）混为一谈。",
+       "en": "not to conflate the DFT",
+       "hn": "https://news.ycombinator.com/item?id=50597150",
+       "id": 50597150,
+       "replies": 0
+      },
+      {
+       "user": "perlgeek",
+       "stance": "延伸",
+       "zh": "如果信号在时间域等间隔采样，DFT 很好用。如果不是，与其插值到时间网格上，通常更好的做法是用 DFT 的推广：Lomb-Scargle 周期图。",
+       "en": "Lomb-Scargle Periodogram",
+       "hn": "https://news.ycombinator.com/item?id=50602022",
+       "id": 50602022,
+       "replies": 1
+      },
+      {
+       "user": "slow_typist",
+       "stance": "数学",
+       "zh": "用矩阵方式算 DFT 还顺带给出一个好办法证明 DFT 总是可逆：只需证明矩阵 F 对任意正整数 N 都可逆。",
+       "en": "a nice way to proof that the DFT can always be inverted",
+       "hn": "https://news.ycombinator.com/item?id=50597309",
+       "id": 50597309,
+       "replies": 3
+      }
+     ],
+     "kicker": "数学 · 信号处理"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50600677,
+     "title": "科学越来越多地把化学物质和「生活方式病」联系起来，欧洲却在放松管制",
+     "title_en": "Europe weakens chemical rules as science links them to 'lifestyle diseases'",
+     "url": "https://www.lemonde.fr/en/opinion/article/2026/11/22/as-science-increasingly-shows-the-role-chemical-substances-play-in-lifestyle-diseases-europe-weakens-its-regulations_6786595_23.html",
+     "hn": "https://news.ycombinator.com/item?id=50600677",
+     "points": 148,
+     "comments": 128
+    },
+    {
+     "id": 50599583,
+     "title": "联合国气候谈判在化石燃料的激烈冲突中破裂",
+     "title_en": "U.N. Climate Talks Collapse in a Bitter Clash over Fossil Fuels",
+     "url": "https://www.nytimes.com/2026/11/22/climate/cop31-climate-summit-ends-climate.html",
+     "hn": "https://news.ycombinator.com/item?id=50599583",
+     "points": 101,
+     "comments": 119
+    },
+    {
+     "id": 50598961,
+     "title": "AI 正在成为气候灾难",
+     "title_en": "AI is becoming a disaster for the climate",
+     "url": "https://www.bloodinthemachine.com/p/ai-is-becoming-a-disaster-for-the",
+     "hn": "https://news.ycombinator.com/item?id=50598961",
+     "points": 97,
+     "comments": 43
+    },
+    {
+     "id": 50603906,
+     "title": "GLP-1 减肥药可能带来出人意料的大环境收益",
+     "title_en": "GLP-1 drugs could have a surprisingly large environmental payoff",
+     "url": "https://theconversation.com/weight-loss-drugs-could-free-up-an-area-of-farmland-larger-than-italy-new-study-291114",
+     "hn": "https://news.ycombinator.com/item?id=50603906",
+     "points": 38,
+     "comments": 68
+    },
+    {
+     "id": 50547698,
+     "title": "苏丹出土大教堂地面，揭示最大的中世纪教堂之一",
+     "title_en": "Cathedral floor emerges in Sudan, revealing one of the biggest medieval churches",
+     "url": "https://apnews.com/article/sudan-antiquities-nubia-cathedral-1b16f67da881ee5592de4481ee55c527",
+     "hn": "https://news.ycombinator.com/item?id=50547698",
+     "points": 66,
+     "comments": 1
+    },
+    {
+     "id": 50573870,
+     "title": "嗑药的田鼠",
+     "title_en": "Field Mice on Drugs",
+     "url": "https://ambrook.com/offrange/livestock/field-mice-on-drugs",
+     "hn": "https://news.ycombinator.com/item?id=50573870",
+     "points": 36,
+     "comments": 15
+    },
+    {
+     "id": 50603962,
+     "title": "第一款获批的迷幻药会成为重磅药吗？",
+     "title_en": "Will the first approved psychedelic become a blockbuster?",
+     "url": "https://www.pharmavoice.com/news/race-first-psilocybin-blockbuster-compass-usona/875270/",
+     "hn": "https://news.ycombinator.com/item?id=50603962",
+     "points": 16,
+     "comments": 14
+    },
+    {
+     "id": 50559441,
+     "title": "Transvoxel 算法",
+     "title_en": "The Transvoxel Algorithm",
+     "url": "https://transvoxel.org/",
+     "hn": "https://news.ycombinator.com/item?id=50559441",
+     "points": 55,
+     "comments": 6
+    },
+    {
+     "id": 50604472,
+     "title": "《无用知识的有用性》（1939，PDF）",
+     "title_en": "The Usefulness of Useless Knowledge [pdf] (1939)",
+     "url": "https://www.ias.edu/sites/default/files/library/UsefulnessHarpers.pdf",
+     "hn": "https://news.ycombinator.com/item?id=50604472",
+     "points": 41,
+     "comments": 7
+    }
+   ],
+   "stats": {
+    "items": 12,
+    "points": 836,
+    "comments": 543,
+    "top_points": {
+     "id": 50600677,
+     "title": "科学越来越多地把化学物质和「生活方式病」联系起来，欧洲却在放松管制",
+     "value": 148,
+     "comments": 128
+    },
+    "top_comments": {
+     "id": 50600677,
+     "title": "科学越来越多地把化学物质和「生活方式病」联系起来，欧洲却在放松管制",
+     "value": 128
+    },
+    "top_brief": {
+     "id": 50600677,
+     "title": "科学越来越多地把化学物质和「生活方式病」联系起来，欧洲却在放松管制",
+     "value": 148,
+     "comments": 128
+    }
+   }
+  },
+  {
+   "name": "社会",
+   "stories": [
+    {
+     "id": 50600511,
+     "title": "开放社交网络联盟：想让社交媒体像电子邮件一样互通",
+     "title_en": "Open Social Web Alliance",
+     "url": "https://osw-alliance.net/en/",
+     "hn": "https://news.ycombinator.com/item?id=50600511",
+     "points": 213,
+     "comments": 209,
+     "summary": [
+      "Open Social Web Alliance 的网站提出愿景：像电子邮件不论用 Proton 还是 Gmail 都能互发一样，基于 ActivityPub、AT Protocol（私信用 Matrix）的开放社交网络让用户一个账号就能在 Mastodon、Eurosky 的 Mu、Streamplace 等之间互联；它设想到 2028 年有超过 1 亿人使用。",
+      "网站称联邦宇宙目前约有 1300 万活跃用户、4.2 万个实例，ATmosphere 约 4300 万注册账号，并归纳出基础设施、治理、资金、吸引力和公共授权五大挑战。路线图希望德国联邦政府支持该联盟，2027 年春前落实公共资金，并带头把开放社交网络作为主要发布渠道。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "fhdkweig",
+       "stance": "现实",
+       "zh": "简短的答案是：这不如制造分裂赚钱。人们的恐惧和愤怒可以变现。",
+       "en": "it isn't as profitable as creating discord",
+       "hn": "https://news.ycombinator.com/item?id=50600877",
+       "id": 50600877,
+       "replies": 49
+      },
+      {
+       "user": "tech_ken",
+       "stance": "怀疑",
+       "zh": "过去十年，这些想用精巧工具「修复」民主的尝试让我很冷淡。我认为这不是能靠工程解决的问题。解法比数字技术还古老：和人交谈、建立联盟、运用权力给人们的生活带来实质性的积极影响。",
+       "en": "talk to people, build a coalition",
+       "hn": "https://news.ycombinator.com/item?id=50601916",
+       "id": 50601916,
+       "replies": 29
+      },
+      {
+       "user": "notatoad",
+       "stance": "反对目标",
+       "zh": "我真心认为「1 亿人互联」是个坏目标。最好的网络社交空间都是小而专注、有门槛的。",
+       "en": "the best online social spaces are small, focused, and have barriers",
+       "hn": "https://news.ycombinator.com/item?id=50601425",
+       "id": 50601425,
+       "replies": 2
+      }
+     ],
+     "kicker": "互联网 · 去中心化"
+    },
+    {
+     "id": 50602847,
+     "title": "加拿大加码联邦新闻资助",
+     "title_en": "Canada recommits to federal funding for news",
+     "url": "https://www.niemanlab.org/2026/11/a-government-that-gets-it-canada-recommits-to-federal-funding-for-news/",
+     "hn": "https://news.ycombinator.com/item?id=50602847",
+     "points": 108,
+     "comments": 107,
+     "summary": [
+      "Nieman Lab 报道，加拿大新预算拟把「地方新闻计划」（LJI）转为常设，四年拨款 1.34 亿加元，此后每年 4100 万加元；同一预算把新闻编辑部薪资 35% 的税收抵免延长到 2028 年（原定 2026 年底降到 25%），每名记者每年最多 29,750 加元，并首次覆盖广播电视，五年花费 5.01 亿加元。预算需经议会通过，执政党占多数。",
+      "此外《在线新闻法》每年从谷歌带来 1 亿加元，其中 6300 万留给新闻出版商；Meta 则选择在加拿大屏蔽新闻。行业组织 News Media Canada 负责人说：「我们有一个懂行的政府，他们看到了科技巨头对地方新闻做了什么。」"
+     ],
+     "comment_quotes": [
+      {
+       "user": "uptrails",
+       "stance": "两面",
+       "zh": "我觉得对「官媒」的冷嘲热讽没抓住重点。不管是税收减免还是直接持有，只要把记者的生计和政府政策绑在一起，就会注入一些偏向。但在点击诱饵和 AI 垃圾的时代，新闻本身在财务上不可持续，想要真实报道多少得补贴。",
+       "en": "you kinda need to subsidize reporting",
+       "hn": "https://news.ycombinator.com/item?id=50603107",
+       "id": 50603107,
+       "replies": 3
+      },
+      {
+       "user": "aborsy",
+       "stance": "反对",
+       "zh": "加拿大居民会通过无穷无尽、覆盖生活越来越多方面的税为此买单。最好的办法是让人们自己选择信息来源。",
+       "en": "The best is to leave it up to people to choose their sources.",
+       "hn": "https://news.ycombinator.com/item?id=50603139",
+       "id": 50603139,
+       "replies": 31
+      },
+      {
+       "user": "thewanderer1983",
+       "stance": "另一种历史",
+       "zh": "对没经历过社交媒体之前年代的人说一句：地方媒体是被大型传统媒体集团在黄金时代挨个收购而毁掉的。",
+       "en": "Local media was destroyed by large traditional media conglomerates",
+       "hn": "https://news.ycombinator.com/item?id=50603277",
+       "id": 50603277,
+       "replies": 1
+      }
+     ],
+     "kicker": "媒体 · 政策"
+    },
+    {
+     "id": 50600622,
+     "title": "Jeff Geerling 加入 NTP Pool：不是用他的一级时间源树莓派",
+     "title_en": "I joined the NTP Pool, but not with my Stratum 1 Pi",
+     "url": "https://www.jeffgeerling.com/blog/2026/i-joined-the-ntp-pool/",
+     "hn": "https://news.ycombinator.com/item?id=50600622",
+     "points": 123,
+     "comments": 32,
+     "summary": [
+      "Jeff Geerling 加入了全球 NTP Pool，提供一台公共二级（Stratum 2）时间服务器 ntp-01.jeffgeerling.com，它从工作室里的一级时间服务器取时；那台树莓派通过 TimeHAT v6 接室外 GNSS 天线，用的是授时级 u-blox ZED-F9T 模块。",
+      "他说加入 Pool 不必用 GNSS，但要长期在线、时间准、IP 稳定，而且 IP 会公开、流量可能多年不散。因为曾被 DDoS 过家庭 IP，他让工作室的树莓派通过 WireGuard 连到圣路易斯的一台 VPS，由 VPS 对外服务。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "yardstick",
+       "stance": "老问题",
+       "zh": "我十多年前在服务器上用过 NTP Pool，他们解决了不可靠和配置错误的时间源问题吗？当时上万台服务器在轮询，我遇到的问题多到改用谷歌、苹果、微软的。",
+       "en": "have they fixed their quality issues",
+       "hn": "https://news.ycombinator.com/item?id=50604644",
+       "id": 50604644,
+       "replies": 0
+      },
+      {
+       "user": "bityard",
+       "stance": "疑问",
+       "zh": "我记得他们因为虚拟机计时的历史问题，不允许 VPS 加入 Pool，但现在找不到相关说明了。",
+       "en": "they did not allow VPSes to be part of the pool",
+       "hn": "https://news.ycombinator.com/item?id=50602777",
+       "id": 50602777,
+       "replies": 4
+      },
+      {
+       "user": "jeffrallen",
+       "stance": "推荐",
+       "zh": "顺带一提：瑞士政府在 ntp{11,12,13}.metas.ch 上提供 NTP 服务器，METAS 是联邦计量研究院。",
+       "en": "The Swiss government has NTP servers",
+       "hn": "https://news.ycombinator.com/item?id=50601996",
+       "id": 50601996,
+       "replies": 2
+      }
+     ],
+     "kicker": "网络 · 自托管"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50600435,
+     "title": "Backblaze 隐私政策更新后，客户担心个人数据被出售或共享",
+     "title_en": "Backblaze customers worried of personal data sale/sharing after policy update",
+     "url": "https://www.neowin.net/news/backblaze-customers-worried-of-personal-data-salesharing-after-policy-update/",
+     "hn": "https://news.ycombinator.com/item?id=50600435",
+     "points": 142,
+     "comments": 59
+    },
+    {
+     "id": 50603232,
+     "title": "自动化系统故障，达美航空经亚特兰大的航班全部延误",
+     "title_en": "All Delta Flights Through Atlanta Delayed as Automated System Falters",
+     "url": "https://www.nytimes.com/2026/11/22/us/delta-flight-delays-system-outage.html",
+     "hn": "https://news.ycombinator.com/item?id=50603232",
+     "points": 84,
+     "comments": 36
+    },
+    {
+     "id": 50603589,
+     "title": "迷你旧金山：有实时公交、飞机和船只",
+     "title_en": "A miniature San Francisco with live buses, planes and boats",
+     "url": "https://smallsf.com/",
+     "hn": "https://news.ycombinator.com/item?id=50603589",
+     "points": 106,
+     "comments": 45
+    },
+    {
+     "id": 50600789,
+     "title": "挪威拟把 16 岁以下社交媒体禁令扩大到游戏和通讯应用",
+     "title_en": "Norway to extend proposed under-16 social media ban to games and messaging apps",
+     "url": "https://www.euronews.com/2026/10/19/norway-to-extend-proposed-under-16-social-media-ban-to-online-games-and-messaging-apps",
+     "hn": "https://news.ycombinator.com/item?id=50600789",
+     "points": 54,
+     "comments": 92
+    },
+    {
+     "id": 50555002,
+     "title": "Ask HN：从 Web 开发转嵌入式/固件有什么建议？",
+     "title_en": "Ask HN: Tips for transitioning from web development to embedded/firmware?",
+     "url": null,
+     "hn": "https://news.ycombinator.com/item?id=50555002",
+     "points": 110,
+     "comments": 69
+    },
+    {
+     "id": 50551397,
+     "title": "16 世纪的《威利在哪里》",
+     "title_en": "The Where's Waldo of the 1500s",
+     "url": "https://blog.alexbeals.com/posts/il-civetta",
+     "hn": "https://news.ycombinator.com/item?id=50551397",
+     "points": 67,
+     "comments": 9
+    },
+    {
+     "id": 50603465,
+     "title": "Nyx：最古老的互联网服务商",
+     "title_en": "Nyx, the Oldest Internet Service Provider",
+     "url": "https://nyx.net/",
+     "hn": "https://news.ycombinator.com/item?id=50603465",
+     "points": 79,
+     "comments": 8
+    },
+    {
+     "id": 50599313,
+     "title": "美国监狱获准屏蔽违禁手机信号",
+     "title_en": "Prisons get OK to jam contraband phones",
+     "url": "https://arstechnica.com/tech-policy/2026/11/prisons-get-ok-to-jam-contraband-phones-ctia-says-nearby-phones-will-be-jammed-too/",
+     "hn": "https://news.ycombinator.com/item?id=50599313",
+     "points": 39,
+     "comments": 83
+    },
+    {
+     "id": 50597014,
+     "title": "工程经理这个角色（又一次）受到冲击",
+     "title_en": "The Engineering Manager's role is under attack (again)",
+     "url": "https://www.manager.dev/newsletter/the-engineering-manager-s-role-is-under-attack-again",
+     "hn": "https://news.ycombinator.com/item?id=50597014",
+     "points": 45,
+     "comments": 89
+    },
+    {
+     "id": 50566495,
+     "title": "Mayberry：通过公网 OPDS 开一个自托管的图书馆分馆",
+     "title_en": "Self-hosted library branch over public web OPDS",
+     "url": "https://joinmayberry.com/",
+     "hn": "https://news.ycombinator.com/item?id=50566495",
+     "points": 113,
+     "comments": 30
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1283,
+    "comments": 868,
+    "top_points": {
+     "id": 50600511,
+     "title": "开放社交网络联盟：想让社交媒体像电子邮件一样互通",
+     "value": 213,
+     "comments": 209
+    },
+    "top_comments": {
+     "id": 50600511,
+     "title": "开放社交网络联盟：想让社交媒体像电子邮件一样互通",
+     "value": 209
+    },
+    "top_brief": {
+     "id": 50600435,
+     "title": "Backblaze 隐私政策更新后，客户担心个人数据被出售或共享",
+     "value": 142,
+     "comments": 59
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "pmkary",
+  "id": 50596295,
+  "hn": "https://news.ycombinator.com/item?id=50596295",
+  "story_id": 50596133,
+  "story": "丰田、日产、本田联手统一零部件标准，以降低成本",
+  "zh": "有意思的是，优化最终会让一切变得一模一样。而这才刚刚开始。",
+  "en": "It's interesting how optimization will eventually make everything exactly the same."
+ },
+ "stats": {
+  "snapshot": "2026-11-23T08:18:41+08:00",
+  "front_page_count": 90,
+  "with_numbers": 88,
+  "flagged_or_dupe": 2,
+  "top_points": {
+   "id": 50596133,
+   "title": "丰田、日产、本田联手统一零部件标准，以降低成本",
+   "value": 1172,
+   "comments": 670
+  },
+  "top_comments": {
+   "id": 50597612,
+   "title": "报告：2028 年 Anthropic 用电 87% 来自天然气、11% 来自煤",
+   "value": 868
+  },
+  "second_comments": {
+   "id": 50596133,
+   "title": "丰田、日产、本田联手统一零部件标准，以降低成本",
+   "value": 670
+  },
+  "over_500": 3,
+  "over_300": 6,
+  "over_100": 25,
+  "show_hn": 4,
+  "total_points": 9397,
+  "total_comments": 5731,
+  "hottest_ratio": {
+   "id": 50595537,
+   "title": "Anil Seth：「有意识的 AI」是一种神话",
+   "value": 2.82,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
