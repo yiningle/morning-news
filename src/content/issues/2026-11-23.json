@@ -1,0 +1,1299 @@
+{
+ "date": "2026-11-23",
+ "published_at": "2026-11-24T08:50:00+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-11-23",
+ "schema_version": 2,
+ "lead": {
+  "id": 50611576,
+  "title": "英伟达董事会恢复黄仁勋 CEO 职务，股价当日收涨 31%",
+  "title_en": "Nvidia Reinstates Jensen Huang as CEO",
+  "url": "https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-ceo.html",
+  "hn": "https://news.ycombinator.com/item?id=50611576",
+  "points": 1958,
+  "comments": 3053,
+  "summary": [
+   "据 CNBC 报道，英伟达周一宣布黄仁勋即日起复任 CEO。董事会称在与他「一系列讨论和会面」后全票通过这一决定，并表示决策过程中「听取了美国政府高层的意见」，确信他复职「不构成国家安全风险」。黄仁勋本月早些时候因多段婚外情曝光辞职，其中一位据称是中国间谍；《纽约时报》周日报道，这名女子在与他交往的至少部分时间里与中国国家安全部的一名官员有联系。",
+   "特朗普对 CNBC 说他一直在「直接和间接地」与英伟达董事会沟通，称黄仁勋「没做错任何事」，并在社交媒体上称赞董事会的决定「正确而恰当」；马斯克等科技界人士也一直在游说其回归。消息公布后英伟达股价收涨 31%，此前自 11 月 8 日黄仁勋承认婚外情以来已累计下跌近 33%。",
+   "董事会聘请 Wachtell 律所进行的独立调查将继续进行。参议员沃伦称董事会的决定「鲁莽」，黄仁勋仍须就出口管制合规向国会作出解释；他将于 12 月 1 日接受众议院外交委员会等三个委员会的闭门问询，并于 12 月 3 日作为唯一证人出席参议院银行委员会关于出口管制的公开听证会。这是当天点赞和评论双料第一的帖子（3000 多条评论）。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "chunky1994",
+    "stance": "关键句",
+    "zh": "（引董事会声明：「在作出决定的过程中，董事会听取了美国政府高层的意见……确信黄先生复职不构成国家安全风险。」）感觉这才是整份声明里最要紧的部分。",
+    "en": "Feels like the most operative part of the statement.",
+    "hn": "https://news.ycombinator.com/item?id=50612048",
+    "id": 50612048,
+    "replies": 313
+   },
+   {
+    "user": "015UUZn8aEvW",
+    "stance": "治理",
+    "zh": "从这件事和 2023 年 OpenAI 风波中能得出一个结论：公司名义上的治理结构不一定是它真正的治理结构。我不评判黄仁勋或奥特曼该不该被解雇，重点是两次董事会名义上都有权作决定，也作了决定，但真到关键时刻，却有别的力量推翻了他们。",
+    "en": "a firm's nominal governance structure isn't necessarily its real governance structure",
+    "hn": "https://news.ycombinator.com/item?id=50612470",
+    "id": 50612470,
+    "replies": 610
+   },
+   {
+    "user": "apexalpha",
+    "stance": "双重标准",
+    "zh": "一边逼 ASML 和日本芯片公司加入美国对华制裁，一边让绕过制裁的英伟达拿到白宫的亲自背书，这种虚伪程度前所未见，哪怕对本届政府来说也是。",
+    "en": "an unheard of level of hypocrisy",
+    "hn": "https://news.ycombinator.com/item?id=50612085",
+    "id": 50612085,
+    "replies": 37
+   }
+  ],
+  "kicker": "要闻 · 芯片",
+  "tag": "点赞第一 · 评论第一"
+ },
+ "side": [
+  {
+   "id": 50614249,
+   "title": "从零写起的浏览器 Ladybird 进入 Alpha 阶段",
+   "title_en": "Ladybird is now in alpha",
+   "url": "https://ladybird.org/posts/alpha/",
+   "hn": "https://news.ycombinator.com/item?id=50614249",
+   "points": 1329,
+   "comments": 317,
+   "summary": [
+    "Ladybird 宣布进入 Alpha，可在 macOS 和 Linux 上下载。官方强调这是一个拥有自研引擎的新浏览器，引擎从头写起、不是任何现有引擎的分支，外围的浏览器界面则「朴素但能用」。",
+    "既然是 Alpha，部分网站会打不开、偶尔会崩溃，可以在浏览器内报告坏掉的网站，崩溃后可自行决定是否发送报告；团队也欢迎安全研究者来攻破它，目前不作安全承诺。Alpha 是滚动更新渠道，会定期自动推送更新；它支持 WebDriver 自动化测试和 Firefox DevTools 协议。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "freakynit",
+     "stance": "实测",
+     "zh": "效果出奇地好。我测了很多网站，每一个都渲染正确。一个从零写起的新浏览器居然真的能用！唯一的小问题是页面滚动有点卡顿，不严重，但能察觉。",
+     "en": "a new browser written from scratch that actually works!",
+     "hn": "https://news.ycombinator.com/item?id=50615429",
+     "id": 50615429,
+     "replies": 16
+    },
+    {
+     "user": "simonw",
+     "stance": "AI 助力",
+     "zh": "（引 10 月 31 日官方通讯）10 月 26 日，我们在 WPT 上超过了 Safari Technology Preview……大部分增长集中在五天里。我们让 AI 编程智能体对着 WPT 去补缺失的功能，它们做了大量小修复，积少成多。",
+     "en": "We pointed AI coding agents at WPT and asked them to fill in missing functionality.",
+     "hn": "https://news.ycombinator.com/item?id=50614718",
+     "id": 50614718,
+     "replies": 3
+    },
+    {
+     "user": "kvuj",
+     "stance": "怀旧",
+     "zh": "Ladybird 放弃一批自研库、改用 sqlite、skia 这类成熟的生产级库，对浏览器的进步帮助巨大。但我还是忍不住怀念 Ladybird 加 SerenityOS 当初那种原汁原味的黑客精神。",
+     "en": "I can't help but feel nostalgic at the original hacker spirit of LB+SerenityOS.",
+     "hn": "https://news.ycombinator.com/item?id=50614419",
+     "id": 50614419,
+     "replies": 84
+    }
+   ],
+   "kicker": "浏览器 · 开源"
+  },
+  {
+   "id": 50615308,
+   "title": "杨立昆：Dario 炒作 AI 危险，是为了让开源模型被禁、自己掌控局面",
+   "title_en": "Dario is hyping the dangers so OSS models are illegal and he stays in control",
+   "url": "https://twitter.com/ylecun/status/2124550037912920090",
+   "hn": "https://news.ycombinator.com/item?id=50615308",
+   "points": 1016,
+   "comments": 594,
+   "summary": [
+    "这是 Yann LeCun 在 X 上的一条帖子：他称 Anthropic CEO Dario Amodei 从 GPT‑2 时代起就一直在炒作 AI 的危险，目的是让开放模型被立法禁止、由他自己掌控局面；还说 Dario 离开 OpenAI 是因为在那里得不到控制权。",
+    "LeCun 把这比作奥斯曼帝国禁止用印刷机印阿拉伯文以维持对教义的控制，说这会阻止大众自由获取多元的知识，是「一种新的中世纪蒙昧主义」。帖子获得当天第二多的评论（594 条）。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "iFred",
+     "stance": "圈内消息",
+     "zh": "我和监管领域里会涉及 AI 的人共事、也有朋友。关于怎么禁止开放权重模型，有一些有意思的讨论，目前形成的共识是：既然禁不了子弹，那就禁枪。提出的想法从要求 AMD 和英伟达推送微码更新、限制消费级 GPU 跑大模型的能力，到要求私人算力登记，甚至直接上缴 GPU。",
+     "en": "if you can't ban the bullets, then you ban the guns",
+     "hn": "https://news.ycombinator.com/item?id=50617658",
+     "id": 50617658,
+     "replies": 272
+    },
+    {
+     "user": "stldev",
+     "stance": "批评",
+     "zh": "1. 占有全世界的知识；2. 把它包装成建立在几十年开源成果和公开研究之上的专有产品；3. 游说阻止别人做同样的事。他们背叛了让自己成功的那种精神。",
+     "en": "They betray the very spirit that made their success possible.",
+     "hn": "https://news.ycombinator.com/item?id=50618102",
+     "id": 50618102,
+     "replies": 47
+    },
+    {
+     "user": "qnleigh",
+     "stance": "另一面",
+     "zh": "为开放权重模型辩护时，最重要的是讨论怎么解决它的安全隐患。指出 Dario 明显的利益冲突，并不足以说服人们忽视安全风险。我们需要一个具体的对案，说明开源模型如何在把风险降到可接受水平的同时继续发展。",
+     "en": "We need a concrete counterproposal",
+     "hn": "https://news.ycombinator.com/item?id=50619665",
+     "id": 50619665,
+     "replies": 7
+    }
+   ],
+   "kicker": "AI · 争论",
+   "tag": "评论第二"
+  },
+  {
+   "id": 50617499,
+   "title": "应 Arm 要求，AArch64 指令速查站将于 12 月 4 日关闭",
+   "title_en": "Per Arm's request, this site will be discontinued on 4 December 2026 :(",
+   "url": "https://arm.jonpalmisc.com/",
+   "hn": "https://news.ycombinator.com/item?id=50617499",
+   "points": 792,
+   "comments": 161,
+   "summary": [
+    "arm.jonpalmisc.com 是一个提供 Armv8‑A / Armv9‑A 架构 AArch64 指令集和系统寄存器参考文档的网站，可以搜索指令或寄存器。站长 Jon 在首页置顶通知：Arm 的律师要求他下架网站，否则将采取法律行动，网站将于 2026 年 12 月 4 日停止服务。",
+    "他感谢多年来的使用者（「包括 Arm 内部的」），并表示会想办法让已有书签和链接继续可用。站长本人在评论区补充了 Arm 的理由。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "jonpalmisc",
+     "stance": "站长回应",
+     "zh": "没想到会上这里，补充点信息：他们要求下架的理由是我托管他们的文档，使用了他们的商标和知识产权，这很难绕开又同时保持网站有用。有人提出帮我做镜像，也有人建议请律师，或者开源（去掉 Arm 知识产权的）代码让大家自己生成。我会逐一考虑。这个站就是 ISA 文档，只是加了搜索、去掉了弹窗和臃肿。",
+     "en": "it's the ISA documentation, but with search and without all the popups and bloat",
+     "hn": "https://news.ycombinator.com/item?id=50618088",
+     "id": 50618088,
+     "replies": 27
+    },
+    {
+     "user": "chmod775",
+     "stance": "批评",
+     "zh": "这就是为什么大多数公司的律师应该向懂业务的工程师汇报，由他来签字。追究这种事，只会让那些最终为 Arm 创造价值和收入的人更难做事。",
+     "en": "lawyers should report to an engineer",
+     "hn": "https://news.ycombinator.com/item?id=50617833",
+     "id": 50617833,
+     "replies": 43
+    },
+    {
+     "user": "eschaton",
+     "stance": "法律分析",
+     "zh": "如果网站在美国：指令集本身不是受保护的知识产权，这一点早就打过官司。只要不是通过禁止披露的合同拿到的、也不侵犯专利，你尽可以记录、使用、实现它。但如果网站用了手册里的文字或图表，那些是受版权保护的。",
+     "en": "The instruction set itself is not protectable IP",
+     "hn": "https://news.ycombinator.com/item?id=50620321",
+     "id": 50620321,
+     "replies": 0
+    }
+   ],
+   "kicker": "硬件 · 版权"
+  },
+  {
+   "id": 50616933,
+   "title": "开源笔记应用 FSNotes 上架 9 年后被苹果撤出欧盟各国 App Store",
+   "title_en": "Apple removed my open-source app from EU App Stores after 9 years",
+   "url": "https://github.com/glushchenko/fsnotes/discussions/2056",
+   "hn": "https://news.ycombinator.com/item?id=50616933",
+   "points": 469,
+   "comments": 100,
+   "summary": [
+    "FSNotes 是一款 macOS/iOS 开源笔记应用，独立开发者在 GitHub 发公开信：几周前苹果把它从所有欧洲 App Store 下架，没有明确解释。起因是他没收到 10 月的销售分成，11 月 5 日和 17 日先后提交两个支持工单，至今没有任何回复。",
+    "他说已在 App Store Connect 里按欧盟《数字服务法》（DSA）补全合规信息，并提交了乌克兰政府商业登记的官方文件（他是乌克兰注册的个体经营者）。他抱怨应用排名和曝光正在流失，呼吁大家点赞转发引起 App Store 团队注意；FSNotes 仍在 GitHub 上免费提供源码和构建。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "ggreer",
+     "stance": "可能原因",
+     "zh": "这个应用在美国和英国商店还在，所以多半是因为欧盟 DSA 被下架的。荷兰商店链接的缓存页写着「Oleksandr Hlushchenko 没有将自己认证为该应用的经营者」。经营者认证不是一劳永逸的，可能因为各种原因失效（比如地址变更）。苹果不回复很糟糕，但我觉得作者漏掉了一些重要信息。",
+     "en": "Verified trader status is not a one-and-done thing.",
+     "hn": "https://news.ycombinator.com/item?id=50618419",
+     "id": 50618419,
+     "replies": 14
+    },
+    {
+     "user": "notrealyme123",
+     "stance": "吐槽",
+     "zh": "「点赞数」如今成了获得官方客服的事实门槛，太疯狂了。",
+     "en": "It's crazy that \"upvotes\" are now the de-facto entry barrier for official customer support.",
+     "hn": "https://news.ycombinator.com/item?id=50617395",
+     "id": 50617395,
+     "replies": 9
+    },
+    {
+     "user": "dmix",
+     "stance": "经验",
+     "zh": "10 月欧盟规则变更后，我们的应用花了一个月才通过 App Store 的 DSA 审批（当时还因此延误了上架）。不过那是新应用。听起来他才等了不到三周。",
+     "en": "It took our app a month to get EU DSA approval",
+     "hn": "https://news.ycombinator.com/item?id=50618601",
+     "id": 50618601,
+     "replies": 3
+    }
+   ],
+   "kicker": "平台 · 开发者"
+  },
+  {
+   "id": 50615481,
+   "title": "Kagi Mail 公测：年费 99 美元的隐私邮箱与日历",
+   "title_en": "Kagi Mail (public beta)",
+   "url": "https://blog.kagi.com/kagi-mail-public-beta",
+   "hn": "https://news.ycombinator.com/item?id=50615481",
+   "points": 329,
+   "comments": 259,
+   "summary": [
+    "以付费搜索引擎闻名的 Kagi 推出 Kagi Mail 公测，提供 @kagimail.com 地址或自有域名的邮箱和日历：免费试用 60 天，之后 99 美元/年（另加税），Kagi Ultimate 会员已包含。基础配置包括无限别名、无限域名、内置日历和 50 GB 存储。",
+    "它基于开放标准和开源基础设施（Stalwart 服务器、IMAP、JMAP、CalDAV），可用 Kagi 自家应用或任意兼容客户端。AI 功能包括用自然语言写分类规则、收件箱重点和问答，可一键全部关闭；默认拦截或代理追踪像素和远程图片，新发件人需批准才能进入收件箱；另提供 Sieve 规则过滤和对邮件只读的 MCP 服务器。联系人和通讯录计划在 2027 年第一季度推出。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "trvz",
+     "stance": "不感兴趣",
+     "zh": "我是 Kagi 用户，但对这个毫无兴趣。Fastmail 不只是够用，是真的好，稳定了几十年，变化节奏也舒服。AI 是 Kagi Mail 最大的卖点，可我绝不会让云端大模型碰我的邮件。",
+     "en": "I won't ever let a cloud LLM access my emails whatsoever",
+     "hn": "https://news.ycombinator.com/item?id=50618483",
+     "id": 50618483,
+     "replies": 28
+    },
+    {
+     "user": "SlimyHog",
+     "stance": "价格",
+     "zh": "我每年给 Fastmail 付 60 美元，如果价格一样我会考虑换，但每年 100 美元对我来说有点贵。",
+     "en": "$100/yr is a bit too rich for my blood",
+     "hn": "https://news.ycombinator.com/item?id=50616112",
+     "id": 50616112,
+     "replies": 27
+    },
+    {
+     "user": "uptrails",
+     "stance": "提醒",
+     "zh": "邮箱是你网络身份的入口，几乎所有网站都支持用邮箱找回账户，包括银行、券商、医疗机构、Cloudflare 等。如果用一个可能请不起顶级安全团队的小众邮箱服务商，至少把找回邮箱分开。",
+     "en": "maybe at least keep recovery emails separate",
+     "hn": "https://news.ycombinator.com/item?id=50616358",
+     "id": 50616358,
+     "replies": 13
+    }
+   ],
+   "kicker": "产品 · 邮件"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "stories": [
+    {
+     "id": 50609685,
+     "title": "智谱 GLM-5.4：首个「循环 Transformer」旗舰模型",
+     "title_en": "GLM-5.4: Toward generalized coding with our first loop transformer",
+     "url": "https://z.ai/blog/glm-5.4",
+     "hn": "https://news.ycombinator.com/item?id=50609685",
+     "points": 1031,
+     "comments": 334,
+     "summary": [
+      "Z.ai（智谱）发布 GLM-5.4，称这是其首个基于循环 Transformer（Loop Transformer）架构的旗舰模型，智能水平可比 2–3 万亿参数的模型。做法不是从头训练，而是在已预训练的 GLM-5 基座上继续训练：把 28 层共享权重的层循环执行两遍，以较小的算力代价提高上限。",
+      "为在 7500 亿参数规模上控制成本，它做了三处改动：每轮循环用逐 token 的门控把更新按比例写回残差流，避免激活值爆炸；第二轮复用第一轮的稀疏 KV、只额外保留一个滑动窗口的 KV 缓存；第二轮直接复用第一轮的稀疏注意力索引。在 30B 模型上的等参数对比中，循环版只多约 10% 训练算力就有明显提升，且多数基准的输出长度缩短 10%–14%。",
+      "官方也承认它容易陷入过长的「马拉松式思考」。模型已对 GLM Coding Plan 用户开放，API 即将推出，权重计划在完成安全加固后开源；文中说下一个规模大得多的模型「很快就绪」。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "lnenad",
+       "stance": "槽点",
+       "zh": "中国模型的「马拉松式思考」越来越难用了。处理复杂问题还好，可连概念上最简单的事情也不停自我怀疑，非常烦人，完成时间比前沿模型长得多。我猜这是它们在基准上逼近的办法，但几天、几周、几个月累积下来，差距惊人。",
+       "en": "It's becoming reaally hard using chinese models with their \"marathon thinking\" sessions.",
+       "hn": "https://news.ycombinator.com/item?id=50610264",
+       "id": 50610264,
+       "replies": 75
+      },
+      {
+       "user": "HarHarVeryFunny",
+       "stance": "赞赏",
+       "zh": "我很喜欢智谱提供的透明度，至少给出了技术细节，和西方公司的封闭做法相比令人耳目一新，也让人一窥最前沿大模型的方向。循环 Transformer 是个显而易见的方向，尽管还有问题要解决。",
+       "en": "I love the transparency",
+       "hn": "https://news.ycombinator.com/item?id=50611040",
+       "id": 50611040,
+       "replies": 55
+      },
+      {
+       "user": "lolokazaki123",
+       "stance": "要点",
+       "zh": "重要的一点：GLM-5.4 是把预训练模型改造成循环结构，而不是从头按循环训练。可以预期会有一大批模型做同样的改造，这是刷基准的低垂果实。",
+       "en": "glm-5.4 is a pretrained model converted to LOOPed, not trained looped from scratch",
+       "hn": "https://news.ycombinator.com/item?id=50611759",
+       "id": 50611759,
+       "replies": 0
+      }
+     ],
+     "kicker": "AI · 模型"
+    },
+    {
+     "id": 50603845,
+     "title": "本地 AI 入门：用 Unsloth 在家跑 Qwen 和 Inkling",
+     "title_en": "A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth",
+     "url": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
+     "hn": "https://news.ycombinator.com/item?id=50603845",
+     "points": 743,
+     "comments": 297,
+     "summary": [
+      "GPU Partner 博客的一篇入门教程：作者想把高 token 消耗的研究、数据收集和编程任务交给 AI，又不想整天盯着用量上限，于是在家里的 Windows 电脑上搭了一个「自己的 ChatGPT」。步骤很简单：装 Unsloth Desktop，下载适合显存大小的量化模型，设好上下文长度，再打开局域网访问让全家都能用；硬件到位后约 10–15 分钟（不含下载时间）。",
+      "作者用的是 32GB 显存的 RTX 5090，选了 4 比特量化的 Qwen3.8-27B（完整版约 56GB，消费级显卡放不下），以便留出 128K 上下文。文中附了按显存分档的模型建议，并补充 Thinking Machines Lab 11 月 17 日发布的 Inkling 2 Mini（26.4B 参数、Apache 2.0、100 万上下文）同样能放进 5090。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "_pdp_",
+       "stance": "判断",
+       "zh": "这是本地 AI 的「等离子电视阶段」：早期、笨重、价格高昂。我估计还要大约 5 年，大多数实用 AI 才能在我们自己的机器上跑，只有少数超级大脑留在云端。目前订阅仍是最实际的入门方式。",
+       "en": "This is the plasma TV phase of local AI.",
+       "hn": "https://news.ycombinator.com/item?id=50604818",
+       "id": 50604818,
+       "replies": 162
+      },
+      {
+       "user": "montroser",
+       "stance": "省钱方案",
+       "zh": "这不需要 5000 美元的 RTX 5090。花 600 美元买台 64GB 内存的 Dell T5820，再花 250 美元加一张 16GB 显存的 Tesla P100，配上 SSD 和散热风扇，不到 1000 美元的硬件就能以每秒 30 个 token 跑一个很能干的模型。",
+       "en": "You don't need a $5k RTX 5090 for this.",
+       "hn": "https://news.ycombinator.com/item?id=50606773",
+       "id": 50606773,
+       "replies": 11
+      },
+      {
+       "user": "tacoman",
+       "stance": "实测",
+       "zh": "Nvidia P40 是不花几千美元玩本地 AI 的好办法，eBay 上大约 300 美元，有 24GB GDDR5。我在 Ubuntu 上用 llama.cpp 跑 Qwen 3.8 27B UD-Q4_K_M，每秒 14 个 token，非常实用，不只是玩具。",
+       "en": "it's very useful, not just a toy",
+       "hn": "https://news.ycombinator.com/item?id=50606063",
+       "id": 50606063,
+       "replies": 14
+      }
+     ],
+     "kicker": "AI · 本地部署"
+    },
+    {
+     "id": 50610830,
+     "title": "报道：Amodei 曾提议用电子游戏安抚因 AI 失业的大众",
+     "title_en": "Amodei reportedly suggested games could pacify masses after AI took their jobs (2015)",
+     "url": "https://www.theverge.com/ai-artificial-intelligence/1039745/dario-amodei-video-games-ai-joblessness",
+     "hn": "https://news.ycombinator.com/item?id=50610830",
+     "points": 74,
+     "comments": 81,
+     "summary": [
+      "The Verge 援引《华尔街日报》在 Anthropic 创纪录 IPO 后刊发的 Dario 与 Daniela Amodei 兄妹特写：文中提到 Dario 当年在 OpenAI 时，曾在与同事的辩论中提出沉浸式电子游戏或许能化解 AI 导致失业引发的政治冲突，依据是「广为流传的 Slack 消息」。",
+      "The Verge 的原文只有寥寥数句；评论区有人贴出 WSJ 原文，并指出这是约十年前的事——Dario 2016 年才加入 OpenAI。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "snowwrestler",
+       "stance": "反驳",
+       "zh": "你安抚不了大众。几千年来这一直是少数想掌控一切的人的梦想，但从来维持不了多久。社会稳定必须是动态的稳定，让人们能以有序的方式按自己的意愿行事。否则人们终究会以无序、也就是破坏性的方式去做。",
+       "en": "You cannot pacify the masses.",
+       "hn": "https://news.ycombinator.com/item?id=50612998",
+       "id": 50612998,
+       "replies": 6
+      },
+      {
+       "user": "sega_sai",
+       "stance": "讽刺",
+       "zh": "想必这些游戏会由 Anthropic 卖给大众。",
+       "en": "Presumably the games would be sold to the masses by Anthropic.",
+       "hn": "https://news.ycombinator.com/item?id=50610901",
+       "id": 50610901,
+       "replies": 12
+      },
+      {
+       "user": "layer8",
+       "stance": "背景",
+       "zh": "注意这是十年前 Amodei 还在 OpenAI 时的事。（引 WSJ 原文）「2015 年创立 OpenAI 时，Brockman 曾试图招募 Dario 未果；Dario 于 2016 年加入。在那里，他与同事辩论，提出沉浸式电子游戏或许能解决 AI 导致失业带来的政治冲突。」",
+       "en": "Note that this was a decade ago when Amodei was at OpenAI",
+       "hn": "https://news.ycombinator.com/item?id=50611547",
+       "id": 50611547,
+       "replies": 0
+      }
+     ],
+     "kicker": "AI · 社会"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50611588,
+     "title": "英伟达官方新闻稿：董事会恢复黄仁勋总裁兼 CEO 职务",
+     "title_en": "Jensen Huang Reinstated as Nvidia CEO",
+     "url": "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director",
+     "hn": "https://news.ycombinator.com/item?id=50611588",
+     "points": 1700,
+     "comments": 4
+    },
+    {
+     "id": 50618490,
+     "title": "国会议员痛批英伟达让黄仁勋「离谱」回归：「品格的失败」",
+     "title_en": "Congress shreds Nvidia's 'outrageous' return of Huang: 'Failure of character'",
+     "url": "https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-congress-trump.html",
+     "hn": "https://news.ycombinator.com/item?id=50618490",
+     "points": 60,
+     "comments": 54
+    },
+    {
+     "id": 50616243,
+     "title": "《纽约时报》：据称特朗普亲自推动黄仁勋复职",
+     "title_en": "Trump Is Said to Have Directed Effort to Reinstate Nvidia Chief",
+     "url": "https://www.nytimes.com/2026/11/23/us/politics/trump-nvidia-huang.html",
+     "hn": "https://news.ycombinator.com/item?id=50616243",
+     "points": 27,
+     "comments": 5
+    },
+    {
+     "id": 50617640,
+     "title": "Polymarket 上两个「可疑账户群」押中黄仁勋回归，赚了 34 万多美元",
+     "title_en": "Two \"suspicious clusters\" on Polymarket Made Over $340k on Huang Comeback",
+     "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-23-2026/card/two-groups-of-polymarket-accounts-made-over-340-000-on-huang-comeback-Lan2T0TwbJPNsyhmQHGq",
+     "hn": "https://news.ycombinator.com/item?id=50617640",
+     "points": 34,
+     "comments": 5
+    },
+    {
+     "id": 50611402,
+     "title": "NariQ：10GB 文件里装下 BF16 水准的 Qwen3.8-27B",
+     "title_en": "NariQ: BF16-level Qwen3.8-27B in a 10 GB file",
+     "url": "https://huggingface.co/nari-labs/Qwen3.8-27B-NariQ-GGUF",
+     "hn": "https://news.ycombinator.com/item?id=50611402",
+     "points": 109,
+     "comments": 21
+    },
+    {
+     "id": 50604540,
+     "title": "Localcode：一条命令在 Mac 上跑开源智能体编程",
+     "title_en": "Localcode, open source agentic coding on your Mac with one command",
+     "url": "https://github.com/mjwsolo/localcode",
+     "hn": "https://news.ycombinator.com/item?id=50604540",
+     "points": 70,
+     "comments": 21
+    },
+    {
+     "id": 50569505,
+     "title": "LittleBit：通过潜在分解实现超低比特量化（2025）",
+     "title_en": "LittleBit: Ultra Low-Bit Quantization via Latent Factorization (2025)",
+     "url": "https://arxiv.org/abs/2506.13771",
+     "hn": "https://news.ycombinator.com/item?id=50569505",
+     "points": 66,
+     "comments": 10
+    },
+    {
+     "id": 50605445,
+     "title": "0rwx：借鉴 Unix 权限的 AI 使用模型",
+     "title_en": "0rwx – A simple model of AI usage, inspired by Unix permissions",
+     "url": "https://0rwx.com/",
+     "hn": "https://news.ycombinator.com/item?id=50605445",
+     "points": 69,
+     "comments": 17
+    },
+    {
+     "id": 50615520,
+     "title": "大模型应该怎样「看」一台电脑？",
+     "title_en": "How should an LLM see a computer?",
+     "url": "https://www.greptile.com/blog/trex-computer-use",
+     "hn": "https://news.ycombinator.com/item?id=50615520",
+     "points": 40,
+     "comments": 21
+    },
+    {
+     "id": 50614037,
+     "title": "系好安全带，AI 泡沫正在破裂",
+     "title_en": "Buckle Up the AI Bubble Is Popping",
+     "url": "https://mathbabe.org/2026/11/23/buckle-up-the-ai-bubble-is-popping/",
+     "hn": "https://news.ycombinator.com/item?id=50614037",
+     "points": 28,
+     "comments": 52
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 4051,
+    "comments": 922,
+    "top_points": {
+     "id": 50611588,
+     "title": "英伟达官方新闻稿：董事会恢复黄仁勋总裁兼 CEO 职务",
+     "value": 1700,
+     "comments": 4
+    },
+    "top_comments": {
+     "id": 50609685,
+     "title": "智谱 GLM-5.4：首个「循环 Transformer」旗舰模型",
+     "value": 334
+    },
+    "top_brief": {
+     "id": 50611588,
+     "title": "英伟达官方新闻稿：董事会恢复黄仁勋总裁兼 CEO 职务",
+     "value": 1700,
+     "comments": 4
+    }
+   }
+  },
+  {
+   "name": "开发",
+   "stories": [
+    {
+     "id": 50607194,
+     "title": "Docker 换新品牌：「建立在信任之上」，主打 AI 智能体隔离",
+     "title_en": "The New Docker: Built to Run on Trust",
+     "url": "https://www.docker.com/blog/meet-the-new-docker-built-to-run-on-trust/",
+     "hn": "https://news.ycombinator.com/item?id=50607194",
+     "points": 121,
+     "comments": 199,
+     "summary": [
+      "Docker 官方博客宣布启用新品牌。文章说容器为隔离工作负载而生，但智能体不是工作负载而是「行动者」，会自己决定运行什么、访问什么、改什么，因此 Docker 的下一章是为智能体提供安全、隔离与治理，让人们敢于给它们真正的自主权。",
+      "文章强调容器业务不会消失，开放与开发者优先不变；全文反复以「信任 Docker，因为……」排比，介绍可信供应链、隔离智能体的可信运行时和可信生态，吉祥物鲸鱼 Moby 也换了新形象，并推荐试用 Docker Sandboxes 和 Docker AI Governance。在点赞过百的帖子中，它的评论与点赞之比当天最高。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "throwfaraway135",
+       "stance": "怀念旧标",
+       "zh": "Docker 以前的标志是我最喜欢的之一，当年它在「要不要学 Docker」这个决定上起了出乎意料的作用。这个新标志毫无灵魂，我连谈都不想谈。",
+       "en": "this new one is so soulless",
+       "hn": "https://news.ycombinator.com/item?id=50609845",
+       "id": 50609845,
+       "replies": 33
+      },
+      {
+       "user": "neuwirth",
+       "stance": "空洞",
+       "zh": "标题里写着「信任」，这篇文章却既没说多少关于「信任」的东西，也几乎没说 Docker 会有哪些实质变化。",
+       "en": "very little about what substantive changes, if any, are coming to Docker",
+       "hn": "https://news.ycombinator.com/item?id=50609415",
+       "id": 50609415,
+       "replies": 1
+      },
+      {
+       "user": "Izkata",
+       "stance": "被忽略的部分",
+       "zh": "这看起来是一次搞砸了的产品发布：这里大多数评论完全没注意到标志图和视频后面的内容——去看看新网站，以及 Docker Sandboxes 和 Docker AI Governance。",
+       "en": "a badly botched product announcement",
+       "hn": "https://news.ycombinator.com/item?id=50613188",
+       "id": 50613188,
+       "replies": 2
+      }
+     ],
+     "kicker": "开发 · 工具",
+     "tag": "评论比最高"
+    },
+    {
+     "id": 50607261,
+     "title": "XNU Linux：把 macOS 内核当成 Linux 模块加载，跑完整 macOS 桌面",
+     "title_en": "XNU Linux: Full OS X GUI Userspace on Linux",
+     "url": "https://github.com/AFK-surf/xnulinux",
+     "hn": "https://news.ycombinator.com/item?id=50607261",
+     "points": 598,
+     "comments": 244,
+     "summary": [
+      "GitHub 项目 xnulinux 用苹果公开的源码编译 macOS 的开源内核 XNU，把它做成可加载内核模块 xnu.ko，在未修改的 arm64 Linux 内核里运行。被托管的 XNU 直接驱动 CPU 和 MMU，macOS 进程与 Linux 进程在同一批 CPU 上原生并行，中间没有虚拟机管理程序；Linux 通过一个小接口模块 fki.ko 把内存、定时器、文件、网络和 GPU 借给 XNU。",
+      "在普通 Ubuntu 内核上 insmod xnu.ko，即可把用苹果官方安装器制作的 macOS 27 系统盘启动到桌面，登录窗口、Dock、Finder、Safari 和 Chrome 都能用。作者称在 Apple Silicon Mac 上的 arm64 Linux 虚拟机里 31–48 秒启动到桌面，30 分钟压力测试无崩溃；也在 NVIDIA DGX Spark 裸机上跑通。Metal 通过 metal2vulkan 转到 Vulkan，没有 GPU 桥接时回退到 CPU 渲染。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "zakisaad",
+       "stance": "震惊",
+       "zh": "如果四五年前有人给我看这个（以及它很可能的构建方式），我会说不出话。这类项目如今已经被视为常态，简直疯狂。",
+       "en": "The fact that these kinds of projects have been normalised is frankly insane.",
+       "hn": "https://news.ycombinator.com/item?id=50607693",
+       "id": 50607693,
+       "replies": 29
+      },
+      {
+       "user": "pcwalton",
+       "stance": "担忧",
+       "zh": "这让我怀疑下一个前沿会不会是：操作系统用只存在于硬件里的密钥加密发行，CPU 只负责解密代码块、放进指令缓存且不让你看，从而阻止你在苹果芯片以外运行这些可执行文件。",
+       "en": "the OS is shipped encrypted with keys that only exist in hardware",
+       "hn": "https://news.ycombinator.com/item?id=50607734",
+       "id": 50607734,
+       "replies": 55
+      },
+      {
+       "user": "opengears",
+       "stance": "前车之鉴",
+       "zh": "这类项目已经开始再次消失了，见「Stela 已被从 GitHub 彻底删除」。",
+       "en": "These projects are already dissapearing again",
+       "hn": "https://news.ycombinator.com/item?id=50608707",
+       "id": 50608707,
+       "replies": 0
+      }
+     ],
+     "kicker": "开发 · 系统"
+    },
+    {
+     "id": 50610334,
+     "title": "Gentoo 开发者：开源维护者正坠入「下一层安全地狱」",
+     "title_en": "The next circle of security hell",
+     "url": "https://blogs.gentoo.org/mgorny/2026/10/27/the-next-circle-of-security-hell/",
+     "hn": "https://news.ycombinator.com/item?id=50610334",
+     "points": 234,
+     "comments": 138,
+     "summary": [
+      "Gentoo 开发者 Michał Górny 在博客中回顾他几年前写的《现代打包者的安全噩梦》，认为情况不升反降：如今「人人和他们的聊天机器人都成了安全研究员」，项目被漏洞报告淹没，即使几乎所有漏洞赏金都因 AI 垃圾报告而停办，人们也没停手；剔除无效报告后剩下的仍要逐一判断严重性、审核修复是否真有效。",
+      "他说很多报告（如 ReDoS 等「性能 bug」）是否算漏洞取决于使用场景，但 CVE 往往已经分配、评分奇高，扫描器会一直报警，他只好对不影响 Gentoo 的漏洞做无意义的稳定化和版本号提升，以免被标为「过时」。他认为多数项目没准备好处理安全问题，缺少 LTS 分支和最小改动的安全发布，最终社区会走到崩溃点，人人只能自己打包更多依赖，「每个聊天机器人各顾各」。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "mattstir",
+       "stance": "反驳",
+       "zh": "（作者说想怪 Rust 让人痴迷内存安全、忽视编译器抓不到的漏洞。）过去 30 天里关键基础设施出了至少六个极其高调的内存安全漏洞（PHP、Brotli、nginx、Java、Ruby……），这种说法很难让人接受。自动捕获最常见、最易被利用的那类 bug 应该是卖点，把它说成坏事很奇怪。",
+       "en": "the past 30 days have featured no less than six extremely high-profile memory safety bugs",
+       "hn": "https://news.ycombinator.com/item?id=50613967",
+       "id": 50613967,
+       "replies": 35
+      },
+      {
+       "user": "markus_zhang",
+       "stance": "建议",
+       "zh": "一直让我困惑的是，维护者为什么总在抱怨，却不做最显而易见的事：按自己想要的节奏来，告诉用户自己跟不上汹涌而来的安全问题——请回馈贡献，风险自负。",
+       "en": "just keep whatever pace you want",
+       "hn": "https://news.ycombinator.com/item?id=50611044",
+       "id": 50611044,
+       "replies": 39
+      },
+      {
+       "user": "14113",
+       "stance": "补充",
+       "zh": "作者漏掉了关键背景：这些漏洞不是出在新代码里，而是存在多年的老代码里。漏洞数量没有增加，增加的只是我们发现和报告它们的能力。",
+       "en": "The number of vunerabilities has not increased",
+       "hn": "https://news.ycombinator.com/item?id=50614847",
+       "id": 50614847,
+       "replies": 1
+      }
+     ],
+     "kicker": "开发 · 安全"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50620349,
+     "title": "Stalwart 现在可以直接替代 Microsoft Exchange",
+     "title_en": "Stalwart is now a drop-in replacement for Microsoft Exchange",
+     "url": "https://stalw.art/blog/microsoft-exchange-replacement/",
+     "hn": "https://news.ycombinator.com/item?id=50620349",
+     "points": 118,
+     "comments": 70
+    },
+    {
+     "id": 50609579,
+     "title": "别把 SSH 密钥放在磁盘上",
+     "title_en": "Don't keep your SSH keys on disk",
+     "url": "https://jola.dev/posts/you-cant-afford-ssh-keys-disk",
+     "hn": "https://news.ycombinator.com/item?id=50609579",
+     "points": 147,
+     "comments": 96
+    },
+    {
+     "id": 50610318,
+     "title": "Nospeaker：用 MacBook 触控板的触觉马达让它「说话」",
+     "title_en": "Nospeaker ─ Make your MacBook's trackpad talk using its haptic motor",
+     "url": "https://github.com/os6/nospeaker",
+     "hn": "https://news.ycombinator.com/item?id=50610318",
+     "points": 268,
+     "comments": 157
+    },
+    {
+     "id": 50610743,
+     "title": "Win4wine：在 Wine 上把 Windows Shell 当作 Linux 桌面",
+     "title_en": "Win4wine – Run Windows Shell as the Linux Desktop on Wine",
+     "url": "https://github.com/mikuta0407/win4wine",
+     "hn": "https://news.ycombinator.com/item?id=50610743",
+     "points": 210,
+     "comments": 110
+    },
+    {
+     "id": 50607627,
+     "title": "Tempo：一个 C 语言部分求值器",
+     "title_en": "A Partial Evaluator for C",
+     "url": "https://phoenix.labri.fr/software/tempo/",
+     "hn": "https://news.ycombinator.com/item?id=50607627",
+     "points": 101,
+     "comments": 29
+    },
+    {
+     "id": 50584526,
+     "title": "Elixir HLS：把 Elixir 函数变成 FPGA 电路",
+     "title_en": "Elixir HLS makes FPGA circuits from functions written in Elixir",
+     "url": "https://github.com/elixir-hls/elixir-hls",
+     "hn": "https://news.ycombinator.com/item?id=50584526",
+     "points": 145,
+     "comments": 16
+    },
+    {
+     "id": 50581961,
+     "title": "刹车检查：通过蓝牙劫持拖车刹车",
+     "title_en": "Brake Check: Hijacking Trailer Brakes over Bluetooth",
+     "url": "https://elementdigital.com.au/blog/brake-check-trailer-brakes-over-bluetooth/",
+     "hn": "https://news.ycombinator.com/item?id=50581961",
+     "points": 94,
+     "comments": 65
+    },
+    {
+     "id": 50587286,
+     "title": "整数和指针有什么区别？（2018）",
+     "title_en": "What's the difference between an integer and a pointer? (2018)",
+     "url": "https://blog.regehr.org/archives/1621",
+     "hn": "https://news.ycombinator.com/item?id=50587286",
+     "points": 103,
+     "comments": 101
+    },
+    {
+     "id": 50606072,
+     "title": "为 1000 个 API 运营鉴权学到的经验",
+     "title_en": "What we learned operating auth for 1k APIs",
+     "url": "https://nango.dev/blog/lessons-from-operating-api-auth-for-900-apis/",
+     "hn": "https://news.ycombinator.com/item?id=50606072",
+     "points": 52,
+     "comments": 12
+    },
+    {
+     "id": 50614424,
+     "title": "Nginx 1.31.10 和 1.30.8 发布（修复 CVE-2026-132779，TLS 1.3 early data）",
+     "title_en": "Nginx 1.31.10 and 1.30.8 (fix CVE-2026-132779; TLS 1.3 early data)",
+     "url": "https://my.f5.com/manage/s/article/K000163947",
+     "hn": "https://news.ycombinator.com/item?id=50614424",
+     "points": 15,
+     "comments": 0
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2206,
+    "comments": 1237,
+    "top_points": {
+     "id": 50607261,
+     "title": "XNU Linux：把 macOS 内核当成 Linux 模块加载，跑完整 macOS 桌面",
+     "value": 598,
+     "comments": 244
+    },
+    "top_comments": {
+     "id": 50607261,
+     "title": "XNU Linux：把 macOS 内核当成 Linux 模块加载，跑完整 macOS 桌面",
+     "value": 244
+    },
+    "top_brief": {
+     "id": 50610318,
+     "title": "Nospeaker：用 MacBook 触控板的触觉马达让它「说话」",
+     "value": 268,
+     "comments": 157
+    }
+   }
+  },
+  {
+   "name": "科学",
+   "stories": [
+    {
+     "id": 50598441,
+     "title": "John Baez 解读 Masullo 的 940 页黎曼猜想证明",
+     "title_en": "Masullo on the Riemann Hypothesis",
+     "url": "https://johncarlosbaez.wordpress.com/2026/11/22/masullo-on-the-riemann-hypothesis/",
+     "hn": "https://news.ycombinator.com/item?id=50598441",
+     "points": 304,
+     "comments": 280,
+     "summary": [
+      "数学物理学家 John Baez 在博客中写道，2026 年 11 月 20 日出现了两份黎曼猜想证明尝试：一份是 Levent Alpöge 与 Claude 合作的、主要以 1700 万行 Lean 代码存在的证明；另一份是 Alessandro Masullo 的 940 页人工手稿，由 Ravi Vakil 发在博客上。Baez 自称不是数论专家，试着用简化方式勾勒 Masullo 的思路。",
+      "Masullo 沿着 Weil 和 Connes 的路线，为（Hecke）L 函数的对数导数构造一个新的「迹公式」，声称它在临界线以右没有极点，从而推出广义黎曼猜想。Baez 也列出已被指出的问题：一项由 Eric Naslund 组织的 AI 辅助审查认为某定理在素数 2 附近的检验中极限应为 0 而非 log 2；第 444 页把只对 Schauder 基成立的结论推广到 Markushevich 基，似乎不成立。手稿本身是草稿，第 13 章推出 GRH 的地方只有占位符；Brian Conrad 说原计划花一年打磨，是 Alpöge 的发布迫使它仓促公开。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "davesque",
+       "stance": "同情",
+       "zh": "我很为 Masullo 担心。不管他的证明最终是否成立，感觉这个人 12 年的人生都被这场风波贬低了。我们当然想发现真理，但也希望人们在乎真理，而不是因为它似乎贬低了自己的人生和追求而心生怨恨。",
+       "en": "it feels like 12 years of this man's life have been cheapened by this whole ordeal",
+       "hn": "https://news.ycombinator.com/item?id=50606852",
+       "id": 50606852,
+       "replies": 186
+      },
+      {
+       "user": "ComplexSystems",
+       "stance": "反问",
+       "zh": "大家默认如果认定 Alpöge「先到」，Masullo 就失去了功劳、被抢先了很可悲。数学家们疯了吗？这是高中吗？这位老兄没借助任何 AI 就证明了黎曼猜想，也许只差几处小调整。谁在乎 Alpöge 早了几个小时？两人都给功劳，都发菲尔兹奖。",
+       "en": "Give them both credit and the Fields medal.",
+       "hn": "https://news.ycombinator.com/item?id=50607154",
+       "id": 50607154,
+       "replies": 30
+      },
+      {
+       "user": "liendolucas",
+       "stance": "理解的价值",
+       "zh": "1700 万行 Lean 代码对数学界什么也没说明。谁会去下功夫研究它？相比之下，这份「仅」940 页的证明是人能消化的，而这正是关键。",
+       "en": "17m lines of Lean code tells absolutely nothing to the math community",
+       "hn": "https://news.ycombinator.com/item?id=50609906",
+       "id": 50609906,
+       "replies": 6
+      }
+     ],
+     "kicker": "数学 · 黎曼猜想"
+    },
+    {
+     "id": 50607668,
+     "title": "是的，1700 万行 Lean 确实很多",
+     "title_en": "Yes, 17M lines of Lean is a lot",
+     "url": "https://micjm.com/blog/yes-17m-lines-of-lean-is-a-lot/",
+     "hn": "https://news.ycombinator.com/item?id=50607668",
+     "points": 256,
+     "comments": 332,
+     "summary": [
+      "针对黎曼猜想证明「1700 万行 Lean」这一数字，作者统计了两个 Lean 证明集合作比较：Mathlib 收录的著名定理中有 259 个附带 Lean 证明，都是人写的，没有一个接近 1700 万行；在 Reservoir 收录的 938 个有 GitHub 代码的 Lean 包里，超过 1600 万行的寥寥无几。",
+      "其中 8800 万行的 CFSG 项目似乎是仍在进行中的 AI 证明；3600 万行的 LeanBridge 约 98% 是脚本生成的逐条核对数据的文件，手写部分约 50 万行；2700 万行的 anthropics/fermats-last-theorem 是 9 月发布的 AI 版费马大定理完整证明，约为 Kevin Buzzard 领导的人工 FLT 项目（约 6 万行、仍在进行）的 450 倍。结论：是的，1700 万行很多。作者注明文字是自己写的，资料搜集和图表借助了 AI。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "_flag",
+       "stance": "澄清",
+       "zh": "很多评论认为行数说明证明难以理解，或者觉得代码压缩能让它更好懂，这是误解。Lean 大致相当于「编译后的数学」，就像编译器把几行高级语言变成几千条汇编指令一样。人们不去理解这些代码，而是去理解……",
+       "en": "Lean is roughly analogous to compiled math.",
+       "hn": "https://news.ycombinator.com/item?id=50616598",
+       "id": 50616598,
+       "replies": 11
+      },
+      {
+       "user": "adgjlsfhk1",
+       "stance": "最新进展",
+       "zh": "已经降到 1300 万行了（rh-shrink.github.io），明天很可能降到 1100 万。",
+       "en": "It's down to 13m",
+       "hn": "https://news.ycombinator.com/item?id=50608462",
+       "id": 50608462,
+       "replies": 13
+      },
+      {
+       "user": "laser",
+       "stance": "优雅",
+       "zh": "打印出来有几十万页，相当于几百本厚教科书。如果 Masullo 的证明成立，它比这精简几百倍，恰好概括了当下这些模型的状况：能把活干完，但还没真正理解优雅。",
+       "en": "They can get the job done but have yet to fully understand elegance.",
+       "hn": "https://news.ycombinator.com/item?id=50608332",
+       "id": 50608332,
+       "replies": 35
+      }
+     ],
+     "kicker": "数学 · 形式化"
+    },
+    {
+     "id": 50620102,
+     "title": "Anthropic 发布 AI 发现的证明：VP ≠ VNP 对所有域成立",
+     "title_en": "VP ≠ VNP over Every Field",
+     "url": "https://github.com/anthropics/formal-math/tree/main/vp-vnp",
+     "hn": "https://news.ycombinator.com/item?id=50620102",
+     "points": 181,
+     "comments": 135,
+     "summary": [
+      "Anthropic 的 formal-math 仓库新增 vp-vnp 目录：对每一个域，哈密顿圈多项式（以及特征不为 2 时的积和式）的电路都需要超过 m^(c (log m)^(1/3)) 个门，近似电路也一样，因此代数复杂度中的 VP 是 VNP 的真子集。说明明确写道：这并不解决 P vs NP。",
+      "README 说该结果由 Anthropic 内部的研究版 Claude 模型发现，论文和 Lean 4 形式化都由 AI 模型撰写，没有人类数学家检查过证明。仓库给出了自行验证的步骤：用 lake 构建并打印所用公理，CI 还会用另一个独立实现的内核 nanoda 重新检查证明。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "isomorphic_duck",
+       "stance": "猜测",
+       "zh": "很明显他们在把一切手段都砸向圣杯（P vs NP），这只是途中他们觉得值得发表的一个阶段性结果。",
+       "en": "they are throwing the kitchen sink at the Holy Grail (P vs NP)",
+       "hn": "https://news.ycombinator.com/item?id=50620360",
+       "id": 50620360,
+       "replies": 45
+      },
+      {
+       "user": "woeirua",
+       "stance": "焦虑",
+       "zh": "如果你现在是数学研究生……是不是直接放弃？你挑的任何问题，一年后大概都会被 Claude 一句提示词解决。",
+       "en": "do you just quit?",
+       "hn": "https://news.ycombinator.com/item?id=50620584",
+       "id": 50620584,
+       "replies": 36
+      },
+      {
+       "user": "amichail",
+       "stance": "保留",
+       "zh": "论文里写着：「我们尚未分析它与相对化和代数化的关系。」",
+       "en": "We have not analysed how it relates to relativization and algebrization",
+       "hn": "https://news.ycombinator.com/item?id=50620390",
+       "id": 50620390,
+       "replies": 0
+      }
+     ],
+     "kicker": "数学 · 复杂度"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50547698,
+     "title": "苏丹出土大教堂地面，揭开最大的中世纪教堂之一",
+     "title_en": "Cathedral floor emerges in Sudan, revealing one of the biggest medieval churches",
+     "url": "https://apnews.com/article/sudan-antiquities-nubia-cathedral-1b16f67da881ee5592de4481ee55c527",
+     "hn": "https://news.ycombinator.com/item?id=50547698",
+     "points": 355,
+     "comments": 133
+    },
+    {
+     "id": 50587439,
+     "title": "航天器抵达水星，史上第二次进入水星轨道的任务",
+     "title_en": "Spacecraft reaches Mercury on second-ever mission to enter its orbit",
+     "url": "https://www.theguardian.com/science/2026/nov/20/spacecraft-mercury-second-ever-mission-orbit-bepicolombo",
+     "hn": "https://news.ycombinator.com/item?id=50587439",
+     "points": 279,
+     "comments": 88
+    },
+    {
+     "id": 50606499,
+     "title": "黎曼猜想 Lean 证明的树状图可视化",
+     "title_en": "Treemap of the Riemann Hypothesis Lean Proof",
+     "url": "https://pengowray.github.io/riemann-zeta-proof-visualizer/",
+     "hn": "https://news.ycombinator.com/item?id=50606499",
+     "points": 185,
+     "comments": 74
+    },
+    {
+     "id": 50620250,
+     "title": "Levent Alpöge 谈他的黎曼猜想证明",
+     "title_en": "Levent Alpöge comments on his Riemann Hypothesis proof",
+     "url": "https://twitter.com/__alpoge__/status/2124987173439209561",
+     "hn": "https://news.ycombinator.com/item?id=50620250",
+     "points": 63,
+     "comments": 54
+    },
+    {
+     "id": 50587750,
+     "title": "MRAM 入门：磁存储器如何取代嵌入式闪存",
+     "title_en": "MRAM Basics: How Magnetic Memory Is Replacing Embedded Flash",
+     "url": "https://www.allaboutcircuits.com/technical-articles/mram-basics-how-magnetic-memory-is-replacing-embedded-flash/",
+     "hn": "https://news.ycombinator.com/item?id=50587750",
+     "points": 93,
+     "comments": 40
+    },
+    {
+     "id": 50594935,
+     "title": "导数翻转（sigfpe 博客）",
+     "title_en": "Derivative Flipping",
+     "url": "http://blog.sigfpe.com/2026/11/derivative-flipping.html",
+     "hn": "https://news.ycombinator.com/item?id=50594935",
+     "points": 66,
+     "comments": 8
+    },
+    {
+     "id": 50588375,
+     "title": "「法律上它们不存在」：让生物学家和渔民困惑的杂交蟹",
+     "title_en": "'Legally, they don't exist': the hybrid crabs puzzling biologists and fishers",
+     "url": "https://www.theguardian.com/environment/2026/nov/21/alaska-bering-sea-heatwave-snow-tanner-hybrid-crabs-fishing-quotas",
+     "hn": "https://news.ycombinator.com/item?id=50588375",
+     "points": 46,
+     "comments": 19
+    },
+    {
+     "id": 50616578,
+     "title": "地球刚经历有记录以来最反常的炎热一天",
+     "title_en": "Earth just saw the most anomalously hot day ever on record",
+     "url": "https://www.scientificamerican.com/article/earth-just-saw-the-most-anomalously-hot-day-ever-on-record/",
+     "hn": "https://news.ycombinator.com/item?id=50616578",
+     "points": 21,
+     "comments": 4
+    },
+    {
+     "id": 50617302,
+     "title": "地球臭氧空洞扩大到十年来未见的规模",
+     "title_en": "Earth's ozone hole has grown to a size not seen in a decade",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261110042546.htm",
+     "hn": "https://news.ycombinator.com/item?id=50617302",
+     "points": 25,
+     "comments": 3
+    }
+   ],
+   "stats": {
+    "items": 12,
+    "points": 1874,
+    "comments": 1170,
+    "top_points": {
+     "id": 50547698,
+     "title": "苏丹出土大教堂地面，揭开最大的中世纪教堂之一",
+     "value": 355,
+     "comments": 133
+    },
+    "top_comments": {
+     "id": 50607668,
+     "title": "是的，1700 万行 Lean 确实很多",
+     "value": 332
+    },
+    "top_brief": {
+     "id": 50547698,
+     "title": "苏丹出土大教堂地面，揭开最大的中世纪教堂之一",
+     "value": 355,
+     "comments": 133
+    }
+   }
+  },
+  {
+   "name": "文化",
+   "stories": [
+    {
+     "id": 50606192,
+     "title": "SPELUNKR：用互联网档案馆的被遗忘录像拼出一个免费「有线电视台」",
+     "title_en": "Free alternative TV network built from the Internet Archive's forgotten videos",
+     "url": "https://spelunkr.tv",
+     "hn": "https://news.ycombinator.com/item?id=50606192",
+     "points": 925,
+     "comments": 160,
+     "summary": [
+      "spelunkr.tv 自称「有线电视，但更怪」：一个由互联网档案馆（Internet Archive）里被遗忘的视频组成的免费另类电视网，24 小时直播同步，首页显示已有 37 个频道、4395 小时节目，还在增加。",
+      "页面以老式节目表呈现，频道名如「周六早晨」「黄金时段」「电脑编年史」「深夜本地台」等，正在播的有 2010 年 CN 周六早间节目合集、《双峰》《X 档案》的老播出录像。网站说明每盘录像都直接从互联网档案馆播放，「这里没有任何东西出售」。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "gabriel666smith",
+       "stance": "共鸣",
+       "zh": "如今我越来越多地点播看影视，偶尔会察觉到一种淡淡的孤独感：此刻世界上没有别人在和你看同一样东西。流媒体的异步性似乎丢掉了娱乐中某种重要的东西。我有时打开 IPTV，只是想看看大家都在看什么。",
+       "en": "a faint background hum of loneliness",
+       "hn": "https://news.ycombinator.com/item?id=50608842",
+       "id": 50608842,
+       "replies": 16
+      },
+      {
+       "user": "goatherders",
+       "stance": "沉迷",
+       "zh": "好到无法形容。我刚花 45 分钟看了 1987 年的《Headbangers Ball》，以后肯定还会再看，甚至在 Def Leppard 和 Mötley Crüe 的 MV 之间看到了 Spuds McKenzie 的广告。",
+       "en": "I just spent 45 minutes watching headbangers ball from 1987",
+       "hn": "https://news.ycombinator.com/item?id=50610346",
+       "id": 50610346,
+       "replies": 1
+      },
+      {
+       "user": "andsoitis",
+       "stance": "疑问",
+       "zh": "他们直接从互联网档案馆串流。档案馆对这种绕过自家用户体验的界面怎么看？不知道他们在不在意。",
+       "en": "How do they feel about a different UI like this that bypasses their own user experience.",
+       "hn": "https://news.ycombinator.com/item?id=50606801",
+       "id": 50606801,
+       "replies": 14
+      }
+     ],
+     "kicker": "文化 · 怀旧"
+    },
+    {
+     "id": 50605479,
+     "title": "雀巢 Nespresso「奥林匹斯计划」：悄悄减少每颗胶囊的咖啡克数",
+     "title_en": "Nespresso's project to reduce grams of coffee per capsule",
+     "url": "https://alvinbunk.wordpress.com/2026/11/01/nespresso-project-olympus/",
+     "hn": "https://news.ycombinator.com/item?id=50605479",
+     "points": 261,
+     "comments": 274,
+     "summary": [
+      "博主 Alvin Bunk 说，2026 年 8 月一名 Nespresso 内部员工向他透露了「Project Olympus」，他公开了据称是内部文件的文本：自 2026 年起，部分 Vertuo 咖啡配方将进行「配方优化」，借助研磨和烘焙技术进步，用「略少的咖啡」达到同样口味，2026 年第一到第三季度分批推出。",
+      "文件称杯量、咖啡因水平和品质标准不变，并指示员工在消费者问起胶囊变轻时强调「这体现的是工艺创新，而不是价值缩水」；第一批涉及 Double Espresso Scuro 等 6 款，第二批 8 款。作者 9 月看到 Reddit 上有人问配方是否改了，决定公开爆料，并用表格追踪受影响胶囊，称除部分大杯量产品外几乎全线都在减量。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "esperent",
+       "stance": "技术分析",
+       "zh": "不难想象：调整烘焙度、研磨粒度、压力、时间、萃取量等变量，从同样一颗胶囊里萃取出更高的 TDS（总溶解固体）。难以想象的是：这样会好喝。我们并不想把豆子里的一切都萃取出来。",
+       "en": "Harder to imagine: that it will taste good.",
+       "hn": "https://news.ycombinator.com/item?id=50605772",
+       "id": 50605772,
+       "replies": 14
+      },
+      {
+       "user": "akdor1154",
+       "stance": "要证据",
+       "zh": "很想看一次盲测，看人们能否分辨改前改后。既然已经有人在问「他们是不是改了配方」，那很可能是能尝出来的，但只有正规测试才能无可争辩地证明。",
+       "en": "Would love to see a double blind test",
+       "hn": "https://news.ycombinator.com/item?id=50619949",
+       "id": 50619949,
+       "replies": 0
+      },
+      {
+       "user": "benhurmarcel",
+       "stance": "意外",
+       "zh": "没想到经典胶囊里只有 5 克咖啡豆。我做一杯意式浓缩通常用 16 克左右。",
+       "en": "I'm surprised the classic pods have only 5g of beans inside.",
+       "hn": "https://news.ycombinator.com/item?id=50609254",
+       "id": 50609254,
+       "replies": 5
+      }
+     ],
+     "kicker": "生活 · 消费"
+    },
+    {
+     "id": 50603143,
+     "title": "写博客，先假设读者对你的文章不感兴趣",
+     "title_en": "Assume People Are Not Interested in Your Blog Post",
+     "url": "https://danielsada.tech/blog/assume-people-are-not-interested-in-your-blog-post/",
+     "hn": "https://news.ycombinator.com/item?id=50603143",
+     "points": 312,
+     "comments": 152,
+     "summary": [
+      "Daniel Sada 的短文主张为读者写作：开头就说明这篇是写给谁的，让读者自己决定要不要读下去。他回忆在 Snowflake 时有一个很酷的礼仪：每封邮件第一句会写「如果你不开发这部分代码，可以不用往下读了」或「如果你不在财务部门，可以不用读了」；Slack/Teams 讨论也先写三到五行简介，细节放在串里。",
+      "他说看到有人写两千字、内容又不适用于所有人还不够简洁，就感到难过，「这是在浪费读者的眼睛」。文章本身也以「如果你不是为别人写作，现在就别读了」开头。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Agentlien",
+       "stance": "不同意",
+       "zh": "「如果你不是为别人写作，现在就别读了」是开头第一句。但在我看来，这恰恰是博客的定义之一：你为自己写，分享出来希望别人也喜欢。绝大多数时候，标题和开头一段就能告诉我这篇是否适合我，用不着作者明说。",
+       "en": "You write for yourself and share hoping others will enjoy it, as well.",
+       "hn": "https://news.ycombinator.com/item?id=50608344",
+       "id": 50608344,
+       "replies": 17
+      },
+      {
+       "user": "TFNA",
+       "stance": "现实",
+       "zh": "99% 的开放网络博主无论愿不愿意讨好读者，都不会获得多少真人关注。既然如此，博主就该想怎么写就怎么写，让大模型爬虫去把内容变得适合人类阅读。",
+       "en": "99% of open-web bloggers are going to get no significant human eyeballs",
+       "hn": "https://news.ycombinator.com/item?id=50604679",
+       "id": 50604679,
+       "replies": 19
+      },
+      {
+       "user": "lbriner",
+       "stance": "建议",
+       "zh": "在我看来更重要的尊重读者的方式是：当读者想解决某个问题（比如修一个怪 bug）时，开头先给出解决方案，再详细讲你是怎么找到的。",
+       "en": "give the solution at the start",
+       "hn": "https://news.ycombinator.com/item?id=50609701",
+       "id": 50609701,
+       "replies": 2
+      }
+     ],
+     "kicker": "写作 · 观点"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50612686,
+     "title": "Cyberleek 放出《GTA 6》Xbox 版可执行文件",
+     "title_en": "Cyberleek posted the GTA 6 Xbox build executable",
+     "url": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1y3jzqe/cyberleek_posted_the_gta_6_xbox_build_executable/",
+     "hn": "https://news.ycombinator.com/item?id=50612686",
+     "points": 253,
+     "comments": 278
+    },
+    {
+     "id": 50605426,
+     "title": "3A 游戏开发者该怎么做",
+     "title_en": "What should AAA game devs do",
+     "url": "https://gamethoughts.bearblog.dev/what-should-aaa-game-devs-do/",
+     "hn": "https://news.ycombinator.com/item?id=50605426",
+     "points": 37,
+     "comments": 79
+    },
+    {
+     "id": 50609252,
+     "title": "《GTA 6》高楼细节被扒，网友围观",
+     "title_en": "Enjoy this guy getting bricked over the detail of towers in GTA6",
+     "url": "https://bsky.app/profile/floppyadult.com/post/3n2tgw7rofc2v",
+     "hn": "https://news.ycombinator.com/item?id=50609252",
+     "points": 86,
+     "comments": 32
+    },
+    {
+     "id": 50604123,
+     "title": "自由之争：BSD 如何摆脱 AT&T 授权（漫画）",
+     "title_en": "The struggle for freedom: How BSD escaped AT&T licensing",
+     "url": "https://fosscomics.com/posts/16.%20BSD%20Unix%20Part%206%20-%20The%20Struggle%20for%20Freedom/",
+     "hn": "https://news.ycombinator.com/item?id=50604123",
+     "points": 167,
+     "comments": 71
+    },
+    {
+     "id": 50560563,
+     "title": "无授权的福音：Wisdom Tree 在 Game Boy 上的圣经游戏",
+     "title_en": "The Unlicensed Gospel: Wisdom Tree's Bible Games on the Game Boy",
+     "url": "https://www.gameboymuseum.com/single-post/the-unlicensed-gospel-wisdom-tree-s-bible-games-on-the-game-boy",
+     "hn": "https://news.ycombinator.com/item?id=50560563",
+     "points": 64,
+     "comments": 54
+    },
+    {
+     "id": 50574412,
+     "title": "Show HN：在 3D 中开车逛我的村子",
+     "title_en": "Show HN: Drive around my village in 3D",
+     "url": "https://cherwellvalleymotorclub.app",
+     "hn": "https://news.ycombinator.com/item?id=50574412",
+     "points": 103,
+     "comments": 72
+    },
+    {
+     "id": 50611861,
+     "title": "为超级任天堂打造无线网卡",
+     "title_en": "Building a wireless network adapter for the Super Nintendo",
+     "url": "https://boland.dev/snet/",
+     "hn": "https://news.ycombinator.com/item?id=50611861",
+     "points": 76,
+     "comments": 17
+    },
+    {
+     "id": 50607498,
+     "title": "反监控摄像头团体 DeFlock America 的 Facebook 群组被以「危险组织」为由封禁",
+     "title_en": "DeFlock Amerca Facebook Group Suspended as a Dangerous Organization",
+     "url": "https://www.facebook.com/shugvermonte/posts/the-deflock-america-group-with-over-840k-members-has-been-suspended-by-meta-what/10165140280736049/",
+     "hn": "https://news.ycombinator.com/item?id=50607498",
+     "points": 210,
+     "comments": 77
+    },
+    {
+     "id": 50613465,
+     "title": "一个人终结夏令时的征途",
+     "title_en": "One man's quest to end daylight savings",
+     "url": "https://www.newyorker.com/magazine/2026/11/30/one-mans-quest-to-end-daylight-savings",
+     "hn": "https://news.ycombinator.com/item?id=50613465",
+     "points": 62,
+     "comments": 116
+    },
+    {
+     "id": 50619186,
+     "title": "马造就了国家：国家起源于游牧而非农耕",
+     "title_en": "The horse made the state",
+     "url": "https://aeon.co/essays/the-origins-of-the-state-are-not-agrarian-but-pastoralist",
+     "hn": "https://news.ycombinator.com/item?id=50619186",
+     "points": 52,
+     "comments": 49
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2608,
+    "comments": 1431,
+    "top_points": {
+     "id": 50606192,
+     "title": "SPELUNKR：用互联网档案馆的被遗忘录像拼出一个免费「有线电视台」",
+     "value": 925,
+     "comments": 160
+    },
+    "top_comments": {
+     "id": 50612686,
+     "title": "Cyberleek 放出《GTA 6》Xbox 版可执行文件",
+     "value": 278
+    },
+    "top_brief": {
+     "id": 50612686,
+     "title": "Cyberleek 放出《GTA 6》Xbox 版可执行文件",
+     "value": 253,
+     "comments": 278
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "015UUZn8aEvW",
+  "id": 50612470,
+  "hn": "https://news.ycombinator.com/item?id=50612470",
+  "story_id": 50611576,
+  "story": "英伟达董事会恢复黄仁勋 CEO 职务，股价当日收涨 31%",
+  "zh": "公司名义上的治理结构，不一定是它真正的治理结构。",
+  "en": "a firm's nominal governance structure isn't necessarily its real governance structure"
+ },
+ "stats": {
+  "snapshot": "2026-11-24T08:15:42+08:00",
+  "front_page_count": 90,
+  "with_numbers": 87,
+  "flagged_or_dupe": 3,
+  "top_points": {
+   "id": 50611576,
+   "title": "英伟达董事会恢复黄仁勋 CEO 职务，股价当日收涨 31%",
+   "value": 1958,
+   "comments": 3053
+  },
+  "top_comments": {
+   "id": 50611576,
+   "title": "英伟达董事会恢复黄仁勋 CEO 职务，股价当日收涨 31%",
+   "value": 3053
+  },
+  "second_comments": {
+   "id": 50615308,
+   "title": "杨立昆：Dario 炒作 AI 危险，是为了让开源模型被禁、自己掌控局面",
+   "value": 594
+  },
+  "over_500": 9,
+  "over_300": 14,
+  "over_100": 33,
+  "show_hn": 5,
+  "total_points": 17512,
+  "total_comments": 9440,
+  "hottest_ratio": {
+   "id": 50607194,
+   "title": "Docker 换新品牌：「建立在信任之上」，主打 AI 智能体隔离",
+   "value": 1.64,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
