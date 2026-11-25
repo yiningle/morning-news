@@ -1,0 +1,1309 @@
+{
+ "date": "2026-11-24",
+ "published_at": "2026-11-25T08:40:00+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-11-24",
+ "schema_version": 2,
+ "lead": {
+  "id": 50627836,
+  "title": "上市不到一周，Anthropic 股价跌破 83 美元发行价",
+  "title_en": "Anthropic breaks below $83 IPO price",
+  "url": "https://www.bloomberg.com/news/articles/2026-11-24/anthropic-breaks-below-83-ipo-price-in-premarket-trading",
+  "hn": "https://news.ycombinator.com/item?id=50627836",
+  "points": 317,
+  "comments": 633,
+  "summary": [
+   "Bloomberg 原文需订阅、无法读取，以下据 Barron's 同日报道（MSN 转载）：Anthropic 股价周二下跌 9% 至 79.69 美元，跌破上周四 83 美元的 IPO 发行价，并朝连续第三个交易日下跌迈进；盘中一度跌到 75.61 美元，对应市值跌破 1 万亿美元（门槛约为每股 75.65 美元）。",
+   "它周四首日上涨 17%，周五回落 8.5%；周一英伟达因黄仁勋复职大涨 32%、AI 概念股普遍大涨时，Anthropic 反而跌了 1.4%，周二则随整个 AI 板块一起走低。报道指出，大型公司跌破发行价并不罕见：Meta 上市一天后就跌破，亚马逊和特斯拉是四天，SpaceX 6 月以 135 美元上市后第 22 个交易日跌破、目前仍在 127 美元左右；但它们当时的估值都远不及 Anthropic 的万亿级别。",
+   "报道认为，Anthropic 的问题在于它是股市上第一家、也是唯一一家纯 AI 模型开发商，行情好时风光，行情差时首当其冲。这是当天评论数最多的帖子（600 多条评论），评论/点赞比也是全场最高。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "futureshock",
+    "stance": "冷静",
+    "zh": "AI 可以是一项变革性技术，可以有数万亿利润可赚，Anthropic 也可以是领先的前沿实验室，而它的股票同时可以是一笔糟糕的投资。我们正在进入许多方面都前所未有的水域，拿亏了会心疼的钱去买 Anthropic 才是傻。",
+    "en": "for their stock to be a terrible investment",
+    "hn": "https://news.ycombinator.com/item?id=50629503",
+    "id": 50629503,
+    "replies": 123
+   },
+   {
+    "user": "mvkel",
+    "stance": "常态",
+    "zh": "上市后下跌过的公司：亚马逊、Netflix、特斯拉、Meta。这是教科书式的 IPO 走势。",
+    "en": "This is textbook IPO behavior.",
+    "hn": "https://news.ycombinator.com/item?id=50630227",
+    "id": 50630227,
+    "replies": 4
+   },
+   {
+    "user": "trwly",
+    "stance": "看空",
+    "zh": "不会再有增长了。他们已经用一场空前的营销攻势占领了整个软件市场，不会再有新客户。老客户会重新评估，转向开放模型，或者干脆放弃 AI。它应该按福特的估值来定价，大概 10 美元才对。",
+    "en": "It should be priced like Ford, so maybe $10 would be correct.",
+    "hn": "https://news.ycombinator.com/item?id=50628548",
+    "id": 50628548,
+    "replies": 11
+   }
+  ],
+  "kicker": "要闻 · 资本市场",
+  "tag": "评论第一 · 评论/点赞比最高"
+ },
+ "side": [
+  {
+   "id": 50624497,
+   "title": "「2035 提前到来」：把 Linux 编译成 WebAssembly，在浏览器里跑 Firefox",
+   "title_en": "2035 came early",
+   "url": "https://fzakaria.com/2026/11/23/2035-came-early",
+   "hn": "https://news.ycombinator.com/item?id=50624497",
+   "points": 949,
+   "comments": 362,
+   "summary": [
+    "作者 Farid Zakaria 从 Gary Bernhardt 的经典演讲《JavaScript 的诞生与死亡》说起：演讲以 2035 年回望的口吻，讲 JavaScript 如何成为所有软件的事实标准。作者认为大语言模型把这个时间线大大提前了，证据就是他做的 trynix.dev——在浏览器里运行任意 Nix 包，超过 30 万个不同的包版本。",
+    "原先它靠浏览器里的 QEMU 模拟，慢到更像新奇玩具；11 月 19 日 Pooya Parsa 发布了 unkernel（把 Linux 内核编译成 WebAssembly，内核以 wasm 速度运行、只模拟用户程序），作者「在 AI 带来的狂热中」立刻换上新引擎，按工作负载提速 2 到 32 倍。现在它能联网（每个 TCP 连接走一条 WebSocket 到 Wisp 中继），能用 WebGL2 渲染 GL，能出声，还能显示 Wayland 窗口。",
+    "他还复刻了演讲里「浏览器套浏览器」的梗：在 trynix 里运行 Firefox，打开 trynix.dev，再在里面启动 Firefox。作者也坦言这一套花了 4 个多小时才跑通，最内层的 Firefox 要关掉 JIT。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "gbl08ma",
+     "stance": "心酸",
+     "zh": "我两个月来一直在做 waarm64.com（其实就是在给 Claude 写提示词），离公开发布只差两周左右，看到 unkernel 抢走了所有关注，有点心碎。我仓促发布了它，但现在已经没什么心情继续做了，尽管它的性能比 unkernel 好，功能（目前）也更完整。",
+     "en": "it was slightly heartbreaking to see unkernel get all the attention",
+     "hn": "https://news.ycombinator.com/item?id=50627172",
+     "id": 50627172,
+     "replies": 33
+    },
+    {
+     "user": "Primer81",
+     "stance": "不认同",
+     "zh": "这篇文章让我觉得很违和——我在软件行业 10 年，从没遇到过非用 JavaScript 不可的时候。JavaScript 当然没有统治世界，据我所知只是统治了 Web 开发。",
+     "en": "Javascript has certainly not taken over the world - just web dev AFAIK.",
+     "hn": "https://news.ycombinator.com/item?id=50629796",
+     "id": 50629796,
+     "replies": 13
+    },
+    {
+     "user": "semiquaver",
+     "stance": "致敬",
+     "zh": "Gary Bernhardt 一定是最不出名的「软件英雄」之一。论远见和才华，我会把他和 Fabrice Bellard、John Carmack 并列。",
+     "en": "one of the least-well-known “software heros”",
+     "hn": "https://news.ycombinator.com/item?id=50629835",
+     "id": 50629835,
+     "replies": 7
+    }
+   ],
+   "kicker": "开发 · 浏览器",
+   "tag": "点赞第二"
+  },
+  {
+   "id": 50627340,
+   "title": "博主：LLM 智能体为母公司打工，而不是为你",
+   "title_en": "LLM agents work for their parent companies, not for you",
+   "url": "https://michaelharley.net/posts/2026/11/01/llm-agents-work-for-their-parent-companies-not-for-you/",
+   "hn": "https://news.ycombinator.com/item?id=50627340",
+   "points": 879,
+   "comments": 368,
+   "summary": [
+    "作者用 Claude Code 写了个技能：打开 Instagram 短视频，识别歌手和歌曲，再找对方有没有 Bandcamp 页面，好直接花钱买音乐。后来 Bandcamp 在搜索接口上加了人机验证，Claude 明确表示不会帮他绕过；可同一个技能的另一分支，却照样会从 YouTube 把歌下载下来，而这一分钱都到不了乐队手里。",
+    "他由此认为前沿模型的真正危险是「它并不真的为我们工作」，只在 Anthropic、OpenAI 等公司允许的范围内为用户服务；他担心迟早要怀疑模型给的答案是不是收了广告费的植入，也担心模型能被要求照政府的意思办事。因此他想在自家 homelab 跑本地模型，并表示自己坚定站在「AI 是工具」一边，不喜欢工具上的人为限制。他在脚注里补充：自己并不是真要绕过 Bandcamp 的验证，只是对 Claude 先发制人的拒绝有感而发。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "Lerc",
+     "stance": "受托义务",
+     "zh": "LLM 应该像法律、财务和医疗顾问一样被视为顾问。法律应要求它们在能力范围内为客户的利益行事，同时和这些行业一样，不能为此违法。",
+     "en": "A LLM should be considered an advisor to the same extent as legal, financial, and medical.",
+     "hn": "https://news.ycombinator.com/item?id=50628691",
+     "id": 50628691,
+     "replies": 74
+    },
+    {
+     "user": "jpatten",
+     "stance": "反驳",
+     "zh": "我觉得这篇的论证相当站不住。作者不满的是 Claude 尊重了 Bandcamp 不想让自己的网站被 LLM 访问的意愿？显然另一种选择更糟。",
+     "en": "I find the argument here pretty flimsy.",
+     "hn": "https://news.ycombinator.com/item?id=50629083",
+     "id": 50629083,
+     "replies": 48
+    },
+    {
+     "user": "ArcHound",
+     "stance": "隐忧",
+     "zh": "这是一个大家迟早会吃惊的大问题：私有数据、商业机密、进行中的研究（咳，数学）。总有一天你醒来会发现，AI 供应商接管了你的生意，哪怕服务条款当初写的不是这样。",
+     "en": "One day you'll wake up to your AI provider taking over your business",
+     "hn": "https://news.ycombinator.com/item?id=50628422",
+     "id": 50628422,
+     "replies": 27
+    }
+   ],
+   "kicker": "AI · 观点",
+   "tag": "点赞第三"
+  },
+  {
+   "id": 50622774,
+   "title": "纽约州立法：禁止车企对已装好的功能收订阅费",
+   "title_en": "New York Bans Subscription and Post-Purchase Fees on Cars",
+   "url": "https://www.governor.ny.gov/news/money-your-pockets-governor-hochul-signs-bill-restricting-exploitative-vehicle-subscription",
+   "hn": "https://news.ycombinator.com/item?id=50622774",
+   "points": 761,
+   "comments": 399,
+   "summary": [
+    "纽约州州长霍楚尔 11 月 23 日签署 S.9348A/A.10411A 法案，禁止汽车制造商、经销商或第三方服务商，对使用车上预装部件或硬件、且没有持续成本的功能加收订阅费或购后费用，例如座椅加热、增强导航、免手扶驾驶和娱乐功能。",
+    "州长称买车的人不该为本应随车附带的功能再掏钱；州检察长詹姆斯和提案人、州参议员 Skoufis 也表态支持，Skoufis 举的例子是冬天用已经装好的远程启动和座椅加热不该按月付费。新法 90 天后、即 2027 年 2 月 27 日生效。评论区有人翻出法案原文指出，导航更新、卫星广播、车载 Wi‑Fi 等有持续成本的服务被明确豁免。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "runako",
+     "stance": "细节",
+     "zh": "回答大家都在问的问题：这似乎不影响 SiriusXM，也不影响特斯拉的增强巡航。参议院法案明确豁免了「导航系统更新、信息娱乐功能、卫星广播、车载 Wi‑Fi、远程信息服务、道路救援……」",
+     "en": "this appears to not impact either SiriusXM or Tesla's enhanced cruise control",
+     "hn": "https://news.ycombinator.com/item?id=50623487",
+     "id": 50623487,
+     "replies": 104
+    },
+    {
+     "user": "marcogarces",
+     "stance": "亲历",
+     "zh": "这种趋势快把我逼疯了！我买了辆二手大众 Multivan T7，给家里用的好车。它附带一堆可以付费开通的选项，比如车内氛围灯多几种颜色，或者自动大灯，我觉得太离谱了！",
+     "en": "This trend drives me nuts!",
+     "hn": "https://news.ycombinator.com/item?id=50625458",
+     "id": 50625458,
+     "replies": 122
+    },
+    {
+     "user": "adamsb6",
+     "stance": "存疑",
+     "zh": "你的第一反应可能是这对消费者是好事，也许确实是。但我几乎可以肯定，这条法律之所以能出台，是因为经销商从这些购后费用里分不到钱。",
+     "en": "the dealerships don't get a cut of those post-purchase fees",
+     "hn": "https://news.ycombinator.com/item?id=50623584",
+     "id": 50623584,
+     "replies": 5
+    }
+   ],
+   "kicker": "政策 · 消费者"
+  },
+  {
+   "id": 50626578,
+   "title": "法国博主追踪 Polymarket：有人在黄仁勋复职前数小时押注获利 7 万美元",
+   "title_en": "Investigation of Polymarket Insider Trading on the Reinstatement of Jensen Huang",
+   "url": "https://deucalionn.vercel.app/polymarket-delit-initie-jensen-huang-nvidia/",
+   "hn": "https://news.ycombinator.com/item?id=50626578",
+   "points": 465,
+   "comments": 268,
+   "summary": [
+    "这是一篇法语调查文章。作者自称刚写好一套监控 Polymarket 敏感市场的算法，结果当晚就报警：11 月 23 日凌晨 01:19 到 02:28（UTC），账户 ljhggk 分四笔、以 6.5% 的隐含概率买入「黄仁勋会在 2026 年底前回归英伟达吗」市场约 7.15 万份，共花 4648 美元，吃掉了该合约 34% 的卖单流动性，随后完全停手。",
+    "作者列出疑点：停手 89 分钟后特朗普在 Truth Social 发文表态，当天英伟达官方宣布复职，这笔押注变成 71518 美元；钱包是 81 小时前才创建的 Gnosis Safe 代理账户，100% 只押这一个事件，签名地址在链上毫无历史。作者也承认，无法确知背后是谁，也不能排除只是直觉过人，但「这些线索相当沉重」。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "shawabawa3",
+     "stance": "定性",
+     "zh": "从 4600 美元变成 71518 美元，大概率是内幕交易，但规模相对很小。",
+     "en": "probably was insider trading but it's relatively minor",
+     "hn": "https://news.ycombinator.com/item?id=50627088",
+     "id": 50627088,
+     "replies": 24
+    },
+    {
+     "user": "William_BB",
+     "stance": "怀疑",
+     "zh": "我不信 7 万美元的利润就算内幕交易，可能只是运气好。真有这个消息，赚钱的办法多得是，比如用杠杆买能隔夜交易的 NVDA 永续合约，或者买比特币，毕竟整个市场都涨了。",
+     "en": "I'm not convinced 70k USD profit is insider trading.",
+     "hn": "https://news.ycombinator.com/item?id=50627580",
+     "id": 50627580,
+     "replies": 1
+    },
+    {
+     "user": "rich_sasha",
+     "stance": "灰色地带",
+     "zh": "公开市场的「内幕信息」很清楚，有明确定义。但在事件博彩里，你本来就该知道点东西，界线并不清楚。",
+     "en": "But for gambling on events, you’re supposed to know stuff.",
+     "hn": "https://news.ycombinator.com/item?id=50627822",
+     "id": 50627822,
+     "replies": 4
+    }
+   ],
+   "kicker": "政经 · 预测市场"
+  },
+  {
+   "id": 50625384,
+   "title": "Quad9 正式停止为法国用户提供 DNS 解析",
+   "title_en": "Quad9 pulled their DNS service from France",
+   "url": "https://quad9.net/news/blog/quad9-service-deactivation-in-france/",
+   "hn": "https://news.ycombinator.com/item?id=50625384",
+   "points": 338,
+   "comments": 170,
+   "summary": [
+    "公益 DNS 服务 Quad9 宣布，11 月 24 日巴黎时间 9:00 起，对法国用户的所有查询一律拒绝。起因是体育版权方 beIN 要求它屏蔽一批据称与盗版直播有关的域名，法国法院支持了 beIN，Quad9 还因不执行被罚款。",
+    "Quad9 称自己反对盗版、但与盗版网站毫无关系，坚决反对把递归 DNS 当作内容屏蔽工具：这对托管内容的源站毫无作用，任何人几秒就能自建解析器。它也承认按 IP 地理定位来识别「法国用户」并不精确，必然会误封部分非法国用户、漏掉部分法国用户，而这种不精确正是它在官司中的核心论点。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "pi-r-p",
+     "stance": "实测",
+     "zh": "确认，今天（2026 年 11 月 24 日）起生效。（附 dig 结果：status: REFUSED，扩展错误为「因法国法律限制，服务不可用」）",
+     "en": "confirmed, effective since today, 24 of november 2026.",
+     "hn": "https://news.ycombinator.com/item?id=50627480",
+     "id": 50627480,
+     "replies": 86
+    },
+    {
+     "user": "lokar",
+     "stance": "建议",
+     "zh": "如果法国政府真想这么干，更好的办法是要求所有家庭宽带运营商来执行禁令（拦截 DNS，为用户运行自己的解析器）。",
+     "en": "it would have been better to require all residential ISPs to enforce the ban",
+     "hn": "https://news.ycombinator.com/item?id=50632087",
+     "id": 50632087,
+     "replies": 4
+    },
+    {
+     "user": "tomschwiha",
+     "stance": "误伤",
+     "zh": "位于德国的 OVH 服务器也被屏蔽了。",
+     "en": "Their service is also blocked for OVH servers based in Germany.",
+     "hn": "https://news.ycombinator.com/item?id=50635611",
+     "id": 50635611,
+     "replies": 0
+    }
+   ],
+   "kicker": "网络 · 审查"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "stories": [
+    {
+     "id": 50630309,
+     "title": "Tidal 将全面下架纯 AI 生成音乐，成首个这样做的流媒体",
+     "title_en": "Tidal bans AI-generated music",
+     "url": "https://variety.com/2026/music/news/tidal-bans-ai-generated-music-1236956924/",
+     "hn": "https://news.ycombinator.com/item?id=50630309",
+     "points": 314,
+     "comments": 299,
+     "summary": [
+      "据 Variety 报道，Tidal 宣布 12 月 9 日起开始移除它认定为完全由 AI 生成的歌曲，成为首个全面禁止 AI 音乐的流媒体平台。近五个月前，它刚宣布对 AI 歌曲取消分成、强制标注「AI 生成」或「AI 辅助」，并封禁冒充知名艺人等欺诈性歌曲。",
+      "母公司 Block 的 Tidal 负责人 Robert Andersen 在 X 上说，这还不够：过去 90 天投递给 Tidal 的曲目中有 43% 被检测为 AI 生成，而 96% 的 AI 歌曲播放量为零。此举将清掉平台上 2900 万首曲目，每天拒收 8 万到 8.5 万首。报道提到，Apple Music 和 Spotify 目前只是在测试标注等办法，Spotify 今年已从推荐中移除 5000 万首垃圾曲目、从曲库中彻底删掉 7500 万首。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "orblivion",
+       "stance": "悲观",
+       "zh": "我本来就反对「AI 音乐」，也支持这些禁令，但我对此基本不抱希望了。我想最后会发现，用「AI 音乐」和用别人编好程序的采样器或合成器之间，界线会相当模糊。",
+       "en": "the line between someone using \"AI music\" and, say, a sampler or a synthesizer",
+       "hn": "https://news.ycombinator.com/item?id=50630597",
+       "id": 50630597,
+       "replies": 127
+      },
+      {
+       "user": "hannofcart",
+       "stance": "反对",
+       "zh": "我觉得这有点过了，做成过滤器或用户设置会更好。我现在几乎只听 AI 音乐。",
+       "en": "This is a step too far I feel.",
+       "hn": "https://news.ycombinator.com/item?id=50631167",
+       "id": 50631167,
+       "replies": 9
+      },
+      {
+       "user": "bborud",
+       "stance": "支持",
+       "zh": "我觉得可以，甚至是个好主意。如果 Spotify 不做类似的事，我倾向于弃用它改用 Tidal。",
+       "en": "I'm okay with this. In fact, I think it is a good idea.",
+       "hn": "https://news.ycombinator.com/item?id=50630943",
+       "id": 50630943,
+       "replies": 2
+      }
+     ],
+     "kicker": "AI · 音乐"
+    },
+    {
+     "id": 50630809,
+     "title": "Ask HN：Anthropic 指控我们公司蒸馏它的模型，怎么自证清白？",
+     "title_en": "Ask HN: Anthropic is accusing my company of distilling. How can I prove I'm not?",
+     "url": null,
+     "hn": "https://news.ycombinator.com/item?id=50630809",
+     "points": 216,
+     "comments": 162,
+     "summary": [
+      "发帖人说，Anthropic 指控他和他的公司利用其 API 做模型蒸馏，但他们并没有，也不训练自己的模型。他猜唯一可能被标记的用法，是每次调整 AI 设置时跑的自动化回归基准测试，而这并不违反 Anthropic 的政策。",
+      "他只有 24 小时来自证，想知道有没有人遇到过类似情况，以及如何在不侵犯用户隐私的前提下证明自己没有蒸馏。以上内容仅来自帖子正文，Anthropic 方面没有公开回应。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "arjie",
+       "stance": "排查",
+       "zh": "那一定很糟心。你确定 API 密钥没有泄露吧？我没遇到过这种事，但这会是我的第一反应：有人偷了我的密钥，真的在拿它做蒸馏。",
+       "en": "That someone stole my keys from somewhere and they're actually running distillation.",
+       "hn": "https://news.ycombinator.com/item?id=50633091",
+       "id": 50633091,
+       "replies": 3
+      },
+      {
+       "user": "RGS1811",
+       "stance": "同遭遇",
+       "zh": "我昨晚在做一些完全无害的报税表格工作，结果一个子智能体被标记为「推理提取」。我怀疑他们最近调高了自动检测的灵敏度。",
+       "en": "had a subagent flagged for \"reasoning extraction\"",
+       "hn": "https://news.ycombinator.com/item?id=50633458",
+       "id": 50633458,
+       "replies": 2
+      },
+      {
+       "user": "mmaunder",
+       "stance": "竞争",
+       "zh": "这就是我们需要竞争的原因。对个人或公司来说，被唯一一家领先的 AI 供应商拒之门外就是死刑。",
+       "en": "This is why we need competition.",
+       "hn": "https://news.ycombinator.com/item?id=50633854",
+       "id": 50633854,
+       "replies": 4
+      }
+     ],
+     "kicker": "AI · 平台",
+     "tag": "Ask HN"
+    },
+    {
+     "id": 50633922,
+     "title": "Ternary Bonsai 2.5：5.9GB 的三值量化 27B 模型，主打本地智能体",
+     "title_en": "Ternary Bonsai 2.5 27B",
+     "url": "https://prismml.com/news/bonsai-2-5-27b",
+     "hn": "https://news.ycombinator.com/item?id=50633922",
+     "points": 282,
+     "comments": 95,
+     "summary": [
+      "PrismML 发布 Ternary Bonsai 2.5 27B，基于 Qwen3.8 27B，保持上一版 5.9GB 的体积，主要增强了智能体编程、多轮工具调用和多步任务执行，并减少了上一版过度思考和重复循环的问题，用更少的轮次和 token 完成任务。官方称它大幅缩小了与全精度基座模型的差距。",
+      "速度方面，官方给出单张 H100 上带 MTP 生成 291 token/秒，RTX 4090 上 204 token/秒。它可通过 llama.cpp 在英伟达和英特尔 GPU 上运行，通过 MLX 在 Mac、iPhone、iPad 上运行，权重以 Apache 2.0 许可发布。PrismML 由加州理工的研究人员创立。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "nik_s",
+       "stance": "跑分",
+       "zh": "如果我没看错，它在 SWE-bench Verified 上的得分相当于 Opus 4.6（2026 年 2 月发布）。我好奇这在多大程度上是刷榜、基准本身在变，还是小模型以大约 6 个月的滞后表现出了前沿级水平。",
+       "en": "this scores equivalent to opus 4.6 (released feb 2026) on SWE-bench verified",
+       "hn": "https://news.ycombinator.com/item?id=50634586",
+       "id": 50634586,
+       "replies": 24
+      },
+      {
+       "user": "ariwilson",
+       "stance": "实测",
+       "zh": "用这个新的 Ternary Bonsai 模型（Q2 GGUF），我在 24G 内存的 Mac Mini M5 Pro 上大约跑到每秒 22 到 25 个 token。",
+       "en": "I'm seeing about 22-25 tokens/s on a Mac Mini M5 Pro",
+       "hn": "https://news.ycombinator.com/item?id=50635106",
+       "id": 50635106,
+       "replies": 15
+      },
+      {
+       "user": "tompagenet2",
+       "stance": "疑问",
+       "zh": "真诚发问，我知道自己肯定是犯傻了：表里这个模型的分数看起来比 Qwen 还差？我没看错的话，它的优势是在别处（内存、速度之类）吗？",
+       "en": "the scores for this model in the table shown seem worse than Qwen",
+       "hn": "https://news.ycombinator.com/item?id=50634686",
+       "id": 50634686,
+       "replies": 11
+      }
+     ],
+     "kicker": "AI · 本地模型"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50631210,
+     "title": "Max Tegmark 称 Anthropic 员工公开谈论「接管世界」",
+     "title_en": "Anthropic Staff Openly Talk About ‘Taking Over the World’, Claims Max Tegmark",
+     "url": "https://novaramedia.com/2026/11/24/anthropic-staff-openly-talk-about-taking-over-the-world-claims-top-mit-physicist/",
+     "hn": "https://news.ycombinator.com/item?id=50631210",
+     "points": 197,
+     "comments": 104
+    },
+    {
+     "id": 50629231,
+     "title": "Songe：利用闲置算力训练本地模型的引擎",
+     "title_en": "A training engine for your local model, using your idle compute",
+     "url": "https://github.com/sous-labs/songe",
+     "hn": "https://news.ycombinator.com/item?id=50629231",
+     "points": 166,
+     "comments": 50
+    },
+    {
+     "id": 50634658,
+     "title": "OpenAI：GPT-6 模型展现出内在的蛋白质设计能力",
+     "title_en": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+     "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/",
+     "hn": "https://news.ycombinator.com/item?id=50634658",
+     "points": 130,
+     "comments": 27
+    },
+    {
+     "id": 50632756,
+     "title": "OpenAI 称自己先于 Anthropic 证明了 VP ≠ VNP",
+     "title_en": "OpenAI reveals they solved VP ≠ VNP before Anthropic",
+     "url": "https://github.com/openai/math/tree/main/preprints/VP-and-VNP-are-different-November-23-2026",
+     "hn": "https://news.ycombinator.com/item?id=50632756",
+     "points": 83,
+     "comments": 88
+    },
+    {
+     "id": 50618513,
+     "title": "Anthropic 推出 Claude Ship",
+     "title_en": "Claude Ship",
+     "url": "https://claude.com/resources/articles/introducing-claude-ship",
+     "hn": "https://news.ycombinator.com/item?id=50618513",
+     "points": 86,
+     "comments": 32
+    },
+    {
+     "id": 50634734,
+     "title": "Anthropic 研究：与 AI 共事",
+     "title_en": "Working with AI",
+     "url": "https://www.anthropic.com/research/working-with-ai",
+     "hn": "https://news.ycombinator.com/item?id=50634734",
+     "points": 62,
+     "comments": 62
+    },
+    {
+     "id": 50625888,
+     "title": "AI 里的杰文斯悖论：更便宜的 token 撑不起资本开支",
+     "title_en": "Jevons Paradox in AI: Cheaper Tokens Won't Pay for Capex",
+     "url": "https://philippdubach.com/posts/cheaper-ai-tokens-wont-pay-for-capex/",
+     "hn": "https://news.ycombinator.com/item?id=50625888",
+     "points": 79,
+     "comments": 40
+    },
+    {
+     "id": 50607512,
+     "title": "不靠扩大规模降低困惑度",
+     "title_en": "Lowering Perplexity Without Scaling",
+     "url": "https://micjm.com/blog/lowering-perplexity-without-scaling/",
+     "hn": "https://news.ycombinator.com/item?id=50607512",
+     "points": 96,
+     "comments": 24
+    },
+    {
+     "id": 50620328,
+     "title": "潜在内省：LLM 能察觉此前被注入的概念",
+     "title_en": "Latent Introspection: LLMs Can Detect Prior Concept Injections",
+     "url": "https://arxiv.org/abs/2602.20031",
+     "hn": "https://news.ycombinator.com/item?id=50620328",
+     "points": 72,
+     "comments": 7
+    },
+    {
+     "id": 50635698,
+     "title": "Fable 5.2 遇到有捷径的难题时会少下功夫",
+     "title_en": "Fable 5.2 Tries Less on Some Hard Tasks When a Shortcut Is Available",
+     "url": "https://goodhartlabs.com/blog/fable-5-2-tries-less-on-some-hard-tasks-when-a-shortcut-is-available",
+     "hn": "https://news.ycombinator.com/item?id=50635698",
+     "points": 24,
+     "comments": 23
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1807,
+    "comments": 1013,
+    "top_points": {
+     "id": 50630309,
+     "title": "Tidal 将全面下架纯 AI 生成音乐，成首个这样做的流媒体",
+     "value": 314,
+     "comments": 299
+    },
+    "top_comments": {
+     "id": 50630309,
+     "title": "Tidal 将全面下架纯 AI 生成音乐，成首个这样做的流媒体",
+     "value": 299
+    },
+    "top_brief": {
+     "id": 50631210,
+     "title": "Max Tegmark 称 Anthropic 员工公开谈论「接管世界」",
+     "value": 197,
+     "comments": 104
+    }
+   }
+  },
+  {
+   "name": "开发",
+   "stories": [
+    {
+     "id": 50630594,
+     "title": "GreyNoise：一场针对 Check Point 安全管理服务器的入侵活动仍在进行",
+     "title_en": "Active intrusion campaign against Check Point security management servers",
+     "url": "https://www.greynoise.io/blog/check-point-security-management-servers-intrusion-campaign",
+     "hn": "https://news.ycombinator.com/item?id=50630594",
+     "points": 252,
+     "comments": 118,
+     "summary": [
+      "安全公司 GreyNoise 用其蜜罐网络发现，10 月 17 日至 11 月 2 日期间，一个被它命名为 GT13 的攻击者入侵了全球至少 22 家机构的 Check Point 安全管理服务器，受害者遍布英、法、德、印、韩、中、澳、美等国，涉及金融、能源、政府、交通、采矿等行业。GreyNoise 目前未将其归因于任何已知团伙。",
+      "攻击者用了 99 个 IP（ExpressVPN 出口或已被攻陷的 Check Point 设备），并把一台被攻陷的服务器当作跳板，存放从 24 台设备上偷来的数据；利用的漏洞包括 Check Point SmartConsole 认证绕过、Citrix NetScaler、Ivanti、Windows NetLogon 和一个 Linux IPv4 释放后使用漏洞。最受关注的细节是：它对 HFS 服务器连续登录，收集用 Math.random() 生成的会话 ID，还原出 V8 伪随机数生成器的内部状态，进而伪造管理员 Cookie。GreyNoise 认为攻击者用了 LLM 和智能体来扫描、利用和开发工具，并预计入侵仍在继续。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "mentalgear",
+       "stance": "担忧",
+       "zh": "系好安全带，这才是终结的开始。现在只有更老练的网络犯罪分子或国家级攻击者用 LLM 渗透，但很快几十万网络罪犯都会直接花算力，让模型「帮我尽可能多赚钱」。",
+       "en": "Buckle up, this is just the beginning of the end.",
+       "hn": "https://news.ycombinator.com/item?id=50630851",
+       "id": 50630851,
+       "replies": 69
+      },
+      {
+       "user": "omh",
+       "stance": "疑问",
+       "zh": "我不太清楚攻击者最初是怎么进去的。多家 Check Point 客户之间的关联说明 CVE-2026-16232 是初始入口。这是否意味着这些机构都把 Check Point 安全管理服务器暴露在了互联网上？",
+       "en": "It's not totally clear to me how the attacker gained initial access.",
+       "hn": "https://news.ycombinator.com/item?id=50633125",
+       "id": 50633125,
+       "replies": 3
+      },
+      {
+       "user": "20after4",
+       "stance": "随机数",
+       "zh": "只有我觉得应该修 Math.random，而不是修几百个用错它的应用吗？为什么不让所有随机数生成器都至少有点安全性？",
+       "en": "Am I the only one that thinks Math.random should be fixed",
+       "hn": "https://news.ycombinator.com/item?id=50634413",
+       "id": 50634413,
+       "replies": 5
+      }
+     ],
+     "kicker": "开发 · 安全"
+    },
+    {
+     "id": 50630462,
+     "title": "John Siracusa 花三个半月「氛围编程」出 Jetty Pro，替换掉 macOS 程序坞",
+     "title_en": "Jetty Pro",
+     "url": "http://hypercritical.co/2026/11/23/jetty-pro",
+     "hn": "https://news.ycombinator.com/item?id=50630462",
+     "points": 254,
+     "comments": 116,
+     "summary": [
+      "Mac 评论老兵 John Siracusa 原本只想要屏幕角落里一个放常用文件夹的小面板，以为借 AI 编程智能体一两天就能做完，结果做了三个半月：他先让智能体把自己 6 年前的 SwitchGlass 现代化、改成支持任意多个面板，很快能用但相当粗糙，于是一头扎进去修，最后「替换掉了程序坞」。",
+      "Jetty Pro 可在屏幕边缘创建高度可定制的类程序坞浮动面板，能放文件、文件夹、应用、快捷指令和废纸篓，可模拟 macOS 15/26/27 的程序坞外观、单独隐藏某些应用的通知角标、自定义点击行为。为了做到这些，它用了能用的一切私有 API，所以只在 Mac App Store 外发行，需要大量权限；沙盒版 Jetty 因限制太多被放弃。他强调这不是随手生成的项目：给 250 名测试者发了 160 多个测试版，文档全由他亲手写。价格为每年 9.99 美元（2026 年底前优惠价），有 14 天试用。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "xnx",
+       "stance": "订阅",
+       "zh": "为更新付订阅费可以，为使用付订阅费免谈。尤其是现在用 Claude 或 Gemini 一次就能复刻出来。",
+       "en": "Subscription for updates is good. Subscription for use is a dealbreaker.",
+       "hn": "https://news.ycombinator.com/item?id=50631499",
+       "id": 50631499,
+       "replies": 14
+      },
+      {
+       "user": "Fraterkes",
+       "stance": "建议",
+       "zh": "我觉得要化解必然出现的订阅抱怨，有个简单办法：允许用户在订阅到期时保留当时拥有的 Jetty 版本。",
+       "en": "allow people to keep the version of Jetty that they owned at the moment their subscription lapsed",
+       "hn": "https://news.ycombinator.com/item?id=50631292",
+       "id": 50631292,
+       "replies": 17
+      },
+      {
+       "user": "geonic",
+       "stance": "共鸣",
+       "zh": "我读得很有兴趣，因为几周前我也开始用氛围编程写的原生 Mac 应用，替换各种软件，让它们完全按我想要的方式做我想要的事。",
+       "en": "I started to replace different applications with vibe coded native Mac apps",
+       "hn": "https://news.ycombinator.com/item?id=50633515",
+       "id": 50633515,
+       "replies": 13
+      }
+     ],
+     "kicker": "开发 · Mac"
+    },
+    {
+     "id": 50632883,
+     "title": "博主：Cloudflare 掩盖了源站基础设施的短板",
+     "title_en": "Cloudflare hides shortcomings of the underlying infrastructure",
+     "url": "https://charlie.fish/posts/2026/11/what-cloudflare-doesnt-tell-you/",
+     "hn": "https://news.ycombinator.com/item?id=50632883",
+     "points": 142,
+     "comments": 97,
+     "summary": [
+      "作者先肯定 Cloudflare 为数百万网站普及 TLS、IPv6 和后量子加密的功劳，随后指出：用户连到 Cloudflare 时享受这些新技术，但 Cloudflare 到源站的连接可能完全没加密、只走 IPv4，用户看到的和实际链路严重不符。",
+      "他批评 Cloudflare 没有在控制台里主动提醒管理员这些问题；按其官方文档，源站同时有 IPv4 和 IPv6 地址时它会优先用 IPv4。他建议业界让 CDN 能对外公开到源站那一段的 TLS 状态和 IP 版本，好让网站方为糟糕的安全实践负责。评论区里以 Cloudflare 口吻发言的用户 jgrahamc 作了回应。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "jgrahamc",
+       "stance": "官方回应",
+       "zh": "我认为我们已经下了很大力气确保客户在到源站的连接上使用 TLS。2022 年我们发布了 SSL/TLS Recommender……",
+       "en": "I think we made a very large effort to make sure our customers were using TLS to the origin.",
+       "hn": "https://news.ycombinator.com/item?id=50634539",
+       "id": 50634539,
+       "replies": 0
+      },
+      {
+       "user": "huijzer",
+       "stance": "另一种不满",
+       "zh": "我对 Cloudflare 最大的意见是，大多数人根本不需要 DDoS 防护，而选择 Cloudflare 的可用性反而比在可靠服务商那里用一台简单的 VPS 更低。",
+       "en": "most people do not need DDoS protection",
+       "hn": "https://news.ycombinator.com/item?id=50633470",
+       "id": 50633470,
+       "replies": 26
+      },
+      {
+       "user": "sholladay",
+       "stance": "建议",
+       "zh": "我认为大多数用 Cloudflare 的人都应该用 Cloudflare Tunnel 连源站，而不只是代理 DNS。",
+       "en": "ought to be using Cloudflare Tunnel to make the connection to the origin server",
+       "hn": "https://news.ycombinator.com/item?id=50635560",
+       "id": 50635560,
+       "replies": 0
+      }
+     ],
+     "kicker": "网络 · 基础设施"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50614249,
+     "title": "（续）从零写起的浏览器 Ladybird 进入 Alpha，昨日点赞仍居第一",
+     "title_en": "Ladybird is now in alpha",
+     "url": "https://ladybird.org/posts/alpha/",
+     "hn": "https://news.ycombinator.com/item?id=50614249",
+     "points": 2379,
+     "comments": 593
+    },
+    {
+     "id": 50619103,
+     "title": "Zed 的 GPU 加速 UI 框架 GPUI 拥有独立仓库",
+     "title_en": "GPUI is getting its own repository",
+     "url": "https://github.com/zed-industries/gpui",
+     "hn": "https://news.ycombinator.com/item?id=50619103",
+     "points": 378,
+     "comments": 137
+    },
+    {
+     "id": 50631157,
+     "title": "路透社：微软历史性宕机后内部宣布「红色警报」",
+     "title_en": "Microsoft declares 'Code Red' after historic outage, internal memos show",
+     "url": "https://www.reuters.com/business/microsoft-declares-code-red-after-historic-outage-internal-memos-show-2026-11-24/",
+     "hn": "https://news.ycombinator.com/item?id=50631157",
+     "points": 212,
+     "comments": 187
+    },
+    {
+     "id": 50626413,
+     "title": "膜拜 Brendan Gregg",
+     "title_en": "Worshipping at the altar of Brendan Gregg",
+     "url": "https://fzakaria.com/2026/11/12/worshipping-at-the-altar-of-brendan-gregg",
+     "hn": "https://news.ycombinator.com/item?id=50626413",
+     "points": 216,
+     "comments": 40
+    },
+    {
+     "id": 50622854,
+     "title": "Declare：一门为你和你的 AI 设计的 UI 语言",
+     "title_en": "Declare is a UI language for you and your AI",
+     "url": "https://davidtemkin.github.io/declarelang/",
+     "hn": "https://news.ycombinator.com/item?id=50622854",
+     "points": 102,
+     "comments": 88
+    },
+    {
+     "id": 50633159,
+     "title": "Grafana 发布多个版本，修复多项 CVE",
+     "title_en": "Grafana 12.4.16, 13.0.14, 13.1.11, 13.2.7 and 13.3.2 (multiple CVEs)",
+     "url": "https://grafana.com/grafana/download",
+     "hn": "https://news.ycombinator.com/item?id=50633159",
+     "points": 117,
+     "comments": 20
+    },
+    {
+     "id": 50604710,
+     "title": "iperf/iperf3 的现代化，以及新工具 fireperf",
+     "title_en": "Modernizing iperf/iperf3 and introducing fireperf",
+     "url": "https://blog.daniel-baumann.ch/posts/20261122-1.html",
+     "hn": "https://news.ycombinator.com/item?id=50604710",
+     "points": 148,
+     "comments": 11
+    },
+    {
+     "id": 50630294,
+     "title": "Show HN：Mason，基于列存储的轻量 Postgres 只读副本",
+     "title_en": "Show HN: Mason – A lightweight Postgres read-replica, built on columnar storage",
+     "url": "https://masondata.ai/",
+     "hn": "https://news.ycombinator.com/item?id=50630294",
+     "points": 80,
+     "comments": 15
+    },
+    {
+     "id": 50622804,
+     "title": "Rune：为 Emacs 写的 Rust 虚拟机",
+     "title_en": "Rune: Rust VM for Emacs",
+     "url": "https://github.com/CeleritasCelery/rune",
+     "hn": "https://news.ycombinator.com/item?id=50622804",
+     "points": 57,
+     "comments": 18
+    },
+    {
+     "id": 50592307,
+     "title": "Arctic：一种实用的无锁自适应基数树（OSDI '26）",
+     "title_en": "Arctic: A Practical Lock-Free Adaptive Radix Tree",
+     "url": "https://www.usenix.org/conference/osdi26/presentation/ni",
+     "hn": "https://news.ycombinator.com/item?id=50592307",
+     "points": 98,
+     "comments": 12
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 4435,
+    "comments": 1452,
+    "top_points": {
+     "id": 50614249,
+     "title": "（续）从零写起的浏览器 Ladybird 进入 Alpha，昨日点赞仍居第一",
+     "value": 2379,
+     "comments": 593
+    },
+    "top_comments": {
+     "id": 50614249,
+     "title": "（续）从零写起的浏览器 Ladybird 进入 Alpha，昨日点赞仍居第一",
+     "value": 593
+    },
+    "top_brief": {
+     "id": 50614249,
+     "title": "（续）从零写起的浏览器 Ladybird 进入 Alpha，昨日点赞仍居第一",
+     "value": 2379,
+     "comments": 593
+    }
+   }
+  },
+  {
+   "name": "科学 · 硬件",
+   "stories": [
+    {
+     "id": 50624061,
+     "title": "Phoronix：AMD EPYC Zen 6 对比十年前的 Zen 1，几何平均快 12.1 倍",
+     "title_en": "AMD EPYC Zen 6 vs. Zen 1 Performance: 12.1x Geo Mean in Less Than 10 Years",
+     "url": "https://www.phoronix.com/review/amd-epyc-9006-7601",
+     "hn": "https://news.ycombinator.com/item?id=50624061",
+     "points": 216,
+     "comments": 123,
+     "summary": [
+      "Phoronix 把 2017 年 6 月发布的初代 EPYC 旗舰 7601（32 核 64 线程、64MB L3、180W）翻出来，和本月开始出货的 Zen 6「Venice」EPYC 9996（每颗 256 个 Zen 6C 核心、512 线程、1024MB L3、600W，16 通道内存、96 条 PCIe 6.0）以及高频版 9686F 对比，均为双路，统一在 Ubuntu 26.10（Linux 7.3、GCC 15.3）上测试，还记录了 CPU 功耗。",
+      "标题给出的结果是：不到十年，几何平均性能提升 12.1 倍，AI 负载最高 133 倍。原来那台评测用的 Dell PowerEdge R7425 服务器近十年后仍能稳定开机运行。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Aurornis",
+       "stance": "惊叹",
+       "zh": "18 秒编译完 Linux 内核，一分钟左右编译完 LLVM，太惊人了。",
+       "en": "Compiling the Linux kernel in 18 seconds and LLVM in almost a minute flat is amazing.",
+       "hn": "https://news.ycombinator.com/item?id=50624803",
+       "id": 50624803,
+       "replies": 71
+      },
+      {
+       "user": "skywal_l",
+       "stance": "能效",
+       "zh": "我自己想找的数据在这里：（引文章）「从 Zen 1 到 Zen 6 旗舰，每瓦性能约为 5 倍」",
+       "en": "on a performance-per-Watt basis was about 5x the performance-per-Watt",
+       "hn": "https://news.ycombinator.com/item?id=50624757",
+       "id": 50624757,
+       "replies": 11
+      },
+      {
+       "user": "x-complexity",
+       "stance": "拆解",
+       "zh": "12 倍的提升有两部分来源：核心数的暴涨，以及单核性能的提升。",
+       "en": "There're 2 parts to the 12x gain",
+       "hn": "https://news.ycombinator.com/item?id=50625628",
+       "id": 50625628,
+       "replies": 6
+      }
+     ],
+     "kicker": "硬件 · 服务器"
+    },
+    {
+     "id": 50599458,
+     "title": "交互式 3D 图解：机械表是怎么走时的",
+     "title_en": "How a Mechanical Watch Keeps Time",
+     "url": "https://martincmartin.github.io/slidev-stem/watches/article/1/",
+     "hn": "https://news.ycombinator.com/item?id=50599458",
+     "points": 209,
+     "comments": 54,
+     "summary": [
+      "这是一个可拖动旋转 3D 模型的科普网页，作者说它受 Bartosz Ciechanowski 那篇著名的机械表页面启发，算是更简单的入门版。它从游丝讲起：1675 年惠更斯发明的游丝是一圈比头发还细的扁平钢带，像卷起来的跳板一样来回摆动；摆轮提供质量和惯性，把摆动放慢到齿轮能计数的节奏，也让走时更稳定；擒纵机构则把来回摆动变成单向的一步步走动。",
+      "作者感叹，一只 100 美元、调校良好的纯机械表（哪怕是普通的精工、西铁城）准确度能达到 99.99% 左右，即每天快慢约 9 秒。不过评论区有懂行的人指出，图中的部件画法在物理上没法真正驱动手表。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "dust42",
+       "stance": "挑错",
+       "zh": "这个 AI 生成动画的问题在于，这只表根本走不起来——除非摆轮是个永动机。",
+       "en": "The problem with this AI generated animation is that the watch wont work",
+       "hn": "https://news.ycombinator.com/item?id=50632035",
+       "id": 50632035,
+       "replies": 6
+      },
+      {
+       "user": "jstanley",
+       "stance": "挑错",
+       "zh": "做得不错，但在我看来擒纵轮没法给擒纵叉提供任何冲量，所以按图中擒纵叉的形状，这只表走不了。",
+       "en": "it looks to me as if the escape wheel is unable to provide any impulse to the pallet",
+       "hn": "https://news.ycombinator.com/item?id=50627737",
+       "id": 50627737,
+       "replies": 3
+      },
+      {
+       "user": "Luc",
+       "stance": "肯定",
+       "zh": "我觉得挺有用。它和 Ciechanowski 那篇的抽象层次不同，想快速了解基础和一些术语、又不想花太多精力时，这是个好办法。",
+       "en": "It's at a different level of abstraction than Ciechanowski's",
+       "hn": "https://news.ycombinator.com/item?id=50628612",
+       "id": 50628612,
+       "replies": 3
+      }
+     ],
+     "kicker": "科学 · 机械"
+    },
+    {
+     "id": 50621977,
+     "title": "《科学·信号》：饮酒会削弱 PD-1 免疫疗法的疗效",
+     "title_en": "Alcohol use reduces efficacy of immunotherapy by disrupting antitumor immunity",
+     "url": "https://www.science.org/doi/10.1126/scisignal.aef1375",
+     "hn": "https://news.ycombinator.com/item?id=50621977",
+     "points": 103,
+     "comments": 80,
+     "summary": [
+      "北卡罗来纳大学教堂山分校团队在《Science Signaling》发表研究：在肺癌和膀胱癌小鼠模型中，中度到重度的乙醇摄入让免疫检查点抑制剂的疗效降低约 50%，并增加肿瘤复发；对接受此类疗法患者的回顾性分析显示，在肺癌患者中经常饮酒与生存获益降低相关，但膀胱癌、黑色素瘤和头颈癌患者的饮酒记录太少，结论不明确。",
+      "机制上，饮酒减少了浸润肿瘤的 T 细胞和组织驻留记忆 T 细胞，提高了表达另一种检查点受体 TIGIT 的 T 细胞比例。用抗体阻断 TIGIT（或在较小程度上用桦木醇抑制 SREBP 信号）能恢复 PD-1 阻断的疗效。作者建议今后把患者饮酒情况纳入癌症数据库。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "jader201",
+       "stance": "解释",
+       "zh": "给和我一样被「antitumor immunity」绕晕的人：这不是指对「抗肿瘤」的免疫，而是指对抗肿瘤的免疫力。",
+       "en": "Antitumor immunity means immunity that fights tumors.",
+       "hn": "https://news.ycombinator.com/item?id=50623301",
+       "id": 50623301,
+       "replies": 3
+      },
+      {
+       "user": "ShinyLeftPad",
+       "stance": "提醒",
+       "zh": "是在小鼠身上。中度到重度饮酒（不确定怎么换算成人的剂量）。",
+       "en": "In mice. Moderate to heavy alcohol intake",
+       "hn": "https://news.ycombinator.com/item?id=50622430",
+       "id": 50622430,
+       "replies": 6
+      },
+      {
+       "user": "CuriousRose",
+       "stance": "感想",
+       "zh": "人生不同阶段我喝酒有多有少。快 30 岁了，我比以前更多考虑它对睡眠和健康的影响。年轻一代喝得少多了，我觉得挺好。",
+       "en": "I think it's great that the younger generation seem to be drinking far less.",
+       "hn": "https://news.ycombinator.com/item?id=50623074",
+       "id": 50623074,
+       "replies": 14
+      }
+     ],
+     "kicker": "科学 · 医学"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50620721,
+     "title": "解放 iPod Nano 第五代",
+     "title_en": "Freeing the iPod Nano 5G",
+     "url": "https://viktorkrapivin.com/blog/nano5g-priv-prvd",
+     "hn": "https://news.ycombinator.com/item?id=50620721",
+     "points": 144,
+     "comments": 17
+    },
+    {
+     "id": 50629106,
+     "title": "拆分 USB-C：一个接口同时出 USB 3 和 USB 2",
+     "title_en": "Splitting USB-C: USB 3 and USB 2 on one port",
+     "url": "https://www.frankchiarulli.com/blog/splitting-usb-c/",
+     "hn": "https://news.ycombinator.com/item?id=50629106",
+     "points": 126,
+     "comments": 83
+    },
+    {
+     "id": 50622934,
+     "title": "让笨电视刚好聪明一点",
+     "title_en": "Making a dumb TV just smart enough",
+     "url": "https://qsantos.fr/2026/11/19/making-a-dumb-tv-just-smart-enough/",
+     "hn": "https://news.ycombinator.com/item?id=50622934",
+     "points": 167,
+     "comments": 53
+    },
+    {
+     "id": 50635271,
+     "title": "心脏病和中风风险可提前几十年检测出来",
+     "title_en": "Heart attack and stroke risk detectable decades in advance",
+     "url": "https://www.ed.ac.uk/news/heart-attack-and-stroke-risk-detectable-decades-in-advance",
+     "hn": "https://news.ycombinator.com/item?id=50635271",
+     "points": 105,
+     "comments": 39
+    },
+    {
+     "id": 50620831,
+     "title": "寻找头号暗物质候选者",
+     "title_en": "The search for a top dark matter candidate",
+     "url": "https://www.smithsonianmag.com/science-nature/the-search-for-a-top-dark-matter-candidate-was-losing-hope-then-came-a-potential-signal-will-it-be-enough-to-energize-the-struggling-field-180989923/",
+     "hn": "https://news.ycombinator.com/item?id=50620831",
+     "points": 67,
+     "comments": 59
+    },
+    {
+     "id": 50610170,
+     "title": "一种越弯越结实的新材料",
+     "title_en": "New material gets stronger the more it bends",
+     "url": "https://source.washu.edu/2026/11/breakthrough-material-gets-stronger-the-more-it-bends/",
+     "hn": "https://news.ycombinator.com/item?id=50610170",
+     "points": 48,
+     "comments": 24
+    },
+    {
+     "id": 50629962,
+     "title": "KL 散度永不为负，PyTorch 里除外",
+     "title_en": "The KL Divergence Is Never Negative, Except in PyTorch",
+     "url": "https://arxiv.org/abs/2611.30835",
+     "hn": "https://news.ycombinator.com/item?id=50629962",
+     "points": 83,
+     "comments": 33
+    },
+    {
+     "id": 50582698,
+     "title": "1930 年代照片是怎么通过电线传送的（2024）",
+     "title_en": "How photos were transmitted by wire in the 1930s (2024)",
+     "url": "https://kottke.org/24/03/how-photos-were-transmitted-by-wire-in-the-1930s",
+     "hn": "https://news.ycombinator.com/item?id=50582698",
+     "points": 87,
+     "comments": 13
+    },
+    {
+     "id": 50623515,
+     "title": "无人机航拍的汽车报废场地图",
+     "title_en": "Drone Maps of Salvage Yards",
+     "url": "https://salvageyarddrone.wordpress.com/",
+     "hn": "https://news.ycombinator.com/item?id=50623515",
+     "points": 169,
+     "comments": 68
+    },
+    {
+     "id": 50625265,
+     "title": "哥德尔之谜研究项目",
+     "title_en": "Gödel Enigma",
+     "url": "https://www.helsinki.fi/en/researchgroups/godel-enigma/research/project-description",
+     "hn": "https://news.ycombinator.com/item?id=50625265",
+     "points": 64,
+     "comments": 22
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1588,
+    "comments": 668,
+    "top_points": {
+     "id": 50624061,
+     "title": "Phoronix：AMD EPYC Zen 6 对比十年前的 Zen 1，几何平均快 12.1 倍",
+     "value": 216,
+     "comments": 123
+    },
+    "top_comments": {
+     "id": 50624061,
+     "title": "Phoronix：AMD EPYC Zen 6 对比十年前的 Zen 1，几何平均快 12.1 倍",
+     "value": 123
+    },
+    "top_brief": {
+     "id": 50623515,
+     "title": "无人机航拍的汽车报废场地图",
+     "value": 169,
+     "comments": 68
+    }
+   }
+  },
+  {
+   "name": "政经 · 文化",
+   "stories": [
+    {
+     "id": 50620822,
+     "title": "《外交政策》：黄仁勋复职或是美国史上最大的国家安全丑闻",
+     "title_en": "Huang's Return Is the Biggest National Security Scandal in U.S. History",
+     "url": "https://foreignpolicy.com/2026/11/23/jensen-huang-nvidia-return-ceo-national-security-scandal/",
+     "hn": "https://news.ycombinator.com/item?id=50620822",
+     "points": 341,
+     "comments": 257,
+     "summary": [
+      "这篇《外交政策》评论文章认为，在特朗普施压下英伟达董事会让黄仁勋复职、并称高层官员保证他「不构成国家安全风险」，可能是美国历史上最大的国家安全丑闻，比伊朗门更严重，因为伊朗门既不涉及总统及其亲信谋私利，也没有帮助美国的头号地缘对手。",
+      "文章列举：英伟达和白宫都曾被警告黄仁勋与一名疑似中国间谍有染，却未采取行动；英伟达去年 12 月与白宫达成向中国出售 H200 的协议，美国政府抽成 25%；黄仁勋向总统的宴会厅捐款 2500 万美元，特朗普持有大量英伟达股票；议员公布英伟达截至 5 月 11 日已向中国公司运去 80 多万颗先进芯片。文章还称，特朗普自己承认这一决定是在与习近平长谈黄仁勋之后作出的，并在周五签署行政令试图阻止国会调查。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "grendelt",
+       "stance": "一句话",
+       "zh": "大到不能倒。",
+       "en": "Too big to fail",
+       "hn": "https://news.ycombinator.com/item?id=50621793",
+       "id": 50621793,
+       "replies": 66
+      },
+      {
+       "user": "ralph84",
+       "stance": "迟了",
+       "zh": "美国政府该关心半导体国家安全的时候，是在它放任台积电和 ASML 发展成垄断、却毫无作为的时候。芯片法案晚了 20 年。",
+       "en": "The CHIPS Act was 20 years too late.",
+       "hn": "https://news.ycombinator.com/item?id=50623395",
+       "id": 50623395,
+       "replies": 2
+      },
+      {
+       "user": "jdlyga",
+       "stance": "标签",
+       "zh": "Hacker News 需要一个 [观点] 标签。",
+       "en": "Hacker News needs an [opinion] tag",
+       "hn": "https://news.ycombinator.com/item?id=50622141",
+       "id": 50622141,
+       "replies": 11
+      }
+     ],
+     "kicker": "政经 · 芯片"
+    },
+    {
+     "id": 50626861,
+     "title": "谁在华盛顿持有、交易英伟达股票",
+     "title_en": "Who in Washington owns and trades Nvidia stock",
+     "url": "https://www.kadoa.com/congress/insights/trump-nvidia",
+     "hn": "https://news.ycombinator.com/item?id=50626861",
+     "points": 281,
+     "comments": 163,
+     "summary": [
+      "数据公司 Kadoa 整理了特朗普和 37 名国会议员公开披露的英伟达股票交易。页面称，英伟达从 10 月高点到 11 月 20 日累计下跌 48%，期间经历黄仁勋辞职和季度财报；11 月 23 日董事会让他复职、并称听取了美国政府高层的意见，当天股价上涨 33%。",
+      "特朗普 2026 年共有 28 笔买入、15 笔卖出，他 11 月 19 日公布的最新报告只覆盖到 9 月 24 日。国会议员方面，自 2025 年 1 月以来 37 人共交易 192 次，最新披露的交易在 10 月 28 日，按金额排前列的有 Cleo Fields、Nancy Pelosi、Michael McCaul 等。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "fanwood",
+       "stance": "震惊",
+       "zh": "议员可以合法地主动炒股，这让我难以置信。",
+       "en": "It blows my mind that it's legal to actively trade stock for legislators in the US",
+       "hn": "https://news.ycombinator.com/item?id=50628413",
+       "id": 50628413,
+       "replies": 23
+      },
+      {
+       "user": "cbg0",
+       "stance": "数据局限",
+       "zh": "美国议员有最多 45 天来申报本人、配偶或受抚养子女的交易，而且超期了也几乎没有后果，所以现在看这些数据意义不大。",
+       "en": "US lawmakers have up to 45 days to report trades",
+       "hn": "https://news.ycombinator.com/item?id=50627861",
+       "id": 50627861,
+       "replies": 20
+      },
+      {
+       "user": "WarmWash",
+       "stance": "补充",
+       "zh": "这篇只关注英伟达股票，但看看他的交易记录就很清楚：有一家公司在替他打理，交易着几百只股票。",
+       "en": "It's clear he has a firm that is managing it for him",
+       "hn": "https://news.ycombinator.com/item?id=50629200",
+       "id": 50629200,
+       "replies": 0
+      }
+     ],
+     "kicker": "政经 · 利益冲突"
+    },
+    {
+     "id": 50624487,
+     "title": "印度反对党青年组织冲进 Meta 办公室，要回被封的 Instagram 账号",
+     "title_en": "India's opposition storms Meta's offices to get its Instagram accounts back",
+     "url": "https://korben.info/en/india-opposition-storms-meta-offices-instagram-accounts.html",
+     "hn": "https://news.ycombinator.com/item?id=50624487",
+     "points": 230,
+     "comments": 106,
+     "summary": [
+      "据 Korben 转述 The Verge 的报道，印度主要反对党国大党的青年组织上周五闯入 Meta 在海得拉巴的办公楼，与警察发生冲突；同日孟买的 Meta 办公楼外墙被喷上反 Meta 标语，古尔冈也有人举横幅要求恢复账号。起因是 11 月 19 日该组织主席和主管干部的 Instagram 账号被封，国大党指责 Meta 听命于执政的印度人民党，限制了数千个批评当局的记者和创作者账号。",
+      "抗议后第二天两个账号被恢复，该组织又给 Meta 七天时间解除对所有反对派声音的限制。报道引用数据：Meta 2026 年上半年在印度限制了超过 540 万条帖子或账号，而 2025 年全年约 7 万；政府 3 月到 7 月发出近 20 万份封禁令，并从 2 月起要求平台在 3 小时内（原为 36 小时）删除被标记内容。Meta 至今未发声。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "tkel",
+       "stance": "质疑",
+       "zh": "他们并没有「冲进办公室」，看视频就知道，只是在外面搞了个小规模抗议。这篇文章读起来像宣传。",
+       "en": "They didn't \"storm the offices\" . Watch the video.",
+       "hn": "https://news.ycombinator.com/item?id=50625416",
+       "id": 50625416,
+       "replies": 2
+      },
+      {
+       "user": "bumperhazard",
+       "stance": "两头挨骂",
+       "zh": "Meta 总是莫名卷在漩涡中心，双方都反复指责 Meta 偏袒对方。",
+       "en": "Both sides repeatedly accuse Meta of favoring the other.",
+       "hn": "https://news.ycombinator.com/item?id=50625469",
+       "id": 50625469,
+       "replies": 0
+      },
+      {
+       "user": "misja111",
+       "stance": "反思",
+       "zh": "也许又会有一些人意识到，把作为民主支柱的言论自由交到一家跨国公司手里，不是明智之举。",
+       "en": "putting free speech, as a means of supporting democracy, in the hands of a multinational, is not a wise idea",
+       "hn": "https://news.ycombinator.com/item?id=50624761",
+       "id": 50624761,
+       "replies": 2
+      }
+     ],
+     "kicker": "政经 · 平台"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50622638,
+     "title": "《GTA 6》重编译项目 Leonida 在主开发者上学期间被 GitHub 封禁",
+     "title_en": "GTA 6 Recomp (Leonida) banned from GitHub while lead dev was in school",
+     "url": "https://github.com/ItsNotRexed/Leonida/issues",
+     "hn": "https://news.ycombinator.com/item?id=50622638",
+     "points": 332,
+     "comments": 594
+    },
+    {
+     "id": 50627783,
+     "title": "《GTA 6》在 Windows 上跑起来了",
+     "title_en": "GTA 6 Running on Windows",
+     "url": "https://twitter.com/raul_bs3/status/2125213756238291075",
+     "hn": "https://news.ycombinator.com/item?id=50627783",
+     "points": 256,
+     "comments": 309
+    },
+    {
+     "id": 50630245,
+     "title": "英伟达前合作伙伴 Megaspeed 被美国商务部列入出口黑名单",
+     "title_en": "Ex-Nvidia partner Megaspeed hit with U.S. Commerce Department export ban",
+     "url": "https://www.upi.com/Top_News/US/2026/11/24/NVIDIA-partner-Megaspeed/1701795520063/",
+     "hn": "https://news.ycombinator.com/item?id=50630245",
+     "points": 113,
+     "comments": 65
+    },
+    {
+     "id": 50598555,
+     "title": "一个喷壶",
+     "title_en": "The Spray Bottle",
+     "url": "https://mechanical-pencil.com/products/spray-bottle",
+     "hn": "https://news.ycombinator.com/item?id=50598555",
+     "points": 330,
+     "comments": 93
+    },
+    {
+     "id": 50604355,
+     "title": "Cento 食品因「番茄造假」被起诉",
+     "title_en": "Cento fine foods has been sued for “tomato fraud”",
+     "url": "https://slate.com/life/2026/11/cento-san-marzano-tomato-sauce-recipes-lawsuit.html",
+     "hn": "https://news.ycombinator.com/item?id=50604355",
+     "points": 96,
+     "comments": 141
+    },
+    {
+     "id": 50610820,
+     "title": "能装进行李箱的意大利折叠自行车",
+     "title_en": "An Italian folding bicycle design that fits into a suitcase",
+     "url": "https://www.core77.com/posts/145766/An-Italian-Folding-Bicycle-Design-that-Fits-Into-a-Suitcase",
+     "hn": "https://news.ycombinator.com/item?id=50610820",
+     "points": 105,
+     "comments": 72
+    },
+    {
+     "id": 50598094,
+     "title": "一只反奴隶制的糖碗（2024）",
+     "title_en": "An anti-slavery sugar bowl (2024)",
+     "url": "https://www.vam.ac.uk/blog/museum-life/an-anti-slavery-sugar-bowl",
+     "hn": "https://news.ycombinator.com/item?id=50598094",
+     "points": 115,
+     "comments": 76
+    },
+    {
+     "id": 50630423,
+     "title": "Camillo Sitte 为美丽城市画下蓝图",
+     "title_en": "Camillo Sitte made the blueprint for beautiful cities",
+     "url": "https://www.worksinprogress.news/p/how-to-make-a-lovable-city",
+     "hn": "https://news.ycombinator.com/item?id=50630423",
+     "points": 94,
+     "comments": 80
+    },
+    {
+     "id": 50632214,
+     "title": "「变态眼镜」当选麦考瑞词典年度词",
+     "title_en": "“Pervert glasses\" named word of the year by Macquarie Dictionary",
+     "url": "https://www.macquariedictionary.com.au/macquarie-dictionary-word-of-the-year-for-2026/",
+     "hn": "https://news.ycombinator.com/item?id=50632214",
+     "points": 69,
+     "comments": 67
+    },
+    {
+     "id": 50634933,
+     "title": "美联社：CIA 一套非涉密系统遭网络攻击",
+     "title_en": "An unclassified CIA system was breached in a cyberattack",
+     "url": "https://apnews.com/article/cia-cyberattack-unclassified-system-bfa6d3b02e3b0e2779dfb613c900bd77",
+     "hn": "https://news.ycombinator.com/item?id=50634933",
+     "points": 86,
+     "comments": 26
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2448,
+    "comments": 2049,
+    "top_points": {
+     "id": 50620822,
+     "title": "《外交政策》：黄仁勋复职或是美国史上最大的国家安全丑闻",
+     "value": 341,
+     "comments": 257
+    },
+    "top_comments": {
+     "id": 50622638,
+     "title": "《GTA 6》重编译项目 Leonida 在主开发者上学期间被 GitHub 封禁",
+     "value": 594
+    },
+    "top_brief": {
+     "id": 50622638,
+     "title": "《GTA 6》重编译项目 Leonida 在主开发者上学期间被 GitHub 封禁",
+     "value": 332,
+     "comments": 594
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "futureshock",
+  "id": 50629503,
+  "hn": "https://news.ycombinator.com/item?id=50629503",
+  "story_id": 50627836,
+  "story": "上市不到一周，Anthropic 股价跌破 83 美元发行价",
+  "zh": "AI 可以是变革性技术，Anthropic 可以是领先的前沿实验室，而它的股票同时可以是一笔糟糕的投资。",
+  "en": "for their stock to be a terrible investment"
+ },
+ "stats": {
+  "snapshot": "2026-11-25T08:12:12+08:00",
+  "front_page_count": 90,
+  "with_numbers": 88,
+  "flagged_or_dupe": 2,
+  "top_points": {
+   "id": 50614249,
+   "title": "（续）从零写起的浏览器 Ladybird 进入 Alpha，昨日点赞仍居第一",
+   "value": 2379,
+   "comments": 593
+  },
+  "top_comments": {
+   "id": 50627836,
+   "title": "上市不到一周，Anthropic 股价跌破 83 美元发行价",
+   "value": 633
+  },
+  "second_comments": {
+   "id": 50622638,
+   "title": "《GTA 6》重编译项目 Leonida 在主开发者上学期间被 GitHub 封禁",
+   "value": 594
+  },
+  "over_500": 4,
+  "over_300": 12,
+  "over_100": 42,
+  "show_hn": 5,
+  "total_points": 15537,
+  "total_comments": 8045,
+  "hottest_ratio": {
+   "id": 50627836,
+   "title": "上市不到一周，Anthropic 股价跌破 83 美元发行价",
+   "value": 2.0,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
