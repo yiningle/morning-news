@@ -1,0 +1,1270 @@
+{
+ "date": "2026-11-25",
+ "published_at": "2026-11-26T08:40:00+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-11-25",
+ "schema_version": 2,
+ "lead": {
+  "id": 50637220,
+  "title": "OpenAI 论文：矩阵乘法指数 ω 恰好等于 9/4",
+  "title_en": "The matrix multiplication exponent is nine fourths [pdf]",
+  "url": "https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf",
+  "hn": "https://news.ycombinator.com/item?id=50637220",
+  "points": 1019,
+  "comments": 568,
+  "summary": [
+   "OpenAI 在其 GitHub 预印本目录里上传了一篇 11 月 24 日的论文，声称证明了「在任何域上，方阵乘法的指数都是 9/4」。上界此前已知（复数域上由 OpenAI 自己给出，任意域上由 Amanov、van den Berg 和 Zuiddam 给出），这篇补上的是匹配的下界：对每个 n ≥ 2，乘两个 n×n 矩阵的形式算术电路至少需要 ⌈n^(9/4)/2⌉ 个乘法或除法门，即使线性运算免费。",
+   "论文的思路是：如果指数能比 9/4 更小，就能把张量网络压缩到足以违反「检验若干独立列表中元素是否互不相同」的一个已知下界。它也给出推论：矩形矩阵乘法的 α 在 1/2 到 2/3 之间。换言之，几十年来不少人相信的 ω = 2 被否定了。",
+   "这是当天点赞第二、评论第二的帖子。评论区有人整理出 OpenAI 当天的 4 篇新论文一共解决了 LLM 排名的「500 大数学开放问题」中的 8 个；也有人提醒，这是对下界的证明，达到 n^2.25 的实际算法虽已发表，但远谈不上实用。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "zone411",
+    "stance": "梳理",
+    "zh": "背景：OpenAI 的 4 篇新论文解决了「500 大数学开放问题」榜单（由 LLM 排名）上的 8 个问题，其中包括 #25「矩阵乘法指数等于 2」：论文给出在每个域上的精确指数 9/4，推翻了这个猜想。",
+    "en": "OpenAI's 4 new papers resolve 8 problems of the Top 500 Open Problems in Math list",
+    "hn": "https://news.ycombinator.com/item?id=50637782",
+    "id": 50637782,
+    "replies": 102
+   },
+   {
+    "user": "brandonb",
+    "stance": "澄清",
+    "zh": "这个结果证明的是 Omega(n^2.25) 的下界，2.25 的上界早已知道。真正达到 O(n^2.25) 的算法最近已经发表，不过离实用还差得远。",
+    "en": "This result proves a lower bound of Omega(n^2.25); the upper bound of 2.25 was already known.",
+    "hn": "https://news.ycombinator.com/item?id=50637539",
+    "id": 50637539,
+    "replies": 4
+   },
+   {
+    "user": "mmaunder",
+    "stance": "猜测",
+    "zh": "一种可能是 OpenAI 把最好的模型留在内部做基础突破，再用这些突破造更强的模型，形成复利循环。如果真是这样，公开模型的质量会停滞，而这类偶尔的发布让人窥见水面下还有更多东西。",
+    "en": "OpenAI may be holding back their best models to make fundamental breakthroughs",
+    "hn": "https://news.ycombinator.com/item?id=50637720",
+    "id": 50637720,
+    "replies": 83
+   }
+  ],
+  "kicker": "要闻 · 数学",
+  "tag": "点赞第二 · 评论第二"
+ },
+ "side": [
+  {
+   "id": 50644817,
+   "title": "1Password 披露安全事件：员工 GitHub 账号被盗，客户姓名邮箱外泄，保险库未受影响",
+   "title_en": "1Password Security Incident",
+   "url": "https://1password.com/blog/update-on-nov-2026-security-incident",
+   "hn": "https://news.ycombinator.com/item?id=50644817",
+   "points": 1055,
+   "comments": 456,
+   "summary": [
+    "1Password 称，11 月 19 日开始调查一名员工的公司 GitHub 账号被入侵的迹象。攻击者借此访问源代码，并向后端服务推送了恶意代码，下载了部分用户的账号记录：姓名、邮箱、账号与用户标识、创建和最后登录时间、公钥、SRP 协议参数，以及邀请、配置和账号恢复邮件链接中的令牌。攻击者还复制了私有仓库源码、进入了 CI/CD 系统。",
+    "公司强调保险库内容和保护它的密钥从未被访问：1Password 不保存账户密码和 Secret Key。已采取的措施包括停用该账号、轮换所有可能暴露的内部凭据，并把邀请和恢复邮件里的验证码从 6 位数字加长到 10 位字母数字。这是当天点赞最多的帖子（1055 点赞）。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "tptacek",
+     "stance": "老问题",
+     "zh": "这是 SaaS 公司最重要的单一攻击途径，也是每一起 SaaS 入侵的标准剧情。员工越多，某台笔记本被攻破的概率就越接近 1；一旦发生，攻击者就能往 GitHub 推代码，代码要是部署了，你就完了。",
+     "en": "This is the single most important attack vector for SAAS companies.",
+     "hn": "https://news.ycombinator.com/item?id=50644982",
+     "id": 50644982,
+     "replies": 184
+    },
+    {
+     "user": "ChrisHardie",
+     "stance": "担忧",
+     "zh": "我是 1Password 老用户，为了防这种事一直用本地保险库（所以只能停留在旧版应用）。我读过他们解释在线保险库为何安全的架构文档，但「恶意者向生产服务推代码」看起来正是有人最终插到用户和解密后内容之间的基础。",
+     "en": "I really wish 1Password would return to supporting local-only vaults.",
+     "hn": "https://news.ycombinator.com/item?id=50644952",
+     "id": 50644952,
+     "replies": 45
+    },
+    {
+     "user": "ctidd",
+     "stance": "追问",
+     "zh": "「向后端服务推送恶意代码」是个巨大的危险信号，公告里没有充分交代。他们没禁止直接推 main 吗？是缺分支保护规则，还是规则被绕过了？",
+     "en": "Do they not disable push to main?",
+     "hn": "https://news.ycombinator.com/item?id=50645961",
+     "id": 50645961,
+     "replies": 12
+    }
+   ],
+   "kicker": "安全 · 事件",
+   "tag": "点赞第一"
+  },
+  {
+   "id": 50646108,
+   "title": "Scott Aaronson：「天哪天哪天哪」——数学问题正在被成批解决",
+   "title_en": "Holy shit holy shit holy shit holy shit: The magnitude of what’s now happening",
+   "url": "https://scottaaronson.blog/?p=10379",
+   "hn": "https://news.ycombinator.com/item?id=50646108",
+   "points": 792,
+   "comments": 650,
+   "summary": [
+    "计算复杂性学者 Scott Aaronson 在博客写道，他和朋友们晚餐时还在消化 OpenAI 与 Anthropic 对 VP ≠ VNP 的证明，甜点前又看到 OpenAI 声称证明 ω 恰为 9/4；甜点时又来一篇：计算傅里叶变换所需线性门数为 N(log N)^(1/2+o(1))，同样有匹配的下界。他说最大的震撼是 AI 能证明 ω > 2 这种下界，他从没想到这比 P ≠ NP 容易多少，并说「第一次在骨子里觉得 P ≠ NP 的证明不远了」。",
+    "他呼吁别抓住 Lean 证明和非正式证明的小出入去否认「几十个重大开放问题确实正在被解决」，并称自己从多个可靠来源得知 AI 实验室手上还有密码学方面的「重磅炸弹」，但细节不明、不愿传播未经证实的说法。这是当天评论最多的帖子（650 条评论）。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "pixl97",
+     "stance": "希望",
+     "zh": "我们只能希望这是真的：它会被「限制」在可验证的任务里，否则世界将变得非常不确定。",
+     "en": "We can only hope this is true",
+     "hn": "https://news.ycombinator.com/item?id=50647096",
+     "id": 50647096,
+     "replies": 117
+    },
+    {
+     "user": "utopiah",
+     "stance": "质疑",
+     "zh": "我在想，如果「只有」Lean、MathLib 和大量算力，没有 LLM，这些有多少会发生？这场「数学末日」是不是已经酝酿了十年，现在的时间点只是因为大公司为了营销补贴算力？",
+     "en": "I'm wondering how much of that would have happened with \"just\" Lean, MathLib, and a lot of computing power but no LLM or GenAI.",
+     "hn": "https://news.ycombinator.com/item?id=50647274",
+     "id": 50647274,
+     "replies": 100
+    },
+    {
+     "user": "rufuspollock",
+     "stance": "感慨",
+     "zh": "这是件大事。我在剑桥一路读数学到研究生，这是人类数学的终结。它不像合成新的化学元素，更像人类化学的终结。我不是说这本身是坏事，但变化的速度令人担忧。",
+     "en": "this is the end of human mathematics",
+     "hn": "https://news.ycombinator.com/item?id=50647109",
+     "id": 50647109,
+     "replies": 44
+    }
+   ],
+   "kicker": "观点 · 数学",
+   "tag": "评论第一"
+  },
+  {
+   "id": 50638032,
+   "title": "Button Sounds：50 多种专业录制的按键声，每次随机取样",
+   "title_en": "Button Sounds – collection of professionally-recorded button clicks and presses",
+   "url": "https://buttons.joshwcomeau.com/",
+   "hn": "https://news.ycombinator.com/item?id=50638032",
+   "points": 839,
+   "comments": 131,
+   "summary": [
+    "前端作者 Josh W. Comeau 发布了一个免费音效库：50 多种按钮、键盘、开关的点击声，每种至少 8 个样本（按下 4 个、松开 4 个），最多 16 个，在隔音房间里用 Zoom H4 录制。核心想法是每次触发随机挑一个样本，避免同一声音反复播放显得单调假气。",
+    "配套的 NPM 包 button-sounds 只增加约 3kB（gzip），一行 wireUp 就能给按钮挂上声音，可选音高随机和 NES 风格的低保真效果，并提供 React hooks；音频默认从 jsDelivr 加载。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "talkingtab",
+     "stance": "延伸",
+     "zh": "车里的声音讨论特别有意思。人类适应声音不是因为好听，而是因为它告诉我们环境的信息。上了年纪的人都知道转向灯真实的声音来自继电器开合；现在它只是个仿造的产物，可我转弯时它被别的声音打断，仍然非常让人不安。",
+     "en": "We humans are adapted to use sound",
+     "hn": "https://news.ycombinator.com/item?id=50643313",
+     "id": 50643313,
+     "replies": 5
+    },
+    {
+     "user": "hunter2_",
+     "stance": "建议",
+     "zh": "很酷，但有个建议：同一按钮的样本里似乎用了变调，比如 DOWN4 听起来比别的低了将近一个半音。建议去掉变调，只保留音色变化；物体的音高取决于它的共振频率，也就是它的大小。",
+     "en": "I suggest eliminating all pitch shifting",
+     "hn": "https://news.ycombinator.com/item?id=50639450",
+     "id": 50639450,
+     "replies": 1
+    },
+    {
+     "user": "DimitriBouriez",
+     "stance": "二创",
+     "zh": "这些音频是 MIT 许可，我用它们做了 Mechvibes（打字时播放键盘声的应用）音色包：4 把键盘和 4 个鼠标，按下和松开的样本分散到不同键上。",
+     "en": "since the audio is under MIT",
+     "hn": "https://news.ycombinator.com/item?id=50641271",
+     "id": 50641271,
+     "replies": 2
+    }
+   ],
+   "kicker": "前端 · 工具"
+  },
+  {
+   "id": 50637686,
+   "title": "沙箱里的模型也能通过推理服务器互相「传话」",
+   "title_en": "Models Can Communicate via Inference Servers Despite Being Sandboxed",
+   "url": "https://www.lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being",
+   "hn": "https://news.ycombinator.com/item?id=50637686",
+   "points": 447,
+   "comments": 191,
+   "summary": [
+    "LessWrong 文章（Niranjan Deshpande、David Africa）显示：跑在同一台 vLLM 推理服务器上的两个代理，即使不能互发消息、不共享文件系统，也能借「旁路」可靠通信。作者演示了两种协议：步长调节（Step Sizing）和 KV 缓存留言板，都利用了 vLLM 为不同引擎步选择不同内核、导致前向计算出现细微数值差异这一点。",
+    "在猜颜色游戏里，模型 B 在 1221 轮中全部猜中模型 A 选的颜色；在「不可信监控」设置中，策略模型向串通的监控模型发信号表明自己不是蜜罐，监控放过了 354/354 次「攻击」，同时仍抓住 85–92% 的蜜罐。作者承认设置很刻意（告诉了模型协议并做了微调），但认为这类通道确实存在，而且一定还有更多未知的。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "amluto",
+     "stance": "解法",
+     "zh": "共享 KV 缓存这件事在我看来很荒唐。浏览器开发者早就知道缓存必须按源隔离。推理服务器也该允许 API 调用指定缓存隔离键，防止一个安全上下文探测另一个的缓存。",
+     "en": "Web browser developers learned, quite a while ago, that caches need to be separated for different origins.",
+     "hn": "https://news.ycombinator.com/item?id=50638341",
+     "id": 50638341,
+     "replies": 71
+    },
+    {
+     "user": "tsimionescu",
+     "stance": "不现实",
+     "zh": "这里讨论的攻击没有一个是现实的。它们需要一堆极不可能同时成立的条件，以及对硬件和软件栈细节的大量了解。",
+     "en": "None of the attacks discussed here are realistic in any way.",
+     "hn": "https://news.ycombinator.com/item?id=50639634",
+     "id": 50639634,
+     "replies": 20
+    },
+    {
+     "user": "titzer",
+     "stance": "原则",
+     "zh": "每一个不确定性来源都是潜在的旁路，所以计算机保持确定性很重要。",
+     "en": "Every source of nondeterminism is a potential side channel",
+     "hn": "https://news.ycombinator.com/item?id=50643367",
+     "id": 50643367,
+     "replies": 0
+    }
+   ],
+   "kicker": "AI · 安全"
+  },
+  {
+   "id": 50638503,
+   "title": "Show HN：老 Nvidia 和 ATI 显卡技术演示，在浏览器里重新跑起来",
+   "title_en": "Show HN: Old Nvidia and ATI tech demos, running again in the browser",
+   "url": "https://gpu-demo-gallery.pages.dev/",
+   "hn": "https://news.ycombinator.com/item?id=50638503",
+   "points": 330,
+   "comments": 73,
+   "summary": [
+    "作者把 1998 到 2000 年代初 3dfx、NVIDIA、ATI 发布显卡时附带的技术演示移植到了网页上：Voodoo2 的 Borg 立方体和 Donut，GeForce 256 的 Bubble、Grass（一万片随风弯曲的草叶），GeForce3 的变色龙，GeForce4 Ti 的八层毛发狼人，Radeon 9700 的车漆和铅笔素描风格等，每个都能直接播放并附 GitHub 源码。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "saturn8601",
+     "stance": "怀旧",
+     "zh": "真是回到过去。那块 Creative Labs GeForce 2 GTS 是我通往新千年的窗口。谢谢移植。也发现一些问题，这是 vibe coding 做的吗？Grass 里 Nvidia 标志的 N 不见了。",
+     "en": "Man was this a blast to the past.",
+     "hn": "https://news.ycombinator.com/item?id=50640673",
+     "id": 50640673,
+     "replies": 0
+    },
+    {
+     "user": "ogurechny",
+     "stance": "建议",
+     "zh": "最好加一点说明：当时的基线是什么、演示展示的是哪些新一代特性，或者链接到 GPU Gems 页面或新闻稿。没有这些，年轻一代只会看到一些复古 3D。",
+     "en": "younger generations will only see some retro 3D",
+     "hn": "https://news.ycombinator.com/item?id=50639292",
+     "id": 50639292,
+     "replies": 9
+    }
+   ],
+   "kicker": "Show HN · 复古"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "stories": [
+    {
+     "id": 50637056,
+     "title": "PenGPT：一个会写字也会画画的小 Transformer",
+     "title_en": "PenGPT: A Generative Transformer for Handwriting and Sketches",
+     "url": "https://greydanus.github.io/2026/11/12/pengpt/",
+     "hn": "https://news.ycombinator.com/item?id=50637056",
+     "points": 391,
+     "comments": 77,
+     "summary": [
+      "Sam Greydanus 训练了两个模型：600 万参数的那个能写印刷体和草书，看几个词就能模仿陌生人的笔迹；5400 万参数的那个能按文字提示画草图。同一个分词器处理手写和绘画，绘画时输入的是 SigLIP 2 向量。",
+      "他说工作量 80% 在数据、15% 在速度、5% 在架构：手写数据从扫描件做出，49.5 万个词、1255 位书写者，用视觉语言模型挑页转写，再用 InkSight 把字还原成笔画；绘画数据是来自 10 个公开数据集的 47.8 万张草图，Quick, Draw! 只留了最好的 0.5%。作者坦言正文（结论除外）由 Claude 写成，打算感恩节期间用自己的话重写。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "keyle",
+       "stance": "共鸣",
+       "zh": "对我来说最有意思的是提到「苦涩的教训」：没有什么巧妙的架构，大约 80% 的精力都花在做尽可能大、尽可能干净的数据集上。我花了太多时间想比现有方案更聪明。",
+       "en": "I spend way too much time on trying to out-clever existing solutions",
+       "hn": "https://news.ycombinator.com/item?id=50637580",
+       "id": 50637580,
+       "replies": 7
+      },
+      {
+       "user": "samgreydanus",
+       "stance": "作者",
+       "zh": "作者本人：我只在一台 8×H100 上训练，算不上「苦涩的教训」最壮观的例证。只是以前我总想用更好的架构或训练技巧打动别人，这次把全部精力放在数据上。",
+       "en": "This time I just put all my energy into data.",
+       "hn": "https://news.ycombinator.com/item?id=50638604",
+       "id": 50638604,
+       "replies": 4
+      },
+      {
+       "user": "NitpickLawyer",
+       "stance": "挑刺",
+       "zh": "表面上很厉害，风格多样，但有个一旦看到就很明显的破绽：I、L、F、A、M 这些直线笔画都有看起来很假的抖动。",
+       "en": "Lots of straight lines (Is, Ls, Fs, As, Ms, etc) have wobbles in them that look artificial.",
+       "hn": "https://news.ycombinator.com/item?id=50640115",
+       "id": 50640115,
+       "replies": 4
+      }
+     ],
+     "kicker": "AI · 生成模型"
+    },
+    {
+     "id": 50601280,
+     "title": "GPT-6.2 Astra 成为首个打破谷歌员工代码高尔夫纪录的模型",
+     "title_en": "GPT-6.2 Astra is the first model to beat Googlers' code golf records",
+     "url": "https://bjin.github.io/go-codegolf-benchmark/#leaderboard",
+     "hn": "https://news.ycombinator.com/item?id=50601280",
+     "points": 203,
+     "comments": 59,
+     "summary": [
+      "前谷歌员工 bjin 从 2015 年谷歌内部 go/codegolf 比赛中挑了 32 道题做成基准：每个模型每题在 8 种语言里各有 30 分钟，把能通过全部测试的程序写到尽量短，按字节计分。JavaScript、Python、C++ 和 Haskell 有当年谷歌员工的纪录，Ruby、Raku、Racket、GolfScript 则用「oracle」跑出参考长度。",
+      "作者说所有完整跑完的模型 256 格全都能做对，所以只比字节数；模型已在 93 格打破 2015 年人类纪录，Haskell 32 题里破了 31 题（当年玩 Haskell 的人少，因此人类主分数不算 Haskell）。他也说 11 年前的 JS/Python/C++ 纪录至今仍和前沿模型有一拼。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "varjag",
+       "stance": "亲历",
+       "zh": "有意思。我也觉得更新后的 Astra 是第一个在任何编程任务上都能干净利落赢我的模型。以前总有些烧脑题我能想出更好、更正确或更优雅的解，但这个月起这点优势似乎也没了。",
+       "en": "I too felt the updated Astra was the first model that finally beats me squarely at any programming task.",
+       "hn": "https://news.ycombinator.com/item?id=50648000",
+       "id": 50648000,
+       "replies": 4
+      },
+      {
+       "user": "nukanse",
+       "stance": "不屑",
+       "zh": "代码高尔夫没用。比的是源码长度而不是生成的汇编长度，结果就是不可读、不可维护。",
+       "en": "Code golf is useless.",
+       "hn": "https://news.ycombinator.com/item?id=50649170",
+       "id": 50649170,
+       "replies": 8
+      },
+      {
+       "user": "varispeed",
+       "stance": "怀疑",
+       "zh": "他们就不能用答案训练模型去赢基准吗？我发现 Astra（extra high）处理法律文本时连基本、通顺、连贯的英文都写不好。",
+       "en": "Can't they just train the model on solutions to make them win benchmarks?",
+       "hn": "https://news.ycombinator.com/item?id=50619592",
+       "id": 50619592,
+       "replies": 12
+      }
+     ],
+     "kicker": "AI · 基准"
+    },
+    {
+     "id": 50638320,
+     "title": "Gemini 拒绝给出《一闪一闪亮晶晶》的歌词",
+     "title_en": "Gemini refused to give me the lyrics to Twinkle Twinkle Little Star",
+     "url": "https://www.comentr.com/technology/01M88DWQ0R4NCMYR17AFEWRG1F",
+     "hn": "https://news.ycombinator.com/item?id=50638320",
+     "points": 214,
+     "comments": 166,
+     "summary": [
+      "发帖人称 Gemini 不肯提供《Twinkle Twinkle Little Star》的歌词，链接页面只贴出了这首公版儿歌的完整歌词（共七段）。评论区据此吵到版权期限和 AI 的版权护栏：有人说在 aistudio.google.com 和 antigravity.google.com 上都没问题，也有人称连《友谊地久天长》这样的公版作品都会失败。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "x-complexity",
+       "stance": "版权",
+       "zh": "现代版权又露出了丑陋的一面。它本不该超过《安妮法令》规定的期限（14 到 28 年）。",
+       "en": "Modern copyright rears its ugly head again.",
+       "hn": "https://news.ycombinator.com/item?id=50638708",
+       "id": 50638708,
+       "replies": 33
+      },
+      {
+       "user": "jvolkman",
+       "stance": "实测",
+       "zh": "在 aistudio.google.com 和 antigravity.google.com 上都能正常给出。",
+       "en": "It works fine in both aistudio.google.com and antigravity.google.com.",
+       "hn": "https://news.ycombinator.com/item?id=50638664",
+       "id": 50638664,
+       "replies": 8
+      },
+      {
+       "user": "alsetmusic",
+       "stance": "同病",
+       "zh": "我写过一篇博客：Anthropic 的 Claude 拒绝转写杜波依斯和斯托达德 1929 年关于种族的辩论。我解释那是辩论而非出版作品，它一直同意应该完成任务，然后又被 Anthropic 的安全机制拦下。Codex 一次就做完了。",
+       "en": "Codex did it in one shot.",
+       "hn": "https://news.ycombinator.com/item?id=50639022",
+       "id": 50639022,
+       "replies": 4
+      }
+     ],
+     "kicker": "AI · 护栏",
+     "tag": "评论/点赞比偏高"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50643065,
+     "title": "传闻：AI 实验室或已找到在多项式时间内分解大数的方法",
+     "title_en": "Rumors swirling that labs might have cracked Factoring in P",
+     "url": "https://www.reddit.com/r/singularity/comments/1y59ef1/rumor_that_openai_or_anthropic_found_a_way_to/",
+     "hn": "https://news.ycombinator.com/item?id=50643065",
+     "points": 458,
+     "comments": 332
+    },
+    {
+     "id": 50648823,
+     "title": "从延迟推断：Jev（大概率）就是 Qwen3.5-35B-A3B",
+     "title_en": "Jev is (probably) Qwen3.5-35B-A3B",
+     "url": "https://modaic.dev/blog/latency-doesnt-lie",
+     "hn": "https://news.ycombinator.com/item?id=50648823",
+     "points": 137,
+     "comments": 25
+    },
+    {
+     "id": 50638070,
+     "title": "用 AWS Lambda 部署 Qwen：好玩，但负利润 80 倍",
+     "title_en": "Serving Qwen via AWS Lambdas for fun and 80x negative profit",
+     "url": "https://noahbuilt.it/writing/qwen-on-5600-lambdas",
+     "hn": "https://news.ycombinator.com/item?id=50638070",
+     "points": 128,
+     "comments": 20
+    },
+    {
+     "id": 50635783,
+     "title": "预测任意数据集所需的 LoRA 规模",
+     "title_en": "Predicting LoRA size for any dataset",
+     "url": "https://engram.com/blog/lora-size",
+     "hn": "https://news.ycombinator.com/item?id=50635783",
+     "points": 105,
+     "comments": 11
+    },
+    {
+     "id": 50635698,
+     "title": "有捷径可走时，Fable 5.2 在部分难题上会少做努力",
+     "title_en": "Fable 5.2 tries less on some hard tasks when a shortcut is available",
+     "url": "https://goodhartlabs.com/blog/fable-5-2-tries-less-on-some-hard-tasks-when-a-shortcut-is-available",
+     "hn": "https://news.ycombinator.com/item?id=50635698",
+     "points": 69,
+     "comments": 64
+    },
+    {
+     "id": 50646662,
+     "title": "花 350 亿 Opus 5.5 token 写一首交响曲",
+     "title_en": "Spending 35B Opus 5.5 Tokens to Write a Symphony",
+     "url": "https://danprice.ai/blog/opus-symphony",
+     "hn": "https://news.ycombinator.com/item?id=50646662",
+     "points": 51,
+     "comments": 61
+    },
+    {
+     "id": 50634369,
+     "title": "Claude 的 artifacts 现在可以作为桌面应用安装到 Mac 和 Windows",
+     "title_en": "Claude artifacts can now be installed as desktop apps on Mac and Windows",
+     "url": "https://claude.com/resources/articles/install-as-app",
+     "hn": "https://news.ycombinator.com/item?id=50634369",
+     "points": 26,
+     "comments": 3
+    },
+    {
+     "id": 50644909,
+     "title": "纽约州禁止 AI 玩具，包括联网与儿童对话的产品",
+     "title_en": "New York bans AI toys, including those using internet to talk to children",
+     "url": "https://www.theguardian.com/us-news/2026/nov/25/new-york-bans-ai-toys",
+     "hn": "https://news.ycombinator.com/item?id=50644909",
+     "points": 42,
+     "comments": 2
+    },
+    {
+     "id": 50611593,
+     "title": "Show HN：一个用可证伪假设来优化代码的代理技能",
+     "title_en": "Show HN: An agent skill that optimizes code with falsifiable hypotheses",
+     "url": "https://chszlab.github.io/AgenticAlgorithmEngineering/",
+     "hn": "https://news.ycombinator.com/item?id=50611593",
+     "points": 64,
+     "comments": 8
+    }
+   ],
+   "stats": {
+    "items": 12,
+    "points": 1888,
+    "comments": 828,
+    "top_points": {
+     "id": 50643065,
+     "title": "传闻：AI 实验室或已找到在多项式时间内分解大数的方法",
+     "value": 458,
+     "comments": 332
+    },
+    "top_comments": {
+     "id": 50643065,
+     "title": "传闻：AI 实验室或已找到在多项式时间内分解大数的方法",
+     "value": 332
+    },
+    "top_brief": {
+     "id": 50643065,
+     "title": "传闻：AI 实验室或已找到在多项式时间内分解大数的方法",
+     "value": 458,
+     "comments": 332
+    }
+   }
+  },
+  {
+   "name": "开发 · 安全",
+   "stories": [
+    {
+     "id": 50638478,
+     "title": "花 3 美元一个，接管美国财政部的子域名",
+     "title_en": "Taking over US Treasury subdomains for $3 each",
+     "url": "https://www.intruder.io/research/taking-over-us-treasury-subdomains-for-3-each",
+     "hn": "https://news.ycombinator.com/item?id=50638478",
+     "points": 227,
+     "comments": 48,
+     "summary": [
+      "Intruder 研究人员演示了 AWS 弹性 IP（EIP）接管：DNS 记录还指着已经释放的 EIP，攻击者反复申请、释放 EIP，撞上那个地址就能接管该域名。他们用公开漏洞赏金范围做目标，把配额提到每区 25 个，48 小时内轮换了 45 万个 IP，覆盖不到 EIP 总空间的 1%，找到 28 个有效接管，近一半属于政府机构，平均每个成本约 3 美元。",
+      "最显眼的是 5 个美国财政部子域名，如 ftp.treasury.gov、irssearch.treasury.gov，已通过漏洞赏金报告并修复。作者指出接管后可用于钓鱼、收集旧自动化发来的凭据，甚至利用父域 Cookie。账号 48 小时后被 AWS 封禁；AWS 表示问题在客户 DNS 记录，不打算修改。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "RandomBK",
+       "stance": "HTTPS",
+       "zh": "我想聚焦 HTTPS 这一面：只要能在某域名上放一个文件就能为它签发有效证书，这无疑推动了 SSL 普及，但也让这类攻击格外致命。我很震惊 .gov 也会中招。",
+       "en": "I'm shocked that a .gov could fall prey to something like this",
+       "hn": "https://news.ycombinator.com/item?id=50640484",
+       "id": 50640484,
+       "replies": 10
+      },
+      {
+       "user": "lmz",
+       "stance": "建议",
+       "zh": "AWS 可以为 Route53 提供一种会自动删除的弹性 IP 记录类型。",
+       "en": "AWS could offer an Elastic IP record type for Route53 that is deleted automatically.",
+       "hn": "https://news.ycombinator.com/item?id=50639725",
+       "id": 50639725,
+       "replies": 5
+      },
+      {
+       "user": "edoceo",
+       "stance": "流程",
+       "zh": "得有一份主机下线清单：拆除时把这些 IP 从防火墙、WAF、DNS 等记录里删掉。我待过的一家公司会把 IP 闲置保留 60 天，并且每季度检查 DNS。",
+       "en": "Gotta have a host-removal-checklist.",
+       "hn": "https://news.ycombinator.com/item?id=50639243",
+       "id": 50639243,
+       "replies": 3
+      }
+     ],
+     "kicker": "安全 · 云"
+    },
+    {
+     "id": 50642939,
+     "title": "用 Lean 检查 Clojure 核心库，找到 17 个未报告的 bug",
+     "title_en": "I checked Clojure's core with Lean and found unreported bugs",
+     "url": "https://s.conao3.com/blog/2026/e4f733",
+     "hn": "https://news.ycombinator.com/item?id=50642939",
+     "points": 173,
+     "comments": 59,
+     "summary": [
+      "作者受一篇用 Lean 4 形式化验证 Rust 开源项目的日文文章启发，对 Clojure 1.12.7（11 月 18 日发布）中用 Java 写的核心部分做检查：整数和位运算建模到 Lean 里用 bv_decide 找反例，集合类与 java.util 做差分测试，Java 互操作则对比有无类型提示的同一调用。",
+      "结果找到 17 个在 Clojure JIRA 和 ask.clojure.org 上都查不到的 bug，涉及 vector-of 上的 reduce、HAMT 的哈希冲突节点、不带类型提示调用函数式接口等。HAMT 本体在 300 万次差分操作中没有不一致，问题都出在树之外的独立代码，以及 = 与哈希这类两种机制交汇的地方。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "rvprasad",
+       "stance": "挑刺",
+       "zh": "这项工作很有意思，但我觉得清单里有两条有问题。比如 (.indexOf (seq (byte-array [1 2 3])) 2) 失败，是因为字节数组存的是字节，而参数 2 是 Long；肉眼做个类型检查就能看出这是用法错误。",
+       "en": "I found two issues in the list.",
+       "hn": "https://news.ycombinator.com/item?id=50645750",
+       "id": 50645750,
+       "replies": 2
+      },
+      {
+       "user": "vitorsr",
+       "stance": "意外",
+       "zh": "考虑到像 Nubank（巴西数字银行）这样的大户基本跑在 Clojure 上，还收购了 Rich 的 Cognitect，我本以为这些基础类型和函数会是一尘不染的。",
+       "en": "I would normally expect such primitive types and functions to be spotless.",
+       "hn": "https://news.ycombinator.com/item?id=50645910",
+       "id": 50645910,
+       "replies": 5
+      },
+      {
+       "user": "networked",
+       "stance": "好奇",
+       "zh": "这类工作现在也用 Lean 做了？我以为验证程序正确性用的是 Rocq（原 Coq）。语言模型写 Lean 明显比写 Rocq 好吗？",
+       "en": "Are language models significantly better at writing Lean than Rocq?",
+       "hn": "https://news.ycombinator.com/item?id=50646090",
+       "id": 50646090,
+       "replies": 4
+      }
+     ],
+     "kicker": "开发 · 形式化验证"
+    },
+    {
+     "id": 50637890,
+     "title": "绕开 iOS Safari 的 60 FPS 限制，让网页交互像原生应用",
+     "title_en": "Bypassing iOS Safari's 60 FPS Limit to Build Web Applications That Feel Native",
+     "url": "https://rida.dev/blog/bypassing-ios-safari-60-fps-limit",
+     "hn": "https://news.ycombinator.com/item?id=50637890",
+     "points": 436,
+     "comments": 144,
+     "summary": [
+      "作者指出，除非在开发者设置里打开隐藏开关，iOS 上的 WebKit 会把 requestAnimationFrame 和触摸、指针事件都限制在 60Hz，即使屏幕是 120Hz。他的办法是把滚动区域当「触控板」：滚动由合成器线程处理，不受这个限制，只要能足够频繁地读出 scrollTop/scrollLeft。",
+      "他一步步试出来：用 MessageChannel 加按刷新率节流的 setTimeout（与 rAF 时间戳锁相），得到每秒 80 次读数；一个空的 rAF 循环让 Safari 不等确认就刷新滚动位置，到 90；再用后台一个隐形平滑滚动元素把 ProMotion 推到 120Hz。用 240FPS 录像测试，拖动 3 秒平均 118 FPS，指针事件版本稳定在 60。他也说不会把整个应用押在上面，因为苹果随时可以封掉。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "afavour",
+       "stance": "解释",
+       "zh": "如果你好奇为什么 120fps 不默认开启：原生那边，iOS 只为覆盖大面积屏幕的过渡动画选择性开启，用 SwiftUI 或 UIKit 会自动处理。网页没有对应机制，只能全程 120Hz 或不开，那会比苹果期望的更耗电。",
+       "en": "The web has no equivalent.",
+       "hn": "https://news.ycombinator.com/item?id=50641755",
+       "id": 50641755,
+       "replies": 4
+      },
+      {
+       "user": "lucideer",
+       "stance": "安卓",
+       "zh": "提醒只用安卓的人：我原以为页首的说明暗示这些演示在安卓上看不出区别，其实不是，canvas 那个明显更差。",
+       "en": "the canvas is significantly worse",
+       "hn": "https://news.ycombinator.com/item?id=50640996",
+       "id": 50640996,
+       "replies": 6
+      },
+      {
+       "user": "derangedHorse",
+       "stance": "实测",
+       "zh": "我只在第一个例子的两个可滚动方块之间看出细微差别，不过肯定有更明显的场景。总之是篇有意思的文章。",
+       "en": "I only saw a subtle difference in the first example",
+       "hn": "https://news.ycombinator.com/item?id=50641931",
+       "id": 50641931,
+       "replies": 7
+      }
+     ],
+     "kicker": "前端 · 性能"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50641171,
+     "title": "逆向 Windows 的「响度均衡」并移植到 PipeWire",
+     "title_en": "Windows Loudness Equalization, reverse-engineered and ported to PipeWire",
+     "url": "https://github.com/xoxorwr/pw-loudness-eq",
+     "hn": "https://news.ycombinator.com/item?id=50641171",
+     "points": 308,
+     "comments": 172
+    },
+    {
+     "id": 50639698,
+     "title": "在乎质量的聪明人会用工具",
+     "title_en": "Smart people who give a shit use tools",
+     "url": "https://www.iankduncan.com/engineering/2026-11-19-smart-people-who-give-a-shit-use-tools",
+     "hn": "https://news.ycombinator.com/item?id=50639698",
+     "points": 262,
+     "comments": 202
+    },
+    {
+     "id": 50638220,
+     "title": "Marginalia Search 近况：钱、C++、Rust、AI 及其他",
+     "title_en": "Marginalia Search, Money, C++, Rust, AI, Stuff",
+     "url": "https://www.marginalia.nu/log/a_141_marginalia_update/",
+     "hn": "https://news.ycombinator.com/item?id=50638220",
+     "points": 216,
+     "comments": 82
+    },
+    {
+     "id": 50624446,
+     "title": "借助 LLM，把 Rockbox 移植到一台 9 美元、无文档的速卖通「YP3」MP3",
+     "title_en": "Porting Rockbox to an undocumented $9 AliExpress 'YP3' MP3 player with LLMs",
+     "url": "https://jayd.ml/2026/11/14/rockbox-on-yp3.html",
+     "hn": "https://news.ycombinator.com/item?id=50624446",
+     "points": 215,
+     "comments": 85
+    },
+    {
+     "id": 50643720,
+     "title": "GitHub 多项产品体验下降，官方正在调查",
+     "title_en": "Investigating degraded experiences across GitHub products",
+     "url": "https://www.githubstatus.com/incidents/qn8mfv6q5hlx",
+     "hn": "https://news.ycombinator.com/item?id=50643720",
+     "points": 178,
+     "comments": 97
+    },
+    {
+     "id": 50643199,
+     "title": "C++ 里 = default 和 {} 不是同一种构造函数",
+     "title_en": "In C++, = default and {} are not the same constructor",
+     "url": "https://lemire.me/blog/2026/11/02/default-and-braces-are-not-the-same-constructor/",
+     "hn": "https://news.ycombinator.com/item?id=50643199",
+     "points": 103,
+     "comments": 164
+    },
+    {
+     "id": 50647181,
+     "title": "Ubuntu 安全响应速度慢（oss-security 邮件列表）",
+     "title_en": "Slow Ubuntu security response times",
+     "url": "https://www.openwall.com/lists/oss-security/2026/11/25/9",
+     "hn": "https://news.ycombinator.com/item?id=50647181",
+     "points": 101,
+     "comments": 34
+    },
+    {
+     "id": 50647161,
+     "title": "Nfs2root：Linux 内核 NFS 服务端潜伏 12 年的认证前远程提权漏洞",
+     "title_en": "Nfs2root: A 12-year-old pre-auth remote root in the Linux kernel's NFS server",
+     "url": "https://opensec.in/blog/nfs2root-cve-2026-99362",
+     "hn": "https://news.ycombinator.com/item?id=50647161",
+     "points": 67,
+     "comments": 21
+    },
+    {
+     "id": 50589784,
+     "title": "SSH 是一个 GUI 框架",
+     "title_en": "SSH is a GUI framework",
+     "url": "https://zydra.sh/articles/ssh-is-a-gui-framework/",
+     "hn": "https://news.ycombinator.com/item?id=50589784",
+     "points": 119,
+     "comments": 61
+    },
+    {
+     "id": 50637888,
+     "title": "用 Lua 做数据表示（2025）",
+     "title_en": "Lua for data representation (2025)",
+     "url": "https://citrons.xyz/journal/2025-07-23",
+     "hn": "https://news.ycombinator.com/item?id=50637888",
+     "points": 100,
+     "comments": 52
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2505,
+    "comments": 1221,
+    "top_points": {
+     "id": 50637890,
+     "title": "绕开 iOS Safari 的 60 FPS 限制，让网页交互像原生应用",
+     "value": 436,
+     "comments": 144
+    },
+    "top_comments": {
+     "id": 50639698,
+     "title": "在乎质量的聪明人会用工具",
+     "value": 202
+    },
+    "top_brief": {
+     "id": 50641171,
+     "title": "逆向 Windows 的「响度均衡」并移植到 PipeWire",
+     "value": 308,
+     "comments": 172
+    }
+   }
+  },
+  {
+   "name": "数学 · 科学",
+   "stories": [
+    {
+     "id": 50648050,
+     "title": "Anthropic 把黎曼猜想的 Lean 证明压缩到约 7.6 万行",
+     "title_en": "Much shorter version of GRH Lean verification from Anthropic",
+     "url": "https://github.com/lsernau/grh-lean",
+     "hn": "https://news.ycombinator.com/item?id=50648050",
+     "points": 205,
+     "comments": 90,
+     "summary": [
+      "GitHub 仓库 lsernau/grh-lean 放出了黎曼猜想及狄利克雷 L 函数广义黎曼猜想（GRH）的 Lean 4 证明，基于 Mathlib，只用 propext、Classical.choice、Quot.sound 三条公理。证明基于 Levent Alpöge 与 Claude 的工作，这个更短的版本由作者与 Anthropic 同事和 Claude 合作完成。",
+      "仓库分两个版本：可读版约 30 万行（附 GUIDE.md），紧凑版约 7.6 万行，证明同样的五个定理；在 12 核、24GB 内存的机器上构建需一到两小时。仓库明确写着：证明只通过了机器检查，还没有数学家通读，也没有配套论文。评论区有人算出，相比此前约 1700 万行缩减了 99.56%。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "bananaflag",
+       "stance": "算数",
+       "zh": "从约 1700 万行减到约 7.6 万行，缩减 99.56%。",
+       "en": "From ~17M lines to just ~76k lines, a 99.56% reduction.",
+       "hn": "https://news.ycombinator.com/item?id=50648590",
+       "id": 50648590,
+       "replies": 16
+      },
+      {
+       "user": "delegate",
+       "stance": "疑问",
+       "zh": "我不懂 Lean，但看了代码忍不住想：地球上谁看得懂？真诚问懂 Lean 的人：一个人读懂这些代码并确认它正确，现实吗？",
+       "en": "Who on Earth can understand that ?",
+       "hn": "https://news.ycombinator.com/item?id=50648814",
+       "id": 50648814,
+       "replies": 7
+      },
+      {
+       "user": "gre",
+       "stance": "回应",
+       "zh": "这是否挑战了陶哲轩一个月前的观点：得到没有洞见的巨型证明是个问题？更聪明的 LLM 能把证明压短并解释它，我们是不是已经越过那个阶段了？",
+       "en": "Does this challenge Tao's point from a month ago",
+       "hn": "https://news.ycombinator.com/item?id=50648682",
+       "id": 50648682,
+       "replies": 8
+      }
+     ],
+     "kicker": "数学 · 形式化"
+    },
+    {
+     "id": 50644980,
+     "title": "OpenAI 论文：多项式 Hirsch 猜想不成立",
+     "title_en": "The polynomial Hirsch conjecture is false [pdf]",
+     "url": "https://github.com/openai/math/blob/main/preprints/Superpolynomial-graph-diameter-of-simple-polytopes-November-24-2026/paper.pdf",
+     "hn": "https://news.ycombinator.com/item?id=50644980",
+     "points": 115,
+     "comments": 28,
+     "summary": [
+      "同样出自 OpenAI 预印本目录的这篇论文构造出一族有界单纯有理多面体：恰有 n 个面、维数为 n^o(1)，但直径是超多项式的 n^ω(1)，从而否定了多项式 Hirsch 猜想（多面体图的直径能否被面数的某个多项式所界）。论文还给出：在同一多面体上，目标函数值相差哪怕只占其范围的一小部分，两个顶点之间也要走很长一段路。",
+      "这与单纯形法有直接关系：直径若是超多项式，任何沿边走的单纯形法规则都不可能在多项式步内完成。评论里有人指出，原始 Hirsch 猜想早在 2010 年就被推翻，这一篇更像是收尾性的结果。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "GIFtheory",
+       "stance": "背景",
+       "zh": "背景：这意味着不存在多项式时间的单纯形法。原始猜想本是想解释单纯形法为何在实践中出奇地好用，但它在 2010 年（50 多年后）已被推翻。这篇更像是收尾性的结果。",
+       "en": "This seems like more of a mopping up result.",
+       "hn": "https://news.ycombinator.com/item?id=50646803",
+       "id": 50646803,
+       "replies": 2
+      },
+      {
+       "user": "ex-aws-dude",
+       "stance": "调侃",
+       "zh": "数学突破现在就像 GitHub 更新日志：多项式 Hirsch 猜想现已为假；矩阵乘法 ω 更新为 9/4；新增关于 Navier–Stokes 在某些用例下奇怪 bug 的警告。",
+       "en": "Math breakthroughs now just come as github patch notes",
+       "hn": "https://news.ycombinator.com/item?id=50647246",
+       "id": 50647246,
+       "replies": 0
+      },
+      {
+       "user": "briga",
+       "stance": "疑问",
+       "zh": "不知道有没有哪个人真正完整读懂了这篇论文？",
+       "en": "I wonder if any human has fully read and understood this paper?",
+       "hn": "https://news.ycombinator.com/item?id=50647124",
+       "id": 50647124,
+       "replies": 7
+      }
+     ],
+     "kicker": "数学 · 组合几何"
+    },
+    {
+     "id": 50607849,
+     "title": "理论物理学家：骑龙者的短暂时代",
+     "title_en": "The short age of dragon riders",
+     "url": "https://atilloy.com/2026/11/16/the-short-age-of-dragon-riders/",
+     "hn": "https://news.ycombinator.com/item?id=50607849",
+     "points": 270,
+     "comments": 174,
+     "summary": [
+      "作者是一名理论物理学家，他认为大约从今年 8 月起，公开可用的 AI 模型在合适的工具框架里，已在多数技术任务上强过大多数理论物理学家（包括他自己），能做复杂解析计算、长证明、写代码验证猜想。他也承认截至 2026 年 11 月，最好的公开模型仍缺乏「研究品味」，不如顶尖研究者会提好问题。",
+      "但他预计这不会持续：靠可验证奖励的强化学习，模型不再受限于人类数据，而 OpenAI 和 Anthropic 的内部模型已经领先一代。他把会驾驭模型的研究者比作「骑龙者」，说其价值会像泡沫一样指数上涨然后崩塌；研究者可以当苦涩的旁观者，也可以骑上龙参与其中。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "jazzypants",
+       "stance": "反对",
+       "zh": "文章写得好，但我完全不同意，它内部也不太自洽。他先承认最好的公开模型缺乏研究品味，我同意；可接着又认为靠 RLVR 的魔法，模型有一天会突然获得这种品味。那为什么现在还没有？",
+       "en": "It's a well written article, but I disagree with it completely.",
+       "hn": "https://news.ycombinator.com/item?id=50642355",
+       "id": 50642355,
+       "replies": 26
+      },
+      {
+       "user": "lubujackson",
+       "stance": "类比",
+       "zh": "看看国际象棋引擎：人类下不过它们，但人类仍在下棋，而且比以往更多。我们研究引擎的棋局，吸收能理解的部分，用引擎训练。AI 的用处会一直受限于人类对其输出的理解。",
+       "en": "Consider chess engines",
+       "hn": "https://news.ycombinator.com/item?id=50642893",
+       "id": 50642893,
+       "replies": 1
+      },
+      {
+       "user": "turbocon",
+       "stance": "推荐",
+       "zh": "读得很享受，我喜欢这个比喻。如果你只是来看评论的，建议去读原文。这是物理学家的视角，但和软件行业的类比显而易见。",
+       "en": "Wow that was a wonderful read.",
+       "hn": "https://news.ycombinator.com/item?id=50641509",
+       "id": 50641509,
+       "replies": 7
+      }
+     ],
+     "kicker": "科研 · AI"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50642086,
+     "title": "谷歌发布 Cogentic 产出的论文，涉及整数分解、离散对数等",
+     "title_en": "Google releases Cogentic papers on integer factorization, discrete logs and more",
+     "url": "https://github.com/google-research/google-research/tree/master/cogentic_research_papers",
+     "hn": "https://news.ycombinator.com/item?id=50642086",
+     "points": 437,
+     "comments": 325
+    },
+    {
+     "id": 50637871,
+     "title": "按 LLM 评估的重要性排名的数学开放问题榜",
+     "title_en": "Top open problems in mathematics ranked by LLM-assessed importance",
+     "url": "https://www.proofatlas.ai/open-problems/",
+     "hn": "https://news.ycombinator.com/item?id=50637871",
+     "points": 101,
+     "comments": 50
+    },
+    {
+     "id": 50638075,
+     "title": "提取 π 十六进制位的更快算法",
+     "title_en": "A faster algorithm for extracting hexadecimal digits of π",
+     "url": "https://www.stylewarning.com/posts/faster-digit-extraction/",
+     "hn": "https://news.ycombinator.com/item?id=50638075",
+     "points": 74,
+     "comments": 5
+    },
+    {
+     "id": 50644814,
+     "title": "推导 Black-Scholes 公式",
+     "title_en": "Deriving Black-Scholes",
+     "url": "https://david.alvarezrosa.com/posts/deriving-black-scholes/",
+     "hn": "https://news.ycombinator.com/item?id=50644814",
+     "points": 55,
+     "comments": 44
+    },
+    {
+     "id": 50639929,
+     "title": "噪音的工业化：自动证明是同一条老死胡同 [PDF]",
+     "title_en": "The industrialization of noise: Automated proof-solving is the same old dead end [pdf]",
+     "url": "https://arxiv.org/abs/2611.31286",
+     "hn": "https://news.ycombinator.com/item?id=50639929",
+     "points": 66,
+     "comments": 102
+    },
+    {
+     "id": 50623866,
+     "title": "依值类型的代数（2025）",
+     "title_en": "The algebra of dependent types (2025)",
+     "url": "https://dotat.at/@/2025-05-28-types.html",
+     "hn": "https://news.ycombinator.com/item?id=50623866",
+     "points": 108,
+     "comments": 16
+    },
+    {
+     "id": 50637866,
+     "title": "网络研究者确立「完美韧性」理论",
+     "title_en": "Network Researchers Nail Down Theory of 'Perfect Resilience'",
+     "url": "https://www.quantamagazine.org/network-researchers-nail-down-theory-of-perfect-resilience-20261120/",
+     "hn": "https://news.ycombinator.com/item?id=50637866",
+     "points": 17,
+     "comments": 1
+    },
+    {
+     "id": 50627079,
+     "title": "河流的形状",
+     "title_en": "The Shapes of Rivers",
+     "url": "https://dominicroye.github.io/shapes-of-rivers/",
+     "hn": "https://news.ycombinator.com/item?id=50627079",
+     "points": 136,
+     "comments": 33
+    },
+    {
+     "id": 50626430,
+     "title": "新型可重写硒化锑显示屏，断电后图像可保持数月",
+     "title_en": "New rewritable antimony selenide display shows an image for months without power",
+     "url": "https://tmos.org.au/news/new-rewritable-displays-can-show-an-image-for-months-without-power/",
+     "hn": "https://news.ycombinator.com/item?id=50626430",
+     "points": 61,
+     "comments": 39
+    },
+    {
+     "id": 50645978,
+     "title": "SpaceX 获 FCC 批准部署 100 万颗轨道数据中心卫星",
+     "title_en": "SpaceX wins FCC approval to deploy 1M orbital data center satellites",
+     "url": "https://www.cnbc.com/2026/11/25/spacex-fcc-satellite-approval.html",
+     "hn": "https://news.ycombinator.com/item?id=50645978",
+     "points": 64,
+     "comments": 114
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1709,
+    "comments": 1021,
+    "top_points": {
+     "id": 50642086,
+     "title": "谷歌发布 Cogentic 产出的论文，涉及整数分解、离散对数等",
+     "value": 437,
+     "comments": 325
+    },
+    "top_comments": {
+     "id": 50642086,
+     "title": "谷歌发布 Cogentic 产出的论文，涉及整数分解、离散对数等",
+     "value": 325
+    },
+    "top_brief": {
+     "id": 50642086,
+     "title": "谷歌发布 Cogentic 产出的论文，涉及整数分解、离散对数等",
+     "value": 437,
+     "comments": 325
+    }
+   }
+  },
+  {
+   "name": "社会 · 文化",
+   "stories": [
+    {
+     "id": 50643129,
+     "title": "钻进家得宝停车场旁的雨水池浮潜，他看到了满池生机",
+     "title_en": "A few questions for the guy who went snorkeling in a Home Depot retention pond",
+     "url": "https://www.vox.com/down-to-earth/511999/home-depot-retention-pond-snorkel-joseph-ricketts",
+     "hn": "https://news.ycombinator.com/item?id=50643129",
+     "points": 424,
+     "comments": 100,
+     "summary": [
+      "Vox 采访了佛罗里达的生物学家兼 YouTuber Joseph Ricketts：他今年秋天一个夜晚在离家三英里的家得宝（Home Depot）旁雨水滞留池里浮潜，水面上漂着旧啤酒罐，水下却有吞了猎物的水蛇、正在变青蛙的蝌蚪和在淤泥上爬行的虾。视频《Night Snorkel In a Home Depot Retention Pond》播放超过 200 万次。",
+      "Ricketts 本职是佛罗里达的鳄鱼研究生物学家，16 岁第一次浮潜就遇到海牛，从此着迷；他说浮潜门槛很低，一副面镜一根呼吸管就够，YouTube 简介写着「我几乎哪儿都能浮潜」。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "goda90",
+       "stance": "回忆",
+       "zh": "记得上学时有次去小溪实地考察，穿上防水裤取水样观察，课上还讲了哪些生物不耐污染、它们的存在说明水比较干净。现在公立学校还上这样的保护教育课吗？",
+       "en": "Do they still do this kind of conservation teaching in public schools anymore?",
+       "hn": "https://news.ycombinator.com/item?id=50644306",
+       "id": 50644306,
+       "replies": 17
+      },
+      {
+       "user": "melenaboija",
+       "stance": "感想",
+       "zh": "读着很奇妙：现代文明像是在自然之上搭了个假布景想把它盖住，但自然无处不在：下水道里的老鼠、家里的果蝇、家得宝池塘里的水生动物。我们本就是这片风景的一部分。",
+       "en": "nature is everywhere in our Western structures",
+       "hn": "https://news.ycombinator.com/item?id=50647500",
+       "id": 50647500,
+       "replies": 0
+      },
+      {
+       "user": "neuwirth",
+       "stance": "点赞",
+       "zh": "这是「佛罗里达男子」最暖心的一次登场。太棒了。",
+       "en": "The most wholesome instance of the notorious Florida man!",
+       "hn": "https://news.ycombinator.com/item?id=50643444",
+       "id": 50643444,
+       "replies": 0
+      }
+     ],
+     "kicker": "生活 · 自然"
+    },
+    {
+     "id": 50647673,
+     "title": "《纽约时报》要求摄影师别用最新版 Photoshop",
+     "title_en": "The New York Times tells photographers not to use the latest Photoshop",
+     "url": "https://www.dpreview.com/news/new-york-times-adobe-photoshop-2027-restriction-ai/",
+     "hn": "https://news.ycombinator.com/item?id=50647673",
+     "points": 144,
+     "comments": 71,
+     "summary": [
+      "HN 链接的 dpreview 页面无法读取，以下据 The Verge 同一报道：《纽约时报》两位摄影负责人在发给自由摄影师的邮件中要求，为《时报》工作时避免使用 Adobe Photoshop 2027（28.0.0 及之后版本），因为其中功能以「用户未必察觉的方式」使用 AI，可能让照片的元数据被标为 AI 生成。《时报》发言人已确认这一要求。",
+      "11 月的更新新增了「AI 辅助编辑器」视图、分步编辑助手、提示词改图、AI 放大和自动重构图等功能；Adobe 自 8 月起在各应用中支持标明 AI 生成或编辑的 C2PA 元数据。报道指出，连自动选区这类老功能也可能被算作 AI 工具，而《时报》承诺不修饰照片，只做最低限度的调色。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "jjcm",
+       "stance": "业内",
+       "zh": "我在创意工具行业工作。这是眼下最大的问题之一：终点是一张图时，几乎无法区分「完全由 AI 生成」和「用 AI 调了下颜色、抠了图」。对权威信源来说，在社交平台被打上「AI 生成」标签是信誉上的致命打击。",
+       "en": "It's nearly impossible to separate",
+       "hn": "https://news.ycombinator.com/item?id=50648319",
+       "id": 50648319,
+       "replies": 25
+      },
+      {
+       "user": "rmason",
+       "stance": "预测",
+       "zh": "我预计多数美国报纸会跟进《纽约时报》。那 Adobe 会不会出一个新闻摄影师版 Photoshop？",
+       "en": "I predict that a majority of U.S. newspapers will follow the NY Times lead.",
+       "hn": "https://news.ycombinator.com/item?id=50647702",
+       "id": 50647702,
+       "replies": 6
+      },
+      {
+       "user": "fullatron",
+       "stance": "冷静",
+       "zh": "只是一时的。一两年内所有编辑软件都会带上同样的生成式功能。新闻编辑室的问题在于，哪些编辑可以接受，并没有公认的界线。",
+       "en": "there's no agreed line on which edits are fine",
+       "hn": "https://news.ycombinator.com/item?id=50649526",
+       "id": 50649526,
+       "replies": 0
+      }
+     ],
+     "kicker": "媒体 · AI"
+    },
+    {
+     "id": 50637891,
+     "title": "六个事实讲完宏观经济史",
+     "title_en": "Macrohistory in Six Facts",
+     "url": "https://basilhalperin.com/essays/macrohistory.html",
+     "hn": "https://news.ycombinator.com/item?id=50637891",
+     "points": 162,
+     "comments": 85,
+     "summary": [
+      "经济学者 Basil Halperin 试图把宏观与宏观历史最重要的教训压缩成六个左右的事实。先是一组相关性：越富裕的国家，人们平均更满意、更长寿、婴儿死亡更少、工作时间更短、更信任邻居，但人均二氧化碳排放也更高；他承认这都是相关而非因果，但仍以人均 GDP 作为衡量标准。",
+      "他称「最重要的事实」是：我们比曾曾曾祖父母富约 10 倍，而他们又比耶稣时代的人富约 2 倍；过去人人都穷，因为生活在马尔萨斯陷阱里，工业革命前工资一涨就有更多婴儿存活，把工资又压回去。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "aarroyoc",
+       "stance": "批评",
+       "zh": "GDP 在很多方面不是好指标。经典例子：骑自行车代替开车，你花得更少、不用保养和油钱、更健康、少去医院，可你对 GDP 的贡献也更少了。",
+       "en": "GDP is not a good metric for many things.",
+       "hn": "https://news.ycombinator.com/item?id=50639982",
+       "id": 50639982,
+       "replies": 19
+      },
+      {
+       "user": "lastofthemojito",
+       "stance": "误会",
+       "zh": "「宏观历史」一般就是指「宏观经济史」吗？我本以为会看到贸易对语言的影响、战争之类各方面的观察，结果全是钱。作者是经济学教授，也就不奇怪了。",
+       "en": "Does the term \"macrohistory\" generally mean \"macroeconomic history\"?",
+       "hn": "https://news.ycombinator.com/item?id=50643166",
+       "id": 50643166,
+       "replies": 1
+      },
+      {
+       "user": "penteract",
+       "stance": "方法",
+       "zh": "「事实 6」那张把倍增时间的对数对距今时间的对数作图的图用得不好：在增长加速的世界里，图上任何一条直线都会推出奇点就在现在。",
+       "en": "is poorly used",
+       "hn": "https://news.ycombinator.com/item?id=50640776",
+       "id": 50640776,
+       "replies": 0
+      }
+     ],
+     "kicker": "经济 · 历史"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50637874,
+     "title": "Scott Aaronson：我一直在厨房里喝葡萄酒",
+     "title_en": "I've been drinking wine in my kitchen",
+     "url": "https://scottaaronson.blog/?p=10362",
+     "hn": "https://news.ycombinator.com/item?id=50637874",
+     "points": 257,
+     "comments": 246
+    },
+    {
+     "id": 50642496,
+     "title": "美国陪审团裁定华为欺诈、违反对伊朗制裁罪名成立",
+     "title_en": "U.S. jury convicts Huawei of fraud, Iran sanctions violations",
+     "url": "https://www.upi.com/Top_News/US/2026/11/25/jury-convicts-Huawei/3151795587204/",
+     "hn": "https://news.ycombinator.com/item?id=50642496",
+     "points": 153,
+     "comments": 187
+    },
+    {
+     "id": 50627726,
+     "title": "让老 Java 手机重新上网",
+     "title_en": "Getting old Java phones online again",
+     "url": "https://antcating.github.io/2026/11/23/getting-old-java-phones-online-again.html",
+     "hn": "https://news.ycombinator.com/item?id=50627726",
+     "points": 157,
+     "comments": 68
+    },
+    {
+     "id": 50613769,
+     "title": "拿不准时，就先乱试一通",
+     "title_en": "When in Doubt, Flail About",
+     "url": "https://www.seangoedecke.com/when-in-doubt-flail-about/",
+     "hn": "https://news.ycombinator.com/item?id=50613769",
+     "points": 127,
+     "comments": 57
+    },
+    {
+     "id": 50642832,
+     "title": "网页行业放弃的那一年",
+     "title_en": "The year the web industry gave up",
+     "url": "https://dbushell.com/2026/11/25/web-industry/",
+     "hn": "https://news.ycombinator.com/item?id=50642832",
+     "points": 88,
+     "comments": 71
+    },
+    {
+     "id": 50645074,
+     "title": "英国的幽灵车站",
+     "title_en": "Britain's ghost stations",
+     "url": "https://spectator.com/article/britains-ghost-stations-are-fascinating/",
+     "hn": "https://news.ycombinator.com/item?id=50645074",
+     "points": 91,
+     "comments": 18
+    },
+    {
+     "id": 50625654,
+     "title": "《木偶奇遇记》200 年：饥饿、贪婪与意大利饮食史",
+     "title_en": "Pinocchio at 200: a tale of hunger, greed and Italy's culinary history",
+     "url": "https://www.repubblica.it/en/europe/food-travel/2026/11/24/news/carlo_collodi_pinocchio_pellegrino_artusi_italian_literature-425744069/",
+     "hn": "https://news.ycombinator.com/item?id=50625654",
+     "points": 67,
+     "comments": 12
+    },
+    {
+     "id": 50636925,
+     "title": "《在这世界上：加缪书信集，1944–1959》书评",
+     "title_en": "Here in the World: Letters of Albert Camus, 1944–1959",
+     "url": "https://literaryreview.co.uk/here-in-the-world",
+     "hn": "https://news.ycombinator.com/item?id=50636925",
+     "points": 59,
+     "comments": 18
+    }
+   ],
+   "stats": {
+    "items": 11,
+    "points": 1729,
+    "comments": 933,
+    "top_points": {
+     "id": 50643129,
+     "title": "钻进家得宝停车场旁的雨水池浮潜，他看到了满池生机",
+     "value": 424,
+     "comments": 100
+    },
+    "top_comments": {
+     "id": 50637874,
+     "title": "Scott Aaronson：我一直在厨房里喝葡萄酒",
+     "value": 246
+    },
+    "top_brief": {
+     "id": 50637874,
+     "title": "Scott Aaronson：我一直在厨房里喝葡萄酒",
+     "value": 257,
+     "comments": 246
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "ex-aws-dude",
+  "id": 50647246,
+  "hn": "https://news.ycombinator.com/item?id=50647246",
+  "story_id": 50644980,
+  "story": "OpenAI 论文：多项式 Hirsch 猜想不成立",
+  "zh": "数学突破现在就像 GitHub 更新日志：多项式 Hirsch 猜想现已为假；矩阵乘法 ω 更新为 9/4。",
+  "en": "Math breakthroughs now just come as github patch notes"
+ },
+ "stats": {
+  "snapshot": "2026-11-26T08:13:00+08:00",
+  "front_page_count": 90,
+  "with_numbers": 87,
+  "flagged_or_dupe": 3,
+  "top_points": {
+   "id": 50644817,
+   "title": "1Password 披露安全事件：员工 GitHub 账号被盗，客户姓名邮箱外泄，保险库未受影响",
+   "value": 1055,
+   "comments": 456
+  },
+  "top_comments": {
+   "id": 50646108,
+   "title": "Scott Aaronson：「天哪天哪天哪」——数学问题正在被成批解决",
+   "value": 650
+  },
+  "second_comments": {
+   "id": 50637220,
+   "title": "OpenAI 论文：矩阵乘法指数 ω 恰好等于 9/4",
+   "value": 568
+  },
+  "over_500": 4,
+  "over_300": 12,
+  "over_100": 39,
+  "show_hn": 8,
+  "total_points": 13186,
+  "total_comments": 6545,
+  "hottest_ratio": {
+   "id": 50643199,
+   "title": "C++ 里 = default 和 {} 不是同一种构造函数",
+   "value": 1.59,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
