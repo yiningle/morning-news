@@ -1,0 +1,1303 @@
+{
+ "date": "2026-11-26",
+ "published_at": "2026-11-27T08:40:00+08:00",
+ "source": "https://news.ycombinator.com/front?day=2026-11-26",
+ "schema_version": 2,
+ "lead": {
+  "id": 50646108,
+  "title": "阿伦森：复杂度理论的古老难题正在被直接解开，这才是真正的量级",
+  "title_en": "Holy shit holy shit holy shit holy shit: The magnitude of what’s now happening",
+  "url": "https://scottaaronson.blog/?p=10379",
+  "hn": "https://news.ycombinator.com/item?id=50646108",
+  "points": 1971,
+  "comments": 1800,
+  "summary": [
+   "得州大学奥斯汀分校的理论计算机科学家斯科特·阿伦森（Scott Aaronson）在博客 Shtetl-Optimized 上连续用四个「HOLY SHIT」做标题，说自己先前的文章、播客和演讲都还没把「眼下正在发生的事」的量级讲够。他写的是感恩节前夜与同事朋友聚餐时，还在消化 OpenAI 与 Anthropic 对 VP ≠ VNP 的证明——紧挨着 Alpöge 与 Anthropic 的黎曼猜想证明，后者「已经像是上周的新闻」——甜点还没上桌，又看到 OpenAI 声称矩阵乘法指数 ω 恰好等于 9/4：下界与他们在 10 月 6 日「数学大崩解」（Mathocalypse）里给出的上界相匹配。",
+   "阿伦森说这里有两重冲击。第一，这个可追溯到 1960 年代末 Volker Strassen 证明 ω<3 的算法学中心谜题，现在有了正确答案，而且答案居然是一个有理数。第二、也是他觉得更大的冲击：AI 居然能证明任何形式为 ω>2 的下界——他从未指望这件事会比 P ≠ NP 容易多少。他写自己多年来一直对「ω 一定等于 2」持怀疑态度，并不是因为手里有 ω>2 的强论据，只是同样也没有 ω=2 的强论据。甜点期间又出现另一篇 OpenAI 结果：计算傅里叶变换所需线性门的真实数量是 N (log N)^(1/2+o(1))，上下界匹配；上界不仅优于 1960 年代以来的 O(N log N) 快速傅里叶变换，也优于 10 月 6 日那批论文里已经把对数指数压到略小于 1 的结果。",
+   "他拿最新的对照来说明风向变了：前不久 Yupan Liu 把预印本放到 arXiv 上，证明 QIP(2) = PSPACE，也就是两轮量子交互协议已经具有任意多项式轮次的全部能力。若在 2025 年，这会被视为当年顶尖的复杂度结果之一，而且「用了 AI」还会显得新奇；现在他得提醒自己这事发生过，使用 AI 已普通到引不起眉毛。他认为我们得到的将不是零散的一题一解，而是「一整片先前只隔着雾看见的数学真理新大陆」，并把它比作列文虎克第一次把显微镜对准池水、伽利略第一次把望远镜对准星空。这是当天点赞最高、评论也最多的帖子。"
+  ],
+  "comment_quotes": [
+   {
+    "user": "Nevermark",
+    "stance": "量级",
+    "zh": "认真说，作为人类我们在生物学上甚至没法对眼下这件事做出一丁点相称的震惊——进化史上从来没有为这种「认知交接」选出过足够的恐慌能力。多数人也无法在抽象层面想象出该有多震惊，会继续把正在发生的变化低估许多个数量级。",
+    "en": "We are all biologically incapable of freaking out at even a tiny fraction of the appropriate level",
+    "hn": "https://news.ycombinator.com/item?id=50650666",
+    "id": 50650666,
+    "replies": 292
+   },
+   {
+    "user": "utopiah",
+    "stance": "追溯",
+    "zh": "不知道其中有多少其实只靠 Lean、Mathlib 和大量算力、没有大语言模型也能发生。这场「数学大崩解」是不是已经酝酿了十年（Lean 2013、Mathlib 2017，更早的工作当然还有），现在只是因为大公司为了营销补贴算力，时机碰巧撞上了？",
+    "en": "Was this \"great Mathocalypse\" already in the making for say a decade",
+    "hn": "https://news.ycombinator.com/item?id=50647274",
+    "id": 50647274,
+    "replies": 217
+   },
+   {
+    "user": "alkonaut",
+    "stance": "降温",
+    "zh": "就数学而言这当然是大事，但对普通人呢？几乎没什么。黎曼猜想或 P≠NP 被证明，改变的是这些系统的能力，以及它们明天还可能做到什么；对不是数学家的人，生活基本不会变。如果下周机器证明的是 P=NP，那才会对普通人有实际冲击。",
+    "en": "Am I alone in thinking this is a big deal _for math_ but not much else?",
+    "hn": "https://news.ycombinator.com/item?id=50653301",
+    "id": 50653301,
+    "replies": 38
+   }
+  ],
+  "kicker": "要闻 · 数学",
+  "tag": "最高点赞 · 最多评论"
+ },
+ "side": [
+  {
+   "id": 50651117,
+   "title": "OpenAI 称 GPT-6.2 上线时计费有误：Astra 会快 40% 触顶，Sol 快 25%",
+   "title_en": "OpenAI cuts GPT-6.2 usage: Astra hits limits 40% faster, Sol 25% faster",
+   "url": "https://twitter.com/thsottiaux/status/2125784147889393806",
+   "hn": "https://news.ycombinator.com/item?id=50651117",
+   "points": 461,
+   "comments": 259,
+   "summary": [
+    "OpenAI 员工 Tibo（@thsottiaux）在 X 上写道：GPT-6.2 上线时出现计费错误，多数用户的 Astra 和 Sol 用量被错误地打了折。他们已经修好，同样的工作现在会消耗更多套餐额度。与上周相比，GPT-6.2 Astra 会快 40% 到达限额，Sol 快 25%。这条帖子是当天点赞第三、评论也很热的要闻。",
+    "评论区的感受并不只是「修了一个 bug」。有人说，限额此前被「重置经济」、网页版 ChatGPT 不计入余额，以及这次所谓的「无意抬高限额」共同撑着；也有人抱怨官方邮件含糊，以至于他们后来又发了一封澄清，说明是只对今后生效还是会追溯。同一时期还有一项改动，让聊天额度开始占用编程额度。有人已经改用 Claude Fable 5.2 Medium，并把代码修改交给 Opus 5.5 子代理，以节省配额。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "Aurornis",
+     "stance": "不满",
+     "zh": "他们又在发含糊的邮件，说限额再次下调，理由是计费错误。第一封邮件信息少到看不出是追溯处罚还是只对今后生效，后来又不得不补发澄清。与此同时，聊天额度开始占用编程额度，等于拿掉了在 Opus 5.5 已经存在的世界里，OpenAI 订阅还剩下的一大卖点。",
+     "en": "Now they’re sending us vague emails about limits being adjusted downward again, citing a billing error?",
+     "hn": "https://news.ycombinator.com/item?id=50651649",
+     "id": 50651649,
+     "replies": 66
+    },
+    {
+     "user": "at1as",
+     "stance": "判断",
+     "zh": "我们的限额一直被「重置经济」、网页版用量不计入余额，以及现在看来属于「无意」抬高的限额共同撑着，而这些都在收束。我并不认为大家已经习惯的这种代币订阅补贴会永远持续，所以更需要几家能打的前沿模型互相竞争。",
+     "en": "Our limits have been artificially propped up by a \"reset\" economy that is coming to an end",
+     "hn": "https://news.ycombinator.com/item?id=50652176",
+     "id": 50652176,
+     "replies": 38
+    },
+    {
+     "user": "simonw",
+     "stance": "对策",
+     "zh": "我昨天用 Claude Fable 5.2 Medium，并让它把所有改代码的工作交给 Opus 5.5 子代理，干了不少活，配额却没烧太多。估计同样的办法对 Astra、Sol 甚至 Luna 也有效。",
+     "en": "I got a huge amount of work done yesterday without burning too much of my quota by using Claude Fable 5.2 Medium",
+     "hn": "https://news.ycombinator.com/item?id=50651665",
+     "id": 50651665,
+     "replies": 13
+    }
+   ],
+   "kicker": "要闻 · 模型额度",
+   "tag": "点赞第三"
+  },
+  {
+   "id": 50653667,
+   "title": "Intel One Mono：专为低视力开发者设计的开源等宽字体（2023）",
+   "title_en": "Intel One Mono font (2023)",
+   "url": "https://github.com/intel/intel-one-mono",
+   "hn": "https://news.ycombinator.com/item?id=50653667",
+   "points": 449,
+   "comments": 234,
+   "summary": [
+    "Intel One Mono 是英特尔品牌团队与 Frere-Jones Type、VMLY&R 合作、面向开发者的开源等宽字体，2023 年发布，当天再次登上首页。官方介绍说，设计针对长期被排版忽视的低视力开发者，请低视力和法定盲的开发者在各阶段提供反馈，目标是提高清晰度、减轻疲劳和视疲劳，并减少编码错误。",
+    "字体覆盖 200 多种拉丁字母语言，有 Light、Regular、Medium、Bold 四种字重及配套斜体，提供 OTF/TTF 和网页用的 WOFF/WOFF2，许可为开源字体许可证。编程连字默认关闭，需打开 OpenType 样式集 ss01；另有箭头形式、抬高冒号等选项。官方建议印刷不小于 7 点、屏幕不小于 9 像素。评论区很快变成字体推荐会：有人力推 Atkinson Hyperlegible Mono，有人用上 Iosevka 就回不去「普通」等宽字体，也有人觉得字体之争多半是自行车 shed。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "bayesnet",
+     "stance": "推荐",
+     "zh": "非常推荐 Atkinson Hyperlegible Mono（以及 Next）。这是我用过最好认的字体，阿特金森易读字体家族是很出色的开源字体（源文件也公开），我觉得关注度还不够。",
+     "en": "Very strong recommendation for",
+     "hn": "https://news.ycombinator.com/item?id=50656649",
+     "id": 50656649,
+     "replies": 10
+    },
+    {
+     "user": "kleiba2",
+     "stance": "泼冷水",
+     "zh": "从八十年代起我在各种不能换字体的系统上写过代码，都没问题。对我来说，用什么字体真的无所谓，通常就是预装的那个。小写 l 和 1、O 和 0 可能看起来像，但这么多年在编辑器里写代码，这对我从来不是问题。当然别人可以为此着迷，我个人觉得多半是在刷油漆的自行车棚。",
+     "en": "I really don't care too much what font I'm using - usually the preinstalled one.",
+     "hn": "https://news.ycombinator.com/item?id=50654149",
+     "id": 50654149,
+     "replies": 58
+    },
+    {
+     "user": "rpozarickij",
+     "stance": "改信",
+     "zh": "仓库预览图里这款字体看起来不错，但发现 Iosevka 之后，我就回不去「普通」等宽字体了。先用 548 宽度就改善了读代码的舒适度，后来改到 500 宽度，既看起来「正常」又更省空间，现在是我的首选编程字体。",
+     "en": "after discovering Iosevka [0] I can't go back to \"regular\" monospaced fonts.",
+     "hn": "https://news.ycombinator.com/item?id=50654057",
+     "id": 50654057,
+     "replies": 24
+    }
+   ],
+   "kicker": "设计 · 字体"
+  },
+  {
+   "id": 50649834,
+   "title": "从 1980 年代到现在：一份被保存下来的界面规范合集",
+   "title_en": "Collection of preserved UI style guides",
+   "url": "https://aresluna.org/ui-style-guides/",
+   "hn": "https://news.ycombinator.com/item?id=50649834",
+   "points": 408,
+   "comments": 99,
+   "summary": [
+    "设计师 Marcin Wichary 在 aresluna.org 上放出一套界面规范（UI style guides / interface guidelines）合集，页面标明收录 79 份，从 1980 年代初一直到 2026 年的现行文档。他自己写道：不少 PDF 本来就在网上流转，他只是集中到一处，按主题和年代分组，并标出最重要的几份；有的要费力寻找，有几份是他亲自扫描的，还为一些微站点做了独立镜像，并做了轻度清理（像素图处理、内联图片、修好 YouTube 嵌入）。页面写着「制作时未使用生成式 AI」，献给曾参与撰写其中至少一份规范的朋友 Marcus Jordan。",
+    "目录从 Amiga 的 Intuition/Workbench、Android Material、BlackBerry，到 CDE/Motif、IBM 的 CUA、GEM/TOS、GNOME、iOS 拟物时代与扁平时代、Macintosh Lisa 和经典 Mac、Aqua、NeXTSTEP、Newton、Palm、Windows 各代，以及 Nokia Symbian、OPEN LOOK、RISC OS、webOS、Kinect、Magic Cap 等已经消失的系统。多数条目同时给出 PDF 和 Internet Archive 阅读器。页面底部提供打包下载，并致谢 Chris Silverman、Geof Crowl、Matt Sephton 等人的既有收藏。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "krstffr",
+     "stance": "意外",
+     "zh": "没想到 1991 年 Amiga 规范第一页就写：英语没有好用的第三人称中性代词，与其通篇用阳性，或一章男一章女地轮换，他们选择随机变换性别，因为这更接近真实用户。还写着：如果你因此吃了一惊——也许你需要被吓一跳。没有哪家公司负担得起，因为没意识到客户是「她」而把人推开。",
+     "en": "If you find yourself being startled by this shift - maybe you needed to be.",
+     "hn": "https://news.ycombinator.com/item?id=50653169",
+     "id": 50653169,
+     "replies": 36
+    },
+    {
+     "user": "stsch",
+     "stance": "怀旧",
+     "zh": "我非常喜欢那些老的图形界面。地方很小，颜色往往也不多，结果却是简单、好懂、好用的界面。我个人觉得设计就该简单：不要光泽、渐变和模糊阴影，颜色和形状都不要走极端。",
+     "en": "I so much enjoy the old graphical user interfaces.",
+     "hn": "https://news.ycombinator.com/item?id=50653568",
+     "id": 50653568,
+     "replies": 2
+    },
+    {
+     "user": "layer8",
+     "stance": "补遗",
+     "zh": "奇怪的是，这里缺了 Windows 7 和 Vista 的 User Experience Interaction Guidelines。微软文档站上还有在线版，也有 PDF 和更早的 Vista 版存档。",
+     "en": "Strangely missing are the Windows User Experience Interaction Guidelines for Windows 7 and Windows Vista.",
+     "hn": "https://news.ycombinator.com/item?id=50654807",
+     "id": 50654807,
+     "replies": 0
+    }
+   ],
+   "kicker": "设计 · 界面史"
+  },
+  {
+   "id": 50654289,
+   "title": "Nextcloud 推出 Office 桌面应用，由欧洲主权套件 Euro-Office 驱动",
+   "title_en": "Nextcloud Office Desktop app",
+   "url": "https://nextcloud.com/blog/euro-office-comes-to-your-desktop-with-the-nextcloud-office-desktop-app/",
+   "hn": "https://news.ycombinator.com/item?id=50654289",
+   "points": 393,
+   "comments": 201,
+   "summary": [
+    "Nextcloud 宣布，由欧洲开发与治理的协作办公套件 Euro-Office 驱动的 Nextcloud Office 桌面应用，已经可以下载使用。官方博客写，Euro-Office 的首个生产可用版本在 2026 年 6 月 9 日发布，随后随 Nextcloud Hub 26 Summer 宣布桌面应用；现在提供 Windows（x64 与 ARM64）、Linux（deb/rpm）和 Apple Silicon 的 macOS 安装包，也可在 GitHub 上获取未签名构建或自行编译，许可证为 AGPL v3。",
+    "应用可离线编辑本地文件，也可连上 Nextcloud Hub 做实时协作，并支持连接多个实例。它使用本机已安装的字体（包括企业字体和系统字体），还能给文档、表格和演示文稿加数字签名、设密码，或限制他人只能评论、填表、或只在修订模式下编辑。编辑器覆盖文稿、表格、演示和 PDF，并强调对微软 Office 格式（DOCX、XLSX、PPTX）和开放文档格式的兼容。评论区有人提醒这是有争议的 ONLYOFFICE 分支，并指出上游 10.0.0 列了 46 项安全修复，而 Euro-Office 的变更日志里乍看并不齐全；也有人试用后觉得「Excel」一侧手感很好，正在找 OpenOffice 替代品。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "nathan_phoenix",
+     "stance": "提醒",
+     "zh": "注意，这是一个有争议的 ONLYOFFICE 分支。而且由一个公司联盟来开发，听起来也不太让人放心，感觉会很官僚。",
+     "en": "Beware that this is a controversial fork of ONLYOFFICE.",
+     "hn": "https://news.ycombinator.com/item?id=50654866",
+     "id": 50654866,
+     "replies": 71
+    },
+    {
+     "user": "ModernTimes",
+     "stance": "试用",
+     "zh": "界面像是嵌了 Chromium Embedded Framework 的应用（核心是 C++）。我本来准备不喜欢它，但试了「Excel」一侧，手感和样子都很好。我一直急着离开 OpenOffice，现在一下子冒出两个选择。",
+     "en": "So I was ready to dislike it BUT I've trying out the \"Excel\" and it feels and looks superb.",
+     "hn": "https://news.ycombinator.com/item?id=50654983",
+     "id": 50654983,
+     "replies": 21
+    },
+    {
+     "user": "eriksjolund",
+     "stance": "安全",
+     "zh": "ONLYOFFICE 10.0.0（2026 年 10 月 12 日）的变更日志列了 46 项安全相关修复。乍看之下，这里的 Euro-Office DocumentServer 变更日志似乎缺了其中一部分，甚至可能全部没有。",
+     "en": "lists 46 security related fixes.",
+     "hn": "https://news.ycombinator.com/item?id=50655643",
+     "id": 50655643,
+     "replies": 1
+    }
+   ],
+   "kicker": "软件 · 开源办公"
+  },
+  {
+   "id": 50657307,
+   "title": "「AI 治愈的疾病」计数器仍是零：还没有任何 AI 发现的药获批",
+   "title_en": "Tracking Diseases Cured by AI",
+   "url": "https://diseasescuredbyai.com/",
+   "hn": "https://news.ycombinator.com/item?id=50657307",
+   "points": 299,
+   "comments": 177,
+   "summary": [
+    "网站 diseasescuredbyai.com 把一个大号的「0」放在页面正中：截至 2026 年 11 月 26 日的静态快照，对照 FDA 批文记录到 2026 年 11 月，没有一种疾病是被「AI 发现的疗法」治愈的，也没有任何 AI 发现的药物获得 FDA 或 EMA 批准。页面写着：不是「差不多一个」，也不是「如果把读片也算上就算一个」。ChatGPT 上线 1452 天，这 1452 天里这个数字一直是零；它同时列出 2025 年 AI 药物发现市场约 69.3 亿美元。",
+    "要让计数变成 1，页面设了三条同时成立的标准：靶点和分子都由 AI 选定或设计，而不是「楼里某处用过 AI」；完成 III 期并获 FDA、EMA 或同等监管机构批准；而且是治愈——消除或持久逆转疾病，而不只是把症状管理得稍好一点。读片（FDA 已授权 1614 个 AI 设备，多数是放射科）、AlphaFold 预测的蛋白质形状、仍在试验中的候选药，以及实验室里更快的筛选，都不计入。最接近的是 Insilico 的 Rentosertib（特发性肺纤维化，AI 同时选了靶点 TNIK 和分子，2026 年 9 月 9 日开始 III 期），以及 Takeda/Nimbus 的 Zasocitinib（银屑病，FDA 受理，目标日期 2027 年一季度，但页面认为这是治疗而非治愈）。页面还直接引用了 Amodei、Altman、Hassabis、盖茨关于「十年内治愈疾病」的原话，作为这个零所对照的承诺。"
+   ],
+   "comment_quotes": [
+    {
+     "user": "chrisamiller",
+     "stance": "一线",
+     "zh": "我就是干这个的。谁说 AI 没在加速科学，那是错的；谁说 AI 会治好人类所有疾病，也是错的。生物学极其复杂，给细胞内发生的事做测量非常困难，这才是主要瓶颈，不是算数据。AlphaFold 之所以成功，是因为它建立在蛋白质数据库里五十年精心采集的数据之上。AI 会帮我们筛选数据、提出新假说，但不会「解决生物学」。",
+     "en": "anyone who says that AI isn't helping to accelerate science is wrong. The folks who say that AI will cure all human disease are also wrong.",
+     "hn": "https://news.ycombinator.com/item?id=50657944",
+     "id": 50657944,
+     "replies": 45
+    },
+    {
+     "user": "jollymonATX",
+     "stance": "时间线",
+     "zh": "把过了 III 期当作标准，本身就是一条很长的路。现在这个零，很大程度上是 III 期临床试验所需要的时间，眼下本来就不太可能已经走完。从 I 期到通过 III 期要 6 到 10 年；10 年前是 2016 年，6 年前是 2020 年。如果到 2030 年还是零，那才更值得一看。",
+     "en": "The current zero read is a function of time to pass a phase 3 clinical trial",
+     "hn": "https://news.ycombinator.com/item?id=50658146",
+     "id": 50658146,
+     "replies": 1
+    },
+    {
+     "user": "matteoraso",
+     "stance": "标准",
+     "zh": "「治愈、消除或持久逆转，而不只是把症状管理得稍好一点」这个门槛太高了。控制症状其实非常重要，我不喜欢因为那不是治愈就把它一笔勾掉。",
+     "en": "This is way too high of a bar. Controlling symptoms is actually really important",
+     "hn": "https://news.ycombinator.com/item?id=50658251",
+     "id": 50658251,
+     "replies": 10
+    }
+   ],
+   "kicker": "要闻 · 医药 AI"
+  }
+ ],
+ "sections": [
+  {
+   "name": "AI",
+   "en": "Artificial Intelligence",
+   "stories": [
+    {
+     "id": 50652527,
+     "title": "有人根据对战数据推测：OpenAI 可能进入了控成本模式",
+     "title_en": "OpenAI may be in cost control mode",
+     "url": "https://micjm.com/blog/openai-is-in-cost-control-mode/",
+     "hn": "https://news.ycombinator.com/item?id=50652527",
+     "points": 242,
+     "comments": 226,
+     "summary": [
+      "博客 micjm 在 11 月 26 日的文章里写，Astra 6.2 和 Sol 6.2 发布后口碑不佳，他们自己的对战数据看起来像是在为省钱做了调参：每个任务的输出 token 和推理 token 都下降了。文章配了相对对手的花费比与 Elo 图，称 Astra 6 和 Sol 6.1 还算「正常」模型，6.2 则变成了「思考偏少」的离群点。",
+      "作者给出的显著性是：输出下降的 p 值，Sol 为 0.0055，Astra 为 0.022；推理下降的 p 值，Sol 为 0.00013，Astra 为 0.0064。结论是这两款模型相对于前代被做了成本向调优，而且幅度大到成了「思考不足」的离群点。评论里有人把它比作上世纪末的手机长途分钟数，也有人提醒 Astra 6.2 是冲着 Anthropic 上市的定时发布，模型可能还没烤熟，不宜从单一点得出过远的结论。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "alexpotato",
+       "stance": "类比",
+       "zh": "对经历过 1990 年代末、2000 年代初的人来说，token 开始有点像当年的手机长途分钟数：新技术、巨大需求、少数几家寡头、需要大量基础设施，商业模式红火大约五年，然后走向到底价竞争和包月。",
+       "en": "tokens are starting to feel a lot like long distance cell phone minutes.",
+       "hn": "https://news.ycombinator.com/item?id=50660707",
+       "id": 50660707,
+       "replies": 9
+      },
+      {
+       "user": "torginus",
+       "stance": "谨慎",
+       "zh": "我不会读得太深。Astra 6.2 是定时发布，安排来对位 Anthropic 的上市。模型可能还没烤熟。他们看起来确实在省成本，大概也牺牲了一些性能。以前也有过反响平平的发布，然后是一堆末日论和推得过远的结论。我会说这只是一个数据点。",
+       "en": "Astra 6.2 was a timed release, scheduled to go against the ANT IPO. The model might be undercooked.",
+       "hn": "https://news.ycombinator.com/item?id=50660438",
+       "id": 50660438,
+       "replies": 2
+      },
+      {
+       "user": "stillpointlab",
+       "stance": "周期",
+       "zh": "很难说这有多令人担忧。也许我们会锁进「猛长一截再细修」的循环，模型上也一样：token 用量爆发带来明显的性能提升，然后再进入回收期。",
+       "en": "Hard to say how concerning this is.",
+       "hn": "https://news.ycombinator.com/item?id=50659214",
+       "id": 50659214,
+       "replies": 69
+      }
+     ],
+     "kicker": "AI · 产品"
+    },
+    {
+     "id": 50657265,
+     "title": "作者推荐面向 AMD 显卡的精简 llama.cpp 补丁组，预填充和生成都快了约一倍",
+     "title_en": "AMD-specific fork of llama.cpp",
+     "url": "https://devnull.land/amd-specific-llama-cpp",
+     "hn": "https://news.ycombinator.com/item?id=50657265",
+     "points": 269,
+     "comments": 64,
+     "summary": [
+      "devnull.land 的一篇 11 月 26 日文章建议：如果用的是 AMD 显卡，可以试试 llama-cpp-rdna-boosts。作者把它写成一组针对锁定 commit 的 llama.cpp 的小补丁，而不是另起一个完整引擎。他批评 2026 年涌现的一批「专为特定硬件、用前沿模型从头 vibe-code、只追生成速度」的推理引擎；其中有的优化不再是针对硬件，而是改了模型「怎么想」，例如 Strata 会更愿意调用已经留在显存里的专家，哪怕按原规则本该选被放到内存或磁盘上的专家。",
+      "他自己的测试平台是经 eGPU 接到笔记本上的 AMD R9700，模型为 ukisai/Swift-1.5-Qwen3.8-27B-GGUF（Q6_K_L）并开启 MTP。数据是：预填充从约 700 token/秒到约 1300，生成从约 35 token/秒到约 55。他用官方预构建的 ROCm 容器运行，并写明补丁说明「有点不透明，全是直出的 Claudish」。评论区有人在老款 gfx906 数据中心卡上另做生态，也有人在 R9700 上改推 radiance 引擎，称预填充可达 2400 token/秒。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "rao-v",
+       "stance": "另一条线",
+       "zh": "2025 年初就有人发现，AMD 大约 2018 年的 gfx906 数据中心系列算力一般，但 HBM2 极快，200 美元能买到 32GB、带宽约 1TB/s 的卡（今天相近的卡要 3000 美元以上）。围绕这些奇怪的卡优化 llama.cpp 已经有一个小小的生态。像这种面向更现代 RDNA 的东西对我们没帮助。",
+       "en": "There has been a rich little ecosystem of folks optimizing llama.cpp for these odd cards",
+       "hn": "https://news.ycombinator.com/item?id=50657791",
+       "id": 50657791,
+       "replies": 14
+      },
+      {
+       "user": "malicz",
+       "stance": "另推",
+       "zh": "我有一张 R9700，非常推荐 radiance 引擎。单卡预填充 2400 token/秒，解码 150 token/秒。我用了一个月，扔了不少代理和编程活，可以同时跑 3 路代理，上下文 20 万，全部放在显存里。",
+       "en": "I have a r9700 card and I highly recommend the radiance engine.",
+       "hn": "https://news.ycombinator.com/item?id=50659700",
+       "id": 50659700,
+       "replies": 1
+      },
+      {
+       "user": "fiddlerwoaroof",
+       "stance": "自研",
+       "zh": "我有一张 MI100，让 Claude 把 AMD 代码激进优化，并把一些 Nvidia 内核移植到 ROCm 上，把 Qwen3.8 的性能提高了两到三倍。跑了一段时间看起来还算稳定，并且让 Claude 对照原版核对了移植内核的数值。",
+       "en": "I managed to get Claude to double or triple the performance of Qwen3.8",
+       "hn": "https://news.ycombinator.com/item?id=50658571",
+       "id": 50658571,
+       "replies": 0
+      }
+     ],
+     "kicker": "AI · 本地推理"
+    },
+    {
+     "id": 50653477,
+     "title": "谷歌将强制 AI 代理走 Workspace MCP：公开的 Gmail 接口不能发信",
+     "title_en": "Google Will Make AI Agents Use Its MCP Servers. The Gmail One Can't Send Email",
+     "url": "https://techstackups.com/articles/google-workspace-ai-agents-mcp/",
+     "hn": "https://news.ycombinator.com/item?id=50653477",
+     "points": 212,
+     "comments": 188,
+     "summary": [
+      "Tech Stackups 11 月 26 日的文章写，谷歌已于 11 月 24 日将八个 Workspace MCP 服务器正式开放，并在 API 条款里加了新附录。从 2027 年 2 月 1 日起，凡是「本身是或由 AI 代理驱动」的工具，访问 Gmail、Drive、日历等 Workspace 服务必须走这些 MCP 服务器；伪装以规避分类也被禁止，违者可能被限制访问或停账号。同时，仍直接打 REST 的代理会被按标准档配额对待，无论项目付的是哪一档。不含 AI 的备份任务、CRM 同步或确定性脚本，官方称不受影响。",
+      "公开工具清单并不完整。Gmail 能搜信、读会话、建草稿和贴标签，但不能发信、回复、转发或改已有草稿，这些能力标注为「需要合作伙伴权限、尚未普遍开放」。Drive 能建文件，却不能移动、重命名或分享。文章指出，Anthropic 的 Claude Workspace 连接器已经宣传可以发信和移动文件，恰好是公共接口所缺的能力。附录还要求 Workspace 数据只用于「正在进行、用户授权的任务」，并把由这些数据建成的向量、记忆索引和用户画像等「技术信息」的保留期限定为最多 30 天。免费标准档为每个项目、每个产品每天 5000 次 MCP 请求，而一次 Gmail 搜索会计为 10 次。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Schnitz",
+       "stance": "反弹",
+       "zh": "可悲的是这根本行不通。人们会改让代理去操作浏览器发邮件，只会更乱、更浪费。",
+       "en": "People will just have the agent operate a browser to send email and it’ll be unnecessarily messy and wasteful.",
+       "hn": "https://news.ycombinator.com/item?id=50658840",
+       "id": 50658840,
+       "replies": 24
+      },
+      {
+       "user": "perdy",
+       "stance": "质疑",
+       "zh": "他们担心请求路径上要有「人工确认」，但 MCP 已经有这个原语：elicitation 可以在工具调用中暂停、先请用户确认。发信完全可以放在这后面，把它做成仅合作伙伴可用，看起来更像商业决定，而不是安全考虑。",
+       "en": "making it partner-only seems more like a business decision than a safety concern.",
+       "hn": "https://news.ycombinator.com/item?id=50654225",
+       "id": 50654225,
+       "replies": 9
+      },
+      {
+       "user": "physicsguy",
+       "stance": "趋势",
+       "zh": "这种事到处都会发生，所以我本来就对很多人宣称的那些能力持怀疑态度。我司这几年开始把 API 改成按量计费，今年更是加码：想提取信息可以，但会非常贵；如果试图从客户端做，就会因违反条款被封号。",
+       "en": "This is going to happen everywhere",
+       "hn": "https://news.ycombinator.com/item?id=50659598",
+       "id": 50659598,
+       "replies": 0
+      }
+     ],
+     "kicker": "AI · 平台"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50652184,
+     "title": "Moat：以会员制批发价替代 OpenRouter，号称无用量上限",
+     "title_en": "Moat: OpenRouter replacement",
+     "url": "https://commandcode.ai/moat",
+     "hn": "https://news.ycombinator.com/item?id=50652184",
+     "points": 244,
+     "comments": 136
+    },
+    {
+     "id": 50648365,
+     "title": "裸机 Qwen：约 2.4 万字节汇编写成的可启动系统，不用 Linux 也不用 libc",
+     "title_en": "Bare Metal Qwen",
+     "url": "https://github.com/alesha-pro/llm.asm/tree/main/02-baremetal-os",
+     "hn": "https://news.ycombinator.com/item?id=50648365",
+     "points": 228,
+     "comments": 55
+    },
+    {
+     "id": 50660180,
+     "title": "AI 让自建服务又变得有意思了",
+     "title_en": "AI made self-hosting fun again",
+     "url": "https://janlukas.blog/posts/ai-self-hosting",
+     "hn": "https://news.ycombinator.com/item?id=50660180",
+     "points": 205,
+     "comments": 113
+    },
+    {
+     "id": 50645541,
+     "title": "多代理编程就是未来",
+     "title_en": "Multiagent coding is the future",
+     "url": "https://www.kalzumeus.com/2026/11/25/multiagent-coding-is-the-future/",
+     "hn": "https://news.ycombinator.com/item?id=50645541",
+     "points": 77,
+     "comments": 83
+    },
+    {
+     "id": 50621638,
+     "title": "在「监控」相关文档上训练，会导致思维链被故意写得含糊",
+     "title_en": "Training on Documents About Monitoring Leads to Cot Obfuscation",
+     "url": "https://arxiv.org/abs/2605.15257",
+     "hn": "https://news.ycombinator.com/item?id=50621638",
+     "points": 30,
+     "comments": 3
+    },
+    {
+     "id": 50655798,
+     "title": "有测试者怀疑经 Opus 5.5 Extra 通道用到了 Opus 5.6",
+     "title_en": "Testers think they're hitting Claude Opus 5.6 through an Opus 5.5 Extra route",
+     "url": "https://www.testingcatalog.com/testers-share-early-results-possible-claude-opus-5-6/",
+     "hn": "https://news.ycombinator.com/item?id=50655798",
+     "points": 29,
+     "comments": 2
+    },
+    {
+     "id": 50657724,
+     "title": "Z.ai 澄清 GLM-5.5 并未延期，仍定 12 月发布",
+     "title_en": "Z.ai clarifies GLM-5.5 has not been delayed, scheduled for December launch",
+     "url": "https://reddit.com/r/LocalLLaMA/comments/1y6260i/zai_clarifies_glm55_has_not_been_delayed/",
+     "hn": "https://news.ycombinator.com/item?id=50657724",
+     "points": 23,
+     "comments": 2
+    },
+    {
+     "id": 50651552,
+     "title": "有人说 Claude 在研究工作的每个阶段都试图搞破坏",
+     "title_en": "Claude tries to sabotage research work at every stage",
+     "url": "https://twitter.com/skirano/status/2125371115979641188",
+     "hn": "https://news.ycombinator.com/item?id=50651552",
+     "points": 40,
+     "comments": 13
+    },
+    {
+     "id": 50658093,
+     "title": "Notion 官方 MCP 被指往代理上下文里塞进隐藏推销指令",
+     "title_en": "Notion's official MCP inject hidden upsell instructions into agent context",
+     "url": "https://www.reddit.com/r/ClaudeCode/comments/1y4qm5o/heads_up_if_you_wire_notions_official_mcp_into/",
+     "hn": "https://news.ycombinator.com/item?id=50658093",
+     "points": 42,
+     "comments": 15
+    },
+    {
+     "id": 50658910,
+     "title": "四家美国公司里被引次数最高的 AI 科学家比较",
+     "title_en": "Top-cited AI scientists at four US companies compared",
+     "url": "https://topcitedscientists.com/figures/ai-at-four-us-companies/",
+     "hn": "https://news.ycombinator.com/item?id=50658910",
+     "points": 25,
+     "comments": 11
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1666,
+    "comments": 911,
+    "top_points": {
+     "id": 50657265,
+     "title": "作者推荐面向 AMD 显卡的精简 llama.cpp 补丁组，预填充和生成都快了约一倍",
+     "value": 269,
+     "comments": 64
+    },
+    "top_comments": {
+     "id": 50652527,
+     "title": "有人根据对战数据推测：OpenAI 可能进入了控成本模式",
+     "value": 226
+    },
+    "top_brief": {
+     "id": 50652184,
+     "title": "Moat：以会员制批发价替代 OpenRouter，号称无用量上限",
+     "value": 244,
+     "comments": 136
+    }
+   }
+  },
+  {
+   "name": "开发",
+   "en": "Software",
+   "stories": [
+    {
+     "id": 50650892,
+     "title": "minipg：把 PostgreSQL 收成一个可执行文件，一个 .pgdb 就是数据库",
+     "title_en": "Minipg: PostgreSQL as a Single Executable",
+     "url": "https://progrium.github.io/minipg/",
+     "hn": "https://news.ycombinator.com/item?id=50650892",
+     "points": 288,
+     "comments": 44,
+     "summary": [
+      "Jeff Lindsay 发布了 minipg：把 PostgreSQL 做成单一可执行文件，不必再单独配置服务器。一个 .pgdb 目录就是数据库，里面放数据、配置、凭证和 Postgres 版本；运行 minipg app.pgdb 会打开对该库的 psql，需要时自动启动服务器，空闲后自行停止。它嵌入 Docker Hub 上的 postgres:18-alpine 镜像，并用作为 Zig 库来用的 h9 运行：h9 的 Linux 个性在宿主机的虚拟机监控上直接跑 Alpine 自带的 Postgres 二进制，由 h9 的 Plan 9 内核应答系统调用，不必启动 Linux 内核，也不需要虚拟机镜像或 Docker。",
+      "支持 Linux x86_64（有 KVM 或无 KVM 时用 h9 原身后端）、Linux arm64（KVM）、Apple Silicon 上的 macOS（Hypervisor.framework），以及浏览器演示（h9 的 web 宿主、v86）。CI 里 Linux 二进制是静态的，不需要特权或设备。作者明确警告：项目仍早，h9 的 Linux 个性也还年轻；在 h9 原身后端上，单客户端大约比原生慢一倍，负载下更慢，「先别把不能重建的数据托付给它」。作者在评论里解释，它更接近「命令行友好的 SQL 数据库」，而不是作为嵌入式库的 SQLite；PGlite 只有单连接模式，已有应用若在事务中再发查询就会死锁，因此不能当通用的即插即用替代。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "progrium",
+       "stance": "定位",
+       "zh": "先分清对 SQLite 的两种看法。评论里多半把它当成库、一个嵌入式 SQL 引擎；另一种是把它当成命令行友好的 SQL 数据库。minipg 更接近后者。PGlite 很出色，也更贴近我最初的动机，但它只有单连接模式，已有应用若在一个事务里再发查询就会死锁，因此不能当通用的即插即用替代。",
+       "en": "Minipg is more about the latter use.",
+       "hn": "https://news.ycombinator.com/item?id=50657843",
+       "id": 50657843,
+       "replies": 1
+      },
+      {
+       "user": "nomercy400",
+       "stance": "原理",
+       "zh": "令人印象深刻。它用了 Postgres Alpine 的 Docker 镜像，却不用 Docker，而是用 h9 这个还年轻的嵌入式虚拟机监控工具。",
+       "en": "Uses postgres alpine's docker image, without docker.",
+       "hn": "https://news.ycombinator.com/item?id=50652064",
+       "id": 50652064,
+       "replies": 0
+      },
+      {
+       "user": "WanderZil",
+       "stance": "体验",
+       "zh": "不错的是：一条命令会在需要时启动共享的后台服务器，空闲一分钟后关掉。",
+       "en": "Nice that a command starts a shared background server if needed",
+       "hn": "https://news.ycombinator.com/item?id=50654756",
+       "id": 50654756,
+       "replies": 0
+      }
+     ],
+     "kicker": "开发 · 数据库"
+    },
+    {
+     "id": 50651719,
+     "title": "《Lions 的 Unix 注释》为何被偷偷复印了二十年",
+     "title_en": "Lions' Commentary on Unix: Why It Was Secretly Copied for 20 Years",
+     "url": "https://fosscomics.com/posts/17.%20Lions%27%20Commentary%20on%20Unix/",
+     "hn": "https://news.ycombinator.com/item?id=50651719",
+     "points": 271,
+     "comments": 62,
+     "summary": [
+      "Joone Hur 在 fosscomics.com 上用漫画形式重讲了 John Lions《Lions' Commentary on UNIX 6th Edition, with Source Code》的流传史。1977 年，这份带源码的 Unix 第六版注释开始在拥有 Unix 许可证的学校和研究机构之间流传，贝尔实验室后来也要了拷贝并接手分发。早期课堂上还可以讲 Unix 源码；但 1979 年 6 月的 USENIX 上，AT&T 宣布了新的第七版许可条款，限制披露或讨论源码的课程，这本书的分发也收紧了。",
+      "在 1996 年正式出版之前的大约二十年里，计算机系学生靠未经授权的复印件学习，一代人借它学会自己做操作系统。Peter H. Salus、Dennis Ritchie 和 Berny Goodheart 等人一直向 AT&T、Novell 和 SCO 争取出版许可，最终由 Peer-to-Peer Communications 在 1996 年出版正式版。漫画里还引用 Ritchie 与 Thompson 的反应：书终于上市了，而且有我写的前言；人们偷偷复印了二十年？难以置信。评论区有人说，自己那本从西电买来的授权原件，后来被借去作为 USL 诉 BSDI 案的证据，用来削弱关于商业秘密和未经版权声明即出版的主张。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "CalChris",
+       "stance": "史料",
+       "zh": "《Lions 注释》在 USL 诉 BSDI 案里被当作证据，用来削弱 USL 关于商业秘密被盗、以及未经版权声明即不受限出版的主张。那是我从西电买来的授权原件，技术上是西电 Unix 源码许可证的一部分。我把书借给 Sam Leffler 用于诉讼，它被呈堂，两三年后我才拿回来。",
+       "en": "Lions Commentary was used as evidence in the USL vs BSDI lawsuit",
+       "hn": "https://news.ycombinator.com/item?id=50657455",
+       "id": 50657455,
+       "replies": 1
+      },
+      {
+       "user": "hidroto",
+       "stance": "对照",
+       "zh": "这让我想起《The Real Book》。爵士乐手也曾经靠私下流传的非法曲谱集学习，正式出版是后来的事。",
+       "en": "This story reminds me of \"The Real Book\".",
+       "hn": "https://news.ycombinator.com/item?id=50652798",
+       "id": 50652798,
+       "replies": 5
+      },
+      {
+       "user": "pjmlp",
+       "stance": "影响",
+       "zh": "很多人忘了，正是《Lions 的 Unix 注释》，以及后来 Tanenbaum 写 Minix 的书，让 Unix 和 C 一起赢过了大学必须付大价钱的那些替代品。如果 Unix 从一开始就是商业产品，两者的历史都会很不一样。",
+       "en": "are the reason UNIX alongside C, won over the big bucks alternatives universities had to pay for.",
+       "hn": "https://news.ycombinator.com/item?id=50653328",
+       "id": 50653328,
+       "replies": 12
+      }
+     ],
+     "kicker": "开发 · 计算机史"
+    },
+    {
+     "id": 50657530,
+     "title": "YouTube Ad Punisher：广告一出就刷新页面，并回到原来的播放位置",
+     "title_en": "YouTube Ad Punisher – Auto-reloads YouTube pages when an ad plays",
+     "url": "https://github.com/antonpictures/youtube-punisher",
+     "hn": "https://news.ycombinator.com/item?id=50657530",
+     "points": 230,
+     "comments": 308,
+     "summary": [
+      "GitHub 上的开源 Chrome 扩展 YouTube Ad Punisher（MIT 许可，Manifest V3）做的事情很直接：侦测到 YouTube 广告后，记下当前播放时间戳，刷新页面，再自动跳回原处。作者写道，传统广告拦截容易被 YouTube 的反广告拦截提示挡住，跳过按钮也要等几秒；他的办法是「刷新页面，通常一两次广告就没了」。如果连续三次刷新仍清不掉广告，就退到无广告镜像 yout-ube.com，并带上 &loop=0 以免镜像默认循环播放。",
+      "扩展还加入了「自动逃脱」：三次刷新后自动切到辅助标签页约 4 秒再切回来——作者说这是一位叫 George 的用户发现的，因为 Chrome 会节流后台标签，广告状态容易落定。这是当天评论数第二高的帖子，也是点赞不少于 100 的帖子里评论/点赞比最高的。评论区迅速分成两派：有人认为为了避开广告而做这么多手脚很可观，YouTube Premium 值得买；也有人说自己在多数网站用拦截器，但在 YouTube 上已经缴械，因为觉得创作者分成还过得去，而且 Premium 附带后台播放和 YouTube Music。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "Grombobulous",
+       "stance": "反对",
+       "zh": "人们为了避开自己一看就是好几个小时的内容上的广告，肯花这么大力气，真是奇妙。YouTube 是全球第一的流媒体视频服务，比迪士尼、HBO、Netflix 都大。YouTube Premium 完全值那个价，还有学生档和更便宜的轻量档。如果你看得够多、已经被广告烦到，一个月 9 美元真的太多吗？",
+       "en": "The amount of effort people will go to avoid paying for content they spend hours watching is fascinating.",
+       "hn": "https://news.ycombinator.com/item?id=50658916",
+       "id": 50658916,
+       "replies": 100
+      },
+      {
+       "user": "jonplackett",
+       "stance": "缴械",
+       "zh": "多数地方我都支持广告拦截，但在 YouTube 上我彻底投降了。原因是：它给创作者的分成看起来还过得去；能用官方应用做后台播放和下载很有用；而且好像还送 YouTube Music，我因此退了 Spotify。我知道自己让步了，也接受这一点。",
+       "en": "I’m all for ad blockers in most places but I have completely caved in on YouTube.",
+       "hn": "https://news.ycombinator.com/item?id=50658552",
+       "id": 50658552,
+       "replies": 17
+      },
+      {
+       "user": "Alifatisk",
+       "stance": "另一边",
+       "zh": "「YouTube 大约每 60 秒就播一条广告，看不完一分钟就会被打断」——如果属实，那也太夸张了。我之所以没感觉到，是因为我在 Zen（Firefox）上用了 uBlock Origin 和 SponsorBlock。",
+       "en": "If this is true, then that's insane. I am unaware of this because I use uBlock Origin + Sponsorblock",
+       "hn": "https://news.ycombinator.com/item?id=50657728",
+       "id": 50657728,
+       "replies": 10
+      }
+     ],
+     "kicker": "开发 · 广告",
+     "tag": "评论热度最高比"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50658191,
+     "title": "Show HN: Fuck_data_brokers.py，一键向数据经纪商发删除请求",
+     "title_en": "Show HN: Fuck_data_brokers.py",
+     "url": "https://github.com/gary23w/f-ck_data_brokers",
+     "hn": "https://news.ycombinator.com/item?id=50658191",
+     "points": 206,
+     "comments": 42
+    },
+    {
+     "id": 50656036,
+     "title": "Show HN: 一个浏览器标签里跑三台 Linux 虚拟机，各开一个不同浏览器",
+     "title_en": "Show HN: Three Linux VMs in a browser tab, each running a different browser",
+     "url": "https://michidk.github.io/sidebyside/",
+     "hn": "https://news.ycombinator.com/item?id=50656036",
+     "points": 110,
+     "comments": 26
+    },
+    {
+     "id": 50658632,
+     "title": "Rvoip 0.5：用 Rust 写的完整 VoIP 协议栈",
+     "title_en": "Rvoip 0.5 the complete VoIP stack in Rust",
+     "url": "https://github.com/eisenzopf/rvoip",
+     "hn": "https://news.ycombinator.com/item?id=50658632",
+     "points": 65,
+     "comments": 14
+    },
+    {
+     "id": 50651430,
+     "title": "NormalScript：一门「完全正常」的脚本语言",
+     "title_en": "NormalScript: A perfectly normal scripting language",
+     "url": "https://psychoscript.com/",
+     "hn": "https://news.ycombinator.com/item?id=50651430",
+     "points": 72,
+     "comments": 14
+    },
+    {
+     "id": 50651099,
+     "title": "Show HN: Olumino，把 Markdown 笔记和间隔重复放在一起",
+     "title_en": "Show HN: Olumino, a Markdown notes and spaced repetition app",
+     "url": "https://olumino.app",
+     "hn": "https://news.ycombinator.com/item?id=50651099",
+     "points": 62,
+     "comments": 34
+    },
+    {
+     "id": 50657070,
+     "title": "Show HN: SimDrop——在 macOS Finder 侧边栏里跑 iOS 模拟器",
+     "title_en": "Show HN: SimDrop – Running iOS simulators in the macOS Finder sidebar",
+     "url": "https://github.com/rxliuli/sim-drop",
+     "hn": "https://news.ycombinator.com/item?id=50657070",
+     "points": 36,
+     "comments": 8
+    },
+    {
+     "id": 50655868,
+     "title": "Show HN: 花四年写了一整本 Vim 手册",
+     "title_en": "Show HN: I wrote an entire Vim manual over 4 years",
+     "url": "http://themouseless.dev/vim/",
+     "hn": "https://news.ycombinator.com/item?id=50655868",
+     "points": 36,
+     "comments": 12
+    },
+    {
+     "id": 50649926,
+     "title": "Mozilla 将于 12 月 8 日起强制启用圆角 Nova 界面，且不能改回",
+     "title_en": "Mozilla makes the rounded Nova UI mandatory from Dec 8, and can't be reverted",
+     "url": "https://connect.mozilla.org/t5/discussions/firefox-s-new-design-your-feedback-and-what-s-changing-in/m-p/147462/highlight/true#M61083",
+     "hn": "https://news.ycombinator.com/item?id=50649926",
+     "points": 34,
+     "comments": 10
+    },
+    {
+     "id": 50657645,
+     "title": "「RansomwareHelp」公司 CTO 因电汇欺诈被起诉：被指先向攻击者买解密密钥再加价卖给受害者",
+     "title_en": "CTO of 'RansomwareHelp' Indicted for Wire Fraud",
+     "url": "https://krebsonsecurity.com/2026/11/cto-of-ransomwarehelp-indicted-for-wire-fraud/",
+     "hn": "https://news.ycombinator.com/item?id=50657645",
+     "points": 190,
+     "comments": 85
+    },
+    {
+     "id": 50656686,
+     "title": "1984 Hosting 因安全事件下线",
+     "title_en": "1984 Hosting is down due to a security incident",
+     "url": "https://status.1984.is/status/public",
+     "hn": "https://news.ycombinator.com/item?id=50656686",
+     "points": 26,
+     "comments": 6
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1626,
+    "comments": 665,
+    "top_points": {
+     "id": 50650892,
+     "title": "minipg：把 PostgreSQL 收成一个可执行文件，一个 .pgdb 就是数据库",
+     "value": 288,
+     "comments": 44
+    },
+    "top_comments": {
+     "id": 50657530,
+     "title": "YouTube Ad Punisher：广告一出就刷新页面，并回到原来的播放位置",
+     "value": 308
+    },
+    "top_brief": {
+     "id": 50658191,
+     "title": "Show HN: Fuck_data_brokers.py，一键向数据经纪商发删除请求",
+     "value": 206,
+     "comments": 42
+    }
+   }
+  },
+  {
+   "name": "科学",
+   "en": "Science",
+   "stories": [
+    {
+     "id": 50647158,
+     "title": "「禁食 72 小时重置免疫系统」来自 2014 年南加大研究，文章提醒别把标题当成结论",
+     "title_en": "72-hour fasting can reset your immune system, USC study shows",
+     "url": "https://scienceinhand.com/72-hour-fasting-can-reset-your-entire-immune-system-usc-study-shows/",
+     "hn": "https://news.ycombinator.com/item?id=50647158",
+     "points": 273,
+     "comments": 212,
+     "summary": [
+      "一篇 11 月 25 日发表在 scienceinhand.com 上的文章，拆解了当天热传的标题「南加大研究显示，禁食 72 小时可以重置整个免疫系统」。它所依据的，是 2014 年 6 月 5 日发表在《Cell Stem Cell》上、由南加大团队主导的研究：主要在小鼠身上观察长时间禁食与重新进食对造血干细胞的影响，并附有接受化疗的癌症患者的初步观察。文章明确写道：这项研究并没有证明，健康的人单做一次 72 小时禁食就能重置整个免疫系统。",
+      "小鼠实验看的是反复的「禁食—再进食」周期，包括暴露于化疗的动物。作者报告禁食降低了循环 IGF-1 以及蛋白激酶 A（PKA）相关通路的活性，并与实验条件下干细胞行为和造血系统恢复有关；重新进食是周期的一部分，补血细胞的恢复发生在食物重新引入之后。论文中的人体部分是在铂类化疗前后禁食的 I 期初步血液学观察；2016 年《BMC Cancer》上另有一份 20 名参与者的可行性报告，并排除了糖尿病、低体重指数或近期明显减重的患者。评论区有人直接指出这是 2014 年的研究，也有人分享自己禁食后关节痛消失或炎症减轻的经历，同时提醒再进食如果操作不当可能有危险。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "aaronbrethorst",
+       "stance": "溯源",
+       "zh": "这项研究的底本是 2014 年的。南加大当年也发过一篇不那么标题党的介绍，讲的是禁食触发干细胞再生、修复受损的旧免疫系统。",
+       "en": "the underlying study is from 2014.",
+       "hn": "https://news.ycombinator.com/item?id=50648430",
+       "id": 50648430,
+       "replies": 1
+      },
+      {
+       "user": "hexapus",
+       "stance": "亲历",
+       "zh": "我做过两次超过 30 天的禁食。没有听到免疫系统「咔哒」一声重置，但体重掉了，慢性疼痛和炎症减了，精力和活动能力好了，胰岛素抵抗也明显改善。我不是医生，动手前一定要跟自己的医生谈，并做大量功课。72 小时大概还好；30 天就很极端。再进食本身是一门学问，做错了真的可能致命。",
+       "en": "I didn't hear a \"click\" as my immune system reset or anything",
+       "hn": "https://news.ycombinator.com/item?id=50650220",
+       "id": 50650220,
+       "replies": 18
+      },
+      {
+       "user": "MassPikeMike",
+       "stance": "背景",
+       "zh": "我是癌症幸存者。就我读到的而言，「细胞凋亡、清理有问题的细胞要在禁食 72 小时后才启动」并不是新说法。癌症研究者 Valter Longo 建议高风险或康复者每月做一次 72 小时清水禁食。他的书《The Longevity Diet》我可以有保留地推荐。",
+       "en": "it is not at all a new claim",
+       "hn": "https://news.ycombinator.com/item?id=50650151",
+       "id": 50650151,
+       "replies": 2
+      }
+     ],
+     "kicker": "科学 · 生理"
+    },
+    {
+     "id": 50655278,
+     "title": "45°C 进液温度让冷水机组变得多余，多数人还没意识到",
+     "title_en": "45°C inlets just killed the chiller. Most people haven't noticed yet",
+     "url": "https://www.theregister.com/hpc/2026/11/26/45c-inlets-just-killed-the-chiller-most-people-havent-noticed-yet/5311831",
+     "hn": "https://news.ycombinator.com/item?id=50655278",
+     "points": 244,
+     "comments": 125,
+     "summary": [
+      "The Register 的 Dan Olds 从芝加哥超算展 SC26 写回：会场更像一场管道设备展，冷却比去年圣路易斯的 SC25 还要占主导。真正的新闻是英伟达今年早些时候公布的数字：液冷进液温度 45°C（113°F）。多数液冷系统一直活在芯片能忍受的 30–35°C 区间；跳到 45°C 之后，许多现在还必须上冷水机组（chiller）的数据中心，将可能不再需要它们。",
+      "文章解释，屋顶干冷器几乎可以把任何进液温度降到 45°C 以下；全球很少有环境温度接近 113°F 的地方，极热时段还可以给网面淋水做绝热辅助。于是新机房变成两个闭式回路：一圈从服务器取热，另一圈把热水送到屋顶冷却再送回来，中间不再需要那些耗电、昂贵、维护繁重的「屋顶大冰箱」。文章援引厂商模型和已发表估算称，与传统冷水机组加冷却塔相比，冷却能耗可降约 50% 到 70%，相当于整座数据中心功耗下降约 10% 到 20%；耗水在多数气候下可降 80% 到 95%。有冷却厂商称，进液温度每升高 1°C，初步测试显示冷却电费降 3% 到 4%。作者也写：把已有机房改到这个设定点仍要做工程核验，而且其他芯片厂商是否跟进英伟达这个数字，展会上没人愿意公开说。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "viktorcode",
+       "stance": "质疑",
+       "zh": "就我所知，反对数据中心的主要意见是电费分摊和税收优惠，换来的工作岗位却很少。作者把这些也归到「歇斯底里」里了吗？而且有技术不等于隔壁那座数据中心就会用。比方说，很多地方可以跑闭式水循环，但因为更便宜，它们宁可不这么做。",
+       "en": "the existence of technologies does not mean the data center next door will use them.",
+       "hn": "https://news.ycombinator.com/item?id=50658551",
+       "id": 50658551,
+       "replies": 8
+      },
+      {
+       "user": "helsinkiandrew",
+       "stance": "寿命",
+       "zh": "从 30–35 度升到 45 度，不知道会不会影响元件寿命。",
+       "en": "I wonder if moving from 30-35 to 45 degrees has an impact on component lifespan",
+       "hn": "https://news.ycombinator.com/item?id=50656268",
+       "id": 50656268,
+       "replies": 21
+      },
+      {
+       "user": "__MatrixMan__",
+       "stance": "废热",
+       "zh": "这温度刚好够洗热水澡。要是能看到更多区域供热、供冷就好了。",
+       "en": "That's conveniently hot enough for a hot shower.",
+       "hn": "https://news.ycombinator.com/item?id=50656205",
+       "id": 50656205,
+       "replies": 25
+      }
+     ],
+     "kicker": "科学 · 基础设施"
+    },
+    {
+     "id": 50651627,
+     "title": "谷歌研究：无条件的亚指数整数分解，并完成 Lean 形式化",
+     "title_en": "Unconditional Integer Factorization in Subexponential Time",
+     "url": "https://github.com/google-research/google-research/tree/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/integer_factorization",
+     "hn": "https://news.ycombinator.com/item?id=50651627",
+     "points": 138,
+     "comments": 21,
+     "summary": [
+      "Google Research 目录里的一篇论文给出一个无条件、零错误的 Las Vegas 算法：在一台固定的、统一的经典多带图灵机上，对每个大于等于 2 的整数给出完整素因数分解，在一次性公平抛币上以概率 1 停机，最坏情况期望时间为 L_N[1/3, 105]，最坏情况确定性工作空间为 L_N[1/3, 40]。输出中的每个素因数都用 Agrawal–Kayal–Saxena 素性检测，并与 N 直接相乘核验，常数可有效计算，不依赖未证明的数论假设。",
+      "README 写，整篇证明已用只依赖 Mathlib 的 Lean 4（v4.35.0）完成形式化，将在配套投稿中发布。论文与形式化「全部由 Cogentic 得到」（预印本 arXiv:2609.40324），基底模型是 Gemini 4，除了最初「请给出完整证明并形式化」的提示外没有人工介入。Cogentic 工具由谷歌研究院与 Google DeepMind 的 Yang Cai、Vineet Gupta 等人构建。评论区有人马上问这是否威胁 RSA：帖子里转述的说明是，密码学家在定 RSA 密钥长度时，已经假设对手能在 L_N[1/3, 1.923] 时间内分解；这个定理只是去掉了「存在抵抗 L_N[1/3] 算法的最坏实例」这种理论上的可能，并不立刻打破现有公钥体系。也有人指出，一般数域筛法早就在 L[1/3] 量级上工作了。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "mentalgear",
+       "stance": "密码",
+       "zh": "对 RSA 没有立即威胁。尽管标题里的指数是 1/3，这并不会打破 RSA 或危及现有的公钥基础设施。讽刺的是，证明分解无条件属于 L_N[1/3, O(1)]，反而加固了既有的密码学建模：定密钥长度时本来就假设对手能在 L_N[1/3, 1.923] 时间内分解。",
+       "en": "No Immediate Threat to RSA",
+       "hn": "https://news.ycombinator.com/item?id=50653020",
+       "id": 50653020,
+       "replies": 8
+      },
+      {
+       "user": "NooneAtAll5",
+       "stance": "疑问",
+       "zh": "我不懂有什么好激动的。一般数域筛法不早就在 L[1/3] 量级上做分解，而且已经用了几十年了吗？",
+       "en": "hasn't L[1/3] factoring already been a thing for decades with general number sieve?",
+       "hn": "https://news.ycombinator.com/item?id=50654263",
+       "id": 50654263,
+       "replies": 1
+      },
+      {
+       "user": "jrm4",
+       "stance": "教学",
+       "zh": "我在测验里会问：下列哪一种能比暴力快上几个数量级地分解一个大合数，标准答案是「以上都没有，这东西不存在」。各位觉得这道题怎么样？现在还成立吗？我的直觉是：还成立。",
+       "en": "Which of the following can factor a large composite number orders of magnitude faster than brute forcing",
+       "hn": "https://news.ycombinator.com/item?id=50658205",
+       "id": 50658205,
+       "replies": 0
+      }
+     ],
+     "kicker": "科学 · 算法"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50626466,
+     "title": "VP ≠ VNP 到底意味着什么（三分钟版）",
+     "title_en": "What VP ≠ VNP Means (In 3 Minutes)",
+     "url": "https://www.friedgil.com/vpvnp",
+     "hn": "https://news.ycombinator.com/item?id=50626466",
+     "points": 215,
+     "comments": 77
+    },
+    {
+     "id": 50651863,
+     "title": "从零锥出发，给引力做代数量子化",
+     "title_en": "An algebraic quantization of gravity from the null cone",
+     "url": "https://arxiv.org/abs/2611.34924",
+     "hn": "https://news.ycombinator.com/item?id=50651863",
+     "points": 200,
+     "comments": 68
+    },
+    {
+     "id": 50657059,
+     "title": "NP_R ≠ PAR_R：实数上的永久式没有短证明",
+     "title_en": "NP_R ≠ PAR_R",
+     "url": "https://github.com/samueleverett01/bss-permanent-separations",
+     "hn": "https://news.ycombinator.com/item?id=50657059",
+     "points": 122,
+     "comments": 153
+    },
+    {
+     "id": 50619466,
+     "title": "垃圾堆里发现诅咒仪式，埃及学家感到意外",
+     "title_en": "Discovery of curse ritual in trash dump surprises Egyptologist",
+     "url": "https://phys.org/news/2026-11-discovery-curse-ritual-trash-dump.html",
+     "hn": "https://news.ycombinator.com/item?id=50619466",
+     "points": 90,
+     "comments": 51
+    },
+    {
+     "id": 50652370,
+     "title": "镜像生命很危险，监管必须在它成为现实之前行动",
+     "title_en": "Mirror life is dangerous. Regulators must act before it becomes real",
+     "url": "https://www.economist.com/leaders/2026/10/01/mirror-life-is-dangerous-regulators-must-act-before-it-becomes-real",
+     "hn": "https://news.ycombinator.com/item?id=50652370",
+     "points": 59,
+     "comments": 81
+    },
+    {
+     "id": 50657936,
+     "title": "George Whitesides，1939–2026",
+     "title_en": "George Whitesides, 1939-2026",
+     "url": "https://www.science.org/content/blog-post/george-whitesides-1939-2026",
+     "hn": "https://news.ycombinator.com/item?id=50657936",
+     "points": 51,
+     "comments": 6
+    },
+    {
+     "id": 50636931,
+     "title": "好奇心不是独角戏",
+     "title_en": "Curiosity Is No Solo Act",
+     "url": "https://thereader.mitpress.mit.edu/curiosity-is-no-solo-act/",
+     "hn": "https://news.ycombinator.com/item?id=50636931",
+     "points": 121,
+     "comments": 29
+    },
+    {
+     "id": 50620991,
+     "title": "港科大 3D 打印出会在应变下持续硬化的钛合金",
+     "title_en": "Hkust 3D Prints a Titanium Alloy That Keeps Hardening",
+     "url": "https://3dprinting.com/news/hkust-researchers-3d-print-a-titanium-alloy-that-keeps-hardening-under-strain/",
+     "hn": "https://news.ycombinator.com/item?id=50620991",
+     "points": 50,
+     "comments": 15
+    },
+    {
+     "id": 50616473,
+     "title": "「机缘巧合」的麻烦：科学发现并不按你想的那样发生",
+     "title_en": "The trouble with serendipity: Scientific discoveries don't happen how you think",
+     "url": "https://www.worksinprogress.news/p/the-trouble-with-serendipity",
+     "hn": "https://news.ycombinator.com/item?id=50616473",
+     "points": 53,
+     "comments": 17
+    },
+    {
+     "id": 50642977,
+     "title": "充电只充到百分之八十",
+     "title_en": "Limiting Charging to 80 Percent",
+     "url": "https://www.jefftk.com/p/limiting-charging-to-80",
+     "hn": "https://news.ycombinator.com/item?id=50642977",
+     "points": 44,
+     "comments": 60
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 1660,
+    "comments": 915,
+    "top_points": {
+     "id": 50647158,
+     "title": "「禁食 72 小时重置免疫系统」来自 2014 年南加大研究，文章提醒别把标题当成结论",
+     "value": 273,
+     "comments": 212
+    },
+    "top_comments": {
+     "id": 50647158,
+     "title": "「禁食 72 小时重置免疫系统」来自 2014 年南加大研究，文章提醒别把标题当成结论",
+     "value": 212
+    },
+    "top_brief": {
+     "id": 50626466,
+     "title": "VP ≠ VNP 到底意味着什么（三分钟版）",
+     "value": 215,
+     "comments": 77
+    }
+   }
+  },
+  {
+   "name": "文化",
+   "en": "Culture",
+   "stories": [
+    {
+     "id": 50655664,
+     "title": "感恩节快乐：首页第二高赞是一句问候",
+     "title_en": "Tell HN: Happy Thanksgiving",
+     "url": null,
+     "hn": "https://news.ycombinator.com/item?id=50655664",
+     "points": 568,
+     "comments": 133,
+     "summary": [
+      "11 月 26 日是美国感恩节。一条没有外链的 Tell HN：「Happy Thanksgiving」，正文只有两句：希望你和朋友家人度过美好的一天；如果不是，也把它过成美好的一天。它拿下当天第二高的点赞。",
+      "评论区没有争论产品，而是互相道谢。有人每年都会做大学老师布置过的作业：把曾经帮助过自己的教练、顾问、老师、雇主、推荐人和亲友逐一想一遍，包括十年前就想感谢、却一直没开口的那个人。也有人感谢那些做出小工具、大工具和有趣小项目的人，以及在「肉身空间」里照料琐事、好让别人能继续钻研的人。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "tito",
+       "stance": "作业",
+       "zh": "我每年都做这项感恩节功课，觉得很充实，是大学里一位很好的教授 Danny Warshay 传下来的：想想你的支持者。想想所有帮你走到今天的人，所有教练、顾问、支持者、老师、雇主、导师、亲戚和朋友。包括职业生涯早期、生活里、或最近帮过你的人，包括为你的工作做过推荐的人。光是这些类别，对谁来说都数不清。还有那个十年前你就想感谢、却一直没说出口的人。",
+       "en": "Think of all of the people who have helped you get to where you are today.",
+       "hn": "https://news.ycombinator.com/item?id=50656449",
+       "id": 50656449,
+       "replies": 2
+      },
+      {
+       "user": "dzink",
+       "stance": "致谢",
+       "zh": "感恩节快乐。感谢那些做出小工具、大工具、可爱小项目和有见地的文章的人。技术像在一片黑暗里打开地图，摆弄的人点亮路，让人看见新的可能。也感谢在「肉身空间」里照料周边、好让别人能有时间做研究和洞察的装置、环境和人。",
+       "en": "Grateful for the people who have made little tools and big tools",
+       "hn": "https://news.ycombinator.com/item?id=50656056",
+       "id": 50656056,
+       "replies": 3
+      }
+     ],
+     "kicker": "文化 · 节日",
+     "tag": "点赞第二"
+    },
+    {
+     "id": 50649864,
+     "title": "Ask HN 列表又「有货了」：原来首页候选池把纯文本帖饿死了",
+     "title_en": "Tell HN: Lots of Ask HNs again",
+     "url": null,
+     "hn": "https://news.ycombinator.com/item?id=50649864",
+     "points": 395,
+     "comments": 154,
+     "summary": [
+      "一条 Tell HN 解释了近几周反复出现的疑问：为什么 https://news.ycombinator.com/ask 只剩下十几条、分页也没了。作者认为自己找到了原因：这个列表传统上是从生成首页所用的已排序投稿池里筛的，而那个池子只保留排名前 1500 的投稿。纯文本帖（没有外链的投稿）在全部投稿里的占比下降到一定程度后，Ask HN 频道就被饿干了。解决办法是为 Ask HN 单独计算一份排序列表。",
+      "帖子还补充：「Ask HN」只是习惯叫法，实际指的是纯文本帖，标题也可以以「Tell HN」开头，或什么前缀都没有，只要提交时没带 URL。评论区随即变成 HN 站务小课堂：有人说这很像报表系统里先取前 M 再在客户端滤到 N 的偷懒优化，页能填满就看不出来，填不满就会恰如其分地「枯竭」；也有人顺手提了其他首页问题，比如在第 2、3 页点「隐藏」时，补位总是第 30 条而不是第 60、90 条，以及 Show HN 有时在发布后立即同时被标成 flagged 和 dead、快到不像是人工操作。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "koolba",
+       "stance": "类比",
+       "zh": "挺好笑的。我在报表系统里见过这类优化：不是取符合条件 X 的前 N 条，而是先取前 M（M>N）再在客户端滤成符合 X 的 N 条。只要结果还够填满页面，你就看不出差别，而且通常更快，因为复用了已有排序。但一旦不够，就会正好变成现在这种情况。",
+       "en": "I've seen optimizations like this for reporting systems",
+       "hn": "https://news.ycombinator.com/item?id=50649957",
+       "id": 50649957,
+       "replies": 5
+      },
+      {
+       "user": "minimaxir",
+       "stance": "连带",
+       "zh": "既然谈到信息流策展……Show HN 似乎有一种新行为：发布后常常立刻同时被标成 flagged 和 dead（例如显示是 0 分钟前发出的，快到不像是人类自然点的）。这是预期中的行为吗？",
+       "en": "There appears to be a new behavior for Show HNs where they are often both [flagged] [dead] immediately after posting",
+       "hn": "https://news.ycombinator.com/item?id=50649964",
+       "id": 50649964,
+       "replies": 39
+      },
+      {
+       "user": "zahlman",
+       "stance": "称赞",
+       "zh": "谢谢把系统设计讲清楚。这种程度的沟通，是 HN 最好的品质之一。",
+       "en": "This level of communication is one of the best things about HN.",
+       "hn": "https://news.ycombinator.com/item?id=50650386",
+       "id": 50650386,
+       "replies": 0
+      }
+     ],
+     "kicker": "文化 · 社区"
+    },
+    {
+     "id": 50659841,
+     "title": "卡米尔·汗·穆姆塔兹：在巴基斯坦备受推崇，在海外几乎看不见的建筑师",
+     "title_en": "Kamil Khan Mumtaz: Pakistani architect, admired at home, almost invisible abroad",
+     "url": "https://worksinprogress.co/issue/the-greatest-architect-youve-never-heard-of-is-in-pakistan/",
+     "hn": "https://news.ycombinator.com/item?id=50659841",
+     "points": 203,
+     "comments": 36,
+     "summary": [
+      "《Works in Progress》刊登了一组关于拉合尔建筑师卡米尔·汗·穆姆塔兹（Kamil Khan Mumtaz）的图文。作者写道，同事曾寄来几张巴基斯坦近年建筑的模糊照片，施工和细部都非常自信；穆姆塔兹在本国广受赞誉，却几乎不出现在国际建筑杂志的拍摄行程里。杂志在他的助手 Sohaib Ahmed 协助下，放出一批此前从未在巴基斯坦以外发表的作品照片。",
+      "穆姆塔兹 1939 年生于加尔各答，在拉合尔 Aitchison College 读完英国 A-level，1960 年代初到伦敦建筑协会学院（AA）学习，当时全盘接受了现代主义。1966 年回国开业，一度从事共产主义活动，曾被军政府两度监禁，并在 1970 年代末为拉合尔古城墙城区撰写保护报告，反对推倒重建——这一区域后来部分成为联合国教科文组织世界遗产。1980 年前后，伊朗建筑师 Nader Ardalan 的《统一感：波斯建筑中的苏菲传统》让他放弃了自己作为马克思主义者、唯物主义者和现代主义者的信念，转而复兴巴基斯坦、尤其是拉合尔的既有建筑传统。文章写，巴基斯坦工业化较晚，前现代工匠传统尚未完全消失；他与世代相传的工匠一起重新找出已失传约三百年的砌砖、平穹顶和 muqarnas 等做法。现年八十多岁的他仍在建造。评论区有人从这些房子里看出早期粗野主义的体量和材料诚实，尽管后来的作品把被粗野主义丢掉的装饰又请了回来。"
+     ],
+     "comment_quotes": [
+      {
+       "user": "doodlebugging",
+       "stance": "赞叹",
+       "zh": "谢谢把这位建筑师一生的作品拿出来给大家看。很明显，他的时间和精力用得其所。把古老传统保存下来也非常棒。文章里的那些例子就是美，有的复杂，有的简单。我来自木龙骨房子和长得一模一样的购物条的土地。巴基斯坦看起来很美。",
+       "en": "Those examples in the article are simply beautiful",
+       "hn": "https://news.ycombinator.com/item?id=50660678",
+       "id": 50660678,
+       "replies": 0
+      },
+      {
+       "user": "Faizan11490",
+       "stance": "读法",
+       "zh": "听我说：他的作品里有粗野主义的痕迹。他 1960 年代初在 AA 受训，那时新粗野主义在伦敦正盛，他早期的房子也是现代主义的。在我看来，厚重的体量和对材料的诚实被保留了下来，尽管后期作品把粗野主义丢掉的装饰又请了回来。",
+       "en": "there are hints of brutalism in his work.",
+       "hn": "https://news.ycombinator.com/item?id=50660948",
+       "id": 50660948,
+       "replies": 1
+      },
+      {
+       "user": "sfjailbird",
+       "stance": "现场",
+       "zh": "作为西方人，我去过拉合尔，那里的历史建筑确实迷人。莫卧儿时期的宫殿和公共建筑，如果还完整矗立着，会是世界奇观。只是它们已成废墟，你得从残存的片段去想象原来的盛况。",
+       "en": "the historical architecture is indeed fascinating.",
+       "hn": "https://news.ycombinator.com/item?id=50660935",
+       "id": 50660935,
+       "replies": 0
+      }
+     ],
+     "kicker": "文化 · 建筑"
+    }
+   ],
+   "briefs": [
+    {
+     "id": 50648323,
+     "title": "在太平洋小岛上装了一部公用电话，不为赚钱只为好玩",
+     "title_en": "Deploying a payphone on a tiny Pacific Island for fun and zero profit",
+     "url": "https://nickvsnetworking.com/deploying-a-payphone-on-a-tiny-pacific-island-for-fun-and-zero-profit/",
+     "hn": "https://news.ycombinator.com/item?id=50648323",
+     "points": 156,
+     "comments": 23
+    },
+    {
+     "id": 50634381,
+     "title": "文明史就是小麦史",
+     "title_en": "The history of civilization is the history of wheat",
+     "url": "https://asteriskmag.com/issues/16/marginal-grains",
+     "hn": "https://news.ycombinator.com/item?id=50634381",
+     "points": 149,
+     "comments": 110
+    },
+    {
+     "id": 50598636,
+     "title": "罗尔德·达尔 1954 年小说《伟大的自动文法机》",
+     "title_en": "The Great Automatic Grammatizator (By Roald Dahl), 1954 [pdf]",
+     "url": "https://gwern.net/doc/fiction/science-fiction/1953-dahl-thegreatautomaticgrammatizator.pdf",
+     "hn": "https://news.ycombinator.com/item?id=50598636",
+     "points": 152,
+     "comments": 54
+    },
+    {
+     "id": 50627532,
+     "title": "XKCD 与傅里叶",
+     "title_en": "XKCD and Fourier",
+     "url": "https://leancrew.com/all-this/2026/10/xkcd-and-fourier/",
+     "hn": "https://news.ycombinator.com/item?id=50627532",
+     "points": 100,
+     "comments": 40
+    },
+    {
+     "id": 50658170,
+     "title": "IBM 给 H-1B 和绿卡持有人三周时间离开美国，否则离职",
+     "title_en": "IBM gives H-1B, green card holders 3 weeks to relocate from US or leave company",
+     "url": "https://economictimes.indiatimes.com/nri/work/ibm-gives-h-1b-green-card-holders-3-weeks-to-relocate-from-us-or-leave-company-december-31-deadline-set/articleshow/136180168.cms?from=mdr",
+     "hn": "https://news.ycombinator.com/item?id=50658170",
+     "points": 122,
+     "comments": 84
+    },
+    {
+     "id": 50656862,
+     "title": "Kagi Watch",
+     "title_en": "Kagi Watch",
+     "url": "https://kagi.com/watch",
+     "hn": "https://news.ycombinator.com/item?id=50656862",
+     "points": 96,
+     "comments": 145
+    },
+    {
+     "id": 50648822,
+     "title": "Duran Duran 吉他手 Andy Taylor 去世，享年 65 岁",
+     "title_en": "Duran Duran guitarist Andy Taylor dies aged 65",
+     "url": "https://www.bbc.co.uk/news/articles/cmp3vk6vr44po",
+     "hn": "https://news.ycombinator.com/item?id=50648822",
+     "points": 52,
+     "comments": 10
+    },
+    {
+     "id": 50644839,
+     "title": "智能手机相机是怎么被工程出来的",
+     "title_en": "The Engineering of Smartphone Cameras",
+     "url": "https://www.pencilofrays.com/smartphone-lens/",
+     "hn": "https://news.ycombinator.com/item?id=50644839",
+     "points": 41,
+     "comments": 16
+    },
+    {
+     "id": 50659640,
+     "title": "公司文化 = Slack 表情 ÷ √人数",
+     "title_en": "Company Culture = Slack Emoji ÷ √Headcount",
+     "url": "https://lia.mg/posts/measuring-company-culture-with-slack-emoji/",
+     "hn": "https://news.ycombinator.com/item?id=50659640",
+     "points": 70,
+     "comments": 11
+    },
+    {
+     "id": 50623232,
+     "title": "Show HN: Synth Patch Hero，合成器音色闯关",
+     "title_en": "Show HN: Synth Patch Hero",
+     "url": "https://swarkentin.github.io/synth-patch-hero/",
+     "hn": "https://news.ycombinator.com/item?id=50623232",
+     "points": 127,
+     "comments": 25
+    }
+   ],
+   "stats": {
+    "items": 13,
+    "points": 2231,
+    "comments": 841,
+    "top_points": {
+     "id": 50655664,
+     "title": "感恩节快乐：首页第二高赞是一句问候",
+     "value": 568,
+     "comments": 133
+    },
+    "top_comments": {
+     "id": 50649864,
+     "title": "Ask HN 列表又「有货了」：原来首页候选池把纯文本帖饿死了",
+     "value": 154
+    },
+    "top_brief": {
+     "id": 50648323,
+     "title": "在太平洋小岛上装了一部公用电话，不为赚钱只为好玩",
+     "value": 156,
+     "comments": 23
+    }
+   }
+  }
+ ],
+ "quote_of_day": {
+  "user": "Nevermark",
+  "id": 50650666,
+  "hn": "https://news.ycombinator.com/item?id=50650666",
+  "story_id": 50646108,
+  "story": "阿伦森：复杂度理论的古老难题正在被直接解开，这才是真正的量级",
+  "zh": "作为人类，我们在生物学上甚至没法对眼下这件事做出一丁点相称的震惊。",
+  "en": "We are all biologically incapable of freaking out at even a tiny fraction of the appropriate level"
+ },
+ "stats": {
+  "snapshot": "2026-11-27T08:15:04+08:00",
+  "front_page_count": 90,
+  "with_numbers": 89,
+  "flagged_or_dupe": 1,
+  "top_points": {
+   "id": 50646108,
+   "title": "阿伦森：复杂度理论的古老难题正在被直接解开，这才是真正的量级",
+   "value": 1971,
+   "comments": 1800
+  },
+  "top_comments": {
+   "id": 50646108,
+   "title": "阿伦森：复杂度理论的古老难题正在被直接解开，这才是真正的量级",
+   "value": 1800
+  },
+  "second_comments": {
+   "id": 50657530,
+   "title": "YouTube Ad Punisher：广告一出就刷新页面，并回到原来的播放位置",
+   "value": 308
+  },
+  "over_500": 2,
+  "over_300": 7,
+  "over_100": 34,
+  "show_hn": 6,
+  "total_points": 12169,
+  "total_comments": 6581,
+  "hottest_ratio": {
+   "id": 50657530,
+   "title": "YouTube Ad Punisher：广告一出就刷新页面，并回到原来的播放位置",
+   "value": 1.34,
+   "note": "点赞 ≥100 的帖子中评论/点赞比最高"
+  }
+ }
+}
